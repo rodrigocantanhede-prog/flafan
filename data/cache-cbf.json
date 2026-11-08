@@ -334,5 +334,25 @@
   "fonteInfo": "CBF",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F61377%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/bahia-x-flamengo/835449"
+ },
+ {
+  "id": "cbf-835451",
+  "modalidade": "futebol-feminino",
+  "adversario": "Bahia",
+  "competicao": "Copa do Brasil Feminina",
+  "inicio": "2026-11-07T21:30:00-03:00",
+  "semHora": false,
+  "local": "Luso Brasileiro - Rio de Janeiro - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 3,
+   "adversario": 2
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F61377%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451"
  }
 ]
