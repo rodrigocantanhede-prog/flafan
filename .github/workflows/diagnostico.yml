@@ -1,0 +1,27 @@
+# Temporário: baixa páginas oficiais para achar onde assistir. Será removido.
+name: Diagnóstico TV
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/diagnostico-tv.mjs']
+permissions:
+  contents: write
+concurrency:
+  group: atualizar-jogos
+  cancel-in-progress: false
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/diagnostico-tv.mjs
+      - run: |
+          git config user.name "FlaFan robô"
+          git config user.email "actions@users.noreply.github.com"
+          git add diagnostico
+          git diff --cached --quiet || git commit -m "Diagnóstico: onde assistir"
+          git pull --rebase origin main
+          git push
