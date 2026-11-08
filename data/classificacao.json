@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T12:28:01.489Z",
+ "atualizadoEm": "2026-11-08T12:52:54.132Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -243,7 +243,8 @@
      "e": null,
      "d": 0,
      "sg": null,
-     "pts": 15
+     "pts": 15,
+     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
     },
     {
      "pos": 2,
@@ -263,7 +264,8 @@
      "e": null,
      "d": 0,
      "sg": null,
-     "pts": 12
+     "pts": 12,
+     "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
     },
     {
      "pos": 4,
@@ -273,7 +275,8 @@
      "e": null,
      "d": 0,
      "sg": null,
-     "pts": 11
+     "pts": 11,
+     "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
     },
     {
      "pos": 5,
@@ -283,7 +286,8 @@
      "e": null,
      "d": 0,
      "sg": null,
-     "pts": 11
+     "pts": 11,
+     "escudo": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
     },
     {
      "pos": 6,
@@ -304,7 +308,8 @@
      "e": null,
      "d": 2,
      "sg": null,
-     "pts": 2
+     "pts": 2,
+     "escudo": "escudos/volei-pinheiros-ef805a.png"
     },
     {
      "pos": 8,
@@ -314,7 +319,8 @@
      "e": null,
      "d": 3,
      "sg": null,
-     "pts": 2
+     "pts": 2,
+     "escudo": "escudos/volei-brusque-volei-ceea88.png"
     },
     {
      "pos": 9,
@@ -324,7 +330,8 @@
      "e": null,
      "d": 4,
      "sg": null,
-     "pts": 1
+     "pts": 1,
+     "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
     },
     {
      "pos": 10,
@@ -334,7 +341,8 @@
      "e": null,
      "d": 4,
      "sg": null,
-     "pts": 0
+     "pts": 0,
+     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
     },
     {
      "pos": 11,
@@ -344,7 +352,8 @@
      "e": null,
      "d": 4,
      "sg": null,
-     "pts": 0
+     "pts": 0,
+     "escudo": "escudos/volei-brasilia-volei-brb-923451.png"
     },
     {
      "pos": 12,
@@ -354,7 +363,8 @@
      "e": null,
      "d": 4,
      "sg": null,
-     "pts": 0
+     "pts": 0,
+     "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
     }
    ],
    "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao"
