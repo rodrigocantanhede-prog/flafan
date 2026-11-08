@@ -581,3 +581,11 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .folha .tabela-camp td.c-ap, .folha .tabela-camp th.c-ap { padding-right: 10px; }
 .folha .tabela-camp .t-time-in { gap: 7px; }
 .folha .tabela-camp .t-time-in .escudo-box.mini, .folha .tabela-camp .t-time-in .escudo-box.mini .escudo { width: 24px; height: 24px; }
+/* ficha flutuando por inteiro: cantos de baixo arredondados e um respiro até o fim da tela */
+.folha-conteudo {
+  border-radius: 34px;
+  margin-bottom: max(10px, env(safe-area-inset-bottom));
+  max-height: calc(100dvh - 50px - max(10px, env(safe-area-inset-bottom)));
+  min-height: calc(100dvh - 50px - max(10px, env(safe-area-inset-bottom)));
+  padding-bottom: 14px;
+}
