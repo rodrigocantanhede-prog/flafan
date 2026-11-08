@@ -1,8 +1,300 @@
 {
- "atualizadoEm": "2026-11-08T00:50:56.582Z",
+ "atualizadoEm": "2026-11-08T01:32:37.569Z",
  "exemplo": false,
  "avisos": [],
+ "escudoFlamengo": null,
  "jogos": [
+  {
+   "id": "m-cd16c86dd3",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Santos",
+   "inicio": "2026-10-08T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-470ab74d6c",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Fluminense",
+   "inicio": "2026-10-11T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-f548261f73",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "La Plata (Argentina)",
+   "competicao": "Libertadores – semifinal (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Estudiantes",
+   "inicio": "2026-10-15T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-1c3c88ba80",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "competicao": "Copa do Brasil Feminina – quartas (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "inicio": "2026-10-15T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-3537948755",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Salvador (BA)",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Bahia",
+   "inicio": "2026-10-18T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-43717a48e9",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 81,
+    "adversario": 82
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Bauru",
+   "inicio": "2026-10-18T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-a8c44be74d",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Paulistano/Barueri",
+   "inicio": "2026-10-19T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-64045f5617",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 81,
+    "adversario": 71
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Ginásio do Tijuca, Rio de Janeiro",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Botafogo",
+   "inicio": "2026-10-20T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-327b159f7a",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Libertadores – semifinal (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Estudiantes",
+   "inicio": "2026-10-22T00:00:00-03:00",
+   "semHora": true,
+   "observacao": "Eliminado nos pênaltis (2 x 3)"
+  },
+  {
+   "id": "m-48fde0f962",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "",
+   "competicao": "Copa do Brasil Feminina – quartas (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "inicio": "2026-10-22T00:00:00-03:00",
+   "semHora": true,
+   "observacao": "Classificado para a semifinal (4 x 3 no agregado)"
+  },
+  {
+   "id": "m-f81da26ae6",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Brasília (DF)",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Brasília",
+   "inicio": "2026-10-23T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-abbbb873d7",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Atlético-MG",
+   "inicio": "2026-10-26T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-f1f9d80c62",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 4,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Estádio Nilton Santos, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Vasco",
+   "inicio": "2026-10-29T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-235e33824d",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Mackenzie",
+   "inicio": "2026-10-31T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-5a0e89a703",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 83,
+    "adversario": 65
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "União Corinthians",
+   "inicio": "2026-11-01T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-754c9a6094",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Arena Fonte Nova, Salvador",
+   "competicao": "Copa do Brasil Feminina – semifinal (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Bahia",
+   "inicio": "2026-11-03T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-29ebc8676f",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Grêmio",
+   "inicio": "2026-11-04T00:00:00-03:00",
+   "semHora": true
+  },
   {
    "id": "m-2032129893",
    "transmissao": [],
@@ -36,6 +328,27 @@
    "adversario": "Londrina",
    "inicio": "2026-11-06T00:00:00-03:00",
    "semHora": true
+  },
+  {
+   "id": "m-ee0f3a74d7",
+   "transmissao": [
+    "Xsports",
+    "Flamengo TV"
+   ],
+   "placar": {
+    "flamengo": 80,
+    "adversario": 66
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Ginásio do Sesi, Pato Branco (PR)",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Pato Basquete",
+   "inicio": "2026-11-07T19:00:00-03:00",
+   "semHora": false,
+   "observacao": "Placar a confirmar: a matéria cita 80 a 66 e também 90 a 66"
   },
   {
    "id": "m-13a4416f99",

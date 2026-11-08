@@ -6,4 +6,30 @@ METHOD:PUBLISH
 X-WR-CALNAME:FlaFan — Futebol feminino
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:m-1c3c88ba80@flafan
+DTSTAMP:20261108T013237Z
+DTSTART;VALUE=DATE:20261015
+SUMMARY:Fluminense x Flamengo (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – quartas (ida)\nOnde assistir: a co
+ nfirmar
+LOCATION:Estádio Luso-Brasileiro\, Rio de Janeiro
+END:VEVENT
+BEGIN:VEVENT
+UID:m-48fde0f962@flafan
+DTSTAMP:20261108T013237Z
+DTSTART;VALUE=DATE:20261022
+SUMMARY:Flamengo x Fluminense (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – quartas (volta)\nOnde assistir: a 
+ confirmar
+END:VEVENT
+BEGIN:VEVENT
+UID:m-754c9a6094@flafan
+DTSTAMP:20261108T013237Z
+DTSTART;VALUE=DATE:20261103
+SUMMARY:Bahia x Flamengo (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – semifinal (ida)\nOnde assistir: a 
+ confirmar
+LOCATION:Arena Fonte Nova\, Salvador
+END:VEVENT
 END:VCALENDAR
