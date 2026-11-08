@@ -43,6 +43,9 @@ const NUM_CAT = (nome) => Number((String(nome ?? '').match(/sub-?(\d+)/i) ?? [])
 export function lerPartidasFerj(html, { idadeMinima = 15, agora = Date.now() } = {}) {
   const { mapa, resolver } = mapaDeLinhas(dadosDaPagina(html));
   const jogos = [];
+  // todas as partidas da página, antes de qualquer filtro (para saber quando parar de virar páginas)
+  jogos.brutos = [...mapa.values()].filter((o) => o && typeof o === 'object' && 'statusPartida' in o && o.mandante)
+    .map((o) => ({ id: o.id, dia: String(o.data ?? '').replace(/^\$D/, '').slice(0, 10) }));
   for (const bruto of mapa.values()) {
     if (!bruto || typeof bruto !== 'object' || !('statusPartida' in bruto) || !bruto.mandante) continue;
     const p = resolver(bruto);
@@ -93,15 +96,19 @@ async function baixar(u) {
 
 // cfg: { ativo, paginas (por aba), idadeMinima, desde }
 export async function lerFerj(cfg, log = () => {}) {
-  const porId = new Map();
+  const porId = new Map(), vistos = new Set();
   for (const tab of ['agendados', 'finalizados']) {
     for (let pg = 1; pg <= (cfg?.paginas ?? 3); pg++) {
       const lidos = lerPartidasFerj(await baixar(`${BASE}/partidas?clubeId=${ID_FLAMENGO_FERJ}&tab=${tab}&pg=${pg}`), cfg);
       await new Promise((r) => setTimeout(r, 1200));
-      const novos = lidos.filter((j) => !porId.has(j.id));
-      novos.forEach((j) => porId.set(j.id, j));
-      // finalizados vêm do mais novo para o mais antigo: para quando passar da data "desde" ou a página não trouxer nada novo
-      if (!novos.length || (tab === 'finalizados' && cfg?.desde && lidos.every((j) => j.inicio.slice(0, 10) < cfg.desde))) break;
+      lidos.forEach((j) => porId.set(j.id, j));
+      // para pela página "bruta" (com Sub-11 a Sub-14), não pela filtrada: página só de escolinha não interrompe a leitura
+      const brutos = lidos.brutos ?? [];
+      const novos = brutos.filter((b) => !vistos.has(b.id));
+      brutos.forEach((b) => vistos.add(b.id));
+      if (!novos.length) break;
+      // finalizados vêm do mais novo para o mais antigo: para quando a página inteira já é de antes da data "desde"
+      if (tab === 'finalizados' && cfg?.desde && brutos.every((b) => b.dia && b.dia < cfg.desde)) break;
     }
   }
   const jogos = [...porId.values()].filter((j) => !cfg?.desde || j.inicio.slice(0, 10) >= cfg.desde).sort((a, b) => a.inicio.localeCompare(b.inicio));

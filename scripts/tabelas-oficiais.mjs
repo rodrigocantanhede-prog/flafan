@@ -120,7 +120,7 @@ export function lerAgendaLnb(html, agora = Date.now()) {
     const fase = limpaTxt((tr.match(/stage_value hide_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1]);
     const ginasio = limpaTxt((tr.match(/gym_value[^>]*>([\s\S]*?)<(?:div|\/td)/) ?? [])[1]);
     const adv = nomeBonito(flaCasa ? fora : casa);
-    const placar = pc !== null && pf !== null && new Date(inicio).getTime() < agora ? { flamengo: flaCasa ? pc : pf, adversario: flaCasa ? pf : pc } : null;
+    const placar = pc !== null && pf !== null && new Date(inicio).getTime() + 2.5 * 3600e3 < agora ? { flamengo: flaCasa ? pc : pf, adversario: flaCasa ? pf : pc } : null;
     jogos.push({
       id: `lnb-${id}`, modalidade: 'basquete', adversario: adv, competicao: fase && !/turno/i.test(fase) ? `NBB – ${fase.toLowerCase()}` : 'NBB',
       inicio, semHora: false, local: ginasio, mandante: flaCasa, transmissao: tv, placar, status: placar ? 'encerrado' : 'agendado',

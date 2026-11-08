@@ -459,8 +459,11 @@ export function mesmoTime(a, b) {
 export function juntarCbf(automaticos, cbf) {
   const saida = automaticos.map((j) => ({ ...j }));
   for (const c of cbf) {
-    const i = saida.findIndex((j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') &&
-      String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10) && String(j.id).startsWith('site-'));
+    const mesmaCat = (j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') && String(j.id).startsWith('site-');
+    let i = saida.findIndex((j) => mesmaCat(j) && String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10));
+    // jogo remarcado (uma fonte já tem a data nova, a outra ainda não): mesmo adversário em até 7 dias = mesmo jogo
+    if (i < 0) i = saida.findIndex((j) => mesmaCat(j) && Math.abs(new Date(j.inicio) - new Date(c.inicio)) <= 7 * 864e5 &&
+      (mesmoTime(j.adversario, c.adversario) || mesmoTime(c.adversario, j.adversario)));
     if (i < 0) { saida.push({ ...c }); continue; }
     const site = saida[i];
     const junto = { ...c };
@@ -647,7 +650,7 @@ async function main() {
     let jogosLnb;
     try { jogosLnb = await lerJogosLnb(cfg.lnbJogos.url, log); await writeFile(cacheLnbArq, JSON.stringify(jogosLnb, null, 1)); }
     catch (e) { problemas.push(`Site da LNB (agenda do NBB): ${e.message} — mantive a última leitura.`); jogosLnb = await lerJson(cacheLnbArq, []); }
-    automaticos = [...automaticos.filter((j) => !String(j.id).startsWith('lnb-')), ...jogosLnb];
+    automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('lnb-')), jogosLnb);
   }
 
   // 1b4) site da FERJ: Carioca (feminino e base) e Copa Rio, com placar e estádio. O site só mostra os últimos

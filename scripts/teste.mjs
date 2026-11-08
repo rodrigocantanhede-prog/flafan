@@ -308,3 +308,33 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(fem.modalidade, 'futebol-feminino'); assert.equal(fem.competicao, 'Carioca Feminino'); assert.deepEqual(fem.placar, { flamengo: 3, adversario: 1 });
   console.log('✓ Leitura da FERJ ok');
 }
+{
+  // revisão 2: FERJ não para numa página só de escolinha; LNB não publica placar parcial; jogo remarcado não duplica
+  const { lerFerj } = await import('./ferj.mjs');
+  const { lerAgendaLnb } = await import('./tabelas-oficiais.mjs');
+  const { juntarCbf } = await import('./atualizar.mjs');
+  const pagina = (cat, id, dia) => {
+    const linhas = ['1:{"id":30,"nome":"C.R Flamengo"}', '2:{"id":25,"nome":"S.A.F Botafogo"}', `3:{"id":4,"nome":"${cat}"}`, '4:{"id":3,"nome":"Copa Rio"}',
+      '5:{"id":9,"campeonatoCategoria":"$3","campeonato":"$4","genero":"MASCULINO"}', '6:{"nome":"X"}',
+      `7:{"id":${id},"data":"$D${dia}T10:00:00.000Z","placarMandante":1,"placarVisitante":0,"visitante":"$2","mandante":"$1","campeonatoCategoriaTemporada":"$5","statusPartida":"FINALIZADO","estadio":"$6"}`].join('\n') + '\n';
+    return `<script>self.__next_f.push([1,${JSON.stringify(linhas)}])</script>`;
+  };
+  const real = globalThis.fetch, realTimeout = globalThis.setTimeout;
+  const pedidas = [];
+  globalThis.setTimeout = (f) => realTimeout(f, 0);
+  globalThis.fetch = async (u) => { pedidas.push(u); const pg = Number(new URL(u).searchParams.get('pg')); const tab = new URL(u).searchParams.get('tab');
+    if (tab === 'agendados') return new Response('<html></html>');
+    return new Response(pg === 1 ? pagina('Sub-17', 1, '2026-10-01') : pg === 2 ? pagina('Sub-13', 2, '2026-09-01') : pg === 3 ? pagina('Sub-20', 3, '2026-08-01') : '<html></html>'); };
+  try {
+    const j = await lerFerj({ paginas: 5, idadeMinima: 15, desde: '2026-01-01' });
+    assert.deepEqual(j.map((x) => x.categoria), ['Sub-20', 'Sub-17'], 'lê a página depois da página só de Sub-13');
+  } finally { globalThis.fetch = real; globalThis.setTimeout = realTimeout; }
+  const tr = `<tr class="with-hotel"><td data-real-id="9">1</td><td class="date_value"><span>08/11/2026</span> <span>19:00</span></td><td class="home_team_value"><span>Flamengo</span></td><td class="score_value show-for-medium"><a><span class="home">40</span> X <span class="away">38</span></a></td><td class="visitor_team_value"><span>Mogi</span></td></tr>`;
+  assert.equal(lerAgendaLnb(tr, new Date('2026-11-08T20:00:00-03:00').getTime())[0].placar, null, 'jogo em andamento: sem placar final');
+  assert.deepEqual(lerAgendaLnb(tr, new Date('2026-11-08T22:00:00-03:00').getTime())[0].placar, { flamengo: 40, adversario: 38 });
+  const site = [{ id: 'site-futebol-masculino-2026-11-18-athletico', modalidade: 'futebol-masculino', adversario: 'Athletico-PR', inicio: '2026-11-18T21:30:00-03:00', ingresso: 'https://x' }];
+  const cbf = [{ id: 'cbf-1', modalidade: 'futebol-masculino', adversario: 'Athletico Paranaense', inicio: '2026-11-19T19:00:00-03:00', link: 'https://cbf' }];
+  const junto = juntarCbf(site, cbf);
+  assert.equal(junto.length, 1, 'remarcado: vira um jogo só'); assert.equal(junto[0].inicio, '2026-11-19T19:00:00-03:00', 'vale a data da CBF'); assert.equal(junto[0].ingresso, 'https://x');
+  console.log('✓ Correções da revisão 2 ok');
+}

@@ -453,8 +453,11 @@ function blocoCampeonato(j) {
   if (!chave || j.tipo === 'evento') return '';
   const mesmos = estado.jogos.filter((x) => x.id !== j.id && x.tipo !== 'evento' && chaveCampeonato(x) === chave)
     .sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
-  const proximos = mesmos.filter((x) => !jaTerminou(x)).slice(0, 2);
-  const ultimos = mesmos.filter((x) => jaTerminou(x)).slice(-3).reverse();
+  const agora = Date.now();
+  const ehProximo = (x) => x.status !== 'cancelado' && !jaTerminou(x) &&
+    (x.status === 'adiado' || new Date(x.inicio).getTime() + (x.semHora ? 864e5 : 3 * 3600e3) > agora);
+  const proximos = mesmos.filter(ehProximo).slice(0, 2);
+  const ultimos = mesmos.filter((x) => !ehProximo(x) && x.status !== 'cancelado').slice(-3).reverse();
   if (!proximos.length && !ultimos.length) return '';
   return `<h3 class="fj-titulo">Neste campeonato</h3>
     <section class="nc">
@@ -619,6 +622,8 @@ let pedidoInstalar = null;
 const linkConvite = () => `${location.origin}${location.pathname.replace(/index\.html$/, '')}?instalar`;
 function avisar(texto) {
   const t = $('#toast'); t.textContent = texto; t.hidden = false;
+  // com uma ficha aberta, o aviso precisa ficar dentro dela (a ficha fica por cima de tudo)
+  (document.querySelector('dialog[open]') ?? document.body).appendChild(t);
   clearTimeout(avisar.tempo); avisar.tempo = setTimeout(() => { t.hidden = true; }, 2600);
 }
 $('#compartilhar').onclick = $('#compartilhar-topo').onclick = async () => {
