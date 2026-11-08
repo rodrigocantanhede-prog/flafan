@@ -123,41 +123,55 @@ async function baixar(caminho) {
 }
 const pausa = () => new Promise((r) => setTimeout(r, 1200));
 
-// cfg: { ativo, ano, desde, campeonatos: [{ campeonato, categoria, nome, modalidade, categoriaApp?, jogos?, tabela? }] }
+// cfg: { ativo, anos: [2026, 2027], desde, campeonatos: [{ campeonato, categoria, nome, modalidade, categoriaApp?, jogos?, tabela? }] }
+// Anos futuros (ex.: 2027) ainda sem página na CBF não contam como erro: os jogos entram sozinhos quando forem publicados.
 export async function lerCbf(cfg, log = () => {}) {
   const jogos = [], tabelas = [], problemas = [], campeonatosComFalha = [];
-  const ano = cfg?.ano ?? new Date().getFullYear();
+  const atual = Number(new Intl.DateTimeFormat('en', { timeZone: 'America/Sao_Paulo', year: 'numeric' }).format(new Date()));
+  const anos = (cfg?.anos ?? [cfg?.ano ?? atual]).map(Number).sort();
+  const futuro = (ano) => ano > atual;
   const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   for (const c of cfg?.campeonatos ?? []) {
-    const rota = `${c.campeonato}/${c.categoria}/${ano}`;
     if (c.jogos !== false) {
-      try {
-        const lidos = lerJogosDoTime(await baixar(`/times/${rota}/${ID_FLAMENGO}`), c, Date.now(), cfg.desde);
-        jogos.push(...lidos);
-        log(`CBF: ${c.nome} — ${lidos.length} jogos do Flamengo.`);
-      } catch (e) { problemas.push(`CBF (${c.nome}, jogos): ${e.message}`); campeonatosComFalha.push(`${c.campeonato}/${c.categoria}`); }
-      await pausa();
+      let falhou = false;
+      for (const ano of anos) {
+        try {
+          const lidos = lerJogosDoTime(await baixar(`/times/${c.campeonato}/${c.categoria}/${ano}/${ID_FLAMENGO}`), c, Date.now(), cfg.desde);
+          jogos.push(...lidos);
+          if (lidos.length || !futuro(ano)) log(`CBF: ${c.nome} ${ano} — ${lidos.length} jogos do Flamengo.`);
+        } catch (e) {
+          if (futuro(ano) && /respondeu 404/.test(e.message)) continue; // ano que vem ainda não publicado
+          problemas.push(`CBF (${c.nome} ${ano}, jogos): ${e.message}`); falhou = true;
+        }
+        await pausa();
+      }
+      if (falhou) campeonatosComFalha.push(`${c.campeonato}/${c.categoria}`);
     }
     if (c.tabela) {
-      try {
-        // fases por pontos; da mais recente para a mais antiga, fica com a primeira que tem o Flamengo
-        const todas = lerFases(await baixar(`/tabelas/${rota}`));
-        const fases = todas.filter((f) => f.fase_tipo === 'pontuacao');
-        await pausa();
-        let achou = false;
-        for (const f of fases.reverse()) {
-          const t = lerTabela(await baixar(`/tabelas/${rota}/${f.fase_id}`));
+      let achou = false, erro = null;
+      // a temporada mais nova que já tiver tabela com o Flamengo
+      for (const ano of [...anos].reverse()) {
+        const rota = `${c.campeonato}/${c.categoria}/${ano}`;
+        try {
+          // fases por pontos; da mais recente para a mais antiga, fica com a primeira que tem o Flamengo
+          const todas = lerFases(await baixar(`/tabelas/${rota}`));
+          const fases = todas.filter((f) => f.fase_tipo === 'pontuacao');
           await pausa();
-          if (!t.linhas.length) continue;
-          const sufixo = [todas.length > 1 ? f.fase_nome : '', t.grupo && !/unico|único/i.test(t.grupo) ? t.grupo.replace(/^GRUPO/i, 'Grupo') : ''].filter(Boolean).join(' · ');
-          tabelas.push({ nome: c.tabela, modalidade: c.modalidade, fonte: 'automatica', fonteInfo: 'CBF',
-            atualizado: `em ${hoje} (site da CBF)${sufixo ? ' — ' + sufixo : ''}`, linhas: t.linhas });
-          log(`CBF: tabela ${c.tabela} (${t.linhas.length} times${sufixo ? ', ' + sufixo : ''}).`);
-          achou = true;
-          break;
-        }
-        if (!achou) problemas.push(`CBF: tabela ${c.tabela} sem fase por pontos com o Flamengo — mantive a publicada antes.`);
-      } catch (e) { problemas.push(`CBF (tabela ${c.tabela}): ${e.message}`); }
+          for (const f of fases.reverse()) {
+            const t = lerTabela(await baixar(`/tabelas/${rota}/${f.fase_id}`));
+            await pausa();
+            if (!t.linhas.length) continue;
+            const sufixo = [todas.length > 1 ? f.fase_nome : '', t.grupo && !/unico|único/i.test(t.grupo) ? t.grupo.replace(/^GRUPO/i, 'Grupo') : ''].filter(Boolean).join(' · ');
+            tabelas.push({ nome: c.tabela, modalidade: c.modalidade, fonte: 'automatica', fonteInfo: 'CBF',
+              atualizado: `em ${hoje} (site da CBF${anos.length > 1 ? `, ${ano}` : ''})${sufixo ? ' — ' + sufixo : ''}`, linhas: t.linhas });
+            log(`CBF: tabela ${c.tabela} ${ano} (${t.linhas.length} times${sufixo ? ', ' + sufixo : ''}).`);
+            achou = true;
+            break;
+          }
+        } catch (e) { if (!(futuro(ano) && /respondeu 404/.test(e.message))) erro = e; }
+        if (achou) break;
+      }
+      if (!achou) problemas.push(erro ? `CBF (tabela ${c.tabela}): ${erro.message} — mantive a publicada antes.` : `CBF: tabela ${c.tabela} sem fase por pontos com o Flamengo — mantive a publicada antes.`);
     }
   }
   return { jogos, tabelas, problemas, campeonatosComFalha };

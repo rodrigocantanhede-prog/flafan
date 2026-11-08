@@ -86,9 +86,8 @@
   ],
   "cbf": {
     "ativo": true,
-    "ano": 2026,
     "desde": "2026-01-01",
-    "_nota": "Jogos do Flamengo (id 20016 na CBF) desde a data 'desde' e tabelas das fases por pontos.",
+    "_nota": "Jogos do Flamengo (id 20016 na CBF) desde a data 'desde', nas temporadas de 'anos' (ano que vem entra sozinho quando a CBF publicar), e tabelas das fases por pontos.",
     "campeonatos": [
       {
         "campeonato": "campeonato-brasileiro",
@@ -175,6 +174,10 @@
         "categoriaApp": "Sub-17",
         "tabela": "Brasileiro Feminino Sub-17"
       }
+    ],
+    "anos": [
+      2026,
+      2027
     ]
   },
   "lnbJogos": {
