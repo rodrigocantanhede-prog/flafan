@@ -529,3 +529,4 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .tabela-camp .ult i { font-style: normal; font-size: 10px; font-weight: 700; width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
 .tabela-camp .ult-V { background: #16A34A; } .tabela-camp .ult-E { background: #8A8F98; } .tabela-camp .ult-D { background: #DC2626; }
 .tabela-dica { font-size: 12px; color: var(--apagado); padding: 8px 14px 0; text-align: right; }
+.folha-conteudo { min-height: 88vh; min-height: 88dvh; }
