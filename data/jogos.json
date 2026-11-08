@@ -1,27 +1,9 @@
 {
- "atualizadoEm": "2026-11-08T18:08:39.601Z",
+ "atualizadoEm": "2026-11-08T18:10:54.983Z",
  "exemplo": false,
  "avisos": [
   "CBF (Supercopa Feminina, jogos): /times/supercopa/feminino/2026/20016 respondeu 404",
-  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior.",
-  "Escudo de Criciúma: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20019%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Criciúma: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20019%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Operário: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20106%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Operário: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20106%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Santos FC: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20008%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de América: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59897%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Cuiabá: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20800%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Criciúma: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20019%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Avaí: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20058%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Santos FC: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20008%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de América: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59897%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Atlético Goianiense: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62261%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Ferroviária: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20038%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Santos FC: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20008%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Mixto: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20064%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de América: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59897%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Uda: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21930%2Fescudo.jpg&w=256&q=75)",
-  "Escudo de Litoral Norte F. C.: imagem indisponível (400) (https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63761%2Fescudo.jpg&w=256&q=75)"
+  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -151,7 +133,8 @@
    "fonte": "automatica",
    "fonteInfo": "CBF",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-criciuma/835426",
-   "categoria": "Sub-20"
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-criciuma-bb31dc.webp"
   },
   {
    "id": "m-466661d860",
@@ -288,7 +271,8 @@
    "fonte": "automatica",
    "fonteInfo": "CBF",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/criciuma-x-flamengo/835434",
-   "categoria": "Sub-20"
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-criciuma-bb31dc.webp"
   },
   {
    "id": "m-74f2c5670f",
@@ -389,7 +373,8 @@
    "fonte": "automatica",
    "fonteInfo": "CBF",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/operario-x-flamengo/835455",
-   "categoria": "Sub-20"
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-operario-1e7a94.webp"
   },
   {
    "id": "cbf-832212",
@@ -468,7 +453,8 @@
    "fonte": "automatica",
    "fonteInfo": "CBF",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
-   "categoria": "Sub-20"
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-operario-1e7a94.webp"
   },
   {
    "id": "cbf-835449",
@@ -572,24 +558,23 @@
    "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
-   "id": "cbf-835451",
-   "modalidade": "futebol-feminino",
-   "adversario": "Bahia",
-   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
-   "inicio": "2026-11-07T21:30:00-03:00",
-   "semHora": false,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "mandante": true,
+   "id": "m-9a7052947a",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 2
    },
    "status": "encerrado",
-   "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
+   "mandante": true,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Bahia",
+   "inicio": "2026-11-07T21:30:00-03:00",
+   "semHora": false,
    "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
+   "fonteInfo": "Site do Flamengo",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {

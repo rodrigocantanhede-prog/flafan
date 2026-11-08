@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T18:08:39.601Z",
+ "atualizadoEm": "2026-11-08T18:10:54.983Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -560,7 +560,8 @@
       "D",
       "V",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-santos-fc-d1894f.webp"
     },
     {
      "pos": 7,
@@ -684,7 +685,8 @@
       "D",
       "E",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-america-3c948b.webp"
     },
     {
      "pos": 13,
@@ -704,7 +706,8 @@
       "V",
       "V",
       "V"
-     ]
+     ],
+     "escudo": "escudos/futebol-cuiaba-61d705.webp"
     },
     {
      "pos": 14,
@@ -808,7 +811,8 @@
       "D",
       "V",
       "V"
-     ]
+     ],
+     "escudo": "escudos/futebol-criciuma-bb31dc.webp"
     },
     {
      "pos": 19,
@@ -828,7 +832,8 @@
       "D",
       "D",
       "E"
-     ]
+     ],
+     "escudo": "escudos/futebol-avai-38f3d1.webp"
     },
     {
      "pos": 20,
@@ -1045,7 +1050,8 @@
       "V",
       "D",
       "V"
-     ]
+     ],
+     "escudo": "escudos/futebol-santos-fc-d1894f.webp"
     },
     {
      "pos": 10,
@@ -1191,7 +1197,8 @@
       "D",
       "V",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-america-3c948b.webp"
     },
     {
      "pos": 17,
@@ -1274,7 +1281,8 @@
       "D",
       "D",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-atletico-goianiense-58c2a0.webp"
     }
    ]
   },
@@ -1366,7 +1374,8 @@
       "E",
       "V",
       "E"
-     ]
+     ],
+     "escudo": "escudos/futebol-ferroviaria-6e4c9e.webp"
     },
     {
      "pos": 5,
@@ -1532,7 +1541,8 @@
       "D",
       "D",
       "V"
-     ]
+     ],
+     "escudo": "escudos/futebol-santos-fc-d1894f.webp"
     },
     {
      "pos": 13,
@@ -1573,7 +1583,8 @@
       "V",
       "D",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-mixto-2ebeec.webp"
     },
     {
      "pos": 15,
@@ -1614,7 +1625,8 @@
       "E",
       "D",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-america-3c948b.webp"
     },
     {
      "pos": 17,
@@ -1726,7 +1738,8 @@
       "E",
       "D",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-uda-42a6f7.webp"
     },
     {
      "pos": 4,
@@ -1746,7 +1759,8 @@
       "E",
       "D",
       "D"
-     ]
+     ],
+     "escudo": "escudos/futebol-litoral-norte-f-c-f5d431.webp"
     }
    ]
   },
