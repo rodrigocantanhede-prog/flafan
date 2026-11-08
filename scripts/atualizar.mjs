@@ -11,6 +11,7 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { lerCbf } from './cbf.mjs';
+import { lerFerj } from './ferj.mjs';
 import { lerTabelasOficiais, lerJogosLnb } from './tabelas-oficiais.mjs';
 import { lerSiteFlamengo } from './site-flamengo.mjs';
 
@@ -642,6 +643,22 @@ async function main() {
     try { jogosLnb = await lerJogosLnb(cfg.lnbJogos.url, log); await writeFile(cacheLnbArq, JSON.stringify(jogosLnb, null, 1)); }
     catch (e) { problemas.push(`Site da LNB (agenda do NBB): ${e.message} — mantive a última leitura.`); jogosLnb = await lerJson(cacheLnbArq, []); }
     automaticos = [...automaticos.filter((j) => !String(j.id).startsWith('lnb-')), ...jogosLnb];
+  }
+
+  // 1b4) site da FERJ: Carioca (feminino e base) e Copa Rio, com placar e estádio. O site só mostra os últimos
+  // resultados, então guarda os jogos que já passaram de leituras anteriores.
+  if (cfg.ferj?.ativo && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const cacheFerjArq = path.join(DATA, 'cache-ferj.json');
+    const cacheFerj = await lerJson(cacheFerjArq, []);
+    let jogosFerj = cacheFerj;
+    try {
+      const lidos = await lerFerj(cfg.ferj, log);
+      const ids = new Set(lidos.map((j) => j.id));
+      jogosFerj = [...lidos, ...cacheFerj.filter((j) => !ids.has(j.id) && new Date(j.inicio).getTime() < Date.now() &&
+        (!cfg.ferj.desde || j.inicio.slice(0, 10) >= cfg.ferj.desde))];
+      await writeFile(cacheFerjArq, JSON.stringify(jogosFerj, null, 1));
+    } catch (e) { problemas.push(`Site da FERJ: ${e.message} — mantive a última leitura.`); }
+    automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('ferj-')), jogosFerj);
   }
 
   // 1c) tabelas completas dos sites das ligas (NBB na LNB, Superliga na CBV)

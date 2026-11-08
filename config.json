@@ -166,5 +166,12 @@
   },
   "lnbJogos": {
     "url": "https://lnb.com.br/nbb/tabela-de-jogos/"
+  },
+  "ferj": {
+    "ativo": true,
+    "paginas": 3,
+    "idadeMinima": 15,
+    "desde": "2026-10-01",
+    "_nota": "Jogos do Flamengo (clubeId 30 na FERJ): Carioca profissional/feminino/base e Copa Rio, a partir do Sub-15."
   }
 }

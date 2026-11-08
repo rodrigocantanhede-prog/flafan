@@ -286,3 +286,24 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(j[1].escudoAdvUrl, 'https://lnb/UNIFACISA.png');
   console.log('✓ Agenda do NBB (LNB) ok');
 }
+{
+  const { lerPartidasFerj, nomeFerj } = await import('./ferj.mjs');
+  assert.equal(nomeFerj('S.A.F Botafogo'), 'Botafogo'); assert.equal(nomeFerj('Vasco da Gama S.A.F'), 'Vasco da Gama'); assert.equal(nomeFerj('Bahia (ba)'), 'Bahia');
+  const linhas = [
+    '1:{"id":30,"nome":"C.R Flamengo","imgEscudo":"img_icone_30.jpg"}', '2:{"id":25,"nome":"S.A.F Botafogo","imgEscudo":"img_icone_25.png"}',
+    '3:{"id":4,"nome":"Sub-17"}', '4:{"id":3,"nome":"Copa Rio"}', '5:{"id":753,"campeonatoCategoria":"$3","campeonato":"$4","genero":"MASCULINO"}', '6:{"nome":"ESTÁDIO NILTON SANTOS"}',
+    '7:{"id":6195,"data":"$D2026-11-11T11:00:00.000Z","placarMandante":null,"placarVisitante":null,"penaltiMandante":null,"penaltiVisitante":null,"visitante":"$1","mandante":"$2","campeonatoCategoriaTemporada":"$5","fase":null,"statusPartida":"AGENDADO","estadio":"$6"}',
+    '8:{"id":1,"nome":"Profissional"}', '9:{"id":2,"nome":"Estadual"}', 'a:{"id":9,"campeonatoCategoria":"$8","campeonato":"$9","genero":"FEMININO"}',
+    'b:{"id":6000,"data":"$D2026-11-07T15:00:00.000Z","placarMandante":3,"placarVisitante":1,"penaltiMandante":null,"penaltiVisitante":null,"visitante":"$2","mandante":"$1","campeonatoCategoriaTemporada":"$a","fase":null,"statusPartida":"FINALIZADO","estadio":"$6"}',
+    'c:{"id":11,"nome":"Sub-13"}', 'd:{"id":12,"campeonatoCategoria":"$c","campeonato":"$4","genero":"MASCULINO"}',
+    'e:{"id":7000,"data":"$D2026-11-12T09:00:00.000Z","placarMandante":null,"placarVisitante":null,"visitante":"$2","mandante":"$1","campeonatoCategoriaTemporada":"$d","statusPartida":"AGENDADO","estadio":"$6"}',
+  ].join('\n') + '\n';
+  const html = `<script>self.__next_f.push([1,${JSON.stringify(linhas)}])</script>`;
+  const j = lerPartidasFerj(html, { idadeMinima: 15, agora: new Date('2026-11-08T12:00:00-03:00').getTime() });
+  assert.equal(j.length, 2, 'Sub-13 fica de fora');
+  const sub17 = j.find((x) => x.id === 'ferj-6195'), fem = j.find((x) => x.id === 'ferj-6000');
+  assert.equal(sub17.modalidade, 'base'); assert.equal(sub17.categoria, 'Sub-17'); assert.equal(sub17.competicao, 'Copa Rio Sub-17');
+  assert.equal(sub17.adversario, 'Botafogo'); assert.equal(sub17.mandante, false); assert.equal(sub17.inicio, '2026-11-11T11:00:00-03:00'); assert.equal(sub17.local, 'Estádio Nilton Santos');
+  assert.equal(fem.modalidade, 'futebol-feminino'); assert.equal(fem.competicao, 'Carioca Feminino'); assert.deepEqual(fem.placar, { flamengo: 3, adversario: 1 });
+  console.log('✓ Leitura da FERJ ok');
+}
