@@ -424,6 +424,46 @@ function tabelaDoJogo(j) {
   return melhor;
 }
 
+// ---------- "Neste campeonato": próximo jogo e últimos resultados da mesma competição ----------
+// "Copa do Brasil Feminina – semifinal (volta)" e "Copa do Brasil Feminina" = mesmo campeonato; "Superliga" = "Superliga Feminina"
+function chaveCampeonato(j) {
+  const nome = semAc(j.competicao ?? '').split(/\s[–—-]\s/)[0].replace(/\(.*?\)/g, ' ')
+    .replace(/\b(campeonato|feminin[oa]|masculin[oa])\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+  return nome ? `${j.modalidade}|${j.categoria ?? ''}|${nome}` : null;
+}
+const fCurta = fmt({ weekday: 'short', day: '2-digit', month: '2-digit' });
+function linhaCampeonato(j) {
+  const terminou = jaTerminou(j);
+  const fla = j.placar ? j.placar.flamengo : null, adv = j.placar ? j.placar.adversario : null;
+  const res = j.placar ? (fla > adv ? 'v' : fla < adv ? 'd' : 'e') : '';
+  const direita = j.placar
+    ? `<span class="nc-placar nc-${res}"><i>${{ v: 'V', e: 'E', d: 'D' }[res]}</i>${fla}–${adv}</span>`
+    : terminou ? '<span class="nc-hora">—</span>'
+    : `<span class="nc-hora">${j.status === 'adiado' ? 'Adiado' : j.semHora ? 'a definir' : fHora.format(new Date(j.inicio))}</span>`;
+  const fase = (String(j.competicao ?? '').split(/\s[–—-]\s/)[1] ?? '');
+  return `<button type="button" class="nc-jogo" data-jogo="${esc(j.id)}">
+    <span class="nc-data">${esc(fCurta.format(new Date(j.inicio)).replace('.', ''))}</span>
+    ${escudoPequeno(j.adversario, j.escudoAdv, false)}
+    <span class="nc-nome"><b>${esc(j.adversario)}</b><small>${j.mandante === true ? 'em casa' : j.mandante === false ? 'fora' : ''}${fase ? (j.mandante !== null && j.mandante !== undefined ? ' · ' : '') + esc(fase) : ''}</small></span>
+    ${direita}
+  </button>`;
+}
+function blocoCampeonato(j) {
+  const chave = chaveCampeonato(j);
+  if (!chave || j.tipo === 'evento') return '';
+  const mesmos = estado.jogos.filter((x) => x.id !== j.id && x.tipo !== 'evento' && chaveCampeonato(x) === chave)
+    .sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
+  const proximos = mesmos.filter((x) => !jaTerminou(x)).slice(0, 2);
+  const ultimos = mesmos.filter((x) => jaTerminou(x)).slice(-3).reverse();
+  if (!proximos.length && !ultimos.length) return '';
+  return `<h3 class="fj-titulo">Neste campeonato</h3>
+    <section class="nc">
+      <div class="nc-rotulo">${proximos.length > 1 ? 'Próximos jogos' : 'Próximo jogo'}</div>
+      ${proximos.length ? proximos.map(linhaCampeonato).join('') : '<p class="nc-vazio">Próximo jogo ainda não marcado.</p>'}
+      ${ultimos.length ? `<div class="nc-rotulo">Últimos resultados</div>${ultimos.map(linhaCampeonato).join('')}` : ''}
+    </section>`;
+}
+
 // ---------- tela do jogo (toque no cartão) ----------
 function abrirJogo(id) {
   const j = estado.jogos.find((x) => x.id === id);
@@ -453,6 +493,7 @@ function abrirJogo(id) {
   $('#detalhe-conteudo').innerHTML = `
     <div class="fj-topo" style="--cor:${m.cor}">${topo}</div>
     <div class="fj-info">${blocoInfo(j)}</div>
+    ${blocoCampeonato(j)}
     ${tabela ? `<h3 class="fj-titulo">Tabela</h3>${htmlTabela(tabela, j.adversario)}` : ''}`;
   // sempre abre do topo (sem herdar a rolagem nem o arraste do jogo anterior)
   const conteudo = $('#detalhe .folha-conteudo');
@@ -536,6 +577,8 @@ function montarAjustes() {
 
 // ---------- eventos ----------
 document.addEventListener('click', (e) => {
+  const outro = e.target.closest('#detalhe [data-jogo]');
+  if (outro) { abrirJogo(outro.dataset.jogo); return; }
   const card = e.target.closest('#lista [data-id]');
   if (card && !e.target.closest('a, button')) { abrirJogo(card.dataset.id); return; }
   const aba = e.target.closest('[data-aba]');
@@ -564,6 +607,30 @@ document.addEventListener('click', (e) => {
   }
 });
 $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
+
+// ---------- instalar na tela inicial ----------
+// o botão só aparece quando o app está aberto no navegador (some depois de instalado)
+const instalado = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const ehIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+let pedidoInstalar = null;
+if (!instalado()) $('#abrir-instalar').hidden = false;
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pedidoInstalar = e; $('#instalar-direto').hidden = false; });
+window.addEventListener('appinstalled', () => { $('#abrir-instalar').hidden = true; $('#instalar').close(); });
+$('#abrir-instalar').onclick = () => {
+  // mostra primeiro o passo a passo do celular da pessoa
+  const passos = $('#instalar .instalar');
+  const meu = passos.querySelector(`[data-sistema="${ehIos ? 'ios' : 'android'}"]`);
+  passos.insertBefore(meu, passos.querySelector('.passos'));
+  passos.querySelectorAll('.passos').forEach((p) => p.classList.toggle('outro', p !== meu));
+  $('#instalar').showModal();
+};
+$('#instalar-direto').onclick = async () => {
+  if (!pedidoInstalar) return;
+  pedidoInstalar.prompt();
+  await pedidoInstalar.userChoice.catch(() => null);
+  pedidoInstalar = null; $('#instalar-direto').hidden = true;
+};
+$('#instalar').addEventListener('click', (e) => { if (e.target === $('#instalar')) $('#instalar').close(); });
 $('#detalhe').addEventListener('click', (e) => { if (e.target === $('#detalhe') || e.target.closest('[data-fechar]')) $('#detalhe').close(); });
 // arrastar a folha para baixo fecha (quando ela está no topo da rolagem)
 {
