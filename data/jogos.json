@@ -1,19 +1,8 @@
 {
- "atualizadoEm": "2026-11-08T17:59:23.493Z",
+ "atualizadoEm": "2026-11-08T18:04:12.081Z",
  "exemplo": false,
  "avisos": [
-  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior.",
-  "Escudo de Criciúma: fetch failed",
-  "Escudo de Operário: fetch failed",
-  "Escudo de Santos FC: fetch failed",
-  "Escudo de América: fetch failed",
-  "Escudo de Cuiabá: fetch failed",
-  "Escudo de Avaí: fetch failed",
-  "Escudo de Atlético Goianiense: fetch failed",
-  "Escudo de Ferroviária: fetch failed",
-  "Escudo de Mixto: fetch failed",
-  "Escudo de Uda: fetch failed",
-  "Escudo de Litoral Norte F. C.: fetch failed"
+  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
