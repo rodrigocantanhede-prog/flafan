@@ -319,7 +319,7 @@ main { padding: 0 16px 16px; }
 select { background: var(--cartao2); border: 1px solid var(--borda); border-radius: 12px; padding: 11px; }
 .botoes { display: flex; flex-wrap: wrap; gap: 8px; }
 .btn { display: inline-block; border: 0; background: var(--vermelho); color: #fff; padding: 11px 15px; border-radius: 12px; font-weight: 700; text-decoration: none; cursor: pointer; font-size: 14px; }
-.btn.sec { background: var(--cartao2); border: 1px solid var(--borda); }
+.btn.sec { background: var(--cartao2); border: 1px solid var(--borda); color: var(--texto); }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .checks { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px; }
 .checks label { display: flex; gap: 10px; align-items: center; background: var(--cartao2); border: 1px solid var(--borda); border-radius: 12px; padding: 11px 12px; font-size: 15px; }
