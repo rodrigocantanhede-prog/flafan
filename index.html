@@ -20,6 +20,10 @@
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // aplica o tema escolhido antes de desenhar a página (evita piscar)
+    try { const t = localStorage.getItem('flafan:tema'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch {}
+  </script>
 </head>
 <body>
   <header class="topo">
@@ -28,9 +32,15 @@
       <div class="marca"><span class="fla">Fla</span><span class="fan">Fan</span></div>
       <div class="marca-sub">Todos os jogos do Mengão</div>
     </div>
+    <div class="topo-botoes">
+    <button class="btn-icone" id="tema" aria-label="Alternar modo claro e noturno" title="Modo claro / noturno">
+      <svg class="ic-tema tema-lua" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1Z"/></svg>
+      <svg class="ic-tema tema-sol" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+    </button>
     <button class="btn-icone" id="abrir-ajustes" aria-label="Ajustes e lembretes">
       <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 0 0-5-5.9V4a1 1 0 1 0-2 0v1.1A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/></svg>
     </button>
+    </div>
   </header>
 
   <div id="aviso-exemplo" class="aviso" hidden>⚠️ Dados de exemplo — ainda não são jogos reais.</div>

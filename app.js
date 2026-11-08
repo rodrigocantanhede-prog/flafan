@@ -337,6 +337,22 @@ document.addEventListener('click', (e) => {
   }
 });
 $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
+
+// ---------- modo claro / noturno ----------
+const sistemaEscuro = () => window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+const temaAtual = () => document.documentElement.dataset.theme || (sistemaEscuro() ? 'dark' : 'light');
+function aplicarCorBarra() {
+  const m = document.querySelector('meta[name="theme-color"]');
+  if (m) m.content = temaAtual() === 'dark' ? '#09090B' : '#F5F4F2';
+}
+$('#tema').onclick = () => {
+  const novo = temaAtual() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = novo;
+  try { localStorage.setItem('flafan:tema', novo); } catch {}
+  aplicarCorBarra();
+};
+window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', aplicarCorBarra);
+aplicarCorBarra();
 $('#ajustes').addEventListener('click', (e) => { if (e.target === $('#ajustes')) $('#ajustes').close(); });
 
 // ---------- início ----------
