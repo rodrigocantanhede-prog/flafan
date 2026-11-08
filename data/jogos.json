@@ -1,12 +1,7 @@
 {
- "atualizadoEm": "2026-11-08T14:22:42.883Z",
+ "atualizadoEm": "2026-11-08T14:27:37.841Z",
  "exemplo": false,
- "avisos": [
-  "Tabela automática de Brasileirão Série A: v3.football.api-sports.io: Free plans do not have access to this season, try from 2022 to 2024.",
-  "Tabela automática de NBB: v1.basketball.api-sports.io: Free plans do not have access to this season, try from 2022 to 2024.",
-  "Tabela automática de Superliga Feminina: v1.volleyball.api-sports.io: Free plans do not have access to this season, try from 2022 to 2024.",
-  "Falha na API (v3.football.api-sports.io: Free plans do not have access to the Next parameter.) — mantive os dados anteriores."
- ],
+ "avisos": [],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
   {
