@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T18:57:33.653Z",
+ "atualizadoEm": "2026-11-08T19:09:02.278Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -573,23 +573,25 @@
    "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
-   "id": "m-9a7052947a",
+   "id": "cbf-835451",
+   "modalidade": "futebol-feminino",
+   "adversario": "Bahia",
+   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
+   "inicio": "2026-11-07T21:30:00-03:00",
+   "semHora": false,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 2
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Bahia",
-   "inicio": "2026-11-07T21:30:00-03:00",
-   "semHora": false,
-   "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
+   "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "campeonatoCbf": "copa-do-brasil/feminino",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
+   "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
