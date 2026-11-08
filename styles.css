@@ -400,11 +400,9 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .painel-compacto { background: var(--cartao); border: 1px solid var(--borda); border-radius: var(--raio); overflow: hidden; margin-bottom: 6px; }
 .lc { border-bottom: 1px solid var(--linha); }
 .lc:last-child { border-bottom: 0; }
-.lc summary { list-style: none; display: grid; grid-template-columns: 1fr minmax(118px, auto) 1fr; align-items: center; gap: 6px; padding: 12px 10px; cursor: pointer; position: relative; }
-.lc summary::-webkit-details-marker { display: none; }
-.lc summary::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 0 3px 3px 0; background: var(--cor); }
-.lc summary:focus-visible { outline: 2px solid var(--vermelho); outline-offset: -2px; }
-.lc[open] summary { background: var(--cartao2); }
+.lc { position: relative; padding: 12px 12px 10px; }
+.lc::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--cor); }
+.lc-placa { display: grid; grid-template-columns: 1fr minmax(118px, auto) 1fr; align-items: center; gap: 6px; }
 .lc-time { display: grid; justify-items: center; gap: 5px; text-align: center; min-width: 0; }
 .lc-time .escudo-box.mini { width: 36px; height: 36px; }
 .lc-time .escudo-box.mini .escudo { width: 36px; height: 36px; font-size: 12px; }
@@ -414,7 +412,7 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .lc-ic .ic { width: 30px; height: 30px; }
 .lc-trofeu { color: var(--ambar); }
 .lc-centro { display: grid; justify-items: center; gap: 2px; text-align: center; min-width: 0; }
-.lc-comp { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; letter-spacing: .02em; color: var(--apagado); max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lc-comp { display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 11px; font-weight: 600; letter-spacing: .02em; color: var(--apagado); max-width: 160px; line-height: 1.2; text-wrap: balance; }
 .lc-comp .ic { width: 12px; height: 12px; flex: none; }
 .lc-hora { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--forte); }
 .lc-hora.apagado { color: var(--apagado); }
@@ -427,7 +425,20 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .lc-leg.v { color: var(--gratis-texto); }
 .lc-leg.d { color: var(--d-texto); }
 .lc-leg.ao-vivo { color: var(--vermelho); }
-.lc-detalhe { padding: 4px 10px 10px; background: var(--cartao2); }
-.lc-detalhe .jogo { margin: 0; }
 #lista.compacto .dia { justify-content: center; font-size: 13px; letter-spacing: .06em; margin: 16px 2px 8px; }
 #lista.compacto .dia::before, #lista.compacto .dia::after { display: none; }
+
+/* informações completas na linha compacta */
+.lc-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; margin-top: 10px; font-size: 12px; color: var(--suave); text-align: center; }
+.lc-item { display: inline-flex; align-items: center; gap: 5px; min-width: 0; }
+.lc-item .ic { width: 14px; height: 14px; color: var(--apagado); flex: none; }
+.lc-item b { font-weight: 700; color: var(--texto); }
+.lc-item b.gratis { color: var(--gratis-texto); }
+.lc-item i { font-style: italic; color: var(--apagado); }
+.lc-obs { margin: 8px auto 0; max-width: 46ch; padding: 5px 10px; border-radius: 8px; background: var(--aviso-fundo); color: var(--aviso-texto); font-size: 12px; text-align: center; }
+.lc-resultado { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--aviso-texto); }
+.lc-resultado span { display: inline-flex; align-items: center; gap: 4px; }
+.lc-resultado .ic { width: 14px; height: 14px; }
+.lc-rodape { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 12px; margin-top: 8px; }
+.lc-fonte { font-size: 10.5px; color: var(--apagado); letter-spacing: .02em; }
+.lc-ingresso { font-size: 12px; font-weight: 700; color: #fff; background: var(--vermelho); padding: 4px 10px; border-radius: 999px; text-decoration: none; }

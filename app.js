@@ -187,12 +187,27 @@ function linhaCompacta(j) {
       valor = '<span class="lc-hora apagado">– × –</span>'; legenda = 'Sem placar';
     } else {
       valor = `<span class="lc-hora">${j.semHora ? '--:--' : fHora.format(data)}</span>`;
-      legenda = j.status === 'ao-vivo' ? 'Ao vivo' : j.transmissao?.[0] ?? (j.semHora ? 'A definir' : '');
+      legenda = j.status === 'ao-vivo' ? 'Ao vivo' : j.semHora ? 'Horário a definir' : 'Brasília';
     }
   }
   const comp = j.tipo === 'evento' ? 'Olímpicos' : (j.competicao || m.nome || '');
-  return `<details class="lc" style="--cor:${m.cor}">
-    <summary>
+  // todas as informações do cartão, em letra pequena, sem precisar abrir
+  const acabou = j.tipo === 'evento' ? (j.status === 'encerrado' || fimDoEvento(j) < Date.now()) : jaTerminou(j) || (!j.semHora && data.getTime() + DURACAO < Date.now());
+  const info = [];
+  if (j.local) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
+  if (!acabou && j.status !== 'cancelado') {
+    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ') : '<i>a confirmar</i>'}</span>`);
+  }
+  if (j.tipo === 'evento' && j.atletas?.length) info.push(`<span class="lc-item">${icone('pessoa')}${j.atletas.map(esc).join(' · ')}</span>`);
+  const extras = [];
+  if (j.tipo === 'evento' && j.resultado?.length > 1) extras.push(`<div class="lc-resultado">${j.resultado.map((r) => `<span>${icone('trofeu')}${esc(r)}</span>`).join('')}</div>`);
+  if (j.observacao) extras.push(`<div class="lc-obs">${esc(j.observacao)}</div>`);
+  const rodape = [];
+  if (j.ingresso && /^https:\/\//.test(j.ingresso) && !acabou && j.status !== 'cancelado') rodape.push(`<a class="lc-ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>`);
+  if (j.categoria) rodape.push(`<span class="lc-fonte">${esc(j.categoria)}</span>`);
+  if (j.fonteInfo) rodape.push(`<span class="lc-fonte">Fonte: ${esc(j.fonteInfo)}</span>`);
+  return `<article class="lc" style="--cor:${m.cor}">
+    <div class="lc-placa">
       ${esq}
       <div class="lc-centro">
         <span class="lc-comp">${j.tipo === 'evento' ? '' : icone(m.icone ?? 'olimpicos')}${esc(comp)}</span>
@@ -200,9 +215,11 @@ function linhaCompacta(j) {
         <span class="lc-leg ${classeValor} ${j.status === 'ao-vivo' ? 'ao-vivo' : ''}">${esc(legenda)}</span>
       </div>
       ${dir}
-    </summary>
-    <div class="lc-detalhe">${cartao(j)}</div>
-  </details>`;
+    </div>
+    ${info.length ? `<div class="lc-info">${info.join('')}</div>` : ''}
+    ${extras.join('')}
+    ${rodape.length ? `<div class="lc-rodape">${rodape.join('')}</div>` : ''}
+  </article>`;
 }
 
 function cartao(j, destaque = false) {
