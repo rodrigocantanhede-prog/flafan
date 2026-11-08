@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T12:52:54.132Z",
+ "atualizadoEm": "2026-11-08T13:14:44.643Z",
  "exemplo": false,
  "avisos": [
   "Chave da API-Sports não configurada — usando só a planilha."
@@ -111,7 +111,8 @@
    "modalidade": "basquete",
    "adversario": "Bauru",
    "inicio": "2026-10-18T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
   },
   {
    "id": "m-a8c44be74d",
@@ -128,7 +129,8 @@
    "modalidade": "volei-feminino",
    "adversario": "Paulistano/Barueri",
    "inicio": "2026-10-19T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/volei-paulistano-barueri-eccc6c.png"
   },
   {
    "id": "m-64045f5617",
@@ -201,7 +203,8 @@
    "modalidade": "volei-feminino",
    "adversario": "Brasília",
    "inicio": "2026-10-23T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/volei-brasilia-volei-brb-923451.png"
   },
   {
    "id": "m-abbbb873d7",
@@ -254,7 +257,8 @@
    "modalidade": "volei-feminino",
    "adversario": "Mackenzie",
    "inicio": "2026-10-31T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
   },
   {
    "id": "m-5a0e89a703",
@@ -271,7 +275,8 @@
    "modalidade": "basquete",
    "adversario": "União Corinthians",
    "inicio": "2026-11-01T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
   },
   {
    "id": "m-754c9a6094",
@@ -324,7 +329,8 @@
    "modalidade": "basquete",
    "adversario": "Brasília",
    "inicio": "2026-11-04T20:15:00-03:00",
-   "semHora": false
+   "semHora": false,
+   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
    "id": "m-f03785d314",
@@ -341,7 +347,8 @@
    "modalidade": "volei-feminino",
    "adversario": "Londrina",
    "inicio": "2026-11-06T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
    "id": "m-ee0f3a74d7",
@@ -395,7 +402,8 @@
    "adversario": "Sesi Vôlei Bauru",
    "inicio": "2026-11-17T21:00:00-03:00",
    "semHora": false,
-   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)"
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
+   "escudoAdv": "escudos/volei-sesi-volei-bauru-bafe0f.png"
   },
   {
    "id": "m-1bbe1f888d",
@@ -473,7 +481,8 @@
    "adversario": "Osasco",
    "inicio": "2026-11-23T21:00:00-03:00",
    "semHora": false,
-   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)"
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
+   "escudoAdv": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
   },
   {
    "id": "m-87eb2e9e1e",
