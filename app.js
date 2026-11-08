@@ -168,7 +168,7 @@ function blocoInfo(j) {
   const info = [];
   if (j.local) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
   if (!acabou && j.status !== 'cancelado') {
-    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ') : '<i>a confirmar</i>'}</span>`);
+    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? `<span class="lc-canais">${j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ')}</span>` : '<i>a confirmar</i>'}</span>`);
   }
   if (j.tipo === 'evento' && j.atletas?.length) info.push(`<span class="lc-item">${icone('pessoa')}${j.atletas.map(esc).join(' · ')}</span>`);
   const extras = [];

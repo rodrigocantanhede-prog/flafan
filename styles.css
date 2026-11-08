@@ -700,3 +700,4 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
   .topo-botoes .btn-icone { width: 31px; height: 31px; }
   .marca-sub { font-size: 9.5px; }
 }
+.lc-canais { display: inline; }
