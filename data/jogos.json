@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T14:59:35.421Z",
+ "atualizadoEm": "2026-11-08T15:00:33.555Z",
  "exemplo": false,
  "avisos": [],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -424,6 +424,22 @@
    "semHora": false,
    "fonteInfo": "LNB",
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
+  },
+  {
+   "id": "site-futebol-feminino-2026-11-11-botafogo",
+   "modalidade": "futebol-feminino",
+   "adversario": "Botafogo",
+   "competicao": "Campeonato Carioca Feminino",
+   "inicio": "2026-11-11T15:00:00-03:00",
+   "semHora": false,
+   "local": "João Saldanha",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
    "id": "site-volei-feminino-2026-11-12-fluminense",
