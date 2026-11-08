@@ -453,19 +453,24 @@ export function mesmoTime(a, b) {
   return pa.length > 0 && pa.every((p) => pb.has(p));
 }
 
-// Jogos da CBF + jogos automáticos já lidos (site do Flamengo): mesma modalidade, categoria e dia = mesmo jogo.
-// Fica o jogo do site (tem ingresso), completado com placar, link e escudo da CBF.
+// Jogos da fonte "dona" do campeonato (CBF nos nacionais, FERJ no Carioca/Copa Rio) + jogos já lidos do site do Flamengo:
+// mesma modalidade, categoria e dia = mesmo jogo. A fonte dona manda (data, placar, estádio, campeonato);
+// o site do Flamengo só acrescenta o que ela não tem: link de ingresso, escudo em melhor qualidade, horário se faltar.
 export function juntarCbf(automaticos, cbf) {
   const saida = automaticos.map((j) => ({ ...j }));
   for (const c of cbf) {
-    const igual = saida.find((j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') &&
-      String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10) && !String(j.id).startsWith('cbf-'));
-    if (!igual) { saida.push({ ...c }); continue; }
-    if (!igual.placar && c.placar) { igual.placar = c.placar; igual.status = c.status; }
-    if (c.observacao && !igual.observacao) igual.observacao = c.observacao;
-    for (const k of ['link', 'tabela', 'escudoReserva']) if (c[k] && !igual[k]) igual[k] = c[k];
-    if (!igual.local && c.local) igual.local = c.local;
-    if (igual.semHora && !c.semHora) { igual.inicio = c.inicio; igual.semHora = false; } // o site não tinha o horário; a CBF tem
+    const i = saida.findIndex((j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') &&
+      String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10) && String(j.id).startsWith('site-'));
+    if (i < 0) { saida.push({ ...c }); continue; }
+    const site = saida[i];
+    const junto = { ...c };
+    if (site.ingresso && !junto.ingresso) junto.ingresso = site.ingresso;
+    if (site.escudoAdvUrl) junto.escudoAdvUrl = site.escudoAdvUrl; // escudo do site (PNG) é melhor que o JPG da CBF
+    if (site.transmissao?.length && !junto.transmissao?.length) junto.transmissao = site.transmissao;
+    if (junto.semHora && !site.semHora) { junto.inicio = site.inicio; junto.semHora = false; }
+    if (!junto.local && site.local) junto.local = site.local;
+    if (!junto.observacao && site.observacao) junto.observacao = site.observacao;
+    saida[i] = junto;
   }
   return saida;
 }

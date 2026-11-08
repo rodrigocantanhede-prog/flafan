@@ -256,7 +256,8 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   const site = [{ id: 'site-base-2026-12-20-bahia', modalidade: 'base', categoria: 'Sub-20', adversario: 'Bahia', inicio: '2026-12-20T15:00:00-03:00', ingresso: 'https://x' }];
   const junto = juntarCbf(site, js);
   assert.equal(junto.length, 3, 'jogo do site e da CBF no mesmo dia viram um só');
-  assert.equal(junto[0].ingresso, 'https://x'); assert.ok(junto[0].link.includes('cbf.com.br'));
+  const bahia = junto.find((j) => j.adversario === 'Bahia');
+  assert.equal(bahia.id.startsWith('cbf-'), true, 'a CBF é a dona do jogo'); assert.equal(bahia.ingresso, 'https://x', 'ingresso vem do site'); assert.ok(bahia.link.includes('cbf.com.br'));
   console.log('✓ Leitura da CBF ok');
 }
 {
