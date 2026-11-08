@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T15:00:33.555Z",
+ "atualizadoEm": "2026-11-08T16:19:21.265Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -54,7 +54,7 @@
     },
     {
      "pos": 5,
-     "time": "Athletico PR",
+     "time": "Athletico-PR",
      "j": 34,
      "v": 15,
      "e": 9,
@@ -76,7 +76,7 @@
     },
     {
      "pos": 7,
-     "time": "Atlético MG",
+     "time": "Atlético-MG",
      "j": 34,
      "v": 14,
      "e": 8,
@@ -231,150 +231,11 @@
    ]
   },
   {
-   "nome": "Superliga Feminina",
-   "modalidade": "volei-feminino",
-   "atualizado": "após a 4ª rodada (7/11)",
-   "fonte": "planilha",
-   "linhas": [
-    {
-     "pos": 1,
-     "time": "Sesi Vôlei Bauru",
-     "j": 5,
-     "v": 5,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 15,
-     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
-    },
-    {
-     "pos": 2,
-     "time": "Sesc RJ Flamengo",
-     "j": 4,
-     "v": 4,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 12
-    },
-    {
-     "pos": 3,
-     "time": "Dentil Praia Clube",
-     "j": 4,
-     "v": 4,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 12,
-     "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
-    },
-    {
-     "pos": 4,
-     "time": "Gerdau Minas",
-     "j": 4,
-     "v": 4,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 11,
-     "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
-    },
-    {
-     "pos": 5,
-     "time": "Osasco São Cristóvão Saúde",
-     "j": 4,
-     "v": 4,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 11,
-     "escudo": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
-    },
-    {
-     "pos": 6,
-     "time": "Fluminense",
-     "j": 3,
-     "v": 1,
-     "e": null,
-     "d": 2,
-     "sg": null,
-     "pts": 3,
-     "escudo": "escudos/volei-fluminense-9265d1.png"
-    },
-    {
-     "pos": 7,
-     "time": "Pinheiros",
-     "j": 3,
-     "v": 1,
-     "e": null,
-     "d": 2,
-     "sg": null,
-     "pts": 2,
-     "escudo": "escudos/volei-pinheiros-ef805a.png"
-    },
-    {
-     "pos": 8,
-     "time": "Brusque Vôlei",
-     "j": 3,
-     "v": 0,
-     "e": null,
-     "d": 3,
-     "sg": null,
-     "pts": 2,
-     "escudo": "escudos/volei-brusque-volei-ceea88.png"
-    },
-    {
-     "pos": 9,
-     "time": "Sancor Seguros Vôlei",
-     "j": 4,
-     "v": 0,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 1,
-     "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
-    },
-    {
-     "pos": 10,
-     "time": "Batavo Mackenzie",
-     "j": 4,
-     "v": 0,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 0,
-     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
-    },
-    {
-     "pos": 11,
-     "time": "Brasília Vôlei / BRB",
-     "j": 4,
-     "v": 0,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 0,
-     "escudo": "escudos/volei-brasilia-volei-brb-923451.png"
-    },
-    {
-     "pos": 12,
-     "time": "Paulistano Barueri",
-     "j": 4,
-     "v": 0,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 0,
-     "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
-    }
-   ],
-   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao"
-  },
-  {
    "nome": "NBB",
    "modalidade": "basquete",
-   "atualizado": "até os jogos de 7/11",
-   "fonte": "planilha",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "atualizado": "em 08/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -516,7 +377,7 @@
      "d": 4,
      "sg": -24,
      "pts": 8,
-     "escudo": "escudos/basquete-sao-jose-basketball-5d93c7.png"
+     "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
     },
     {
      "pos": 14,
@@ -574,8 +435,147 @@
      "escudo": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
     }
    ],
-   "link": "https://lnb.com.br/nbb/classificacao/",
    "nota": "Ordem pelo aproveitamento (% de vitórias), como no site da LNB. SG = saldo de cestas."
+  },
+  {
+   "nome": "Superliga Feminina",
+   "modalidade": "volei-feminino",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "atualizado": "em 08/11/2026 (site da CBV)",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Sesi Vôlei Bauru",
+     "j": 5,
+     "v": 5,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 15,
+     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
+    },
+    {
+     "pos": 2,
+     "time": "Sesc RJ Flamengo",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 12
+    },
+    {
+     "pos": 3,
+     "time": "Dentil Praia Clube",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 12,
+     "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
+    },
+    {
+     "pos": 4,
+     "time": "Gerdau Minas",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 11,
+     "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
+    },
+    {
+     "pos": 5,
+     "time": "Osasco São Cristóvão Saúde",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 11,
+     "escudo": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
+    },
+    {
+     "pos": 6,
+     "time": "Fluminense",
+     "j": 3,
+     "v": 1,
+     "e": null,
+     "d": 2,
+     "sg": null,
+     "pts": 3,
+     "escudo": "escudos/volei-fluminense-c0deef.png"
+    },
+    {
+     "pos": 7,
+     "time": "Pinheiros",
+     "j": 3,
+     "v": 1,
+     "e": null,
+     "d": 2,
+     "sg": null,
+     "pts": 2,
+     "escudo": "escudos/volei-pinheiros-ef805a.png"
+    },
+    {
+     "pos": 8,
+     "time": "Brusque Vôlei",
+     "j": 3,
+     "v": 0,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": 2,
+     "escudo": "escudos/volei-brusque-volei-ceea88.png"
+    },
+    {
+     "pos": 9,
+     "time": "Sancor Seguros Vôlei",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 1,
+     "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
+    },
+    {
+     "pos": 10,
+     "time": "Batavo Mackenzie",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0,
+     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
+    },
+    {
+     "pos": 11,
+     "time": "Brasília Vôlei / BRB",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0,
+     "escudo": "escudos/volei-brasilia-volei-brb-923451.png"
+    },
+    {
+     "pos": 12,
+     "time": "Paulistano Barueri",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0,
+     "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
+    }
+   ]
   }
  ]
 }
