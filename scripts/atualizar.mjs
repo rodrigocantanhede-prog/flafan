@@ -222,7 +222,7 @@ export function mesclar(automaticos, linhas) {
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
     if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
-    if (limpar(l.fonte) && base.fonteInfo !== 'Site do Flamengo') novo.fonteInfo = limpar(l.fonte); // o site oficial prevalece
+    if (limpar(l.fonte) && !String(base.fonte ?? '').startsWith('automatica')) novo.fonteInfo = limpar(l.fonte); // o site oficial prevalece
     if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
     if (!novo.modalidade || !novo.inicio || isNaN(Date.parse(novo.inicio)) || !novo.adversario) {
