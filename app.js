@@ -361,13 +361,17 @@ function mesmoTimeApp(a, b) {
 
 function htmlTabela(c, adversario = null) {
   const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
-  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo']];
-  const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined);
+  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['gp', 'GP', 'Gols pró'], ['gc', 'GC', 'Gols contra'],
+    ['sg', 'SG', 'Saldo'], ['ap', '%', 'Aproveitamento'], ['ca', 'CA', 'Cartões amarelos'], ['cv', 'CV', 'Cartões vermelhos'], ['ult', 'Últimos', 'Últimos jogos']];
+  const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined && !(Array.isArray(l[k]) && !l[k].length));
   const extras = COLS.filter(([k]) => tem(k));
   const temPts = tem('pts');
   const brasileirao = /brasileir[aã]o s[ée]rie a/i.test(c.nome);
   const zona = (pos) => !brasileirao || !pos ? '' : pos <= 4 ? 'z-liberta' : pos <= 6 ? 'z-pre' : pos >= c.linhas.length - 3 ? 'z-rebaixa' : '';
-  const sinal = (k, v) => (k === 'sg' && v > 0 ? `+${v}` : v ?? '');
+  const ULT = { V: 'Vitória', E: 'Empate', D: 'Derrota' };
+  const sinal = (k, v) => k === 'ult' ? `<span class="ult">${(v ?? []).map((r) => `<i class="ult-${r}" title="${ULT[r]}">${r}</i>`).join('')}</span>`
+    : (k === 'sg' && v > 0 ? `+${v}` : v ?? '');
+  const larga = extras.length > 4;
   const linhas = c.linhas.map((l) => {
     const fla = /flamengo/i.test(l.time);
     const adv = !fla && adversario && mesmoTimeApp(adversario, l.time);
@@ -375,7 +379,7 @@ function htmlTabela(c, adversario = null) {
       <td class="t-pos">${l.pos ?? ''}</td>
       <td class="t-time"><div class="t-time-in">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></div></td>
       ${temPts ? `<td class="t-pts">${l.pts ?? ''}</td>` : ''}<td>${l.j ?? ''}</td>
-      ${extras.map(([k]) => `<td>${sinal(k, l[k])}</td>`).join('')}
+      ${extras.map(([k]) => `<td class="c-${k}">${sinal(k, l[k])}</td>`).join('')}
     </tr>`;
   }).join('');
   return `<section class="tabela-camp" style="--cor:${m.cor}">
@@ -383,11 +387,12 @@ function htmlTabela(c, adversario = null) {
       <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(c.nome)}</span></span>
       ${c.atualizado ? `<small>Atualizado ${esc(c.atualizado)}</small>` : ''}
     </header>
-    <div class="tabela-rolagem"><table>
+    <div class="tabela-rolagem"><table class="${larga ? 'larga' : ''}">
       <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th>${temPts ? '<th title="Pontos">P</th>' : ''}<th title="Jogos">J</th>
-        ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
+        ${extras.map(([k, r, t]) => `<th class="c-${k}" title="${t}">${r}</th>`).join('')}</tr></thead>
       <tbody>${linhas}</tbody>
     </table></div>
+    ${larga ? '<div class="tabela-dica">Arraste para o lado para ver todas as colunas →</div>' : ''}
     ${c.nota ? `<div class="tabela-nota"><span>${esc(c.nota)}</span></div>` : ''}
     ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
   </section>`;
@@ -404,9 +409,10 @@ function desenharTabela() {
 
 // tabela do campeonato do jogo (Brasileirão, NBB, Superliga...), se existir
 function tabelaDoJogo(j) {
+  if (j.tabela) return estado.campeonatos.find((c) => c.nome === j.tabela) ?? null;
   const comp = semAc(j.competicao);
   return estado.campeonatos.find((c) => c.modalidade === j.modalidade &&
-    semAc(c.nome).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !['serie', 'feminina', 'masculina'].includes(p)).some((p) => comp.includes(p)));
+    semAc(c.nome).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !['serie', 'feminina', 'masculina', 'sub', 'feminino', 'copa'].includes(p)).some((p) => comp.includes(p)));
 }
 
 // ---------- tela do jogo (toque no cartão) ----------

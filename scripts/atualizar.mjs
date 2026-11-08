@@ -10,6 +10,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { lerCbf } from './cbf.mjs';
 import { lerTabelasOficiais } from './tabelas-oficiais.mjs';
 import { lerSiteFlamengo } from './site-flamengo.mjs';
 
@@ -398,8 +399,9 @@ export async function resolverEscudos(itens, chave, problemas) {
     const grupo = GRUPO[j.modalidade];
     const chaveCache = `${grupo ?? 'outro'}|${slug(j.adversario)}`;
     const base = `${grupo ?? 'outro'}-${slug(j.adversario)}`;
-    const url = j.escudoAdvUrl;
-    delete j.escudoAdvUrl;
+    // escudo "de reserva" (ex.: o da CBF, em JPG): só usado quando ainda não há escudo melhor guardado
+    const url = j.escudoAdvUrl ?? (!cache[chaveCache] && !(grupo === 'futebol' && IDS_FUTEBOL[slug(j.adversario)]) ? j.escudoReserva : undefined);
+    delete j.escudoAdvUrl; delete j.escudoReserva;
     try {
       const idFut = grupo === 'futebol' ? IDS_FUTEBOL[slug(j.adversario)] : IDS_MESMO_CLUBE[slug(j.adversario)];
       if (url) {
@@ -442,6 +444,22 @@ export function mesmoTime(a, b) {
   const pa = sa.split('-').filter((p) => p.length >= 4 && !PALAVRAS_GENERICAS.has(p));
   const pb = new Set(sb.split('-'));
   return pa.length > 0 && pa.every((p) => pb.has(p));
+}
+
+// Jogos da CBF + jogos automáticos já lidos (site do Flamengo): mesma modalidade, categoria e dia = mesmo jogo.
+// Fica o jogo do site (tem ingresso), completado com placar, link e escudo da CBF.
+export function juntarCbf(automaticos, cbf) {
+  const saida = automaticos.map((j) => ({ ...j }));
+  for (const c of cbf) {
+    const igual = saida.find((j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') &&
+      String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10) && !String(j.id).startsWith('cbf-'));
+    if (!igual) { saida.push({ ...c }); continue; }
+    if (!igual.placar && c.placar) { igual.placar = c.placar; igual.status = c.status; }
+    if (c.observacao && !igual.observacao) igual.observacao = c.observacao;
+    for (const k of ['link', 'tabela', 'escudoReserva']) if (c[k] && !igual[k]) igual[k] = c[k];
+    if (!igual.local && c.local) igual.local = c.local;
+  }
+  return saida;
 }
 
 // Tabela automática + a mesma tabela na planilha: usa os nomes da planilha (mais bonitos) quando o time bate,
@@ -592,6 +610,20 @@ async function main() {
     campeonatosApi.push(...site.tabelas);
   }
 
+  // 1b2) site da CBF: jogos do Flamengo (base, feminino, Brasileirão) com placar + tabelas completas
+  if (cfg.cbf?.ativo && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const cacheCbfArq = path.join(DATA, 'cache-cbf.json');
+    const r = await lerCbf(cfg.cbf, log);
+    problemas.push(...r.problemas);
+    const comJogos = (cfg.cbf.campeonatos ?? []).filter((c) => c.jogos !== false).length;
+    const falhas = r.problemas.filter((p) => p.includes(', jogos)')).length;
+    let jogosCbf = r.jogos;
+    if (comJogos && falhas >= comJogos) jogosCbf = await lerJson(cacheCbfArq, []); // CBF fora do ar: usa a última leitura boa
+    else await writeFile(cacheCbfArq, JSON.stringify(jogosCbf, null, 1));
+    automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('cbf-')), jogosCbf);
+    campeonatosApi.push(...r.tabelas);
+  }
+
   // 1c) tabelas completas dos sites das ligas (NBB na LNB, Superliga na CBV)
   if (cfg.tabelasOficiais?.length && !args.includes('--sem-api') && !args.includes('--sem-site')) {
     const r = await lerTabelasOficiais(cfg.tabelasOficiais, log);
@@ -652,7 +684,7 @@ async function main() {
   // 5) escudos (jogos + times das tabelas)
   let escudoFlamengo = null;
   const linhasTabela = campeonatos.flatMap((c) => c.linhas.map((l) => Object.assign(l, { modalidade: c.modalidade, adversario: l.time })));
-  if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => delete j.escudoAdvUrl);
+  if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => { delete j.escudoAdvUrl; delete j.escudoReserva; });
   else escudoFlamengo = await resolverEscudos([...jogos.filter((j) => j.tipo !== 'evento'), ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
   // jogos sem escudo: usa o da tabela do mesmo campeonato quando o nome bate
   for (const j of jogos) {
@@ -661,7 +693,7 @@ async function main() {
     const l = cands.find((x) => slug(x.time) === slug(j.adversario)) ?? cands.find((x) => mesmoTime(j.adversario, x.time));
     if (l) j.escudoAdv = l.escudoAdv;
   }
-  for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; delete l.escudoAdvUrl; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
+  for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; delete l.escudoAdvUrl; delete l.escudoReserva; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
 
   const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };
   const semData = (o) => JSON.stringify({ ...o, atualizadoEm: null });

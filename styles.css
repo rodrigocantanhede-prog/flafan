@@ -514,3 +514,18 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .escudo-box { position: relative; }
 .escudo-box > .escudo-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .folha, .folha:focus, .folha:focus-visible, .folha-conteudo:focus { outline: none; box-shadow: none; }
+/* tabelas com muitas colunas (CBF): rola para o lado, # e Time ficam parados */
+.tabela-camp table.larga { width: max-content; min-width: 100%; }
+.tabela-camp table.larga td.t-time { max-width: none; width: auto; }
+.tabela-camp table.larga .t-time-in { width: 150px; }
+.tabela-camp table.larga .t-pos, .tabela-camp table.larga .t-time { position: sticky; z-index: 1; background: var(--cartao); }
+.tabela-camp table.larga .t-pos { left: 0; }
+.tabela-camp table.larga .t-time { left: 34px; box-shadow: 6px 0 8px -6px rgba(0,0,0,.25); }
+.tabela-camp table.larga tr.eh-fla td.t-pos, .tabela-camp table.larga tr.eh-fla td.t-time { background: color-mix(in srgb, #E3141B 14%, var(--cartao)); }
+.tabela-camp table.larga tr.eh-adv td.t-pos, .tabela-camp table.larga tr.eh-adv td.t-time { background: color-mix(in srgb, var(--texto) 8%, var(--cartao)); }
+.tabela-camp td.c-ap:not(:empty)::after { content: "%"; opacity: .6; }
+.tabela-camp .c-ca, .tabela-camp .c-cv { color: var(--apagado); }
+.tabela-camp .ult { display: inline-flex; gap: 3px; }
+.tabela-camp .ult i { font-style: normal; font-size: 10px; font-weight: 700; width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+.tabela-camp .ult-V { background: #16A34A; } .tabela-camp .ult-E { background: #8A8F98; } .tabela-camp .ult-D { background: #DC2626; }
+.tabela-dica { font-size: 12px; color: var(--apagado); padding: 8px 14px 0; text-align: right; }

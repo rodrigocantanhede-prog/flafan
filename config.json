@@ -83,5 +83,73 @@
       "nome": "Superliga Feminina",
       "modalidade": "volei-feminino"
     }
-  ]
+  ],
+  "cbf": {
+    "ativo": true,
+    "ano": 2026,
+    "desde": "2026-10-01",
+    "_nota": "Jogos do Flamengo (id 20016 na CBF) desde a data 'desde' e tabelas das fases por pontos.",
+    "campeonatos": [
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "serie-a",
+        "nome": "Brasileirão Série A",
+        "modalidade": "futebol-masculino",
+        "tabela": "Brasileirão Série A"
+      },
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "sub-20",
+        "nome": "Brasileiro Sub-20",
+        "modalidade": "base",
+        "categoriaApp": "Sub-20",
+        "tabela": "Brasileiro Sub-20"
+      },
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "sub-17",
+        "nome": "Brasileiro Sub-17",
+        "modalidade": "base",
+        "categoriaApp": "Sub-17",
+        "tabela": "Brasileiro Sub-17"
+      },
+      {
+        "campeonato": "copa-do-brasil",
+        "categoria": "sub-20",
+        "nome": "Copa do Brasil Sub-20",
+        "modalidade": "base",
+        "categoriaApp": "Sub-20"
+      },
+      {
+        "campeonato": "copa-do-brasil",
+        "categoria": "sub-17",
+        "nome": "Copa do Brasil Sub-17",
+        "modalidade": "base",
+        "categoriaApp": "Sub-17"
+      },
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "feminino-a1",
+        "nome": "Brasileiro Feminino",
+        "modalidade": "futebol-feminino",
+        "tabela": "Brasileiro Feminino"
+      },
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "feminino-sub-20",
+        "nome": "Brasileiro Feminino Sub-20",
+        "modalidade": "futebol-feminino",
+        "categoriaApp": "Sub-20",
+        "tabela": "Brasileiro Feminino Sub-20"
+      },
+      {
+        "campeonato": "campeonato-brasileiro",
+        "categoria": "feminino-sub-17",
+        "nome": "Brasileiro Feminino Sub-17",
+        "modalidade": "futebol-feminino",
+        "categoriaApp": "Sub-17",
+        "tabela": "Brasileiro Feminino Sub-17"
+      }
+    ]
+  }
 }

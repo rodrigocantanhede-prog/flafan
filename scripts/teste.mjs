@@ -230,3 +230,32 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(junta.nota, 'obs');
   console.log('✓ Tabelas da LNB e da CBV ok');
 }
+{
+  const { lerJogosDoTime, lerTabela, lerFases } = await import('./cbf.mjs');
+  const { juntarCbf } = await import('./atualizar.mjs');
+  const pagina = (obj) => `<script>self.__next_f.push([1,${JSON.stringify('28:' + JSON.stringify(obj).slice(0, 40))}])</script><script>self.__next_f.push([1,${JSON.stringify(JSON.stringify(obj).slice(40))}])</script>`;
+  const jogo = (id, data, m, gm, v, gv, pm = '0', pv = '0') => ({ id_jogo: id, rodada: '1', grupo: 'GRUPO 1', local: 'Luso Brasileiro - Rio de Janeiro - RJ', campeonato: 'Copa do Brasil', data: ` ${data}`, hora: '16:30',
+    mandante: { id: m === 'Flamengo' ? '20016' : '1', nome: m, url_escudo: 'https://conteudo.cbf.com.br/clubes/1/escudo.jpg', gols: gm, panaltis: pm },
+    visitante: { id: v === 'Flamengo' ? '20016' : '1', nome: v, url_escudo: 'https://conteudo.cbf.com.br/clubes/1/escudo.jpg', gols: gv, panaltis: pv } });
+  const html = pagina({ data: [jogo('1', '08/09/2026', 'Flamengo', '6', 'Forte', '0'), jogo('2', '08/10/2026', 'Flamengo', '2', 'Vasco da Gama Saf', '2', '4', '3'),
+    jogo('2', '08/10/2026', 'Flamengo', '2', 'Vasco da Gama Saf', '2', '4', '3'), jogo('3', '27/10/2026', 'Operário', '0', 'Flamengo', '0'), jogo('4', '20/12/2026', 'Flamengo', '', 'Bahia', '')] });
+  const c = { campeonato: 'copa-do-brasil', categoria: 'sub-20', nome: 'Copa do Brasil Sub-20', modalidade: 'base', categoriaApp: 'Sub-20' };
+  const js = lerJogosDoTime(html, c, new Date('2026-11-08T12:00:00-03:00').getTime(), '2026-10-01');
+  assert.equal(js.length, 3, 'filtra pela data "desde" e tira repetidos');
+  assert.deepEqual(js[0].placar, { flamengo: 2, adversario: 2 }); assert.equal(js[0].adversario, 'Vasco da Gama');
+  assert.equal(js[0].observacao, 'Pênaltis: Flamengo 4 x 3'); assert.equal(js[0].categoria, 'Sub-20'); assert.equal(js[0].mandante, true);
+  assert.equal(js[1].mandante, false); assert.equal(js[1].status, 'encerrado');
+  assert.equal(js[2].placar, null); assert.equal(js[2].status, 'agendado'); assert.equal(js[2].inicio, '2026-12-20T16:30:00-03:00');
+  const linha = (p, t, cod, j) => ({ cod_time: cod, time: t, escudo: 'https://e/' + cod + '.jpg', posicao: String(p), pontos: String(30 - p), jogos: String(j), vitorias: '5', empates: '2', derrotas: '1', gols_pro: '20', gols_contra: '10', gols_saldo: '10', cartoes_vermelho: '1', cartoes_amarelo: '20', aproveitamento: '60', ultimos_jogos: ['V', 'E', 'D'] });
+  const tab = pagina({ competitionData: { competitionId: '1', phase: { fase_id: '9', fase_nome: 'Final', fase_tipo: 'eliminacao' }, phasesList: [{ fase_id: '8', fase_nome: '1ª Fase', fase_tipo: 'pontuacao' }] },
+    grupos: [{ title: 'GRUPO A', data: [1, 2, 3, 4].map((p) => linha(p, p === 3 ? 'Flamengo' : 'Time ' + p, p === 3 ? '20016' : String(p), 8)) }, { title: 'GRUPO B', data: [1, 2, 3, 4].map((p) => linha(p, 'Outro ' + p, String(p + 10), 8)) }] });
+  assert.deepEqual(lerFases(tab).map((f) => f.fase_id), ['8', '9']);
+  const t = lerTabela(tab);
+  assert.equal(t.grupo, 'GRUPO A', 'pega o grupo do Flamengo');
+  assert.deepEqual(t.linhas[2], { pos: 3, time: 'Flamengo', j: 8, v: 5, e: 2, d: 1, gp: 20, gc: 10, sg: 10, pts: 27, ap: 60, ca: 20, cv: 1, ult: ['V', 'E', 'D'], escudoReserva: 'https://e/20016.jpg' });
+  const site = [{ id: 'site-base-2026-12-20-bahia', modalidade: 'base', categoria: 'Sub-20', adversario: 'Bahia', inicio: '2026-12-20T15:00:00-03:00', ingresso: 'https://x' }];
+  const junto = juntarCbf(site, js);
+  assert.equal(junto.length, 3, 'jogo do site e da CBF no mesmo dia viram um só');
+  assert.equal(junto[0].ingresso, 'https://x'); assert.ok(junto[0].link.includes('cbf.com.br'));
+  console.log('✓ Leitura da CBF ok');
+}
