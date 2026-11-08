@@ -442,3 +442,71 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .lc-rodape { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 12px; margin-top: 8px; }
 .lc-fonte { font-size: 10.5px; color: var(--apagado); letter-spacing: .02em; }
 .lc-ingresso { font-size: 12px; font-weight: 700; color: #fff; background: var(--vermelho); padding: 4px 10px; border-radius: 999px; text-decoration: none; }
+
+/* nomes compridos não invadem o logo nem quebram no meio da palavra */
+.time { gap: 12px; }
+.time-nome { overflow-wrap: normal; word-break: normal; hyphens: manual; max-width: 100%; }
+.time-nome.longo { font-size: 16px; }
+.jogo.destaque .time-nome.longo { font-size: 18px; }
+.lc-time { gap: 8px; }
+.lc-nome { overflow-wrap: normal; word-break: normal; }
+.lc-nome.longo { font-size: 11.5px; }
+
+/* ---------- letra do sistema (no iPhone, a mesma do Apple Sports) ---------- */
+:root {
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
+  --corpo: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
+}
+.marca { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
+.aba { text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; }
+.dia { text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; }
+.tag { text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 700; }
+.time-nome, .evento-nome, .lc-evento { font-weight: 600; letter-spacing: -.01em; }
+.time-nome { font-size: 17px; }
+.time-nome.longo { font-size: 14.5px; }
+.hora-grande, .lc-hora { font-weight: 600; letter-spacing: -.02em; }
+.placar, .lc-placar, .cx b { font-weight: 700; letter-spacing: -.02em; }
+.cal-titulo strong, .painel h2 { text-transform: none; letter-spacing: -.01em; font-weight: 700; }
+.cal-num, .cal-semana span { font-weight: 600; }
+.tabela-camp th { letter-spacing: 0; font-weight: 600; }
+.tabela-camp .t-pos, .tabela-camp .t-pts { font-weight: 600; }
+.resultado, .status { text-transform: none; letter-spacing: 0; font-weight: 700; }
+.destaque-rotulo { letter-spacing: .06em; font-weight: 700; }
+#lista.compacto .dia { text-transform: none; letter-spacing: 0; font-size: 14px; }
+
+/* ---------- tela do jogo (folha que sobe de baixo) ---------- */
+.folha { border: 0; padding: 0; background: transparent; width: 100%; max-width: 640px; max-height: 94vh; margin: auto auto 0; }
+.folha::backdrop { background: #000c; backdrop-filter: blur(4px); }
+.folha[open] .folha-conteudo { animation: subir .28s ease-out; }
+@keyframes subir { from { transform: translateY(40px); opacity: .4; } }
+.folha-conteudo { position: relative; background: var(--fundo); color: var(--texto); border-radius: 26px 26px 0 0; padding: 0 0 calc(24px + env(safe-area-inset-bottom)); overflow: hidden; }
+.folha-alca { width: 40px; height: 5px; border-radius: 3px; background: #ffffff40; margin: 8px auto 0; position: relative; z-index: 2; }
+.folha-fechar { position: absolute; top: 14px; right: 14px; z-index: 2; width: 38px; height: 38px; border-radius: 50%; background: #00000055; border-color: #ffffff22; color: #fff; }
+.fj-topo { padding: 22px 18px 22px; text-align: center; color: #fff;
+  background: radial-gradient(90% 120% at 15% 0%, rgba(227,20,27,.75), transparent 60%), radial-gradient(90% 120% at 90% 10%, color-mix(in srgb, var(--cor) 55%, transparent), transparent 60%), linear-gradient(180deg, #2a0a0d, #0d0d10); }
+.fj-comp { font-size: 14px; font-weight: 600; color: #ffffffb3; margin: 6px 0 14px; }
+.fj-confronto { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }
+.fj-time { display: grid; justify-items: center; gap: 12px; min-width: 0; font-size: 17px; font-weight: 600; }
+.fj-time .longo { font-size: 15px; }
+.fj-time .escudo-box { width: 84px; height: 84px; }
+.fj-time .escudo-box .escudo { width: 84px; height: 84px; font-size: 22px; }
+.fj-centro { min-width: 96px; }
+.fj-hora { font-size: 30px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.fj-placar { display: flex; gap: 10px; justify-content: center; font-size: 44px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.fj-placar i { font-style: normal; opacity: .5; }
+.fj-leg { font-size: 13px; font-weight: 600; color: #ffffffb3; margin-top: 4px; }
+.fj-evento { font-size: 24px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 6px; text-wrap: balance; }
+.fj-info { padding: 14px 16px 0; }
+.fj-info .lc-info { font-size: 13.5px; gap: 6px 16px; }
+.fj-info .lc-obs { font-size: 13px; }
+.fj-titulo { text-align: center; font-size: 16px; font-weight: 700; margin: 22px 0 10px; }
+.folha .tabela-camp { margin: 0 12px; }
+.folha-conteudo { overflow-y: auto; max-height: 94vh; }
+.tabela-camp tr.eh-adv td { background: color-mix(in srgb, var(--texto) 8%, transparent); color: var(--forte); }
+.tabela-camp tr.eh-adv td.t-time { font-weight: 800; }
+#lista [data-id] { cursor: pointer; }
+#lista .lc[data-id]:active, #lista .jogo[data-id]:active { transform: scale(.995); }
+
+/* o logo nunca passa do tamanho da caixa (logos altos, como Athletico e Vasco, estouravam) */
+.escudo-box { position: relative; }
+.escudo-box > .escudo-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }

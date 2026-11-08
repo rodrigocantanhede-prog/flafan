@@ -99,6 +99,10 @@ function sigla(nome) {
 const FUNDO_CLARO = /gerdau-minas|osasco-sao-cristovao/;
 const classeImg = (url) => `escudo-img${FUNDO_CLARO.test(url ?? '') ? ' claro' : ''}`;
 
+// nome do time: pode quebrar depois de "/" e ganha letra menor quando é comprido
+const nomeTime = (nome) => esc(nome).replace(/\//g, '/<wbr>');
+const classeNome = (nome) => (String(nome).length > 13 ? 'longo' : '');
+
 function escudo(nome, fla, url) {
   const reserva = fla ? '<span class="escudo fla"></span>' : `<span class="escudo adv">${esc(sigla(nome))}</span>`;
   if (!url) return `<span class="escudo-box falhou" aria-hidden="true">${reserva}</span>`;
@@ -132,7 +136,7 @@ function cartaoEvento(j, destaque = false) {
   const canais = j.transmissao?.length
     ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
     : `<span class="canal confirmar">A confirmar</span>`;
-  return `<article class="jogo evento ${destaque ? 'destaque' : ''}" style="--cor:${m.cor}">
+  return `<article class="jogo evento ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" style="--cor:${m.cor}">
     ${destaque ? '<div class="destaque-rotulo">Próximo evento</div>' : ''}
     <header class="jogo-cab">
       <span class="tag">${icone(iconeEsporte(j.esporte))}<span>${esc(j.esporte)}</span></span>
@@ -158,6 +162,25 @@ function contagemCaixas(data) {
   return `<div class="contagem" aria-label="${esc(contagem(data))}">${caixa(d, d === 1 ? 'dia' : 'dias')}${caixa(h, 'horas')}${caixa(m, 'min')}</div>`;
 }
 
+function blocoInfo(j) {
+  const data = new Date(j.inicio);
+  const acabou = j.tipo === 'evento' ? (j.status === 'encerrado' || fimDoEvento(j) < Date.now()) : jaTerminou(j) || (!j.semHora && data.getTime() + DURACAO < Date.now());
+  const info = [];
+  if (j.local) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
+  if (!acabou && j.status !== 'cancelado') {
+    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ') : '<i>a confirmar</i>'}</span>`);
+  }
+  if (j.tipo === 'evento' && j.atletas?.length) info.push(`<span class="lc-item">${icone('pessoa')}${j.atletas.map(esc).join(' · ')}</span>`);
+  const extras = [];
+  if (j.tipo === 'evento' && j.resultado?.length > 1) extras.push(`<div class="lc-resultado">${j.resultado.map((r) => `<span>${icone('trofeu')}${esc(r)}</span>`).join('')}</div>`);
+  if (j.observacao) extras.push(`<div class="lc-obs">${esc(j.observacao)}</div>`);
+  const rodape = [];
+  if (j.ingresso && /^https:\/\//.test(j.ingresso) && !acabou && j.status !== 'cancelado') rodape.push(`<a class="lc-ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>`);
+  if (j.categoria) rodape.push(`<span class="lc-fonte">${esc(j.categoria)}</span>`);
+  if (j.fonteInfo) rodape.push(`<span class="lc-fonte">Fonte: ${esc(j.fonteInfo)}</span>`);
+  return `${info.length ? `<div class="lc-info">${info.join('')}</div>` : ''}${extras.join('')}${rodape.length ? `<div class="lc-rodape">${rodape.join('')}</div>` : ''}`;
+}
+
 function linhaCompacta(j) {
   const m = MODALIDADES[j.modalidade] ?? { cor: '#E3141B' };
   const data = new Date(j.inicio);
@@ -170,7 +193,7 @@ function linhaCompacta(j) {
     legenda = kIni === kFim ? (j.semHora ? 'Dia todo' : fHora.format(data)) : `${fDM.format(dataDoDia(kIni))} a ${fDM.format(dataDoDia(kFim))}`;
   } else {
     const flaCasa = j.mandante !== false;
-    const lado = (nome, fla, url, venceu) => `<div class="lc-time ${fla ? 'eh-fla' : ''} ${venceu ? 'venc' : ''}">${escudoPequeno(nome, url, fla)}<span class="lc-nome">${esc(nome)}</span></div>`;
+    const lado = (nome, fla, url, venceu) => `<div class="lc-time ${fla ? 'eh-fla' : ''} ${venceu ? 'venc' : ''}">${escudoPequeno(nome, url, fla)}<span class="lc-nome ${classeNome(nome)}">${nomeTime(nome)}</span></div>`;
     const terminou = jaTerminou(j);
     const f = j.placar?.flamengo, a = j.placar?.adversario;
     const flaVenceu = j.placar && f > a, advVenceu = j.placar && a > f;
@@ -191,22 +214,7 @@ function linhaCompacta(j) {
     }
   }
   const comp = j.tipo === 'evento' ? 'Olímpicos' : (j.competicao || m.nome || '');
-  // todas as informações do cartão, em letra pequena, sem precisar abrir
-  const acabou = j.tipo === 'evento' ? (j.status === 'encerrado' || fimDoEvento(j) < Date.now()) : jaTerminou(j) || (!j.semHora && data.getTime() + DURACAO < Date.now());
-  const info = [];
-  if (j.local) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
-  if (!acabou && j.status !== 'cancelado') {
-    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ') : '<i>a confirmar</i>'}</span>`);
-  }
-  if (j.tipo === 'evento' && j.atletas?.length) info.push(`<span class="lc-item">${icone('pessoa')}${j.atletas.map(esc).join(' · ')}</span>`);
-  const extras = [];
-  if (j.tipo === 'evento' && j.resultado?.length > 1) extras.push(`<div class="lc-resultado">${j.resultado.map((r) => `<span>${icone('trofeu')}${esc(r)}</span>`).join('')}</div>`);
-  if (j.observacao) extras.push(`<div class="lc-obs">${esc(j.observacao)}</div>`);
-  const rodape = [];
-  if (j.ingresso && /^https:\/\//.test(j.ingresso) && !acabou && j.status !== 'cancelado') rodape.push(`<a class="lc-ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>`);
-  if (j.categoria) rodape.push(`<span class="lc-fonte">${esc(j.categoria)}</span>`);
-  if (j.fonteInfo) rodape.push(`<span class="lc-fonte">Fonte: ${esc(j.fonteInfo)}</span>`);
-  return `<article class="lc" style="--cor:${m.cor}">
+  return `<article class="lc" data-id="${esc(j.id)}" style="--cor:${m.cor}">
     <div class="lc-placa">
       ${esq}
       <div class="lc-centro">
@@ -216,9 +224,7 @@ function linhaCompacta(j) {
       </div>
       ${dir}
     </div>
-    ${info.length ? `<div class="lc-info">${info.join('')}</div>` : ''}
-    ${extras.join('')}
-    ${rodape.length ? `<div class="lc-rodape">${rodape.join('')}</div>` : ''}
+    ${blocoInfo(j)}
   </article>`;
 }
 
@@ -229,7 +235,7 @@ function cartao(j, destaque = false) {
   const flaCasa = j.mandante !== false;
   const timeFla = { nome: 'Flamengo', fla: true, url: estado.escudoFla }, timeAdv = { nome: j.adversario, fla: false, url: j.escudoAdv };
   const [esq, dir] = flaCasa ? [timeFla, timeAdv] : [timeAdv, timeFla];
-  const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla, t.url)}<span class="time-nome">${esc(t.nome)}</span></div>`;
+  const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla, t.url)}<span class="time-nome ${classeNome(t.nome)}">${nomeTime(t.nome)}</span></div>`;
 
   let centro, selo = '';
   const terminou = jaTerminou(j);
@@ -257,7 +263,7 @@ function cartao(j, destaque = false) {
     : `<span class="canal confirmar">A confirmar</span>`;
   const mostraOnde = j.status !== 'encerrado';
 
-  return `<article class="jogo ${destaque ? 'destaque' : ''}" style="--cor:${m.cor}">
+  return `<article class="jogo ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" style="--cor:${m.cor}">
     ${destaque ? `<div class="destaque-rotulo">Próximo jogo</div>` : ''}
     <header class="jogo-cab">
       <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span></span>
@@ -345,43 +351,95 @@ function escudoPequeno(nome, url, fla) {
   return `<span class="escudo-box mini ${u ? '' : 'falhou'}" aria-hidden="true">${u ? `<img class="${classeImg(u)}" src="${esc(u)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">` : ''}${reserva}</span>`;
 }
 
+// mesmo time com nomes diferentes ("Athletico-PR" x "Athletico PR")
+const tokensTime = (n) => semAc(n).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 4 && !['volei', 'basquete', 'basket', 'clube', 'esporte', 'sesi', 'sesc', 'caixa', 'ceisc'].includes(p));
+function mesmoTimeApp(a, b) {
+  if (semAc(a) === semAc(b)) return true;
+  const ta = tokensTime(a), tb = new Set(tokensTime(b));
+  return ta.length > 0 && ta.some((t) => tb.has(t));
+}
+
+function htmlTabela(c, adversario = null) {
+  const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
+  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo']];
+  const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined);
+  const extras = COLS.filter(([k]) => tem(k));
+  const temPts = tem('pts');
+  const brasileirao = /brasileir[aã]o s[ée]rie a/i.test(c.nome);
+  const zona = (pos) => !brasileirao || !pos ? '' : pos <= 4 ? 'z-liberta' : pos <= 6 ? 'z-pre' : pos >= c.linhas.length - 3 ? 'z-rebaixa' : '';
+  const sinal = (k, v) => (k === 'sg' && v > 0 ? `+${v}` : v ?? '');
+  const linhas = c.linhas.map((l) => {
+    const fla = /flamengo/i.test(l.time);
+    const adv = !fla && adversario && mesmoTimeApp(adversario, l.time);
+    return `<tr class="${fla ? 'eh-fla' : ''} ${adv ? 'eh-adv' : ''} ${zona(l.pos)}">
+      <td class="t-pos">${l.pos ?? ''}</td>
+      <td class="t-time">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></td>
+      ${temPts ? `<td class="t-pts">${l.pts ?? ''}</td>` : ''}<td>${l.j ?? ''}</td>
+      ${extras.map(([k]) => `<td>${sinal(k, l[k])}</td>`).join('')}
+    </tr>`;
+  }).join('');
+  return `<section class="tabela-camp" style="--cor:${m.cor}">
+    <header class="tabela-cab">
+      <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(c.nome)}</span></span>
+      ${c.atualizado ? `<small>Atualizado ${esc(c.atualizado)}</small>` : ''}
+    </header>
+    <div class="tabela-rolagem"><table>
+      <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th>${temPts ? '<th title="Pontos">P</th>' : ''}<th title="Jogos">J</th>
+        ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
+      <tbody>${linhas}</tbody>
+    </table></div>
+    ${c.nota || c.link ? `<div class="tabela-nota">${c.nota ? `<span>${esc(c.nota)}</span>` : ''}${c.link ? `<a class="btn sec" href="${esc(c.link)}" target="_blank" rel="noopener">Ver tabela completa no site oficial ↗</a>` : ''}</div>` : ''}
+    ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
+  </section>`;
+}
+
 function desenharTabela() {
   const lista = estado.campeonatos.filter((c) => estado.filtro === 'todas' || c.modalidade === estado.filtro);
   if (!lista.length) {
     $('#lista').innerHTML = `<p class="vazio">${estado.campeonatos.length ? 'Nenhuma tabela para esta modalidade ainda.' : 'As tabelas de classificação aparecem aqui assim que forem cadastradas.'}</p>`;
     return;
   }
-  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo']];
-  $('#lista').innerHTML = lista.map((c) => {
-    const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
-    const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined);
-    const extras = COLS.filter(([k]) => tem(k));
-    const temPts = tem('pts');
-    const brasileirao = /brasileir[aã]o s[ée]rie a/i.test(c.nome);
-    const zona = (pos) => !brasileirao || !pos ? '' : pos <= 4 ? 'z-liberta' : pos <= 6 ? 'z-pre' : pos >= c.linhas.length - 3 ? 'z-rebaixa' : '';
-    const linhas = c.linhas.map((l) => {
-      const fla = /flamengo/i.test(l.time);
-      return `<tr class="${fla ? 'eh-fla' : ''} ${zona(l.pos)}">
-        <td class="t-pos">${l.pos ?? ''}</td>
-        <td class="t-time">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></td>
-        ${temPts ? `<td class="t-pts">${l.pts ?? ''}</td>` : ''}<td>${l.j ?? ''}</td>
-        ${extras.map(([k]) => `<td>${l[k] ?? ''}</td>`).join('')}
-      </tr>`;
-    }).join('');
-    return `<section class="tabela-camp" style="--cor:${m.cor}">
-      <header class="tabela-cab">
-        <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(c.nome)}</span></span>
-        ${c.atualizado ? `<small>Atualizado ${esc(c.atualizado)}</small>` : ''}
-      </header>
-      <div class="tabela-rolagem"><table>
-        <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th>${temPts ? '<th title="Pontos">P</th>' : ''}<th title="Jogos">J</th>
-          ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
-        <tbody>${linhas}</tbody>
-      </table></div>
-      ${c.nota || c.link ? `<div class="tabela-nota">${c.nota ? `<span>${esc(c.nota)}</span>` : ''}${c.link ? `<a class="btn sec" href="${esc(c.link)}" target="_blank" rel="noopener">Ver tabela completa no site oficial ↗</a>` : ''}</div>` : ''}
-      ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
-    </section>`;
-  }).join('');
+  $('#lista').innerHTML = lista.map((c) => htmlTabela(c)).join('');
+}
+
+// tabela do campeonato do jogo (Brasileirão, NBB, Superliga...), se existir
+function tabelaDoJogo(j) {
+  const comp = semAc(j.competicao);
+  return estado.campeonatos.find((c) => c.modalidade === j.modalidade &&
+    semAc(c.nome).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !['serie', 'feminina', 'masculina'].includes(p)).some((p) => comp.includes(p)));
+}
+
+// ---------- tela do jogo (toque no cartão) ----------
+function abrirJogo(id) {
+  const j = estado.jogos.find((x) => x.id === id);
+  if (!j) return;
+  const m = MODALIDADES[j.modalidade] ?? { cor: '#E3141B', nome: '' };
+  let topo;
+  if (j.tipo === 'evento') {
+    topo = `<div class="fj-comp">${esc(j.esporte)}</div><div class="fj-evento">${esc(j.competicao)}</div>`;
+  } else {
+    const flaCasa = j.mandante !== false;
+    const ladoT = (nome, fla, url) => `<div class="fj-time">${escudo(nome, fla, fla ? estado.escudoFla : url)}<span class="${classeNome(nome)}">${nomeTime(nome)}</span></div>`;
+    const esq = flaCasa ? ladoT('Flamengo', true) : ladoT(j.adversario, false, j.escudoAdv);
+    const dir = flaCasa ? ladoT(j.adversario, false, j.escudoAdv) : ladoT('Flamengo', true);
+    const data = new Date(j.inicio);
+    let centro;
+    if (j.placar) {
+      const [pe, pd] = flaCasa ? [j.placar.flamengo, j.placar.adversario] : [j.placar.adversario, j.placar.flamengo];
+      centro = `<div class="fj-placar">${pe}<i>–</i>${pd}</div><div class="fj-leg">${jaTerminou(j) ? 'Fim' : 'Parcial'}</div>`;
+    } else {
+      const dia = rotuloDia(data);
+      centro = `<div class="fj-hora">${j.semHora ? '--:--' : fHora.format(data)}</div><div class="fj-leg">${esc(/^(Hoje|Amanhã|Ontem)$/.test(dia) ? dia : fDiaCurto.format(data))}</div>`;
+    }
+    topo = `<div class="fj-comp">${esc(j.competicao || m.nome)}${j.categoria ? ' · ' + esc(j.categoria) : ''}</div>
+      <div class="fj-confronto">${esq}<div class="fj-centro">${centro}</div>${dir}</div>`;
+  }
+  const tabela = j.tipo === 'evento' ? null : tabelaDoJogo(j);
+  $('#detalhe-conteudo').innerHTML = `
+    <div class="fj-topo" style="--cor:${m.cor}">${topo}</div>
+    <div class="fj-info">${blocoInfo(j)}</div>
+    ${tabela ? `<h3 class="fj-titulo">Tabela</h3>${htmlTabela(tabela, j.adversario)}` : ''}`;
+  $('#detalhe').showModal();
 }
 
 const DURACAO = 3 * 3600e3;
@@ -456,6 +514,8 @@ function montarAjustes() {
 
 // ---------- eventos ----------
 document.addEventListener('click', (e) => {
+  const card = e.target.closest('#lista [data-id]');
+  if (card && !e.target.closest('a, button')) { abrirJogo(card.dataset.id); return; }
   const aba = e.target.closest('[data-aba]');
   if (aba) {
     estado.aba = aba.dataset.aba;
@@ -481,6 +541,7 @@ document.addEventListener('click', (e) => {
   }
 });
 $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
+$('#detalhe').addEventListener('click', (e) => { if (e.target === $('#detalhe') || e.target.closest('[data-fechar]')) $('#detalhe').close(); });
 
 // ---------- chave do visual compacto ----------
 $('#chave-compacto').checked = !!estado.compacto;
