@@ -104,6 +104,12 @@
         "modalidade": "futebol-masculino"
       },
       {
+        "campeonato": "supercopa-do-brasil",
+        "categoria": "profissional",
+        "nome": "Supercopa do Brasil",
+        "modalidade": "futebol-masculino"
+      },
+      {
         "campeonato": "campeonato-brasileiro",
         "categoria": "sub-20",
         "nome": "Brasileiro Sub-20",
@@ -118,6 +124,13 @@
         "modalidade": "base",
         "categoriaApp": "Sub-17",
         "tabela": "Brasileiro Sub-17"
+      },
+      {
+        "campeonato": "copa-do-brasil",
+        "categoria": "sub-15",
+        "nome": "Copa do Brasil Sub-15",
+        "modalidade": "base",
+        "categoriaApp": "Sub-15"
       },
       {
         "campeonato": "copa-do-brasil",
