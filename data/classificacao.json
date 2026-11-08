@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T18:12:13.669Z",
+ "atualizadoEm": "2026-11-08T18:44:12.460Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1780,6 +1780,7 @@
      "d": 0,
      "sg": 113,
      "pts": 12,
+     "ap": 100,
      "escudo": "escudos/basquete-minas-storm-438d6e.png"
     },
     {
@@ -1791,6 +1792,7 @@
      "d": 1,
      "sg": 61,
      "pts": 11,
+     "ap": 83,
      "escudo": "escudos/basquete-unifacisa-f360c0.png"
     },
     {
@@ -1802,6 +1804,7 @@
      "d": 1,
      "sg": 100,
      "pts": 11,
+     "ap": 83,
      "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
     },
     {
@@ -1812,7 +1815,8 @@
      "e": null,
      "d": 1,
      "sg": 63,
-     "pts": 11
+     "pts": 11,
+     "ap": 83
     },
     {
      "pos": 5,
@@ -1823,6 +1827,7 @@
      "d": 1,
      "sg": 32,
      "pts": 9,
+     "ap": 80,
      "escudo": "escudos/basquete-mogi-basquete-daf842.png"
     },
     {
@@ -1834,6 +1839,7 @@
      "d": 3,
      "sg": 16,
      "pts": 11,
+     "ap": 57,
      "escudo": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
     },
     {
@@ -1845,6 +1851,7 @@
      "d": 3,
      "sg": -16,
      "pts": 9,
+     "ap": 50,
      "escudo": "escudos/basquete-paulistano-d2670e.png"
     },
     {
@@ -1856,6 +1863,7 @@
      "d": 3,
      "sg": 24,
      "pts": 9,
+     "ap": 50,
      "escudo": "escudos/basquete-sesi-franca-c08c49.png"
     },
     {
@@ -1867,6 +1875,7 @@
      "d": 3,
      "sg": -16,
      "pts": 9,
+     "ap": 50,
      "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
     },
     {
@@ -1878,6 +1887,7 @@
      "d": 3,
      "sg": -31,
      "pts": 7,
+     "ap": 40,
      "escudo": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
     },
     {
@@ -1889,6 +1899,7 @@
      "d": 3,
      "sg": -15,
      "pts": 7,
+     "ap": 40,
      "escudo": "escudos/basquete-botafogo-a485c5.png"
     },
     {
@@ -1900,6 +1911,7 @@
      "d": 4,
      "sg": -27,
      "pts": 8,
+     "ap": 33,
      "escudo": "escudos/basquete-bauru-basket-28da4b.png"
     },
     {
@@ -1911,6 +1923,7 @@
      "d": 4,
      "sg": -24,
      "pts": 8,
+     "ap": 33,
      "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
     },
     {
@@ -1922,6 +1935,7 @@
      "d": 3,
      "sg": 2,
      "pts": 5,
+     "ap": 25,
      "escudo": "escudos/basquete-corinthians-c187b9.png"
     },
     {
@@ -1933,6 +1947,7 @@
      "d": 3,
      "sg": -26,
      "pts": 5,
+     "ap": 25,
      "escudo": "escudos/basquete-basket-osasco-449453.png"
     },
     {
@@ -1944,6 +1959,7 @@
      "d": 4,
      "sg": -48,
      "pts": 6,
+     "ap": 20,
      "escudo": "escudos/basquete-pato-basquete-d43cc6.png"
     },
     {
@@ -1955,6 +1971,7 @@
      "d": 4,
      "sg": -106,
      "pts": 6,
+     "ap": 20,
      "escudo": "escudos/basquete-basquete-cearense-8b0fd2.png"
     },
     {
@@ -1966,6 +1983,7 @@
      "d": 6,
      "sg": -102,
      "pts": 6,
+     "ap": 0,
      "escudo": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
     }
    ],
