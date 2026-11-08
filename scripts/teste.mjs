@@ -54,7 +54,7 @@ const probs = [];
 const fla = await resolverEscudos(jogosTeste, 'chave-falsa', probs);
 assert.equal(fla, 'escudos/flamengo.png');
 assert.equal(jogosTeste[0].escudoAdv, 'escudos/futebol-palmeiras-teste.png');
-assert.equal(jogosTeste[1].escudoAdv, 'escudos/volei-clube-teste.png');
+assert.match(jogosTeste[1].escudoAdv, /^escudos/volei-clube-teste-[0-9a-f]{6}.png$/);
 assert.equal(jogosTeste[2].escudoAdv, undefined);
 assert.ok(!('escudoAdvUrl' in jogosTeste[1]));
 assert.deepEqual(probs, []);
@@ -64,7 +64,7 @@ await resolverEscudos([{ modalidade: 'futebol-masculino', adversario: 'Palmeiras
 assert.equal(chamadas.length, 0);
 // limpeza
 globalThis.fetch = fetchOriginal;
-for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', 'escudos/volei-clube-teste.png']) await rm(f, { force: true });
+for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', jogosTeste[1].escudoAdv]) await rm(f, { force: true });
 if (cacheAntes === null) await rm('data/escudos.json', { force: true }); else await (await import('node:fs/promises')).writeFile('data/escudos.json', cacheAntes);
 console.log('✓ Testes de escudos passaram');
 

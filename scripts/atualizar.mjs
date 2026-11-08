@@ -323,7 +323,9 @@ export async function resolverEscudos(itens, chave, problemas) {
     try {
       const idFut = grupo === 'futebol' ? IDS_FUTEBOL[slug(j.adversario)] : IDS_MESMO_CLUBE[slug(j.adversario)];
       if (url) {
-        cache[chaveCache] = await baixarImagem(url, base);
+        // link colado à mão: cada link vira um arquivo próprio, então substitui o escudo achado antes
+        const sufixo = createHash('sha1').update(url).digest('hex').slice(0, 6);
+        cache[chaveCache] = await baixarImagem(url, `${base}-${sufixo}`);
       } else if (idFut && !cache[chaveCache]) {
         cache[chaveCache] = await baixarImagem(`https://media.api-sports.io/football/teams/${idFut}.png`, base);
       } else if (!(chaveCache in cache) || (cache[chaveCache] === null && (cache[`${chaveCache}|tentou`] ?? 0) < Date.now() - 7 * 864e5)) {
