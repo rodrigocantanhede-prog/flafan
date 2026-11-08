@@ -145,3 +145,27 @@ semjogo,Basquete,,10/12/2026,20:00`));
 // jogo adiado não entra na agenda (sem alarme no horário antigo)
 assert.doesNotMatch(gerarIcs([{ id: 'x', modalidade: 'basquete', adversario: 'A', inicio: '2026-12-01T20:00:00-03:00', transmissao: [], status: 'adiado' }], 't'), /VEVENT/);
 console.log('✓ Datas, horários, base e adiados ok');
+
+// ---- eventos olímpicos ----
+import { montarEventos } from './atualizar.mjs';
+{
+  const { eventos, avisos } = montarEventos(parseCsv(`id,esporte,competicao,data_inicio,data_fim,hora,local,atletas,resultado,onde_assistir,status,acao,observacao,fonte
+,Natação,Troféu Teste,10/12/2026,14/12/2026,,Rio de Janeiro,Fulana (100 m livre); Ciclano,,SporTV,,,,CBDA
+,Judô,Grand Prix Teste,05/11/2026,,10:00,Lima,Beltrana (-57 kg),Ouro (Beltrana),,,,,IJF
+,Remo,Sem data,,,,,,,,,,,
+,Remo,Escondido,01/12/2026,,,,,,,,remover,,`));
+  assert.equal(eventos.length, 2);
+  assert.equal(avisos.length, 1);
+  const nat = eventos.find((e) => e.esporte === 'Natação');
+  assert.equal(nat.fim, '2026-12-14');
+  assert.deepEqual(nat.atletas, ['Fulana (100 m livre)', 'Ciclano']);
+  assert.equal(nat.status, 'agendado');
+  assert.equal(nat.fonteInfo, 'CBDA');
+  const judo = eventos.find((e) => e.esporte === 'Judô');
+  assert.equal(judo.status, 'encerrado', 'com resultado vira encerrado');
+  const ics = gerarIcs(eventos, 't');
+  assert.match(ics, /DTSTART;VALUE=DATE:20261210/);
+  assert.match(ics, /DTEND;VALUE=DATE:20261215/);
+  assert.match(ics, /SUMMARY:Natação: Troféu Teste \(Flamengo\)/);
+  console.log('✓ Eventos olímpicos ok');
+}

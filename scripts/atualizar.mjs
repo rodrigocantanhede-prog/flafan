@@ -210,6 +210,7 @@ export function mesclar(automaticos, linhas) {
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
     if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
+    if (limpar(l.fonte)) novo.fonteInfo = limpar(l.fonte);
     if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
     if (!novo.modalidade || !novo.inicio || isNaN(Date.parse(novo.inicio)) || !novo.adversario) {
@@ -219,6 +220,38 @@ export function mesclar(automaticos, linhas) {
   }
   const jogos = [...porId.values()].sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
   return { jogos, avisos };
+}
+
+// ---------- eventos olímpicos (aba "Eventos") ----------
+// id | esporte | competicao | data_inicio | data_fim | hora | local | atletas | resultado | onde_assistir | status | acao | observacao | fonte
+export function montarEventos(linhas) {
+  const eventos = [], avisos = [];
+  for (const [n, l] of linhas.entries()) {
+    const nLinha = n + 2;
+    if (semAcento(l.acao) === 'remover') continue;
+    const competicao = limpar(l.competicao), esporte = limpar(l.esporte) || 'Esporte olímpico';
+    const inicio = dataHoraBrasilia(l.data_inicio, l.hora);
+    if (!competicao || !inicio) {
+      if (competicao || limpar(l.data_inicio)) avisos.push(`Eventos, linha ${nLinha}: faltou competição ou data válida — ignorada.`);
+      continue;
+    }
+    const fimData = limpar(l.data_fim) ? dataHoraBrasilia(l.data_fim, '') : null;
+    if (limpar(l.data_fim) && !fimData) avisos.push(`Eventos, linha ${nLinha}: data_fim inválida — usei só a data de início.`);
+    const lista = (s) => limpar(s).split(/[;|]/).map(limpar).filter(Boolean);
+    const resultado = lista(l.resultado);
+    const ev = {
+      id: limpar(l.id) || 'e-' + createHash('sha1').update(`${slug(esporte)}|${inicio.slice(0, 10)}|${slug(competicao)}`).digest('hex').slice(0, 10),
+      tipo: 'evento', modalidade: 'olimpicos', esporte, competicao, adversario: competicao,
+      inicio, fim: fimData && fimData >= inicio.slice(0, 10) ? fimData.slice(0, 10) : inicio.slice(0, 10),
+      semHora: !lerHora(l.hora), local: limpar(l.local), mandante: null,
+      atletas: lista(l.atletas), resultado, transmissao: listaTransmissao(l.onde_assistir), placar: null,
+      status: STATUS[semAcento(l.status)] ?? (resultado.length ? 'encerrado' : 'agendado'), fonte: 'manual',
+    };
+    if (limpar(l.observacao)) ev.observacao = limpar(l.observacao);
+    if (limpar(l.fonte)) ev.fonteInfo = limpar(l.fonte);
+    eventos.push(ev);
+  }
+  return { eventos, avisos };
 }
 
 // ---------- calendário (.ics) ----------
@@ -240,15 +273,18 @@ export function gerarIcs(jogos, titulo, carimbo = new Date()) {
   const ev = jogos.filter((j) => !['cancelado', 'adiado'].includes(j.status) && !isNaN(Date.parse(j.inicio))).map((j) => {
     const fim = new Date(new Date(j.inicio).getTime() + 2 * 3600e3);
     const dia = j.inicio.slice(0, 10).replace(/-/g, '');
-    const nome = j.mandante === false ? `${j.adversario} x Flamengo` : `Flamengo x ${j.adversario}`;
+    const evento = j.tipo === 'evento';
+    const nome = evento ? `${j.esporte}: ${j.competicao}` : j.mandante === false ? `${j.adversario} x Flamengo` : `Flamengo x ${j.adversario}`;
+    const multiDia = evento && j.fim && j.fim !== j.inicio.slice(0, 10);
+    const diaSeguinte = (d) => new Date(Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10) + 1)).toISOString().slice(0, 10).replace(/-/g, '');
     const onde = j.transmissao.length ? `Onde assistir: ${j.transmissao.join(', ')}` : 'Onde assistir: a confirmar';
     return [
       'BEGIN:VEVENT', `UID:${j.id}@flafan`, `DTSTAMP:${agora}`,
-      ...(j.semHora ? [`DTSTART;VALUE=DATE:${dia}`] : [`DTSTART:${icsData(j.inicio)}`, `DTEND:${icsData(fim)}`]),
-      `SUMMARY:${icsTexto(`${nome} (${MODALIDADES[j.modalidade]})`)}`,
+      ...(j.semHora || multiDia ? [`DTSTART;VALUE=DATE:${dia}`, `DTEND;VALUE=DATE:${diaSeguinte(j.fim ?? j.inicio.slice(0, 10))}`] : [`DTSTART:${icsData(j.inicio)}`, `DTEND:${icsData(fim)}`]),
+      `SUMMARY:${icsTexto(evento ? `${nome} (Flamengo)` : `${nome} (${MODALIDADES[j.modalidade]})`)}`,
       `DESCRIPTION:${icsTexto(`${j.competicao}\n${onde}`)}`,
       j.local ? `LOCATION:${icsTexto(j.local)}` : null,
-      ...(j.semHora ? [] : ['BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsTexto(nome + ' começa em 1 hora')}`, 'TRIGGER:-PT1H', 'END:VALARM']),
+      ...(j.semHora || multiDia ? [] : ['BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsTexto(nome + ' começa em 1 hora')}`, 'TRIGGER:-PT1H', 'END:VALARM']),
       'END:VEVENT',
     ].filter(Boolean);
   }).flat();
@@ -539,6 +575,18 @@ async function main() {
   // 3) junta e salva
   const { jogos, avisos } = mesclar(automaticos, linhas);
   problemas.push(...avisos);
+  // 3b) eventos olímpicos (se a aba falhar, mantém os eventos já publicados)
+  try {
+    const csv = await lerCsv(arg('--eventos'), cfg.planilhaEventosCsvUrl, 'competicao');
+    if (csv !== null) {
+      const r = montarEventos(parseCsv(csv));
+      jogos.push(...r.eventos); problemas.push(...r.avisos);
+    }
+  } catch (e) {
+    jogos.push(...(anterior?.jogos ?? []).filter((j) => j.tipo === 'evento'));
+    problemas.push(`Falha ao ler a aba Eventos (${e.message}) — mantive os eventos anteriores.`);
+  }
+  jogos.sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
 
   // 4) classificação: planilha + API (a API substitui a planilha no mesmo campeonato, quando funciona)
   let campeonatos = [];
@@ -558,10 +606,10 @@ async function main() {
   let escudoFlamengo = null;
   const linhasTabela = campeonatos.flatMap((c) => c.linhas.map((l) => Object.assign(l, { modalidade: c.modalidade, adversario: l.time })));
   if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => delete j.escudoAdvUrl);
-  else escudoFlamengo = await resolverEscudos([...jogos, ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
+  else escudoFlamengo = await resolverEscudos([...jogos.filter((j) => j.tipo !== 'evento'), ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
   // jogos sem escudo: usa o da tabela do mesmo campeonato quando o nome bate
   for (const j of jogos) {
-    if (j.escudoAdv) continue;
+    if (j.escudoAdv || j.tipo === 'evento') continue;
     const cands = linhasTabela.filter((x) => x.modalidade === j.modalidade && x.escudoAdv);
     const l = cands.find((x) => slug(x.time) === slug(j.adversario)) ?? cands.find((x) => mesmoTime(j.adversario, x.time));
     if (l) j.escudoAdv = l.escudoAdv;

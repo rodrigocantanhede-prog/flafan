@@ -374,3 +374,13 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 /* no claro, as cores das modalidades ficam um pouco mais escuras para dar leitura no branco */
 @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .tag { color: color-mix(in srgb, var(--cor) 70%, #000); } }
 :root[data-theme="light"] .tag { color: color-mix(in srgb, var(--cor) 70%, #000); }
+
+/* eventos olímpicos */
+.evento-nome { font-family: var(--display); font-weight: 800; font-size: 24px; line-height: 1.05; margin: 10px 0 8px; color: var(--forte); text-wrap: balance; }
+.evento-quando, .evento-atletas { display: flex; gap: 8px; align-items: flex-start; font-size: 15px; color: var(--texto); margin-bottom: 8px; }
+.evento-quando .ic, .evento-atletas .ic { width: 18px; height: 18px; margin-top: 2px; color: var(--cor); }
+.evento-atletas { color: var(--suave); font-size: 14px; }
+.evento-lista { list-style: none; margin: 4px 0 10px; padding: 10px 12px; display: grid; gap: 6px; background: var(--aviso-fundo); border-radius: 12px; }
+.evento-lista li { display: flex; gap: 8px; align-items: flex-start; font-weight: 700; color: var(--aviso-texto); font-size: 14px; }
+.evento-lista .ic { width: 18px; height: 18px; flex: none; }
+.fonte-info { margin-top: 8px; font-size: 11px; color: var(--apagado); letter-spacing: .02em; }

@@ -51,5 +51,6 @@
     "_plano": "Plano grátis: só libera temporadas 2022-2024. Jogos e tabelas vêm da planilha (atualizada todo dia pelo Claude). Para ligar de novo após assinar o Pro, mude \"ativo\" para true."
   },
   "onesignalAppId": "",
-  "planilhaClassificacaoCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=94890183"
+  "planilhaClassificacaoCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=94890183",
+  "planilhaEventosCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=1175589755"
 }

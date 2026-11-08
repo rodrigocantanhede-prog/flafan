@@ -19,6 +19,12 @@ const ICONES = {
   volei: '<circle cx="12" cy="12" r="9.5"/><path d="M12 12c-1.2-3.8-.6-7.2 1.6-9.3M12 12c3.9-.9 7.2.2 9.2 2.6M12 12c-2.7 2.9-6 4-9 3.5M12 12c3.2-2.4 4.4-5.7 4-8.5M12 12c.7 3.9 3 6.6 6 7.4"/>',
   futsal: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.8"/><path d="M2 9.5h2.5v5H2M22 9.5h-2.5v5H22"/>',
   olimpicos: '<circle cx="12" cy="15.5" r="5.5"/><path d="M8.5 11.3L5.5 2.5h4l2.5 6M15.5 11.3l3-8.8h-4L12 8.5"/><path d="M12 13l.9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="currentColor" stroke="none"/>',
+  natacao: '<path d="M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><circle cx="16.5" cy="6.5" r="2"/><path d="M4 13l5-4 3 2 3-2"/>',
+  remo: '<path d="M3 21L17 7M15 3l6 6-3 1-4-4zM2 15c3 1 6 1 9 0M13 21c3-1 6-1 9 0"/>',
+  judo: '<path d="M4 9h16M8 9l-2 9M16 9l2 9M10 9l2 5 2-5"/><rect x="9" y="7" width="6" height="4" rx="1"/>',
+  ginastica: '<circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M7 10V3M17 10V3"/>',
+  pessoa: '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 21c.5-4 3.3-6.5 7-6.5s6.5 2.5 7 6.5"/>',
+  trofeu: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4.5a2.5 2.5 0 0 0 3.5 3.5M16 6h3.5a2.5 2.5 0 0 1-3.5 3.5M12 13v4M8.5 20h7l-1-3h-5z"/>',
   pin: '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
   tv: '<rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M8 21.5h8M9 2.5l3 3 3-3"/>',
   relogio: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
@@ -98,6 +104,51 @@ function escudo(nome, fla, url) {
   return `<span class="escudo-box" aria-hidden="true"><img class="${classeImg(url)}" src="${esc(url)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">${reserva}</span>`;
 }
 
+const semAc = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+function iconeEsporte(esporte) {
+  const e = semAc(esporte);
+  if (/natac|aquat|nado|polo|salto/.test(e)) return 'natacao';
+  if (/remo|canoa/.test(e)) return 'remo';
+  if (/judo/.test(e)) return 'judo';
+  if (/ginast/.test(e)) return 'ginastica';
+  return 'olimpicos';
+}
+const fDiaCurto = fmt({ weekday: 'short', day: '2-digit', month: '2-digit' });
+// "13/11" (00:00 de Brasília) a partir de 'AAAA-MM-DD'
+const dataDoDia = (k) => new Date(`${k}T12:00:00-03:00`);
+const fimDoEvento = (j) => new Date(`${j.fim ?? j.inicio.slice(0, 10)}T23:59:59-03:00`).getTime();
+
+function cartaoEvento(j, destaque = false) {
+  const m = MODALIDADES.olimpicos;
+  const inicio = new Date(j.inicio);
+  const kIni = j.inicio.slice(0, 10), kFim = j.fim ?? kIni;
+  const quando = kIni === kFim
+    ? `${fDiaCurto.format(inicio)}${j.semHora ? '' : ' · ' + fHora.format(inicio)}`
+    : `${fDiaCurto.format(dataDoDia(kIni))} a ${fDiaCurto.format(dataDoDia(kFim))}`;
+  const status = { adiado: 'Adiado', cancelado: 'Cancelado' }[j.status];
+  const terminou = j.status === 'encerrado' || fimDoEvento(j) < Date.now();
+  const canais = j.transmissao?.length
+    ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
+    : `<span class="canal confirmar">A confirmar</span>`;
+  return `<article class="jogo evento ${destaque ? 'destaque' : ''}" style="--cor:${m.cor}">
+    ${destaque ? '<div class="destaque-rotulo">Próximo evento</div>' : ''}
+    <header class="jogo-cab">
+      <span class="tag">${icone(iconeEsporte(j.esporte))}<span>${esc(j.esporte)}</span></span>
+      ${status ? `<span class="status ${j.status}">${status}</span>` : ''}
+    </header>
+    <div class="evento-nome">${esc(j.competicao)}</div>
+    <div class="evento-quando">${icone('relogio')}<span>${esc(quando)}</span></div>
+    ${j.resultado?.length ? `<ul class="evento-lista resultado-lista">${j.resultado.map((r) => `<li>${icone('trofeu')}<span>${esc(r)}</span></li>`).join('')}</ul>` : ''}
+    ${j.atletas?.length ? `<div class="evento-atletas">${icone('pessoa')}<span>${j.atletas.map(esc).join(' · ')}</span></div>` : ''}
+    <div class="detalhes">
+      ${j.local ? `<div class="linha">${icone('pin')}<span>${esc(j.local)}</span></div>` : ''}
+      ${!terminou ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
+    </div>
+    ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
+    ${j.fonteInfo ? `<div class="fonte-info">Fonte: ${esc(j.fonteInfo)}</div>` : ''}
+  </article>`;
+}
+
 function contagemCaixas(data) {
   const ms = Math.max(0, data - Date.now());
   const d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5), m = Math.floor((ms % 36e5) / 6e4);
@@ -106,6 +157,7 @@ function contagemCaixas(data) {
 }
 
 function cartao(j, destaque = false) {
+  if (j.tipo === 'evento') return cartaoEvento(j, destaque);
   const m = MODALIDADES[j.modalidade] ?? { nome: j.modalidade, cor: '#E3141B' };
   const data = new Date(j.inicio);
   const flaCasa = j.mandante !== false;
@@ -153,6 +205,7 @@ function cartao(j, destaque = false) {
       ${mostraOnde ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
     </div>
     ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
+    ${j.fonteInfo ? `<div class="fonte-info">Fonte: ${esc(j.fonteInfo)}</div>` : ''}
   </article>`;
 }
 
@@ -172,9 +225,11 @@ function desenharCalendario(filtrados) {
   const porDia = new Map();
   for (const j of filtrados) {
     if (j.status === 'cancelado') continue;
-    const k = chaveDia(new Date(j.inicio));
-    if (!porDia.has(k)) porDia.set(k, []);
-    porDia.get(k).push(j);
+    const dias = [chaveDia(new Date(j.inicio))];
+    if (j.tipo === 'evento' && j.fim) {
+      for (let d = dataDoDia(dias[0]); chaveDia(d) < j.fim && dias.length < 40;) { d = new Date(d.getTime() + 864e5); dias.push(chaveDia(d)); }
+    }
+    for (const k of dias) { if (!porDia.has(k)) porDia.set(k, []); porDia.get(k).push(j); }
   }
 
   const primeiro = new Date(Date.UTC(ano, mes, 1));
@@ -264,7 +319,8 @@ function desenharTabela() {
 
 const DURACAO = 3 * 3600e3;
 // terminou = marcado como encerrado, ou já tem placar e passaram 3h do início
-const jaTerminou = (j) => j.status === 'encerrado' || (!!j.placar && new Date(j.inicio).getTime() + DURACAO < Date.now());
+const jaTerminou = (j) => j.status === 'encerrado' || (!!j.placar && new Date(j.inicio).getTime() + DURACAO < Date.now()) ||
+  (j.tipo === 'evento' && fimDoEvento(j) < Date.now());
 
 function desenhar() {
   const agora = Date.now();
@@ -272,7 +328,7 @@ function desenhar() {
   const filtrados = estado.jogos.filter((j) => estado.filtro === 'todas' || j.modalidade === estado.filtro);
   // Próximos: ainda vai acontecer (ou adiado sem nova data). Resultados: todo o resto — nenhum jogo some.
   const proximos = filtrados.filter((j) => j.status !== 'cancelado' && !jaTerminou(j) &&
-    (j.status === 'adiado' || new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora));
+    (j.status === 'adiado' || (j.tipo === 'evento' ? fimDoEvento(j) > agora : new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora)));
   const idsProx = new Set(proximos.map((j) => j.id));
   const resultados = filtrados.filter((j) => !idsProx.has(j.id)).reverse();
   if (estado.aba === 'calendario') return desenharCalendario(filtrados);

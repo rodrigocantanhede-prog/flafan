@@ -47,3 +47,9 @@ node scripts/teste.mjs                                                         #
 node scripts/atualizar.mjs --sem-api --planilha data/exemplo-planilha.csv --exemplo   # gera dados de exemplo
 npx serve .                                                                    # abre o app em http://localhost:3000
 ```
+
+## Esportes olímpicos (aba Eventos)
+- Judô, natação, remo, ginástica etc. ficam na aba **Eventos** da planilha: competição, datas, atletas do Flamengo e resultado.
+- No app aparecem no filtro "Olímpicos", com cartão próprio (nome da competição, datas, atletas e medalhas).
+- Eventos de vários dias aparecem em todos os dias no calendário e entram na agenda do celular como compromisso de dia inteiro.
+- A coluna **fonte** (Jogos e Eventos) mostra no app de onde veio a informação.
