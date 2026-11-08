@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T14:54:04.498Z",
+ "atualizadoEm": "2026-11-08T14:59:35.421Z",
  "exemplo": false,
  "avisos": [],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -21,7 +21,7 @@
    "inicio": "2026-10-08T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "Wikipédia",
-   "escudoAdv": "escudos/futebol-santos.png"
+   "escudoAdv": "escudos/futebol-santos-7effcf.webp"
   },
   {
    "id": "m-763c27645d",
@@ -40,7 +40,7 @@
    "inicio": "2026-10-11T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "CBF",
-   "escudoAdv": "escudos/futebol-fluminense.png"
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "m-466661d860",
@@ -78,7 +78,7 @@
    "inicio": "2026-10-15T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "Agência Brasil",
-   "escudoAdv": "escudos/futebol-fluminense.png"
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "m-b80833c2a1",
@@ -97,7 +97,7 @@
    "inicio": "2026-10-18T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "ESPN",
-   "escudoAdv": "escudos/futebol-bahia.png"
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "m-b147397237",
@@ -194,7 +194,7 @@
    "semHora": true,
    "observacao": "Classificado para a semifinal (4 x 3 no agregado)",
    "fonteInfo": "Agência Brasil",
-   "escudoAdv": "escudos/futebol-fluminense.png"
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "m-217bc21f14",
@@ -232,7 +232,7 @@
    "inicio": "2026-10-26T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "ESPN",
-   "escudoAdv": "escudos/futebol-atletico-mg.png"
+   "escudoAdv": "escudos/futebol-atletico-mg-a62640.png"
   },
   {
    "id": "m-d642d2d4d3",
@@ -251,7 +251,7 @@
    "inicio": "2026-10-29T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "Site do Flamengo",
-   "escudoAdv": "escudos/futebol-vasco.png"
+   "escudoAdv": "escudos/futebol-vasco-5dbf77.webp"
   },
   {
    "id": "m-187b54a54e",
@@ -308,7 +308,7 @@
    "inicio": "2026-11-03T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "CBF",
-   "escudoAdv": "escudos/futebol-bahia.png"
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "m-4d00e876d1",
@@ -327,7 +327,7 @@
    "inicio": "2026-11-04T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "Fim de Jogo",
-   "escudoAdv": "escudos/futebol-gremio.png"
+   "escudoAdv": "escudos/futebol-gremio-ba2f40.webp"
   },
   {
    "id": "m-fe40430b2b",
@@ -407,7 +407,7 @@
    "semHora": false,
    "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
    "fonteInfo": "Site do Flamengo",
-   "escudoAdv": "escudos/futebol-bahia.png"
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "m-056473b820",
@@ -426,38 +426,23 @@
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   },
   {
-   "id": "m-59ef70123f",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": null,
-   "local": "",
-   "competicao": "Copa do Brasil Feminina – final (ida)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "A definir",
-   "inicio": "2026-11-11T00:00:00-03:00",
-   "semHora": true,
-   "observacao": "Adversário sai de Internacional x Bragantino (8/11). Local e horário a definir",
-   "fonteInfo": "CBF"
-  },
-  {
-   "id": "m-aaf0f0cfd8",
+   "id": "site-volei-feminino-2026-11-12-fluminense",
+   "modalidade": "volei-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Superliga Feminina",
+   "inicio": "2026-11-12T21:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [
     "SporTV 2"
    ],
    "placar": null,
    "status": "agendado",
-   "mandante": true,
-   "local": "Maracanãzinho, Rio de Janeiro",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
-   "modalidade": "volei-feminino",
-   "adversario": "Fluminense",
-   "inicio": "2026-11-12T21:00:00-03:00",
-   "semHora": false,
-   "fonteInfo": "Olympics.com",
-   "escudoAdv": "escudos/volei-fluminense.png"
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611",
+   "escudoAdv": "escudos/volei-fluminense-9265d1.png"
   },
   {
    "id": "m-9067298e6b",
@@ -476,6 +461,22 @@
    "escudoAdv": "escudos/basquete-paisas.png"
   },
   {
+   "id": "site-futebol-feminino-2026-11-14-vasco-da-gama",
+   "modalidade": "futebol-feminino",
+   "adversario": "Vasco da Gama",
+   "competicao": "Campeonato Carioca Feminino",
+   "inicio": "2026-11-14T15:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Nivaldo Pereira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
    "id": "m-70f8b20602",
    "transmissao": [],
    "placar": null,
@@ -491,22 +492,6 @@
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "LNB",
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
-  },
-  {
-   "id": "m-c09dbc16af",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": null,
-   "local": "",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "A definir",
-   "inicio": "2026-11-15T00:00:00-03:00",
-   "semHora": true,
-   "observacao": "Adversário sai de Internacional x Bragantino (8/11). Local e horário a definir",
-   "fonteInfo": "CBF"
   },
   {
    "id": "m-a81a57701d",
@@ -546,38 +531,54 @@
    "fonteInfo": "CBJ"
   },
   {
-   "id": "m-bbebcb469d",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": false,
-   "local": "Bauru (SP)",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
+   "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
    "modalidade": "volei-feminino",
    "adversario": "Sesi Vôlei Bauru",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-11-17T21:00:00-03:00",
    "semHora": false,
-   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
-   "fonteInfo": "Olympics.com",
-   "escudoAdv": "escudos/volei-sesi-volei-bauru-bafe0f.png"
-  },
-  {
-   "id": "m-4da123786c",
+   "local": "Bauru (SP)",
+   "mandante": false,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
+   "escudoAdv": "escudos/volei-sesi-volei-bauru-c39437.webp"
+  },
+  {
+   "id": "site-futebol-feminino-2026-11-18-fluminense",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Campeonato Carioca Feminino",
+   "inicio": "2026-11-18T15:00:00-03:00",
+   "semHora": false,
+   "local": "João Saldanha",
    "mandante": true,
-   "local": "Maracanã, Rio de Janeiro",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+  },
+  {
+   "id": "site-futebol-masculino-2026-11-18-athletico-paranaense",
    "modalidade": "futebol-masculino",
    "adversario": "Athletico-PR",
+   "competicao": "Brasileirão Série A",
    "inicio": "2026-11-18T20:30:00-03:00",
    "semHora": false,
-   "observacao": "Horário a confirmar: uma fonte cita 15h",
+   "local": "Maracanã, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
-   "escudoAdv": "escudos/futebol-athletico-pr.png"
+   "observacao": "Horário a confirmar: uma fonte cita 15h",
+   "escudoAdv": "escudos/futebol-athletico-pr-59ce02.webp"
   },
   {
    "id": "m-477a722ab0",
@@ -597,20 +598,20 @@
    "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
   },
   {
-   "id": "m-aaebbaf32e",
+   "id": "site-futebol-masculino-2026-11-21-palmeiras",
+   "modalidade": "futebol-masculino",
+   "adversario": "Palmeiras",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-11-21T16:30:00-03:00",
+   "semHora": false,
+   "local": "Nubank Parque, São Paulo",
+   "mandante": false,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "mandante": false,
-   "local": "Nubank Parque, São Paulo",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Palmeiras",
-   "inicio": "2026-11-21T16:30:00-03:00",
-   "semHora": false,
-   "fonteInfo": "Diário do Rio",
-   "escudoAdv": "escudos/futebol-palmeiras.png"
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/futebol-palmeiras-26c301.png"
   },
   {
    "id": "m-6bc47cc42d",
@@ -630,38 +631,38 @@
    "escudoAdv": "escudos/basquete-basquete-cearense-8b0fd2.png"
   },
   {
-   "id": "m-82b932583f",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": true,
-   "local": "",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
+   "id": "site-volei-feminino-2026-11-23-osasco-sao-cristovao-saude",
    "modalidade": "volei-feminino",
    "adversario": "Osasco",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-11-23T21:00:00-03:00",
    "semHora": false,
-   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
-   "fonteInfo": "Olympics.com",
-   "escudoAdv": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
-  },
-  {
-   "id": "m-cb84f57f8a",
+   "local": "Maracanãzinho (RJ)",
+   "mandante": true,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "mandante": false,
-   "local": "Couto Pereira, Curitiba",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
+   "escudoAdv": "escudos/volei-osasco-83684f.png"
+  },
+  {
+   "id": "site-futebol-masculino-2026-11-29-coritiba",
    "modalidade": "futebol-masculino",
    "adversario": "Coritiba",
+   "competicao": "Brasileirão Série A",
    "inicio": "2026-11-29T16:00:00-03:00",
    "semHora": false,
+   "local": "Couto Pereira, Curitiba",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
    "observacao": "Data definida pela CBF em 7/11 (antes se falava em 27/11)",
-   "fonteInfo": "Diário do Rio",
-   "escudoAdv": "escudos/futebol-coritiba.png"
+   "escudoAdv": "escudos/futebol-coritiba-2c60dd.png"
   },
   {
    "id": "e-f3a32d5abf",
@@ -687,21 +688,85 @@
    "fonteInfo": "CBDA"
   },
   {
-   "id": "m-5a19b75bab",
+   "id": "site-futebol-masculino-2026-12-02-chapecoense",
+   "modalidade": "futebol-masculino",
+   "adversario": "Chapecoense",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-12-02T21:30:00-03:00",
+   "semHora": false,
+   "local": "Maracanã, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "mandante": true,
-   "local": "Maracanã, Rio de Janeiro",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Chapecoense",
-   "inicio": "2026-12-02T21:30:00-03:00",
-   "semHora": false,
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
    "observacao": "Última rodada do Brasileirão",
-   "fonteInfo": "Diário do Rio",
-   "escudoAdv": "escudos/futebol-chapecoense.png"
+   "escudoAdv": "escudos/futebol-chapecoense-2cccc2.png"
+  },
+  {
+   "id": "site-volei-feminino-2026-12-03-pinheiros",
+   "modalidade": "volei-feminino",
+   "adversario": "Pinheiros",
+   "competicao": "Superliga",
+   "inicio": "2026-12-03T18:30:00-03:00",
+   "semHora": false,
+   "local": "Tijuca (RJ)",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
+  },
+  {
+   "id": "site-volei-feminino-2026-12-08-minas",
+   "modalidade": "volei-feminino",
+   "adversario": "Minas",
+   "competicao": "Superliga",
+   "inicio": "2026-12-08T21:00:00-03:00",
+   "semHora": false,
+   "local": "Belo Horizonte",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/volei-minas-21559f.svg"
+  },
+  {
+   "id": "site-volei-feminino-2026-12-14-dentil-praia-clube",
+   "modalidade": "volei-feminino",
+   "adversario": "Dentil Praia Clube",
+   "competicao": "Superliga",
+   "inicio": "2026-12-14T21:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca (RJ)",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/volei-dentil-praia-clube-7bfdf3.png"
+  },
+  {
+   "id": "site-volei-feminino-2026-12-19-abel-moda-volei-brusque",
+   "modalidade": "volei-feminino",
+   "adversario": "Abel Moda Vôlei (Brusque)",
+   "competicao": "Superliga",
+   "inicio": "2026-12-19T18:30:00-03:00",
+   "semHora": false,
+   "local": "Brusque",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "escudoAdv": "escudos/volei-abel-moda-volei-brusque-181b0a.webp"
   }
  ]
 }

@@ -1,231 +1,232 @@
 {
- "atualizadoEm": "2026-11-08T14:54:04.498Z",
+ "atualizadoEm": "2026-11-08T14:59:35.421Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
    "nome": "Brasileirão Série A",
    "modalidade": "futebol-masculino",
-   "atualizado": "após a 34ª rodada (5/11)",
-   "fonte": "planilha",
+   "fonte": "automatica",
+   "fonteInfo": "Site do Flamengo",
+   "atualizado": "em 08/11/2026 (site do Flamengo)",
    "linhas": [
     {
      "pos": 1,
      "time": "Flamengo",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 23,
+     "e": 7,
+     "d": 4,
+     "sg": 42,
      "pts": 76
     },
     {
      "pos": 2,
      "time": "Palmeiras",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 21,
+     "e": 10,
+     "d": 3,
+     "sg": 39,
      "pts": 73,
-     "escudo": "escudos/futebol-palmeiras.png"
+     "escudo": "escudos/futebol-palmeiras-26c301.png"
     },
     {
      "pos": 3,
      "time": "Cruzeiro",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 18,
+     "e": 6,
+     "d": 10,
+     "sg": 7,
      "pts": 60,
-     "escudo": "escudos/futebol-cruzeiro.png"
+     "escudo": "escudos/futebol-cruzeiro-42d7c7.webp"
     },
     {
      "pos": 4,
      "time": "Fluminense",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 16,
+     "e": 9,
+     "d": 9,
+     "sg": 13,
      "pts": 57,
-     "escudo": "escudos/futebol-fluminense.png"
+     "escudo": "escudos/futebol-fluminense-9265d1.png"
     },
     {
      "pos": 5,
-     "time": "Athletico-PR",
+     "time": "Athletico PR",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 15,
+     "e": 9,
+     "d": 10,
+     "sg": 8,
      "pts": 54,
-     "escudo": "escudos/futebol-athletico-pr.png"
+     "escudo": "escudos/futebol-athletico-pr-59ce02.webp"
     },
     {
      "pos": 6,
      "time": "Bahia",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 14,
+     "e": 11,
+     "d": 9,
+     "sg": 5,
      "pts": 53,
-     "escudo": "escudos/futebol-bahia.png"
+     "escudo": "escudos/futebol-bahia-9eba69.png"
     },
     {
      "pos": 7,
-     "time": "Atlético-MG",
+     "time": "Atlético MG",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 14,
+     "e": 8,
+     "d": 12,
+     "sg": 4,
      "pts": 50,
-     "escudo": "escudos/futebol-atletico-mg.png"
+     "escudo": "escudos/futebol-atletico-mg-a62640.png"
     },
     {
      "pos": 8,
      "time": "Bragantino",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 13,
+     "e": 8,
+     "d": 13,
+     "sg": 5,
      "pts": 47,
-     "escudo": "escudos/futebol-bragantino.png"
+     "escudo": "escudos/futebol-bragantino-0801e7.png"
     },
     {
      "pos": 9,
      "time": "Santos",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 12,
+     "e": 11,
+     "d": 11,
+     "sg": 1,
      "pts": 47,
-     "escudo": "escudos/futebol-santos.png"
+     "escudo": "escudos/futebol-santos-7effcf.webp"
     },
     {
      "pos": 10,
      "time": "São Paulo",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 12,
+     "e": 8,
+     "d": 14,
+     "sg": 0,
      "pts": 44,
-     "escudo": "escudos/futebol-sao-paulo.png"
+     "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
     },
     {
      "pos": 11,
      "time": "Botafogo",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 11,
+     "e": 9,
+     "d": 14,
+     "sg": -7,
      "pts": 42,
-     "escudo": "escudos/futebol-botafogo.png"
+     "escudo": "escudos/futebol-botafogo-db3e70.png"
     },
     {
      "pos": 12,
      "time": "Coritiba",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 11,
+     "e": 9,
+     "d": 14,
+     "sg": -11,
      "pts": 42,
-     "escudo": "escudos/futebol-coritiba.png"
+     "escudo": "escudos/futebol-coritiba-2c60dd.png"
     },
     {
      "pos": 13,
      "time": "Vasco",
      "j": 33,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 11,
+     "e": 8,
+     "d": 14,
+     "sg": -7,
      "pts": 41,
-     "escudo": "escudos/futebol-vasco.png"
+     "escudo": "escudos/futebol-vasco-5dbf77.webp"
     },
     {
      "pos": 14,
      "time": "Mirassol",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 10,
+     "e": 10,
+     "d": 14,
+     "sg": -9,
      "pts": 40,
-     "escudo": "escudos/futebol-mirassol.png"
+     "escudo": "escudos/futebol-mirassol-74dc30.webp"
     },
     {
      "pos": 15,
      "time": "Vitória",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 10,
+     "e": 8,
+     "d": 16,
+     "sg": -16,
      "pts": 38,
-     "escudo": "escudos/futebol-vitoria.png"
+     "escudo": "escudos/futebol-vitoria-a96951.png"
     },
     {
      "pos": 16,
      "time": "Internacional",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 9,
+     "e": 11,
+     "d": 14,
+     "sg": -4,
      "pts": 38,
-     "escudo": "escudos/futebol-internacional.png"
+     "escudo": "escudos/futebol-internacional-a7b9ea.webp"
     },
     {
      "pos": 17,
      "time": "Corinthians",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 9,
+     "e": 10,
+     "d": 15,
+     "sg": -6,
      "pts": 37,
-     "escudo": "escudos/futebol-corinthians.png"
+     "escudo": "escudos/futebol-corinthians-3e414a.png"
     },
     {
      "pos": 18,
      "time": "Grêmio",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 9,
+     "e": 10,
+     "d": 15,
+     "sg": -9,
      "pts": 37,
-     "escudo": "escudos/futebol-gremio.png"
+     "escudo": "escudos/futebol-gremio-ba2f40.webp"
     },
     {
      "pos": 19,
      "time": "Remo",
      "j": 34,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 6,
+     "e": 11,
+     "d": 17,
+     "sg": -20,
      "pts": 29,
-     "escudo": "escudos/futebol-remo.png"
+     "escudo": "escudos/futebol-remo-d14164.webp"
     },
     {
      "pos": 20,
      "time": "Chapecoense",
      "j": 33,
-     "v": null,
-     "e": null,
-     "d": null,
-     "sg": null,
+     "v": 4,
+     "e": 9,
+     "d": 20,
+     "sg": -35,
      "pts": 21,
-     "escudo": "escudos/futebol-chapecoense.png"
+     "escudo": "escudos/futebol-chapecoense-2cccc2.png"
     }
    ]
   },
@@ -298,7 +299,7 @@
      "d": 2,
      "sg": null,
      "pts": 3,
-     "escudo": "escudos/volei-fluminense.png"
+     "escudo": "escudos/volei-fluminense-9265d1.png"
     },
     {
      "pos": 7,
