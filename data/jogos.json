@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T12:27:23.907Z",
+ "atualizadoEm": "2026-11-08T12:28:01.489Z",
  "exemplo": false,
  "avisos": [
   "Chave da API-Sports não configurada — usando só a planilha."
@@ -146,7 +146,7 @@
    "adversario": "Botafogo",
    "inicio": "2026-10-20T00:00:00-03:00",
    "semHora": true,
-   "escudoAdv": "escudos/basquete-botafogo.png"
+   "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
   },
   {
    "id": "m-327b159f7a",
@@ -362,7 +362,8 @@
    "adversario": "Pato Basquete",
    "inicio": "2026-11-07T19:00:00-03:00",
    "semHora": false,
-   "observacao": "Placar a confirmar: a matéria cita 80 a 66 e também 90 a 66"
+   "observacao": "Placar a confirmar: a matéria cita 80 a 66 e também 90 a 66",
+   "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
    "id": "m-13a4416f99",
@@ -425,7 +426,8 @@
    "adversario": "Unifacisa",
    "inicio": "2026-11-19T00:00:00-03:00",
    "semHora": true,
-   "observacao": "Horário ainda não divulgado"
+   "observacao": "Horário ainda não divulgado",
+   "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
   },
   {
    "id": "m-85a5adbc9b",
@@ -455,7 +457,8 @@
    "adversario": "Basquete Cearense",
    "inicio": "2026-11-22T00:00:00-03:00",
    "semHora": true,
-   "observacao": "Horário ainda não divulgado"
+   "observacao": "Horário ainda não divulgado",
+   "escudoAdv": "escudos/basquete-basquete-cearense-8b0fd2.png"
   },
   {
    "id": "m-57da9f5a4c",
