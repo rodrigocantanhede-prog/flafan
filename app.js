@@ -271,7 +271,7 @@ function cartao(j, destaque = false) {
     </header>
     ${j.competicao ? `<div class="competicao">${esc(j.competicao)}</div>` : ''}
     <div class="confronto">${lado(esq, 'esq')}<div class="centro">${centro}</div>${lado(dir, 'dir')}</div>
-    ${destaque && !j.semHora && !j.placar ? contagemCaixas(data) : ''}
+    ${destaque && !j.semHora && !j.placar && j.status !== 'adiado' && j.status !== 'cancelado' ? contagemCaixas(data) : ''}
     <div class="detalhes">
       ${j.local ? `<div class="linha">${icone('pin')}<span>${esc(j.local)}</span></div>` : ''}
       ${mostraOnde ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
@@ -411,8 +411,17 @@ function desenharTabela() {
 function tabelaDoJogo(j) {
   if (j.tabela) return estado.campeonatos.find((c) => c.nome === j.tabela) ?? null;
   const comp = semAc(j.competicao);
-  return estado.campeonatos.find((c) => c.modalidade === j.modalidade &&
-    semAc(c.nome).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !['serie', 'feminina', 'masculina', 'sub', 'feminino', 'copa'].includes(p)).some((p) => comp.includes(p)));
+  const cat = semAc(j.categoria ?? '').replace(/[^a-z0-9]+/g, ' ').trim(); // "sub 20" ou ""
+  let melhor = null, pontos = 0;
+  for (const c of estado.campeonatos) {
+    if (c.modalidade !== j.modalidade) continue;
+    const nome = semAc(c.nome).replace(/[^a-z0-9]+/g, ' ');
+    const catTabela = (nome.match(/sub \d+/) ?? [''])[0];
+    if (catTabela !== cat) continue; // Sub-17 não usa a tabela do Sub-20, nem o principal a da base
+    const n = nome.split(' ').filter((p) => p.length >= 3 && !['serie', 'feminina', 'masculina', 'sub', 'feminino', 'copa'].includes(p) && comp.includes(p)).length;
+    if (n > pontos) { melhor = c; pontos = n; }
+  }
+  return melhor;
 }
 
 // ---------- tela do jogo (toque no cartão) ----------
@@ -478,6 +487,7 @@ function desenhar() {
     return;
   }
   let html = '', diaAtual = '';
+  const iDestaque = estado.aba === 'proximos' ? lista.findIndex((j) => j.status !== 'adiado' && j.status !== 'cancelado') : -1;
   lista.forEach((j, i) => {
     const d = new Date(j.inicio);
     const rot = rotuloDia(d);
@@ -487,7 +497,7 @@ function desenhar() {
       if (estado.compacto) html += '<div class="painel-compacto">';
       diaAtual = rot;
     }
-    html += estado.compacto ? linhaCompacta(j) : cartao(j, estado.aba === 'proximos' && i === 0);
+    html += estado.compacto ? linhaCompacta(j) : cartao(j, i === iDestaque);
   });
   if (estado.compacto && diaAtual) html += '</div>';
   $('#lista').innerHTML = html;
@@ -625,7 +635,7 @@ async function carregar() {
 }
 montarAjustes();
 carregar();
-setInterval(() => { if (estado.carregado) desenhar(); }, 60e3); // atualiza a contagem regressiva
+setInterval(() => { if (estado.carregado && (estado.aba === 'proximos' || estado.aba === 'resultados') && !$('#detalhe').open) desenhar(); }, 60e3); // atualiza a contagem regressiva
 
 // Atualização do app: confere se há versão nova ao abrir e ao voltar para o app; quando chega, recarrega sozinho.
 if ('serviceWorker' in navigator) {

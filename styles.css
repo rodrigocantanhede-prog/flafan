@@ -150,7 +150,7 @@ button:focus-visible, a:focus-visible, select:focus-visible { outline: 2px solid
 
 /* ---------- abas ---------- */
 .abas {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px;
   margin: 14px 16px 12px; background: var(--cartao); padding: 4px; border-radius: 16px; border: 1px solid var(--borda);
 }
 .aba {
@@ -557,3 +557,7 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .folha .tabela-camp tr.eh-adv td { background: rgba(255,255,255,.06); }
 .folha .tabela-camp table.larga .t-pos, .folha .tabela-camp table.larga .t-time { background: #22171b; }
 .folha .tabela-camp table.larga tr.eh-fla td.t-pos, .folha .tabela-camp table.larga tr.eh-fla td.t-time { background: #33262a; }
+/* telas estreitas (iPhone SE/mini): as 4 abas cabem sem empurrar a última para fora */
+.aba { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 430px) { .aba { font-size: 14px; letter-spacing: -.01em; padding: 10px 2px; } }
+@media (max-width: 380px) { .aba { font-size: 12.5px; letter-spacing: -.01em; padding: 10px 1px; } .abas { margin-left: 12px; margin-right: 12px; } }

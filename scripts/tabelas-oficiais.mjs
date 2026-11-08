@@ -7,7 +7,7 @@ const UA = 'FlaFan/1.0 (app de torcedor; github.com/rodrigocantanhede-prog/flafa
 const decodificar = (s) => String(s ?? '')
   .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
   .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n))).replace(/\s+/g, ' ').trim();
-const num = (s) => { const n = Number(String(s ?? '').replace(',', '.')); return Number.isFinite(n) ? n : null; };
+const num = (s) => { const t = String(s ?? '').replace(',', '.').trim(); if (!t) return null; const n = Number(t); return Number.isFinite(n) ? n : null; };
 
 // "SESI VOLEI BAURU" -> "Sesi Volei Bauru" (só quando não há nome melhor na planilha)
 const PEQUENAS = new Set(['de', 'da', 'do', 'das', 'dos', 'e']);

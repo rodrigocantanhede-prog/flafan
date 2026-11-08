@@ -64,7 +64,7 @@ export function lerProximosJogos(html, pagina, hoje = new Date()) {
       inicio: data.iso, semHora: !data.temHora, local: attr(abre, 'data-analytics-match-venue'),
       mandante: iFla === 0, transmissao: [], placar: null,
       status: estado.includes('live') || estado.includes('vivo') ? 'ao-vivo' : estado.includes('finish') || estado.includes('encerr') ? 'encerrado' : 'agendado',
-      fonte: 'automatica', fonteInfo: 'Site do Flamengo', escudoAdvUrl: adv.escudo || undefined,
+      fonte: 'automatica', fonteInfo: 'Site do Flamengo', escudoAdvUrl: adv.escudo || undefined, pagina,
     };
     if (categoria) jogo.categoria = categoria;
     if (ingresso) jogo.ingresso = decodificar(ingresso);
@@ -100,13 +100,13 @@ async function baixar(caminho) {
 
 // cfg: { ativo, paginas: ['futebol', ...], classificacao: [{ pagina, nome, modalidade }] }
 export async function lerSiteFlamengo(cfg, log = () => {}) {
-  const jogos = [], tabelas = [], problemas = [];
+  const jogos = [], tabelas = [], problemas = [], paginasComFalha = [];
   for (const pagina of cfg?.paginas ?? []) {
     try {
       const lidos = lerProximosJogos(await baixar(`/${pagina}/proximos-jogos`), pagina);
       jogos.push(...lidos);
       log(`Site do Flamengo: ${pagina} — ${lidos.length} próximos jogos.`);
-    } catch (e) { problemas.push(`Site do Flamengo (${pagina}): ${e.message}`); }
+    } catch (e) { problemas.push(`Site do Flamengo (${pagina}): ${e.message}`); paginasComFalha.push(pagina); }
     await new Promise((r) => setTimeout(r, 1000));
   }
   for (const t of cfg?.classificacao ?? []) {
@@ -119,5 +119,5 @@ export async function lerSiteFlamengo(cfg, log = () => {}) {
       } else problemas.push(`Site do Flamengo: tabela ${t.nome} vazia ou incompleta — mantive a da planilha.`);
     } catch (e) { problemas.push(`Site do Flamengo (tabela ${t.nome}): ${e.message}`); }
   }
-  return { jogos, tabelas, problemas };
+  return { jogos, tabelas, problemas, paginasComFalha };
 }

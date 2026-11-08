@@ -78,7 +78,7 @@ export function lerJogosDoTime(html, c, agora = Date.now(), desde = null) {
       id: `cbf-${o.id_jogo}`, modalidade: c.modalidade, adversario: limparNome(adv.nome), competicao: c.nome,
       inicio: ini.iso, semHora: !ini.temHora, local: String(o.local ?? '').replace(/\s+/g, ' ').trim(),
       mandante: flaCasa, transmissao: [], placar, status: placar ? 'encerrado' : 'agendado',
-      fonte: 'automatica', fonteInfo: 'CBF', escudoReserva: escudoCbf(adv.url_escudo),
+      fonte: 'automatica', fonteInfo: 'CBF', campeonatoCbf: `${c.campeonato}/${c.categoria}`, escudoReserva: escudoCbf(adv.url_escudo),
       link: `${BASE}/jogos/${c.campeonato}/${c.categoria}/${ini.iso.slice(0, 4)}/${slug(o.mandante.nome)}-x-${slug(o.visitante.nome)}/${o.id_jogo}`,
     };
     if (c.categoriaApp) jogo.categoria = c.categoriaApp;
@@ -125,7 +125,7 @@ const pausa = () => new Promise((r) => setTimeout(r, 1200));
 
 // cfg: { ativo, ano, desde, campeonatos: [{ campeonato, categoria, nome, modalidade, categoriaApp?, jogos?, tabela? }] }
 export async function lerCbf(cfg, log = () => {}) {
-  const jogos = [], tabelas = [], problemas = [];
+  const jogos = [], tabelas = [], problemas = [], campeonatosComFalha = [];
   const ano = cfg?.ano ?? new Date().getFullYear();
   const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   for (const c of cfg?.campeonatos ?? []) {
@@ -135,7 +135,7 @@ export async function lerCbf(cfg, log = () => {}) {
         const lidos = lerJogosDoTime(await baixar(`/times/${rota}/${ID_FLAMENGO}`), c, Date.now(), cfg.desde);
         jogos.push(...lidos);
         log(`CBF: ${c.nome} — ${lidos.length} jogos do Flamengo.`);
-      } catch (e) { problemas.push(`CBF (${c.nome}, jogos): ${e.message}`); }
+      } catch (e) { problemas.push(`CBF (${c.nome}, jogos): ${e.message}`); campeonatosComFalha.push(`${c.campeonato}/${c.categoria}`); }
       await pausa();
     }
     if (c.tabela) {
@@ -156,9 +156,9 @@ export async function lerCbf(cfg, log = () => {}) {
           achou = true;
           break;
         }
-        if (!achou) problemas.push(`CBF: tabela ${c.tabela} sem fase por pontos com o Flamengo — mantive a anterior.`);
+        if (!achou) problemas.push(`CBF: tabela ${c.tabela} sem fase por pontos com o Flamengo — mantive a publicada antes.`);
       } catch (e) { problemas.push(`CBF (tabela ${c.tabela}): ${e.message}`); }
     }
   }
-  return { jogos, tabelas, problemas };
+  return { jogos, tabelas, problemas, campeonatosComFalha };
 }

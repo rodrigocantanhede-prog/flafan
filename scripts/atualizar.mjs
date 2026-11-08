@@ -65,6 +65,8 @@ export function normalizarModalidade(txt) {
   if (t.includes('futsal')) return 'futsal';
   if (t.includes('basq')) return 'basquete';
   if (t.includes('volei')) return t.includes('fem') ? 'volei-feminino' : 'volei-masculino';
+  // feminino vem antes da base: "Futebol feminino Sub-20" é futebol feminino (categoria Sub-20), não a base masculina
+  if (t.includes('fem') && (t.includes('futebol') || /sub[- ]?\d+/.test(t))) return 'futebol-feminino';
   if (t.includes('base') || /sub[- ]?\d+/.test(t)) return 'base';
   if (t.includes('futebol') || t === 'futebol') return t.includes('fem') ? 'futebol-feminino' : 'futebol-masculino';
   if (/(olimp|remo|natac|ginast|judo|atlet|nado|polo)/.test(t)) return 'olimpicos';
@@ -188,15 +190,19 @@ export function mesclar(automaticos, linhas) {
       }
       // mesmo jogo já veio da fonte automática? (mesma modalidade no mesmo dia) -> junta em vez de duplicar
       const dia = inicio.slice(0, 10);
-      let igual = [...porId.values()].find((j) => j.fonte?.startsWith('automatica') && j.modalidade === modalidade && diaBrasilia(j.inicio) === dia);
-      // "remover" só apaga um jogo automático se o adversário também for o mesmo (não apaga jogo de outro campeonato no mesmo dia)
-      if (igual && acao === 'remover' && !mesmoTime(l.adversario, igual.adversario)) igual = null;
       const categoria = (limpar(l.modalidade).match(/sub[- ]?(\d+)/i) ?? [])[1] ?? '';
+      // candidatos: automáticos da mesma modalidade, categoria (Sub-20, Sub-17...) e dia; prefere o do mesmo adversário
+      const cands = [...porId.values()].filter((j) => String(j.fonte ?? '').startsWith('automatica') && j.modalidade === modalidade &&
+        diaBrasilia(j.inicio) === dia && (j.categoria ?? '') === (categoria ? `Sub-${categoria}` : ''));
+      let igual = cands.find((j) => mesmoTime(l.adversario, j.adversario) || mesmoTime(j.adversario, l.adversario)) ?? null;
+      // sem adversário igual: só junta se houver um único jogo possível (e "remover" nunca apaga jogo de outro adversário)
+      const livres = cands.filter((j) => !j.daPlanilha);
+      if (!igual && livres.length === 1 && acao !== 'remover') igual = livres[0];
       id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${categoria}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
     }
     if (acao === 'remover') { porId.delete(id); continue; }
     const base = porId.get(id) ?? { id, transmissao: [], placar: null, status: 'agendado', mandante: null, local: '', competicao: '', fonte: 'manual' };
-    const novo = { ...base };
+    const novo = { ...base, daPlanilha: true };
     if (modalidade) novo.modalidade = modalidade;
     const cat = limpar(l.modalidade).match(/sub[- ]?(\d+)/i);
     if (cat) novo.categoria = `Sub-${cat[1]}`;
@@ -223,7 +229,7 @@ export function mesclar(automaticos, linhas) {
     }
     porId.set(id, novo);
   }
-  const jogos = [...porId.values()].sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
+  const jogos = [...porId.values()].map(({ daPlanilha, ...j }) => j).sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
   return { jogos, avisos };
 }
 
@@ -458,6 +464,7 @@ export function juntarCbf(automaticos, cbf) {
     if (c.observacao && !igual.observacao) igual.observacao = c.observacao;
     for (const k of ['link', 'tabela', 'escudoReserva']) if (c[k] && !igual[k]) igual[k] = c[k];
     if (!igual.local && c.local) igual.local = c.local;
+    if (igual.semHora && !c.semHora) { igual.inicio = c.inicio; igual.semHora = false; } // o site não tinha o horário; a CBF tem
   }
   return saida;
 }
@@ -596,14 +603,18 @@ async function main() {
     const cacheSite = await lerJson(cacheSiteArq, []);
     const site = await lerSiteFlamengo(cfg.siteFlamengo, log);
     problemas.push(...site.problemas);
-    const falhouTudo = site.problemas.filter((p) => !p.includes('tabela')).length >= (cfg.siteFlamengo.paginas?.length ?? 0);
+    const falhas = new Set(site.paginasComFalha ?? []);
     let jogosSite;
-    if (falhouTudo) jogosSite = cacheSite; // site fora do ar: usa a última leitura boa
+    if (falhas.size >= (cfg.siteFlamengo.paginas?.length ?? 0)) jogosSite = cacheSite; // site fora do ar: usa a última leitura boa
     else {
-      // mantém os jogos que já passaram (o site tira da lista depois do jogo) e troca os futuros pela leitura nova
+      // mantém os jogos que já passaram (o site tira da lista depois do jogo) e troca os futuros pela leitura nova;
+      // de uma página que falhou desta vez, mantém todos os jogos guardados
       const ids = new Set(site.jogos.map((j) => j.id));
-      const passados = cacheSite.filter((j) => !ids.has(j.id) && new Date(j.inicio).getTime() < Date.now() + 3 * 3600e3);
-      jogosSite = [...site.jogos, ...passados];
+      const chave = (j) => `${j.modalidade}|${j.categoria ?? ''}|${slug(j.adversario)}`;
+      const remarcados = new Set(site.jogos.map(chave)); // mesmo jogo com data nova: some a data antiga
+      const guardados = cacheSite.filter((j) => !ids.has(j.id) && (falhas.has(j.pagina) ||
+        (new Date(j.inicio).getTime() < Date.now() + 3 * 3600e3 && !(remarcados.has(chave(j)) && !j.placar))));
+      jogosSite = [...site.jogos, ...guardados];
       await writeFile(cacheSiteArq, JSON.stringify(jogosSite, null, 1));
     }
     automaticos = [...automaticos.filter((j) => !String(j.id).startsWith('site-')), ...jogosSite.map((j) => ({ ...j }))];
@@ -615,11 +626,11 @@ async function main() {
     const cacheCbfArq = path.join(DATA, 'cache-cbf.json');
     const r = await lerCbf(cfg.cbf, log);
     problemas.push(...r.problemas);
-    const comJogos = (cfg.cbf.campeonatos ?? []).filter((c) => c.jogos !== false).length;
-    const falhas = r.problemas.filter((p) => p.includes(', jogos)')).length;
-    let jogosCbf = r.jogos;
-    if (comJogos && falhas >= comJogos) jogosCbf = await lerJson(cacheCbfArq, []); // CBF fora do ar: usa a última leitura boa
-    else await writeFile(cacheCbfArq, JSON.stringify(jogosCbf, null, 1));
+    // campeonato que falhou desta vez: mantém os jogos dele guardados da última leitura boa
+    const falhas = new Set(r.campeonatosComFalha ?? []);
+    const cacheCbf = await lerJson(cacheCbfArq, []);
+    const jogosCbf = [...r.jogos, ...cacheCbf.filter((j) => falhas.has(j.campeonatoCbf))];
+    if (r.jogos.length || !falhas.size) await writeFile(cacheCbfArq, JSON.stringify(jogosCbf, null, 1));
     automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('cbf-')), jogosCbf);
     campeonatosApi.push(...r.tabelas);
   }
@@ -678,6 +689,10 @@ async function main() {
     problemas.push(`Falha ao ler a classificação da planilha (${e.message}) — mantive as tabelas anteriores.`);
   }
   for (const c of campeonatosApi) campeonatos = [...campeonatos.filter((x) => x.nome !== c.nome), juntarComPlanilha(c, campeonatos.find((x) => x.nome === c.nome))];
+  // tabela automática que falhou desta vez (site fora do ar): continua a versão publicada antes, em vez de sumir
+  for (const c of tabelasAnteriores?.campeonatos ?? []) {
+    if (c.fonte === 'automatica' && !campeonatos.some((x) => x.nome === c.nome)) campeonatos.push(c);
+  }
   // mantém a ordem: Brasileirão primeiro, depois os outros
   campeonatos.sort((a, b) => (/brasileir/i.test(b.nome) ? 1 : 0) - (/brasileir/i.test(a.nome) ? 1 : 0));
 

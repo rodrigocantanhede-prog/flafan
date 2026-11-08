@@ -259,3 +259,19 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(junto[0].ingresso, 'https://x'); assert.ok(junto[0].link.includes('cbf.com.br'));
   console.log('✓ Leitura da CBF ok');
 }
+{
+  // revisão: base Sub-17 e Sub-20 no mesmo dia não se misturam; "remover" acha o jogo certo; feminino Sub-20 não vira base
+  assert.equal(normalizarModalidade('Futebol feminino Sub-20'), 'futebol-feminino');
+  assert.equal(normalizarModalidade('Futebol sub-17'), 'base');
+  const auto7 = [
+    { id: 'site-base-a', modalidade: 'base', categoria: 'Sub-17', adversario: 'Vasco', inicio: '2026-11-20T10:00:00-03:00', transmissao: [], status: 'agendado', fonte: 'automatica' },
+    { id: 'site-base-b', modalidade: 'base', categoria: 'Sub-20', adversario: 'Palmeiras', inicio: '2026-11-20T15:00:00-03:00', transmissao: [], status: 'agendado', fonte: 'automatica' }];
+  const { jogos: j7 } = mesclar(auto7, parseCsv(`id,modalidade,adversario,data,onde_assistir\n,Futebol sub-20,Palmeiras,20/11/2026,SporTV`));
+  assert.equal(j7.length, 2);
+  assert.equal(j7.find((j) => j.adversario === 'Vasco').transmissao.length, 0, 'Sub-17 intacto');
+  assert.equal(j7.find((j) => j.adversario === 'Palmeiras').transmissao[0].nome ?? j7.find((j) => j.adversario === 'Palmeiras').transmissao[0], 'SporTV');
+  assert.ok(!('daPlanilha' in j7[0]));
+  const { jogos: j8 } = mesclar(auto7, parseCsv(`id,modalidade,adversario,data,acao\n,Futebol sub-20,Palmeiras,20/11/2026,remover`));
+  assert.deepEqual(j8.map((j) => j.adversario), ['Vasco'], 'remover apaga o jogo certo');
+  console.log('✓ Correções da revisão ok');
+}
