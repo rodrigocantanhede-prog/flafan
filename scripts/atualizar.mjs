@@ -340,7 +340,7 @@ async function baixarImagem(url, base) {
   for (const ext of ['png', 'svg', 'jpg', 'webp']) {
     if (existsSync(path.join(ESCUDOS, `${base}.${ext}`))) return `escudos/${base}.${ext}`;
   }
-  const r = await fetch(url);
+  const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; FlaFan/1.0; +https://github.com/rodrigocantanhede-prog/flafan)', accept: 'image/avif,image/webp,image/png,image/*;q=0.8' }, signal: AbortSignal.timeout(20000) });
   const tipo = r.headers.get('content-type') || '';
   if (!r.ok || !tipo.startsWith('image/')) throw new Error(`imagem indisponível (${r.status})`);
   const ext = tipo.includes('svg') ? 'svg' : tipo.includes('jpeg') ? 'jpg' : tipo.includes('webp') ? 'webp' : 'png';
@@ -421,7 +421,7 @@ export async function resolverEscudos(itens, chave, problemas) {
         }
       }
     } catch (e) {
-      if (!(chaveCache in cache)) problemas.push(`Escudo de ${j.adversario}: ${e.message}`);
+      if (!(chaveCache in cache) || url) problemas.push(`Escudo de ${j.adversario}: ${e.message}${url ? ` (${url.slice(0, 120)})` : ''}`);
       if (!cache[chaveCache]) { cache[chaveCache] = null; cache[`${chaveCache}|tentou`] = Date.now(); }
     }
     if (cache[chaveCache]) j.escudoAdv = cache[chaveCache];
