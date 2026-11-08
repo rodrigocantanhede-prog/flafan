@@ -672,3 +672,31 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
   box-shadow: 0 -10px 40px rgba(0,0,0,.35);
 }
 .painel[open] .painel-conteudo { animation: subir .28s ease-out; }
+/* topo com 4 botões: o nome nunca fica por baixo dos botões */
+.marca-bloco { min-width: 0; flex: 1 1 auto; overflow: hidden; }
+.marca-sub { overflow: hidden; text-overflow: ellipsis; }
+.topo-botoes { flex: none; }
+@media (max-width: 430px) {
+  .topo-botoes { gap: 5px; }
+  .topo-botoes .btn-icone { width: 36px; height: 36px; border-radius: 12px; }
+  .topo-botoes .btn-icone svg { width: 20px; height: 20px; }
+  .marca-sub { font-size: 11px; letter-spacing: 0; }
+}
+@media (max-width: 380px) {
+  .topo-botoes { gap: 4px; }
+  .topo-botoes .btn-icone { width: 33px; height: 33px; border-radius: 11px; }
+  .topo-botoes .btn-icone svg { width: 18px; height: 18px; }
+  .marca-sub { font-size: 10px; }
+}
+@media (max-width: 400px) {
+  .topo-botoes { gap: 4px; }
+  .topo-botoes .btn-icone { width: 33px; height: 33px; border-radius: 11px; }
+  .topo-botoes .btn-icone svg { width: 18px; height: 18px; }
+  .marca-sub { font-size: 10.5px; }
+}
+@media (max-width: 365px) {
+  .topo-icone { width: 34px; height: 34px; }
+  .topo { gap: 8px; }
+  .topo-botoes .btn-icone { width: 31px; height: 31px; }
+  .marca-sub { font-size: 9.5px; }
+}

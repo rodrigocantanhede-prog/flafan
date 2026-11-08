@@ -621,7 +621,7 @@ function avisar(texto) {
   const t = $('#toast'); t.textContent = texto; t.hidden = false;
   clearTimeout(avisar.tempo); avisar.tempo = setTimeout(() => { t.hidden = true; }, 2600);
 }
-$('#compartilhar').onclick = async () => {
+$('#compartilhar').onclick = $('#compartilhar-topo').onclick = async () => {
   const dados = { title: 'FlaFan', text: 'Todos os jogos do Mengão em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
   try {
     if (navigator.share) { await navigator.share(dados); return; }
