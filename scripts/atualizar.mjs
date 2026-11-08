@@ -436,7 +436,9 @@ async function descobrirLigas(cfgTabelas, chave, problemas) {
       const re = new RegExp(t.busca, 'i');
       const liga = lista.map((x) => x.league ? { ...x.league, seasons: x.seasons } : x).find((x) => re.test(x.name));
       if (!liga) { problemas.push(`Não achei a liga "${t.nome}" na API-Sports.`); continue; }
-      const temporadas = (liga.seasons ?? []).map((x) => x.season ?? x.year).filter(Boolean);
+      // a temporada mais recente (a lista da API nem sempre vem em ordem)
+      const temporadas = (liga.seasons ?? []).map((x) => x.season ?? x.year).filter(Boolean)
+        .sort((a, b) => parseInt(String(a), 10) - parseInt(String(b), 10));
       const achado = { liga: liga.id, temporada: temporadas[temporadas.length - 1] ?? t.temporada };
       cache[t.nome] = achado;
       Object.assign(t, achado);
