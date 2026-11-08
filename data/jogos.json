@@ -1,8 +1,176 @@
 {
- "atualizadoEm": "2026-11-08T00:39:46.743Z",
+ "atualizadoEm": "2026-11-08T00:50:56.582Z",
  "exemplo": false,
- "avisos": [
-  "Chave da API-Sports não configurada — usando só a planilha."
- ],
- "jogos": []
+ "avisos": [],
+ "jogos": [
+  {
+   "id": "m-2032129893",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 91,
+    "adversario": 87
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Arena Nilson Nelson, Brasília",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Brasília",
+   "inicio": "2026-11-04T20:15:00-03:00",
+   "semHora": false
+  },
+  {
+   "id": "m-f03785d314",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Londrina (PR)",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Londrina",
+   "inicio": "2026-11-06T00:00:00-03:00",
+   "semHora": true
+  },
+  {
+   "id": "m-13a4416f99",
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Fluminense",
+   "inicio": "2026-11-12T21:00:00-03:00",
+   "semHora": false
+  },
+  {
+   "id": "m-f2d807f153",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Bauru (SP)",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Sesi Vôlei Bauru",
+   "inicio": "2026-11-17T21:00:00-03:00",
+   "semHora": false,
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)"
+  },
+  {
+   "id": "m-1bbe1f888d",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Athletico-PR",
+   "inicio": "2026-11-18T20:30:00-03:00",
+   "semHora": false,
+   "observacao": "Horário a confirmar: uma fonte cita 15h"
+  },
+  {
+   "id": "m-6def5ed9e1",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Campina Grande (PB)",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Unifacisa",
+   "inicio": "2026-11-19T00:00:00-03:00",
+   "semHora": true,
+   "observacao": "Horário ainda não divulgado"
+  },
+  {
+   "id": "m-85a5adbc9b",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Nubank Parque, São Paulo",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Palmeiras",
+   "inicio": "2026-11-21T16:30:00-03:00",
+   "semHora": false
+  },
+  {
+   "id": "m-7cd4bd6209",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Fortaleza (CE)",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Basquete Cearense",
+   "inicio": "2026-11-22T00:00:00-03:00",
+   "semHora": true,
+   "observacao": "Horário ainda não divulgado"
+  },
+  {
+   "id": "m-57da9f5a4c",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Osasco",
+   "inicio": "2026-11-23T21:00:00-03:00",
+   "semHora": false,
+   "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)"
+  },
+  {
+   "id": "m-87eb2e9e1e",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Couto Pereira, Curitiba",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Coritiba",
+   "inicio": "2026-11-29T16:00:00-03:00",
+   "semHora": false,
+   "observacao": "Data definida pela CBF em 7/11 (antes se falava em 27/11)"
+  },
+  {
+   "id": "m-ad5cbc04f6",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Chapecoense",
+   "inicio": "2026-12-02T21:30:00-03:00",
+   "semHora": false,
+   "observacao": "Última rodada do Brasileirão"
+  }
+ ]
 }
