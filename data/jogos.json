@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-08T18:04:12.081Z",
+ "atualizadoEm": "2026-11-08T18:07:03.237Z",
  "exemplo": false,
  "avisos": [
+  "CBF (Supercopa Feminina, jogos): /times/supercopa/feminino/2026/20016 respondeu 404",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -154,22 +155,23 @@
    "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
-   "id": "m-8d865e6f15",
+   "id": "cbf-835083",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Copa do Brasil Feminina – quartas (ida)",
+   "inicio": "2026-10-15T19:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "mandante": false,
    "transmissao": [],
    "placar": {
     "flamengo": 1,
     "adversario": 2
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "competicao": "Copa do Brasil Feminina – quartas (ida)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Fluminense",
-   "inicio": "2026-10-15T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "Agência Brasil",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-fluminense/835083",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
@@ -291,23 +293,24 @@
    "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
-   "id": "m-bced4da706",
+   "id": "cbf-835088",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Copa do Brasil Feminina – quartas (volta)",
+   "inicio": "2026-10-22T19:00:00-03:00",
+   "semHora": false,
+   "local": "Luso Brasileiro - Rio de Janeiro - RJ",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 1
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "",
-   "competicao": "Copa do Brasil Feminina – quartas (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Fluminense",
-   "inicio": "2026-10-22T00:00:00-03:00",
-   "semHora": true,
-   "observacao": "Classificado para a semifinal (4 x 3 no agregado)",
+   "fonte": "automatica+manual",
    "fonteInfo": "Agência Brasil",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/fluminense-x-flamengo/835088",
+   "observacao": "Classificado para a semifinal (4 x 3 no agregado)",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
@@ -430,25 +433,6 @@
    "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
   },
   {
-   "id": "m-8354cc1063",
-   "transmissao": [],
-   "placar": {
-    "flamengo": 0,
-    "adversario": 0
-   },
-   "status": "encerrado",
-   "mandante": false,
-   "local": "Arena Fonte Nova, Salvador",
-   "competicao": "Copa do Brasil Feminina – semifinal (ida)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Bahia",
-   "inicio": "2026-11-03T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "CBF",
-   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
-  },
-  {
    "id": "cbf-835459",
    "modalidade": "base",
    "adversario": "Operário",
@@ -467,6 +451,26 @@
    "fonteInfo": "CBF",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
    "categoria": "Sub-20"
+  },
+  {
+   "id": "cbf-835449",
+   "modalidade": "futebol-feminino",
+   "adversario": "Bahia",
+   "competicao": "Copa do Brasil Feminina – semifinal (ida)",
+   "inicio": "2026-11-03T19:00:00-03:00",
+   "semHora": false,
+   "local": "Arena Fonte Nova, Salvador",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/bahia-x-flamengo/835449",
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "cbf-832221",
@@ -550,23 +554,24 @@
    "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
-   "id": "m-9a7052947a",
+   "id": "cbf-835451",
+   "modalidade": "futebol-feminino",
+   "adversario": "Bahia",
+   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
+   "inicio": "2026-11-07T21:30:00-03:00",
+   "semHora": false,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 2
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "competicao": "Copa do Brasil Feminina – semifinal (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Bahia",
-   "inicio": "2026-11-07T21:30:00-03:00",
-   "semHora": false,
-   "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
+   "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
+   "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
