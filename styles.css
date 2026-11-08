@@ -701,3 +701,16 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
   .marca-sub { font-size: 9.5px; }
 }
 .lc-canais { display: inline; }
+
+/* ---------- fichas: a janela sempre cobre a tela inteira e o cartão mede a partir dela (mesma régua no iPhone) ---------- */
+.folha, .painel {
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+  width: 100vw; height: 100vh; height: 100dvh; max-height: none; min-height: 0;
+}
+.folha-conteudo, .painel-conteudo {
+  max-height: calc(100% - 50px - max(10px, env(safe-area-inset-bottom)));
+  flex-shrink: 1;
+}
+.folha-conteudo { min-height: calc(100% - 50px - max(10px, env(safe-area-inset-bottom))); }
+.painel-conteudo { min-height: 0; }
+html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enquanto a ficha está aberta */
