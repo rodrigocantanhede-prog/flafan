@@ -6,4 +6,102 @@ METHOD:PUBLISH
 X-WR-CALNAME:FlaFan — Categorias de base
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:cbf-835414@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261007T203000Z
+DTEND:20261007T223000Z
+SUMMARY:Flamengo x Corinthians (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Corinthians começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835397@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261008T193000Z
+DTEND:20261008T213000Z
+SUMMARY:Flamengo x Vasco da Gama (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vasco da Gama começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835418@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261013T203000Z
+DTEND:20261013T223000Z
+SUMMARY:Corinthians x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Parque São Jorge - Sao Paulo - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Corinthians x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835426@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261014T180000Z
+DTEND:20261014T200000Z
+SUMMARY:Flamengo x Criciúma (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:CT Ninho do Urubu - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Criciúma começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835434@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261020T223000Z
+DTEND:20261021T003000Z
+SUMMARY:Criciúma x Flamengo (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:Heriberto Hulse - Criciuma - SC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Criciúma x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835455@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261027T230000Z
+DTEND:20261028T010000Z
+SUMMARY:Operário x Flamengo (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:Germano Kruger - Ponta Grossa - PR
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Operário x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835459@flafan
+DTSTAMP:20261108T175923Z
+DTSTART:20261103T193000Z
+DTEND:20261103T213000Z
+SUMMARY:Flamengo x Operário (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Operário começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
 END:VCALENDAR

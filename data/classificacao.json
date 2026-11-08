@@ -1,13 +1,13 @@
 {
- "atualizadoEm": "2026-11-08T17:46:11.291Z",
+ "atualizadoEm": "2026-11-08T17:59:23.493Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
    "nome": "Brasileirão Série A",
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "atualizado": "em 08/11/2026 (site do Flamengo)",
+   "fonteInfo": "CBF",
+   "atualizado": "em 08/11/2026 (site da CBF)",
    "linhas": [
     {
      "pos": 1,
@@ -16,8 +16,18 @@
      "v": 23,
      "e": 7,
      "d": 4,
+     "gp": 71,
+     "gc": 29,
      "sg": 42,
-     "pts": 76
+     "pts": 76,
+     "ap": 74,
+     "ca": 69,
+     "cv": 7,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ]
     },
     {
      "pos": 2,
@@ -26,8 +36,18 @@
      "v": 21,
      "e": 10,
      "d": 3,
+     "gp": 62,
+     "gc": 23,
      "sg": 39,
      "pts": 73,
+     "ap": 71,
+     "ca": 72,
+     "cv": 7,
+     "ult": [
+      "V",
+      "E",
+      "V"
+     ],
      "escudo": "escudos/futebol-palmeiras-26c301.png"
     },
     {
@@ -37,8 +57,18 @@
      "v": 18,
      "e": 6,
      "d": 10,
+     "gp": 55,
+     "gc": 48,
      "sg": 7,
      "pts": 60,
+     "ap": 58,
+     "ca": 86,
+     "cv": 4,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ],
      "escudo": "escudos/futebol-cruzeiro-42d7c7.webp"
     },
     {
@@ -48,8 +78,18 @@
      "v": 16,
      "e": 9,
      "d": 9,
+     "gp": 55,
+     "gc": 42,
      "sg": 13,
      "pts": 57,
+     "ap": 55,
+     "ca": 93,
+     "cv": 4,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
      "escudo": "escudos/futebol-fluminense-9265d1.png"
     },
     {
@@ -59,8 +99,18 @@
      "v": 15,
      "e": 9,
      "d": 10,
+     "gp": 51,
+     "gc": 43,
      "sg": 8,
      "pts": 54,
+     "ap": 52,
+     "ca": 78,
+     "cv": 4,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ],
      "escudo": "escudos/futebol-athletico-pr-59ce02.webp"
     },
     {
@@ -70,8 +120,18 @@
      "v": 14,
      "e": 11,
      "d": 9,
+     "gp": 50,
+     "gc": 45,
      "sg": 5,
      "pts": 53,
+     "ap": 51,
+     "ca": 86,
+     "cv": 4,
+     "ult": [
+      "E",
+      "V",
+      "D"
+     ],
      "escudo": "escudos/futebol-bahia-9eba69.png"
     },
     {
@@ -81,8 +141,18 @@
      "v": 14,
      "e": 8,
      "d": 12,
+     "gp": 44,
+     "gc": 40,
      "sg": 4,
      "pts": 50,
+     "ap": 49,
+     "ca": 57,
+     "cv": 5,
+     "ult": [
+      "D",
+      "D",
+      "D"
+     ],
      "escudo": "escudos/futebol-atletico-mg-a62640.png"
     },
     {
@@ -92,8 +162,18 @@
      "v": 13,
      "e": 8,
      "d": 13,
+     "gp": 44,
+     "gc": 39,
      "sg": 5,
      "pts": 47,
+     "ap": 46,
+     "ca": 86,
+     "cv": 5,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
      "escudo": "escudos/futebol-bragantino-0801e7.png"
     },
     {
@@ -103,8 +183,18 @@
      "v": 12,
      "e": 11,
      "d": 11,
+     "gp": 50,
+     "gc": 49,
      "sg": 1,
      "pts": 47,
+     "ap": 46,
+     "ca": 101,
+     "cv": 10,
+     "ult": [
+      "E",
+      "E",
+      "D"
+     ],
      "escudo": "escudos/futebol-santos-7effcf.webp"
     },
     {
@@ -114,8 +204,18 @@
      "v": 12,
      "e": 8,
      "d": 14,
+     "gp": 39,
+     "gc": 39,
      "sg": 0,
      "pts": 44,
+     "ap": 43,
+     "ca": 78,
+     "cv": 4,
+     "ult": [
+      "E",
+      "D",
+      "E"
+     ],
      "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
     },
     {
@@ -125,8 +225,18 @@
      "v": 11,
      "e": 9,
      "d": 14,
+     "gp": 46,
+     "gc": 53,
      "sg": -7,
      "pts": 42,
+     "ap": 41,
+     "ca": 91,
+     "cv": 6,
+     "ult": [
+      "D",
+      "D",
+      "V"
+     ],
      "escudo": "escudos/futebol-botafogo-db3e70.png"
     },
     {
@@ -136,8 +246,18 @@
      "v": 11,
      "e": 9,
      "d": 14,
+     "gp": 40,
+     "gc": 51,
      "sg": -11,
      "pts": 42,
+     "ap": 41,
+     "ca": 65,
+     "cv": 10,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ],
      "escudo": "escudos/futebol-coritiba-2c60dd.png"
     },
     {
@@ -147,8 +267,18 @@
      "v": 11,
      "e": 8,
      "d": 14,
+     "gp": 43,
+     "gc": 50,
      "sg": -7,
      "pts": 41,
+     "ap": 41,
+     "ca": 64,
+     "cv": 3,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
      "escudo": "escudos/futebol-vasco-5dbf77.webp"
     },
     {
@@ -158,8 +288,18 @@
      "v": 10,
      "e": 10,
      "d": 14,
+     "gp": 39,
+     "gc": 48,
      "sg": -9,
      "pts": 40,
+     "ap": 39,
+     "ca": 87,
+     "cv": 9,
+     "ult": [
+      "E",
+      "D",
+      "V"
+     ],
      "escudo": "escudos/futebol-mirassol-74dc30.webp"
     },
     {
@@ -169,8 +309,18 @@
      "v": 10,
      "e": 8,
      "d": 16,
+     "gp": 35,
+     "gc": 51,
      "sg": -16,
      "pts": 38,
+     "ap": 37,
+     "ca": 77,
+     "cv": 4,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ],
      "escudo": "escudos/futebol-vitoria-a96951.png"
     },
     {
@@ -180,8 +330,18 @@
      "v": 9,
      "e": 11,
      "d": 14,
+     "gp": 38,
+     "gc": 42,
      "sg": -4,
      "pts": 38,
+     "ap": 37,
+     "ca": 97,
+     "cv": 10,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
      "escudo": "escudos/futebol-internacional-a7b9ea.webp"
     },
     {
@@ -191,8 +351,18 @@
      "v": 9,
      "e": 10,
      "d": 15,
+     "gp": 36,
+     "gc": 42,
      "sg": -6,
      "pts": 37,
+     "ap": 36,
+     "ca": 94,
+     "cv": 9,
+     "ult": [
+      "D",
+      "V",
+      "E"
+     ],
      "escudo": "escudos/futebol-corinthians-3e414a.png"
     },
     {
@@ -202,8 +372,18 @@
      "v": 9,
      "e": 10,
      "d": 15,
+     "gp": 38,
+     "gc": 47,
      "sg": -9,
      "pts": 37,
+     "ap": 36,
+     "ca": 90,
+     "cv": 9,
+     "ult": [
+      "V",
+      "V",
+      "D"
+     ],
      "escudo": "escudos/futebol-gremio-ba2f40.webp"
     },
     {
@@ -213,8 +393,18 @@
      "v": 6,
      "e": 11,
      "d": 17,
+     "gp": 37,
+     "gc": 57,
      "sg": -20,
      "pts": 29,
+     "ap": 28,
+     "ca": 68,
+     "cv": 7,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ],
      "escudo": "escudos/futebol-remo-d14164.webp"
     },
     {
@@ -224,9 +414,1339 @@
      "v": 4,
      "e": 9,
      "d": 20,
+     "gp": 33,
+     "gc": 68,
      "sg": -35,
      "pts": 21,
+     "ap": 21,
+     "ca": 76,
+     "cv": 4,
+     "ult": [
+      "V",
+      "D",
+      "D"
+     ],
      "escudo": "escudos/futebol-chapecoense-2cccc2.png"
+    }
+   ]
+  },
+  {
+   "nome": "Brasileiro Sub-20",
+   "modalidade": "base",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "atualizado": "em 08/11/2026 (site da CBF) — 1ª Fase · Grupo A",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Palmeiras",
+     "j": 19,
+     "v": 13,
+     "e": 5,
+     "d": 1,
+     "gp": 54,
+     "gc": 23,
+     "sg": 31,
+     "pts": 44,
+     "ap": 77,
+     "ca": 70,
+     "cv": 5,
+     "ult": [
+      "V",
+      "V",
+      "D"
+     ],
+     "escudo": "escudos/futebol-palmeiras-26c301.png"
+    },
+    {
+     "pos": 2,
+     "time": "Vasco da Gama",
+     "j": 19,
+     "v": 11,
+     "e": 3,
+     "d": 5,
+     "gp": 36,
+     "gc": 19,
+     "sg": 17,
+     "pts": 36,
+     "ap": 63,
+     "ca": 50,
+     "cv": 6,
+     "ult": [
+      "D",
+      "D",
+      "E"
+     ],
+     "escudo": "escudos/futebol-vasco-da-gama.png"
+    },
+    {
+     "pos": 3,
+     "time": "Botafogo",
+     "j": 19,
+     "v": 11,
+     "e": 3,
+     "d": 5,
+     "gp": 32,
+     "gc": 20,
+     "sg": 12,
+     "pts": 36,
+     "ap": 63,
+     "ca": 47,
+     "cv": 1,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-botafogo-db3e70.png"
+    },
+    {
+     "pos": 4,
+     "time": "Red Bull Bragantino",
+     "j": 19,
+     "v": 10,
+     "e": 4,
+     "d": 5,
+     "gp": 49,
+     "gc": 35,
+     "sg": 14,
+     "pts": 34,
+     "ap": 59,
+     "ca": 55,
+     "cv": 5,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-red-bull-bragantino.png"
+    },
+    {
+     "pos": 5,
+     "time": "Athletico Paranaense",
+     "j": 19,
+     "v": 9,
+     "e": 5,
+     "d": 5,
+     "gp": 39,
+     "gc": 25,
+     "sg": 14,
+     "pts": 32,
+     "ap": 56,
+     "ca": 65,
+     "cv": 7,
+     "ult": [
+      "E",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-athletico-paranaense.png"
+    },
+    {
+     "pos": 6,
+     "time": "Santos FC",
+     "j": 19,
+     "v": 9,
+     "e": 4,
+     "d": 6,
+     "gp": 29,
+     "gc": 24,
+     "sg": 5,
+     "pts": 31,
+     "ap": 54,
+     "ca": 42,
+     "cv": 3,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ]
+    },
+    {
+     "pos": 7,
+     "time": "Cruzeiro",
+     "j": 19,
+     "v": 8,
+     "e": 5,
+     "d": 6,
+     "gp": 35,
+     "gc": 27,
+     "sg": 8,
+     "pts": 29,
+     "ap": 50,
+     "ca": 53,
+     "cv": 1,
+     "ult": [
+      "D",
+      "E",
+      "D"
+     ],
+     "escudo": "escudos/futebol-cruzeiro-42d7c7.webp"
+    },
+    {
+     "pos": 8,
+     "time": "Corinthians",
+     "j": 19,
+     "v": 8,
+     "e": 5,
+     "d": 6,
+     "gp": 31,
+     "gc": 25,
+     "sg": 6,
+     "pts": 29,
+     "ap": 50,
+     "ca": 47,
+     "cv": 7,
+     "ult": [
+      "V",
+      "E",
+      "D"
+     ],
+     "escudo": "escudos/futebol-corinthians-3e414a.png"
+    },
+    {
+     "pos": 9,
+     "time": "Bahia",
+     "j": 19,
+     "v": 8,
+     "e": 5,
+     "d": 6,
+     "gp": 32,
+     "gc": 30,
+     "sg": 2,
+     "pts": 29,
+     "ap": 50,
+     "ca": 43,
+     "cv": 3,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-bahia-9eba69.png"
+    },
+    {
+     "pos": 10,
+     "time": "Flamengo",
+     "j": 19,
+     "v": 7,
+     "e": 7,
+     "d": 5,
+     "gp": 28,
+     "gc": 29,
+     "sg": -1,
+     "pts": 28,
+     "ap": 49,
+     "ca": 54,
+     "cv": 5,
+     "ult": [
+      "E",
+      "E",
+      "E"
+     ]
+    },
+    {
+     "pos": 11,
+     "time": "São Paulo",
+     "j": 19,
+     "v": 6,
+     "e": 7,
+     "d": 6,
+     "gp": 27,
+     "gc": 26,
+     "sg": 1,
+     "pts": 25,
+     "ap": 43,
+     "ca": 54,
+     "cv": 3,
+     "ult": [
+      "E",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
+    },
+    {
+     "pos": 12,
+     "time": "América",
+     "j": 19,
+     "v": 6,
+     "e": 7,
+     "d": 6,
+     "gp": 25,
+     "gc": 37,
+     "sg": -12,
+     "pts": 25,
+     "ap": 43,
+     "ca": 61,
+     "cv": 2,
+     "ult": [
+      "D",
+      "E",
+      "D"
+     ]
+    },
+    {
+     "pos": 13,
+     "time": "Cuiabá",
+     "j": 19,
+     "v": 6,
+     "e": 3,
+     "d": 10,
+     "gp": 19,
+     "gc": 27,
+     "sg": -8,
+     "pts": 21,
+     "ap": 36,
+     "ca": 44,
+     "cv": 5,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ]
+    },
+    {
+     "pos": 14,
+     "time": "Vitória",
+     "j": 19,
+     "v": 5,
+     "e": 5,
+     "d": 9,
+     "gp": 20,
+     "gc": 31,
+     "sg": -11,
+     "pts": 20,
+     "ap": 35,
+     "ca": 64,
+     "cv": 4,
+     "ult": [
+      "V",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-vitoria-a96951.png"
+    },
+    {
+     "pos": 15,
+     "time": "Grêmio",
+     "j": 19,
+     "v": 6,
+     "e": 1,
+     "d": 12,
+     "gp": 31,
+     "gc": 42,
+     "sg": -11,
+     "pts": 19,
+     "ap": 33,
+     "ca": 37,
+     "cv": 2,
+     "ult": [
+      "V",
+      "V",
+      "D"
+     ],
+     "escudo": "escudos/futebol-gremio-ba2f40.webp"
+    },
+    {
+     "pos": 16,
+     "time": "Fluminense",
+     "j": 19,
+     "v": 5,
+     "e": 4,
+     "d": 10,
+     "gp": 25,
+     "gc": 31,
+     "sg": -6,
+     "pts": 19,
+     "ap": 33,
+     "ca": 51,
+     "cv": 6,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-fluminense-9265d1.png"
+    },
+    {
+     "pos": 17,
+     "time": "Juventude",
+     "j": 19,
+     "v": 5,
+     "e": 3,
+     "d": 11,
+     "gp": 20,
+     "gc": 39,
+     "sg": -19,
+     "pts": 18,
+     "ap": 31,
+     "ca": 60,
+     "cv": 10,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-juventude.png"
+    },
+    {
+     "pos": 18,
+     "time": "Criciúma",
+     "j": 19,
+     "v": 5,
+     "e": 2,
+     "d": 12,
+     "gp": 24,
+     "gc": 40,
+     "sg": -16,
+     "pts": 17,
+     "ap": 29,
+     "ca": 49,
+     "cv": 6,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ]
+    },
+    {
+     "pos": 19,
+     "time": "Avaí",
+     "j": 19,
+     "v": 3,
+     "e": 7,
+     "d": 9,
+     "gp": 24,
+     "gc": 43,
+     "sg": -19,
+     "pts": 16,
+     "ap": 28,
+     "ca": 41,
+     "cv": 4,
+     "ult": [
+      "D",
+      "D",
+      "E"
+     ]
+    },
+    {
+     "pos": 20,
+     "time": "Fortaleza",
+     "j": 19,
+     "v": 2,
+     "e": 9,
+     "d": 8,
+     "gp": 18,
+     "gc": 25,
+     "sg": -7,
+     "pts": 15,
+     "ap": 26,
+     "ca": 61,
+     "cv": 10,
+     "ult": [
+      "D",
+      "D",
+      "E"
+     ],
+     "escudo": "escudos/futebol-fortaleza.png"
+    }
+   ]
+  },
+  {
+   "nome": "Brasileiro Sub-17",
+   "modalidade": "base",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "atualizado": "em 08/11/2026 (site da CBF) — 1ª Fase · Grupo A",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Palmeiras",
+     "j": 19,
+     "v": 14,
+     "e": 2,
+     "d": 3,
+     "gp": 56,
+     "gc": 26,
+     "sg": 30,
+     "pts": 44,
+     "ap": 77,
+     "ca": 52,
+     "cv": 3,
+     "ult": [
+      "E",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-palmeiras-26c301.png"
+    },
+    {
+     "pos": 2,
+     "time": "Corinthians",
+     "j": 19,
+     "v": 12,
+     "e": 3,
+     "d": 4,
+     "gp": 58,
+     "gc": 20,
+     "sg": 38,
+     "pts": 39,
+     "ap": 68,
+     "ca": 44,
+     "cv": 4,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-corinthians-3e414a.png"
+    },
+    {
+     "pos": 3,
+     "time": "Red Bull Bragantino",
+     "j": 19,
+     "v": 12,
+     "e": 3,
+     "d": 4,
+     "gp": 55,
+     "gc": 26,
+     "sg": 29,
+     "pts": 39,
+     "ap": 68,
+     "ca": 33,
+     "cv": 2,
+     "ult": [
+      "E",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-red-bull-bragantino.png"
+    },
+    {
+     "pos": 4,
+     "time": "Fluminense",
+     "j": 19,
+     "v": 11,
+     "e": 4,
+     "d": 4,
+     "gp": 35,
+     "gc": 16,
+     "sg": 19,
+     "pts": 37,
+     "ap": 64,
+     "ca": 46,
+     "cv": 3,
+     "ult": [
+      "V",
+      "E",
+      "D"
+     ],
+     "escudo": "escudos/futebol-fluminense-9265d1.png"
+    },
+    {
+     "pos": 5,
+     "time": "Cruzeiro",
+     "j": 19,
+     "v": 11,
+     "e": 4,
+     "d": 4,
+     "gp": 34,
+     "gc": 25,
+     "sg": 9,
+     "pts": 37,
+     "ap": 64,
+     "ca": 39,
+     "cv": 3,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-cruzeiro-42d7c7.webp"
+    },
+    {
+     "pos": 6,
+     "time": "Fortaleza",
+     "j": 19,
+     "v": 10,
+     "e": 3,
+     "d": 6,
+     "gp": 29,
+     "gc": 33,
+     "sg": -4,
+     "pts": 33,
+     "ap": 57,
+     "ca": 41,
+     "cv": 2,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-fortaleza.png"
+    },
+    {
+     "pos": 7,
+     "time": "Flamengo",
+     "j": 19,
+     "v": 9,
+     "e": 6,
+     "d": 4,
+     "gp": 37,
+     "gc": 22,
+     "sg": 15,
+     "pts": 33,
+     "ap": 57,
+     "ca": 44,
+     "cv": 3,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ]
+    },
+    {
+     "pos": 8,
+     "time": "Atlético Mineiro",
+     "j": 19,
+     "v": 9,
+     "e": 5,
+     "d": 5,
+     "gp": 41,
+     "gc": 24,
+     "sg": 17,
+     "pts": 32,
+     "ap": 56,
+     "ca": 51,
+     "cv": 3,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-atletico-mineiro.png"
+    },
+    {
+     "pos": 9,
+     "time": "Santos FC",
+     "j": 19,
+     "v": 9,
+     "e": 3,
+     "d": 7,
+     "gp": 35,
+     "gc": 33,
+     "sg": 2,
+     "pts": 30,
+     "ap": 52,
+     "ca": 50,
+     "cv": 3,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ]
+    },
+    {
+     "pos": 10,
+     "time": "São Paulo",
+     "j": 19,
+     "v": 7,
+     "e": 9,
+     "d": 3,
+     "gp": 26,
+     "gc": 18,
+     "sg": 8,
+     "pts": 30,
+     "ap": 52,
+     "ca": 44,
+     "cv": 4,
+     "ult": [
+      "E",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
+    },
+    {
+     "pos": 11,
+     "time": "Athletico Paranaense",
+     "j": 19,
+     "v": 8,
+     "e": 5,
+     "d": 6,
+     "gp": 35,
+     "gc": 31,
+     "sg": 4,
+     "pts": 29,
+     "ap": 50,
+     "ca": 38,
+     "cv": 2,
+     "ult": [
+      "D",
+      "E",
+      "D"
+     ],
+     "escudo": "escudos/futebol-athletico-paranaense.png"
+    },
+    {
+     "pos": 12,
+     "time": "Botafogo",
+     "j": 19,
+     "v": 7,
+     "e": 4,
+     "d": 8,
+     "gp": 37,
+     "gc": 43,
+     "sg": -6,
+     "pts": 25,
+     "ap": 43,
+     "ca": 52,
+     "cv": 6,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ],
+     "escudo": "escudos/futebol-botafogo-db3e70.png"
+    },
+    {
+     "pos": 13,
+     "time": "Internacional",
+     "j": 19,
+     "v": 7,
+     "e": 2,
+     "d": 10,
+     "gp": 22,
+     "gc": 33,
+     "sg": -11,
+     "pts": 23,
+     "ap": 40,
+     "ca": 57,
+     "cv": 8,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-internacional-a7b9ea.webp"
+    },
+    {
+     "pos": 14,
+     "time": "Vasco da Gama",
+     "j": 19,
+     "v": 6,
+     "e": 5,
+     "d": 8,
+     "gp": 29,
+     "gc": 27,
+     "sg": 2,
+     "pts": 23,
+     "ap": 40,
+     "ca": 48,
+     "cv": 2,
+     "ult": [
+      "E",
+      "V",
+      "D"
+     ],
+     "escudo": "escudos/futebol-vasco-da-gama.png"
+    },
+    {
+     "pos": 15,
+     "time": "Bahia",
+     "j": 19,
+     "v": 5,
+     "e": 6,
+     "d": 8,
+     "gp": 30,
+     "gc": 33,
+     "sg": -3,
+     "pts": 21,
+     "ap": 36,
+     "ca": 54,
+     "cv": 4,
+     "ult": [
+      "E",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-bahia-9eba69.png"
+    },
+    {
+     "pos": 16,
+     "time": "América",
+     "j": 19,
+     "v": 5,
+     "e": 4,
+     "d": 10,
+     "gp": 30,
+     "gc": 27,
+     "sg": 3,
+     "pts": 19,
+     "ap": 33,
+     "ca": 37,
+     "cv": 12,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ]
+    },
+    {
+     "pos": 17,
+     "time": "Juventude",
+     "j": 19,
+     "v": 4,
+     "e": 4,
+     "d": 11,
+     "gp": 18,
+     "gc": 49,
+     "sg": -31,
+     "pts": 16,
+     "ap": 28,
+     "ca": 48,
+     "cv": 2,
+     "ult": [
+      "V",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-juventude.png"
+    },
+    {
+     "pos": 18,
+     "time": "Vitória",
+     "j": 19,
+     "v": 3,
+     "e": 1,
+     "d": 15,
+     "gp": 19,
+     "gc": 46,
+     "sg": -27,
+     "pts": 10,
+     "ap": 17,
+     "ca": 43,
+     "cv": 5,
+     "ult": [
+      "V",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-vitoria-a96951.png"
+    },
+    {
+     "pos": 19,
+     "time": "Grêmio",
+     "j": 19,
+     "v": 3,
+     "e": 1,
+     "d": 15,
+     "gp": 15,
+     "gc": 52,
+     "sg": -37,
+     "pts": 10,
+     "ap": 17,
+     "ca": 39,
+     "cv": 7,
+     "ult": [
+      "D",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-gremio-ba2f40.webp"
+    },
+    {
+     "pos": 20,
+     "time": "Atlético Goianiense",
+     "j": 19,
+     "v": 1,
+     "e": 0,
+     "d": 18,
+     "gp": 16,
+     "gc": 73,
+     "sg": -57,
+     "pts": 3,
+     "ap": 5,
+     "ca": 50,
+     "cv": 3,
+     "ult": [
+      "D",
+      "D",
+      "D"
+     ]
+    }
+   ]
+  },
+  {
+   "nome": "Brasileiro Feminino",
+   "modalidade": "futebol-feminino",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "atualizado": "em 08/11/2026 (site da CBF) — 1ª Fase · Grupo A",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "São Paulo",
+     "j": 17,
+     "v": 13,
+     "e": 2,
+     "d": 2,
+     "gp": 31,
+     "gc": 11,
+     "sg": 20,
+     "pts": 41,
+     "ap": 80,
+     "ca": 34,
+     "cv": 3,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
+    },
+    {
+     "pos": 2,
+     "time": "Corinthians",
+     "j": 17,
+     "v": 12,
+     "e": 2,
+     "d": 3,
+     "gp": 42,
+     "gc": 18,
+     "sg": 24,
+     "pts": 38,
+     "ap": 74,
+     "ca": 30,
+     "cv": 2,
+     "ult": [
+      "V",
+      "E",
+      "D"
+     ],
+     "escudo": "escudos/futebol-corinthians-3e414a.png"
+    },
+    {
+     "pos": 3,
+     "time": "Palmeiras",
+     "j": 17,
+     "v": 10,
+     "e": 6,
+     "d": 1,
+     "gp": 32,
+     "gc": 11,
+     "sg": 21,
+     "pts": 36,
+     "ap": 70,
+     "ca": 39,
+     "cv": 2,
+     "ult": [
+      "E",
+      "V",
+      "E"
+     ],
+     "escudo": "escudos/futebol-palmeiras-26c301.png"
+    },
+    {
+     "pos": 4,
+     "time": "Ferroviária",
+     "j": 17,
+     "v": 8,
+     "e": 7,
+     "d": 2,
+     "gp": 23,
+     "gc": 14,
+     "sg": 9,
+     "pts": 31,
+     "ap": 60,
+     "ca": 37,
+     "cv": 0,
+     "ult": [
+      "E",
+      "V",
+      "E"
+     ]
+    },
+    {
+     "pos": 5,
+     "time": "Flamengo",
+     "j": 17,
+     "v": 8,
+     "e": 6,
+     "d": 3,
+     "gp": 29,
+     "gc": 20,
+     "sg": 9,
+     "pts": 30,
+     "ap": 58,
+     "ca": 43,
+     "cv": 2,
+     "ult": [
+      "E",
+      "V",
+      "V"
+     ]
+    },
+    {
+     "pos": 6,
+     "time": "Bahia",
+     "j": 17,
+     "v": 8,
+     "e": 5,
+     "d": 4,
+     "gp": 30,
+     "gc": 21,
+     "sg": 9,
+     "pts": 29,
+     "ap": 56,
+     "ca": 40,
+     "cv": 3,
+     "ult": [
+      "V",
+      "E",
+      "E"
+     ],
+     "escudo": "escudos/futebol-bahia-9eba69.png"
+    },
+    {
+     "pos": 7,
+     "time": "Cruzeiro",
+     "j": 17,
+     "v": 7,
+     "e": 7,
+     "d": 3,
+     "gp": 30,
+     "gc": 19,
+     "sg": 11,
+     "pts": 28,
+     "ap": 54,
+     "ca": 36,
+     "cv": 3,
+     "ult": [
+      "D",
+      "V",
+      "E"
+     ],
+     "escudo": "escudos/futebol-cruzeiro-42d7c7.webp"
+    },
+    {
+     "pos": 8,
+     "time": "Grêmio",
+     "j": 17,
+     "v": 8,
+     "e": 3,
+     "d": 6,
+     "gp": 23,
+     "gc": 16,
+     "sg": 7,
+     "pts": 27,
+     "ap": 52,
+     "ca": 42,
+     "cv": 2,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-gremio-ba2f40.webp"
+    },
+    {
+     "pos": 9,
+     "time": "Internacional",
+     "j": 17,
+     "v": 8,
+     "e": 3,
+     "d": 6,
+     "gp": 21,
+     "gc": 17,
+     "sg": 4,
+     "pts": 27,
+     "ap": 52,
+     "ca": 37,
+     "cv": 0,
+     "ult": [
+      "E",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-internacional-a7b9ea.webp"
+    },
+    {
+     "pos": 10,
+     "time": "Red Bull Bragantino",
+     "j": 17,
+     "v": 8,
+     "e": 2,
+     "d": 7,
+     "gp": 30,
+     "gc": 26,
+     "sg": 4,
+     "pts": 26,
+     "ap": 50,
+     "ca": 35,
+     "cv": 1,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-red-bull-bragantino.png"
+    },
+    {
+     "pos": 11,
+     "time": "Fluminense",
+     "j": 17,
+     "v": 7,
+     "e": 5,
+     "d": 5,
+     "gp": 23,
+     "gc": 19,
+     "sg": 4,
+     "pts": 26,
+     "ap": 50,
+     "ca": 32,
+     "cv": 2,
+     "ult": [
+      "V",
+      "V",
+      "E"
+     ],
+     "escudo": "escudos/futebol-fluminense-9265d1.png"
+    },
+    {
+     "pos": 12,
+     "time": "Santos FC",
+     "j": 17,
+     "v": 6,
+     "e": 5,
+     "d": 6,
+     "gp": 22,
+     "gc": 23,
+     "sg": -1,
+     "pts": 23,
+     "ap": 45,
+     "ca": 39,
+     "cv": 1,
+     "ult": [
+      "D",
+      "D",
+      "V"
+     ]
+    },
+    {
+     "pos": 13,
+     "time": "Atlético Mineiro",
+     "j": 17,
+     "v": 4,
+     "e": 4,
+     "d": 9,
+     "gp": 17,
+     "gc": 25,
+     "sg": -8,
+     "pts": 16,
+     "ap": 31,
+     "ca": 47,
+     "cv": 2,
+     "ult": [
+      "D",
+      "V",
+      "D"
+     ],
+     "escudo": "escudos/futebol-atletico-mineiro.png"
+    },
+    {
+     "pos": 14,
+     "time": "Mixto",
+     "j": 17,
+     "v": 2,
+     "e": 6,
+     "d": 9,
+     "gp": 10,
+     "gc": 27,
+     "sg": -17,
+     "pts": 12,
+     "ap": 23,
+     "ca": 32,
+     "cv": 1,
+     "ult": [
+      "V",
+      "D",
+      "D"
+     ]
+    },
+    {
+     "pos": 15,
+     "time": "Juventude",
+     "j": 17,
+     "v": 2,
+     "e": 5,
+     "d": 10,
+     "gp": 9,
+     "gc": 22,
+     "sg": -13,
+     "pts": 11,
+     "ap": 21,
+     "ca": 45,
+     "cv": 4,
+     "ult": [
+      "D",
+      "D",
+      "E"
+     ],
+     "escudo": "escudos/futebol-juventude.png"
+    },
+    {
+     "pos": 16,
+     "time": "América",
+     "j": 17,
+     "v": 1,
+     "e": 4,
+     "d": 12,
+     "gp": 9,
+     "gc": 34,
+     "sg": -25,
+     "pts": 7,
+     "ap": 13,
+     "ca": 36,
+     "cv": 2,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ]
+    },
+    {
+     "pos": 17,
+     "time": "Vitória",
+     "j": 17,
+     "v": 1,
+     "e": 4,
+     "d": 12,
+     "gp": 15,
+     "gc": 45,
+     "sg": -30,
+     "pts": 7,
+     "ap": 13,
+     "ca": 49,
+     "cv": 2,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-vitoria-a96951.png"
+    },
+    {
+     "pos": 18,
+     "time": "Botafogo",
+     "j": 17,
+     "v": 1,
+     "e": 2,
+     "d": 14,
+     "gp": 10,
+     "gc": 38,
+     "sg": -28,
+     "pts": 5,
+     "ap": 9,
+     "ca": 41,
+     "cv": 2,
+     "ult": [
+      "D",
+      "D",
+      "D"
+     ],
+     "escudo": "escudos/futebol-botafogo-db3e70.png"
+    }
+   ]
+  },
+  {
+   "nome": "Brasileiro Feminino Sub-20",
+   "modalidade": "futebol-feminino",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "atualizado": "em 08/11/2026 (site da CBF) — 1ª Fase · Grupo B",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Flamengo",
+     "j": 6,
+     "v": 5,
+     "e": 0,
+     "d": 1,
+     "gp": 22,
+     "gc": 4,
+     "sg": 18,
+     "pts": 15,
+     "ap": 83,
+     "ca": 9,
+     "cv": 0,
+     "ult": [
+      "V",
+      "V",
+      "V"
+     ]
+    },
+    {
+     "pos": 2,
+     "time": "Fluminense",
+     "j": 6,
+     "v": 5,
+     "e": 0,
+     "d": 1,
+     "gp": 14,
+     "gc": 6,
+     "sg": 8,
+     "pts": 15,
+     "ap": 83,
+     "ca": 12,
+     "cv": 1,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-fluminense-9265d1.png"
+    },
+    {
+     "pos": 3,
+     "time": "Uda",
+     "j": 6,
+     "v": 1,
+     "e": 1,
+     "d": 4,
+     "gp": 12,
+     "gc": 11,
+     "sg": 1,
+     "pts": 4,
+     "ap": 22,
+     "ca": 10,
+     "cv": 0,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ]
+    },
+    {
+     "pos": 4,
+     "time": "Litoral Norte F. C.",
+     "j": 6,
+     "v": 0,
+     "e": 1,
+     "d": 5,
+     "gp": 4,
+     "gc": 31,
+     "sg": -27,
+     "pts": 1,
+     "ap": 5,
+     "ca": 14,
+     "cv": 0,
+     "ult": [
+      "E",
+      "D",
+      "D"
+     ]
     }
    ]
   },

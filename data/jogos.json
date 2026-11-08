@@ -1,46 +1,149 @@
 {
- "atualizadoEm": "2026-11-08T17:46:11.291Z",
+ "atualizadoEm": "2026-11-08T17:59:23.493Z",
  "exemplo": false,
- "avisos": [],
+ "avisos": [
+  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior.",
+  "Escudo de Criciúma: fetch failed",
+  "Escudo de Operário: fetch failed",
+  "Escudo de Santos FC: fetch failed",
+  "Escudo de América: fetch failed",
+  "Escudo de Cuiabá: fetch failed",
+  "Escudo de Avaí: fetch failed",
+  "Escudo de Atlético Goianiense: fetch failed",
+  "Escudo de Ferroviária: fetch failed",
+  "Escudo de Mixto: fetch failed",
+  "Escudo de Uda: fetch failed",
+  "Escudo de Litoral Norte F. C.: fetch failed"
+ ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
   {
-   "id": "m-2563b27284",
-   "transmissao": [],
-   "placar": {
-    "flamengo": 2,
-    "adversario": 2
-   },
-   "status": "encerrado",
-   "mandante": false,
-   "local": "",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Santos",
-   "inicio": "2026-10-08T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Wikipédia",
-   "escudoAdv": "escudos/futebol-santos-7effcf.webp"
-  },
-  {
-   "id": "m-763c27645d",
+   "id": "cbf-835414",
+   "modalidade": "base",
+   "adversario": "Corinthians",
+   "competicao": "Brasileiro Sub-17",
+   "inicio": "2026-10-07T17:30:00-03:00",
+   "semHora": false,
+   "local": "Luso Brasileiro - Rio de Janeiro - RJ",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 1,
     "adversario": 0
    },
    "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/flamengo-x-corinthians/835414",
+   "categoria": "Sub-17",
+   "tabela": "Brasileiro Sub-17",
+   "escudoAdv": "escudos/futebol-corinthians-3e414a.png"
+  },
+  {
+   "id": "cbf-835397",
+   "modalidade": "base",
+   "adversario": "Vasco da Gama",
+   "competicao": "Copa do Brasil Sub-20",
+   "inicio": "2026-10-08T16:30:00-03:00",
+   "semHora": false,
+   "local": "Luso Brasileiro - Rio de Janeiro - RJ",
    "mandante": true,
-   "local": "Maracanã, Rio de Janeiro",
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-vasco-da-gama-saf/835397",
+   "categoria": "Sub-20",
+   "observacao": "Pênaltis: Flamengo 4 x 3",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
+   "id": "cbf-832173",
+   "modalidade": "futebol-masculino",
+   "adversario": "Santos",
    "competicao": "Brasileirão Série A",
-   "fonte": "manual",
+   "inicio": "2026-10-08T19:30:00-03:00",
+   "semHora": false,
+   "local": "Vila Belmiro - Santos - SP",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Wikipédia",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/santos-fc-x-flamengo/832173",
+   "tabela": "Brasileirão Série A",
+   "escudoAdv": "escudos/futebol-santos-7effcf.webp"
+  },
+  {
+   "id": "cbf-832181",
    "modalidade": "futebol-masculino",
    "adversario": "Fluminense",
-   "inicio": "2026-10-11T00:00:00-03:00",
-   "semHora": true,
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-10-11T17:30:00-03:00",
+   "semHora": false,
+   "local": "Maracanã, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
    "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-fluminense/832181",
+   "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+  },
+  {
+   "id": "cbf-835418",
+   "modalidade": "base",
+   "adversario": "Corinthians",
+   "competicao": "Brasileiro Sub-17",
+   "inicio": "2026-10-13T17:30:00-03:00",
+   "semHora": false,
+   "local": "Parque São Jorge - Sao Paulo - SP",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 3
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/corinthians-x-flamengo/835418",
+   "categoria": "Sub-17",
+   "tabela": "Brasileiro Sub-17",
+   "escudoAdv": "escudos/futebol-corinthians-3e414a.png"
+  },
+  {
+   "id": "cbf-835426",
+   "modalidade": "base",
+   "adversario": "Criciúma",
+   "competicao": "Copa do Brasil Sub-20",
+   "inicio": "2026-10-14T15:00:00-03:00",
+   "semHora": false,
+   "local": "CT Ninho do Urubu - Rio de Janeiro - RJ",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 4,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-criciuma/835426",
+   "categoria": "Sub-20"
   },
   {
    "id": "m-466661d860",
@@ -81,25 +184,6 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
-   "id": "m-b80833c2a1",
-   "transmissao": [],
-   "placar": {
-    "flamengo": 3,
-    "adversario": 0
-   },
-   "status": "encerrado",
-   "mandante": false,
-   "local": "Salvador (BA)",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Bahia",
-   "inicio": "2026-10-18T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "ESPN",
-   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
-  },
-  {
    "id": "m-b147397237",
    "transmissao": [],
    "placar": {
@@ -117,6 +201,27 @@
    "semHora": true,
    "fonteInfo": "LNB",
    "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
+  },
+  {
+   "id": "cbf-832199",
+   "modalidade": "futebol-masculino",
+   "adversario": "Bahia",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-10-18T18:30:00-03:00",
+   "semHora": false,
+   "local": "Salvador (BA)",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "ESPN",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/bahia-x-flamengo/832199",
+   "tabela": "Brasileirão Série A",
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "m-d13ad9a4ad",
@@ -155,6 +260,26 @@
    "semHora": true,
    "fonteInfo": "LNB",
    "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
+  },
+  {
+   "id": "cbf-835434",
+   "modalidade": "base",
+   "adversario": "Criciúma",
+   "competicao": "Copa do Brasil Sub-20",
+   "inicio": "2026-10-20T19:30:00-03:00",
+   "semHora": false,
+   "local": "Heriberto Hulse - Criciuma - SC",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/criciuma-x-flamengo/835434",
+   "categoria": "Sub-20"
   },
   {
    "id": "m-74f2c5670f",
@@ -216,41 +341,65 @@
    "escudoAdv": "escudos/volei-brasilia-volei-brb-923451.png"
   },
   {
-   "id": "m-7acd505154",
+   "id": "cbf-832201",
+   "modalidade": "futebol-masculino",
+   "adversario": "Atlético-MG",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-10-26T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanã, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 2
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Maracanã, Rio de Janeiro",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Atlético-MG",
-   "inicio": "2026-10-26T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "ESPN",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-atletico-mineiro/832201",
+   "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-atletico-mg-a62640.png"
   },
   {
-   "id": "m-d642d2d4d3",
+   "id": "cbf-835455",
+   "modalidade": "base",
+   "adversario": "Operário",
+   "competicao": "Copa do Brasil Sub-20",
+   "inicio": "2026-10-27T20:00:00-03:00",
+   "semHora": false,
+   "local": "Germano Kruger - Ponta Grossa - PR",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/operario-x-flamengo/835455",
+   "categoria": "Sub-20"
+  },
+  {
+   "id": "cbf-832212",
+   "modalidade": "futebol-masculino",
+   "adversario": "Vasco",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-10-29T20:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Nilton Santos, Rio de Janeiro",
+   "mandante": false,
    "transmissao": [],
    "placar": {
     "flamengo": 4,
     "adversario": 1
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Estádio Nilton Santos, Rio de Janeiro",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Vasco",
-   "inicio": "2026-10-29T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/vasco-da-gama-saf-x-flamengo/832212",
+   "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-vasco-5dbf77.webp"
   },
   {
@@ -311,22 +460,44 @@
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
-   "id": "m-4d00e876d1",
+   "id": "cbf-835459",
+   "modalidade": "base",
+   "adversario": "Operário",
+   "competicao": "Copa do Brasil Sub-20",
+   "inicio": "2026-11-03T16:30:00-03:00",
+   "semHora": false,
+   "local": "Luso Brasileiro - Rio de Janeiro - RJ",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
+   "categoria": "Sub-20"
+  },
+  {
+   "id": "cbf-832221",
+   "modalidade": "futebol-masculino",
+   "adversario": "Grêmio",
+   "competicao": "Brasileirão Série A",
+   "inicio": "2026-11-04T19:30:00-03:00",
+   "semHora": false,
+   "local": "Maracanã, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [],
    "placar": {
     "flamengo": 3,
     "adversario": 1
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Maracanã, Rio de Janeiro",
-   "competicao": "Brasileirão Série A",
-   "fonte": "manual",
-   "modalidade": "futebol-masculino",
-   "adversario": "Grêmio",
-   "inicio": "2026-11-04T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "Fim de Jogo",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221",
+   "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-gremio-ba2f40.webp"
   },
   {
