@@ -213,7 +213,7 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   const lnb = `<table class="table_ap table-wrapper"><thead><tr><th>EQUIPES</th></tr></thead><tbody>${nomes.map((n, i) => lnbLinha(i + 1, n, 6, 6 - i % 6, i % 6, 10 - i, 12 - i)).join('')}</tbody></table><table class="table_pon"></table>`;
   const t = lerTabelaLnb(lnb);
   assert.equal(t.length, 8);
-  assert.deepEqual(t[1], { pos: 2, time: 'Unifacisa', j: 6, v: 5, e: null, d: 1, sg: 9, pts: 11, escudoAdvUrl: 'https://lnb.com.br/l2.png' });
+  assert.deepEqual(t[1], { pos: 2, time: 'Unifacisa', j: 6, v: 5, e: null, d: 1, sg: 9, pts: 11, ap: 1, escudoAdvUrl: 'https://lnb.com.br/l2.png' });
   assert.equal(lerTabelaLnb(lnb.replace(/<tr class="">[\s\S]*?<\/tr>/, '')).length, 0, 'tabela incompleta (sem o 1º) é ignorada');
   const cbvLinha = (p, nome, pts, j, v, d) => `<tr class="group"><td><span>${p}</span></td><td><div><img alt="" src="/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F${p}%2Fbadge.png&amp;w=64&amp;q=75"/><span class="x">${nome}</span></div></td><td>${pts}</td><td>${j}</td><td>${v}</td><td>${d}</td><td>15</td><td>1</td></tr>`;
   const vnomes = ['SESI VOLEI BAURU', 'SESC RJ FLAMENGO', 'DENTIL PRAIA CLUBE', 'GERDAU MINAS', 'FLUMINENSE F.C.', 'E.C. PINHEIROS', 'BRUSQUE VÔLEI', 'PAULISTANO BARUERI'];

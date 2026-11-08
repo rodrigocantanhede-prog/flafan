@@ -44,7 +44,7 @@ export function lerTabelaLnb(html) {
     const logo = decodificar((img.match(/src="([^"]*)"/) ?? [])[1]);
     const v = [...tr.matchAll(/data-sort-value="([^"]*)"/g)].map((m) => num(m[1]));
     if (!pos || !time || v.length < 12) continue;
-    linhas.push({ pos, time: nomeBonito(time), j: v[3], v: v[4], e: null, d: v[5], sg: v[10], pts: v[1], escudoAdvUrl: /^https?:/.test(logo) ? logo : undefined });
+    linhas.push({ pos, time: nomeBonito(time), j: v[3], v: v[4], e: null, d: v[5], sg: v[10], pts: v[1], ap: v[0] === null ? null : Math.round(v[0]), escudoAdvUrl: /^https?:/.test(logo) ? logo : undefined });
   }
   return valida(linhas);
 }
