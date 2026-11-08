@@ -5,17 +5,12 @@ await mkdir('diagnostico', { recursive: true });
 const status = {};
 const limpa = (t) => t.replace(/[A-Za-z0-9+/=_-]{40,}/g, '[x]');
 const urls = {
-  robots: 'https://www.conmebol.com/robots.txt',
-  home: 'https://www.conmebol.com/',
-  libertadores: 'https://www.conmebol.com/libertadores/',
-  'libertadores-pt': 'https://www.conmebol.com/pt-br/libertadores/',
-  fixture: 'https://www.conmebol.com/libertadores/fixture/',
-  'cl-com': 'https://www.conmebollibertadores.com/',
-  'cl-pt': 'https://www.conmebollibertadores.com/pt-br/',
-  feminina: 'https://www.conmebol.com/libertadores-femenina/',
-  sub20: 'https://www.conmebol.com/libertadores-sub-20/',
-  sulamericana: 'https://www.conmebol.com/sudamericana/',
-  recopa: 'https://www.conmebol.com/recopa/',
+  'dt-page': 'http://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture',
+  'dt-https': 'https://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture',
+  'dt-fixture-json': 'https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/pages/es/fixture.json',
+  'dt-fixture-xml': 'https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/xml/es/fixture.xml',
+  'dt-agenda': 'https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/agendaMaM/es/agenda.json',
+  'dt-root': 'https://estadisticas.conmebol.com/',
 };
 for (const [nome, u] of Object.entries(urls)) {
   try {
@@ -30,5 +25,5 @@ for (const [nome, u] of Object.entries(urls)) {
   } catch (e) { status[nome] = { url: u, erro: e.message }; }
   await new Promise((r) => setTimeout(r, 1500));
 }
-await writeFile('diagnostico/conmebol-status.json', JSON.stringify(status, null, 1));
+await writeFile('diagnostico/conmebol-status2.json', JSON.stringify(status, null, 1));
 console.log(JSON.stringify(status, null, 1));
