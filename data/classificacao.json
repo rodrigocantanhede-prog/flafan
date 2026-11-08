@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T16:19:21.265Z",
+ "atualizadoEm": "2026-11-08T17:46:11.291Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -500,6 +500,17 @@
     },
     {
      "pos": 6,
+     "time": "Brusque Vôlei",
+     "j": 4,
+     "v": 1,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": 5,
+     "escudo": "escudos/volei-brusque-volei-ceea88.png"
+    },
+    {
+     "pos": 7,
      "time": "Fluminense",
      "j": 3,
      "v": 1,
@@ -510,7 +521,7 @@
      "escudo": "escudos/volei-fluminense-c0deef.png"
     },
     {
-     "pos": 7,
+     "pos": 8,
      "time": "Pinheiros",
      "j": 3,
      "v": 1,
@@ -519,17 +530,6 @@
      "sg": null,
      "pts": 2,
      "escudo": "escudos/volei-pinheiros-ef805a.png"
-    },
-    {
-     "pos": 8,
-     "time": "Brusque Vôlei",
-     "j": 3,
-     "v": 0,
-     "e": null,
-     "d": 3,
-     "sg": null,
-     "pts": 2,
-     "escudo": "escudos/volei-brusque-volei-ceea88.png"
     },
     {
      "pos": 9,
@@ -567,10 +567,10 @@
     {
      "pos": 12,
      "time": "Paulistano Barueri",
-     "j": 4,
+     "j": 5,
      "v": 0,
      "e": null,
-     "d": 4,
+     "d": 5,
      "sg": null,
      "pts": 0,
      "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
