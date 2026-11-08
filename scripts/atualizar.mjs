@@ -358,7 +358,9 @@ export function montarClassificacao(linhas) {
     if (limpar(l.atualizado)) c.atualizado = limpar(l.atualizado);
     if (/^https?:\/\//.test(limpar(l.link))) c.link = limpar(l.link);
     if (limpar(l.nota)) c.nota = limpar(l.nota);
-    c.linhas.push({ pos: numOuNull(l.pos), time: limpar(l.time), j: numOuNull(l.j), v: numOuNull(l.v), e: numOuNull(l.e), d: numOuNull(l.d), sg: numOuNull(l.sg), pts: numOuNull(l.pts) });
+    const linha = { pos: numOuNull(l.pos), time: limpar(l.time), j: numOuNull(l.j), v: numOuNull(l.v), e: numOuNull(l.e), d: numOuNull(l.d), sg: numOuNull(l.sg), pts: numOuNull(l.pts) };
+    if (/^https?:\/\//.test(limpar(l.escudo))) linha.escudoAdvUrl = limpar(l.escudo);
+    c.linhas.push(linha);
   }
   for (const c of porCamp.values()) c.linhas.sort((a, b) => (a.pos ?? 99) - (b.pos ?? 99));
   return [...porCamp.values()];

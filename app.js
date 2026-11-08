@@ -220,7 +220,7 @@ function desenharTabela() {
     $('#lista').innerHTML = `<p class="vazio">${estado.campeonatos.length ? 'Nenhuma tabela para esta modalidade ainda.' : 'As tabelas de classificação aparecem aqui assim que forem cadastradas.'}</p>`;
     return;
   }
-  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo de gols']];
+  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo']];
   $('#lista').innerHTML = lista.map((c) => {
     const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
     const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined);
