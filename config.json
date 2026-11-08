@@ -87,7 +87,7 @@
   "cbf": {
     "ativo": true,
     "ano": 2026,
-    "desde": "2026-10-01",
+    "desde": "2026-01-01",
     "_nota": "Jogos do Flamengo (id 20016 na CBF) desde a data 'desde' e tabelas das fases por pontos.",
     "campeonatos": [
       {
@@ -184,7 +184,7 @@
     "ativo": true,
     "paginas": 3,
     "idadeMinima": 15,
-    "desde": "2026-10-01",
+    "desde": "2026-01-01",
     "_nota": "Jogos do Flamengo (clubeId 30 na FERJ): Carioca profissional/feminino/base e Copa Rio, a partir do Sub-15."
   }
 }
