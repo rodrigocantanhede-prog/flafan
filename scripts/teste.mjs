@@ -169,3 +169,29 @@ import { montarEventos } from './atualizar.mjs';
   assert.match(ics, /SUMMARY:Natação: Troféu Teste \(Flamengo\)/);
   console.log('✓ Eventos olímpicos ok');
 }
+
+// ---- leitura do site do Flamengo ----
+import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.mjs';
+{
+  const hoje = new Date('2026-11-08T12:00:00-03:00');
+  assert.equal(dataDoSite('12 Nov, 21:00', hoje).iso, '2026-11-12T21:00:00-03:00');
+  assert.equal(dataDoSite('03 Jan, 16:00', hoje).iso, '2027-01-03T16:00:00-03:00', 'janeiro do ano seguinte');
+  assert.equal(dataDoSite('20 Out, 19:00', hoje).iso, '2026-10-20T19:00:00-03:00', 'outubro que já passou');
+  const card = (data, esporte, local, a, b, escA = true) => `<article class="X_matchCard" data-analytics-match-state="upcoming" data-analytics-match-competition="Superliga" data-analytics-match-sport="${esporte}" data-analytics-match-date="${data}" data-analytics-match-venue="${local}"><div class="Y_matchTeams"><div class="Z_matchTeamsEmblem">${escA ? '<img class="Z_teamEmblem" src="https://x/a.png"/>' : ''}<p class="T_title">${a}</p></div><span>X</span><div class="Z_matchTeamsEmblem"><img class="Z_teamEmblem" src="https://x/b.png"/><p class="T_title">${b}</p></div></div><a class="b" aria-label="Ingresso" href="https://ingresso.exemplo/1">Ingresso</a></article>`;
+  const html = card('12 Nov, 21:00', 'Vôlei Feminino', 'Maracanãzinho (RJ)', 'Sesc RJ Flamengo', 'Fluminense') + card('17 Nov, 21:00', 'Vôlei Feminino', 'Bauru', 'SESI Vôlei Bauru', 'Sesc RJ Flamengo', false);
+  const j = lerProximosJogos(html, 'volei', hoje);
+  assert.equal(j.length, 2);
+  assert.equal(j[0].modalidade, 'volei-feminino');
+  assert.equal(j[0].mandante, true);
+  assert.equal(j[0].adversario, 'Fluminense');
+  assert.equal(j[0].escudoAdvUrl, 'https://x/b.png');
+  assert.equal(j[0].ingresso, 'https://ingresso.exemplo/1');
+  assert.equal(j[1].mandante, false);
+  assert.equal(j[1].escudoAdvUrl, undefined, 'adversário sem escudo no site');
+  const fut = lerProximosJogos(card('18 Nov, 20:30', 'Sub-20', 'Gávea', 'Flamengo', 'Vasco'), 'futebol', hoje);
+  assert.equal(fut[0].modalidade, 'base'); assert.equal(fut[0].categoria, 'Sub-20');
+  const tab = `<table class="A_standingsTable"><thead><tr><th>Times</th></tr></thead><tbody><tr><td><div><span>1</span><img src="https://x/f.png"/><span>Flamengo</span></div></td><td>76</td><td>34</td><td>23</td><td>7</td><td>4</td><td>71</td><td>29</td><td>42</td></tr></tbody></table>`;
+  assert.deepEqual(lerClassificacao(tab)[0], { pos: 1, time: 'Flamengo', j: 34, v: 23, e: 7, d: 4, sg: 42, pts: 76, escudoAdvUrl: 'https://x/f.png' });
+  assert.equal(lerClassificacao(tab.replace(/<td>34<\/td>/, '<td>0</td>')).length, 0, 'tabela zerada é ignorada');
+  console.log('✓ Leitura do site do Flamengo ok');
+}

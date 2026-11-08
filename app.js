@@ -205,6 +205,7 @@ function cartao(j, destaque = false) {
       ${mostraOnde ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
     </div>
     ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
+    ${j.ingresso && /^https:\/\//.test(j.ingresso) && !terminou && j.status !== 'cancelado' ? `<a class="btn ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>` : ''}
     ${j.fonteInfo ? `<div class="fonte-info">Fonte: ${esc(j.fonteInfo)}</div>` : ''}
   </article>`;
 }

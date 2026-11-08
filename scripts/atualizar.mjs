@@ -10,6 +10,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { lerSiteFlamengo } from './site-flamengo.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(RAIZ, 'data');
@@ -210,7 +211,7 @@ export function mesclar(automaticos, linhas) {
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
     if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
-    if (limpar(l.fonte)) novo.fonteInfo = limpar(l.fonte);
+    if (limpar(l.fonte) && base.fonteInfo !== 'Site do Flamengo') novo.fonteInfo = limpar(l.fonte); // o site oficial prevalece
     if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
     if (!novo.modalidade || !novo.inicio || isNaN(Date.parse(novo.inicio)) || !novo.adversario) {
@@ -552,6 +553,26 @@ async function main() {
     }
   }
 
+  // 1b) site oficial do Flamengo (próximos jogos + tabela do Brasileirão)
+  if (cfg.siteFlamengo?.ativo && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const cacheSiteArq = path.join(DATA, 'cache-site.json');
+    const cacheSite = await lerJson(cacheSiteArq, []);
+    const site = await lerSiteFlamengo(cfg.siteFlamengo, log);
+    problemas.push(...site.problemas);
+    const falhouTudo = site.problemas.filter((p) => !p.includes('tabela')).length >= (cfg.siteFlamengo.paginas?.length ?? 0);
+    let jogosSite;
+    if (falhouTudo) jogosSite = cacheSite; // site fora do ar: usa a última leitura boa
+    else {
+      // mantém os jogos que já passaram (o site tira da lista depois do jogo) e troca os futuros pela leitura nova
+      const ids = new Set(site.jogos.map((j) => j.id));
+      const passados = cacheSite.filter((j) => !ids.has(j.id) && new Date(j.inicio).getTime() < Date.now() + 3 * 3600e3);
+      jogosSite = [...site.jogos, ...passados];
+      await writeFile(cacheSiteArq, JSON.stringify(jogosSite, null, 1));
+    }
+    automaticos = [...automaticos.filter((j) => !String(j.id).startsWith('site-')), ...jogosSite.map((j) => ({ ...j }))];
+    campeonatosApi.push(...site.tabelas);
+  }
+
   // 2) planilha
   const anterior = await lerJson(path.join(DATA, 'jogos.json'), null);
   const tabelasAnteriores = await lerJson(path.join(DATA, 'classificacao.json'), null);
@@ -566,7 +587,7 @@ async function main() {
   }
   // Segurança: se a planilha falhou (ou veio vazia de repente) e não há outra fonte, mantém o que já está publicado
   const totalAnterior = anterior?.jogos?.length ?? 0;
-  if ((!planilhaOk || linhas.length === 0) && automaticos.length === 0 && totalAnterior > 0) {
+  if ((!planilhaOk || (linhas.length === 0 && automaticos.length === 0)) && totalAnterior > 0) {
     log(`Planilha indisponível ou vazia — mantive os ${totalAnterior} jogos já publicados, sem mexer em nada.`);
     problemas.forEach((p) => log('Aviso:', p));
     return;

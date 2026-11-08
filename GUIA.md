@@ -26,6 +26,12 @@ Todo dia de madrugada, um robô do GitHub busca os jogos na fonte automática (A
 
 A aba **Como usar** da planilha explica cada coluna.
 
+## Site oficial do Flamengo (fonte principal)
+- A cada 3 horas o robô lê flamengo.com.br: próximos jogos de futebol, futebol feminino, vôlei e basquete (com escudos e link de ingresso) e a tabela do Brasileirão.
+- Jogos que já passaram continuam no app (o site tira da lista depois do jogo). O placar vem da planilha.
+- Se o site ficar fora do ar, o app continua com a última leitura boa.
+- O que você escreve na planilha sempre vale mais que o site (para o mesmo jogo, mesma modalidade e dia).
+
 ## Atualização diária pelo Claude
 - Todo dia às 6h34 (Brasília) o Claude pesquisa resultados, novos jogos, canais e tabelas e atualiza a planilha. O robô publica em até 3 horas.
 - O plano grátis da API-Sports não cobre a temporada atual; por isso jogos e tabelas vêm da planilha. Se um dia assinar o plano Pro, é só mudar "ativo" para true no config.json.

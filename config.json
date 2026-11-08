@@ -52,5 +52,22 @@
   },
   "onesignalAppId": "",
   "planilhaClassificacaoCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=94890183",
-  "planilhaEventosCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=1175589755"
+  "planilhaEventosCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=1175589755",
+  "siteFlamengo": {
+    "_leia": "Lê as páginas públicas de próximos jogos e a tabela do Brasileirão em flamengo.com.br a cada 3 horas.",
+    "ativo": true,
+    "paginas": [
+      "futebol",
+      "futebol-feminino",
+      "volei",
+      "basquete"
+    ],
+    "classificacao": [
+      {
+        "pagina": "futebol",
+        "nome": "Brasileirão Série A",
+        "modalidade": "futebol-masculino"
+      }
+    ]
+  }
 }

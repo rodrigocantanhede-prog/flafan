@@ -384,3 +384,4 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .evento-lista li { display: flex; gap: 8px; align-items: flex-start; font-weight: 700; color: var(--aviso-texto); font-size: 14px; }
 .evento-lista .ic { width: 18px; height: 18px; flex: none; }
 .fonte-info { margin-top: 8px; font-size: 11px; color: var(--apagado); letter-spacing: .02em; }
+.btn.ingresso { display: block; text-align: center; margin-top: 12px; }
