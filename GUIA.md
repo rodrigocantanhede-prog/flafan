@@ -26,6 +26,11 @@ Todo dia de madrugada, um robô do GitHub busca os jogos na fonte automática (A
 
 A aba **Como usar** da planilha explica cada coluna.
 
+## Atualização diária pelo Claude
+- Todo dia às 6h34 (Brasília) o Claude pesquisa resultados, novos jogos, canais e tabelas e atualiza a planilha. O robô publica em até 3 horas.
+- O plano grátis da API-Sports não cobre a temporada atual; por isso jogos e tabelas vêm da planilha. Se um dia assinar o plano Pro, é só mudar "ativo" para true no config.json.
+- Você pode sempre corrigir a planilha à mão; o Claude não apaga o que você escreveu.
+
 ## Escudos dos times
 - O robô baixa os escudos sozinho pela API-Sports (precisa da chave configurada) e guarda na pasta `escudos/`.
 - Se um escudo não aparecer ou vier errado, cole o link de uma imagem do escudo na coluna `escudo_adv` da planilha.

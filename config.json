@@ -5,7 +5,7 @@
   "apiSports": {
     "_leia": "A chave NÃO fica aqui: ela fica guardada como segredo no GitHub (API_SPORTS_KEY).",
     "futebol": {
-      "ativo": true,
+      "ativo": false,
       "time": 127,
       "proximos": 20,
       "ultimos": 10
@@ -25,7 +25,7 @@
         "_leia": "Brasileirão Série A (liga 71 na API-Sports)",
         "nome": "Brasileirão Série A",
         "modalidade": "futebol-masculino",
-        "ativo": true,
+        "ativo": false,
         "liga": 71,
         "temporada": 2026
       },
@@ -33,7 +33,7 @@
         "_leia": "O robô descobre o código sozinho quando a chave existir",
         "nome": "NBB",
         "modalidade": "basquete",
-        "ativo": true,
+        "ativo": false,
         "liga": null,
         "busca": "^NBB",
         "temporada": "2026-2027"
@@ -42,12 +42,13 @@
         "_leia": "O robô descobre o código sozinho quando a chave existir",
         "nome": "Superliga Feminina",
         "modalidade": "volei-feminino",
-        "ativo": true,
+        "ativo": false,
         "liga": null,
         "busca": "superliga.*(women|fem)",
         "temporada": 2026
       }
-    ]
+    ],
+    "_plano": "Plano grátis: só libera temporadas 2022-2024. Jogos e tabelas vêm da planilha (atualizada todo dia pelo Claude). Para ligar de novo após assinar o Pro, mude \"ativo\" para true."
   },
   "onesignalAppId": "",
   "planilhaClassificacaoCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=94890183"
