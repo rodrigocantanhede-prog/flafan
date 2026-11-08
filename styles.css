@@ -44,7 +44,7 @@ button, select, a { font: inherit; color: inherit; }
 .aviso { margin: 0 16px 8px; padding: 10px 12px; border-radius: 12px; background: #3a2c05; color: #fde68a; font-size: 14px; }
 
 /* abas */
-.abas { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 4px 16px 10px; background: var(--cartao); padding: 4px; border-radius: 14px; }
+.abas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 4px 16px 10px; background: var(--cartao); padding: 4px; border-radius: 14px; }
 .aba { border: 0; background: transparent; padding: 10px; border-radius: 10px; font-weight: 700; color: var(--suave); cursor: pointer; }
 .aba.ativa { background: var(--vermelho); color: #fff; }
 
@@ -119,3 +119,27 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
 .checks label { display: flex; gap: 8px; align-items: center; background: var(--cartao2); border-radius: 10px; padding: 10px; font-size: 14px; }
 .checks input { accent-color: var(--vermelho); width: 18px; height: 18px; }
+
+/* calendário */
+.cal { background: var(--cartao); border: 1px solid var(--borda); border-radius: var(--raio); padding: 12px; }
+.cal-topo { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.cal-topo .btn-icone { font-size: 24px; line-height: 1; }
+.cal-titulo { display: grid; text-align: center; }
+.cal-titulo strong { font-size: 18px; }
+.cal-titulo span { font-size: 12px; color: var(--suave); }
+.cal-semana, .cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-semana span { text-align: center; font-size: 12px; font-weight: 800; color: var(--suave); padding: 4px 0; }
+.cal-dia {
+  aspect-ratio: 1; max-width: 100%; border: 1px solid transparent; border-radius: 12px; background: transparent;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer;
+  color: var(--suave); padding: 0;
+}
+.cal-dia.tem { background: var(--cartao2); color: var(--texto); font-weight: 800; }
+.cal-dia.hoje .cal-num { color: var(--vermelho); text-decoration: underline; text-underline-offset: 3px; }
+.cal-dia.sel { border-color: #fff; background: #ffffff14; color: var(--texto); }
+.cal-dia:focus-visible { outline: 2px solid var(--vermelho); outline-offset: 2px; }
+.cal-num { font-size: 15px; font-variant-numeric: tabular-nums; }
+.cal-pontos { display: flex; gap: 3px; height: 7px; align-items: center; }
+.cal-pontos i { width: 7px; height: 7px; border-radius: 50%; display: block; }
+.cal-pontos b { font-size: 10px; line-height: 7px; }
+.vazio.pequeno { padding: 18px 10px; }

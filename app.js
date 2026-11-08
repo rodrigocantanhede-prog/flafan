@@ -20,6 +20,8 @@ const estado = {
   aba: 'proximos',
   filtro: lembrar('filtro', 'todas'),
   jogos: [],
+  mes: null,      // {ano, mes} em exibição no calendário
+  diaSel: null,   // 'AAAA-MM-DD' selecionado no calendário
 };
 
 const $ = (s) => document.querySelector(s);
@@ -99,12 +101,74 @@ function cartao(j, destaque = false) {
   </article>`;
 }
 
+// chave 'AAAA-MM-DD' de uma data no horário de Brasília
+function chaveDia(data) {
+  const [d, m, a] = fChave.format(data).split('/');
+  return `${a}-${m}-${d}`;
+}
+const fMes = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+function desenharCalendario(filtrados) {
+  const hoje = chaveDia(new Date());
+  if (!estado.mes) estado.mes = { ano: +hoje.slice(0, 4), mes: +hoje.slice(5, 7) - 1 };
+  if (!estado.diaSel) estado.diaSel = hoje;
+  const { ano, mes } = estado.mes;
+
+  const porDia = new Map();
+  for (const j of filtrados) {
+    if (j.status === 'cancelado') continue;
+    const k = chaveDia(new Date(j.inicio));
+    if (!porDia.has(k)) porDia.set(k, []);
+    porDia.get(k).push(j);
+  }
+
+  const primeiro = new Date(Date.UTC(ano, mes, 1));
+  const diasNoMes = new Date(Date.UTC(ano, mes + 1, 0)).getUTCDate();
+  const vazios = primeiro.getUTCDay();
+  const titulo = fMes.format(primeiro);
+  const totalMes = [...porDia.keys()].filter((k) => k.startsWith(`${ano}-${String(mes + 1).padStart(2, '0')}`))
+    .reduce((n, k) => n + porDia.get(k).length, 0);
+
+  let celulas = '';
+  for (let i = 0; i < vazios; i++) celulas += '<span class="cal-vazio"></span>';
+  for (let d = 1; d <= diasNoMes; d++) {
+    const k = `${ano}-${String(mes + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const jogos = porDia.get(k) ?? [];
+    const cores = jogos.slice(0, 3).map((j) => `<i style="background:${(MODALIDADES[j.modalidade] ?? {}).cor ?? '#E3141B'}"></i>`).join('');
+    const mais = jogos.length > 3 ? '<b>+</b>' : '';
+    const classes = ['cal-dia', k === hoje ? 'hoje' : '', k === estado.diaSel ? 'sel' : '', jogos.length ? 'tem' : ''].join(' ');
+    const rotulo = `${d}${jogos.length ? `, ${jogos.length} jogo${jogos.length > 1 ? 's' : ''}` : ''}`;
+    celulas += `<button class="${classes}" data-dia="${k}" aria-label="${rotulo}" aria-pressed="${k === estado.diaSel}">
+      <span class="cal-num">${d}</span><span class="cal-pontos">${cores}${mais}</span></button>`;
+  }
+
+  const sel = porDia.get(estado.diaSel) ?? [];
+  const [sa, sm, sd] = estado.diaSel.split('-').map(Number);
+  const rotSel = rotuloDia(new Date(Date.UTC(sa, sm - 1, sd, 15)));
+  const lista = sel.length ? sel.map((j) => cartao(j)).join('') : '<p class="vazio pequeno">Nenhum jogo neste dia.</p>';
+
+  $('#lista').innerHTML = `
+    <section class="cal" aria-label="Calendário de jogos">
+      <div class="cal-topo">
+        <button class="btn-icone" data-mes="-1" aria-label="Mês anterior">‹</button>
+        <div class="cal-titulo"><strong>${esc(titulo.charAt(0).toUpperCase() + titulo.slice(1))}</strong>
+          <span>${totalMes ? `${totalMes} jogo${totalMes > 1 ? 's' : ''}` : 'Sem jogos cadastrados'}</span></div>
+        <button class="btn-icone" data-mes="1" aria-label="Próximo mês">›</button>
+      </div>
+      <div class="cal-semana" aria-hidden="true"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+      <div class="cal-grade">${celulas}</div>
+    </section>
+    <h2 class="dia">${esc(rotSel)}</h2>
+    ${lista}`;
+}
+
 function desenhar() {
   const agora = Date.now();
   const DUR = 3 * 3600e3; // um jogo "ainda não acabou" até 3h depois do início, se não tiver resultado
   const filtrados = estado.jogos.filter((j) => estado.filtro === 'todas' || j.modalidade === estado.filtro);
   const proximos = filtrados.filter((j) => j.status !== 'encerrado' && new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora && j.status !== 'cancelado');
   const resultados = filtrados.filter((j) => j.status === 'encerrado' || (j.placar && new Date(j.inicio) < agora)).reverse();
+  if (estado.aba === 'calendario') return desenharCalendario(filtrados);
   const lista = estado.aba === 'proximos' ? proximos : resultados;
 
   if (!lista.length) {
@@ -160,6 +224,16 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.aba').forEach((b) => { const on = b === aba; b.classList.toggle('ativa', on); b.setAttribute('aria-selected', on); });
     desenhar();
   }
+  const navMes = e.target.closest('[data-mes]');
+  if (navMes) {
+    let { ano, mes } = estado.mes;
+    mes += Number(navMes.dataset.mes);
+    if (mes < 0) { mes = 11; ano--; } else if (mes > 11) { mes = 0; ano++; }
+    estado.mes = { ano, mes };
+    desenhar();
+  }
+  const dia = e.target.closest('[data-dia]');
+  if (dia) { estado.diaSel = dia.dataset.dia; desenhar(); }
   const chip = e.target.closest('[data-filtro]');
   if (chip) {
     estado.filtro = chip.dataset.filtro; guardar('filtro', estado.filtro);
