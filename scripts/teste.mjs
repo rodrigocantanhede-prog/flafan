@@ -195,3 +195,13 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(lerClassificacao(tab.replace(/<td>34<\/td>/, '<td>0</td>')).length, 0, 'tabela zerada é ignorada');
   console.log('✓ Leitura do site do Flamengo ok');
 }
+{
+  const auto5 = [{ id: 'site-futebol-feminino-2026-11-11-botafogo', modalidade: 'futebol-feminino', adversario: 'Botafogo', inicio: '2026-11-11T15:00:00-03:00', transmissao: [], status: 'agendado', fonte: 'automatica' }];
+  const { jogos: j5 } = mesclar(auto5, parseCsv(`id,modalidade,adversario,data,acao
+,Futebol feminino,A definir,11/11/2026,remover`));
+  assert.equal(j5.length, 1, 'remover de outro jogo no mesmo dia não apaga o jogo do site');
+  const { jogos: j6 } = mesclar(auto5, parseCsv(`id,modalidade,adversario,data,acao
+,Futebol feminino,Botafogo,11/11/2026,remover`));
+  assert.equal(j6.length, 0, 'remover com o mesmo adversário apaga');
+  console.log('✓ Remover só o jogo certo');
+}

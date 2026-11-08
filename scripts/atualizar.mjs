@@ -186,7 +186,9 @@ export function mesclar(automaticos, linhas) {
       }
       // mesmo jogo já veio da fonte automática? (mesma modalidade no mesmo dia) -> junta em vez de duplicar
       const dia = inicio.slice(0, 10);
-      const igual = [...porId.values()].find((j) => j.fonte?.startsWith('automatica') && j.modalidade === modalidade && diaBrasilia(j.inicio) === dia);
+      let igual = [...porId.values()].find((j) => j.fonte?.startsWith('automatica') && j.modalidade === modalidade && diaBrasilia(j.inicio) === dia);
+      // "remover" só apaga um jogo automático se o adversário também for o mesmo (não apaga jogo de outro campeonato no mesmo dia)
+      if (igual && acao === 'remover' && !mesmoTime(l.adversario, igual.adversario)) igual = null;
       const categoria = (limpar(l.modalidade).match(/sub[- ]?(\d+)/i) ?? [])[1] ?? '';
       id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${categoria}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
     }
