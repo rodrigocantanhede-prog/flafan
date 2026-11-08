@@ -26,6 +26,12 @@ Todo dia de madrugada, um robô do GitHub busca os jogos na fonte automática (A
 
 A aba **Como usar** da planilha explica cada coluna.
 
+## Escudos dos times
+- O robô baixa os escudos sozinho pela API-Sports (precisa da chave configurada) e guarda na pasta `escudos/`.
+- Se um escudo não aparecer ou vier errado, cole o link de uma imagem do escudo na coluna `escudo_adv` da planilha.
+- Para trocar um escudo errado: apague o arquivo dele na pasta `escudos/` do GitHub e preencha `escudo_adv`.
+- Sem escudo, o app mostra um círculo com as iniciais do time.
+
 ## Configuração que só precisa ser feita uma vez
 - **Planilha legível pelo robô:** na planilha, clique em Compartilhar → Acesso geral → "Qualquer pessoa com o link" → **Leitor**.
 - **Chave da API-Sports:** crie uma conta grátis em dashboard.api-football.com. Depois, no GitHub, vá em Settings → Secrets and variables → Actions → New repository secret, com o nome `API_SPORTS_KEY` e a sua chave como valor.

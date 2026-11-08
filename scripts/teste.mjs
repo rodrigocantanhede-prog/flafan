@@ -28,3 +28,42 @@ const ics = gerarIcs(jogos, 'teste');
 assert.match(ics, /TRIGGER:-PT1H/);
 assert.match(ics, /DTSTART:20261202T003000Z/);
 console.log('✓ Todos os testes passaram');
+
+// ---- escudos (simula a API e o servidor de imagens, sem internet) ----
+import { resolverEscudos, slug } from './atualizar.mjs';
+import { rm, readFile as ler } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+assert.equal(slug('Athletico-PR'), 'athletico-pr');
+const png = new Uint8Array([137, 80, 78, 71]);
+const chamadas = [];
+const fetchOriginal = globalThis.fetch;
+globalThis.fetch = async (url) => {
+  chamadas.push(String(url));
+  if (String(url).includes('/teams?search=')) {
+    return new Response(JSON.stringify({ errors: [], response: [{ team: { name: 'Palmeiras', logo: 'https://media.api-sports.io/football/teams/121.png', country: 'Brazil' } }] }), { headers: { 'content-type': 'application/json' } });
+  }
+  return new Response(png, { headers: { 'content-type': 'image/png' } });
+};
+const cacheAntes = existsSync('data/escudos.json') ? await ler('data/escudos.json', 'utf8') : null;
+const jogosTeste = [
+  { modalidade: 'futebol-masculino', adversario: 'Palmeiras Teste' },
+  { modalidade: 'volei-feminino', adversario: 'Clube Teste', escudoAdvUrl: 'https://exemplo.com/escudo.png' },
+  { modalidade: 'olimpicos', adversario: 'Regata Teste' },
+];
+const probs = [];
+const fla = await resolverEscudos(jogosTeste, 'chave-falsa', probs);
+assert.equal(fla, 'escudos/flamengo.png');
+assert.equal(jogosTeste[0].escudoAdv, 'escudos/futebol-palmeiras-teste.png');
+assert.equal(jogosTeste[1].escudoAdv, 'escudos/volei-clube-teste.png');
+assert.equal(jogosTeste[2].escudoAdv, undefined);
+assert.ok(!('escudoAdvUrl' in jogosTeste[1]));
+assert.deepEqual(probs, []);
+// segunda vez: não busca nem baixa de novo
+chamadas.length = 0;
+await resolverEscudos([{ modalidade: 'futebol-masculino', adversario: 'Palmeiras Teste' }], 'chave-falsa', []);
+assert.equal(chamadas.length, 0);
+// limpeza
+globalThis.fetch = fetchOriginal;
+for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', 'escudos/volei-clube-teste.png']) await rm(f, { force: true });
+if (cacheAntes === null) await rm('data/escudos.json', { force: true }); else await (await import('node:fs/promises')).writeFile('data/escudos.json', cacheAntes);
+console.log('✓ Testes de escudos passaram');

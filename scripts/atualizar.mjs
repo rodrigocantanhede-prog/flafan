@@ -7,11 +7,13 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(RAIZ, 'data');
+const ESCUDOS = path.join(RAIZ, 'escudos');
 
 export const MODALIDADES = {
   'futebol-masculino': 'Futebol masculino',
@@ -126,6 +128,7 @@ function deApi(modalidade, idTime, j) {
     placar: temPlacar ? { flamengo: flaEmCasa ? pCasa : pFora, adversario: flaEmCasa ? pFora : pCasa } : null,
     status: statusApi(info.status?.short ?? j.status?.short),
     fonte: 'automatica',
+    escudoAdvUrl: adv?.logo || undefined,
   };
 }
 
@@ -185,6 +188,7 @@ export function mesclar(automaticos, linhas) {
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
     if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
+    if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
     if (!novo.modalidade || !novo.inicio) { avisos.push(`Linha ${nLinha}: jogo sem modalidade ou data — ignorado.`); continue; }
     porId.set(id, novo);
@@ -234,6 +238,72 @@ async function lerJson(arq, padrao) {
   try { return JSON.parse(await readFile(arq, 'utf8')); } catch { return padrao; }
 }
 
+// ---------- escudos dos times ----------
+// Baixa cada escudo uma vez para a pasta escudos/ e reaproveita nos dias seguintes.
+export const slug = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const GRUPO = { 'futebol-masculino': 'futebol', 'futebol-feminino': 'futebol', base: 'futebol', futsal: 'futebol', basquete: 'basquete', 'volei-masculino': 'volei', 'volei-feminino': 'volei' };
+const HOST = { futebol: 'v3.football.api-sports.io', basquete: 'v1.basketball.api-sports.io', volei: 'v1.volleyball.api-sports.io' };
+const ESCUDO_FLAMENGO = 'https://media.api-sports.io/football/teams/127.png';
+const MAX_BUSCAS = 15; // protege a cota grátis (100 consultas/dia)
+
+async function baixarImagem(url, base) {
+  for (const ext of ['png', 'svg', 'jpg', 'webp']) {
+    if (existsSync(path.join(ESCUDOS, `${base}.${ext}`))) return `escudos/${base}.${ext}`;
+  }
+  const r = await fetch(url);
+  const tipo = r.headers.get('content-type') || '';
+  if (!r.ok || !tipo.startsWith('image/')) throw new Error(`imagem indisponível (${r.status})`);
+  const ext = tipo.includes('svg') ? 'svg' : tipo.includes('jpeg') ? 'jpg' : tipo.includes('webp') ? 'webp' : 'png';
+  await mkdir(ESCUDOS, { recursive: true });
+  await writeFile(path.join(ESCUDOS, `${base}.${ext}`), Buffer.from(await r.arrayBuffer()));
+  return `escudos/${base}.${ext}`;
+}
+
+async function buscarLogo(grupo, nome, chave) {
+  const termo = semAcento(nome).replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  if (termo.length < 3) return null;
+  const lista = await apiGet(HOST[grupo], `teams?search=${encodeURIComponent(termo)}`, chave);
+  const times = lista.map((x) => x.team ?? x);
+  const pais = (t, x) => semAcento(t.country?.name ?? t.country ?? x?.country?.name ?? '');
+  const doBrasil = lista.find((x) => pais(x.team ?? x, x) === 'brazil');
+  const t = (doBrasil ? doBrasil.team ?? doBrasil : times[0]);
+  return t?.logo || null;
+}
+
+export async function resolverEscudos(jogos, chave, problemas) {
+  const cacheArq = path.join(DATA, 'escudos.json');
+  const cache = await lerJson(cacheArq, {});
+  let buscas = 0;
+  let escudoFlamengo = null;
+  try { escudoFlamengo = await baixarImagem(ESCUDO_FLAMENGO, 'flamengo'); }
+  catch (e) { problemas.push(`Escudo do Flamengo: ${e.message}`); }
+
+  for (const j of jogos) {
+    const grupo = GRUPO[j.modalidade];
+    const chaveCache = `${grupo ?? 'outro'}|${slug(j.adversario)}`;
+    const base = `${grupo ?? 'outro'}-${slug(j.adversario)}`;
+    const url = j.escudoAdvUrl;
+    delete j.escudoAdvUrl;
+    try {
+      if (url) {
+        cache[chaveCache] = await baixarImagem(url, base);
+      } else if (!(chaveCache in cache) || (cache[chaveCache] === null && cache[`${chaveCache}|tentou`] < Date.now() - 30 * 864e5)) {
+        if (grupo && chave && buscas < MAX_BUSCAS) {
+          buscas++;
+          const logo = await buscarLogo(grupo, j.adversario, chave);
+          cache[chaveCache] = logo ? await baixarImagem(logo, base) : null;
+          cache[`${chaveCache}|tentou`] = Date.now();
+        }
+      }
+    } catch (e) {
+      problemas.push(`Escudo de ${j.adversario}: ${e.message}`);
+    }
+    if (cache[chaveCache]) j.escudoAdv = cache[chaveCache];
+  }
+  await writeFile(cacheArq, JSON.stringify(cache, null, 1));
+  return escudoFlamengo;
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const arg = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
@@ -279,7 +349,10 @@ async function main() {
   // 3) junta e salva
   const { jogos, avisos } = mesclar(automaticos, linhas);
   problemas.push(...avisos);
-  const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, jogos };
+  let escudoFlamengo = null;
+  if (args.includes('--sem-api')) jogos.forEach((j) => delete j.escudoAdvUrl);
+  else escudoFlamengo = await resolverEscudos(jogos, chave, problemas);
+  const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };
   await writeFile(path.join(DATA, 'jogos.json'), JSON.stringify(saida, null, 1));
 
   await mkdir(path.join(DATA, 'calendario'), { recursive: true });

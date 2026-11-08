@@ -127,6 +127,12 @@ main { padding: 0 16px 16px; }
   box-shadow: 0 0 0 2px #fff2, 0 6px 16px rgba(227,20,27,.3);
 }
 .escudo.adv { background: var(--cartao2); color: var(--texto); box-shadow: inset 0 0 0 1px #ffffff1f; }
+.escudo-box { position: relative; display: grid; place-items: center; width: 50px; height: 50px; flex: none; }
+.escudo-img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+.escudo-box > .escudo { display: none; }
+.escudo-box.falhou > .escudo-img { display: none; }
+.escudo-box.falhou > .escudo { display: grid; }
+.jogo.destaque .escudo-box { width: 60px; height: 60px; }
 .centro { text-align: center; min-width: 92px; }
 .hora-grande { font-family: var(--display); font-weight: 800; font-size: 36px; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .01em; }
 .hora-grande.a-definir { color: var(--apagado); }

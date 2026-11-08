@@ -87,9 +87,11 @@ function sigla(nome) {
   const boa = palavras.find((p) => !SIGLA_IGNORAR.has(p.toLowerCase())) ?? palavras[0] ?? '?';
   return boa.normalize('NFD').replace(/[̀-ͯ]/g, '').slice(0, 3).toUpperCase();
 }
-const escudo = (nome, fla) => fla
-  ? '<span class="escudo fla" aria-hidden="true"></span>'
-  : `<span class="escudo adv" aria-hidden="true">${esc(sigla(nome))}</span>`;
+function escudo(nome, fla, url) {
+  const reserva = fla ? '<span class="escudo fla"></span>' : `<span class="escudo adv">${esc(sigla(nome))}</span>`;
+  if (!url) return `<span class="escudo-box falhou" aria-hidden="true">${reserva}</span>`;
+  return `<span class="escudo-box" aria-hidden="true"><img class="escudo-img" src="${esc(url)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">${reserva}</span>`;
+}
 
 function contagemCaixas(data) {
   const ms = Math.max(0, data - Date.now());
@@ -102,9 +104,9 @@ function cartao(j, destaque = false) {
   const m = MODALIDADES[j.modalidade] ?? { nome: j.modalidade, cor: '#E3141B' };
   const data = new Date(j.inicio);
   const flaCasa = j.mandante !== false;
-  const timeFla = { nome: 'Flamengo', fla: true }, timeAdv = { nome: j.adversario, fla: false };
+  const timeFla = { nome: 'Flamengo', fla: true, url: estado.escudoFla }, timeAdv = { nome: j.adversario, fla: false, url: j.escudoAdv };
   const [esq, dir] = flaCasa ? [timeFla, timeAdv] : [timeAdv, timeFla];
-  const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla)}<span class="time-nome">${esc(t.nome)}</span></div>`;
+  const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla, t.url)}<span class="time-nome">${esc(t.nome)}</span></div>`;
 
   let centro, selo = '';
   if (j.placar) {
@@ -292,6 +294,7 @@ async function carregar() {
     const r = await fetch('data/jogos.json', { cache: 'no-cache' });
     const dados = await r.json();
     estado.jogos = dados.jogos ?? [];
+    estado.escudoFla = dados.escudoFlamengo ?? null;
     $('#aviso-exemplo').hidden = !dados.exemplo;
     if (dados.atualizadoEm) $('#atualizado').textContent = 'Atualizado em ' + fDataHora.format(new Date(dados.atualizadoEm));
   } catch {
