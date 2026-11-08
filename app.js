@@ -1,13 +1,13 @@
 // FlaFan — telas do app.
 const FUSO = 'America/Sao_Paulo';
 const MODALIDADES = {
-  'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol', icone: 'futebol', sexo: 'm', cor: '#E3141B' },
-  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Futebol', icone: 'futebol', sexo: 'f', cor: '#F472B6' },
+  'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol masc.', icone: 'futebol', sexo: 'm', cor: '#E3141B' },
+  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Futebol fem.', icone: 'futebol', sexo: 'f', cor: '#F472B6' },
   'base': { nome: 'Categorias de base', curto: 'Base', icone: 'base', sexo: null, cor: '#FB923C' },
-  'basquete': { nome: 'Basquete masculino', curto: 'Basquete', icone: 'basquete', sexo: 'm', cor: '#F59E0B' },
-  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei', icone: 'volei', sexo: 'm', cor: '#38BDF8' },
-  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei', icone: 'volei', sexo: 'f', cor: '#A78BFA' },
-  'futsal': { nome: 'Futsal masculino', curto: 'Futsal', icone: 'futsal', sexo: 'm', cor: '#4ADE80' },
+  'basquete': { nome: 'Basquete masculino', curto: 'Basquete masc.', icone: 'basquete', sexo: 'm', cor: '#F59E0B' },
+  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei masc.', icone: 'volei', sexo: 'm', cor: '#38BDF8' },
+  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei fem.', icone: 'volei', sexo: 'f', cor: '#A78BFA' },
+  'futsal': { nome: 'Futsal masculino', curto: 'Futsal masc.', icone: 'futsal', sexo: 'm', cor: '#4ADE80' },
   'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', icone: 'olimpicos', sexo: null, cor: '#2DD4BF' },
 };
 
@@ -19,6 +19,9 @@ const ICONES = {
   volei: '<circle cx="12" cy="12" r="9.5"/><path d="M12 12c-1.2-3.8-.6-7.2 1.6-9.3M12 12c3.9-.9 7.2.2 9.2 2.6M12 12c-2.7 2.9-6 4-9 3.5M12 12c3.2-2.4 4.4-5.7 4-8.5M12 12c.7 3.9 3 6.6 6 7.4"/>',
   futsal: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.8"/><path d="M2 9.5h2.5v5H2M22 9.5h-2.5v5H22"/>',
   olimpicos: '<circle cx="12" cy="15.5" r="5.5"/><path d="M8.5 11.3L5.5 2.5h4l2.5 6M15.5 11.3l3-8.8h-4L12 8.5"/><path d="M12 13l.9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="currentColor" stroke="none"/>',
+  pin: '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  tv: '<rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M8 21.5h8M9 2.5l3 3 3-3"/>',
+  relogio: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   f: '<circle cx="12" cy="9" r="5.5"/><path d="M12 14.5V22M8.5 18.5h7"/>',
   m: '<circle cx="10" cy="14" r="5.5"/><path d="M14 10l6.5-6.5M15 3.5h5.5V9"/>',
 };
@@ -75,45 +78,69 @@ function montarFiltros() {
   const opcoes = [['todas', 'Todas', ''], ...Object.entries(MODALIDADES).filter(([k]) => presentes.has(k)).map(([k, v]) => [k, v.curto, v])];
   if (!opcoes.some(([k]) => k === estado.filtro)) estado.filtro = 'todas';
   $('#filtros').innerHTML = opcoes.map(([k, nome, m]) =>
-    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}" ${m ? `aria-label="${esc(m.nome)}" title="${esc(m.nome)}"` : ''}>${m ? icone(m.icone) : ''}${esc(nome)}${m && m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}</button>`).join('');
+    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}" ${m ? `aria-label="${esc(m.nome)}" title="${esc(m.nome)}"` : ''}>${m ? icone(m.icone) : ''}${esc(nome)}</button>`).join('');
+}
+
+const SIGLA_IGNORAR = new Set(['sesi', 'sesc', 'time', 'basquete', 'volei', 'vôlei', 'ec', 'sc', 'fc', 'cr', 'clube', 'esporte', 'associação', 'regata', 'caixa']);
+function sigla(nome) {
+  const palavras = String(nome).split(/[\s\-/]+/).filter(Boolean);
+  const boa = palavras.find((p) => !SIGLA_IGNORAR.has(p.toLowerCase())) ?? palavras[0] ?? '?';
+  return boa.normalize('NFD').replace(/[̀-ͯ]/g, '').slice(0, 3).toUpperCase();
+}
+const escudo = (nome, fla) => fla
+  ? '<span class="escudo fla" aria-hidden="true"></span>'
+  : `<span class="escudo adv" aria-hidden="true">${esc(sigla(nome))}</span>`;
+
+function contagemCaixas(data) {
+  const ms = Math.max(0, data - Date.now());
+  const d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5), m = Math.floor((ms % 36e5) / 6e4);
+  const caixa = (n, r) => `<span class="cx"><b>${String(n).padStart(2, '0')}</b><small>${r}</small></span>`;
+  return `<div class="contagem" aria-label="${esc(contagem(data))}">${caixa(d, d === 1 ? 'dia' : 'dias')}${caixa(h, 'horas')}${caixa(m, 'min')}</div>`;
 }
 
 function cartao(j, destaque = false) {
   const m = MODALIDADES[j.modalidade] ?? { nome: j.modalidade, cor: '#E3141B' };
   const data = new Date(j.inicio);
-  const fla = `<span class="fla-nome">Flamengo</span>`;
-  const adv = `<span>${esc(j.adversario)}</span>`;
-  const confronto = j.mandante === false ? `${adv}<span class="vs">x</span>${fla}` : `${fla}<span class="vs">x</span>${adv}`;
-  let confrontoHtml = `<div class="confronto">${confronto}</div>`;
-  let selo = '';
+  const flaCasa = j.mandante !== false;
+  const timeFla = { nome: 'Flamengo', fla: true }, timeAdv = { nome: j.adversario, fla: false };
+  const [esq, dir] = flaCasa ? [timeFla, timeAdv] : [timeAdv, timeFla];
+  const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla)}<span class="time-nome">${esc(t.nome)}</span></div>`;
+
+  let centro, selo = '';
   if (j.placar) {
     const { flamengo: f, adversario: a } = j.placar;
-    const linhas = j.mandante === false ? [['adv', j.adversario, a], ['fla', 'Flamengo', f]] : [['fla', 'Flamengo', f], ['adv', j.adversario, a]];
-    const venceu = (n) => (n === Math.max(f, a) && f !== a ? 'venc' : '');
-    confrontoHtml = `<div class="placar-grade">${linhas.map(([t, nome, p]) =>
-      `<span class="${t === 'fla' ? 'fla-nome' : ''} ${venceu(p)}">${esc(nome)}</span><span class="pts ${venceu(p)}">${p}</span>`).join('')}</div>`;
+    const [pe, pd] = flaCasa ? [f, a] : [a, f];
+    centro = `<div class="placar"><span>${pe}</span><i>–</i><span>${pd}</span></div><div class="centro-legenda">${j.status === 'encerrado' ? 'Encerrado' : 'Parcial'}</div>`;
     if (j.status === 'encerrado') {
       const r = f > a ? ['v', 'Vitória'] : f < a ? ['d', 'Derrota'] : ['e', 'Empate'];
       selo = `<span class="resultado ${r[0]}">${r[1]}</span>`;
     }
+  } else if (j.semHora) {
+    centro = `<div class="hora-grande a-definir">--:--</div><div class="centro-legenda">Horário a definir</div>`;
+  } else {
+    centro = `<div class="hora-grande">${fHora.format(data)}</div><div class="centro-legenda">Brasília</div>`;
   }
-  const status = { 'ao-vivo': 'AO VIVO', adiado: 'ADIADO', cancelado: 'CANCELADO' }[j.status];
+
+  const status = { 'ao-vivo': 'Ao vivo', adiado: 'Adiado', cancelado: 'Cancelado' }[j.status];
   const canais = j.transmissao?.length
-    ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</span>`).join('')
+    ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
     : `<span class="canal confirmar">A confirmar</span>`;
   const mostraOnde = j.status !== 'encerrado';
+
   return `<article class="jogo ${destaque ? 'destaque' : ''}" style="--cor:${m.cor}">
-    <div class="jogo-cab">
-      <span class="tag">${m.icone ? seloModalidade(m) : ''}${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span>
-      ${j.competicao ? `<span class="ponto">${esc(j.competicao)}</span>` : ''}
+    ${destaque ? `<div class="destaque-rotulo">Próximo jogo</div>` : ''}
+    <header class="jogo-cab">
+      <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span></span>
       ${status ? `<span class="status ${j.status}">${status}</span>` : ''}${selo}
-      <span class="hora">${j.semHora ? 'Horário a definir' : fHora.format(data)}</span>
+    </header>
+    ${j.competicao ? `<div class="competicao">${esc(j.competicao)}</div>` : ''}
+    <div class="confronto">${lado(esq, 'esq')}<div class="centro">${centro}</div>${lado(dir, 'dir')}</div>
+    ${destaque && !j.semHora && !j.placar ? contagemCaixas(data) : ''}
+    <div class="detalhes">
+      ${j.local ? `<div class="linha">${icone('pin')}<span>${esc(j.local)}</span></div>` : ''}
+      ${mostraOnde ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
     </div>
-    ${confrontoHtml}
-    ${j.local ? `<div class="local">📍 ${esc(j.local)}</div>` : ''}
-    ${mostraOnde ? `<div class="onde"><span class="onde-rotulo">📺 Onde assistir</span>${canais}</div>` : ''}
     ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
-    ${destaque ? `<div class="contagem">⏱ ${j.semHora ? 'Horário ainda não definido' : contagem(data)} · ${esc(rotuloDia(data))}</div>` : ''}
   </article>`;
 }
 
