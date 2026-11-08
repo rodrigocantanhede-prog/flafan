@@ -1,0 +1,13 @@
+id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_fla,placar_adv,status,acao,observacao
+,Futebol masculino,Time Exemplo A,Brasileirão Série A,01/11/2026,16:00,"Maracanã, Rio de Janeiro",casa,Premiere; Globo,2,1,encerrado,,
+,Vôlei feminino,Time Exemplo B,Superliga Feminina,03/11/2026,19:00,"Tijuca Tênis Clube, Rio de Janeiro",casa,SporTV 2,3,1,encerrado,,
+,Basquete,Time Exemplo C,NBB,05/11/2026,20:00,"Ginásio do Exemplo, São Paulo",fora,Xsports; YouTube NBB,78,84,encerrado,,
+,Futebol feminino,Time Exemplo D,Brasileirão Feminino,06/11/2026,15:00,"Estádio Exemplo, São Paulo",fora,ge tv (YouTube),1,1,encerrado,,
+,Futebol masculino,Time Exemplo E,Brasileirão Série A,08/11/2026,18:30,"Maracanã, Rio de Janeiro",casa,Premiere; SporTV,,,,,
+,Vôlei masculino,Time Exemplo F,Superliga Masculina,09/11/2026,21:30,"Ginásio Exemplo, Belo Horizonte",fora,ge tv (YouTube),,,,,
+,Basquete,Time Exemplo G,NBB,11/11/2026,19:30,"Ginásio do Tijuca, Rio de Janeiro",casa,SporTV; ESPN,,,,,
+,Futebol masculino,Time Exemplo H,Brasileirão Série A,12/11/2026,21:30,"Arena Exemplo, Porto Alegre",fora,Premiere,,,,,
+,Futsal,Time Exemplo I,Liga Nacional de Futsal,13/11/2026,20:00,"Ginásio Exemplo, Carlos Barbosa",fora,Xsports; LNFTV,,,,,
+,Futebol sub-20,Time Exemplo J,Brasileirão Sub-20,14/11/2026,10:00,"Ninho do Urubu, Rio de Janeiro",casa,FlaTV (YouTube),,,,,
+,Vôlei feminino,Time Exemplo K,Superliga Feminina,15/11/2026,17:00,"Tijuca Tênis Clube, Rio de Janeiro",casa,,,,,,Transmissão ainda não anunciada
+,Remo,Regata Exemplo,Campeonato Estadual de Remo,22/11/2026,08:00,"Lagoa Rodrigo de Freitas, Rio de Janeiro",,,,,,,

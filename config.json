@@ -1,0 +1,25 @@
+{
+  "_leia": "Configurações do FlaFan. Só mexa aqui seguindo o GUIA.md.",
+  "planilhaCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=860075626",
+  "fusoHorario": "America/Sao_Paulo",
+  "apiSports": {
+    "_leia": "A chave NÃO fica aqui: ela fica guardada como segredo no GitHub (API_SPORTS_KEY).",
+    "futebol": {
+      "ativo": true,
+      "time": 127,
+      "proximos": 20,
+      "ultimos": 10
+    },
+    "basquete": {
+      "ativo": false,
+      "time": null,
+      "temporada": "2026-2027"
+    },
+    "volei": {
+      "ativo": false,
+      "time": null,
+      "temporada": "2026"
+    }
+  },
+  "onesignalAppId": ""
+}

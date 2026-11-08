@@ -1,0 +1,201 @@
+{
+ "atualizadoEm": "2026-11-07T23:55:21.254Z",
+ "exemplo": true,
+ "avisos": [],
+ "jogos": [
+  {
+   "id": "m-eb80ab86b4",
+   "transmissao": [
+    "Premiere",
+    "Globo"
+   ],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Time Exemplo A",
+   "inicio": "2026-11-01T16:00:00-03:00"
+  },
+  {
+   "id": "m-b1ca2b7e57",
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Time Exemplo B",
+   "inicio": "2026-11-03T19:00:00-03:00"
+  },
+  {
+   "id": "m-9a7d8a0964",
+   "transmissao": [
+    "Xsports",
+    "YouTube NBB"
+   ],
+   "placar": {
+    "flamengo": 78,
+    "adversario": 84
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Ginásio do Exemplo, São Paulo",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Time Exemplo C",
+   "inicio": "2026-11-05T20:00:00-03:00"
+  },
+  {
+   "id": "m-233dc7b693",
+   "transmissao": [
+    "ge tv (YouTube)"
+   ],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "mandante": false,
+   "local": "Estádio Exemplo, São Paulo",
+   "competicao": "Brasileirão Feminino",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Time Exemplo D",
+   "inicio": "2026-11-06T15:00:00-03:00"
+  },
+  {
+   "id": "m-a1193a9cc4",
+   "transmissao": [
+    "Premiere",
+    "SporTV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Maracanã, Rio de Janeiro",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Time Exemplo E",
+   "inicio": "2026-11-08T18:30:00-03:00"
+  },
+  {
+   "id": "m-b9441b2721",
+   "transmissao": [
+    "ge tv (YouTube)"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Ginásio Exemplo, Belo Horizonte",
+   "competicao": "Superliga Masculina",
+   "fonte": "manual",
+   "modalidade": "volei-masculino",
+   "adversario": "Time Exemplo F",
+   "inicio": "2026-11-09T21:30:00-03:00"
+  },
+  {
+   "id": "m-d3886574e6",
+   "transmissao": [
+    "SporTV",
+    "ESPN"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Ginásio do Tijuca, Rio de Janeiro",
+   "competicao": "NBB",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Time Exemplo G",
+   "inicio": "2026-11-11T19:30:00-03:00"
+  },
+  {
+   "id": "m-d02ad015bd",
+   "transmissao": [
+    "Premiere"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Arena Exemplo, Porto Alegre",
+   "competicao": "Brasileirão Série A",
+   "fonte": "manual",
+   "modalidade": "futebol-masculino",
+   "adversario": "Time Exemplo H",
+   "inicio": "2026-11-12T21:30:00-03:00"
+  },
+  {
+   "id": "m-5e2ab89684",
+   "transmissao": [
+    "Xsports",
+    "LNFTV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": false,
+   "local": "Ginásio Exemplo, Carlos Barbosa",
+   "competicao": "Liga Nacional de Futsal",
+   "fonte": "manual",
+   "modalidade": "futsal",
+   "adversario": "Time Exemplo I",
+   "inicio": "2026-11-13T20:00:00-03:00"
+  },
+  {
+   "id": "m-c68aea3000",
+   "transmissao": [
+    "FlaTV (YouTube)"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Ninho do Urubu, Rio de Janeiro",
+   "competicao": "Brasileirão Sub-20",
+   "fonte": "manual",
+   "modalidade": "base",
+   "adversario": "Time Exemplo J",
+   "inicio": "2026-11-14T10:00:00-03:00"
+  },
+  {
+   "id": "m-fb24dd79a4",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "competicao": "Superliga Feminina",
+   "fonte": "manual",
+   "modalidade": "volei-feminino",
+   "adversario": "Time Exemplo K",
+   "inicio": "2026-11-15T17:00:00-03:00",
+   "observacao": "Transmissão ainda não anunciada"
+  },
+  {
+   "id": "m-91ce570694",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": null,
+   "local": "Lagoa Rodrigo de Freitas, Rio de Janeiro",
+   "competicao": "Campeonato Estadual de Remo",
+   "fonte": "manual",
+   "modalidade": "olimpicos",
+   "adversario": "Regata Exemplo",
+   "inicio": "2026-11-22T08:00:00-03:00"
+  }
+ ]
+}

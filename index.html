@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FlaFan</title>
+  <meta name="description" content="Todos os jogos do Mengão, em todas as modalidades, e onde assistir.">
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="FlaFan">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="FlaFan">
+  <meta property="og:description" content="Todos os jogos do Mengão e onde assistir.">
+  <meta property="og:image" content="icons/icon-512.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <img src="icons/icon-192.png" alt="" class="topo-icone" width="40" height="40">
+    <div class="marca"><span class="fla">Fla</span><span class="fan">Fan</span></div>
+    <button class="btn-icone" id="abrir-ajustes" aria-label="Ajustes e lembretes">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 0 0-5-5.9V4a1 1 0 1 0-2 0v1.1A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2Z"/></svg>
+    </button>
+  </header>
+
+  <div id="aviso-exemplo" class="aviso" hidden>⚠️ Dados de exemplo — ainda não são jogos reais.</div>
+
+  <nav class="abas" role="tablist">
+    <button role="tab" class="aba ativa" data-aba="proximos" aria-selected="true">Próximos jogos</button>
+    <button role="tab" class="aba" data-aba="resultados" aria-selected="false">Resultados</button>
+  </nav>
+
+  <div class="filtros" id="filtros" role="group" aria-label="Filtrar por modalidade"></div>
+
+  <main id="lista" aria-live="polite"><p class="vazio">Carregando jogos…</p></main>
+
+  <footer class="rodape">
+    <span id="atualizado"></span>
+    <span>FlaFan é um app de torcedor, sem vínculo oficial com o clube.</span>
+  </footer>
+
+  <dialog id="ajustes" class="painel">
+    <form method="dialog" class="painel-conteudo">
+      <div class="painel-topo">
+        <h2>Lembretes</h2>
+        <button class="btn-icone" value="fechar" aria-label="Fechar">✕</button>
+      </div>
+
+      <section>
+        <h3>📅 Lembrete na agenda do celular</h3>
+        <p class="ajuda">Os jogos entram na agenda do seu celular com alerta <b>1 hora antes</b>. Se um jogo mudar, a agenda se atualiza sozinha.</p>
+        <label class="campo">Quais jogos?
+          <select id="cal-modalidade"></select>
+        </label>
+        <div class="botoes">
+          <a class="btn" id="cal-iphone" href="#">iPhone / Apple</a>
+          <a class="btn" id="cal-google" href="#" target="_blank" rel="noopener">Google Agenda (Android)</a>
+          <button type="button" class="btn sec" id="cal-copiar">Copiar link</button>
+        </div>
+      </section>
+
+      <section>
+        <h3>🔔 Notificação do app</h3>
+        <p class="ajuda">Escolha as modalidades que você acompanha:</p>
+        <div id="pref-modalidades" class="checks"></div>
+        <button type="button" class="btn" id="ativar-push" disabled>Ativar notificações (em breve)</button>
+        <p class="ajuda pequena" id="push-ajuda">No iPhone, primeiro instale o FlaFan na tela inicial (Compartilhar → “Adicionar à Tela de Início”).</p>
+      </section>
+    </form>
+  </dialog>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Roda todo dia às 05:17 (horário de Brasília) e também quando você clicar em "Run workflow".
+name: Atualizar jogos
+on:
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Buscar jogos (API + planilha)
+        env:
+          API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
+        run: node scripts/atualizar.mjs
+      - name: Salvar se algo mudou
+        run: |
+          git config user.name "FlaFan robô"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Atualização automática dos jogos"
+          git push
