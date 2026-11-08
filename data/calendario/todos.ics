@@ -7,8 +7,1618 @@ X-WR-CALNAME:FlaFan — todos os jogos
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
+UID:cbf-831891@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260129T003000Z
+DTEND:20260129T023000Z
+SUMMARY:São Paulo x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Morumbi - Sao Paulo - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831969@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260201T190000Z
+DTEND:20260201T210000Z
+SUMMARY:Flamengo x Corinthians (Futebol masculino)
+DESCRIPTION:Supercopa do Brasil\nOnde assistir: a confirmar
+LOCATION:Mané Garrincha - Brasilia - DF
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Corinthians começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831899@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260204T220000Z
+DTEND:20260205T000000Z
+SUMMARY:Flamengo x Internacional (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Internacional começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831917@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260211T003000Z
+DTEND:20260211T023000Z
+SUMMARY:Vitória x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Manoel Barradas - Salvador - BA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Vitória x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832279@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260213T000000Z
+DTEND:20260213T020000Z
+SUMMARY:Mixto x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Dutrinha - Cuiaba - MT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mixto x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832519@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260220T180000Z
+DTEND:20260220T200000Z
+SUMMARY:Red Bull Bragantino x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:CT Red Bull Bragantino - Atibaia - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Red Bull Bragantino x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832280@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260221T000000Z
+DTEND:20260221T020000Z
+SUMMARY:Flamengo x Red Bull Bragantino (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Red Bull Bragantino começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832524@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260223T220000Z
+DTEND:20260224T000000Z
+SUMMARY:Flamengo x Vasco da Gama (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vasco da Gama começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832432@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260224T180000Z
+DTEND:20260224T200000Z
+SUMMARY:Flamengo x BNT (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-17\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x BNT começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832534@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260227T180000Z
+DTEND:20260227T200000Z
+SUMMARY:Flamengo x Vitória (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vitória começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-833296@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260304T180000Z
+DTEND:20260304T200000Z
+SUMMARY:Atlético Mineiro x Flamengo (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-17\nOnde assistir: a confirmar
+LOCATION:ARENA MRV - Belo Horizonte - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Atlético Mineiro x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832442@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260308T180000Z
+DTEND:20260308T200000Z
+SUMMARY:Litoral Norte F. C. x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Pituaçu - Salvador - BA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Litoral Norte F. C. x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-833305@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260310T180000Z
+DTEND:20260310T200000Z
+SUMMARY:Flamengo x Atlético Mineiro (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-17\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Atlético Mineiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831929@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260312T003000Z
+DTEND:20260312T023000Z
+SUMMARY:Flamengo x Cruzeiro (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Cruzeiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832454@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260312T180000Z
+DTEND:20260312T200000Z
+SUMMARY:Flamengo x Uda (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Uda começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832295@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260313T220000Z
+DTEND:20260314T000000Z
+SUMMARY:Botafogo x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Nilton Santos - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Botafogo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831940@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260314T233000Z
+DTEND:20260315T013000Z
+SUMMARY:Botafogo x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Nilton Santos - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Botafogo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832466@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260317T180000Z
+DTEND:20260317T200000Z
+SUMMARY:Flamengo x Fluminense (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831949@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260319T230000Z
+DTEND:20260320T010000Z
+SUMMARY:Flamengo x Remo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Remo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832298@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260321T000000Z
+DTEND:20260321T020000Z
+SUMMARY:Flamengo x Cruzeiro (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Cruzeiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831962@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260322T233000Z
+DTEND:20260323T013000Z
+SUMMARY:Corinthians x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Neo Química Arena - Sao Paulo - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Corinthians x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832478@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260325T180000Z
+DTEND:20260325T200000Z
+SUMMARY:Fluminense x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Marcelo Vieira - Duque de Caxias - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Fluminense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832308@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260327T000000Z
+DTEND:20260327T020000Z
+SUMMARY:Juventude x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Alfredo Jaconi - Caxias do Sul - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Juventude x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832320@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260331T003000Z
+DTEND:20260331T023000Z
+SUMMARY:Palmeiras x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Arena Barueri - Barueri - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Palmeiras x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832551@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260401T180000Z
+DTEND:20260401T200000Z
+SUMMARY:Criciúma x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:CT do Criciúma 1 - Criciuma - SC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Criciúma x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832490@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260402T180000Z
+DTEND:20260402T200000Z
+SUMMARY:Uda x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Rei Pelé - Maceio - AL
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Uda x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831974@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260403T003000Z
+DTEND:20260403T023000Z
+SUMMARY:Red Bull Bragantino x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Cícero de Souza Marques - Braganca Paulista - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Red Bull Bragantino x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832502@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260405T180000Z
+DTEND:20260405T200000Z
+SUMMARY:Flamengo x Litoral Norte F. C. (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Litoral Norte F. C. começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831980@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260405T203000Z
+DTEND:20260405T223000Z
+SUMMARY:Flamengo x Santos FC (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Santos FC começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832554@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260408T180000Z
+DTEND:20260408T200000Z
+SUMMARY:Flamengo x Fortaleza (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fortaleza começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831990@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260412T210000Z
+DTEND:20260412T230000Z
+SUMMARY:Fluminense x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Fluminense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832565@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260415T180000Z
+DTEND:20260415T200000Z
+SUMMARY:Grêmio x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Airton Ferreira da Silva - Eldorado do Sul - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Grêmio x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832000@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260419T223000Z
+DTEND:20260420T003000Z
+SUMMARY:Flamengo x Bahia (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Bahia começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832325@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260421T003000Z
+DTEND:20260421T023000Z
+SUMMARY:Flamengo x Bahia (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Bahia começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832574@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260422T180000Z
+DTEND:20260422T200000Z
+SUMMARY:Flamengo x Fluminense (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834013@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260423T003000Z
+DTEND:20260423T023000Z
+SUMMARY:Flamengo x Vitória (Futebol masculino)
+DESCRIPTION:Copa do Brasil\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vitória começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832584@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260425T180000Z
+DTEND:20260425T200000Z
+SUMMARY:Flamengo x Cruzeiro (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Cruzeiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832334@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260425T190000Z
+DTEND:20260425T210000Z
+SUMMARY:Flamengo x Vitória (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vitória começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834078@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260426T180000Z
+DTEND:20260426T200000Z
+SUMMARY:Flamengo x Porto Vitória F. C. (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Porto Vitória F. C. começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834043@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260426T180000Z
+DTEND:20260426T200000Z
+SUMMARY:Fluminense x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Marcelo Vieira - Duque de Caxias - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Fluminense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832015@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260426T233000Z
+DTEND:20260427T013000Z
+SUMMARY:Atlético Mineiro x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:ARENA MRV - Belo Horizonte - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Atlético Mineiro x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832592@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260430T180000Z
+DTEND:20260430T200000Z
+SUMMARY:Bahia x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:CT Evaristo de Macedo - Camacari - BA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Bahia x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834047@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260430T180000Z
+DTEND:20260430T200000Z
+SUMMARY:Flamengo x Fluminense (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834094@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260503T180000Z
+DTEND:20260503T200000Z
+SUMMARY:América x Flamengo (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:Campo Usina Esperança - Itabirito - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:América x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832020@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260503T190000Z
+DTEND:20260503T210000Z
+SUMMARY:Flamengo x Vasco da Gama (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vasco da Gama começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832351@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260505T000000Z
+DTEND:20260505T020000Z
+SUMMARY:São Paulo x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Marcelo Portugal - Cotia - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834370@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260505T210000Z
+DTEND:20260505T230000Z
+SUMMARY:Flamengo x Internacional (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Internacional começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832604@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260507T210000Z
+DTEND:20260507T230000Z
+SUMMARY:Flamengo x Palmeiras (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Palmeiras começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834110@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260510T180000Z
+DTEND:20260510T200000Z
+SUMMARY:Flamengo x Atlético Goianiense (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:CT Ninho do Urubu - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Atlético Goianiense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832036@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260510T223000Z
+DTEND:20260511T003000Z
+SUMMARY:Grêmio x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Arena do Grêmio - Porto Alegre - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Grêmio x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832352@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260511T220000Z
+DTEND:20260512T000000Z
+SUMMARY:Flamengo x Ferroviária (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Ferroviária começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832620@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260513T200000Z
+DTEND:20260513T220000Z
+SUMMARY:Botafogo x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Nilton Santos - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Botafogo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834029@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260515T003000Z
+DTEND:20260515T023000Z
+SUMMARY:Vitória x Flamengo (Futebol masculino)
+DESCRIPTION:Copa do Brasil\nOnde assistir: a confirmar
+LOCATION:Manoel Barradas - Salvador - BA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Vitória x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832361@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260516T000000Z
+DTEND:20260516T020000Z
+SUMMARY:Flamengo x Fluminense (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832623@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260516T180000Z
+DTEND:20260516T200000Z
+SUMMARY:Juventude x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Homero Soldatelli - Flores da Cunha - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Juventude x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832047@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260517T223000Z
+DTEND:20260518T003000Z
+SUMMARY:Athletico Paranaense x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Arena da Baixada - Curitiba - PR
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Athletico Paranaense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834372@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260520T210000Z
+DTEND:20260520T230000Z
+SUMMARY:Internacional x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Francisco Novelletto - Porto Alegre - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Internacional x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832634@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260522T003000Z
+DTEND:20260522T023000Z
+SUMMARY:Flamengo x Santos FC (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Santos FC começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832371@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260523T003000Z
+DTEND:20260523T023000Z
+SUMMARY:Internacional x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:SESC Protásio Alves - Porto Alegre - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Internacional x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832050@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260524T000000Z
+DTEND:20260524T020000Z
+SUMMARY:Flamengo x Palmeiras (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Palmeiras começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834709@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260524T140000Z
+DTEND:20260524T160000Z
+SUMMARY:São Paulo x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Jardim Inamar - Diadema - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832647@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260527T180000Z
+DTEND:20260527T200000Z
+SUMMARY:América x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Castor Cifuentes - Nova Lima - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:América x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834699@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260527T220000Z
+DTEND:20260528T000000Z
+SUMMARY:Liga Sanjoanense x Flamengo (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina\nOnde assistir: a confirmar
+LOCATION:Arena Ytacoatiara - Piripiri - PI
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Liga Sanjoanense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834363@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260529T203000Z
+DTEND:20260529T223000Z
+SUMMARY:Internacional x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Francisco Novelletto - Porto Alegre - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Internacional x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834710@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260530T000000Z
+DTEND:20260530T020000Z
+SUMMARY:Flamengo x São Paulo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino Sub-20\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x São Paulo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832060@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260530T190000Z
+DTEND:20260530T210000Z
+SUMMARY:Flamengo x Coritiba (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Coritiba começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834677@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260531T180000Z
+DTEND:20260531T200000Z
+SUMMARY:Flamengo x Fluminense (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834450@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260602T210000Z
+DTEND:20260602T230000Z
+SUMMARY:Flamengo x Fluminense (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Fluminense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832654@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260609T180000Z
+DTEND:20260609T200000Z
+SUMMARY:Flamengo x Athletico Paranaense (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Athletico Paranaense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834461@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260609T180000Z
+DTEND:20260609T200000Z
+SUMMARY:São Paulo x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Marcelo Portugal - Cotia - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834470@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260616T180000Z
+DTEND:20260616T200000Z
+SUMMARY:Flamengo x Atlético Mineiro (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Atlético Mineiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832664@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260617T180000Z
+DTEND:20260617T200000Z
+SUMMARY:Flamengo x Cuiabá (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Cuiabá começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832676@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260620T180000Z
+DTEND:20260620T200000Z
+SUMMARY:São Paulo x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Marcelo Portugal - Cotia - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834478@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260623T180000Z
+DTEND:20260623T200000Z
+SUMMARY:Vasco da Gama x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Nivaldo Pereira - Nova Iguacu - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Vasco da Gama x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832688@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260625T180000Z
+DTEND:20260625T200000Z
+SUMMARY:Corinthians x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:Parque São Jorge - Sao Paulo - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Corinthians x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834490@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260630T180000Z
+DTEND:20260630T200000Z
+SUMMARY:Flamengo x Juventude (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Juventude começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832694@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260701T180000Z
+DTEND:20260701T200000Z
+SUMMARY:Flamengo x Avaí (Categorias de base)
+DESCRIPTION:Brasileiro Sub-20\nOnde assistir: a confirmar
+LOCATION:CT Ninho do Urubu - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Avaí começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834500@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260708T180000Z
+DTEND:20260708T200000Z
+SUMMARY:Flamengo x Vitória (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Ninho Urubu - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vitória começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834515@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260714T140000Z
+DTEND:20260714T160000Z
+SUMMARY:Palmeiras x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Nubank Parque - Sao Paulo - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Palmeiras x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834957@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260720T220000Z
+DTEND:20260721T000000Z
+SUMMARY:Flamengo x Instituto 3b (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Instituto 3b começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834521@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260722T190000Z
+DTEND:20260722T210000Z
+SUMMARY:Flamengo x Santos FC (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Santos FC começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832079@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260723T003000Z
+DTEND:20260723T023000Z
+SUMMARY:Chapecoense x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Arena Condá - Chapeco - SC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Chapecoense x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832379@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260724T220000Z
+DTEND:20260725T000000Z
+SUMMARY:Flamengo x Grêmio (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Grêmio começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832080@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260726T213000Z
+DTEND:20260726T233000Z
+SUMMARY:Flamengo x São Paulo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x São Paulo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835011@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260728T180000Z
+DTEND:20260728T200000Z
+SUMMARY:Flamengo x São Raimundo (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:CT Granja Comary - Teresopolis - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x São Raimundo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832096@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260729T223000Z
+DTEND:20260730T003000Z
+SUMMARY:Internacional x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Beira-Rio - Porto Alegre - RS
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Internacional x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835095@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260730T130000Z
+DTEND:20260730T150000Z
+SUMMARY:Flamengo x Palmeiras (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:CT Granja Comary - Teresopolis - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Palmeiras começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835107@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260801T130000Z
+DTEND:20260801T150000Z
+SUMMARY:Flamengo x Ceará (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-15\nOnde assistir: a confirmar
+LOCATION:CT Granja Comary - Teresopolis - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Ceará começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832388@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260803T213000Z
+DTEND:20260803T233000Z
+SUMMARY:Flamengo x Corinthians (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Corinthians começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834527@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260805T180000Z
+DTEND:20260805T200000Z
+SUMMARY:Fortaleza x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:CT Ribamar Bezerra - Maracanau - CE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Fortaleza x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832100@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260809T223000Z
+DTEND:20260810T003000Z
+SUMMARY:Flamengo x Vitória (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Vitória começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832402@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260811T000000Z
+DTEND:20260811T020000Z
+SUMMARY:América x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Arena URBSAN - Betim - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:América x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834541@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260811T184500Z
+DTEND:20260811T204500Z
+SUMMARY:Flamengo x Corinthians (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Corinthians começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832413@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260816T140000Z
+DTEND:20260816T160000Z
+SUMMARY:Santos FC x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Jardim Inamar - Diadema - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Santos FC x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832114@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260816T213000Z
+DTEND:20260816T233000Z
+SUMMARY:Mirassol x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:José Maria de Campos Maia - Mirassol - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mirassol x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834553@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260817T193000Z
+DTEND:20260817T213000Z
+SUMMARY:Botafogo x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Nilton Santos - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Botafogo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832415@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260822T210000Z
+DTEND:20260822T230000Z
+SUMMARY:Flamengo x Atlético Mineiro (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Atlético Mineiro começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832125@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260822T233000Z
+DTEND:20260823T013000Z
+SUMMARY:Cruzeiro x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Mineirão - Belo Horizonte - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cruzeiro x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834561@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260825T180000Z
+DTEND:20260825T200000Z
+SUMMARY:Flamengo x Atlético Goianiense (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Atlético Goianiense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835265@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260829T193000Z
+DTEND:20260829T213000Z
+SUMMARY:Flamengo x Ferroviária (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Ferroviária começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832130@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260830T190000Z
+DTEND:20260830T210000Z
+SUMMARY:Flamengo x Botafogo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Botafogo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834566@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260901T183000Z
+DTEND:20260901T203000Z
+SUMMARY:Cruzeiro x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Arena do Jacaré - Sete Lagoas - MG
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cruzeiro x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-831919@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260902T223000Z
+DTEND:20260903T003000Z
+SUMMARY:Flamengo x Mirassol (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Mirassol começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834581@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260905T180000Z
+DTEND:20260905T200000Z
+SUMMARY:Flamengo x Athletico Paranaense (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Athletico Paranaense começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835269@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260905T193000Z
+DTEND:20260905T213000Z
+SUMMARY:Ferroviária x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Fonte Luminosa - Araraquara - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ferroviária x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832149@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260906T190000Z
+DTEND:20260906T210000Z
+SUMMARY:Remo x Flamengo (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Mangueirão - Belem - PA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Remo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835232@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260908T180000Z
+DTEND:20260908T200000Z
+SUMMARY:Flamengo x Forte Futebol Club (Categorias de base)
+DESCRIPTION:Copa do Brasil Sub-20\nOnde assistir: a confirmar
+LOCATION:CT Ninho do Urubu - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Forte Futebol Club começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834594@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260909T180000Z
+DTEND:20260909T200000Z
+SUMMARY:Bahia x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:CT Evaristo de Macedo - Camacari - BA
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Bahia x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835301@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260912T193000Z
+DTEND:20260912T213000Z
+SUMMARY:Flamengo x São Paulo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Luso Brasileiro - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x São Paulo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832151@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260913T203000Z
+DTEND:20260913T223000Z
+SUMMARY:Flamengo x Corinthians (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Corinthians começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834601@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260915T180000Z
+DTEND:20260915T200000Z
+SUMMARY:Flamengo x Grêmio (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Grêmio começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-835303@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260919T193000Z
+DTEND:20260919T213000Z
+SUMMARY:São Paulo x Flamengo (Futebol feminino)
+DESCRIPTION:Brasileiro Feminino\nOnde assistir: a confirmar
+LOCATION:Brinco de Ouro - Campinas - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:São Paulo x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-832161@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260920T213000Z
+DTEND:20260920T233000Z
+SUMMARY:Flamengo x Red Bull Bragantino (Futebol masculino)
+DESCRIPTION:Brasileirão Série A\nOnde assistir: a confirmar
+LOCATION:Maracanã - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Red Bull Bragantino começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834608@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260922T180000Z
+DTEND:20260922T200000Z
+SUMMARY:Red Bull Bragantino x Flamengo (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:CT Red Bull Bragantino - Atibaia - SP
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Red Bull Bragantino x Flamengo começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cbf-834621@flafan
+DTSTAMP:20261108T193248Z
+DTSTART:20260930T180000Z
+DTEND:20260930T200000Z
+SUMMARY:Flamengo x América (Categorias de base)
+DESCRIPTION:Brasileiro Sub-17\nOnde assistir: a confirmar
+LOCATION:Estádio da Gávea - Rio de Janeiro - RJ
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x América começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:cbf-835414@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261007T203000Z
 DTEND:20261007T223000Z
 SUMMARY:Flamengo x Corinthians (Categorias de base)
@@ -22,7 +1632,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835397@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261008T193000Z
 DTEND:20261008T213000Z
 SUMMARY:Flamengo x Vasco da Gama (Categorias de base)
@@ -36,7 +1646,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832173@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261008T223000Z
 DTEND:20261009T003000Z
 SUMMARY:Santos x Flamengo (Futebol masculino)
@@ -50,7 +1660,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832181@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261011T203000Z
 DTEND:20261011T223000Z
 SUMMARY:Flamengo x Fluminense (Futebol masculino)
@@ -64,7 +1674,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835418@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261013T203000Z
 DTEND:20261013T223000Z
 SUMMARY:Corinthians x Flamengo (Categorias de base)
@@ -78,7 +1688,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835426@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261014T180000Z
 DTEND:20261014T200000Z
 SUMMARY:Flamengo x Criciúma (Categorias de base)
@@ -92,7 +1702,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-466661d860@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
 SUMMARY:Estudiantes x Flamengo (Futebol masculino)
@@ -101,7 +1711,7 @@ LOCATION:La Plata (Argentina)
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835083@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261015T220000Z
 DTEND:20261016T000000Z
 SUMMARY:Fluminense x Flamengo (Futebol feminino)
@@ -116,7 +1726,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27113@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261018T140000Z
 DTEND:20261018T160000Z
 SUMMARY:Flamengo x Bauru (Basquete)
@@ -130,7 +1740,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832199@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261018T213000Z
 DTEND:20261018T233000Z
 SUMMARY:Bahia x Flamengo (Futebol masculino)
@@ -144,7 +1754,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-d13ad9a4ad@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261019
 DTEND;VALUE=DATE:20261020
 SUMMARY:Flamengo x Paulistano/Barueri (Vôlei feminino)
@@ -152,7 +1762,7 @@ DESCRIPTION:Superliga Feminina\nOnde assistir: a confirmar
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27119@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261020T210000Z
 DTEND:20261020T230000Z
 SUMMARY:Flamengo x Botafogo (Basquete)
@@ -166,7 +1776,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835434@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261020T223000Z
 DTEND:20261021T003000Z
 SUMMARY:Criciúma x Flamengo (Categorias de base)
@@ -180,7 +1790,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-74f2c5670f@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:Flamengo x Estudiantes (Futebol masculino)
@@ -189,7 +1799,7 @@ LOCATION:Maracanã\, Rio de Janeiro
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835088@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261022T220000Z
 DTEND:20261023T000000Z
 SUMMARY:Flamengo x Fluminense (Futebol feminino)
@@ -204,7 +1814,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-217bc21f14@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:Brasília x Flamengo (Vôlei feminino)
@@ -213,7 +1823,7 @@ LOCATION:Brasília (DF)
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832201@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261026T230000Z
 DTEND:20261027T010000Z
 SUMMARY:Flamengo x Atlético-MG (Futebol masculino)
@@ -227,7 +1837,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835455@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261027T230000Z
 DTEND:20261028T010000Z
 SUMMARY:Operário x Flamengo (Categorias de base)
@@ -241,7 +1851,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832212@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261029T230000Z
 DTEND:20261030T010000Z
 SUMMARY:Vasco x Flamengo (Futebol masculino)
@@ -255,7 +1865,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27142@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261030T230000Z
 DTEND:20261031T010000Z
 SUMMARY:Flamengo x Caxias do Sul Basquete (Basquete)
@@ -269,7 +1879,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-187b54a54e@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
 SUMMARY:Flamengo x Mackenzie (Vôlei feminino)
@@ -278,7 +1888,7 @@ LOCATION:Tijuca Tênis Clube\, Rio de Janeiro
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6457@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261101T130000Z
 DTEND:20261101T150000Z
 SUMMARY:Botafogo x Flamengo (Categorias de base)
@@ -292,7 +1902,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27143@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261101T140000Z
 DTEND:20261101T160000Z
 SUMMARY:Flamengo x União Corinthians (Basquete)
@@ -306,7 +1916,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835459@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261103T193000Z
 DTEND:20261103T213000Z
 SUMMARY:Flamengo x Operário (Categorias de base)
@@ -320,7 +1930,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835449@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261103T220000Z
 DTEND:20261104T000000Z
 SUMMARY:Bahia x Flamengo (Futebol feminino)
@@ -335,7 +1945,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6185@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261104T140000Z
 DTEND:20261104T160000Z
 SUMMARY:Flamengo x Vasco da Gama (Categorias de base)
@@ -349,7 +1959,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-832221@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261104T223000Z
 DTEND:20261105T003000Z
 SUMMARY:Flamengo x Grêmio (Futebol masculino)
@@ -363,7 +1973,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27151@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261104T231500Z
 DTEND:20261105T011500Z
 SUMMARY:Brasília x Flamengo (Basquete)
@@ -377,7 +1987,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-78aa055826@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 SUMMARY:Londrina x Flamengo (Vôlei feminino)
@@ -386,7 +1996,7 @@ LOCATION:Londrina (PR)
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6459@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261106T180000Z
 DTEND:20261106T200000Z
 SUMMARY:Flamengo x Botafogo (Categorias de base)
@@ -400,7 +2010,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6215@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261107T120000Z
 DTEND:20261107T140000Z
 SUMMARY:Flamengo x Nova Cidade (Categorias de base)
@@ -414,7 +2024,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6472@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261107T130000Z
 DTEND:20261107T150000Z
 SUMMARY:Flamengo x Vasco da Gama (Categorias de base)
@@ -428,7 +2038,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6189@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261107T140000Z
 DTEND:20261107T160000Z
 SUMMARY:Flamengo x Nova Cidade (Categorias de base)
@@ -442,7 +2052,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27159@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261107T220000Z
 DTEND:20261108T000000Z
 SUMMARY:Pato Basquete x Flamengo (Basquete)
@@ -456,7 +2066,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cbf-835451@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261108T003000Z
 DTEND:20261108T023000Z
 SUMMARY:Flamengo x Bahia (Futebol feminino)
@@ -471,7 +2081,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27164@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261110T233000Z
 DTEND:20261111T013000Z
 SUMMARY:Flamengo x Sesi Franca (Basquete)
@@ -485,7 +2095,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6229@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261111T120000Z
 DTEND:20261111T140000Z
 SUMMARY:Botafogo x Flamengo (Categorias de base)
@@ -499,7 +2109,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6195@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261111T140000Z
 DTEND:20261111T160000Z
 SUMMARY:Botafogo x Flamengo (Categorias de base)
@@ -513,7 +2123,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-feminino-2026-11-11-botafogo@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261111T180000Z
 DTEND:20261111T200000Z
 SUMMARY:Flamengo x Botafogo (Futebol feminino)
@@ -527,7 +2137,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-11-12-fluminense@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261113T000000Z
 DTEND:20261113T020000Z
 SUMMARY:Flamengo x Fluminense (Vôlei feminino)
@@ -541,7 +2151,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-9067298e6b@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T014000Z
 DTEND:20261114T034000Z
 SUMMARY:Paisas x Flamengo (Basquete)
@@ -556,7 +2166,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6474@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T130000Z
 DTEND:20261114T150000Z
 SUMMARY:Vasco da Gama x Flamengo (Categorias de base)
@@ -570,7 +2180,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6201@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T160000Z
 DTEND:20261114T180000Z
 SUMMARY:Flamengo x Bangu (Categorias de base)
@@ -584,7 +2194,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-feminino-2026-11-14-vasco-da-gama@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T180000Z
 DTEND:20261114T200000Z
 SUMMARY:Vasco da Gama x Flamengo (Futebol feminino)
@@ -598,7 +2208,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ferj-6235@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T180000Z
 DTEND:20261114T200000Z
 SUMMARY:Flamengo x Bangu (Categorias de base)
@@ -612,7 +2222,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-70f8b20602@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261114T211000Z
 DTEND:20261114T231000Z
 SUMMARY:Flamengo x CAIXA/Brasília (Basquete)
@@ -627,7 +2237,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m-a81a57701d@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261115T211000Z
 DTEND:20261115T231000Z
 SUMMARY:Boca Juniors x Flamengo (Basquete)
@@ -642,7 +2252,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e-99864950cc@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261119
 SUMMARY:Judô: Campeonato Brasileiro Sênior (Flamengo)
@@ -651,7 +2261,7 @@ LOCATION:Local a definir
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-11-17-sesi-volei-bauru@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261118T000000Z
 DTEND:20261118T020000Z
 SUMMARY:Sesi Vôlei Bauru x Flamengo (Vôlei feminino)
@@ -665,7 +2275,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-feminino-2026-11-18-fluminense@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261118T180000Z
 DTEND:20261118T200000Z
 SUMMARY:Flamengo x Fluminense (Futebol feminino)
@@ -679,7 +2289,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-masculino-2026-11-18-athletico-paranaense@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261118T233000Z
 DTEND:20261119T013000Z
 SUMMARY:Flamengo x Athletico-PR (Futebol masculino)
@@ -693,7 +2303,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27181@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261119T220000Z
 DTEND:20261120T000000Z
 SUMMARY:Unifacisa x Flamengo (Basquete)
@@ -707,7 +2317,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-masculino-2026-11-21-palmeiras@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261121T193000Z
 DTEND:20261121T213000Z
 SUMMARY:Palmeiras x Flamengo (Futebol masculino)
@@ -721,7 +2331,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27189@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261122T140000Z
 DTEND:20261122T160000Z
 SUMMARY:Basquete Cearense x Flamengo (Basquete)
@@ -735,7 +2345,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-11-23-osasco-sao-cristovao-saude@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261124T000000Z
 DTEND:20261124T020000Z
 SUMMARY:Flamengo x Osasco (Vôlei feminino)
@@ -749,7 +2359,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-masculino-2026-11-29-coritiba@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261129T190000Z
 DTEND:20261129T210000Z
 SUMMARY:Coritiba x Flamengo (Futebol masculino)
@@ -763,7 +2373,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e-f3a32d5abf@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261207
 SUMMARY:Natação: Mundial de Piscina Curta (Flamengo)
@@ -772,7 +2382,7 @@ LOCATION:Pequim (China)
 END:VEVENT
 BEGIN:VEVENT
 UID:site-futebol-masculino-2026-12-02-chapecoense@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261203T003000Z
 DTEND:20261203T023000Z
 SUMMARY:Flamengo x Chapecoense (Futebol masculino)
@@ -786,7 +2396,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-12-03-pinheiros@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261203T213000Z
 DTEND:20261203T233000Z
 SUMMARY:Flamengo x Pinheiros (Vôlei feminino)
@@ -800,7 +2410,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-12-08-minas@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261209T000000Z
 DTEND:20261209T020000Z
 SUMMARY:Minas x Flamengo (Vôlei feminino)
@@ -814,7 +2424,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27211@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261210T230000Z
 DTEND:20261211T010000Z
 SUMMARY:Mogi Basquete x Flamengo (Basquete)
@@ -828,7 +2438,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27214@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261212T190000Z
 DTEND:20261212T210000Z
 SUMMARY:São José Basketball x Flamengo (Basquete)
@@ -842,7 +2452,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-12-14-dentil-praia-clube@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261215T000000Z
 DTEND:20261215T020000Z
 SUMMARY:Flamengo x Dentil Praia Clube (Vôlei feminino)
@@ -856,7 +2466,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27220@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261215T230000Z
 DTEND:20261216T010000Z
 SUMMARY:Flamengo x Corinthians (Basquete)
@@ -870,7 +2480,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27226@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261217T230000Z
 DTEND:20261218T010000Z
 SUMMARY:Flamengo x Paulistano (Basquete)
@@ -884,7 +2494,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:site-volei-feminino-2026-12-19-abel-moda-volei-brusque@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261219T213000Z
 DTEND:20261219T233000Z
 SUMMARY:Abel Moda Vôlei (Brusque) x Flamengo (Vôlei feminino)
@@ -898,7 +2508,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27236@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261221T230000Z
 DTEND:20261222T010000Z
 SUMMARY:Flamengo x Basket Osasco (Basquete)
@@ -912,7 +2522,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27243@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261223T230000Z
 DTEND:20261224T010000Z
 SUMMARY:Flamengo x Pinheiros (Basquete)
@@ -926,7 +2536,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27252@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261227T200000Z
 DTEND:20261227T220000Z
 SUMMARY:Minas x Flamengo (Basquete)
@@ -940,7 +2550,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27257@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20261229T223000Z
 DTEND:20261230T003000Z
 SUMMARY:Cruzeiro x Flamengo (Basquete)
@@ -954,7 +2564,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27328@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20270112T230000Z
 DTEND:20270113T010000Z
 SUMMARY:Botafogo x Flamengo (Basquete)
@@ -968,7 +2578,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27336@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20270118T223000Z
 DTEND:20270119T003000Z
 SUMMARY:Caxias do Sul Basquete x Flamengo (Basquete)
@@ -982,7 +2592,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:lnb-27344@flafan
-DTSTAMP:20261108T192500Z
+DTSTAMP:20261108T193248Z
 DTSTART:20270120T223000Z
 DTEND:20270121T003000Z
 SUMMARY:Ceisc/União Corinthians x Flamengo (Basquete)
