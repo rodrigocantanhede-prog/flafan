@@ -244,6 +244,13 @@ export const slug = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|
 const GRUPO = { 'futebol-masculino': 'futebol', 'futebol-feminino': 'futebol', base: 'futebol', futsal: 'futebol', basquete: 'basquete', 'volei-masculino': 'volei', 'volei-feminino': 'volei' };
 const HOST = { futebol: 'v3.football.api-sports.io', basquete: 'v1.basketball.api-sports.io', volei: 'v1.volleyball.api-sports.io' };
 const ESCUDO_FLAMENGO = 'https://media.api-sports.io/football/teams/127.png';
+// Códigos dos clubes no servidor de imagens da API-Sports (funciona sem chave). Conferidos visualmente.
+const IDS_FUTEBOL = {
+  palmeiras: 121, fluminense: 124, botafogo: 120, vasco: 133, 'vasco-da-gama': 133, corinthians: 131, 'sao-paulo': 126,
+  santos: 128, gremio: 130, internacional: 119, 'atletico-mg': 1062, 'atletico-mineiro': 1062, cruzeiro: 135, bahia: 118,
+  'athletico-pr': 134, 'athletico-paranaense': 134, coritiba: 147, chapecoense: 132, bragantino: 794, 'red-bull-bragantino': 794,
+  vitoria: 136, mirassol: 7848, remo: 1198, fortaleza: 154, ceara: 129, sport: 123, juventude: 152, estudiantes: 450,
+};
 const MAX_BUSCAS = 40; // limite de buscas novas por dia (protege as cotas grátis)
 
 async function baixarImagem(url, base) {
@@ -270,7 +277,7 @@ async function buscarLogoApiSports(grupo, nome, chave) {
   return t?.logo || null;
 }
 
-// Fonte grátis e sem cadastro (TheSportsDB, chave pública de teste "3"), usada quando a API-Sports não acha.
+// Fonte grátis e sem cadastro (TheSportsDB, chave pública "123"), usada quando a API-Sports não acha.
 const NOMES_TSDB = {
   'athletico-pr': 'Athletico Paranaense', 'atletico-mg': 'Atletico Mineiro', vasco: 'Vasco da Gama',
   bragantino: 'Red Bull Bragantino', 'red-bull-bragantino': 'Red Bull Bragantino', remo: 'Clube do Remo',
@@ -281,7 +288,7 @@ const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 async function buscarLogoTsdb(grupo, nome) {
   const termo = NOMES_TSDB[slug(nome)] ?? semAcento(nome).replace(/[^a-z0-9 ]+/gi, ' ').trim();
   await espera(2100); // respeita o limite de ~30 consultas por minuto
-  const r = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${encodeURIComponent(termo)}`);
+  const r = await fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${encodeURIComponent(termo)}`);
   if (!r.ok) throw new Error(`TheSportsDB respondeu ${r.status}`);
   const times = ((await r.json()).teams ?? []).filter((t) => semAcento(t.strSport) === ESPORTE_TSDB[grupo] && !/women|feminino|u\d\d/i.test(t.strTeam));
   const t = times.find((x) => semAcento(x.strCountry) === 'brazil') ?? times[0];
@@ -307,8 +314,11 @@ export async function resolverEscudos(itens, chave, problemas) {
     const url = j.escudoAdvUrl;
     delete j.escudoAdvUrl;
     try {
+      const idFut = grupo === 'futebol' ? IDS_FUTEBOL[slug(j.adversario)] : null;
       if (url) {
         cache[chaveCache] = await baixarImagem(url, base);
+      } else if (idFut && !cache[chaveCache]) {
+        cache[chaveCache] = await baixarImagem(`https://media.api-sports.io/football/teams/${idFut}.png`, base);
       } else if (!(chaveCache in cache) || (cache[chaveCache] === null && (cache[`${chaveCache}|tentou`] ?? 0) < Date.now() - 7 * 864e5)) {
         if (grupo && buscas < MAX_BUSCAS) {
           buscas++;
@@ -320,7 +330,8 @@ export async function resolverEscudos(itens, chave, problemas) {
         }
       }
     } catch (e) {
-      problemas.push(`Escudo de ${j.adversario}: ${e.message}`);
+      if (!(chaveCache in cache)) problemas.push(`Escudo de ${j.adversario}: ${e.message}`);
+      if (!cache[chaveCache]) { cache[chaveCache] = null; cache[`${chaveCache}|tentou`] = Date.now(); }
     }
     if (cache[chaveCache]) j.escudoAdv = cache[chaveCache];
   }
