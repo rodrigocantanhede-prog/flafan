@@ -1,11 +1,8 @@
 {
- "atualizadoEm": "2026-11-08T01:44:27.559Z",
+ "atualizadoEm": "2026-11-08T11:23:42.027Z",
  "exemplo": false,
  "avisos": [
-  "Chave da API-Sports não configurada — usando só a planilha.",
-  "Escudo de Unifacisa: TheSportsDB respondeu 429",
-  "Escudo de Basquete Cearense: TheSportsDB respondeu 429",
-  "Escudo de Osasco: TheSportsDB respondeu 429"
+  "Chave da API-Sports não configurada — usando só a planilha."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
