@@ -1,0 +1,68 @@
+{
+ "dt-page": {
+  "url": "http://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture",
+  "final": "https://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ },
+ "dt-https": {
+  "url": "https://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture",
+  "final": "https://estadisticas.conmebol.com/html/v3/page.html?channel=deportes.futbol.libertadores2015&lang=es_LA&page=fixture",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ },
+ "dt-fixture-json": {
+  "url": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/pages/es/fixture.json",
+  "final": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/pages/es/fixture.json",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ },
+ "dt-fixture-xml": {
+  "url": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/xml/es/fixture.xml",
+  "final": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/xml/es/fixture.xml",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ },
+ "dt-agenda": {
+  "url": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/agendaMaM/es/agenda.json",
+  "final": "https://estadisticas.conmebol.com/html/v3/htmlCenter/data/deportes/futbol/libertadores2015/agendaMaM/es/agenda.json",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ },
+ "dt-root": {
+  "url": "https://estadisticas.conmebol.com/",
+  "final": "https://estadisticas.conmebol.com/",
+  "status": 403,
+  "tipo": "text/html; charset=utf-8",
+  "bytes": 969,
+  "flamengo": 0,
+  "next": "",
+  "apis": [],
+  "links": []
+ }
+}
