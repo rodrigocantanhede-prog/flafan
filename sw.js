@@ -1,5 +1,5 @@
 // FlaFan — permite abrir o app mesmo sem internet (mostra a última lista baixada).
-const VERSAO = 'flafan-v2';
+const VERSAO = 'flafan-v3';
 const ARQUIVOS = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(VERSAO).then((c) => c.addAll(ARQUIVOS))); self.skipWaiting(); });
 self.addEventListener('activate', (e) => {

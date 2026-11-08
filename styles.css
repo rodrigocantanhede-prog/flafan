@@ -52,6 +52,7 @@ button, select, a { font: inherit; color: inherit; }
 .filtros { display: flex; gap: 8px; overflow-x: auto; padding: 2px 16px 12px; scrollbar-width: none; }
 .filtros::-webkit-scrollbar { display: none; }
 .chip {
+  display: inline-flex; align-items: center; gap: 6px;
   flex: none; border: 1px solid var(--borda); background: var(--cartao);
   padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap;
 }
@@ -143,3 +144,13 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .cal-pontos i { width: 7px; height: 7px; border-radius: 50%; display: block; }
 .cal-pontos b { font-size: 10px; line-height: 7px; }
 .vazio.pequeno { padding: 18px 10px; }
+
+/* ícones de esporte e sexo */
+.ic { width: 1.15em; height: 1.15em; flex: none; vertical-align: -0.2em; }
+.ic-sexo { width: 1em; height: 1em; opacity: .9; }
+.tag { display: inline-flex; align-items: center; gap: 5px; }
+.tag .ic-sexo { margin-right: 2px; }
+.chip .ic { width: 18px; height: 18px; }
+.chip .ic-sexo { width: 15px; height: 15px; margin-left: -2px; }
+.pref-nome { display: inline-flex; gap: 2px; }
+.checks { grid-template-columns: 1fr; }

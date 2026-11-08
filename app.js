@@ -1,15 +1,31 @@
 // FlaFan — telas do app.
 const FUSO = 'America/Sao_Paulo';
 const MODALIDADES = {
-  'futebol-masculino': { nome: 'Futebol', curto: 'Futebol', cor: '#E3141B' },
-  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Fut. feminino', cor: '#F472B6' },
-  'base': { nome: 'Categorias de base', curto: 'Base', cor: '#FB923C' },
-  'basquete': { nome: 'Basquete', curto: 'Basquete', cor: '#F59E0B' },
-  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei masc.', cor: '#38BDF8' },
-  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei fem.', cor: '#A78BFA' },
-  'futsal': { nome: 'Futsal', curto: 'Futsal', cor: '#4ADE80' },
-  'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', cor: '#2DD4BF' },
+  'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol', icone: 'futebol', sexo: 'm', cor: '#E3141B' },
+  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Futebol', icone: 'futebol', sexo: 'f', cor: '#F472B6' },
+  'base': { nome: 'Categorias de base', curto: 'Base', icone: 'base', sexo: null, cor: '#FB923C' },
+  'basquete': { nome: 'Basquete masculino', curto: 'Basquete', icone: 'basquete', sexo: 'm', cor: '#F59E0B' },
+  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei', icone: 'volei', sexo: 'm', cor: '#38BDF8' },
+  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei', icone: 'volei', sexo: 'f', cor: '#A78BFA' },
+  'futsal': { nome: 'Futsal masculino', curto: 'Futsal', icone: 'futsal', sexo: 'm', cor: '#4ADE80' },
+  'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', icone: 'olimpicos', sexo: null, cor: '#2DD4BF' },
 };
+
+// Ícones desenhados para o FlaFan (traço simples, herdam a cor do texto)
+const ICONES = {
+  futebol: '<circle cx="12" cy="12" r="9.5"/><path d="M12 7.6l3.2 2.3-1.2 3.8h-4l-1.2-3.8z" fill="currentColor"/><path d="M12 7.6V2.6M15.2 9.9l4.6-1.5M14 13.7l2.9 3.9M10 13.7l-2.9 3.9M8.8 9.9L4.2 8.4"/>',
+  base: '<circle cx="12" cy="12" r="9.5"/><path d="M12 7.6l3.2 2.3-1.2 3.8h-4l-1.2-3.8z" fill="currentColor"/><path d="M12 7.6V2.6M15.2 9.9l4.6-1.5M14 13.7l2.9 3.9M10 13.7l-2.9 3.9M8.8 9.9L4.2 8.4"/>',
+  basquete: '<circle cx="12" cy="12" r="9.5"/><path d="M12 2.5v19M2.5 12h19M5.6 5c2.8 2.6 2.8 11.4 0 14M18.4 5c-2.8 2.6-2.8 11.4 0 14"/>',
+  volei: '<circle cx="12" cy="12" r="9.5"/><path d="M12 12c-1.2-3.8-.6-7.2 1.6-9.3M12 12c3.9-.9 7.2.2 9.2 2.6M12 12c-2.7 2.9-6 4-9 3.5M12 12c3.2-2.4 4.4-5.7 4-8.5M12 12c.7 3.9 3 6.6 6 7.4"/>',
+  futsal: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.8"/><path d="M2 9.5h2.5v5H2M22 9.5h-2.5v5H22"/>',
+  olimpicos: '<circle cx="12" cy="15.5" r="5.5"/><path d="M8.5 11.3L5.5 2.5h4l2.5 6M15.5 11.3l3-8.8h-4L12 8.5"/><path d="M12 13l.9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="currentColor" stroke="none"/>',
+  f: '<circle cx="12" cy="9" r="5.5"/><path d="M12 14.5V22M8.5 18.5h7"/>',
+  m: '<circle cx="10" cy="14" r="5.5"/><path d="M14 10l6.5-6.5M15 3.5h5.5V9"/>',
+};
+const icone = (nome, cls = 'ic') => ICONES[nome]
+  ? `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONES[nome]}</svg>` : '';
+const seloModalidade = (m) => `${icone(m.icone)}${m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}`;
+
 const GRATIS = /(globo\b|tv globo|ge ?tv|youtube|tv brasil|cazé|caze|record\b|band\b|sbt\b|flatv|fla tv)/i;
 
 // ---------- memória do aparelho (só conveniência; se falhar, o app funciona igual) ----------
@@ -56,10 +72,10 @@ function contagem(data) {
 // ---------- montagem da tela ----------
 function montarFiltros() {
   const presentes = new Set(estado.jogos.map((j) => j.modalidade));
-  const opcoes = [['todas', 'Todas'], ...Object.entries(MODALIDADES).filter(([k]) => presentes.has(k)).map(([k, v]) => [k, v.curto])];
+  const opcoes = [['todas', 'Todas', ''], ...Object.entries(MODALIDADES).filter(([k]) => presentes.has(k)).map(([k, v]) => [k, v.curto, v])];
   if (!opcoes.some(([k]) => k === estado.filtro)) estado.filtro = 'todas';
-  $('#filtros').innerHTML = opcoes.map(([k, nome]) =>
-    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}">${esc(nome)}</button>`).join('');
+  $('#filtros').innerHTML = opcoes.map(([k, nome, m]) =>
+    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}" ${m ? `aria-label="${esc(m.nome)}" title="${esc(m.nome)}"` : ''}>${m ? icone(m.icone) : ''}${esc(nome)}${m && m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}</button>`).join('');
 }
 
 function cartao(j, destaque = false) {
@@ -88,7 +104,7 @@ function cartao(j, destaque = false) {
   const mostraOnde = j.status !== 'encerrado';
   return `<article class="jogo ${destaque ? 'destaque' : ''}" style="--cor:${m.cor}">
     <div class="jogo-cab">
-      <span class="tag">${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span>
+      <span class="tag">${m.icone ? seloModalidade(m) : ''}${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span>
       ${j.competicao ? `<span class="ponto">${esc(j.competicao)}</span>` : ''}
       ${status ? `<span class="status ${j.status}">${status}</span>` : ''}${selo}
       <span class="hora">${j.semHora ? 'Horário a definir' : fHora.format(data)}</span>
@@ -209,7 +225,7 @@ function montarAjustes() {
 
   const prefs = lembrar('acompanhar', Object.keys(MODALIDADES));
   $('#pref-modalidades').innerHTML = Object.entries(MODALIDADES).map(([k, v]) =>
-    `<label><input type="checkbox" value="${k}" ${prefs.includes(k) ? 'checked' : ''}> ${esc(v.curto)}</label>`).join('');
+    `<label><input type="checkbox" value="${k}" ${prefs.includes(k) ? 'checked' : ''}> <span class="pref-nome" style="color:${v.cor}">${seloModalidade(v)}</span> ${esc(v.nome)}</label>`).join('');
   $('#pref-modalidades').onchange = () => {
     guardar('acompanhar', [...document.querySelectorAll('#pref-modalidades input:checked')].map((i) => i.value));
     window.dispatchEvent(new Event('flafan:prefs'));
