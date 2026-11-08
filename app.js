@@ -621,4 +621,15 @@ montarAjustes();
 carregar();
 setInterval(() => { if (estado.carregado) desenhar(); }, 60e3); // atualiza a contagem regressiva
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+// Atualização do app: confere se há versão nova ao abrir e ao voltar para o app; quando chega, recarrega sozinho.
+if ('serviceWorker' in navigator) {
+  const tinhaVersao = !!navigator.serviceWorker.controller;
+  let recarregou = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (tinhaVersao && !recarregou) { recarregou = true; location.reload(); }
+  });
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then((reg) => {
+    reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  }).catch(() => {});
+}
