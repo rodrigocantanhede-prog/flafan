@@ -530,3 +530,30 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .tabela-camp .ult-V { background: #16A34A; } .tabela-camp .ult-E { background: #8A8F98; } .tabela-camp .ult-D { background: #DC2626; }
 .tabela-dica { font-size: 12px; color: var(--apagado); padding: 8px 14px 0; text-align: right; }
 .folha-conteudo { min-height: 88vh; min-height: 88dvh; }
+
+/* ---------- ficha do jogo flutuando (como no Apple Sports) ---------- */
+.folha { width: calc(100% - 20px); max-width: 620px; max-height: calc(100dvh - 50px); margin: auto auto 0; }
+.folha::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(6px) saturate(.8); -webkit-backdrop-filter: blur(6px) saturate(.8); }
+.folha-conteudo {
+  /* a ficha é sempre escura, nos dois temas */
+  --fundo: #0e0d10; --cartao: #1b1519; --cartao2: #241c21; --borda: rgba(255,255,255,.09); --texto: #F6F5F4; --suave: #c9c6cc;
+  --apagado: #8f8a94; --forte: #fff; --time-nome: #e4e1e6; --linha: rgba(255,255,255,.07); --anel: rgba(255,255,255,.14); --aviso-texto: #fcd677;
+  color: var(--texto);
+  background:
+    radial-gradient(130% 95% at 0% 0%, rgba(227,20,27,.6), transparent 70%),
+    radial-gradient(130% 95% at 100% 0%, color-mix(in srgb, var(--cor, #555) 58%, transparent), transparent 70%),
+    linear-gradient(180deg, #1a1216 0%, #121014 45%, #0c0b0e 100%);
+  border-radius: 34px 34px 0 0; max-height: calc(100dvh - 50px); min-height: calc(100dvh - 50px);
+  box-shadow: 0 -10px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.fj-topo { background: none !important; padding-top: 34px; }
+.fj-info .lc-info, .fj-info .lc-obs, .fj-info { color: var(--suave); }
+.fj-titulo { margin: 26px 0 0; padding: 14px 0 6px; font-size: 16px; }
+.folha .tabela-camp { margin: 0 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 22px;
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); padding-top: 10px; }
+.folha .tabela-camp::before { display: none; }
+.folha .tabela-camp th, .folha .tabela-camp td { border-bottom-color: rgba(255,255,255,.06); }
+.folha .tabela-camp tr.eh-fla td { background: rgba(255,255,255,.10); }
+.folha .tabela-camp tr.eh-adv td { background: rgba(255,255,255,.06); }
+.folha .tabela-camp table.larga .t-pos, .folha .tabela-camp table.larga .t-time { background: #22171b; }
+.folha .tabela-camp table.larga tr.eh-fla td.t-pos, .folha .tabela-camp table.larga tr.eh-fla td.t-time { background: #33262a; }

@@ -448,6 +448,7 @@ function abrirJogo(id) {
   // sempre abre do topo (sem herdar a rolagem nem o arraste do jogo anterior)
   const conteudo = $('#detalhe .folha-conteudo');
   conteudo.style.transition = 'none'; conteudo.style.transform = '';
+  conteudo.style.setProperty('--cor', m.cor);
   $('#detalhe').showModal();
   conteudo.scrollTop = 0; $('#detalhe').scrollTop = 0;
   requestAnimationFrame(() => { conteudo.scrollTop = 0; });
