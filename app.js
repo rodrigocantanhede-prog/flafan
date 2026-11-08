@@ -542,6 +542,7 @@ document.addEventListener('click', (e) => {
   if (aba) {
     estado.aba = aba.dataset.aba;
     document.querySelectorAll('.aba').forEach((b) => { const on = b === aba; b.classList.toggle('ativa', on); b.setAttribute('aria-selected', on); });
+    moverDestaqueAba();
     desenhar();
   }
   const navMes = e.target.closest('[data-mes]');
@@ -633,6 +634,14 @@ async function carregar() {
   }
   montarFiltros(); desenhar();
 }
+// destaque vermelho que desliza até a aba escolhida
+function moverDestaqueAba() {
+  const abas = [...document.querySelectorAll('.abas .aba')];
+  const i = Math.max(0, abas.findIndex((b) => b.classList.contains('ativa')));
+  document.querySelector('.abas')?.style.setProperty('--i', i);
+}
+moverDestaqueAba();
+requestAnimationFrame(() => document.querySelector('.abas')?.classList.add('anima'));
 montarAjustes();
 carregar();
 setInterval(() => { if (estado.carregado && (estado.aba === 'proximos' || estado.aba === 'resultados') && !$('#detalhe').open) desenhar(); }, 60e3); // atualiza a contagem regressiva
