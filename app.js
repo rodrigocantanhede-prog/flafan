@@ -223,7 +223,9 @@ function desenharTabela() {
   const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo de gols']];
   $('#lista').innerHTML = lista.map((c) => {
     const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
-    const extras = COLS.filter(([k]) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined));
+    const tem = (k) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined);
+    const extras = COLS.filter(([k]) => tem(k));
+    const temPts = tem('pts');
     const brasileirao = /brasileir[aã]o s[ée]rie a/i.test(c.nome);
     const zona = (pos) => !brasileirao || !pos ? '' : pos <= 4 ? 'z-liberta' : pos <= 6 ? 'z-pre' : pos >= c.linhas.length - 3 ? 'z-rebaixa' : '';
     const linhas = c.linhas.map((l) => {
@@ -231,7 +233,7 @@ function desenharTabela() {
       return `<tr class="${fla ? 'eh-fla' : ''} ${zona(l.pos)}">
         <td class="t-pos">${l.pos ?? ''}</td>
         <td class="t-time">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></td>
-        <td class="t-pts">${l.pts ?? ''}</td><td>${l.j ?? ''}</td>
+        ${temPts ? `<td class="t-pts">${l.pts ?? ''}</td>` : ''}<td>${l.j ?? ''}</td>
         ${extras.map(([k]) => `<td>${l[k] ?? ''}</td>`).join('')}
       </tr>`;
     }).join('');
@@ -241,10 +243,11 @@ function desenharTabela() {
         ${c.atualizado ? `<small>Atualizado ${esc(c.atualizado)}</small>` : ''}
       </header>
       <div class="tabela-rolagem"><table>
-        <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th><th title="Pontos">P</th><th title="Jogos">J</th>
+        <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th>${temPts ? '<th title="Pontos">P</th>' : ''}<th title="Jogos">J</th>
           ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
         <tbody>${linhas}</tbody>
       </table></div>
+      ${c.nota || c.link ? `<div class="tabela-nota">${c.nota ? `<span>${esc(c.nota)}</span>` : ''}${c.link ? `<a class="btn sec" href="${esc(c.link)}" target="_blank" rel="noopener">Ver tabela completa no site oficial ↗</a>` : ''}</div>` : ''}
       ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
     </section>`;
   }).join('');

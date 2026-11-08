@@ -349,6 +349,8 @@ export function montarClassificacao(linhas) {
     if (!porCamp.has(nome)) porCamp.set(nome, { nome, modalidade: normalizarModalidade(l.modalidade) ?? 'futebol-masculino', atualizado: '', fonte: 'planilha', linhas: [] });
     const c = porCamp.get(nome);
     if (limpar(l.atualizado)) c.atualizado = limpar(l.atualizado);
+    if (/^https?:\/\//.test(limpar(l.link))) c.link = limpar(l.link);
+    if (limpar(l.nota)) c.nota = limpar(l.nota);
     c.linhas.push({ pos: numOuNull(l.pos), time: limpar(l.time), j: numOuNull(l.j), v: numOuNull(l.v), e: numOuNull(l.e), d: numOuNull(l.d), sg: numOuNull(l.sg), pts: numOuNull(l.pts) });
   }
   for (const c of porCamp.values()) c.linhas.sort((a, b) => (a.pos ?? 99) - (b.pos ?? 99));

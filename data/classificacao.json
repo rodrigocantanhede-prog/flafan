@@ -228,6 +228,66 @@
      "escudo": "escudos/futebol-chapecoense.png"
     }
    ]
+  },
+  {
+   "nome": "Superliga Feminina",
+   "modalidade": "volei-feminino",
+   "atualizado": "após os jogos de 7/11",
+   "fonte": "planilha",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Sesi Bauru",
+     "j": null,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 15
+    },
+    {
+     "pos": 2,
+     "time": "Sesc RJ Flamengo",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 12
+    },
+    {
+     "pos": 3,
+     "time": "Dentil Praia Clube",
+     "j": null,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 12
+    }
+   ],
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao",
+   "nota": "Tabela parcial: só as primeiras posições foram confirmadas."
+  },
+  {
+   "nome": "NBB",
+   "modalidade": "basquete",
+   "atualizado": "após os jogos de 7/11",
+   "fonte": "planilha",
+   "linhas": [
+    {
+     "pos": 3,
+     "time": "Flamengo",
+     "j": 6,
+     "v": 5,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": null
+    }
+   ],
+   "link": "https://lnb.com.br/nbb/classificacao/",
+   "nota": "Tabela parcial: só a campanha do Flamengo foi confirmada."
   }
  ]
 }

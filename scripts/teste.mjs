@@ -79,3 +79,8 @@ assert.equal(camps[0].linhas[0].time, 'Flamengo');
 assert.equal(camps[0].atualizado, 'após a 34ª rodada');
 assert.equal(camps[1].modalidade, 'basquete');
 console.log('✓ Testes de classificação passaram');
+const c2 = montarClassificacao(parseCsv(`campeonato,modalidade,pos,time,j,v,e,d,sg,pts,atualizado,link,nota
+NBB,Basquete,3,Flamengo,6,5,,1,,,após 7/11,https://lnb.com.br/nbb/classificacao/,Tabela parcial`));
+assert.equal(c2[0].link, 'https://lnb.com.br/nbb/classificacao/');
+assert.equal(c2[0].nota, 'Tabela parcial');
+console.log('✓ Nota e link da classificação ok');
