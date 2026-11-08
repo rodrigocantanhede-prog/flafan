@@ -561,3 +561,23 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .aba { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 430px) { .aba { font-size: 14px; letter-spacing: -.01em; padding: 10px 2px; } }
 @media (max-width: 380px) { .aba { font-size: 12.5px; letter-spacing: -.01em; padding: 10px 1px; } .abas { margin-left: 12px; margin-right: 12px; } }
+
+/* ---------- ficha: a janela ocupa a tela toda (transparente) e o cartão fica dentro, sem "quadrado" atrás dos cantos ---------- */
+.folha {
+  width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; inset: 0;
+  background: rgba(0,0,0,.72); backdrop-filter: blur(6px) saturate(.8); -webkit-backdrop-filter: blur(6px) saturate(.8);
+  overflow: hidden;
+}
+.folha[open] { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.folha::backdrop { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.folha-conteudo {
+  width: calc(100% - 20px); max-width: 620px; margin: 0 auto;
+  max-height: calc(100dvh - 50px); min-height: calc(100dvh - 50px);
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+}
+/* ficha: colunas mais justas para o nome do time caber */
+.folha .tabela-camp th, .folha .tabela-camp td { padding-left: 3px; padding-right: 3px; }
+.folha .tabela-camp .t-pos { width: 26px; padding-left: 10px; }
+.folha .tabela-camp td.c-ap, .folha .tabela-camp th.c-ap { padding-right: 10px; }
+.folha .tabela-camp .t-time-in { gap: 7px; }
+.folha .tabela-camp .t-time-in .escudo-box.mini, .folha .tabela-camp .t-time-in .escudo-box.mini .escudo { width: 24px; height: 24px; }

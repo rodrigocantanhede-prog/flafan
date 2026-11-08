@@ -1,5 +1,5 @@
 // FlaFan — permite abrir o app mesmo sem internet (mostra a última lista baixada).
-const VERSAO = 'flafan-v23';
+const VERSAO = 'flafan-v24';
 const ARQUIVOS = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'fonts/barlow-latin-400-normal.woff2', 'fonts/barlow-latin-600-normal.woff2', 'fonts/barlow-latin-700-normal.woff2',
   'fonts/barlow-condensed-latin-700-normal.woff2', 'fonts/barlow-condensed-latin-800-normal.woff2', 'fonts/barlow-condensed-latin-800-italic.woff2'];
