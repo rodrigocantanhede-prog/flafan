@@ -244,7 +244,7 @@ export const slug = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|
 const GRUPO = { 'futebol-masculino': 'futebol', 'futebol-feminino': 'futebol', base: 'futebol', futsal: 'futebol', basquete: 'basquete', 'volei-masculino': 'volei', 'volei-feminino': 'volei' };
 const HOST = { futebol: 'v3.football.api-sports.io', basquete: 'v1.basketball.api-sports.io', volei: 'v1.volleyball.api-sports.io' };
 const ESCUDO_FLAMENGO = 'https://media.api-sports.io/football/teams/127.png';
-const MAX_BUSCAS = 15; // protege a cota grátis (100 consultas/dia)
+const MAX_BUSCAS = 40; // limite de buscas novas por dia (protege as cotas grátis)
 
 async function baixarImagem(url, base) {
   for (const ext of ['png', 'svg', 'jpg', 'webp']) {
@@ -259,7 +259,7 @@ async function baixarImagem(url, base) {
   return `escudos/${base}.${ext}`;
 }
 
-async function buscarLogo(grupo, nome, chave) {
+async function buscarLogoApiSports(grupo, nome, chave) {
   const termo = semAcento(nome).replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
   if (termo.length < 3) return null;
   const lista = await apiGet(HOST[grupo], `teams?search=${encodeURIComponent(termo)}`, chave);
@@ -270,15 +270,37 @@ async function buscarLogo(grupo, nome, chave) {
   return t?.logo || null;
 }
 
-export async function resolverEscudos(jogos, chave, problemas) {
+// Fonte grátis e sem cadastro (TheSportsDB, chave pública de teste "3"), usada quando a API-Sports não acha.
+const NOMES_TSDB = {
+  'athletico-pr': 'Athletico Paranaense', 'atletico-mg': 'Atletico Mineiro', vasco: 'Vasco da Gama',
+  bragantino: 'Red Bull Bragantino', 'red-bull-bragantino': 'Red Bull Bragantino', remo: 'Clube do Remo',
+  estudiantes: 'Estudiantes', sport: 'Sport Recife', 'america-mg': 'America Mineiro',
+};
+const ESPORTE_TSDB = { futebol: 'soccer', basquete: 'basketball', volei: 'volleyball' };
+const espera = (ms) => new Promise((r) => setTimeout(r, ms));
+async function buscarLogoTsdb(grupo, nome) {
+  const termo = NOMES_TSDB[slug(nome)] ?? semAcento(nome).replace(/[^a-z0-9 ]+/gi, ' ').trim();
+  await espera(2100); // respeita o limite de ~30 consultas por minuto
+  const r = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${encodeURIComponent(termo)}`);
+  if (!r.ok) throw new Error(`TheSportsDB respondeu ${r.status}`);
+  const times = ((await r.json()).teams ?? []).filter((t) => semAcento(t.strSport) === ESPORTE_TSDB[grupo] && !/women|feminino|u\d\d/i.test(t.strTeam));
+  const t = times.find((x) => semAcento(x.strCountry) === 'brazil') ?? times[0];
+  return t?.strBadge || t?.strTeamBadge || null;
+}
+
+// itens: [{ modalidade, adversario, escudoAdvUrl? }] — recebem .escudoAdv quando houver imagem
+export async function resolverEscudos(itens, chave, problemas) {
   const cacheArq = path.join(DATA, 'escudos.json');
   const cache = await lerJson(cacheArq, {});
   let buscas = 0;
   let escudoFlamengo = null;
   try { escudoFlamengo = await baixarImagem(ESCUDO_FLAMENGO, 'flamengo'); }
-  catch (e) { problemas.push(`Escudo do Flamengo: ${e.message}`); }
+  catch (e) {
+    try { const l = await buscarLogoTsdb('futebol', 'Flamengo'); if (l) escudoFlamengo = await baixarImagem(l, 'flamengo'); }
+    catch (e2) { problemas.push(`Escudo do Flamengo: ${e.message}`); }
+  }
 
-  for (const j of jogos) {
+  for (const j of itens) {
     const grupo = GRUPO[j.modalidade];
     const chaveCache = `${grupo ?? 'outro'}|${slug(j.adversario)}`;
     const base = `${grupo ?? 'outro'}-${slug(j.adversario)}`;
@@ -287,10 +309,12 @@ export async function resolverEscudos(jogos, chave, problemas) {
     try {
       if (url) {
         cache[chaveCache] = await baixarImagem(url, base);
-      } else if (!(chaveCache in cache) || (cache[chaveCache] === null && cache[`${chaveCache}|tentou`] < Date.now() - 30 * 864e5)) {
-        if (grupo && chave && buscas < MAX_BUSCAS) {
+      } else if (!(chaveCache in cache) || (cache[chaveCache] === null && (cache[`${chaveCache}|tentou`] ?? 0) < Date.now() - 7 * 864e5)) {
+        if (grupo && buscas < MAX_BUSCAS) {
           buscas++;
-          const logo = await buscarLogo(grupo, j.adversario, chave);
+          let logo = null;
+          if (chave) { try { logo = await buscarLogoApiSports(grupo, j.adversario, chave); } catch { /* tenta a outra fonte */ } }
+          if (!logo) logo = await buscarLogoTsdb(grupo, j.adversario);
           cache[chaveCache] = logo ? await baixarImagem(logo, base) : null;
           cache[`${chaveCache}|tentou`] = Date.now();
         }
@@ -302,6 +326,43 @@ export async function resolverEscudos(jogos, chave, problemas) {
   }
   await writeFile(cacheArq, JSON.stringify(cache, null, 1));
   return escudoFlamengo;
+}
+
+// ---------- classificação ----------
+// Aba "Classificacao" da planilha: campeonato | modalidade | pos | time | j | v | e | d | sg | pts | atualizado
+export function montarClassificacao(linhas) {
+  const porCamp = new Map();
+  for (const l of linhas) {
+    const nome = limpar(l.campeonato);
+    if (!nome || !limpar(l.time)) continue;
+    if (!porCamp.has(nome)) porCamp.set(nome, { nome, modalidade: normalizarModalidade(l.modalidade) ?? 'futebol-masculino', atualizado: '', fonte: 'planilha', linhas: [] });
+    const c = porCamp.get(nome);
+    if (limpar(l.atualizado)) c.atualizado = limpar(l.atualizado);
+    c.linhas.push({ pos: numOuNull(l.pos), time: limpar(l.time), j: numOuNull(l.j), v: numOuNull(l.v), e: numOuNull(l.e), d: numOuNull(l.d), sg: numOuNull(l.sg), pts: numOuNull(l.pts) });
+  }
+  for (const c of porCamp.values()) c.linhas.sort((a, b) => (a.pos ?? 99) - (b.pos ?? 99));
+  return [...porCamp.values()];
+}
+
+async function classificacaoApi(cfgTabelas, chave) {
+  const saida = [];
+  for (const t of cfgTabelas ?? []) {
+    if (!t.ativo || !t.liga) continue;
+    const host = HOST[GRUPO[t.modalidade]];
+    const r = await apiGet(host, `standings?league=${t.liga}&season=${t.temporada}`, chave);
+    const grupos = r[0]?.league?.standings ?? (Array.isArray(r[0]) ? r : [r]);
+    const tabela = (grupos[0] ?? []).filter(Boolean);
+    if (!tabela.length) continue;
+    saida.push({
+      nome: t.nome, modalidade: t.modalidade, fonte: 'automatica',
+      atualizado: new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+      linhas: tabela.map((x) => ({
+        pos: x.rank ?? x.position, time: x.team?.name, j: x.all?.played ?? x.games?.played, v: x.all?.win ?? x.games?.win?.total,
+        e: x.all?.draw ?? null, d: x.all?.lose ?? x.games?.lose?.total, sg: x.goalsDiff ?? null, pts: x.points, escudoAdvUrl: x.team?.logo,
+      })),
+    });
+  }
+  return saida;
 }
 
 async function main() {
@@ -349,11 +410,38 @@ async function main() {
   // 3) junta e salva
   const { jogos, avisos } = mesclar(automaticos, linhas);
   problemas.push(...avisos);
+
+  // 4) classificação: planilha + API (a API substitui a planilha no mesmo campeonato, quando funciona)
+  let campeonatos = [];
+  try {
+    const arqLocal = arg('--classificacao');
+    let csv;
+    if (arqLocal) csv = await readFile(arqLocal, 'utf8');
+    else if (cfg.planilhaClassificacaoCsvUrl) {
+      const r = await fetch(cfg.planilhaClassificacaoCsvUrl, { redirect: 'follow' });
+      if (!r.ok) throw new Error(`planilha respondeu ${r.status}`);
+      csv = await r.text();
+    }
+    if (csv) campeonatos = montarClassificacao(parseCsv(csv));
+  } catch (e) { problemas.push(`Falha ao ler a classificação da planilha (${e.message}).`); }
+  if (chave && !args.includes('--sem-api')) {
+    try {
+      for (const c of await classificacaoApi(cfg.apiSports?.classificacao, chave)) {
+        campeonatos = [c, ...campeonatos.filter((x) => x.nome !== c.nome)];
+      }
+    } catch (e) { problemas.push(`Classificação automática indisponível (${e.message}) — usando a planilha.`); }
+  }
+
+  // 5) escudos (jogos + times das tabelas)
   let escudoFlamengo = null;
-  if (args.includes('--sem-api')) jogos.forEach((j) => delete j.escudoAdvUrl);
-  else escudoFlamengo = await resolverEscudos(jogos, chave, problemas);
+  const linhasTabela = campeonatos.flatMap((c) => c.linhas.map((l) => Object.assign(l, { modalidade: c.modalidade, adversario: l.time })));
+  if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => delete j.escudoAdvUrl);
+  else escudoFlamengo = await resolverEscudos([...jogos, ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
+  for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
+
   const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };
   await writeFile(path.join(DATA, 'jogos.json'), JSON.stringify(saida, null, 1));
+  await writeFile(path.join(DATA, 'classificacao.json'), JSON.stringify({ atualizadoEm: saida.atualizadoEm, escudoFlamengo, campeonatos }, null, 1));
 
   await mkdir(path.join(DATA, 'calendario'), { recursive: true });
   await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'FlaFan — todos os jogos'));

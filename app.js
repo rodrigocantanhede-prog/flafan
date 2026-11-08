@@ -39,6 +39,7 @@ const estado = {
   aba: 'proximos',
   filtro: lembrar('filtro', 'todas'),
   jogos: [],
+  campeonatos: [],
   mes: null,      // {ano, mes} em exibição no calendário
   diaSel: null,   // 'AAAA-MM-DD' selecionado no calendário
 };
@@ -74,7 +75,7 @@ function contagem(data) {
 
 // ---------- montagem da tela ----------
 function montarFiltros() {
-  const presentes = new Set(estado.jogos.map((j) => j.modalidade));
+  const presentes = new Set([...estado.jogos.map((j) => j.modalidade), ...estado.campeonatos.map((c) => c.modalidade)]);
   const opcoes = [['todas', 'Todas', ''], ...Object.entries(MODALIDADES).filter(([k]) => presentes.has(k)).map(([k, v]) => [k, v.curto, v])];
   if (!opcoes.some(([k]) => k === estado.filtro)) estado.filtro = 'todas';
   $('#filtros').innerHTML = opcoes.map(([k, nome, m]) =>
@@ -207,6 +208,48 @@ function desenharCalendario(filtrados) {
     ${lista}`;
 }
 
+function escudoPequeno(nome, url, fla) {
+  const u = fla ? estado.escudoFla : url;
+  const reserva = fla ? '<span class="escudo fla"></span>' : `<span class="escudo adv">${esc(sigla(nome))}</span>`;
+  return `<span class="escudo-box mini ${u ? '' : 'falhou'}" aria-hidden="true">${u ? `<img class="escudo-img" src="${esc(u)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">` : ''}${reserva}</span>`;
+}
+
+function desenharTabela() {
+  const lista = estado.campeonatos.filter((c) => estado.filtro === 'todas' || c.modalidade === estado.filtro);
+  if (!lista.length) {
+    $('#lista').innerHTML = `<p class="vazio">${estado.campeonatos.length ? 'Nenhuma tabela para esta modalidade ainda.' : 'As tabelas de classificação aparecem aqui assim que forem cadastradas.'}</p>`;
+    return;
+  }
+  const COLS = [['v', 'V', 'Vitórias'], ['e', 'E', 'Empates'], ['d', 'D', 'Derrotas'], ['sg', 'SG', 'Saldo de gols']];
+  $('#lista').innerHTML = lista.map((c) => {
+    const m = MODALIDADES[c.modalidade] ?? { cor: '#E3141B' };
+    const extras = COLS.filter(([k]) => c.linhas.some((l) => l[k] !== null && l[k] !== undefined));
+    const brasileirao = /brasileir[aã]o s[ée]rie a/i.test(c.nome);
+    const zona = (pos) => !brasileirao || !pos ? '' : pos <= 4 ? 'z-liberta' : pos <= 6 ? 'z-pre' : pos >= c.linhas.length - 3 ? 'z-rebaixa' : '';
+    const linhas = c.linhas.map((l) => {
+      const fla = /flamengo/i.test(l.time);
+      return `<tr class="${fla ? 'eh-fla' : ''} ${zona(l.pos)}">
+        <td class="t-pos">${l.pos ?? ''}</td>
+        <td class="t-time">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></td>
+        <td class="t-pts">${l.pts ?? ''}</td><td>${l.j ?? ''}</td>
+        ${extras.map(([k]) => `<td>${l[k] ?? ''}</td>`).join('')}
+      </tr>`;
+    }).join('');
+    return `<section class="tabela-camp" style="--cor:${m.cor}">
+      <header class="tabela-cab">
+        <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(c.nome)}</span></span>
+        ${c.atualizado ? `<small>Atualizado ${esc(c.atualizado)}</small>` : ''}
+      </header>
+      <div class="tabela-rolagem"><table>
+        <thead><tr><th class="t-pos">#</th><th class="t-time">Time</th><th title="Pontos">P</th><th title="Jogos">J</th>
+          ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
+        <tbody>${linhas}</tbody>
+      </table></div>
+      ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
+    </section>`;
+  }).join('');
+}
+
 function desenhar() {
   const agora = Date.now();
   const DUR = 3 * 3600e3; // um jogo "ainda não acabou" até 3h depois do início, se não tiver resultado
@@ -214,6 +257,7 @@ function desenhar() {
   const proximos = filtrados.filter((j) => j.status !== 'encerrado' && new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora && j.status !== 'cancelado');
   const resultados = filtrados.filter((j) => j.status === 'encerrado' || (j.placar && new Date(j.inicio) < agora)).reverse();
   if (estado.aba === 'calendario') return desenharCalendario(filtrados);
+  if (estado.aba === 'tabela') return desenharTabela();
   const lista = estado.aba === 'proximos' ? proximos : resultados;
 
   if (!lista.length) {
@@ -295,6 +339,10 @@ async function carregar() {
     const dados = await r.json();
     estado.jogos = dados.jogos ?? [];
     estado.escudoFla = dados.escudoFlamengo ?? null;
+    try {
+      const t = await (await fetch('data/classificacao.json', { cache: 'no-cache' })).json();
+      estado.campeonatos = t.campeonatos ?? [];
+    } catch { estado.campeonatos = []; }
     $('#aviso-exemplo').hidden = !dados.exemplo;
     if (dados.atualizadoEm) $('#atualizado').textContent = 'Atualizado em ' + fDataHora.format(new Date(dados.atualizadoEm));
   } catch {

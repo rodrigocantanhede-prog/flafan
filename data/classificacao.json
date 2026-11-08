@@ -1,0 +1,214 @@
+{
+ "atualizadoEm": "2026-11-08T01:40:54.158Z",
+ "escudoFlamengo": null,
+ "campeonatos": [
+  {
+   "nome": "Brasileirão Série A",
+   "modalidade": "futebol-masculino",
+   "atualizado": "após a 34ª rodada (5/11)",
+   "fonte": "planilha",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Flamengo",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 76
+    },
+    {
+     "pos": 2,
+     "time": "Palmeiras",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 73
+    },
+    {
+     "pos": 3,
+     "time": "Cruzeiro",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 60
+    },
+    {
+     "pos": 4,
+     "time": "Fluminense",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 57
+    },
+    {
+     "pos": 5,
+     "time": "Athletico-PR",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 54
+    },
+    {
+     "pos": 6,
+     "time": "Bahia",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 53
+    },
+    {
+     "pos": 7,
+     "time": "Atlético-MG",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 50
+    },
+    {
+     "pos": 8,
+     "time": "Bragantino",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 47
+    },
+    {
+     "pos": 9,
+     "time": "Santos",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 47
+    },
+    {
+     "pos": 10,
+     "time": "São Paulo",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 44
+    },
+    {
+     "pos": 11,
+     "time": "Botafogo",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 42
+    },
+    {
+     "pos": 12,
+     "time": "Coritiba",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 42
+    },
+    {
+     "pos": 13,
+     "time": "Vasco",
+     "j": 33,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 41
+    },
+    {
+     "pos": 14,
+     "time": "Mirassol",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 40
+    },
+    {
+     "pos": 15,
+     "time": "Vitória",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 38
+    },
+    {
+     "pos": 16,
+     "time": "Internacional",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 38
+    },
+    {
+     "pos": 17,
+     "time": "Corinthians",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 37
+    },
+    {
+     "pos": 18,
+     "time": "Grêmio",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 37
+    },
+    {
+     "pos": 19,
+     "time": "Remo",
+     "j": 34,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 29
+    },
+    {
+     "pos": 20,
+     "time": "Chapecoense",
+     "j": 33,
+     "v": null,
+     "e": null,
+     "d": null,
+     "sg": null,
+     "pts": 21
+    }
+   ]
+  }
+ ]
+}

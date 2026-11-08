@@ -66,12 +66,12 @@ button:focus-visible, a:focus-visible, select:focus-visible { outline: 2px solid
 
 /* ---------- abas ---------- */
 .abas {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
   margin: 14px 16px 12px; background: var(--cartao); padding: 4px; border-radius: 16px; border: 1px solid var(--borda);
 }
 .aba {
   border: 0; background: transparent; padding: 10px 6px; border-radius: 12px; cursor: pointer;
-  font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: .04em; text-transform: uppercase; color: var(--suave);
+  font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: .03em; text-transform: uppercase; color: var(--suave);
   transition: background .2s, color .2s;
 }
 .aba.ativa { background: linear-gradient(180deg, #F0262D, var(--vermelho) 60%, #C30F15); color: #fff; box-shadow: 0 4px 14px rgba(227,20,27,.35); }
@@ -244,3 +244,30 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .pref-nome .ic { width: 19px; height: 19px; }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- tabela de classificação ---------- */
+.tabela-camp { background: var(--cartao); border: 1px solid var(--borda); border-radius: var(--raio); padding: 14px 0 10px; margin-bottom: 14px; position: relative; overflow: hidden; }
+.tabela-camp::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--cor), transparent 75%); }
+.tabela-cab { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 10px; padding: 0 14px 10px; }
+.tabela-cab small { color: var(--apagado); font-size: 12px; }
+.tabela-rolagem { overflow-x: auto; }
+.tabela-camp table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 14px; }
+.tabela-camp th { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .06em; color: var(--apagado); text-align: center; padding: 6px 6px; border-bottom: 1px solid var(--borda); }
+.tabela-camp td { text-align: center; padding: 7px 6px; border-bottom: 1px solid #ffffff08; color: var(--suave); }
+.tabela-camp th.t-time, .tabela-camp td.t-time { text-align: left; width: 100%; }
+.tabela-camp .t-pos { width: 34px; padding-left: 14px; font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--texto); position: relative; }
+.tabela-camp td.t-time { display: flex; align-items: center; gap: 9px; color: var(--texto); font-weight: 600; white-space: nowrap; }
+.tabela-camp .t-pts { font-family: var(--display); font-weight: 800; font-size: 17px; color: var(--texto); }
+.tabela-camp tr:last-child td { border-bottom: 0; }
+.tabela-camp tr.eh-fla td { background: linear-gradient(90deg, rgba(227,20,27,.22), rgba(227,20,27,.06)); color: #fff; }
+.tabela-camp tr.eh-fla td.t-time { font-weight: 800; }
+.tabela-camp tr td.t-pos::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; border-radius: 0 3px 3px 0; background: transparent; }
+.tabela-camp tr.z-liberta td.t-pos::before, .lg.z-liberta::before { background: #3B82F6; }
+.tabela-camp tr.z-pre td.t-pos::before, .lg.z-pre::before { background: #22D3EE; }
+.tabela-camp tr.z-rebaixa td.t-pos::before, .lg.z-rebaixa::before { background: #EF4444; }
+.escudo-box.mini { width: 24px; height: 24px; }
+.escudo-box.mini .escudo { width: 24px; height: 24px; font-size: 9px; letter-spacing: 0; }
+.escudo-box.mini .escudo.fla { background: repeating-linear-gradient(180deg, var(--vermelho) 0 4px, #0B0B0D 4px 8px); box-shadow: 0 0 0 1px #fff3; }
+.tabela-legenda { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 14px 2px; font-size: 12px; color: var(--apagado); }
+.lg { display: inline-flex; align-items: center; gap: 6px; }
+.lg::before { content: ""; width: 10px; height: 10px; border-radius: 3px; }

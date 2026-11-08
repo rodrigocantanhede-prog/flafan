@@ -19,7 +19,33 @@
       "ativo": false,
       "time": null,
       "temporada": "2026"
-    }
+    },
+    "classificacao": [
+      {
+        "_leia": "Brasileirão Série A (liga 71 na API-Sports)",
+        "nome": "Brasileirão Série A",
+        "modalidade": "futebol-masculino",
+        "ativo": true,
+        "liga": 71,
+        "temporada": 2026
+      },
+      {
+        "_leia": "Preencher o número da liga quando a chave estiver ativa",
+        "nome": "NBB",
+        "modalidade": "basquete",
+        "ativo": false,
+        "liga": null,
+        "temporada": "2026-2027"
+      },
+      {
+        "nome": "Superliga Feminina",
+        "modalidade": "volei-feminino",
+        "ativo": false,
+        "liga": null,
+        "temporada": 2026
+      }
+    ]
   },
-  "onesignalAppId": ""
+  "onesignalAppId": "",
+  "planilhaClassificacaoCsvUrl": "https://docs.google.com/spreadsheets/d/1naHAEWPxQM3825OkuSNWoSh8Tp2dKfk67Jgv3R9lCGQ/export?format=csv&gid=94890183"
 }

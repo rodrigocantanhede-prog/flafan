@@ -67,3 +67,15 @@ globalThis.fetch = fetchOriginal;
 for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', 'escudos/volei-clube-teste.png']) await rm(f, { force: true });
 if (cacheAntes === null) await rm('data/escudos.json', { force: true }); else await (await import('node:fs/promises')).writeFile('data/escudos.json', cacheAntes);
 console.log('✓ Testes de escudos passaram');
+
+// ---- classificação ----
+import { montarClassificacao } from './atualizar.mjs';
+const camps = montarClassificacao(parseCsv(`campeonato,modalidade,pos,time,j,v,e,d,sg,pts,atualizado
+Brasileirão Série A,Futebol masculino,2,Palmeiras,34,,,,,73,
+Brasileirão Série A,Futebol masculino,1,Flamengo,34,,,,,76,após a 34ª rodada
+NBB,Basquete,1,Minas,5,5,,0,,,`));
+assert.equal(camps.length, 2);
+assert.equal(camps[0].linhas[0].time, 'Flamengo');
+assert.equal(camps[0].atualizado, 'após a 34ª rodada');
+assert.equal(camps[1].modalidade, 'basquete');
+console.log('✓ Testes de classificação passaram');
