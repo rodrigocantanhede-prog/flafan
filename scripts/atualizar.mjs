@@ -256,6 +256,8 @@ const IDS_FUTEBOL = {
   'athletico-pr': 134, 'athletico-paranaense': 134, coritiba: 147, chapecoense: 132, bragantino: 794, 'red-bull-bragantino': 794,
   vitoria: 136, mirassol: 7848, remo: 1198, fortaleza: 154, ceara: 129, sport: 123, juventude: 152, estudiantes: 450,
 };
+// Clubes que jogam vôlei/basquete com o mesmo escudo do futebol
+const IDS_MESMO_CLUBE = { fluminense: 124, botafogo: 120, corinthians: 131, 'itatiaiucu-cruzeiro-basquete': 135, 'sesc-rj-flamengo': 127 };
 const MAX_BUSCAS = 40; // limite de buscas novas por dia (protege as cotas grátis)
 
 async function baixarImagem(url, base) {
@@ -319,7 +321,7 @@ export async function resolverEscudos(itens, chave, problemas) {
     const url = j.escudoAdvUrl;
     delete j.escudoAdvUrl;
     try {
-      const idFut = grupo === 'futebol' ? IDS_FUTEBOL[slug(j.adversario)] : null;
+      const idFut = grupo === 'futebol' ? IDS_FUTEBOL[slug(j.adversario)] : IDS_MESMO_CLUBE[slug(j.adversario)];
       if (url) {
         cache[chaveCache] = await baixarImagem(url, base);
       } else if (idFut && !cache[chaveCache]) {
