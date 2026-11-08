@@ -30,18 +30,21 @@
         "temporada": 2026
       },
       {
-        "_leia": "Preencher o número da liga quando a chave estiver ativa",
+        "_leia": "O robô descobre o código sozinho quando a chave existir",
         "nome": "NBB",
         "modalidade": "basquete",
-        "ativo": false,
+        "ativo": true,
         "liga": null,
+        "busca": "^NBB",
         "temporada": "2026-2027"
       },
       {
+        "_leia": "O robô descobre o código sozinho quando a chave existir",
         "nome": "Superliga Feminina",
         "modalidade": "volei-feminino",
-        "ativo": false,
+        "ativo": true,
         "liga": null,
+        "busca": "superliga.*(women|fem)",
         "temporada": 2026
       }
     ]

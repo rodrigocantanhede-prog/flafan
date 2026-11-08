@@ -156,6 +156,8 @@ async function buscarApi(cfg, chave) {
 // ---------- fonte 2: sua planilha ----------
 // Colunas: id | modalidade | adversario | competicao | data | hora | local | mando | onde_assistir |
 //          placar_fla | placar_adv | status | acao | observacao
+const diaBrasilia = (iso) => new Date(new Date(iso).getTime() - 3 * 3600e3).toISOString().slice(0, 10);
+
 export function mesclar(automaticos, linhas) {
   const porId = new Map(automaticos.map((j) => [j.id, { ...j }]));
   const avisos = [];
@@ -170,7 +172,10 @@ export function mesclar(automaticos, linhas) {
         avisos.push(`Linha ${nLinha}: faltou modalidade, data ou adversário — ignorada.`);
         continue;
       }
-      id = 'm-' + createHash('sha1').update(`${modalidade}|${inicio.slice(0, 10)}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
+      // mesmo jogo já veio da fonte automática? (mesma modalidade no mesmo dia) -> junta em vez de duplicar
+      const dia = inicio.slice(0, 10);
+      const igual = [...porId.values()].find((j) => j.fonte?.startsWith('automatica') && j.modalidade === modalidade && diaBrasilia(j.inicio) === dia);
+      id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
     }
     if (acao === 'remover') { porId.delete(id); continue; }
     const base = porId.get(id) ?? { id, transmissao: [], placar: null, status: 'agendado', mandante: null, local: '', competicao: '', fonte: 'manual' };
@@ -357,25 +362,65 @@ export function montarClassificacao(linhas) {
   return [...porCamp.values()];
 }
 
-async function classificacaoApi(cfgTabelas, chave) {
-  const saida = [];
+// Descobre sozinho o código da liga (ex.: NBB, Superliga Feminina) na API-Sports e guarda em data/ligas.json.
+async function descobrirLigas(cfgTabelas, chave, problemas) {
+  const cacheArq = path.join(DATA, 'ligas.json');
+  const cache = await lerJson(cacheArq, {});
+  for (const t of cfgTabelas ?? []) {
+    if (!t.ativo || t.liga || !t.busca) continue;
+    if (cache[t.nome]) { Object.assign(t, cache[t.nome]); continue; }
+    try {
+      const lista = await apiGet(HOST[GRUPO[t.modalidade]], 'leagues?country=Brazil', chave);
+      const re = new RegExp(t.busca, 'i');
+      const liga = lista.map((x) => x.league ? { ...x.league, seasons: x.seasons } : x).find((x) => re.test(x.name));
+      if (!liga) { problemas.push(`Não achei a liga "${t.nome}" na API-Sports.`); continue; }
+      const temporadas = (liga.seasons ?? []).map((x) => x.season ?? x.year).filter(Boolean);
+      const achado = { liga: liga.id, temporada: temporadas[temporadas.length - 1] ?? t.temporada };
+      cache[t.nome] = achado;
+      Object.assign(t, achado);
+      log(`Liga encontrada: ${t.nome} = código ${achado.liga}, temporada ${achado.temporada}`);
+    } catch (e) { problemas.push(`Busca da liga ${t.nome}: ${e.message}`); }
+  }
+  await writeFile(cacheArq, JSON.stringify(cache, null, 1));
+}
+
+// Tabelas pela API. Também devolve o código do Flamengo em cada liga, para buscar os jogos dela.
+async function classificacaoApi(cfgTabelas, chave, problemas) {
+  const saida = [], timesFla = [];
   for (const t of cfgTabelas ?? []) {
     if (!t.ativo || !t.liga) continue;
     const host = HOST[GRUPO[t.modalidade]];
-    const r = await apiGet(host, `standings?league=${t.liga}&season=${t.temporada}`, chave);
-    const grupos = r[0]?.league?.standings ?? (Array.isArray(r[0]) ? r : [r]);
-    const tabela = (grupos[0] ?? []).filter(Boolean);
-    if (!tabela.length) continue;
-    saida.push({
-      nome: t.nome, modalidade: t.modalidade, fonte: 'automatica',
-      atualizado: new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
-      linhas: tabela.map((x) => ({
-        pos: x.rank ?? x.position, time: x.team?.name, j: x.all?.played ?? x.games?.played, v: x.all?.win ?? x.games?.win?.total,
-        e: x.all?.draw ?? null, d: x.all?.lose ?? x.games?.lose?.total, sg: x.goalsDiff ?? null, pts: x.points, escudoAdvUrl: x.team?.logo,
-      })),
-    });
+    try {
+      const r = await apiGet(host, `standings?league=${t.liga}&season=${t.temporada}`, chave);
+      const grupos = r[0]?.league?.standings ?? (Array.isArray(r[0]) ? r : [r]);
+      const tabela = (grupos[0] ?? []).filter(Boolean);
+      if (!tabela.length) { problemas.push(`${t.nome}: a API ainda não tem tabela para ${t.temporada}.`); continue; }
+      const fla = tabela.find((x) => /flamengo/i.test(x.team?.name ?? ''));
+      if (fla && t.modalidade !== 'futebol-masculino') timesFla.push({ modalidade: t.modalidade, host, time: fla.team.id, liga: t.liga, temporada: t.temporada, competicao: t.nome });
+      saida.push({
+        nome: t.nome, modalidade: t.modalidade, fonte: 'automatica',
+        atualizado: new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+        linhas: tabela.map((x) => ({
+          pos: x.rank ?? x.position, time: x.team?.name, j: x.all?.played ?? x.games?.played, v: x.all?.win ?? x.games?.win?.total,
+          e: x.all?.draw ?? null, d: x.all?.lose ?? x.games?.lose?.total, sg: x.goalsDiff ?? null, pts: typeof x.points === "number" ? x.points : null, escudoAdvUrl: x.team?.logo,
+        })),
+      });
+      log(`Tabela automática: ${t.nome} (${tabela.length} times).`);
+    } catch (e) { problemas.push(`Tabela automática de ${t.nome}: ${e.message}`); }
   }
-  return saida;
+  return { saida, timesFla };
+}
+
+async function jogosDasLigas(timesFla, chave, problemas) {
+  const jogos = [];
+  for (const t of timesFla) {
+    try {
+      const r = await apiGet(t.host, `games?league=${t.liga}&season=${t.temporada}&team=${t.time}&timezone=America/Sao_Paulo`, chave);
+      jogos.push(...r.map((j) => ({ ...deApi(t.modalidade, t.time, j), competicao: j.league?.name ? t.competicao : t.competicao })));
+      log(`Jogos automáticos: ${t.competicao} (${r.length}).`);
+    } catch (e) { problemas.push(`Jogos de ${t.competicao}: ${e.message}`); }
+  }
+  return jogos;
 }
 
 async function main() {
@@ -387,12 +432,16 @@ async function main() {
   // 1) automáticos (se falhar, usa a última versão que deu certo)
   const cacheArq = path.join(DATA, 'cache-automatico.json');
   let automaticos = await lerJson(cacheArq, []);
+  let campeonatosApi = [];
   const chave = process.env.API_SPORTS_KEY;
   if (args.includes('--sem-api')) log('Pulando a API (modo teste).');
   else if (!chave) { problemas.push('Chave da API-Sports não configurada — usando só a planilha.'); }
   else {
     try {
-      const novos = await buscarApi(cfg.apiSports ?? {}, chave);
+      await descobrirLigas(cfg.apiSports?.classificacao, chave, problemas);
+      const r = await classificacaoApi(cfg.apiSports?.classificacao, chave, problemas);
+      campeonatosApi = r.saida;
+      const novos = [...await buscarApi(cfg.apiSports ?? {}, chave), ...await jogosDasLigas(r.timesFla, chave, problemas)];
       // mantém jogos antigos do cache que a API não devolveu mais (ex.: resultados de 1 mês atrás)
       const ids = new Set(novos.map((j) => j.id));
       automaticos = [...novos, ...automaticos.filter((j) => !ids.has(j.id))];
@@ -437,20 +486,16 @@ async function main() {
     }
     if (csv) campeonatos = montarClassificacao(parseCsv(csv));
   } catch (e) { problemas.push(`Falha ao ler a classificação da planilha (${e.message}).`); }
-  if (chave && !args.includes('--sem-api')) {
-    try {
-      for (const c of await classificacaoApi(cfg.apiSports?.classificacao, chave)) {
-        campeonatos = [c, ...campeonatos.filter((x) => x.nome !== c.nome)];
-      }
-    } catch (e) { problemas.push(`Classificação automática indisponível (${e.message}) — usando a planilha.`); }
-  }
+  for (const c of campeonatosApi) campeonatos = [...campeonatos.filter((x) => x.nome !== c.nome), c];
+  // mantém a ordem: Brasileirão primeiro, depois os outros
+  campeonatos.sort((a, b) => (/brasileir/i.test(b.nome) ? 1 : 0) - (/brasileir/i.test(a.nome) ? 1 : 0));
 
   // 5) escudos (jogos + times das tabelas)
   let escudoFlamengo = null;
   const linhasTabela = campeonatos.flatMap((c) => c.linhas.map((l) => Object.assign(l, { modalidade: c.modalidade, adversario: l.time })));
   if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => delete j.escudoAdvUrl);
   else escudoFlamengo = await resolverEscudos([...jogos, ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
-  for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
+  for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; delete l.escudoAdvUrl; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
 
   const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };
   await writeFile(path.join(DATA, 'jogos.json'), JSON.stringify(saida, null, 1));

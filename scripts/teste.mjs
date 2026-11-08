@@ -84,3 +84,13 @@ NBB,Basquete,3,Flamengo,6,5,,1,,,após 7/11,https://lnb.com.br/nbb/classificacao
 assert.equal(c2[0].link, 'https://lnb.com.br/nbb/classificacao/');
 assert.equal(c2[0].nota, 'Tabela parcial');
 console.log('✓ Nota e link da classificação ok');
+// jogo da planilha sem id + mesmo jogo da API no mesmo dia -> um só
+{
+  const auto2 = [{ id: 'api-volei-feminino-2', modalidade: 'volei-feminino', adversario: 'Fluminense FC', inicio: '2026-11-13T00:00:00Z', transmissao: [], status: 'agendado', fonte: 'automatica' }];
+  const { jogos: j2 } = mesclar(auto2, parseCsv(`id,modalidade,adversario,data,hora,onde_assistir
+,Vôlei feminino,Fluminense,12/11/2026,21:00,SporTV 2`));
+  assert.equal(j2.length, 1);
+  assert.deepEqual(j2[0].transmissao, ['SporTV 2']);
+  assert.equal(j2[0].adversario, 'Fluminense');
+  console.log('✓ Sem jogos duplicados entre planilha e API');
+}
