@@ -1,8 +1,8 @@
 {
- "atualizadoEm": "2026-11-08T18:44:12.460Z",
+ "atualizadoEm": "2026-11-08T18:54:00.888Z",
  "exemplo": false,
  "avisos": [
-  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a anterior."
+  "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -23,6 +23,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/sub-17",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/flamengo-x-corinthians/835414",
    "categoria": "Sub-17",
    "tabela": "Brasileiro Sub-17",
@@ -45,6 +46,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/sub-20",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-vasco-da-gama-saf/835397",
    "categoria": "Sub-20",
    "observacao": "Pênaltis: Flamengo 4 x 3",
@@ -67,6 +69,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Wikipédia",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/santos-fc-x-flamengo/832173",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-santos-7effcf.webp"
@@ -88,6 +91,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-fluminense/832181",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
@@ -109,6 +113,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/sub-17",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/corinthians-x-flamengo/835418",
    "categoria": "Sub-17",
    "tabela": "Brasileiro Sub-17",
@@ -131,6 +136,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/sub-20",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-criciuma/835426",
    "categoria": "Sub-20",
    "escudoAdv": "escudos/futebol-criciuma-bb31dc.webp"
@@ -171,6 +177,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Agência Brasil",
+   "campeonatoCbf": "copa-do-brasil/feminino",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-fluminense/835083",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
@@ -210,6 +217,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "ESPN",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/bahia-x-flamengo/832199",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
@@ -269,6 +277,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/sub-20",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/criciuma-x-flamengo/835434",
    "categoria": "Sub-20",
    "escudoAdv": "escudos/futebol-criciuma-bb31dc.webp"
@@ -310,6 +319,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Agência Brasil",
+   "campeonatoCbf": "copa-do-brasil/feminino",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/fluminense-x-flamengo/835088",
    "observacao": "Classificado para a semifinal (4 x 3 no agregado)",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
@@ -350,6 +360,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "ESPN",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-atletico-mineiro/832201",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-atletico-mg-a62640.png"
@@ -371,6 +382,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/sub-20",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/operario-x-flamengo/835455",
    "categoria": "Sub-20",
    "escudoAdv": "escudos/futebol-operario-1e7a94.webp"
@@ -392,6 +404,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/vasco-da-gama-saf-x-flamengo/832212",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-vasco-5dbf77.webp"
@@ -451,6 +464,7 @@
    "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/sub-20",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
    "categoria": "Sub-20",
    "escudoAdv": "escudos/futebol-operario-1e7a94.webp"
@@ -472,6 +486,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/feminino",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/bahia-x-flamengo/835449",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
@@ -492,6 +507,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Fim de Jogo",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221",
    "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-gremio-ba2f40.webp"
@@ -573,6 +589,7 @@
    "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "campeonatoCbf": "copa-do-brasil/feminino",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
    "observacao": "Classificado para a final inédita da Copa do Brasil Feminina",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
@@ -607,6 +624,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
@@ -625,6 +643,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611",
    "escudoAdv": "escudos/volei-fluminense-9265d1.png"
   },
@@ -658,6 +677,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
@@ -728,6 +748,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
    "escudoAdv": "escudos/volei-sesi-volei-bauru-c39437.webp"
   },
@@ -745,6 +766,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
@@ -761,6 +783,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol",
    "observacao": "Horário a confirmar: uma fonte cita 15h",
    "escudoAdv": "escudos/futebol-athletico-pr-59ce02.webp"
   },
@@ -795,6 +818,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol",
    "escudoAdv": "escudos/futebol-palmeiras-26c301.png"
   },
   {
@@ -828,6 +852,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "observacao": "Transmissão ainda não anunciada (Superliga é do Grupo Globo)",
    "escudoAdv": "escudos/volei-osasco-83684f.png"
   },
@@ -845,6 +870,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol",
    "observacao": "Data definida pela CBF em 7/11 (antes se falava em 27/11)",
    "escudoAdv": "escudos/futebol-coritiba-2c60dd.png"
   },
@@ -885,6 +911,7 @@
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol",
    "observacao": "Última rodada do Brasileirão",
    "escudoAdv": "escudos/futebol-chapecoense-2cccc2.png"
   },
@@ -902,6 +929,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
   },
   {
@@ -918,6 +946,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "escudoAdv": "escudos/volei-minas-21559f.svg"
   },
   {
@@ -934,6 +963,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "escudoAdv": "escudos/volei-dentil-praia-clube-7bfdf3.png"
   },
   {
@@ -950,6 +980,7 @@
    "status": "agendado",
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
+   "pagina": "volei",
    "escudoAdv": "escudos/volei-abel-moda-volei-brusque-181b0a.webp"
   }
  ]

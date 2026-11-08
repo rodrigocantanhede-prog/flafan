@@ -13,7 +13,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Athletico_Paranaense_Logo_2019_svg_83295ef1c5/Athletico_Paranaense_Logo_2019_svg_83295ef1c5.webp"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Athletico_Paranaense_Logo_2019_svg_83295ef1c5/Athletico_Paranaense_Logo_2019_svg_83295ef1c5.webp",
+  "pagina": "futebol"
  },
  {
   "id": "site-futebol-masculino-2026-11-21-palmeiras",
@@ -29,7 +30,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-hml/Palmeiras_logo_svg_188ba56cdf/Palmeiras_logo_svg_188ba56cdf.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-hml/Palmeiras_logo_svg_188ba56cdf/Palmeiras_logo_svg_188ba56cdf.png",
+  "pagina": "futebol"
  },
  {
   "id": "site-futebol-masculino-2026-11-29-coritiba",
@@ -45,7 +47,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/coritiba_logo_0_dc7f8fba5c/coritiba_logo_0_dc7f8fba5c.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/coritiba_logo_0_dc7f8fba5c/coritiba_logo_0_dc7f8fba5c.png",
+  "pagina": "futebol"
  },
  {
   "id": "site-futebol-masculino-2026-12-02-chapecoense",
@@ -61,7 +64,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Associacao_Chapecoense_de_Futebol_7dc9a7dff8/Associacao_Chapecoense_de_Futebol_7dc9a7dff8.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Associacao_Chapecoense_de_Futebol_7dc9a7dff8/Associacao_Chapecoense_de_Futebol_7dc9a7dff8.png",
+  "pagina": "futebol"
  },
  {
   "id": "site-futebol-feminino-2026-11-11-botafogo",
@@ -77,7 +81,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Escudo_Botafogo_0ebba0955c/Escudo_Botafogo_0ebba0955c.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Escudo_Botafogo_0ebba0955c/Escudo_Botafogo_0ebba0955c.png",
+  "pagina": "futebol-feminino"
  },
  {
   "id": "site-futebol-feminino-2026-11-14-vasco-da-gama",
@@ -92,7 +97,8 @@
   "placar": null,
   "status": "agendado",
   "fonte": "automatica",
-  "fonteInfo": "Site do Flamengo"
+  "fonteInfo": "Site do Flamengo",
+  "pagina": "futebol-feminino"
  },
  {
   "id": "site-futebol-feminino-2026-11-18-fluminense",
@@ -108,7 +114,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Fluminense_FC_escudo_3d85ea84e5/Fluminense_FC_escudo_3d85ea84e5.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Fluminense_FC_escudo_3d85ea84e5/Fluminense_FC_escudo_3d85ea84e5.png",
+  "pagina": "futebol-feminino"
  },
  {
   "id": "site-volei-feminino-2026-11-12-fluminense",
@@ -125,6 +132,7 @@
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
   "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Fluminense_FC_escudo_3d85ea84e5/Fluminense_FC_escudo_3d85ea84e5.png",
+  "pagina": "volei",
   "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611"
  },
  {
@@ -141,7 +149,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/sesi_volei_bauru_3170420874/sesi_volei_bauru_3170420874.webp"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/sesi_volei_bauru_3170420874/sesi_volei_bauru_3170420874.webp",
+  "pagina": "volei"
  },
  {
   "id": "site-volei-feminino-2026-11-23-osasco-sao-cristovao-saude",
@@ -157,7 +166,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/osasco_volei_1a62aa924c/osasco_volei_1a62aa924c.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/osasco_volei_1a62aa924c/osasco_volei_1a62aa924c.png",
+  "pagina": "volei"
  },
  {
   "id": "site-volei-feminino-2026-12-03-pinheiros",
@@ -173,7 +183,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Esporte_Clube_Pinheiros_e2776539b5/Esporte_Clube_Pinheiros_e2776539b5.svg"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Esporte_Clube_Pinheiros_e2776539b5/Esporte_Clube_Pinheiros_e2776539b5.svg",
+  "pagina": "volei"
  },
  {
   "id": "site-volei-feminino-2026-12-08-minas",
@@ -189,7 +200,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-hml/Escudo_do_Minas_Tenis_Clube_006cb229a1/Escudo_do_Minas_Tenis_Clube_006cb229a1.svg"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-hml/Escudo_do_Minas_Tenis_Clube_006cb229a1/Escudo_do_Minas_Tenis_Clube_006cb229a1.svg",
+  "pagina": "volei"
  },
  {
   "id": "site-volei-feminino-2026-12-14-dentil-praia-clube",
@@ -205,7 +217,8 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/dentil_praia_clube_234e64692b/dentil_praia_clube_234e64692b.png"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/dentil_praia_clube_234e64692b/dentil_praia_clube_234e64692b.png",
+  "pagina": "volei"
  },
  {
   "id": "site-volei-feminino-2026-12-19-abel-moda-volei-brusque",
@@ -221,6 +234,7 @@
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/abel_moda_volei_8aed27edf5/abel_moda_volei_8aed27edf5.webp"
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/abel_moda_volei_8aed27edf5/abel_moda_volei_8aed27edf5.webp",
+  "pagina": "volei"
  }
 ]

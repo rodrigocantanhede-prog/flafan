@@ -16,6 +16,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20008%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/santos-fc-x-flamengo/832173",
   "tabela": "Brasileirão Série A"
@@ -37,6 +38,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20014%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-fluminense/832181",
   "tabela": "Brasileirão Série A"
@@ -58,6 +60,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F61377%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/bahia-x-flamengo/832199",
   "tabela": "Brasileirão Série A"
@@ -79,6 +82,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62194%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-atletico-mineiro/832201",
   "tabela": "Brasileirão Série A"
@@ -100,6 +104,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F60646%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/vasco-da-gama-saf-x-flamengo/832212",
   "tabela": "Brasileirão Série A"
@@ -121,6 +126,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20013%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221",
   "tabela": "Brasileirão Série A"
@@ -142,6 +148,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/sub-17",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20001%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/flamengo-x-corinthians/835414",
   "categoria": "Sub-17",
@@ -164,6 +171,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/sub-17",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20001%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/corinthians-x-flamengo/835418",
   "categoria": "Sub-17",
@@ -186,6 +194,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-20",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F60646%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-vasco-da-gama-saf/835397",
   "categoria": "Sub-20",
@@ -208,6 +217,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-20",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20019%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-criciuma/835426",
   "categoria": "Sub-20"
@@ -229,6 +239,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-20",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20019%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/criciuma-x-flamengo/835434",
   "categoria": "Sub-20"
@@ -250,6 +261,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-20",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20106%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/operario-x-flamengo/835455",
   "categoria": "Sub-20"
@@ -271,6 +283,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-20",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20106%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
   "categoria": "Sub-20"
@@ -292,6 +305,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/feminino",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20014%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-fluminense/835083"
  },
@@ -312,6 +326,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/feminino",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20014%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/fluminense-x-flamengo/835088"
  },
@@ -332,6 +347,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/feminino",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F61377%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/bahia-x-flamengo/835449"
  },
@@ -352,6 +368,7 @@
   "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/feminino",
   "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F61377%2Fescudo.jpg&w=128&q=70",
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451"
  }
