@@ -645,3 +645,5 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 /* observação (faixa amarela) legível dentro da ficha escura, nos dois temas */
 .folha-conteudo { --aviso-fundo: rgba(252,214,119,.14); --aviso-texto: #fcd677; }
 .folha .lc-obs { background: rgba(252,214,119,.14) !important; color: #fcd677 !important; border-color: rgba(252,214,119,.25) !important; }
+/* ficha: sem contorno de foco nos jogos da lista (a ficha seleciona o primeiro botão ao abrir) */
+.folha button:focus, .folha button:focus-visible, .nc-jogo:focus, .nc-jogo:focus-visible { outline: none; box-shadow: none; }

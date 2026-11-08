@@ -500,6 +500,7 @@ function abrirJogo(id) {
   conteudo.style.transition = 'none'; conteudo.style.transform = '';
   conteudo.style.setProperty('--cor', m.cor);
   $('#detalhe').showModal();
+  document.activeElement?.blur?.(); // não deixa nenhum botão selecionado ao abrir
   conteudo.scrollTop = 0; $('#detalhe').scrollTop = 0;
   requestAnimationFrame(() => { conteudo.scrollTop = 0; });
 }
