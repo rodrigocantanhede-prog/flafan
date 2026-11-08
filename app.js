@@ -88,10 +88,14 @@ function sigla(nome) {
   const boa = palavras.find((p) => !SIGLA_IGNORAR.has(p.toLowerCase())) ?? palavras[0] ?? '?';
   return boa.normalize('NFD').replace(/[̀-ͯ]/g, '').slice(0, 3).toUpperCase();
 }
+// logos escuros que ficam apagados no fundo preto: ganham um fundo claro
+const FUNDO_CLARO = /gerdau-minas|osasco-sao-cristovao/;
+const classeImg = (url) => `escudo-img${FUNDO_CLARO.test(url ?? '') ? ' claro' : ''}`;
+
 function escudo(nome, fla, url) {
   const reserva = fla ? '<span class="escudo fla"></span>' : `<span class="escudo adv">${esc(sigla(nome))}</span>`;
   if (!url) return `<span class="escudo-box falhou" aria-hidden="true">${reserva}</span>`;
-  return `<span class="escudo-box" aria-hidden="true"><img class="escudo-img" src="${esc(url)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">${reserva}</span>`;
+  return `<span class="escudo-box" aria-hidden="true"><img class="${classeImg(url)}" src="${esc(url)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">${reserva}</span>`;
 }
 
 function contagemCaixas(data) {
@@ -211,7 +215,7 @@ function desenharCalendario(filtrados) {
 function escudoPequeno(nome, url, fla) {
   const u = fla ? estado.escudoFla : url;
   const reserva = fla ? '<span class="escudo fla"></span>' : `<span class="escudo adv">${esc(sigla(nome))}</span>`;
-  return `<span class="escudo-box mini ${u ? '' : 'falhou'}" aria-hidden="true">${u ? `<img class="escudo-img" src="${esc(u)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">` : ''}${reserva}</span>`;
+  return `<span class="escudo-box mini ${u ? '' : 'falhou'}" aria-hidden="true">${u ? `<img class="${classeImg(u)}" src="${esc(u)}" alt="" loading="lazy" onerror="this.parentNode.classList.add('falhou')">` : ''}${reserva}</span>`;
 }
 
 function desenharTabela() {
