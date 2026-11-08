@@ -388,7 +388,7 @@ function htmlTabela(c, adversario = null) {
         ${extras.map(([, r, t]) => `<th title="${t}">${r}</th>`).join('')}</tr></thead>
       <tbody>${linhas}</tbody>
     </table></div>
-    ${c.nota || c.link ? `<div class="tabela-nota">${c.nota ? `<span>${esc(c.nota)}</span>` : ''}${c.link ? `<a class="btn sec" href="${esc(c.link)}" target="_blank" rel="noopener">Ver tabela completa no site oficial ↗</a>` : ''}</div>` : ''}
+    ${c.nota ? `<div class="tabela-nota"><span>${esc(c.nota)}</span></div>` : ''}
     ${brasileirao ? '<div class="tabela-legenda"><span class="lg z-liberta">Libertadores</span><span class="lg z-pre">Pré-Libertadores</span><span class="lg z-rebaixa">Rebaixamento</span></div>' : ''}
   </section>`;
 }
