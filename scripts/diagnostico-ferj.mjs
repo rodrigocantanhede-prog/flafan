@@ -16,11 +16,9 @@ const baixar = async (nome, u) => {
     return t;
   } catch (e) { status[nome] = { url: u, erro: e.message }; return ''; }
 };
-await baixar('robots', `${B}/robots.txt`);
-await baixar('home', `${B}/`);
-for (const p of ['/jogos', '/agenda', '/competicoes', '/tabela', '/partidas', '/calendario']) {
+for (const tab of ['agendados', 'finalizados']) for (const pg of [1, 2, 3]) {
+  await baixar(`fla-${tab}-${pg}`, `${B}/partidas?clubeId=30&tab=${tab}&pg=${pg}`);
   await new Promise((r) => setTimeout(r, 1200));
-  await baixar('p' + p.replace(/\W/g, '_'), B + p);
 }
-await writeFile('diagnostico/ferj-status.json', JSON.stringify(status, null, 1));
+await writeFile('diagnostico/ferj-status2.json', JSON.stringify(status, null, 1));
 console.log(JSON.stringify(status, null, 1));
