@@ -45,6 +45,9 @@ globalThis.fetch = async (url) => {
   return new Response(png, { headers: { 'content-type': 'image/png' } });
 };
 const cacheAntes = existsSync('data/escudos.json') ? await ler('data/escudos.json', 'utf8') : null;
+// guarda o escudo verdadeiro do Flamengo para devolver depois do teste (o teste não pode apagar arquivos reais)
+const flaAntes = existsSync('escudos/flamengo.png') ? await ler('escudos/flamengo.png') : null;
+if (flaAntes) await rm('escudos/flamengo.png');
 const jogosTeste = [
   { modalidade: 'futebol-masculino', adversario: 'Palmeiras Teste' },
   { modalidade: 'volei-feminino', adversario: 'Clube Teste', escudoAdvUrl: 'https://exemplo.com/escudo.png' },
@@ -65,6 +68,7 @@ assert.equal(chamadas.length, 0);
 // limpeza
 globalThis.fetch = fetchOriginal;
 for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', jogosTeste[1].escudoAdv]) await rm(f, { force: true });
+if (flaAntes) await (await import('node:fs/promises')).writeFile('escudos/flamengo.png', flaAntes);
 if (cacheAntes === null) await rm('data/escudos.json', { force: true }); else await (await import('node:fs/promises')).writeFile('data/escudos.json', cacheAntes);
 console.log('✓ Testes de escudos passaram');
 
