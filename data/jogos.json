@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T19:10:44.471Z",
+ "atualizadoEm": "2026-11-08T19:25:00.774Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -460,6 +460,27 @@
    "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
   },
   {
+   "id": "ferj-6457",
+   "modalidade": "base",
+   "adversario": "Botafogo",
+   "competicao": "Guilherme Embry Sub-16",
+   "inicio": "2026-11-01T10:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Olímpico Nilton Santos Anexo",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 6,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6457",
+   "categoria": "Sub-16",
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
+  },
+  {
    "id": "lnb-27143",
    "modalidade": "basquete",
    "adversario": "União Corinthians",
@@ -524,6 +545,27 @@
    "campeonatoCbf": "copa-do-brasil/feminino",
    "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/bahia-x-flamengo/835449",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
+  },
+  {
+   "id": "ferj-6185",
+   "modalidade": "base",
+   "adversario": "Vasco da Gama",
+   "competicao": "Copa Rio Sub-17",
+   "inicio": "2026-11-04T11:00:00-03:00",
+   "semHora": false,
+   "local": "José Bastos Padilha",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 2
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6185",
+   "categoria": "Sub-17",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
    "id": "cbf-832221",
@@ -591,6 +633,90 @@
    "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
+   "id": "ferj-6459",
+   "modalidade": "base",
+   "adversario": "Botafogo",
+   "competicao": "Guilherme Embry Sub-16",
+   "inicio": "2026-11-06T15:00:00-03:00",
+   "semHora": false,
+   "local": "Ninho do Urubu",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 6,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6459",
+   "categoria": "Sub-16",
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
+  },
+  {
+   "id": "ferj-6215",
+   "modalidade": "base",
+   "adversario": "Nova Cidade",
+   "competicao": "Copa Rio Sub-15",
+   "inicio": "2026-11-07T09:00:00-03:00",
+   "semHora": false,
+   "local": "Ninho do Urubu",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 4,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6215",
+   "categoria": "Sub-15",
+   "escudoAdv": "escudos/futebol-nova-cidade-0ef074.png"
+  },
+  {
+   "id": "ferj-6472",
+   "modalidade": "base",
+   "adversario": "Vasco da Gama",
+   "competicao": "Carioca Sub-20",
+   "inicio": "2026-11-07T10:00:00-03:00",
+   "semHora": false,
+   "local": "José Bastos Padilha",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6472",
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
+   "id": "ferj-6189",
+   "modalidade": "base",
+   "adversario": "Nova Cidade",
+   "competicao": "Copa Rio Sub-17",
+   "inicio": "2026-11-07T11:00:00-03:00",
+   "semHora": false,
+   "local": "Ninho do Urubu",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 4,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6189",
+   "categoria": "Sub-17",
+   "escudoAdv": "escudos/futebol-nova-cidade-0ef074.png"
+  },
+  {
    "id": "lnb-27159",
    "modalidade": "basquete",
    "adversario": "Pato Basquete",
@@ -656,6 +782,42 @@
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   },
   {
+   "id": "ferj-6229",
+   "modalidade": "base",
+   "adversario": "Botafogo",
+   "competicao": "Copa Rio Sub-15",
+   "inicio": "2026-11-11T09:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Olímpico Nilton Santos Anexo",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6229",
+   "categoria": "Sub-15",
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
+  },
+  {
+   "id": "ferj-6195",
+   "modalidade": "base",
+   "adversario": "Botafogo",
+   "competicao": "Copa Rio Sub-17",
+   "inicio": "2026-11-11T11:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Olímpico Nilton Santos Anexo",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6195",
+   "categoria": "Sub-17",
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
+  },
+  {
    "id": "site-futebol-feminino-2026-11-11-botafogo",
    "modalidade": "futebol-feminino",
    "adversario": "Botafogo",
@@ -670,6 +832,7 @@
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
    "pagina": "futebol-feminino",
+   "link": "https://www.fferj.com.br/partidas/6448",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
@@ -709,6 +872,42 @@
    "escudoAdv": "escudos/basquete-paisas.png"
   },
   {
+   "id": "ferj-6474",
+   "modalidade": "base",
+   "adversario": "Vasco da Gama",
+   "competicao": "Carioca Sub-20",
+   "inicio": "2026-11-14T10:00:00-03:00",
+   "semHora": false,
+   "local": "Nivaldo Pereira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6474",
+   "categoria": "Sub-20",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
+   "id": "ferj-6201",
+   "modalidade": "base",
+   "adversario": "Bangu",
+   "competicao": "Copa Rio Sub-17",
+   "inicio": "2026-11-14T13:00:00-03:00",
+   "semHora": false,
+   "local": "José Bastos Padilha",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6201",
+   "categoria": "Sub-17",
+   "escudoAdv": "escudos/futebol-bangu-037a9f.png"
+  },
+  {
    "id": "site-futebol-feminino-2026-11-14-vasco-da-gama",
    "modalidade": "futebol-feminino",
    "adversario": "Vasco da Gama",
@@ -723,7 +922,26 @@
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
    "pagina": "futebol-feminino",
+   "link": "https://www.fferj.com.br/partidas/6463",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
+   "id": "ferj-6235",
+   "modalidade": "base",
+   "adversario": "Bangu",
+   "competicao": "Copa Rio Sub-15",
+   "inicio": "2026-11-14T15:00:00-03:00",
+   "semHora": false,
+   "local": "José Bastos Padilha",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6235",
+   "categoria": "Sub-15",
+   "escudoAdv": "escudos/futebol-bangu-037a9f.png"
   },
   {
    "id": "m-70f8b20602",
