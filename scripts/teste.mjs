@@ -54,7 +54,7 @@ const probs = [];
 const fla = await resolverEscudos(jogosTeste, 'chave-falsa', probs);
 assert.equal(fla, 'escudos/flamengo.png');
 assert.equal(jogosTeste[0].escudoAdv, 'escudos/futebol-palmeiras-teste.png');
-assert.match(jogosTeste[1].escudoAdv, /^escudos/volei-clube-teste-[0-9a-f]{6}.png$/);
+assert.match(jogosTeste[1].escudoAdv, /^escudos\/volei-clube-teste-[0-9a-f]{6}\.png$/);
 assert.equal(jogosTeste[2].escudoAdv, undefined);
 assert.ok(!('escudoAdvUrl' in jogosTeste[1]));
 assert.deepEqual(probs, []);
