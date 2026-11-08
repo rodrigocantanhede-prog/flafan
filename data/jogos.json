@@ -1,48 +1,11 @@
 {
- "atualizadoEm": "2026-11-08T01:42:51.586Z",
+ "atualizadoEm": "2026-11-08T01:44:27.559Z",
  "exemplo": false,
  "avisos": [
   "Chave da API-Sports não configurada — usando só a planilha.",
-  "Escudo de Santos: TheSportsDB respondeu 403",
-  "Escudo de Fluminense: TheSportsDB respondeu 403",
-  "Escudo de Estudiantes: TheSportsDB respondeu 403",
-  "Escudo de Fluminense: TheSportsDB respondeu 403",
-  "Escudo de Bahia: TheSportsDB respondeu 403",
-  "Escudo de Bauru: TheSportsDB respondeu 403",
-  "Escudo de Paulistano/Barueri: TheSportsDB respondeu 403",
-  "Escudo de Botafogo: TheSportsDB respondeu 403",
-  "Escudo de Estudiantes: TheSportsDB respondeu 403",
-  "Escudo de Fluminense: TheSportsDB respondeu 403",
-  "Escudo de Brasília: TheSportsDB respondeu 403",
-  "Escudo de Atlético-MG: TheSportsDB respondeu 403",
-  "Escudo de Vasco: TheSportsDB respondeu 403",
-  "Escudo de Mackenzie: TheSportsDB respondeu 403",
-  "Escudo de União Corinthians: TheSportsDB respondeu 403",
-  "Escudo de Bahia: TheSportsDB respondeu 403",
-  "Escudo de Grêmio: TheSportsDB respondeu 403",
-  "Escudo de Brasília: TheSportsDB respondeu 403",
-  "Escudo de Londrina: TheSportsDB respondeu 403",
-  "Escudo de Pato Basquete: TheSportsDB respondeu 403",
-  "Escudo de Fluminense: TheSportsDB respondeu 403",
-  "Escudo de Sesi Vôlei Bauru: TheSportsDB respondeu 403",
-  "Escudo de Athletico-PR: TheSportsDB respondeu 403",
-  "Escudo de Unifacisa: TheSportsDB respondeu 403",
-  "Escudo de Palmeiras: TheSportsDB respondeu 403",
-  "Escudo de Basquete Cearense: TheSportsDB respondeu 403",
-  "Escudo de Osasco: TheSportsDB respondeu 403",
-  "Escudo de Coritiba: TheSportsDB respondeu 403",
-  "Escudo de Chapecoense: TheSportsDB respondeu 403",
-  "Escudo de Palmeiras: TheSportsDB respondeu 403",
-  "Escudo de Cruzeiro: TheSportsDB respondeu 403",
-  "Escudo de Fluminense: TheSportsDB respondeu 403",
-  "Escudo de Athletico-PR: TheSportsDB respondeu 403",
-  "Escudo de Bahia: TheSportsDB respondeu 403",
-  "Escudo de Atlético-MG: TheSportsDB respondeu 403",
-  "Escudo de Bragantino: TheSportsDB respondeu 403",
-  "Escudo de Santos: TheSportsDB respondeu 403",
-  "Escudo de São Paulo: TheSportsDB respondeu 403",
-  "Escudo de Botafogo: TheSportsDB respondeu 403",
-  "Escudo de Coritiba: TheSportsDB respondeu 403"
+  "Escudo de Unifacisa: TheSportsDB respondeu 429",
+  "Escudo de Basquete Cearense: TheSportsDB respondeu 429",
+  "Escudo de Osasco: TheSportsDB respondeu 429"
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -61,7 +24,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Santos",
    "inicio": "2026-10-08T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-santos.png"
   },
   {
    "id": "m-470ab74d6c",
@@ -78,7 +42,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Fluminense",
    "inicio": "2026-10-11T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
    "id": "m-f548261f73",
@@ -95,7 +60,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Estudiantes",
    "inicio": "2026-10-15T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
    "id": "m-1c3c88ba80",
@@ -112,7 +78,8 @@
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
    "inicio": "2026-10-15T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
    "id": "m-3537948755",
@@ -129,7 +96,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Bahia",
    "inicio": "2026-10-18T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-bahia.png"
   },
   {
    "id": "m-43717a48e9",
@@ -198,7 +166,8 @@
    "adversario": "Estudiantes",
    "inicio": "2026-10-22T00:00:00-03:00",
    "semHora": true,
-   "observacao": "Eliminado nos pênaltis (2 x 3)"
+   "observacao": "Eliminado nos pênaltis (2 x 3)",
+   "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
    "id": "m-48fde0f962",
@@ -216,7 +185,8 @@
    "adversario": "Fluminense",
    "inicio": "2026-10-22T00:00:00-03:00",
    "semHora": true,
-   "observacao": "Classificado para a semifinal (4 x 3 no agregado)"
+   "observacao": "Classificado para a semifinal (4 x 3 no agregado)",
+   "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
    "id": "m-f81da26ae6",
@@ -250,7 +220,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Atlético-MG",
    "inicio": "2026-10-26T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-atletico-mg.png"
   },
   {
    "id": "m-f1f9d80c62",
@@ -267,7 +238,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Vasco",
    "inicio": "2026-10-29T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-vasco.png"
   },
   {
    "id": "m-235e33824d",
@@ -318,7 +290,8 @@
    "modalidade": "futebol-feminino",
    "adversario": "Bahia",
    "inicio": "2026-11-03T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-bahia.png"
   },
   {
    "id": "m-29ebc8676f",
@@ -335,7 +308,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Grêmio",
    "inicio": "2026-11-04T00:00:00-03:00",
-   "semHora": true
+   "semHora": true,
+   "escudoAdv": "escudos/futebol-gremio.png"
   },
   {
    "id": "m-2032129893",
@@ -436,7 +410,8 @@
    "adversario": "Athletico-PR",
    "inicio": "2026-11-18T20:30:00-03:00",
    "semHora": false,
-   "observacao": "Horário a confirmar: uma fonte cita 15h"
+   "observacao": "Horário a confirmar: uma fonte cita 15h",
+   "escudoAdv": "escudos/futebol-athletico-pr.png"
   },
   {
    "id": "m-6def5ed9e1",
@@ -465,7 +440,8 @@
    "modalidade": "futebol-masculino",
    "adversario": "Palmeiras",
    "inicio": "2026-11-21T16:30:00-03:00",
-   "semHora": false
+   "semHora": false,
+   "escudoAdv": "escudos/futebol-palmeiras.png"
   },
   {
    "id": "m-7cd4bd6209",
@@ -510,7 +486,8 @@
    "adversario": "Coritiba",
    "inicio": "2026-11-29T16:00:00-03:00",
    "semHora": false,
-   "observacao": "Data definida pela CBF em 7/11 (antes se falava em 27/11)"
+   "observacao": "Data definida pela CBF em 7/11 (antes se falava em 27/11)",
+   "escudoAdv": "escudos/futebol-coritiba.png"
   },
   {
    "id": "m-ad5cbc04f6",
@@ -525,7 +502,8 @@
    "adversario": "Chapecoense",
    "inicio": "2026-12-02T21:30:00-03:00",
    "semHora": false,
-   "observacao": "Última rodada do Brasileirão"
+   "observacao": "Última rodada do Brasileirão",
+   "escudoAdv": "escudos/futebol-chapecoense.png"
   }
  ]
 }

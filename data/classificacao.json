@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T01:42:51.586Z",
+ "atualizadoEm": "2026-11-08T01:44:27.559Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -26,7 +26,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 73
+     "pts": 73,
+     "escudo": "escudos/futebol-palmeiras.png"
     },
     {
      "pos": 3,
@@ -36,7 +37,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 60
+     "pts": 60,
+     "escudo": "escudos/futebol-cruzeiro.png"
     },
     {
      "pos": 4,
@@ -46,7 +48,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 57
+     "pts": 57,
+     "escudo": "escudos/futebol-fluminense.png"
     },
     {
      "pos": 5,
@@ -56,7 +59,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 54
+     "pts": 54,
+     "escudo": "escudos/futebol-athletico-pr.png"
     },
     {
      "pos": 6,
@@ -66,7 +70,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 53
+     "pts": 53,
+     "escudo": "escudos/futebol-bahia.png"
     },
     {
      "pos": 7,
@@ -76,7 +81,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 50
+     "pts": 50,
+     "escudo": "escudos/futebol-atletico-mg.png"
     },
     {
      "pos": 8,
@@ -86,7 +92,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 47
+     "pts": 47,
+     "escudo": "escudos/futebol-bragantino.png"
     },
     {
      "pos": 9,
@@ -96,7 +103,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 47
+     "pts": 47,
+     "escudo": "escudos/futebol-santos.png"
     },
     {
      "pos": 10,
@@ -106,7 +114,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 44
+     "pts": 44,
+     "escudo": "escudos/futebol-sao-paulo.png"
     },
     {
      "pos": 11,
@@ -116,7 +125,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 42
+     "pts": 42,
+     "escudo": "escudos/futebol-botafogo.png"
     },
     {
      "pos": 12,
@@ -126,7 +136,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 42
+     "pts": 42,
+     "escudo": "escudos/futebol-coritiba.png"
     },
     {
      "pos": 13,
@@ -136,7 +147,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 41
+     "pts": 41,
+     "escudo": "escudos/futebol-vasco.png"
     },
     {
      "pos": 14,
@@ -146,7 +158,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 40
+     "pts": 40,
+     "escudo": "escudos/futebol-mirassol.png"
     },
     {
      "pos": 15,
@@ -156,7 +169,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 38
+     "pts": 38,
+     "escudo": "escudos/futebol-vitoria.png"
     },
     {
      "pos": 16,
@@ -166,7 +180,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 38
+     "pts": 38,
+     "escudo": "escudos/futebol-internacional.png"
     },
     {
      "pos": 17,
@@ -176,7 +191,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 37
+     "pts": 37,
+     "escudo": "escudos/futebol-corinthians.png"
     },
     {
      "pos": 18,
@@ -186,7 +202,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 37
+     "pts": 37,
+     "escudo": "escudos/futebol-gremio.png"
     },
     {
      "pos": 19,
@@ -196,7 +213,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 29
+     "pts": 29,
+     "escudo": "escudos/futebol-remo.png"
     },
     {
      "pos": 20,
@@ -206,7 +224,8 @@
      "e": null,
      "d": null,
      "sg": null,
-     "pts": 21
+     "pts": 21,
+     "escudo": "escudos/futebol-chapecoense.png"
     }
    ]
   }
