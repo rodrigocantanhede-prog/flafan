@@ -1,0 +1,98 @@
+[
+ {
+  "rota": "campeonato-brasileiro/serie-a",
+  "jogos": 34,
+  "nome": "",
+  "ultimo": "2026-11-04"
+ },
+ {
+  "rota": "campeonato-brasileiro/feminino-a1",
+  "jogos": 21,
+  "nome": "",
+  "ultimo": "2026-09-19"
+ },
+ {
+  "rota": "campeonato-brasileiro/feminino-sub-20",
+  "jogos": 12,
+  "nome": "",
+  "ultimo": "2026-05-29"
+ },
+ {
+  "rota": "campeonato-brasileiro/sub-20",
+  "jogos": 19,
+  "nome": "",
+  "ultimo": "2026-07-01"
+ },
+ {
+  "rota": "campeonato-brasileiro/sub-17",
+  "jogos": 21,
+  "nome": "",
+  "ultimo": "2026-10-13"
+ },
+ {
+  "rota": "copa-do-brasil/profissional",
+  "jogos": 2,
+  "nome": "",
+  "ultimo": "2026-05-14"
+ },
+ {
+  "rota": "copa-do-brasil/masculino",
+  "jogos": 2,
+  "nome": "",
+  "ultimo": "2026-05-14"
+ },
+ {
+  "rota": "copa-do-brasil/feminino",
+  "jogos": 5,
+  "nome": "",
+  "ultimo": "2026-11-03"
+ },
+ {
+  "rota": "copa-do-brasil/feminino-sub-20",
+  "jogos": 6,
+  "nome": "",
+  "ultimo": "2026-11-03"
+ },
+ {
+  "rota": "copa-do-brasil/feminino-sub-17",
+  "jogos": 3,
+  "nome": "",
+  "ultimo": "2026-03-10"
+ },
+ {
+  "rota": "copa-do-brasil/feminino-sub-15",
+  "jogos": 7,
+  "nome": "",
+  "ultimo": "2026-08-01"
+ },
+ {
+  "rota": "copa-do-brasil/sub-20",
+  "jogos": 6,
+  "nome": "",
+  "ultimo": "2026-11-03"
+ },
+ {
+  "rota": "copa-do-brasil/sub-17",
+  "jogos": 3,
+  "nome": "",
+  "ultimo": "2026-03-10"
+ },
+ {
+  "rota": "copa-do-brasil/sub-15",
+  "jogos": 7,
+  "nome": "",
+  "ultimo": "2026-08-01"
+ },
+ {
+  "rota": "supercopa-do-brasil/profissional",
+  "jogos": 1,
+  "nome": "",
+  "ultimo": "2026-02-01"
+ },
+ {
+  "rota": "supercopa-do-brasil/masculino",
+  "jogos": 1,
+  "nome": "",
+  "ultimo": "2026-02-01"
+ }
+]
