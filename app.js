@@ -46,6 +46,7 @@ const estado = {
   filtro: lembrar('filtro', 'todas'),
   jogos: [],
   campeonatos: [],
+  compacto: lembrar('compacto', false),
   mes: null,      // {ano, mes} em exibição no calendário
   diaSel: null,   // 'AAAA-MM-DD' selecionado no calendário
 };
@@ -114,6 +115,7 @@ function iconeEsporte(esporte) {
   return 'olimpicos';
 }
 const fDiaCurto = fmt({ weekday: 'short', day: '2-digit', month: '2-digit' });
+const fDM = fmt({ day: '2-digit', month: '2-digit' });
 // "13/11" (00:00 de Brasília) a partir de 'AAAA-MM-DD'
 const dataDoDia = (k) => new Date(`${k}T12:00:00-03:00`);
 const fimDoEvento = (j) => new Date(`${j.fim ?? j.inicio.slice(0, 10)}T23:59:59-03:00`).getTime();
@@ -154,6 +156,53 @@ function contagemCaixas(data) {
   const d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5), m = Math.floor((ms % 36e5) / 6e4);
   const caixa = (n, r) => `<span class="cx"><b>${String(n).padStart(2, '0')}</b><small>${r}</small></span>`;
   return `<div class="contagem" aria-label="${esc(contagem(data))}">${caixa(d, d === 1 ? 'dia' : 'dias')}${caixa(h, 'horas')}${caixa(m, 'min')}</div>`;
+}
+
+function linhaCompacta(j) {
+  const m = MODALIDADES[j.modalidade] ?? { cor: '#E3141B' };
+  const data = new Date(j.inicio);
+  let esq, dir, valor, legenda = '', classeValor = '';
+  if (j.tipo === 'evento') {
+    const kIni = j.inicio.slice(0, 10), kFim = j.fim ?? kIni;
+    esq = `<div class="lc-time"><span class="lc-ic" style="color:${m.cor}">${icone(iconeEsporte(j.esporte))}</span><span class="lc-nome">${esc(j.esporte)}</span></div>`;
+    dir = `<div class="lc-time"><span class="lc-ic lc-trofeu">${icone(j.resultado?.length ? 'trofeu' : 'pin')}</span><span class="lc-nome">${esc(j.resultado?.[0] ?? j.local ?? '')}</span></div>`;
+    valor = `<span class="lc-evento">${esc(j.competicao)}</span>`;
+    legenda = kIni === kFim ? (j.semHora ? 'Dia todo' : fHora.format(data)) : `${fDM.format(dataDoDia(kIni))} a ${fDM.format(dataDoDia(kFim))}`;
+  } else {
+    const flaCasa = j.mandante !== false;
+    const lado = (nome, fla, url, venceu) => `<div class="lc-time ${fla ? 'eh-fla' : ''} ${venceu ? 'venc' : ''}">${escudoPequeno(nome, url, fla)}<span class="lc-nome">${esc(nome)}</span></div>`;
+    const terminou = jaTerminou(j);
+    const f = j.placar?.flamengo, a = j.placar?.adversario;
+    const flaVenceu = j.placar && f > a, advVenceu = j.placar && a > f;
+    esq = flaCasa ? lado('Flamengo', true, null, flaVenceu) : lado(j.adversario, false, j.escudoAdv, advVenceu);
+    dir = flaCasa ? lado(j.adversario, false, j.escudoAdv, advVenceu) : lado('Flamengo', true, null, flaVenceu);
+    if (j.placar) {
+      const [pe, pd] = flaCasa ? [f, a] : [a, f];
+      valor = `<span class="lc-placar"><b class="${pe > pd ? 'mais' : ''}">${pe}</b><i>–</i><b class="${pd > pe ? 'mais' : ''}">${pd}</b></span>`;
+      legenda = terminou ? (f > a ? 'Vitória' : f < a ? 'Derrota' : 'Empate') : 'Parcial';
+      classeValor = terminou ? (f > a ? 'v' : f < a ? 'd' : 'e') : '';
+    } else if (j.status === 'cancelado' || j.status === 'adiado') {
+      valor = '<span class="lc-hora apagado">--:--</span>'; legenda = j.status === 'adiado' ? 'Adiado' : 'Cancelado';
+    } else if (terminou || (!j.semHora && data.getTime() + DURACAO < Date.now())) {
+      valor = '<span class="lc-hora apagado">– × –</span>'; legenda = 'Sem placar';
+    } else {
+      valor = `<span class="lc-hora">${j.semHora ? '--:--' : fHora.format(data)}</span>`;
+      legenda = j.status === 'ao-vivo' ? 'Ao vivo' : j.transmissao?.[0] ?? (j.semHora ? 'A definir' : '');
+    }
+  }
+  const comp = j.tipo === 'evento' ? 'Olímpicos' : (j.competicao || m.nome || '');
+  return `<details class="lc" style="--cor:${m.cor}">
+    <summary>
+      ${esq}
+      <div class="lc-centro">
+        <span class="lc-comp">${j.tipo === 'evento' ? '' : icone(m.icone ?? 'olimpicos')}${esc(comp)}</span>
+        ${valor}
+        <span class="lc-leg ${classeValor} ${j.status === 'ao-vivo' ? 'ao-vivo' : ''}">${esc(legenda)}</span>
+      </div>
+      ${dir}
+    </summary>
+    <div class="lc-detalhe">${cartao(j)}</div>
+  </details>`;
 }
 
 function cartao(j, destaque = false) {
@@ -256,7 +305,7 @@ function desenharCalendario(filtrados) {
   const sel = porDia.get(estado.diaSel) ?? [];
   const [sa, sm, sd] = estado.diaSel.split('-').map(Number);
   const rotSel = rotuloDia(new Date(Date.UTC(sa, sm - 1, sd, 15)));
-  const lista = sel.length ? sel.map((j) => cartao(j)).join('') : '<p class="vazio pequeno">Nenhum jogo neste dia.</p>';
+  const lista = sel.length ? (estado.compacto ? `<div class="painel-compacto">${sel.map(linhaCompacta).join('')}</div>` : sel.map((j) => cartao(j)).join('')) : '<p class="vazio pequeno">Nenhum jogo neste dia.</p>';
 
   $('#lista').innerHTML = `
     <section class="cal" aria-label="Calendário de jogos">
@@ -324,6 +373,7 @@ const jaTerminou = (j) => j.status === 'encerrado' || (!!j.placar && new Date(j.
   (j.tipo === 'evento' && fimDoEvento(j) < Date.now());
 
 function desenhar() {
+  $('#lista').classList.toggle('compacto', !!estado.compacto);
   const agora = Date.now();
   const DUR = 3 * 3600e3; // um jogo "ainda não acabou" até 3h depois do início, se não tiver resultado
   const filtrados = estado.jogos.filter((j) => estado.filtro === 'todas' || j.modalidade === estado.filtro);
@@ -344,9 +394,15 @@ function desenhar() {
   lista.forEach((j, i) => {
     const d = new Date(j.inicio);
     const rot = rotuloDia(d);
-    if (rot !== diaAtual) { html += `<h2 class="dia">${esc(rot)}</h2>`; diaAtual = rot; }
-    html += cartao(j, estado.aba === 'proximos' && i === 0);
+    if (rot !== diaAtual) {
+      if (estado.compacto && diaAtual) html += '</div>';
+      html += `<h2 class="dia">${esc(rot)}</h2>`;
+      if (estado.compacto) html += '<div class="painel-compacto">';
+      diaAtual = rot;
+    }
+    html += estado.compacto ? linhaCompacta(j) : cartao(j, estado.aba === 'proximos' && i === 0);
   });
+  if (estado.compacto && diaAtual) html += '</div>';
   $('#lista').innerHTML = html;
 }
 
@@ -408,6 +464,14 @@ document.addEventListener('click', (e) => {
   }
 });
 $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
+
+// ---------- chave do visual compacto ----------
+$('#chave-compacto').checked = !!estado.compacto;
+$('#chave-compacto').onchange = (e) => {
+  estado.compacto = e.target.checked;
+  guardar('compacto', estado.compacto);
+  desenhar();
+};
 
 // ---------- modo claro / noturno ----------
 const sistemaEscuro = () => window.matchMedia?.('(prefers-color-scheme: dark)').matches;
