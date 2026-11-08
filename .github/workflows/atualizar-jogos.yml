@@ -1,8 +1,8 @@
-# Roda todo dia às 05:17 (horário de Brasília) e também quando você clicar em "Run workflow".
+# Roda a cada 3 horas (e quando você clicar em "Run workflow" ou quando o código do robô muda).
 name: Atualizar jogos
 on:
   schedule:
-    - cron: '17 8 * * *'
+    - cron: '17 */3 * * *'
   workflow_dispatch:
   push:
     branches: [main]

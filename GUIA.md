@@ -22,7 +22,7 @@ Todo dia de madrugada, um robô do GitHub busca os jogos na fonte automática (A
 2. Para um **jogo novo**, preencha uma linha e deixe a coluna `id` vazia.
 3. Para **corrigir um jogo automático**, coloque o `id` dele e só os campos que quer mudar (por exemplo, `onde_assistir`).
 4. Para **esconder um jogo**, escreva `remover` na coluna `acao`.
-5. O app atualiza na madrugada seguinte. Para atualizar na hora: no GitHub, vá em **Actions → Atualizar jogos → Run workflow**.
+5. O app atualiza em até 3 horas. Para atualizar na hora: no GitHub, vá em **Actions → Atualizar jogos → Run workflow**.
 
 A aba **Como usar** da planilha explica cada coluna.
 
