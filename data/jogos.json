@@ -1,14 +1,8 @@
 {
- "atualizadoEm": "2026-11-08T12:14:29.344Z",
+ "atualizadoEm": "2026-11-08T12:23:10.312Z",
  "exemplo": false,
  "avisos": [
-  "Chave da API-Sports não configurada — usando só a planilha.",
-  "Escudo de Sesi Franca: TheSportsDB respondeu 429",
-  "Escudo de Ceisc/União Corinthians: TheSportsDB respondeu 429",
-  "Escudo de Bauru Basket: TheSportsDB respondeu 429",
-  "Escudo de São José Basketball: TheSportsDB respondeu 429",
-  "Escudo de Basket Osasco: TheSportsDB respondeu 429",
-  "Escudo de Caxias do Sul Basquete: TheSportsDB respondeu 429"
+  "Chave da API-Sports não configurada — usando só a planilha."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
