@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T19:09:02.278Z",
+ "atualizadoEm": "2026-11-08T19:10:44.471Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -182,23 +182,27 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
-   "id": "m-b147397237",
-   "transmissao": [],
+   "id": "lnb-27113",
+   "modalidade": "basquete",
+   "adversario": "Bauru",
+   "competicao": "NBB",
+   "inicio": "2026-10-18T11:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "YouTube",
+    "Flamengo TV"
+   ],
    "placar": {
     "flamengo": 81,
     "adversario": 82
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Maracanãzinho, Rio de Janeiro",
-   "competicao": "NBB",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "Bauru",
-   "inicio": "2026-10-18T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
-   "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-bauru-28da4b.png"
   },
   {
    "id": "cbf-832199",
@@ -242,22 +246,26 @@
    "escudoAdv": "escudos/volei-paulistano-barueri-eccc6c.png"
   },
   {
-   "id": "m-8bef2ba532",
-   "transmissao": [],
+   "id": "lnb-27119",
+   "modalidade": "basquete",
+   "adversario": "Botafogo",
+   "competicao": "NBB",
+   "inicio": "2026-10-20T18:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio do Tijuca, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "ESPN",
+    "Disney+"
+   ],
    "placar": {
     "flamengo": 81,
     "adversario": 71
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Ginásio do Tijuca, Rio de Janeiro",
-   "competicao": "NBB",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "Botafogo",
-   "inicio": "2026-10-20T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
+   "tabela": "NBB",
    "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
   },
   {
@@ -410,6 +418,29 @@
    "escudoAdv": "escudos/futebol-vasco-5dbf77.webp"
   },
   {
+   "id": "lnb-27142",
+   "modalidade": "basquete",
+   "adversario": "Caxias do Sul Basquete",
+   "competicao": "NBB",
+   "inicio": "2026-10-30T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [
+    "Xsports",
+    "Flamengo TV"
+   ],
+   "placar": {
+    "flamengo": 77,
+    "adversario": 59
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
+  },
+  {
    "id": "m-187b54a54e",
    "transmissao": [],
    "placar": {
@@ -429,23 +460,27 @@
    "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
   },
   {
-   "id": "m-195728fb40",
-   "transmissao": [],
+   "id": "lnb-27143",
+   "modalidade": "basquete",
+   "adversario": "União Corinthians",
+   "competicao": "NBB",
+   "inicio": "2026-11-01T11:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "YouTube",
+    "Flamengo TV"
+   ],
    "placar": {
     "flamengo": 83,
     "adversario": 65
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Maracanãzinho, Rio de Janeiro",
-   "competicao": "NBB",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "União Corinthians",
-   "inicio": "2026-11-01T00:00:00-03:00",
-   "semHora": true,
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
-   "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-uniao-corinthians-bce2f9.png"
   },
   {
    "id": "cbf-835459",
@@ -513,23 +548,28 @@
    "escudoAdv": "escudos/futebol-gremio-ba2f40.webp"
   },
   {
-   "id": "m-fe40430b2b",
-   "transmissao": [],
+   "id": "lnb-27151",
+   "modalidade": "basquete",
+   "adversario": "Brasília",
+   "competicao": "NBB",
+   "inicio": "2026-11-04T20:15:00-03:00",
+   "semHora": false,
+   "local": "Arena Nilson Nelson, Brasília",
+   "mandante": false,
+   "transmissao": [
+    "YouTube",
+    "SporTV",
+    "Flamengo TV"
+   ],
    "placar": {
     "flamengo": 91,
     "adversario": 87
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Arena Nilson Nelson, Brasília",
-   "competicao": "NBB",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "Brasília",
-   "inicio": "2026-11-04T20:15:00-03:00",
-   "semHora": false,
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
-   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
   },
   {
    "id": "m-78aa055826",
@@ -551,7 +591,14 @@
    "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
-   "id": "m-2caaaf16a1",
+   "id": "lnb-27159",
+   "modalidade": "basquete",
+   "adversario": "Pato Basquete",
+   "competicao": "NBB",
+   "inicio": "2026-11-07T19:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio do Sesi, Pato Branco (PR)",
+   "mandante": false,
    "transmissao": [
     "Xsports",
     "Flamengo TV"
@@ -561,15 +608,9 @@
     "adversario": 66
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Ginásio do Sesi, Pato Branco (PR)",
-   "competicao": "NBB",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "Pato Basquete",
-   "inicio": "2026-11-07T19:00:00-03:00",
-   "semHora": false,
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
+   "tabela": "NBB",
    "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
@@ -595,19 +636,23 @@
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
-   "id": "m-056473b820",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": true,
-   "local": "Maracanãzinho, Rio de Janeiro",
-   "competicao": "NBB",
-   "fonte": "manual",
+   "id": "lnb-27164",
    "modalidade": "basquete",
    "adversario": "Sesi Franca",
+   "competicao": "NBB",
    "inicio": "2026-11-10T20:30:00-03:00",
    "semHora": false,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "ESPN",
+    "Disney+"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
    "fonteInfo": "LNB",
+   "tabela": "NBB",
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   },
   {
@@ -788,20 +833,23 @@
    "escudoAdv": "escudos/futebol-athletico-pr-59ce02.webp"
   },
   {
-   "id": "m-477a722ab0",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": false,
-   "local": "Campina Grande (PB)",
-   "competicao": "NBB",
-   "fonte": "manual",
+   "id": "lnb-27181",
    "modalidade": "basquete",
    "adversario": "Unifacisa",
-   "inicio": "2026-11-19T00:00:00-03:00",
-   "semHora": true,
-   "observacao": "Horário ainda não divulgado",
+   "competicao": "NBB",
+   "inicio": "2026-11-19T19:00:00-03:00",
+   "semHora": false,
+   "local": "Campina Grande (PB)",
+   "mandante": false,
+   "transmissao": [
+    "SporTV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
    "fonteInfo": "RealGM",
+   "tabela": "NBB",
+   "observacao": "Horário ainda não divulgado",
    "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
   },
   {
@@ -822,20 +870,24 @@
    "escudoAdv": "escudos/futebol-palmeiras-26c301.png"
   },
   {
-   "id": "m-6bc47cc42d",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": false,
-   "local": "Fortaleza (CE)",
-   "competicao": "NBB",
-   "fonte": "manual",
+   "id": "lnb-27189",
    "modalidade": "basquete",
    "adversario": "Basquete Cearense",
-   "inicio": "2026-11-22T00:00:00-03:00",
-   "semHora": true,
-   "observacao": "Horário ainda não divulgado",
+   "competicao": "NBB",
+   "inicio": "2026-11-22T11:00:00-03:00",
+   "semHora": false,
+   "local": "Fortaleza (CE)",
+   "mandante": false,
+   "transmissao": [
+    "YouTube",
+    "Flamengo TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
    "fonteInfo": "RealGM",
+   "tabela": "NBB",
+   "observacao": "Horário ainda não divulgado",
    "escudoAdv": "escudos/basquete-basquete-cearense-8b0fd2.png"
   },
   {
@@ -950,6 +1002,40 @@
    "escudoAdv": "escudos/volei-minas-21559f.svg"
   },
   {
+   "id": "lnb-27211",
+   "modalidade": "basquete",
+   "adversario": "Mogi Basquete",
+   "competicao": "NBB",
+   "inicio": "2026-12-10T20:00:00-03:00",
+   "semHora": false,
+   "local": "Prof. Hugo Ramos",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-mogi-basquete-daf842.png"
+  },
+  {
+   "id": "lnb-27214",
+   "modalidade": "basquete",
+   "adversario": "São José Basketball",
+   "competicao": "NBB",
+   "inicio": "2026-12-12T16:00:00-03:00",
+   "semHora": false,
+   "local": "Gin. Linneu de Moura",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-sao-jose-basketball-89ff28.png"
+  },
+  {
    "id": "site-volei-feminino-2026-12-14-dentil-praia-clube",
    "modalidade": "volei-feminino",
    "adversario": "Dentil Praia Clube",
@@ -967,6 +1053,40 @@
    "escudoAdv": "escudos/volei-dentil-praia-clube-7bfdf3.png"
   },
   {
+   "id": "lnb-27220",
+   "modalidade": "basquete",
+   "adversario": "Corinthians",
+   "competicao": "NBB",
+   "inicio": "2026-12-15T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-corinthians-c187b9.png"
+  },
+  {
+   "id": "lnb-27226",
+   "modalidade": "basquete",
+   "adversario": "Paulistano",
+   "competicao": "NBB",
+   "inicio": "2026-12-17T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-paulistano-d2670e.png"
+  },
+  {
    "id": "site-volei-feminino-2026-12-19-abel-moda-volei-brusque",
    "modalidade": "volei-feminino",
    "adversario": "Abel Moda Vôlei (Brusque)",
@@ -982,6 +1102,125 @@
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
    "escudoAdv": "escudos/volei-abel-moda-volei-brusque-181b0a.webp"
+  },
+  {
+   "id": "lnb-27236",
+   "modalidade": "basquete",
+   "adversario": "Basket Osasco",
+   "competicao": "NBB",
+   "inicio": "2026-12-21T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-basket-osasco-449453.png"
+  },
+  {
+   "id": "lnb-27243",
+   "modalidade": "basquete",
+   "adversario": "Pinheiros",
+   "competicao": "NBB",
+   "inicio": "2026-12-23T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-pinheiros-bfe7cc.png"
+  },
+  {
+   "id": "lnb-27252",
+   "modalidade": "basquete",
+   "adversario": "Minas",
+   "competicao": "NBB",
+   "inicio": "2026-12-27T17:00:00-03:00",
+   "semHora": false,
+   "local": "Arena Minas",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-minas-438d6e.png"
+  },
+  {
+   "id": "lnb-27257",
+   "modalidade": "basquete",
+   "adversario": "Cruzeiro",
+   "competicao": "NBB",
+   "inicio": "2026-12-29T19:30:00-03:00",
+   "semHora": false,
+   "local": "Gin. Dona Salomé - Barro Preto",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-cruzeiro-afae7a.png"
+  },
+  {
+   "id": "lnb-27328",
+   "modalidade": "basquete",
+   "adversario": "Botafogo",
+   "competicao": "NBB",
+   "inicio": "2027-01-12T20:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio Oscar Zelaya",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
+  },
+  {
+   "id": "lnb-27336",
+   "modalidade": "basquete",
+   "adversario": "Caxias do Sul Basquete",
+   "competicao": "NBB",
+   "inicio": "2027-01-18T19:30:00-03:00",
+   "semHora": false,
+   "local": "Sesi",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
+  },
+  {
+   "id": "lnb-27344",
+   "modalidade": "basquete",
+   "adversario": "Ceisc/União Corinthians",
+   "competicao": "NBB",
+   "inicio": "2027-01-20T19:30:00-03:00",
+   "semHora": false,
+   "local": "Gin. Poliesportivo Arnão",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
   }
  ]
 }

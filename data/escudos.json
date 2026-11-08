@@ -3,7 +3,7 @@
  "futebol|fluminense": "escudos/futebol-fluminense-9265d1.png",
  "futebol|estudiantes": "escudos/futebol-estudiantes.png",
  "futebol|bahia": "escudos/futebol-bahia-9eba69.png",
- "basquete|bauru": null,
+ "basquete|bauru": "escudos/basquete-bauru-28da4b.png",
  "basquete|bauru|tentou": 1794102238143,
  "volei|paulistano-barueri": "escudos/volei-paulistano-barueri-eccc6c.png",
  "volei|paulistano-barueri|tentou": 1794102240406,
@@ -15,10 +15,10 @@
  "futebol|vasco": "escudos/futebol-vasco-5dbf77.webp",
  "volei|mackenzie": null,
  "volei|mackenzie|tentou": 1794102247279,
- "basquete|uniao-corinthians": null,
+ "basquete|uniao-corinthians": "escudos/basquete-uniao-corinthians-bce2f9.png",
  "basquete|uniao-corinthians|tentou": 1794102249537,
  "futebol|gremio": "escudos/futebol-gremio-ba2f40.webp",
- "basquete|brasilia": null,
+ "basquete|brasilia": "escudos/basquete-brasilia-e22d40.png",
  "basquete|brasilia|tentou": 1794102251706,
  "volei|londrina": null,
  "volei|londrina|tentou": 1794102253983,
@@ -126,5 +126,7 @@
  "futebol|uda": "escudos/futebol-uda-42a6f7.webp",
  "futebol|uda|tentou": 1794161319481,
  "futebol|litoral-norte-f-c": "escudos/futebol-litoral-norte-f-c-f5d431.webp",
- "futebol|litoral-norte-f-c|tentou": 1794161319599
+ "futebol|litoral-norte-f-c|tentou": 1794161319599,
+ "basquete|minas": "escudos/basquete-minas-438d6e.png",
+ "basquete|cruzeiro": "escudos/basquete-cruzeiro-afae7a.png"
 }
