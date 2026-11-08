@@ -1,0 +1,89 @@
+{
+ "lnb-tabela": {
+  "url": "https://lnb.com.br/nbb/tabela-de-jogos/",
+  "status": 200,
+  "bytes": 1197839,
+  "tv": [
+   "max",
+   "youtube",
+   "sportv",
+   "espn",
+   "globo"
+  ]
+ },
+ "lnb-nbb": {
+  "url": "https://lnb.com.br/nbb/",
+  "status": 200,
+  "bytes": 904328,
+  "tv": [
+   "max",
+   "youtube",
+   "espn",
+   "sportv",
+   "globo"
+  ]
+ },
+ "fiba-lsb-noticia": {
+  "url": "https://www.fiba.basketball/en/news/liga-sudamericana-de-baloncesto-2026-full-schedule-tip-off-times",
+  "status": 200,
+  "bytes": 381949,
+  "tv": [
+   "youtube",
+   "record",
+   "dazn",
+   "courtside"
+  ]
+ },
+ "fiba-lsb": {
+  "url": "https://www.fiba.basketball/en/events/liga-sudamericana-de-baloncesto-2026",
+  "status": 200,
+  "bytes": 233546,
+  "tv": [
+   "youtube",
+   "record",
+   "dazn",
+   "courtside"
+  ]
+ },
+ "fla-feminino": {
+  "url": "https://www.flamengo.com.br/futebol-feminino/proximos-jogos",
+  "status": 200,
+  "bytes": 216936,
+  "tv": [
+   "youtube"
+  ]
+ },
+ "fla-basquete": {
+  "url": "https://www.flamengo.com.br/basquete/proximos-jogos",
+  "status": 200,
+  "bytes": 207015,
+  "tv": [
+   "youtube"
+  ]
+ },
+ "fla-volei": {
+  "url": "https://www.flamengo.com.br/volei/proximos-jogos",
+  "status": 200,
+  "bytes": 229726,
+  "tv": [
+   "youtube"
+  ]
+ },
+ "fla-futebol": {
+  "url": "https://www.flamengo.com.br/futebol/proximos-jogos",
+  "status": 200,
+  "bytes": 178561,
+  "tv": [
+   "youtube"
+  ]
+ },
+ "fferj": {
+  "url": "https://www.fferj.com.br/",
+  "status": 200,
+  "bytes": 406835,
+  "tv": [
+   "max",
+   "youtube"
+  ]
+ }
+}
