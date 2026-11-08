@@ -96,3 +96,45 @@ export async function lerTabelasOficiais(cfg, log = () => {}) {
   }
   return { tabelas, problemas };
 }
+
+// ---------- agenda do NBB (LNB): jogos do Flamengo com data, local, placar e onde assistir ----------
+// https://lnb.com.br/nbb/tabela-de-jogos/ — cada jogo é um <tr class="with-hotel"> com DATA, CASA, placar, VISITANTE, GINÁSIO e logos das TVs
+const limpaTxt = (s) => decodificar(String(s ?? '').replace(/<[^>]+>/g, ' '));
+export function lerAgendaLnb(html, agora = Date.now()) {
+  const jogos = [];
+  for (const tr of html.match(/<tr class="with-hotel">[\s\S]*?<\/tr>/g) ?? []) {
+    const id = (tr.match(/data-real-id="(\d+)"/) ?? [])[1];
+    const dh = tr.match(/<span[^>]*>\s*(\d{2})\/(\d{2})\/(\d{4})\s*<\/span>\s*<span[^>]*>\s*(\d{1,2}):(\d{2})?/);
+    const casa = limpaTxt((tr.match(/home_team_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1]);
+    const fora = limpaTxt((tr.match(/visitor_team_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1]);
+    if (!id || !dh || !casa || !fora) continue;
+    const flaCasa = /flamengo/i.test(casa), flaFora = /flamengo/i.test(fora);
+    if (flaCasa === flaFora) continue;
+    const p = (n) => String(n).padStart(2, '0');
+    const inicio = `${dh[3]}-${dh[2]}-${dh[1]}T${p(dh[4])}:${dh[5] ?? '00'}:00-03:00`;
+    const logo = (cls) => decodificar((tr.match(new RegExp(`${cls}[^>]*>\\s*<img[^>]*src="([^"]+)"`)) ?? [])[1]);
+    const placarTd = (tr.match(/score_value show-for-medium[^>]*>([\s\S]*?)<\/td>/) ?? [])[1] ?? '';
+    const pc = num((placarTd.match(/class="home"[^>]*>\s*(\d+)/) ?? [])[1]), pf = num((placarTd.match(/class="away"[^>]*>\s*(\d+)/) ?? [])[1]);
+    const tvTd = (tr.match(/logo_tv_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1] ?? '';
+    const tv = [...new Set([...tvTd.matchAll(/<img[^>]*(?:title|alt)="([^"]+)"/g)].map((m) => decodificar(m[1])).filter(Boolean))];
+    const fase = limpaTxt((tr.match(/stage_value hide_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1]);
+    const ginasio = limpaTxt((tr.match(/gym_value[^>]*>([\s\S]*?)<(?:div|\/td)/) ?? [])[1]);
+    const adv = nomeBonito(flaCasa ? fora : casa);
+    const placar = pc !== null && pf !== null && new Date(inicio).getTime() < agora ? { flamengo: flaCasa ? pc : pf, adversario: flaCasa ? pf : pc } : null;
+    jogos.push({
+      id: `lnb-${id}`, modalidade: 'basquete', adversario: adv, competicao: fase && !/turno/i.test(fase) ? `NBB – ${fase.toLowerCase()}` : 'NBB',
+      inicio, semHora: false, local: ginasio, mandante: flaCasa, transmissao: tv, placar, status: placar ? 'encerrado' : 'agendado',
+      fonte: 'automatica', fonteInfo: 'LNB', escudoAdvUrl: logo(flaCasa ? 'logo_visitor_team' : 'logo_home_team') || undefined, tabela: 'NBB',
+    });
+  }
+  return jogos;
+}
+
+export async function lerJogosLnb(url, log = () => {}) {
+  const r = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  if (!r.ok) throw new Error(`respondeu ${r.status}`);
+  const jogos = lerAgendaLnb(await r.text());
+  if (!jogos.length) throw new Error('nenhum jogo do Flamengo na agenda (formato mudou?)');
+  log(`Site da LNB: agenda do NBB — ${jogos.length} jogos do Flamengo.`);
+  return jogos;
+}

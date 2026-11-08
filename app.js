@@ -35,7 +35,7 @@ const icone = (nome, cls = 'ic') => ICONES[nome]
   ? `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONES[nome]}</svg>` : '';
 const seloModalidade = (m) => `${icone(m.icone)}${m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}`;
 
-const GRATIS = /(globo\b|tv globo|ge ?tv|youtube|tv brasil|cazé|caze|record\b|band\b|sbt\b|flatv|fla tv)/i;
+const GRATIS = /(globo\b|tv globo|ge ?tv|youtube|tv brasil|tv cultura|cazé|caze|record\b|band\b|sbt\b|flatv|fla tv|flamengo tv)/i;
 
 // ---------- memória do aparelho (só conveniência; se falhar, o app funciona igual) ----------
 const guardar = (k, v) => { try { localStorage.setItem('flafan:' + k, JSON.stringify(v)); } catch {} };

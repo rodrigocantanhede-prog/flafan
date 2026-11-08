@@ -11,7 +11,7 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { lerCbf } from './cbf.mjs';
-import { lerTabelasOficiais } from './tabelas-oficiais.mjs';
+import { lerTabelasOficiais, lerJogosLnb } from './tabelas-oficiais.mjs';
 import { lerSiteFlamengo } from './site-flamengo.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -633,6 +633,15 @@ async function main() {
     if (r.jogos.length || !falhas.size) await writeFile(cacheCbfArq, JSON.stringify(jogosCbf, null, 1));
     automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('cbf-')), jogosCbf);
     campeonatosApi.push(...r.tabelas);
+  }
+
+  // 1b3) agenda do NBB no site da LNB: jogos do basquete com placar, ginásio e onde assistir
+  if (cfg.lnbJogos?.url && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const cacheLnbArq = path.join(DATA, 'cache-lnb.json');
+    let jogosLnb;
+    try { jogosLnb = await lerJogosLnb(cfg.lnbJogos.url, log); await writeFile(cacheLnbArq, JSON.stringify(jogosLnb, null, 1)); }
+    catch (e) { problemas.push(`Site da LNB (agenda do NBB): ${e.message} — mantive a última leitura.`); jogosLnb = await lerJson(cacheLnbArq, []); }
+    automaticos = [...automaticos.filter((j) => !String(j.id).startsWith('lnb-')), ...jogosLnb];
   }
 
   // 1c) tabelas completas dos sites das ligas (NBB na LNB, Superliga na CBV)

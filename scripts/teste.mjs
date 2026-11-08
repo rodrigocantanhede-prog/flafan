@@ -275,3 +275,14 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.deepEqual(j8.map((j) => j.adversario), ['Vasco'], 'remover apaga o jogo certo');
   console.log('✓ Correções da revisão ok');
 }
+{
+  const { lerAgendaLnb } = await import('./tabelas-oficiais.mjs');
+  const linha = (id, data, hora, casa, fora, placar, tvs) => `<tr class="with-hotel"><td class="position_value show-for-medium" data-label="JOGO" data-real-id="${id}">1</td><td class="date_value show-for-medium" data-label="DATA"> <span class="">${data}</span> <span class="">${hora}</span> </td><td class="home_team_value show-for-medium" data-label="CASA"> <span class="team-shortname">${casa}</span> </td><td class="logo_home_team show-for-medium"> <img alt="" src="https://lnb/${casa}.png"> </td><td class="score_value show-for-medium"> ${placar ? `<a><span class="home">${placar[0]}</span> X <span class="away">${placar[1]}</span></a>` : 'X'} </td><td class="logo_visitor_team show-for-medium"> <img alt="" src="https://lnb/${fora}.png"> </td><td class="visitor_team_value show-for-medium" data-label="VISITANTE"> <span class="team-shortname">${fora}</span> </td><td class="stage_value hide_value" data-label="FASE">1º TURNO</td><td class="gym_value hide_value" data-label="GINÁSIO">Maracanãzinho <div class="hotel"></div></td><td class="logo_tv_value"> ${tvs.map((t) => `<img alt="${t}" title="${t}" src="x.png">`).join(' ')} </td></tr>`;
+  const html = linha(1, '04/11/2026', '20:15', 'CAIXA/Brasília Basquete', 'Flamengo', [87, 91], ['YouTube', 'SporTV']) + linha(2, '19/11/2026', '19:00', 'UNIFACISA', 'Flamengo', null, ['SporTV']) + linha(3, '20/11/2026', '19:00', 'Minas', 'Pinheiros', null, []);
+  const j = lerAgendaLnb(html, new Date('2026-11-08T12:00:00-03:00').getTime());
+  assert.equal(j.length, 2, 'só jogos do Flamengo');
+  assert.deepEqual(j[0].placar, { flamengo: 91, adversario: 87 }); assert.equal(j[0].mandante, false); assert.deepEqual(j[0].transmissao, ['YouTube', 'SporTV']);
+  assert.equal(j[1].adversario, 'Unifacisa'); assert.equal(j[1].placar, null); assert.equal(j[1].inicio, '2026-11-19T19:00:00-03:00'); assert.equal(j[1].local, 'Maracanãzinho');
+  assert.equal(j[1].escudoAdvUrl, 'https://lnb/UNIFACISA.png');
+  console.log('✓ Agenda do NBB (LNB) ok');
+}

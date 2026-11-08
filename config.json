@@ -163,5 +163,8 @@
         "tabela": "Brasileiro Feminino Sub-17"
       }
     ]
+  },
+  "lnbJogos": {
+    "url": "https://lnb.com.br/nbb/tabela-de-jogos/"
   }
 }
