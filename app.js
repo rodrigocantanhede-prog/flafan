@@ -373,7 +373,7 @@ function htmlTabela(c, adversario = null) {
     const adv = !fla && adversario && mesmoTimeApp(adversario, l.time);
     return `<tr class="${fla ? 'eh-fla' : ''} ${adv ? 'eh-adv' : ''} ${zona(l.pos)}">
       <td class="t-pos">${l.pos ?? ''}</td>
-      <td class="t-time">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></td>
+      <td class="t-time"><div class="t-time-in">${escudoPequeno(l.time, l.escudo, fla)}<span>${esc(l.time)}</span></div></td>
       ${temPts ? `<td class="t-pts">${l.pts ?? ''}</td>` : ''}<td>${l.j ?? ''}</td>
       ${extras.map(([k]) => `<td>${sinal(k, l[k])}</td>`).join('')}
     </tr>`;
