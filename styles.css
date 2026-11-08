@@ -482,10 +482,10 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .folha::backdrop { background: #000c; backdrop-filter: blur(4px); }
 .folha[open] .folha-conteudo { animation: subir .28s ease-out; }
 @keyframes subir { from { transform: translateY(40px); opacity: .4; } }
-.folha-conteudo { position: relative; background: var(--fundo); color: var(--texto); border-radius: 26px 26px 0 0; padding: 0 0 calc(24px + env(safe-area-inset-bottom)); overflow: hidden; }
-.folha-alca { width: 40px; height: 5px; border-radius: 3px; background: #ffffff55; position: absolute; top: 8px; left: 50%; margin-left: -20px; z-index: 3; }
+.folha-conteudo { position: relative; background: linear-gradient(#2a0a0d, #2a0a0d) top / 100% 80px no-repeat, var(--fundo); color: var(--texto); border-radius: 26px 26px 0 0; padding: 0 0 calc(24px + env(safe-area-inset-bottom)); overflow: hidden; }
+.folha-alca { width: 44px; height: 5px; border-radius: 3px; background: #ffffff55; position: absolute; top: 8px; left: 50%; margin-left: -20px; z-index: 3; }
 .folha-fechar { position: absolute; top: 16px; right: 16px; padding: 0; display: grid; place-items: center; font-size: 15px; line-height: 1; z-index: 2; width: 38px; height: 38px; border-radius: 50%; background: #00000055; border-color: #ffffff22; color: #fff; }
-.fj-topo { padding: 30px 18px 22px; text-align: center; color: #fff;
+.fj-topo { padding: 30px 18px 22px; margin-top: -1px; text-align: center; color: #fff;
   background: radial-gradient(90% 120% at 15% 0%, rgba(227,20,27,.75), transparent 60%), radial-gradient(90% 120% at 90% 10%, color-mix(in srgb, var(--cor) 55%, transparent), transparent 60%), linear-gradient(180deg, #2a0a0d, #0d0d10); }
 .fj-comp { font-size: 14px; font-weight: 600; color: #ffffffb3; margin: 6px 0 14px; }
 .fj-confronto { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; }

@@ -548,6 +548,29 @@ document.addEventListener('click', (e) => {
 });
 $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
 $('#detalhe').addEventListener('click', (e) => { if (e.target === $('#detalhe') || e.target.closest('[data-fechar]')) $('#detalhe').close(); });
+// arrastar a folha para baixo fecha (quando ela está no topo da rolagem)
+{
+  const folha = $('#detalhe'), conteudo = folha.querySelector('.folha-conteudo');
+  let y0 = null, dy = 0;
+  conteudo.addEventListener('touchstart', (e) => { y0 = conteudo.scrollTop <= 0 ? e.touches[0].clientY : null; dy = 0; conteudo.style.transition = 'none'; }, { passive: true });
+  conteudo.addEventListener('touchmove', (e) => {
+    if (y0 === null) return;
+    dy = e.touches[0].clientY - y0;
+    if (dy > 0) { conteudo.style.transform = `translateY(${dy}px)`; if (e.cancelable) e.preventDefault(); }
+    else { y0 = null; conteudo.style.transform = ''; }
+  }, { passive: false });
+  const soltar = () => {
+    if (y0 === null) return;
+    y0 = null;
+    conteudo.style.transition = 'transform .22s ease-out';
+    if (dy > 90) {
+      conteudo.style.transform = 'translateY(100%)';
+      setTimeout(() => { folha.close(); conteudo.style.transition = 'none'; conteudo.style.transform = ''; }, 200);
+    } else conteudo.style.transform = '';
+  };
+  conteudo.addEventListener('touchend', soltar);
+  conteudo.addEventListener('touchcancel', soltar);
+}
 
 // ---------- chave do visual compacto ----------
 $('#chave-compacto').checked = !!estado.compacto;

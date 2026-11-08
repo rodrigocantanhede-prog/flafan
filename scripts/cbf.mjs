@@ -12,7 +12,7 @@ const slug = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '
 const limparNome = (s) => String(s ?? '').replace(/\s+saf$/i, '').replace(/\s+/g, ' ').trim();
 // o servidor de imagens da CBF não responde para o robô; o próprio site entrega a mesma imagem por /_next/image
 export const escudoCbf = (u) => !u ? undefined : /^https:\/\/conteudo\.cbf\.com\.br\//.test(u)
-  ? `https://www.cbf.com.br/_next/image?url=${encodeURIComponent(u)}&w=256&q=75` : u;
+  ? `https://www.cbf.com.br/_next/image?url=${encodeURIComponent(u)}&w=128&q=70` : u;
 const num = (s) => { if (s === null || s === undefined || String(s).trim() === '') return null; const n = Number(s); return Number.isFinite(n) ? n : null; };
 
 // junta os pedaços de dados da página
