@@ -177,7 +177,7 @@ export function mesclar(automaticos, linhas) {
     if (cat) novo.categoria = `Sub-${cat[1]}`;
     if (limpar(l.adversario)) novo.adversario = limpar(l.adversario);
     if (limpar(l.competicao)) novo.competicao = limpar(l.competicao);
-    if (inicio) novo.inicio = inicio;
+    if (inicio) { novo.inicio = inicio; novo.semHora = !limpar(l.hora); }
     if (limpar(l.local)) novo.local = limpar(l.local);
     if (limpar(l.mando)) novo.mandante = semAcento(l.mando).startsWith('casa');
     if (limpar(l.onde_assistir)) novo.transmissao = listaTransmissao(l.onde_assistir);
@@ -211,15 +211,16 @@ export function gerarIcs(jogos, titulo) {
   const agora = icsData(new Date());
   const ev = jogos.filter((j) => !['cancelado'].includes(j.status)).map((j) => {
     const fim = new Date(new Date(j.inicio).getTime() + 2 * 3600e3);
+    const dia = j.inicio.slice(0, 10).replace(/-/g, '');
     const nome = j.mandante === false ? `${j.adversario} x Flamengo` : `Flamengo x ${j.adversario}`;
     const onde = j.transmissao.length ? `Onde assistir: ${j.transmissao.join(', ')}` : 'Onde assistir: a confirmar';
     return [
       'BEGIN:VEVENT', `UID:${j.id}@flafan`, `DTSTAMP:${agora}`,
-      `DTSTART:${icsData(j.inicio)}`, `DTEND:${icsData(fim)}`,
+      ...(j.semHora ? [`DTSTART;VALUE=DATE:${dia}`] : [`DTSTART:${icsData(j.inicio)}`, `DTEND:${icsData(fim)}`]),
       `SUMMARY:${icsTexto(`${nome} (${MODALIDADES[j.modalidade]})`)}`,
       `DESCRIPTION:${icsTexto(`${j.competicao}\n${onde}`)}`,
       j.local ? `LOCATION:${icsTexto(j.local)}` : null,
-      'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsTexto(nome + ' começa em 1 hora')}`, 'TRIGGER:-PT1H', 'END:VALARM',
+      ...(j.semHora ? [] : ['BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsTexto(nome + ' começa em 1 hora')}`, 'TRIGGER:-PT1H', 'END:VALARM']),
       'END:VEVENT',
     ].filter(Boolean);
   }).flat();

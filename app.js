@@ -89,13 +89,13 @@ function cartao(j, destaque = false) {
       <span class="tag">${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span>
       ${j.competicao ? `<span class="ponto">${esc(j.competicao)}</span>` : ''}
       ${status ? `<span class="status ${j.status}">${status}</span>` : ''}${selo}
-      <span class="hora">${fHora.format(data)}</span>
+      <span class="hora">${j.semHora ? 'Horário a definir' : fHora.format(data)}</span>
     </div>
     ${confrontoHtml}
     ${j.local ? `<div class="local">📍 ${esc(j.local)}</div>` : ''}
     ${mostraOnde ? `<div class="onde"><span class="onde-rotulo">📺 Onde assistir</span>${canais}</div>` : ''}
     ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
-    ${destaque ? `<div class="contagem">⏱ ${contagem(data)} · ${esc(rotuloDia(data))}</div>` : ''}
+    ${destaque ? `<div class="contagem">⏱ ${j.semHora ? 'Horário ainda não definido' : contagem(data)} · ${esc(rotuloDia(data))}</div>` : ''}
   </article>`;
 }
 
@@ -103,7 +103,7 @@ function desenhar() {
   const agora = Date.now();
   const DUR = 3 * 3600e3; // um jogo "ainda não acabou" até 3h depois do início, se não tiver resultado
   const filtrados = estado.jogos.filter((j) => estado.filtro === 'todas' || j.modalidade === estado.filtro);
-  const proximos = filtrados.filter((j) => j.status !== 'encerrado' && new Date(j.inicio).getTime() + DUR > agora && j.status !== 'cancelado');
+  const proximos = filtrados.filter((j) => j.status !== 'encerrado' && new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora && j.status !== 'cancelado');
   const resultados = filtrados.filter((j) => j.status === 'encerrado' || (j.placar && new Date(j.inicio) < agora)).reverse();
   const lista = estado.aba === 'proximos' ? proximos : resultados;
 
