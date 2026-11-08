@@ -6,4 +6,22 @@ METHOD:PUBLISH
 X-WR-CALNAME:FlaFan — Esportes olímpicos
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:e-99864950cc@flafan
+DTSTAMP:20261108T144426Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261119
+SUMMARY:Judô: Campeonato Brasileiro Sênior (Flamengo)
+DESCRIPTION:Campeonato Brasileiro Sênior\nOnde assistir: a confirmar
+LOCATION:Local a definir
+END:VEVENT
+BEGIN:VEVENT
+UID:e-f3a32d5abf@flafan
+DTSTAMP:20261108T144426Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261207
+SUMMARY:Natação: Mundial de Piscina Curta (Flamengo)
+DESCRIPTION:Mundial de Piscina Curta\nOnde assistir: a confirmar
+LOCATION:Pequim (China)
+END:VEVENT
 END:VCALENDAR

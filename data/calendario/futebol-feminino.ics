@@ -8,8 +8,9 @@ X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:m-8d865e6f15@flafan
-DTSTAMP:20261108T142737Z
+DTSTAMP:20261108T144426Z
 DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
 SUMMARY:Fluminense x Flamengo (Futebol feminino)
 DESCRIPTION:Copa do Brasil Feminina – quartas (ida)\nOnde assistir: a co
  nfirmar
@@ -17,19 +18,54 @@ LOCATION:Estádio Luso-Brasileiro\, Rio de Janeiro
 END:VEVENT
 BEGIN:VEVENT
 UID:m-bced4da706@flafan
-DTSTAMP:20261108T142737Z
+DTSTAMP:20261108T144426Z
 DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
 SUMMARY:Flamengo x Fluminense (Futebol feminino)
 DESCRIPTION:Copa do Brasil Feminina – quartas (volta)\nOnde assistir: a 
  confirmar
 END:VEVENT
 BEGIN:VEVENT
 UID:m-8354cc1063@flafan
-DTSTAMP:20261108T142737Z
+DTSTAMP:20261108T144426Z
 DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
 SUMMARY:Bahia x Flamengo (Futebol feminino)
 DESCRIPTION:Copa do Brasil Feminina – semifinal (ida)\nOnde assistir: a 
  confirmar
 LOCATION:Arena Fonte Nova\, Salvador
+END:VEVENT
+BEGIN:VEVENT
+UID:m-9a7052947a@flafan
+DTSTAMP:20261108T144426Z
+DTSTART:20261108T003000Z
+DTEND:20261108T023000Z
+SUMMARY:Flamengo x Bahia (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – semifinal (volta)\nOnde assistir: 
+ a confirmar
+LOCATION:Estádio Luso-Brasileiro\, Rio de Janeiro
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Flamengo x Bahia começa em 1 hora
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m-59ef70123f@flafan
+DTSTAMP:20261108T144426Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:Flamengo x A definir (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – final (ida)\nOnde assistir: a conf
+ irmar
+END:VEVENT
+BEGIN:VEVENT
+UID:m-c09dbc16af@flafan
+DTSTAMP:20261108T144426Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Flamengo x A definir (Futebol feminino)
+DESCRIPTION:Copa do Brasil Feminina – final (volta)\nOnde assistir: a co
+ nfirmar
 END:VEVENT
 END:VCALENDAR
