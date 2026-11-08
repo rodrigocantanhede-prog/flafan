@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T19:35:32.330Z",
+ "atualizadoEm": "2026-11-08T20:50:24.736Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3393,20 +3393,19 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "site-futebol-feminino-2026-11-11-botafogo",
+   "id": "ferj-6448",
    "modalidade": "futebol-feminino",
    "adversario": "Botafogo",
-   "competicao": "Campeonato Carioca Feminino",
+   "competicao": "Carioca Feminino",
    "inicio": "2026-11-11T15:00:00-03:00",
    "semHora": false,
-   "local": "João Saldanha",
+   "local": "João Saldanha - RJ",
    "mandante": true,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
+   "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6448",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
@@ -3483,20 +3482,19 @@
    "escudoAdv": "escudos/futebol-bangu-037a9f.png"
   },
   {
-   "id": "site-futebol-feminino-2026-11-14-vasco-da-gama",
+   "id": "ferj-6463",
    "modalidade": "futebol-feminino",
    "adversario": "Vasco da Gama",
-   "competicao": "Campeonato Carioca Feminino",
+   "competicao": "Carioca Feminino",
    "inicio": "2026-11-14T15:00:00-03:00",
    "semHora": false,
-   "local": "Estádio Nivaldo Pereira",
+   "local": "Nivaldo Pereira",
    "mandante": false,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
+   "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6463",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
