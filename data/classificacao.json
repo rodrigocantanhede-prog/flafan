@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T12:05:50.522Z",
+ "atualizadoEm": "2026-11-08T12:14:29.344Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -232,16 +232,16 @@
   {
    "nome": "Superliga Feminina",
    "modalidade": "volei-feminino",
-   "atualizado": "após os jogos de 7/11",
+   "atualizado": "após a 4ª rodada (7/11)",
    "fonte": "planilha",
    "linhas": [
     {
      "pos": 1,
-     "time": "Sesi Bauru",
-     "j": null,
-     "v": null,
+     "time": "Sesi Vôlei Bauru",
+     "j": 5,
+     "v": 5,
      "e": null,
-     "d": null,
+     "d": 0,
      "sg": null,
      "pts": 15
     },
@@ -258,25 +258,147 @@
     {
      "pos": 3,
      "time": "Dentil Praia Clube",
-     "j": null,
-     "v": null,
+     "j": 4,
+     "v": 4,
      "e": null,
-     "d": null,
+     "d": 0,
      "sg": null,
      "pts": 12
+    },
+    {
+     "pos": 4,
+     "time": "Gerdau Minas",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 11
+    },
+    {
+     "pos": 5,
+     "time": "Osasco São Cristóvão Saúde",
+     "j": 4,
+     "v": 4,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 11
+    },
+    {
+     "pos": 6,
+     "time": "Fluminense",
+     "j": 3,
+     "v": 1,
+     "e": null,
+     "d": 2,
+     "sg": null,
+     "pts": 3,
+     "escudo": "escudos/volei-fluminense.png"
+    },
+    {
+     "pos": 7,
+     "time": "Pinheiros",
+     "j": 3,
+     "v": 1,
+     "e": null,
+     "d": 2,
+     "sg": null,
+     "pts": 2
+    },
+    {
+     "pos": 8,
+     "time": "Brusque Vôlei",
+     "j": 3,
+     "v": 0,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": 2
+    },
+    {
+     "pos": 9,
+     "time": "Sancor Seguros Vôlei",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 1
+    },
+    {
+     "pos": 10,
+     "time": "Batavo Mackenzie",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0
+    },
+    {
+     "pos": 11,
+     "time": "Brasília Vôlei / BRB",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0
+    },
+    {
+     "pos": 12,
+     "time": "Paulistano Barueri",
+     "j": 4,
+     "v": 0,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 0
     }
    ],
-   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao",
-   "nota": "Tabela parcial: só as primeiras posições foram confirmadas."
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao"
   },
   {
    "nome": "NBB",
    "modalidade": "basquete",
-   "atualizado": "após os jogos de 7/11",
+   "atualizado": "até os jogos de 7/11",
    "fonte": "planilha",
    "linhas": [
     {
+     "pos": 1,
+     "time": "Minas Storm",
+     "j": 6,
+     "v": 6,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": null,
+     "escudo": "escudos/basquete-minas-storm.png"
+    },
+    {
+     "pos": 2,
+     "time": "Unifacisa",
+     "j": 6,
+     "v": 5,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": null
+    },
+    {
      "pos": 3,
+     "time": "Pinheiros",
+     "j": 6,
+     "v": 5,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": null,
+     "escudo": "escudos/basquete-pinheiros.png"
+    },
+    {
+     "pos": 4,
      "time": "Flamengo",
      "j": 6,
      "v": 5,
@@ -284,10 +406,152 @@
      "d": 1,
      "sg": null,
      "pts": null
+    },
+    {
+     "pos": 5,
+     "time": "CAIXA/Brasília Basquete",
+     "j": 7,
+     "v": 4,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 6,
+     "time": "Mogi Basquete",
+     "j": 5,
+     "v": 4,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 7,
+     "time": "Paulistano",
+     "j": 6,
+     "v": 3,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 8,
+     "time": "Sesi Franca",
+     "j": 6,
+     "v": 3,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 9,
+     "time": "Itatiaiuçu Cruzeiro Basquete",
+     "j": 6,
+     "v": 3,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null,
+     "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete.png"
+    },
+    {
+     "pos": 10,
+     "time": "Ceisc/União Corinthians",
+     "j": 5,
+     "v": 2,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 11,
+     "time": "Botafogo",
+     "j": 5,
+     "v": 2,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null,
+     "escudo": "escudos/basquete-botafogo.png"
+    },
+    {
+     "pos": 12,
+     "time": "Bauru Basket",
+     "j": 6,
+     "v": 2,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 13,
+     "time": "São José Basketball",
+     "j": 6,
+     "v": 2,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 14,
+     "time": "Corinthians",
+     "j": 4,
+     "v": 1,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null,
+     "escudo": "escudos/basquete-corinthians.png"
+    },
+    {
+     "pos": 15,
+     "time": "Basket Osasco",
+     "j": 4,
+     "v": 1,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 16,
+     "time": "Pato Basquete",
+     "j": 5,
+     "v": 1,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 17,
+     "time": "Basquete Cearense",
+     "j": 5,
+     "v": 1,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": null
+    },
+    {
+     "pos": 18,
+     "time": "Caxias do Sul Basquete",
+     "j": 6,
+     "v": 0,
+     "e": null,
+     "d": 6,
+     "sg": null,
+     "pts": null
     }
    ],
-   "link": "https://lnb.com.br/nbb/classificacao/",
-   "nota": "Tabela parcial: só a campanha do Flamengo foi confirmada."
+   "link": "https://lnb.com.br/nbb/classificacao/"
   }
  ]
 }
