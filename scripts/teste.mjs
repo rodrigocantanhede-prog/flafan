@@ -205,3 +205,28 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(j6.length, 0, 'remover com o mesmo adversário apaga');
   console.log('✓ Remover só o jogo certo');
 }
+{
+  const { lerTabelaLnb, lerTabelaCbv } = await import('./tabelas-oficiais.mjs');
+  const { juntarComPlanilha } = await import('./atualizar.mjs');
+  const lnbLinha = (p, nome, j, v, d, sal, pon) => `<tr class=""><td class="open_content headcol"><div class="number"><strong>${p}</strong></div><div class="logo" style="max-height:32px;"><img src="https://lnb.com.br/l${p}.png" alt="${nome}" ></div></td><td data-sort-value="1">1</td><td data-sort-value="${pon}">${pon}</td><td data-sort-value="1">1</td><td data-sort-value="${j}">${j}</td><td data-sort-value="${v}">${v}</td><td data-sort-value="${d}">${d}</td><td data-sort-value="1">1-0</td><td data-sort-value="1">1-0</td><td data-sort-value="500">500</td><td data-sort-value="400">400</td><td data-sort-value="${sal}">${sal}</td><td></td><td data-sort-value="${pon}.0">${pon}</td></tr><tr><td colspan="12">detalhes</td></tr>`;
+  const nomes = ['Minas Storm', 'UNIFACISA', 'Pinheiros', 'Flamengo', 'Mogi', 'Paulistano', 'Sesi Franca', 'Bauru Basket'];
+  const lnb = `<table class="table_ap table-wrapper"><thead><tr><th>EQUIPES</th></tr></thead><tbody>${nomes.map((n, i) => lnbLinha(i + 1, n, 6, 6 - i % 6, i % 6, 10 - i, 12 - i)).join('')}</tbody></table><table class="table_pon"></table>`;
+  const t = lerTabelaLnb(lnb);
+  assert.equal(t.length, 8);
+  assert.deepEqual(t[1], { pos: 2, time: 'Unifacisa', j: 6, v: 5, e: null, d: 1, sg: 9, pts: 11, escudoAdvUrl: 'https://lnb.com.br/l2.png' });
+  assert.equal(lerTabelaLnb(lnb.replace(/<tr class="">[\s\S]*?<\/tr>/, '')).length, 0, 'tabela incompleta (sem o 1º) é ignorada');
+  const cbvLinha = (p, nome, pts, j, v, d) => `<tr class="group"><td><span>${p}</span></td><td><div><img alt="" src="/_next/image?url=https%3A%2F%2Fassets.volleystation.com%2Fwebsite%2Fteams%2F${p}%2Fbadge.png&amp;w=64&amp;q=75"/><span class="x">${nome}</span></div></td><td>${pts}</td><td>${j}</td><td>${v}</td><td>${d}</td><td>15</td><td>1</td></tr>`;
+  const vnomes = ['SESI VOLEI BAURU', 'SESC RJ FLAMENGO', 'DENTIL PRAIA CLUBE', 'GERDAU MINAS', 'FLUMINENSE F.C.', 'E.C. PINHEIROS', 'BRUSQUE VÔLEI', 'PAULISTANO BARUERI'];
+  const cbv = `<table><thead><tr><th>#</th></tr></thead><tbody>${vnomes.map((n, i) => cbvLinha(i + 1, n, 15 - i, 5, 5 - i % 5, i % 5)).join('')}</tbody></table>`;
+  const s = lerTabelaCbv(cbv);
+  assert.equal(s.length, 8);
+  assert.equal(s[0].time, 'Sesi Volei Bauru'); assert.equal(s[1].time, 'Sesc RJ Flamengo'); assert.equal(s[4].time, 'Fluminense F.C.');
+  assert.equal(s[0].escudoAdvUrl, 'https://assets.volleystation.com/website/teams/1/badge.png');
+  assert.equal(s[2].pts, 13); assert.equal(s[2].j, 5);
+  assert.equal(lerTabelaCbv(cbv.replace(/>5<\/td>/g, '>0</td>')).length, 0, 'tabela zerada é ignorada');
+  const junta = juntarComPlanilha({ nome: 'Superliga Feminina', linhas: s }, { nome: 'Superliga Feminina', nota: 'obs', linhas: [{ time: 'Sesi Vôlei Bauru' }, { time: 'Fluminense', escudoAdvUrl: 'https://x/flu.png' }] });
+  assert.equal(junta.linhas[0].time, 'Sesi Vôlei Bauru'); assert.equal(junta.linhas[4].time, 'Fluminense');
+  assert.equal(junta.linhas[4].escudoAdvUrl, 'https://assets.volleystation.com/website/teams/5/badge.png', 'escudo do site tem preferência');
+  assert.equal(junta.nota, 'obs');
+  console.log('✓ Tabelas da LNB e da CBV ok');
+}

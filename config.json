@@ -69,5 +69,19 @@
         "modalidade": "futebol-masculino"
       }
     ]
-  }
+  },
+  "tabelasOficiais": [
+    {
+      "tipo": "lnb",
+      "url": "https://lnb.com.br/nbb/classificacao/",
+      "nome": "NBB",
+      "modalidade": "basquete"
+    },
+    {
+      "tipo": "cbv",
+      "url": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/classificacao",
+      "nome": "Superliga Feminina",
+      "modalidade": "volei-feminino"
+    }
+  ]
 }

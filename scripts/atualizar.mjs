@@ -10,6 +10,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { lerTabelasOficiais } from './tabelas-oficiais.mjs';
 import { lerSiteFlamengo } from './site-flamengo.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -443,6 +444,22 @@ export function mesmoTime(a, b) {
   return pa.length > 0 && pa.every((p) => pb.has(p));
 }
 
+// Tabela automática + a mesma tabela na planilha: usa os nomes da planilha (mais bonitos) quando o time bate,
+// o escudo da planilha quando o site não tem, e mantém a observação (nota) escrita na planilha.
+export function juntarComPlanilha(auto, planilha) {
+  if (!planilha) return auto;
+  const linhas = auto.linhas.map((l) => {
+    const p = planilha.linhas.find((x) => slug(x.time) === slug(l.time)) ?? planilha.linhas.find((x) => mesmoTime(l.time, x.time) || mesmoTime(x.time, l.time));
+    if (!p) return l;
+    const n = { ...l, time: p.time };
+    if (!n.escudoAdvUrl && p.escudoAdvUrl) n.escudoAdvUrl = p.escudoAdvUrl;
+    return n;
+  });
+  const r = { ...auto, linhas };
+  if (planilha.nota && !r.nota) r.nota = planilha.nota;
+  return r;
+}
+
 // ---------- classificação ----------
 // Aba "Classificacao" da planilha: campeonato | modalidade | pos | time | j | v | e | d | sg | pts | atualizado
 export function montarClassificacao(linhas) {
@@ -575,6 +592,13 @@ async function main() {
     campeonatosApi.push(...site.tabelas);
   }
 
+  // 1c) tabelas completas dos sites das ligas (NBB na LNB, Superliga na CBV)
+  if (cfg.tabelasOficiais?.length && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const r = await lerTabelasOficiais(cfg.tabelasOficiais, log);
+    problemas.push(...r.problemas);
+    campeonatosApi.push(...r.tabelas);
+  }
+
   // 2) planilha
   const anterior = await lerJson(path.join(DATA, 'jogos.json'), null);
   const tabelasAnteriores = await lerJson(path.join(DATA, 'classificacao.json'), null);
@@ -621,7 +645,7 @@ async function main() {
     campeonatos = (tabelasAnteriores?.campeonatos ?? []).filter((c) => c.fonte !== 'automatica');
     problemas.push(`Falha ao ler a classificação da planilha (${e.message}) — mantive as tabelas anteriores.`);
   }
-  for (const c of campeonatosApi) campeonatos = [...campeonatos.filter((x) => x.nome !== c.nome), c];
+  for (const c of campeonatosApi) campeonatos = [...campeonatos.filter((x) => x.nome !== c.nome), juntarComPlanilha(c, campeonatos.find((x) => x.nome === c.nome))];
   // mantém a ordem: Brasileirão primeiro, depois os outros
   campeonatos.sort((a, b) => (/brasileir/i.test(b.nome) ? 1 : 0) - (/brasileir/i.test(a.nome) ? 1 : 0));
 
