@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-08T13:25:39.941Z",
+ "atualizadoEm": "2026-11-08T13:36:46.625Z",
  "exemplo": false,
  "avisos": [
   "Chave da API-Sports não configurada — usando só a planilha."
@@ -7,7 +7,7 @@
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
   {
-   "id": "m-cd16c86dd3",
+   "id": "m-2563b27284",
    "transmissao": [],
    "placar": {
     "flamengo": 2,
@@ -25,7 +25,7 @@
    "escudoAdv": "escudos/futebol-santos.png"
   },
   {
-   "id": "m-470ab74d6c",
+   "id": "m-763c27645d",
    "transmissao": [],
    "placar": {
     "flamengo": 1,
@@ -43,7 +43,7 @@
    "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
-   "id": "m-f548261f73",
+   "id": "m-466661d860",
    "transmissao": [],
    "placar": {
     "flamengo": 0,
@@ -61,7 +61,7 @@
    "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
-   "id": "m-1c3c88ba80",
+   "id": "m-8d865e6f15",
    "transmissao": [],
    "placar": {
     "flamengo": 1,
@@ -79,7 +79,7 @@
    "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
-   "id": "m-3537948755",
+   "id": "m-b80833c2a1",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -97,7 +97,7 @@
    "escudoAdv": "escudos/futebol-bahia.png"
   },
   {
-   "id": "m-43717a48e9",
+   "id": "m-b147397237",
    "transmissao": [],
    "placar": {
     "flamengo": 81,
@@ -115,7 +115,7 @@
    "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
   },
   {
-   "id": "m-a8c44be74d",
+   "id": "m-d13ad9a4ad",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -133,7 +133,7 @@
    "escudoAdv": "escudos/volei-paulistano-barueri-eccc6c.png"
   },
   {
-   "id": "m-64045f5617",
+   "id": "m-8bef2ba532",
    "transmissao": [],
    "placar": {
     "flamengo": 81,
@@ -151,7 +151,7 @@
    "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
   },
   {
-   "id": "m-327b159f7a",
+   "id": "m-74f2c5670f",
    "transmissao": [],
    "placar": {
     "flamengo": 0,
@@ -170,7 +170,7 @@
    "escudoAdv": "escudos/futebol-estudiantes.png"
   },
   {
-   "id": "m-48fde0f962",
+   "id": "m-bced4da706",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -189,7 +189,7 @@
    "escudoAdv": "escudos/futebol-fluminense.png"
   },
   {
-   "id": "m-f81da26ae6",
+   "id": "m-217bc21f14",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -207,7 +207,7 @@
    "escudoAdv": "escudos/volei-brasilia-volei-brb-923451.png"
   },
   {
-   "id": "m-abbbb873d7",
+   "id": "m-7acd505154",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -225,7 +225,7 @@
    "escudoAdv": "escudos/futebol-atletico-mg.png"
   },
   {
-   "id": "m-f1f9d80c62",
+   "id": "m-d642d2d4d3",
    "transmissao": [],
    "placar": {
     "flamengo": 4,
@@ -243,7 +243,7 @@
    "escudoAdv": "escudos/futebol-vasco.png"
   },
   {
-   "id": "m-235e33824d",
+   "id": "m-187b54a54e",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -261,7 +261,7 @@
    "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
   },
   {
-   "id": "m-5a0e89a703",
+   "id": "m-195728fb40",
    "transmissao": [],
    "placar": {
     "flamengo": 83,
@@ -279,7 +279,7 @@
    "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
   },
   {
-   "id": "m-754c9a6094",
+   "id": "m-8354cc1063",
    "transmissao": [],
    "placar": {
     "flamengo": 0,
@@ -297,7 +297,7 @@
    "escudoAdv": "escudos/futebol-bahia.png"
   },
   {
-   "id": "m-29ebc8676f",
+   "id": "m-4d00e876d1",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -315,7 +315,7 @@
    "escudoAdv": "escudos/futebol-gremio.png"
   },
   {
-   "id": "m-2032129893",
+   "id": "m-fe40430b2b",
    "transmissao": [],
    "placar": {
     "flamengo": 91,
@@ -333,7 +333,7 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "m-f03785d314",
+   "id": "m-78aa055826",
    "transmissao": [],
    "placar": {
     "flamengo": 3,
@@ -351,7 +351,7 @@
    "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
-   "id": "m-ee0f3a74d7",
+   "id": "m-2caaaf16a1",
    "transmissao": [
     "Xsports",
     "Flamengo TV"
@@ -373,7 +373,7 @@
    "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
   },
   {
-   "id": "m-13a4416f99",
+   "id": "m-aaf0f0cfd8",
    "transmissao": [
     "SporTV 2"
    ],
@@ -390,7 +390,7 @@
    "escudoAdv": "escudos/volei-fluminense.png"
   },
   {
-   "id": "m-f2d807f153",
+   "id": "m-bbebcb469d",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -406,7 +406,7 @@
    "escudoAdv": "escudos/volei-sesi-volei-bauru-bafe0f.png"
   },
   {
-   "id": "m-1bbe1f888d",
+   "id": "m-4da123786c",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -422,7 +422,7 @@
    "escudoAdv": "escudos/futebol-athletico-pr.png"
   },
   {
-   "id": "m-6def5ed9e1",
+   "id": "m-477a722ab0",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -438,7 +438,7 @@
    "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
   },
   {
-   "id": "m-85a5adbc9b",
+   "id": "m-aaebbaf32e",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -453,7 +453,7 @@
    "escudoAdv": "escudos/futebol-palmeiras.png"
   },
   {
-   "id": "m-7cd4bd6209",
+   "id": "m-6bc47cc42d",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -469,7 +469,7 @@
    "escudoAdv": "escudos/basquete-basquete-cearense-8b0fd2.png"
   },
   {
-   "id": "m-57da9f5a4c",
+   "id": "m-82b932583f",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -485,7 +485,7 @@
    "escudoAdv": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
   },
   {
-   "id": "m-87eb2e9e1e",
+   "id": "m-cb84f57f8a",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
@@ -501,7 +501,7 @@
    "escudoAdv": "escudos/futebol-coritiba.png"
   },
   {
-   "id": "m-ad5cbc04f6",
+   "id": "m-5a19b75bab",
    "transmissao": [],
    "placar": null,
    "status": "agendado",
