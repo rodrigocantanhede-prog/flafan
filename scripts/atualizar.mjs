@@ -314,7 +314,9 @@ export async function resolverEscudos(itens, chave, problemas) {
     catch (e2) { problemas.push(`Escudo do Flamengo: ${e.message}`); }
   }
 
-  for (const j of itens) {
+  // primeiro os que têm link colado à mão (assim os outros com o mesmo nome reaproveitam)
+  const ordem = [...itens].sort((a, b) => (b.escudoAdvUrl ? 1 : 0) - (a.escudoAdvUrl ? 1 : 0));
+  for (const j of ordem) {
     const grupo = GRUPO[j.modalidade];
     const chaveCache = `${grupo ?? 'outro'}|${slug(j.adversario)}`;
     const base = `${grupo ?? 'outro'}-${slug(j.adversario)}`;
@@ -344,8 +346,24 @@ export async function resolverEscudos(itens, chave, problemas) {
     }
     if (cache[chaveCache]) j.escudoAdv = cache[chaveCache];
   }
+  for (const j of itens) {
+    if (j.escudoAdv) continue;
+    const c = cache[`${GRUPO[j.modalidade] ?? 'outro'}|${slug(j.adversario)}`];
+    if (c) j.escudoAdv = c;
+  }
   await writeFile(cacheArq, JSON.stringify(cache, null, 1));
   return escudoFlamengo;
+}
+
+// Nomes diferentes para o mesmo time (jogo x tabela)
+const APELIDOS = { londrina: 'sancor-seguros-volei' };
+const PALAVRAS_GENERICAS = new Set(['volei', 'basquete', 'basket', 'basketball', 'clube', 'esporte', 'sesi', 'sesc', 'caixa', 'ceisc', 'brb', 'saude']);
+export function mesmoTime(a, b) {
+  const sa = APELIDOS[slug(a)] ?? slug(a), sb = APELIDOS[slug(b)] ?? slug(b);
+  if (sa === sb) return true;
+  const pa = sa.split('-').filter((p) => p.length >= 4 && !PALAVRAS_GENERICAS.has(p));
+  const pb = new Set(sb.split('-'));
+  return pa.length > 0 && pa.every((p) => pb.has(p));
 }
 
 // ---------- classificação ----------
@@ -501,6 +519,13 @@ async function main() {
   const linhasTabela = campeonatos.flatMap((c) => c.linhas.map((l) => Object.assign(l, { modalidade: c.modalidade, adversario: l.time })));
   if (args.includes('--sem-api')) [...jogos, ...linhasTabela].forEach((j) => delete j.escudoAdvUrl);
   else escudoFlamengo = await resolverEscudos([...jogos, ...linhasTabela.filter((l) => !/flamengo/i.test(l.time))], chave, problemas);
+  // jogos sem escudo: usa o da tabela do mesmo campeonato quando o nome bate
+  for (const j of jogos) {
+    if (j.escudoAdv) continue;
+    const cands = linhasTabela.filter((x) => x.modalidade === j.modalidade && x.escudoAdv);
+    const l = cands.find((x) => slug(x.time) === slug(j.adversario)) ?? cands.find((x) => mesmoTime(j.adversario, x.time));
+    if (l) j.escudoAdv = l.escudoAdv;
+  }
   for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; delete l.escudoAdvUrl; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
 
   const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };

@@ -94,3 +94,14 @@ console.log('✓ Nota e link da classificação ok');
   assert.equal(j2[0].adversario, 'Fluminense');
   console.log('✓ Sem jogos duplicados entre planilha e API');
 }
+import { mesmoTime } from './atualizar.mjs';
+assert.ok(mesmoTime('Londrina', 'Sancor Seguros Vôlei'));
+assert.ok(mesmoTime('Brasília', 'CAIXA/Brasília Basquete'));
+assert.ok(mesmoTime('Brasília', 'Brasília Vôlei / BRB'));
+assert.ok(mesmoTime('Bauru', 'Bauru Basket'));
+assert.ok(mesmoTime('União Corinthians', 'Ceisc/União Corinthians'));
+assert.ok(mesmoTime('Osasco', 'Osasco São Cristóvão Saúde'));
+assert.ok(mesmoTime('Mackenzie', 'Batavo Mackenzie'));
+assert.ok(mesmoTime('Paulistano/Barueri', 'Paulistano Barueri'));
+assert.ok(!mesmoTime('Bauru', 'Minas Storm'));
+console.log('✓ Nomes de times reconhecidos');
