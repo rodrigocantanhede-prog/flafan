@@ -46,7 +46,7 @@ const estado = {
   filtro: lembrar('filtro', 'todas'),
   jogos: [],
   campeonatos: [],
-  compacto: lembrar('compacto', false),
+  compacto: lembrar('compacto', true), // visual compacto é o padrão
   mes: null,      // {ano, mes} em exibição no calendário
   diaSel: null,   // 'AAAA-MM-DD' selecionado no calendário
 };
@@ -614,8 +614,6 @@ $('#abrir-ajustes').onclick = () => $('#ajustes').showModal();
 const instalado = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 const ehIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 let pedidoInstalar = null;
-if (!instalado()) $('#abrir-instalar').hidden = false;
-else $('#compartilhar').hidden = false; // dentro do app instalado: compartilhar com amigos
 
 // link que abre o FlaFan já com o passo a passo de instalação (para mandar aos amigos)
 const linkConvite = () => `${location.origin}${location.pathname.replace(/index\.html$/, '')}?instalar`;
@@ -632,13 +630,12 @@ $('#compartilhar').onclick = async () => {
   catch { prompt('Copie o link do FlaFan:', dados.url); }
 };
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pedidoInstalar = e; $('#instalar-direto').hidden = false; });
-window.addEventListener('appinstalled', () => { $('#abrir-instalar').hidden = true; $('#instalar').close(); });
+window.addEventListener('appinstalled', () => { $('#instalar-direto').hidden = true; });
 $('#abrir-instalar').onclick = () => {
   // mostra primeiro o passo a passo do celular da pessoa
   const passos = $('#instalar .instalar');
   const meu = passos.querySelector(`[data-sistema="${ehIos ? 'ios' : 'android'}"]`);
   passos.insertBefore(meu, passos.querySelector('.passos'));
-  passos.querySelectorAll('.passos').forEach((p) => p.classList.toggle('outro', p !== meu));
   $('#instalar').showModal();
 };
 $('#instalar-direto').onclick = async () => {
