@@ -114,14 +114,19 @@ function cartao(j, destaque = false) {
   const lado = (t, pos) => `<div class="time ${pos} ${t.fla ? 'eh-fla' : ''}">${escudo(t.nome, t.fla, t.url)}<span class="time-nome">${esc(t.nome)}</span></div>`;
 
   let centro, selo = '';
+  const terminou = jaTerminou(j);
   if (j.placar) {
     const { flamengo: f, adversario: a } = j.placar;
     const [pe, pd] = flaCasa ? [f, a] : [a, f];
-    centro = `<div class="placar"><span>${pe}</span><i>–</i><span>${pd}</span></div><div class="centro-legenda">${j.status === 'encerrado' ? 'Encerrado' : 'Parcial'}</div>`;
-    if (j.status === 'encerrado') {
+    centro = `<div class="placar"><span>${pe}</span><i>–</i><span>${pd}</span></div><div class="centro-legenda">${terminou ? 'Encerrado' : 'Parcial'}</div>`;
+    if (terminou) {
       const r = f > a ? ['v', 'Vitória'] : f < a ? ['d', 'Derrota'] : ['e', 'Empate'];
       selo = `<span class="resultado ${r[0]}">${r[1]}</span>`;
     }
+  } else if (j.status === 'cancelado' || j.status === 'adiado') {
+    centro = `<div class="hora-grande a-definir">--:--</div><div class="centro-legenda">${j.status === 'adiado' ? 'Nova data a definir' : 'Jogo cancelado'}</div>`;
+  } else if (terminou || (!j.semHora && data.getTime() + DURACAO < Date.now())) {
+    centro = `<div class="hora-grande a-definir">– × –</div><div class="centro-legenda">Placar não informado</div>`;
   } else if (j.semHora) {
     centro = `<div class="hora-grande a-definir">--:--</div><div class="centro-legenda">Horário a definir</div>`;
   } else {
@@ -257,12 +262,19 @@ function desenharTabela() {
   }).join('');
 }
 
+const DURACAO = 3 * 3600e3;
+// terminou = marcado como encerrado, ou já tem placar e passaram 3h do início
+const jaTerminou = (j) => j.status === 'encerrado' || (!!j.placar && new Date(j.inicio).getTime() + DURACAO < Date.now());
+
 function desenhar() {
   const agora = Date.now();
   const DUR = 3 * 3600e3; // um jogo "ainda não acabou" até 3h depois do início, se não tiver resultado
   const filtrados = estado.jogos.filter((j) => estado.filtro === 'todas' || j.modalidade === estado.filtro);
-  const proximos = filtrados.filter((j) => j.status !== 'encerrado' && new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora && j.status !== 'cancelado');
-  const resultados = filtrados.filter((j) => j.status === 'encerrado' || (j.placar && new Date(j.inicio) < agora)).reverse();
+  // Próximos: ainda vai acontecer (ou adiado sem nova data). Resultados: todo o resto — nenhum jogo some.
+  const proximos = filtrados.filter((j) => j.status !== 'cancelado' && !jaTerminou(j) &&
+    (j.status === 'adiado' || new Date(j.inicio).getTime() + (j.semHora ? 864e5 : DUR) > agora));
+  const idsProx = new Set(proximos.map((j) => j.id));
+  const resultados = filtrados.filter((j) => !idsProx.has(j.id)).reverse();
   if (estado.aba === 'calendario') return desenharCalendario(filtrados);
   if (estado.aba === 'tabela') return desenharTabela();
   const lista = estado.aba === 'proximos' ? proximos : resultados;
@@ -326,6 +338,8 @@ document.addEventListener('click', (e) => {
     mes += Number(navMes.dataset.mes);
     if (mes < 0) { mes = 11; ano--; } else if (mes > 11) { mes = 0; ano++; }
     estado.mes = { ano, mes };
+    const hojeK = chaveDia(new Date()), prefixo = `${ano}-${String(mes + 1).padStart(2, '0')}`;
+    estado.diaSel = hojeK.startsWith(prefixo) ? hojeK : `${prefixo}-01`;
     desenhar();
   }
   const dia = e.target.closest('[data-dia]');
@@ -361,6 +375,7 @@ async function carregar() {
     const r = await fetch('data/jogos.json', { cache: 'no-cache' });
     const dados = await r.json();
     estado.jogos = dados.jogos ?? [];
+    estado.carregado = true;
     estado.escudoFla = dados.escudoFlamengo ?? null;
     try {
       const t = await (await fetch('data/classificacao.json', { cache: 'no-cache' })).json();
@@ -376,6 +391,6 @@ async function carregar() {
 }
 montarAjustes();
 carregar();
-setInterval(desenhar, 60e3); // atualiza a contagem regressiva
+setInterval(() => { if (estado.carregado) desenhar(); }, 60e3); // atualiza a contagem regressiva
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});

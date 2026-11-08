@@ -69,13 +69,24 @@ export function normalizarModalidade(txt) {
 }
 
 // "25/12/2026" + "16:00" -> "2026-12-25T16:00:00-03:00" (Brasília não tem horário de verão desde 2019)
+// "13:30", "13h", "13h30" -> { hh, mm }; qualquer outra coisa (vazio, "a definir") -> null
+export function lerHora(hora) {
+  const h = limpar(hora).match(/^(\d{1,2})(?:[:h](\d{2})?)?h?$/i);
+  if (!h) return null;
+  const hh = Number(h[1]), mm = Number(h[2] ?? 0);
+  if (hh > 23 || mm > 59) return null;
+  return { hh: String(hh).padStart(2, '0'), mm: String(mm).padStart(2, '0') };
+}
+
+// "25/12/2026" + "16:00" -> "2026-12-25T16:00:00-03:00". Datas impossíveis (31/02, 12/13) -> null
 export function dataHoraBrasilia(data, hora) {
   const m = limpar(data).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (!m) return null;
-  const h = limpar(hora).match(/^(\d{1,2})[:h](\d{2})?/);
-  const hh = h ? h[1].padStart(2, '0') : '00';
-  const mm = h ? (h[2] ?? '00') : '00';
-  return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}T${hh}:${mm}:00-03:00`;
+  const [d, mes, a] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const teste = new Date(Date.UTC(a, mes - 1, d));
+  if (teste.getUTCFullYear() !== a || teste.getUTCMonth() !== mes - 1 || teste.getUTCDate() !== d) return null;
+  const h = lerHora(hora) ?? { hh: '00', mm: '00' };
+  return `${a}-${String(mes).padStart(2, '0')}-${String(d).padStart(2, '0')}T${h.hh}:${h.mm}:00-03:00`;
 }
 
 const STATUS = {
@@ -169,13 +180,14 @@ export function mesclar(automaticos, linhas) {
     let id = limpar(l.id);
     if (!id) {
       if (!modalidade || !inicio || !limpar(l.adversario)) {
-        avisos.push(`Linha ${nLinha}: faltou modalidade, data ou adversário — ignorada.`);
+        avisos.push(`Linha ${nLinha}: ${limpar(l.data) && !inicio ? `data inválida ("${limpar(l.data)}")` : 'faltou modalidade, data ou adversário'} — ignorada.`);
         continue;
       }
       // mesmo jogo já veio da fonte automática? (mesma modalidade no mesmo dia) -> junta em vez de duplicar
       const dia = inicio.slice(0, 10);
       const igual = [...porId.values()].find((j) => j.fonte?.startsWith('automatica') && j.modalidade === modalidade && diaBrasilia(j.inicio) === dia);
-      id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
+      const categoria = (limpar(l.modalidade).match(/sub[- ]?(\d+)/i) ?? [])[1] ?? '';
+      id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${categoria}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
     }
     if (acao === 'remover') { porId.delete(id); continue; }
     const base = porId.get(id) ?? { id, transmissao: [], placar: null, status: 'agendado', mandante: null, local: '', competicao: '', fonte: 'manual' };
@@ -185,7 +197,12 @@ export function mesclar(automaticos, linhas) {
     if (cat) novo.categoria = `Sub-${cat[1]}`;
     if (limpar(l.adversario)) novo.adversario = limpar(l.adversario);
     if (limpar(l.competicao)) novo.competicao = limpar(l.competicao);
-    if (inicio) { novo.inicio = inicio; novo.semHora = !limpar(l.hora); }
+    if (limpar(l.hora) && !lerHora(l.hora)) avisos.push(`Linha ${nLinha}: horário "${limpar(l.hora)}" não entendido — use HH:MM. O jogo aparece como "horário a definir".`);
+    if (inicio) {
+      const temHora = !!lerHora(l.hora);
+      // linha só para completar um jogo automático (ex.: canal): não apaga o horário que veio da API
+      if (temHora || !String(base.fonte ?? '').startsWith('automatica')) { novo.inicio = inicio; novo.semHora = !temHora; }
+    }
     if (limpar(l.local)) novo.local = limpar(l.local);
     if (limpar(l.mando)) novo.mandante = semAcento(l.mando).startsWith('casa');
     if (limpar(l.onde_assistir)) novo.transmissao = listaTransmissao(l.onde_assistir);
@@ -195,7 +212,9 @@ export function mesclar(automaticos, linhas) {
     if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
     if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
-    if (!novo.modalidade || !novo.inicio) { avisos.push(`Linha ${nLinha}: jogo sem modalidade ou data — ignorado.`); continue; }
+    if (!novo.modalidade || !novo.inicio || isNaN(Date.parse(novo.inicio)) || !novo.adversario) {
+      avisos.push(`Linha ${nLinha}: jogo sem modalidade, data válida ou adversário — ignorado.`); continue;
+    }
     porId.set(id, novo);
   }
   const jogos = [...porId.values()].sort((a, b) => new Date(a.inicio) - new Date(b.inicio));
@@ -203,7 +222,7 @@ export function mesclar(automaticos, linhas) {
 }
 
 // ---------- calendário (.ics) ----------
-const icsTexto = (s) => limpar(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+const icsTexto = (s) => limpar(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n|\r/g, '\\n');
 const icsData = (d) => new Date(d).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 function dobrar(linha) {
   const out = [];
@@ -216,9 +235,9 @@ function dobrar(linha) {
   out.push(s);
   return out.join('\r\n');
 }
-export function gerarIcs(jogos, titulo) {
-  const agora = icsData(new Date());
-  const ev = jogos.filter((j) => !['cancelado'].includes(j.status)).map((j) => {
+export function gerarIcs(jogos, titulo, carimbo = new Date()) {
+  const agora = icsData(carimbo);
+  const ev = jogos.filter((j) => !['cancelado', 'adiado'].includes(j.status) && !isNaN(Date.parse(j.inicio))).map((j) => {
     const fim = new Date(new Date(j.inicio).getTime() + 2 * 3600e3);
     const dia = j.inicio.slice(0, 10).replace(/-/g, '');
     const nome = j.mandante === false ? `${j.adversario} x Flamengo` : `Flamengo x ${j.adversario}`;
@@ -236,6 +255,22 @@ export function gerarIcs(jogos, titulo) {
   return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//FlaFan//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     `X-WR-CALNAME:${icsTexto(titulo)}`, 'X-WR-TIMEZONE:America/Sao_Paulo', 'REFRESH-INTERVAL;VALUE=DURATION:PT12H',
     ...ev, 'END:VCALENDAR'].map(dobrar).join('\r\n') + '\r\n';
+}
+
+// Lê um CSV da planilha (ou de um arquivo local, nos testes) e confere se é mesmo a planilha esperada
+async function lerCsv(arqLocal, url, colunaObrigatoria) {
+  let csv;
+  if (arqLocal) csv = await readFile(arqLocal, 'utf8');
+  else if (url) {
+    const r = await fetch(url, { redirect: 'follow' });
+    if (!r.ok) throw new Error(`planilha respondeu ${r.status}`);
+    csv = await r.text();
+  } else return null;
+  const cab = semAcento(csv.split(/\r?\n/)[0] ?? '');
+  if (csv.trimStart().startsWith('<') || !cab.includes(colunaObrigatoria)) {
+    throw new Error('a resposta não parece a planilha (o compartilhamento por link pode ter sido desligado)');
+  }
+  return csv;
 }
 
 // ---------- programa principal ----------
@@ -315,6 +350,9 @@ export async function resolverEscudos(itens, chave, problemas) {
   }
 
   // primeiro os que têm link colado à mão (assim os outros com o mesmo nome reaproveitam)
+  for (const [k, v] of Object.entries(cache)) {
+    if (typeof v === 'string' && v.startsWith('escudos/') && !existsSync(path.join(RAIZ, v))) delete cache[k];
+  }
   const ordem = [...itens].sort((a, b) => (b.escudoAdvUrl ? 1 : 0) - (a.escudoAdvUrl ? 1 : 0));
   for (const j of ordem) {
     const grupo = GRUPO[j.modalidade];
@@ -477,20 +515,23 @@ async function main() {
   }
 
   // 2) planilha
+  const anterior = await lerJson(path.join(DATA, 'jogos.json'), null);
+  const tabelasAnteriores = await lerJson(path.join(DATA, 'classificacao.json'), null);
   let linhas = [];
+  let planilhaOk = false;
   try {
-    const arqLocal = arg('--planilha');
-    let csv;
-    if (arqLocal) csv = await readFile(arqLocal, 'utf8');
-    else if (cfg.planilhaCsvUrl) {
-      const r = await fetch(cfg.planilhaCsvUrl, { redirect: 'follow' });
-      if (!r.ok) throw new Error(`planilha respondeu ${r.status}`);
-      csv = await r.text();
-    }
-    if (csv) linhas = parseCsv(csv);
+    const csv = await lerCsv(arg('--planilha'), cfg.planilhaCsvUrl, 'adversario');
+    if (csv !== null) { linhas = parseCsv(csv); planilhaOk = true; }
     else problemas.push('Endereço da planilha não configurado.');
   } catch (e) {
     problemas.push(`Falha ao ler a planilha (${e.message}).`);
+  }
+  // Segurança: se a planilha falhou (ou veio vazia de repente) e não há outra fonte, mantém o que já está publicado
+  const totalAnterior = anterior?.jogos?.length ?? 0;
+  if ((!planilhaOk || linhas.length === 0) && automaticos.length === 0 && totalAnterior > 0) {
+    log(`Planilha indisponível ou vazia — mantive os ${totalAnterior} jogos já publicados, sem mexer em nada.`);
+    problemas.forEach((p) => log('Aviso:', p));
+    return;
   }
 
   // 3) junta e salva
@@ -500,16 +541,13 @@ async function main() {
   // 4) classificação: planilha + API (a API substitui a planilha no mesmo campeonato, quando funciona)
   let campeonatos = [];
   try {
-    const arqLocal = arg('--classificacao');
-    let csv;
-    if (arqLocal) csv = await readFile(arqLocal, 'utf8');
-    else if (cfg.planilhaClassificacaoCsvUrl) {
-      const r = await fetch(cfg.planilhaClassificacaoCsvUrl, { redirect: 'follow' });
-      if (!r.ok) throw new Error(`planilha respondeu ${r.status}`);
-      csv = await r.text();
-    }
-    if (csv) campeonatos = montarClassificacao(parseCsv(csv));
-  } catch (e) { problemas.push(`Falha ao ler a classificação da planilha (${e.message}).`); }
+    const csv = await lerCsv(arg('--classificacao'), cfg.planilhaClassificacaoCsvUrl, 'campeonato');
+    if (csv !== null) campeonatos = montarClassificacao(parseCsv(csv));
+  } catch (e) {
+    // não deixa a aba Tabela vazia por uma falha passageira: reaproveita as tabelas da planilha já publicadas
+    campeonatos = (tabelasAnteriores?.campeonatos ?? []).filter((c) => c.fonte !== 'automatica');
+    problemas.push(`Falha ao ler a classificação da planilha (${e.message}) — mantive as tabelas anteriores.`);
+  }
   for (const c of campeonatosApi) campeonatos = [...campeonatos.filter((x) => x.nome !== c.nome), c];
   // mantém a ordem: Brasileirão primeiro, depois os outros
   campeonatos.sort((a, b) => (/brasileir/i.test(b.nome) ? 1 : 0) - (/brasileir/i.test(a.nome) ? 1 : 0));
@@ -529,13 +567,19 @@ async function main() {
   for (const l of linhasTabela) { delete l.modalidade; delete l.adversario; delete l.escudoAdvUrl; if (l.escudoAdv) { l.escudo = l.escudoAdv; delete l.escudoAdv; } }
 
   const saida = { atualizadoEm: new Date().toISOString(), exemplo: args.includes('--exemplo'), avisos: problemas, escudoFlamengo, jogos };
+  const semData = (o) => JSON.stringify({ ...o, atualizadoEm: null });
+  const tabelasNovas = { atualizadoEm: saida.atualizadoEm, escudoFlamengo, campeonatos };
+  if (anterior && semData(anterior) === semData(saida) && tabelasAnteriores && semData(tabelasAnteriores) === semData(tabelasNovas)) {
+    saida.atualizadoEm = anterior.atualizadoEm; // nada mudou: mantém tudo igual (evita publicações à toa)
+    tabelasNovas.atualizadoEm = anterior.atualizadoEm;
+  }
   await writeFile(path.join(DATA, 'jogos.json'), JSON.stringify(saida, null, 1));
-  await writeFile(path.join(DATA, 'classificacao.json'), JSON.stringify({ atualizadoEm: saida.atualizadoEm, escudoFlamengo, campeonatos }, null, 1));
+  await writeFile(path.join(DATA, 'classificacao.json'), JSON.stringify(tabelasNovas, null, 1));
 
   await mkdir(path.join(DATA, 'calendario'), { recursive: true });
-  await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'FlaFan — todos os jogos'));
+  await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'FlaFan — todos os jogos', new Date(saida.atualizadoEm)));
   for (const [chaveMod, nome] of Object.entries(MODALIDADES)) {
-    await writeFile(path.join(DATA, 'calendario', `${chaveMod}.ics`), gerarIcs(jogos.filter((j) => j.modalidade === chaveMod), `FlaFan — ${nome}`));
+    await writeFile(path.join(DATA, 'calendario', `${chaveMod}.ics`), gerarIcs(jogos.filter((j) => j.modalidade === chaveMod), `FlaFan — ${nome}`, new Date(saida.atualizadoEm)));
   }
   log(`Pronto: ${jogos.length} jogos salvos.`);
   problemas.forEach((p) => log('Aviso:', p));

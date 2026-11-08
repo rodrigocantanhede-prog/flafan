@@ -53,6 +53,7 @@ const jogosTeste = [
   { modalidade: 'volei-feminino', adversario: 'Clube Teste', escudoAdvUrl: 'https://exemplo.com/escudo.png' },
   { modalidade: 'olimpicos', adversario: 'Regata Teste' },
 ];
+try {
 const probs = [];
 const fla = await resolverEscudos(jogosTeste, 'chave-falsa', probs);
 assert.equal(fla, 'escudos/flamengo.png');
@@ -65,10 +66,12 @@ assert.deepEqual(probs, []);
 chamadas.length = 0;
 await resolverEscudos([{ modalidade: 'futebol-masculino', adversario: 'Palmeiras Teste' }], 'chave-falsa', []);
 assert.equal(chamadas.length, 0);
+} finally {
 // limpeza
 globalThis.fetch = fetchOriginal;
 for (const f of ['escudos/flamengo.png', 'escudos/futebol-palmeiras-teste.png', jogosTeste[1].escudoAdv]) await rm(f, { force: true });
 if (flaAntes) await (await import('node:fs/promises')).writeFile('escudos/flamengo.png', flaAntes);
+}
 if (cacheAntes === null) await rm('data/escudos.json', { force: true }); else await (await import('node:fs/promises')).writeFile('data/escudos.json', cacheAntes);
 console.log('✓ Testes de escudos passaram');
 
@@ -109,3 +112,36 @@ assert.ok(mesmoTime('Mackenzie', 'Batavo Mackenzie'));
 assert.ok(mesmoTime('Paulistano/Barueri', 'Paulistano Barueri'));
 assert.ok(!mesmoTime('Bauru', 'Minas Storm'));
 console.log('✓ Nomes de times reconhecidos');
+
+// ---- datas e horas impossíveis não travam nada ----
+import { lerHora } from './atualizar.mjs';
+assert.equal(dataHoraBrasilia('12/13/2026', '10:00'), null);
+assert.equal(dataHoraBrasilia('31/02/2026', '10:00'), null);
+assert.equal(lerHora('25:00'), null);
+assert.equal(lerHora('A definir'), null);
+assert.deepEqual(lerHora('16h'), { hh: '16', mm: '00' });
+assert.deepEqual(lerHora('16h30'), { hh: '16', mm: '30' });
+{
+  const { jogos: j3, avisos: av3 } = mesclar([], parseCsv(`id,modalidade,adversario,data,hora
+,Basquete,Time X,12/13/2026,20:00
+,Basquete,Time Y,10/12/2026,A definir
+,Futebol sub-17,Vasco,15/11/2026,10:00
+,Futebol sub-20,Vasco,15/11/2026,15:00
+semjogo,Basquete,,10/12/2026,20:00`));
+  assert.equal(j3.length, 3, 'data impossível e linha sem adversário são ignoradas; sub-17 e sub-20 não se sobrepõem');
+  assert.ok(j3.find((j) => j.adversario === 'Time Y').semHora, 'horário em texto vira "a definir"');
+  assert.ok(av3.some((a) => a.includes('data inválida')));
+  gerarIcs(j3, 'teste'); // não pode quebrar
+}
+// linha da planilha só com o canal não apaga o horário que veio da API
+{
+  const auto4 = [{ id: 'api-futebol-masculino-9', modalidade: 'futebol-masculino', adversario: 'Palmeiras', inicio: '2026-11-21T19:30:00Z', semHora: false, transmissao: [], status: 'agendado', fonte: 'automatica' }];
+  const { jogos: j4 } = mesclar(auto4, parseCsv(`id,modalidade,adversario,data,hora,onde_assistir
+,Futebol masculino,Palmeiras,21/11/2026,,Premiere`));
+  assert.equal(j4.length, 1);
+  assert.equal(j4[0].inicio, '2026-11-21T19:30:00Z');
+  assert.equal(j4[0].semHora, false);
+}
+// jogo adiado não entra na agenda (sem alarme no horário antigo)
+assert.doesNotMatch(gerarIcs([{ id: 'x', modalidade: 'basquete', adversario: 'A', inicio: '2026-12-01T20:00:00-03:00', transmissao: [], status: 'adiado' }], 't'), /VEVENT/);
+console.log('✓ Datas, horários, base e adiados ok');
