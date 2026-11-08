@@ -98,6 +98,12 @@
         "tabela": "Brasileirão Série A"
       },
       {
+        "campeonato": "copa-do-brasil",
+        "categoria": "profissional",
+        "nome": "Copa do Brasil",
+        "modalidade": "futebol-masculino"
+      },
+      {
         "campeonato": "campeonato-brasileiro",
         "categoria": "sub-20",
         "nome": "Brasileiro Sub-20",
@@ -133,6 +139,18 @@
         "nome": "Brasileiro Feminino",
         "modalidade": "futebol-feminino",
         "tabela": "Brasileiro Feminino"
+      },
+      {
+        "campeonato": "copa-do-brasil",
+        "categoria": "feminino",
+        "nome": "Copa do Brasil Feminina",
+        "modalidade": "futebol-feminino"
+      },
+      {
+        "campeonato": "supercopa",
+        "categoria": "feminino",
+        "nome": "Supercopa Feminina",
+        "modalidade": "futebol-feminino"
       },
       {
         "campeonato": "campeonato-brasileiro",

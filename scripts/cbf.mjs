@@ -10,6 +10,9 @@ export const ID_FLAMENGO = '20016';
 const semAcento = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
 const slug = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const limparNome = (s) => String(s ?? '').replace(/\s+saf$/i, '').replace(/\s+/g, ' ').trim();
+// o servidor de imagens da CBF não responde para o robô; o próprio site entrega a mesma imagem por /_next/image
+export const escudoCbf = (u) => !u ? undefined : /^https:\/\/conteudo\.cbf\.com\.br\//.test(u)
+  ? `https://www.cbf.com.br/_next/image?url=${encodeURIComponent(u)}&w=256&q=75` : u;
 const num = (s) => { if (s === null || s === undefined || String(s).trim() === '') return null; const n = Number(s); return Number.isFinite(n) ? n : null; };
 
 // junta os pedaços de dados da página
@@ -75,7 +78,7 @@ export function lerJogosDoTime(html, c, agora = Date.now(), desde = null) {
       id: `cbf-${o.id_jogo}`, modalidade: c.modalidade, adversario: limparNome(adv.nome), competicao: c.nome,
       inicio: ini.iso, semHora: !ini.temHora, local: String(o.local ?? '').replace(/\s+/g, ' ').trim(),
       mandante: flaCasa, transmissao: [], placar, status: placar ? 'encerrado' : 'agendado',
-      fonte: 'automatica', fonteInfo: 'CBF', escudoReserva: adv.url_escudo || undefined,
+      fonte: 'automatica', fonteInfo: 'CBF', escudoReserva: escudoCbf(adv.url_escudo),
       link: `${BASE}/jogos/${c.campeonato}/${c.categoria}/${ini.iso.slice(0, 4)}/${slug(o.mandante.nome)}-x-${slug(o.visitante.nome)}/${o.id_jogo}`,
     };
     if (c.categoriaApp) jogo.categoria = c.categoriaApp;
@@ -107,7 +110,7 @@ export function lerTabela(html) {
     gp: num(t.gols_pro), gc: num(t.gols_contra), sg: num(t.gols_saldo), pts: num(t.pontos), ap: num(t.aproveitamento),
     ca: num(t.cartoes_amarelo), cv: num(t.cartoes_vermelho),
     ult: Array.isArray(t.ultimos_jogos) ? t.ultimos_jogos.filter((x) => /^[VED]$/.test(x)) : [],
-    escudoReserva: t.escudo || undefined,
+    escudoReserva: escudoCbf(t.escudo),
   })).filter((l) => l.pos && l.time).sort((a, b) => a.pos - b.pos);
   const ok = linhas.length >= 4 && linhas.every((l, i) => l.pos === i + 1) && linhas.some((l) => l.j > 0);
   return { grupo: grupo.title, linhas: ok ? linhas : [] };
