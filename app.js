@@ -615,6 +615,22 @@ const instalado = () => window.matchMedia('(display-mode: standalone)').matches 
 const ehIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 let pedidoInstalar = null;
 if (!instalado()) $('#abrir-instalar').hidden = false;
+else $('#compartilhar').hidden = false; // dentro do app instalado: compartilhar com amigos
+
+// link que abre o FlaFan já com o passo a passo de instalação (para mandar aos amigos)
+const linkConvite = () => `${location.origin}${location.pathname.replace(/index\.html$/, '')}?instalar`;
+function avisar(texto) {
+  const t = $('#toast'); t.textContent = texto; t.hidden = false;
+  clearTimeout(avisar.tempo); avisar.tempo = setTimeout(() => { t.hidden = true; }, 2600);
+}
+$('#compartilhar').onclick = async () => {
+  const dados = { title: 'FlaFan', text: 'Todos os jogos do Mengão em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
+  try {
+    if (navigator.share) { await navigator.share(dados); return; }
+  } catch (e) { if (e?.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(`${dados.text} ${dados.url}`); avisar('Link copiado! Cole no WhatsApp para mandar.'); }
+  catch { prompt('Copie o link do FlaFan:', dados.url); }
+};
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pedidoInstalar = e; $('#instalar-direto').hidden = false; });
 window.addEventListener('appinstalled', () => { $('#abrir-instalar').hidden = true; $('#instalar').close(); });
 $('#abrir-instalar').onclick = () => {
@@ -632,6 +648,10 @@ $('#instalar-direto').onclick = async () => {
   pedidoInstalar = null; $('#instalar-direto').hidden = true;
 };
 $('#instalar').addEventListener('click', (e) => { if (e.target === $('#instalar')) $('#instalar').close(); });
+if (/[?&]instalar\b/.test(location.search)) {
+  history.replaceState(null, '', location.pathname); // tira o ?instalar do endereço (não reabre ao atualizar)
+  if (!instalado()) setTimeout(() => $('#abrir-instalar').click(), 600);
+}
 $('#detalhe').addEventListener('click', (e) => { if (e.target === $('#detalhe') || e.target.closest('[data-fechar]')) $('#detalhe').close(); });
 // arrastar a folha para baixo fecha (quando ela está no topo da rolagem)
 {

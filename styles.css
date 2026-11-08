@@ -647,3 +647,7 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .folha .lc-obs { background: rgba(252,214,119,.14) !important; color: #fcd677 !important; border-color: rgba(252,214,119,.25) !important; }
 /* ficha: sem contorno de foco nos jogos da lista (a ficha seleciona o primeiro botão ao abrir) */
 .folha button:focus, .folha button:focus-visible, .nc-jogo:focus, .nc-jogo:focus-visible { outline: none; box-shadow: none; }
+#compartilhar[hidden] { display: none !important; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 50;
+  background: #111; color: #fff; padding: 12px 18px; border-radius: 14px; font-size: 14px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,.35); max-width: calc(100% - 32px); text-align: center; }
+.toast[hidden] { display: none; }
