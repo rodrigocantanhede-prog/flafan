@@ -457,8 +457,8 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 
 /* ---------- letra do sistema (no iPhone, a mesma do Apple Sports) ---------- */
 :root {
-  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
-  --corpo: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
+  --display: -apple-system, "Inter FlaFan", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --corpo: -apple-system, "Inter FlaFan", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 .marca { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
 .aba { text-transform: none; letter-spacing: 0; font-size: 15px; font-weight: 600; }
@@ -865,3 +865,6 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   #lista[data-vista="tabelas"] table.larga tr.eh-fla td.t-pos, #lista[data-vista="tabelas"] table.larga tr.eh-fla td.t-time { background: rgba(227,20,27,.14); }
   #lista[data-vista="tabelas"] .tabela-camp .t-pos { padding-left: 14px; position: relative !important; }
 }
+
+/* Inter (licença livre OFL): deixa Windows e Android com letra quase igual à da Apple. Em iPhone/Mac continua a fonte do sistema. */
+@font-face { font-family: "Inter FlaFan"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-latin-variavel.woff2") format("woff2-variations"), url("fonts/inter-latin-variavel.woff2") format("woff2"); }
