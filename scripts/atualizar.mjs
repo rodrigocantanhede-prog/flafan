@@ -221,7 +221,8 @@ export function mesclar(automaticos, linhas) {
     }
     if (limpar(l.local)) novo.local = limpar(l.local);
     if (limpar(l.mando)) novo.mandante = semAcento(l.mando).startsWith('casa');
-    if (limpar(l.onde_assistir)) novo.transmissao = listaTransmissao(l.onde_assistir);
+    // canal oficial (CBF, LNB) vale mais que o da planilha; a planilha só completa quando a fonte oficial não tem canal
+    if (limpar(l.onde_assistir) && !(String(base.fonte ?? '').startsWith('automatica') && base.transmissao?.length)) novo.transmissao = listaTransmissao(l.onde_assistir);
     const pf = numOuNull(l.placar_fla), pa = numOuNull(l.placar_adv);
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];

@@ -346,3 +346,14 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(jogos[0].observacao, undefined); assert.ok(avisos.some((a) => a.includes('dúvida')));
   console.log('✓ Observação com dúvida não é publicada');
 }
+{
+  const { lerCanais } = await import('./cbf.mjs');
+  const pag = (c) => `<script>self.__next_f.push([1,${JSON.stringify(`5:{"id_jogo":"1","data":" 04/11/2026","hora":"19:30","canais":"${c}","qtd_alteracoes_jogo":0}\n`)}])</script>`;
+  assert.deepEqual(lerCanais(pag('Premiere')), ['Premiere']);
+  assert.deepEqual(lerCanais(pag('Mil Sports, Sportv')), ['Mil Sports', 'SporTV']);
+  assert.deepEqual(lerCanais(pag('')), []);
+  const auto = [{ id: 'cbf-1', modalidade: 'futebol-masculino', adversario: 'Grêmio', inicio: '2026-11-20T19:30:00-03:00', transmissao: ['Premiere'], status: 'agendado', fonte: 'automatica' }];
+  const { jogos } = mesclar(auto, parseCsv(`id,modalidade,adversario,data,onde_assistir\n,Futebol masculino,Grêmio,20/11/2026,Globo`));
+  assert.deepEqual(jogos[0].transmissao, ['Premiere'], 'canal oficial da CBF vale mais que o da planilha');
+  console.log('✓ Canais da CBF ok');
+}

@@ -718,3 +718,36 @@ html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enqua
 .nc-jogo { grid-template-columns: 86px 26px minmax(0, 1fr) auto; }
 .nc-data { min-width: 0; width: 86px; overflow: hidden; text-overflow: clip; font-variant-numeric: tabular-nums; }
 .nc-nome { justify-items: start; }
+
+/* ---------- "Fale com a gente" ---------- */
+.fale-conosco { display: inline-flex; align-items: center; justify-content: center; gap: 8px; align-self: center; margin: 6px 0 2px;
+  background: var(--cartao); color: var(--texto); border: 1px solid var(--borda); font-weight: 700; font-size: 15px; padding: 11px 18px; border-radius: 999px; }
+.rodape-chamada { font-size: 12.5px; color: var(--suave); margin-bottom: 8px; }
+.btn-link { display: block; margin: 14px auto 2px; background: none; border: 0; color: var(--vermelho); font-weight: 700; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.contato-corpo { display: grid; gap: 14px; margin-top: 10px; }
+.contato-corpo[hidden], .contato-ok[hidden], .campo-empresa[hidden], .contato-erro[hidden] { display: none !important; }
+.contato-tipos { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.contato-tipos legend { font-weight: 600; font-size: 14px; margin-bottom: 8px; padding: 0; }
+.contato-tipos label { position: relative; }
+.contato-tipos input { position: absolute; opacity: 0; pointer-events: none; }
+.contato-tipos span { display: block; text-align: center; padding: 11px 6px; border-radius: 14px; border: 1px solid var(--borda); background: var(--cartao2, var(--cartao)); font-size: 14px; font-weight: 600; cursor: pointer; }
+.contato-tipos input:checked + span { border-color: var(--vermelho); background: color-mix(in srgb, var(--vermelho) 14%, var(--cartao)); color: var(--texto); }
+.contato-tipos input:focus-visible + span { outline: 2px solid var(--vermelho); outline-offset: 2px; }
+.contato .campo { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.contato .campo small { font-weight: 400; color: var(--apagado); }
+.contato .campo input, .contato .campo textarea { width: 100%; font: inherit; font-size: 16px; font-weight: 400; color: var(--texto); background: var(--cartao2, var(--cartao));
+  border: 1px solid var(--borda); border-radius: 12px; padding: 11px 12px; resize: vertical; }
+.contato .campo input:focus, .contato .campo textarea:focus { outline: 2px solid color-mix(in srgb, var(--vermelho) 60%, transparent); border-color: transparent; }
+.isca { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contato-erro { margin: 0; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, #DC2626 14%, transparent); color: #DC2626; font-size: 14px; font-weight: 600; }
+.contato-enviar { width: 100%; justify-content: center; background: var(--vermelho); color: #fff; border: 0; font-weight: 700; font-size: 16px; padding: 14px; border-radius: 14px; }
+.contato-enviar:disabled { opacity: .6; }
+.contato-ok { text-align: center; padding: 20px 6px 6px; display: grid; gap: 10px; justify-items: center; }
+.contato-ok-icone { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #16A34A; color: #fff; font-size: 28px; font-weight: 800; }
+.contato-ok h3 { margin: 0; font-size: 20px; }
+.contato-ok p { margin: 0 0 6px; color: var(--suave); font-size: 15px; }
+/* emoji da modalidade nos filtros e selos */
+.emoji-mod { font-size: 1.15em; line-height: 1; display: inline-block; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.chip .emoji-mod { font-size: 18px; margin-right: 1px; }
+.tag .emoji-mod { font-size: 15px; }
+.lc-comp .emoji-mod { font-size: 13px; margin-right: 3px; } .lc-ic .emoji-mod { font-size: 30px; }

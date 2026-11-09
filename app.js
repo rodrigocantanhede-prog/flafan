@@ -1,14 +1,14 @@
 // FlaFan — telas do app.
 const FUSO = 'America/Sao_Paulo';
 const MODALIDADES = {
-  'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol masc.', icone: 'futebol', sexo: 'm', cor: '#E3141B' },
-  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Futebol fem.', icone: 'futebol', sexo: 'f', cor: '#F472B6' },
-  'base': { nome: 'Categorias de base', curto: 'Base', icone: 'base', sexo: null, cor: '#FB923C' },
-  'basquete': { nome: 'Basquete masculino', curto: 'Basquete masc.', icone: 'basquete', sexo: 'm', cor: '#F59E0B' },
-  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei masc.', icone: 'volei', sexo: 'm', cor: '#38BDF8' },
-  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei fem.', icone: 'volei', sexo: 'f', cor: '#A78BFA' },
-  'futsal': { nome: 'Futsal masculino', curto: 'Futsal masc.', icone: 'futsal', sexo: 'm', cor: '#4ADE80' },
-  'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', icone: 'olimpicos', sexo: null, cor: '#2DD4BF' },
+  'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol masc.', icone: 'futebol', emoji: '⚽', sexo: 'm', cor: '#E3141B' },
+  'futebol-feminino': { nome: 'Futebol feminino', curto: 'Futebol fem.', icone: 'futebol', emoji: '⚽', sexo: 'f', cor: '#F472B6' },
+  'base': { nome: 'Categorias de base', curto: 'Base', icone: 'base', emoji: '🌱', sexo: null, cor: '#FB923C' },
+  'basquete': { nome: 'Basquete masculino', curto: 'Basquete masc.', icone: 'basquete', emoji: '🏀', sexo: 'm', cor: '#F59E0B' },
+  'volei-masculino': { nome: 'Vôlei masculino', curto: 'Vôlei masc.', icone: 'volei', emoji: '🏐', sexo: 'm', cor: '#38BDF8' },
+  'volei-feminino': { nome: 'Vôlei feminino', curto: 'Vôlei fem.', icone: 'volei', emoji: '🏐', sexo: 'f', cor: '#A78BFA' },
+  'futsal': { nome: 'Futsal masculino', curto: 'Futsal masc.', icone: 'futsal', emoji: '🥅', sexo: 'm', cor: '#4ADE80' },
+  'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', icone: 'olimpicos', emoji: '🏅', sexo: null, cor: '#2DD4BF' },
 };
 
 // Ícones desenhados para o FlaFan (traço simples, herdam a cor do texto)
@@ -33,7 +33,9 @@ const ICONES = {
 };
 const icone = (nome, cls = 'ic') => ICONES[nome]
   ? `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONES[nome]}</svg>` : '';
-const seloModalidade = (m) => `${icone(m.icone)}${m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}`;
+// emoji colorido da modalidade (⚽ 🏀 🏐...) + símbolo de sexo
+const emojiModalidade = (m) => (m?.emoji ? `<span class="emoji-mod" aria-hidden="true">${m.emoji}</span>` : '');
+const seloModalidade = (m) => `${m.emoji ? emojiModalidade(m) : icone(m.icone)}${m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}`;
 
 const GRATIS = /(globo\b|tv globo|ge ?tv|youtube|tv brasil|tv cultura|cazé|caze|record\b|band\b|sbt\b|flatv|fla tv|flamengo tv)/i;
 
@@ -86,7 +88,7 @@ function montarFiltros() {
   const opcoes = [['todas', 'Todas', ''], ...Object.entries(MODALIDADES).filter(([k]) => presentes.has(k)).map(([k, v]) => [k, v.curto, v])];
   if (!opcoes.some(([k]) => k === estado.filtro)) estado.filtro = 'todas';
   $('#filtros').innerHTML = opcoes.map(([k, nome, m]) =>
-    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}" ${m ? `aria-label="${esc(m.nome)}" title="${esc(m.nome)}"` : ''}>${m ? icone(m.icone) : ''}${esc(nome)}</button>`).join('');
+    `<button class="chip" data-filtro="${k}" aria-pressed="${k === estado.filtro}" ${m ? `aria-label="${esc(m.nome)}" title="${esc(m.nome)}"` : ''}>${m ? emojiModalidade(m) : ''}${esc(nome)}</button>`).join('');
 }
 
 const SIGLA_IGNORAR = new Set(['sesi', 'sesc', 'time', 'basquete', 'volei', 'vôlei', 'ec', 'sc', 'fc', 'cr', 'clube', 'esporte', 'associação', 'regata', 'caixa']);
@@ -118,6 +120,12 @@ function iconeEsporte(esporte) {
   if (/ginast/.test(e)) return 'ginastica';
   return 'olimpicos';
 }
+// emoji do esporte olímpico (eventos)
+function emojiEsporte(esporte) {
+  const e = semAc(esporte);
+  const mapa = [[/natac|aquat|nado/, '🏊'], [/polo/, '🤽'], [/salto/, '🤿'], [/remo|canoa/, '🚣'], [/judo/, '🥋'], [/ginast/, '🤸'], [/atlet/, '🏃'], [/tenis/, '🎾'], [/futsal/, '🥅'], [/volei/, '🏐'], [/basq/, '🏀']];
+  return `<span class="emoji-mod" aria-hidden="true">${(mapa.find(([r]) => r.test(e)) ?? [0, '🏅'])[1]}</span>`;
+}
 const fDiaCurto = fmt({ weekday: 'short', day: '2-digit', month: '2-digit' });
 const fDM = fmt({ day: '2-digit', month: '2-digit' });
 // "13/11" (00:00 de Brasília) a partir de 'AAAA-MM-DD'
@@ -139,7 +147,7 @@ function cartaoEvento(j, destaque = false) {
   return `<article class="jogo evento ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" style="--cor:${m.cor}">
     ${destaque ? '<div class="destaque-rotulo">Próximo evento</div>' : ''}
     <header class="jogo-cab">
-      <span class="tag">${icone(iconeEsporte(j.esporte))}<span>${esc(j.esporte)}</span></span>
+      <span class="tag">${emojiEsporte(j.esporte)}<span>${esc(j.esporte)}</span></span>
       ${status ? `<span class="status ${j.status}">${status}</span>` : ''}
     </header>
     <div class="evento-nome">${esc(j.competicao)}</div>
@@ -187,7 +195,7 @@ function linhaCompacta(j) {
   let esq, dir, valor, legenda = '', classeValor = '';
   if (j.tipo === 'evento') {
     const kIni = j.inicio.slice(0, 10), kFim = j.fim ?? kIni;
-    esq = `<div class="lc-time"><span class="lc-ic" style="color:${m.cor}">${icone(iconeEsporte(j.esporte))}</span><span class="lc-nome">${esc(j.esporte)}</span></div>`;
+    esq = `<div class="lc-time"><span class="lc-ic" style="color:${m.cor}">${emojiEsporte(j.esporte)}</span><span class="lc-nome">${esc(j.esporte)}</span></div>`;
     dir = `<div class="lc-time"><span class="lc-ic lc-trofeu">${icone(j.resultado?.length ? 'trofeu' : 'pin')}</span><span class="lc-nome">${esc(j.resultado?.[0] ?? j.local ?? '')}</span></div>`;
     valor = `<span class="lc-evento">${esc(j.competicao)}</span>`;
     legenda = kIni === kFim ? (j.semHora ? 'Dia todo' : fHora.format(data)) : `${fDM.format(dataDoDia(kIni))} a ${fDM.format(dataDoDia(kFim))}`;
@@ -218,7 +226,7 @@ function linhaCompacta(j) {
     <div class="lc-placa">
       ${esq}
       <div class="lc-centro">
-        <span class="lc-comp">${j.tipo === 'evento' ? '' : icone(m.icone ?? 'olimpicos')}${esc(comp)}</span>
+        <span class="lc-comp">${j.tipo === 'evento' ? '' : (m.emoji ? emojiModalidade(m) : icone(m.icone ?? 'olimpicos'))}${esc(comp)}</span>
         ${valor}
         <span class="lc-leg ${classeValor} ${j.status === 'ao-vivo' ? 'ao-vivo' : ''}">${esc(legenda)}</span>
       </div>
@@ -650,6 +658,56 @@ $('#instalar-direto').onclick = async () => {
   pedidoInstalar = null; $('#instalar-direto').hidden = true;
 };
 $('#instalar').addEventListener('click', (e) => { if (e.target === $('#instalar')) $('#instalar').close(); });
+
+// ---------- "Fale com a gente": mensagens vão para a planilha (Google Apps Script) e chegam por e-mail ----------
+// endereço do App da Web (termina em /exec). Enquanto estiver vazio, o formulário avisa que ainda não está ativo.
+const CONTATO_URL = '';
+const formContato = $('#form-contato');
+function abrirContato(tipo) {
+  for (const d of document.querySelectorAll('dialog[open]')) d.close();
+  formContato.reset();
+  if (tipo) formContato.querySelector(`input[name="tipo"][value="${tipo}"]`).checked = true;
+  formContato.querySelector('.contato-corpo').hidden = false;
+  formContato.querySelector('.contato-ok').hidden = true;
+  formContato.querySelector('.contato-erro').hidden = true;
+  ajustarContato();
+  $('#contato').showModal();
+  document.activeElement?.blur?.();
+}
+function ajustarContato() {
+  const anunciar = formContato.tipo.value === 'anunciar';
+  formContato.querySelector('.campo-empresa').hidden = !anunciar;
+  formContato.querySelector('.contato-opcional').textContent = anunciar ? '(para a gente responder)' : '(opcional, se quiser resposta)';
+  formContato.mensagem.placeholder = anunciar ? 'Conte o que você quer anunciar e para quando…'
+    : formContato.tipo.value === 'erro' ? 'O que aconteceu? Em qual tela ou jogo?' : 'Escreva aqui…';
+}
+formContato.addEventListener('change', (e) => { if (e.target.name === 'tipo') ajustarContato(); });
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-abrir-contato]')) abrirContato();
+  if (e.target.closest('[data-fechar-contato]')) $('#contato').close();
+});
+$('#contato').addEventListener('click', (e) => { if (e.target === $('#contato')) $('#contato').close(); });
+formContato.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const erro = formContato.querySelector('.contato-erro');
+  const mostrarErro = (t) => { erro.textContent = t; erro.hidden = false; };
+  const f = formContato;
+  const dados = { tipo: f.tipo.value, nome: f.nome.value.trim(), contato: f.contato.value.trim(), empresa: f.empresa.value.trim(),
+    mensagem: f.mensagem.value.trim(), site: f.site.value, aparelho: `${navigator.userAgent.slice(0, 150)}${instalado() ? ' (app instalado)' : ''}` };
+  if (dados.mensagem.length < 3) return mostrarErro('Escreva a sua mensagem.');
+  if (dados.tipo === 'anunciar' && !dados.contato) return mostrarErro('Deixe um e-mail ou WhatsApp para a gente responder.');
+  if (!CONTATO_URL) return mostrarErro('O envio de mensagens ainda está sendo ativado. Tente de novo em breve.');
+  const botao = f.querySelector('.contato-enviar');
+  botao.disabled = true; botao.textContent = 'Enviando…';
+  try {
+    // texto simples (sem cabeçalhos especiais) para o Google aceitar o envio vindo do app
+    await fetch(CONTATO_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(dados) });
+    f.querySelector('.contato-corpo').hidden = true;
+    f.querySelector('.contato-ok').hidden = false;
+  } catch {
+    mostrarErro('Não foi possível enviar agora. Confira a internet e tente de novo.');
+  } finally { botao.disabled = false; botao.textContent = 'Enviar mensagem'; }
+});
 if (/[?&]instalar\b/.test(location.search)) {
   history.replaceState(null, '', location.pathname); // tira o ?instalar do endereço (não reabre ao atualizar)
   if (!instalado()) setTimeout(() => $('#abrir-instalar').click(), 600);

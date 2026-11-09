@@ -116,6 +116,20 @@ export function lerTabela(html) {
   return { grupo: grupo.title, linhas: ok ? linhas : [] };
 }
 
+// "Mil Sports, Sportv" -> ["Mil Sports", "SporTV"]
+const NOMES_CANAIS = { sportv: 'SporTV', 'sportv 2': 'SporTV 2', 'sportv 3': 'SporTV 3', premiere: 'Premiere', globo: 'Globo', 'tv globo': 'Globo', 'ge tv': 'ge TV', getv: 'ge TV', cazetv: 'CazéTV', 'cazé tv': 'CazéTV', 'caze tv': 'CazéTV', record: 'Record', band: 'Band', espn: 'ESPN', 'prime video': 'Prime Video', youtube: 'YouTube' };
+export function lerCanais(html) {
+  const txt = dadosDaPagina(html);
+  const bruto = (txt.match(/"canais":"([^"]*)"/) ?? [])[1] ?? '';
+  return [...new Set(bruto.split(/[,;\/]| e /).map((c) => c.trim()).filter((c) => c && !/^(a definir|a confirmar|-|n\/?a)$/i.test(c))
+    .map((c) => NOMES_CANAIS[c.toLowerCase()] ?? c))];
+}
+async function baixarUrl(u) {
+  const r = await fetch(u, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  if (!r.ok) throw new Error(`${u} respondeu ${r.status}`);
+  return r.text();
+}
+
 async function baixar(caminho) {
   const r = await fetch(BASE + caminho, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
   if (!r.ok) throw new Error(`${caminho} respondeu ${r.status}`);
@@ -173,6 +187,17 @@ export async function lerCbf(cfg, log = () => {}) {
       }
       if (!achou) problemas.push(erro ? `CBF (tabela ${c.tabela}): ${erro.message} — mantive a publicada antes.` : `CBF: tabela ${c.tabela} sem fase por pontos com o Flamengo — mantive a publicada antes.`);
     }
+  }
+  // onde assistir: a página de cada jogo traz o canal oficial ("canais":"Premiere"). Só jogos de ontem até 14 dias à frente.
+  const agora = Date.now();
+  for (const j of jogos) {
+    const t = new Date(j.inicio).getTime();
+    if (!j.link || t < agora - 864e5 || t > agora + 14 * 864e5) continue;
+    try {
+      const canais = lerCanais(await baixarUrl(j.link));
+      if (canais.length) j.transmissao = canais;
+    } catch { /* sem canal desta vez: fica "a confirmar" */ }
+    await pausa();
   }
   return { jogos, tabelas, problemas, campeonatosComFalha };
 }
