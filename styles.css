@@ -714,3 +714,7 @@ select { background: var(--cartao2); border: 1px solid var(--borda); border-radi
 .folha-conteudo { min-height: calc(100% - 50px - max(10px, env(safe-area-inset-bottom))); }
 .painel-conteudo { min-height: 0; }
 html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enquanto a ficha está aberta */
+/* "Neste campeonato": coluna da data com largura fixa, para escudos e nomes ficarem alinhados em todas as linhas */
+.nc-jogo { grid-template-columns: 86px 26px minmax(0, 1fr) auto; }
+.nc-data { min-width: 0; width: 86px; overflow: hidden; text-overflow: clip; font-variant-numeric: tabular-nums; }
+.nc-nome { justify-items: start; }
