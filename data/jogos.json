@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-09T21:00:16.546Z",
+ "atualizadoEm": "2026-11-09T21:07:49.274Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3409,23 +3409,6 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "site-futebol-feminino-2026-11-11-botafogo",
-   "modalidade": "futebol-feminino",
-   "adversario": "Botafogo",
-   "competicao": "Campeonato Carioca Feminino",
-   "inicio": "2026-11-11T15:00:00-03:00",
-   "semHora": false,
-   "local": "João Saldanha",
-   "mandante": true,
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
-   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
-  },
-  {
    "id": "site-volei-feminino-2026-11-12-fluminense",
    "modalidade": "volei-feminino",
    "adversario": "Fluminense",
@@ -3616,7 +3599,7 @@
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6448",
-   "escudoAdv": "escudos/futebol-botafogo-9265d1.png"
+   "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-18-athletico-paranaense",
