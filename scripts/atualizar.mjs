@@ -74,6 +74,10 @@ export function normalizarModalidade(txt) {
   return null;
 }
 
+// Observação com cara de dúvida ou de bastidor não vai para o app: dia/horário/canal se resolvem pela fonte oficial.
+const DUVIDA = /(a confirmar|a definir|n[aã]o (foi )?(divulgad|anunciad|confirmad|definid)|uma fonte|outra fonte|fontes? (cita|diz|indica|fala)|antes se falava|se falava|rumor|especula|possivelmente|provavelmente|talvez|suposta|n[aã]o se sabe|ainda n[aã]o)/i;
+export const ehDuvida = (s) => DUVIDA.test(String(s ?? ''));
+
 // "25/12/2026" + "16:00" -> "2026-12-25T16:00:00-03:00" (Brasília não tem horário de verão desde 2019)
 // "13:30", "13h", "13h30" -> { hh, mm }; qualquer outra coisa (vazio, "a definir") -> null
 export function lerHora(hora) {
@@ -221,7 +225,10 @@ export function mesclar(automaticos, linhas) {
     const pf = numOuNull(l.placar_fla), pa = numOuNull(l.placar_adv);
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
-    if (limpar(l.observacao)) novo.observacao = limpar(l.observacao);
+    if (limpar(l.observacao)) {
+      if (ehDuvida(l.observacao)) avisos.push(`Linha ${nLinha}: observação com dúvida ("${limpar(l.observacao).slice(0, 60)}") não foi publicada — resolva pela fonte oficial.`);
+      else novo.observacao = limpar(l.observacao);
+    }
     if (limpar(l.fonte) && !String(base.fonte ?? '').startsWith('automatica')) novo.fonteInfo = limpar(l.fonte); // o site oficial prevalece
     if (/^https?:\/\//.test(limpar(l.escudo_adv))) novo.escudoAdvUrl = limpar(l.escudo_adv);
     if (base.fonte === 'automatica') novo.fonte = 'automatica+manual';
@@ -259,7 +266,7 @@ export function montarEventos(linhas) {
       atletas: lista(l.atletas), resultado, transmissao: listaTransmissao(l.onde_assistir), placar: null,
       status: STATUS[semAcento(l.status)] ?? (resultado.length ? 'encerrado' : 'agendado'), fonte: 'manual',
     };
-    if (limpar(l.observacao)) ev.observacao = limpar(l.observacao);
+    if (limpar(l.observacao) && !ehDuvida(l.observacao)) ev.observacao = limpar(l.observacao);
     if (limpar(l.fonte)) ev.fonteInfo = limpar(l.fonte);
     eventos.push(ev);
   }

@@ -338,3 +338,11 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(junto.length, 1, 'remarcado: vira um jogo só'); assert.equal(junto[0].inicio, '2026-11-19T19:00:00-03:00', 'vale a data da CBF'); assert.equal(junto[0].ingresso, 'https://x');
   console.log('✓ Correções da revisão 2 ok');
 }
+{
+  const { ehDuvida } = await import('./atualizar.mjs');
+  for (const t of ['Horário a confirmar: uma fonte cita 15h', 'Horário ainda não divulgado', 'Transmissão ainda não anunciada', 'Data definida pela CBF em 7/11 (antes se falava em 27/11)', 'Atletas inscritos ainda não divulgados']) assert.ok(ehDuvida(t), t);
+  for (const t of ['Pênaltis: Flamengo 4 x 3', 'Classificado para a final inédita da Copa do Brasil Feminina', 'Jogo em quadra neutra, em Medellín', 'Última rodada do Brasileirão', 'Eliminado nos pênaltis (2 x 3)']) assert.ok(!ehDuvida(t), t);
+  const { jogos, avisos } = mesclar([], parseCsv(`id,modalidade,adversario,data,hora,observacao\n,Futebol masculino,Athletico-PR,18/11/2026,20:30,Horário a confirmar: uma fonte cita 15h`));
+  assert.equal(jogos[0].observacao, undefined); assert.ok(avisos.some((a) => a.includes('dúvida')));
+  console.log('✓ Observação com dúvida não é publicada');
+}
