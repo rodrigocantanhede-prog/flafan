@@ -162,23 +162,6 @@
   "categoria": "Sub-17"
  },
  {
-  "id": "ferj-6448",
-  "modalidade": "futebol-feminino",
-  "adversario": "Botafogo",
-  "competicao": "Carioca Feminino",
-  "inicio": "2026-11-11T15:00:00-03:00",
-  "semHora": false,
-  "local": "João Saldanha - RJ",
-  "mandante": true,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_25.png",
-  "link": "https://www.fferj.com.br/partidas/6448"
- },
- {
   "id": "ferj-6474",
   "modalidade": "base",
   "adversario": "Vasco da Gama",
@@ -233,11 +216,28 @@
   "categoria": "Sub-15"
  },
  {
+  "id": "ferj-6448",
+  "modalidade": "futebol-feminino",
+  "adversario": "Botafogo",
+  "competicao": "Carioca Feminino",
+  "inicio": "2026-11-18T15:00:00-03:00",
+  "semHora": false,
+  "local": "João Saldanha - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_25.png",
+  "link": "https://www.fferj.com.br/partidas/6448"
+ },
+ {
   "id": "ferj-6463",
   "modalidade": "futebol-feminino",
   "adversario": "Vasco da Gama",
   "competicao": "Carioca Feminino",
-  "inicio": "2026-11-14T15:00:00-03:00",
+  "inicio": "2026-11-21T15:00:00-03:00",
   "semHora": false,
   "local": "Nivaldo Pereira",
   "mandante": false,
@@ -248,5 +248,22 @@
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
   "link": "https://www.fferj.com.br/partidas/6463"
+ },
+ {
+  "id": "ferj-6521",
+  "modalidade": "futebol-feminino",
+  "adversario": "Fluminense",
+  "competicao": "Carioca Feminino",
+  "inicio": "2026-11-25T15:00:00-03:00",
+  "semHora": false,
+  "local": "João Saldanha - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
+  "link": "https://www.fferj.com.br/partidas/6521"
  }
 ]

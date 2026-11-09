@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-09T09:39:15.342Z",
+ "atualizadoEm": "2026-11-09T21:00:16.546Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3409,20 +3409,20 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "ferj-6448",
+   "id": "site-futebol-feminino-2026-11-11-botafogo",
    "modalidade": "futebol-feminino",
    "adversario": "Botafogo",
-   "competicao": "Carioca Feminino",
+   "competicao": "Campeonato Carioca Feminino",
    "inicio": "2026-11-11T15:00:00-03:00",
    "semHora": false,
-   "local": "João Saldanha - RJ",
+   "local": "João Saldanha",
    "mandante": true,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "FERJ",
-   "link": "https://www.fferj.com.br/partidas/6448",
+   "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
@@ -3496,23 +3496,6 @@
    "link": "https://www.fferj.com.br/partidas/6201",
    "categoria": "Sub-17",
    "escudoAdv": "escudos/futebol-bangu-037a9f.png"
-  },
-  {
-   "id": "ferj-6463",
-   "modalidade": "futebol-feminino",
-   "adversario": "Vasco da Gama",
-   "competicao": "Carioca Feminino",
-   "inicio": "2026-11-14T15:00:00-03:00",
-   "semHora": false,
-   "local": "Nivaldo Pereira",
-   "mandante": false,
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica",
-   "fonteInfo": "FERJ",
-   "link": "https://www.fferj.com.br/partidas/6463",
-   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
    "id": "ferj-6235",
@@ -3619,21 +3602,21 @@
    "escudoAdv": "escudos/volei-sesi-volei-bauru-c39437.webp"
   },
   {
-   "id": "site-futebol-feminino-2026-11-18-fluminense",
+   "id": "ferj-6448",
    "modalidade": "futebol-feminino",
-   "adversario": "Fluminense",
-   "competicao": "Campeonato Carioca Feminino",
+   "adversario": "Botafogo",
+   "competicao": "Carioca Feminino",
    "inicio": "2026-11-18T15:00:00-03:00",
    "semHora": false,
-   "local": "João Saldanha",
+   "local": "João Saldanha - RJ",
    "mandante": true,
    "transmissao": [],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
-   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6448",
+   "escudoAdv": "escudos/futebol-botafogo-9265d1.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-18-athletico-paranaense",
@@ -3670,6 +3653,23 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
+  },
+  {
+   "id": "ferj-6463",
+   "modalidade": "futebol-feminino",
+   "adversario": "Vasco da Gama",
+   "competicao": "Carioca Feminino",
+   "inicio": "2026-11-21T15:00:00-03:00",
+   "semHora": false,
+   "local": "Nivaldo Pereira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6463",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-21-palmeiras",
@@ -3724,6 +3724,23 @@
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
    "escudoAdv": "escudos/volei-osasco-83684f.png"
+  },
+  {
+   "id": "ferj-6521",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Carioca Feminino",
+   "inicio": "2026-11-25T15:00:00-03:00",
+   "semHora": false,
+   "local": "João Saldanha - RJ",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6521",
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-29-coritiba",
@@ -4037,6 +4054,74 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
+  },
+  {
+   "id": "lnb-27356",
+   "modalidade": "basquete",
+   "adversario": "Pato Basquete",
+   "competicao": "NBB",
+   "inicio": "2027-02-03T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-pato-basquete-d43cc6.png"
+  },
+  {
+   "id": "lnb-27362",
+   "modalidade": "basquete",
+   "adversario": "CAIXA/Brasília Basquete",
+   "competicao": "NBB",
+   "inicio": "2027-02-05T20:00:00-03:00",
+   "semHora": false,
+   "local": "Maracanãzinho",
+   "mandante": true,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+  },
+  {
+   "id": "lnb-27383",
+   "modalidade": "basquete",
+   "adversario": "Bauru Basket",
+   "competicao": "NBB",
+   "inicio": "2027-02-11T19:30:00-03:00",
+   "semHora": false,
+   "local": "Gin. Panela de Pressão",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
+  },
+  {
+   "id": "lnb-27402",
+   "modalidade": "basquete",
+   "adversario": "Sesi Franca",
+   "competicao": "NBB",
+   "inicio": "2027-02-19T19:30:00-03:00",
+   "semHora": false,
+   "local": "Ginásio Pedrocão",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "LNB",
+   "tabela": "NBB",
+   "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   }
  ]
 }
