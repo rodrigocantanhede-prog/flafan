@@ -481,20 +481,15 @@ export function juntarCbf(automaticos, cbf) {
   const usados = new Set(), par = new Map();
   const mesmaCat = (j, c) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') && String(j.id).startsWith('site-');
   const mesmoAdv = (j, c) => mesmoTime(j.adversario, c.adversario) || mesmoTime(c.adversario, j.adversario);
-  // 1ª passada: mesmo dia E mesmo adversário (ou, sem bater o nome, mesmo campeonato)
-  for (const c of cbf) {
-    const doDia = (j, k) => !usados.has(k) && mesmaCat(j, c) && String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10);
-    let i = saida.findIndex((j, k) => doDia(j, k) && mesmoAdv(j, c));
-    if (i < 0) i = saida.findIndex((j, k) => doDia(j, k) && j.competicao && mesmaCompeticao(c.competicao, j.competicao) &&
-      semAcento(String(c.competicao).split(/\s[–—-]\s/)[0]).split(' ').some((p) => p.length >= 5 && semAcento(j.competicao).includes(p)));
-    if (i >= 0) { usados.add(i); par.set(c, i); }
-  }
-  // 2ª passada — jogo remarcado (uma fonte já tem a data nova, a outra ainda não): mesmo adversário em até 7 dias
-  for (const c of cbf) {
-    if (par.has(c)) continue;
-    const i = saida.findIndex((j, k) => !usados.has(k) && mesmaCat(j, c) && Math.abs(new Date(j.inicio) - new Date(c.inicio)) <= 7 * 864e5 && mesmoAdv(j, c));
-    if (i >= 0) { usados.add(i); par.set(c, i); }
-  }
+  const casar = (teste) => { for (const c of cbf) { if (par.has(c)) continue; const i = saida.findIndex((j, k) => !usados.has(k) && mesmaCat(j, c) && teste(j, c)); if (i >= 0) { usados.add(i); par.set(c, i); } } };
+  const mesmoDia = (j, c) => String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10);
+  // 1º: mesmo dia e mesmo adversário
+  casar((j, c) => mesmoDia(j, c) && mesmoAdv(j, c));
+  // 2º: jogo remarcado (uma fonte já tem a data nova, a outra ainda não): mesmo adversário em até 7 dias
+  casar((j, c) => Math.abs(new Date(j.inicio) - new Date(c.inicio)) <= 7 * 864e5 && mesmoAdv(j, c));
+  // 3º: sobrou um jogo no mesmo dia e do mesmo campeonato com nome de adversário escrito diferente
+  casar((j, c) => mesmoDia(j, c) && j.competicao && c.competicao && mesmaCompeticao(c.competicao, j.competicao) &&
+    semAcento(String(c.competicao).split(/\s[–—-]\s/)[0]).split(' ').some((p) => p.length >= 5 && semAcento(j.competicao).includes(p)));
   for (const c of cbf) {
     const i = par.get(c);
     if (i === undefined) { saida.push({ ...c }); continue; }

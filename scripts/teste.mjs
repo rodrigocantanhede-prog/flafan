@@ -391,3 +391,12 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.ok(!/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/.test(ics), 'calendário não corta emoji ao meio');
   console.log('✓ Correções da revisão 3 ok');
 }
+{
+  // rodada inteira adiada em uma semana: cada jogo do site casa com o seu, sem sobrar jogo fantasma
+  const { juntarCbf } = await import('./atualizar.mjs');
+  const S = (adv, dia) => ({ id: `site-fem-${dia}-${adv}`, modalidade: 'futebol-feminino', adversario: adv, competicao: 'Campeonato Carioca Feminino', inicio: `2026-11-${dia}T15:00:00-03:00` });
+  const F = (id, adv, dia) => ({ id: `ferj-${id}`, modalidade: 'futebol-feminino', adversario: adv, competicao: 'Carioca Feminino', inicio: `2026-11-${dia}T15:00:00-03:00` });
+  const j = juntarCbf([S('Botafogo', 11), S('Vasco da Gama', 14), S('Fluminense', 18)], [F(1, 'Botafogo', 18), F(2, 'Vasco da Gama', 21), F(3, 'Fluminense', 25)]);
+  assert.deepEqual(j.map((x) => `${x.id} ${x.inicio.slice(8, 10)}`).sort(), ['ferj-1 18', 'ferj-2 21', 'ferj-3 25']);
+  console.log('✓ Rodada adiada não deixa jogo fantasma');
+}
