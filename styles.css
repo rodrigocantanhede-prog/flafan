@@ -15,7 +15,7 @@
   --borda: #26262D;
   --texto: #F6F5F4;
   --suave: #A1A1AB;
-  --apagado: #6B6B75;
+  --apagado: #9494A0;
   --vermelho: #E3141B;
   --vermelho-escuro: #8E0A0F;
   --verde: #22C55E;
@@ -54,7 +54,7 @@
     --borda: #E4E2DE;
     --texto: #18181B;
     --suave: #5B5B66;
-    --apagado: #8A8A94;
+    --apagado: #6A6A74;
     --cartao-topo: #FFFFFF;
     --forte: #0B0B0D;
     --time-nome: #33333B;
@@ -85,7 +85,7 @@
   --borda: #E4E2DE;
   --texto: #18181B;
   --suave: #5B5B66;
-  --apagado: #8A8A94;
+  --apagado: #6A6A74;
   --cartao-topo: #FFFFFF;
   --forte: #0B0B0D;
   --time-nome: #33333B;
@@ -757,7 +757,7 @@ html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enqua
 
 /* ================= VERSÃO PARA COMPUTADOR E TABLET ================= */
 .folha-x { display: none; }
-@media (min-width: 900px) {
+@media (min-width: 760px) {
   body { max-width: none; }
   .topo, .abas, .filtros, .visual-barra, main, .rodape, .aviso { max-width: 1180px; margin-left: auto; margin-right: auto; }
   .topo { padding-left: 24px; padding-right: 24px; border-radius: 0 0 22px 22px; }
@@ -809,3 +809,33 @@ html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enqua
 }
 @keyframes surgir { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .folha[open] .folha-conteudo, .painel[open] .painel-conteudo, .abas.anima::before { animation: none !important; transition: none !important; } }
+
+/* revisão: foco visível só para teclado, botão "ver mais", cartões navegáveis */
+.folha button:focus-visible, .nc-jogo:focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: -2px; }
+#lista [data-id]:focus-visible { outline: 2px solid var(--vermelho); outline-offset: 2px; border-radius: 14px; }
+#lista [data-id]:focus:not(:focus-visible) { outline: none; }
+.ver-mais { grid-column: 1 / -1; display: flex; justify-content: center; margin: 16px 0 6px; }
+.ver-mais .btn { background: var(--cartao); color: var(--texto); border: 1px solid var(--borda); font-weight: 700; padding: 12px 20px; border-radius: 999px; }
+#secao-push[hidden] { display: none; }
+
+/* ===== computador: mouse ===== */
+/* fichas sem a barra de rolagem do sistema (rola com a rodinha, o touchpad ou o teclado, como no celular) */
+.folha-conteudo, .painel-conteudo { scrollbar-width: none; -ms-overflow-style: none; }
+.folha-conteudo::-webkit-scrollbar, .painel-conteudo::-webkit-scrollbar { display: none; }
+/* barras finas e discretas onde ainda aparecem (página e tabelas largas) */
+html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 28%, transparent) transparent; scrollbar-gutter: stable; }
+.tabela-rolagem { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 30%, transparent) transparent; }
+.tabela-rolagem::-webkit-scrollbar { height: 8px; }
+.tabela-rolagem::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--texto) 28%, transparent); border-radius: 8px; }
+.tabela-rolagem::-webkit-scrollbar-track { background: transparent; }
+@media (hover: hover) and (pointer: fine) {
+  /* com mouse, em qualquer largura: filtros todos à vista (quebram linha) e ✕ para fechar a ficha */
+  .filtros { flex-wrap: wrap; overflow: visible; row-gap: 8px; }
+  .folha-alca { display: none; }
+  .folha-x { display: grid; place-items: center; position: sticky; top: 14px; margin: 14px 14px -52px auto; z-index: 4; width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 15px; padding: 0; cursor: pointer; }
+  .folha-x:hover { background: rgba(0,0,0,.55); }
+  .aba, .chip, .cal-dia, .nc-jogo, .btn, .btn-icone, .chave, #lista [data-id] { cursor: pointer; }
+  .aba:not(.ativa):hover { color: var(--texto); }
+  .cal-dia.tem:hover { border-color: color-mix(in srgb, var(--vermelho) 50%, transparent); }
+}

@@ -77,14 +77,16 @@ export function normalizarModalidade(txt) {
 // Mesmo campeonato? ("Copa do Brasil Feminina – final" x "Carioca Feminino" = não). Sem campeonato na planilha = aceita.
 const PALAVRAS_COMUNS = new Set(['copa', 'campeonato', 'do', 'da', 'de', 'feminino', 'feminina', 'masculino', 'sub', 'serie', 'final', 'ida', 'volta', 'semifinal', 'quartas', 'fase', 'rodada', 'grupo']);
 export function mesmaCompeticao(a, b) {
-  const t = (x) => semAcento(x).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !PALAVRAS_COMUNS.has(p) && !/^\d+$/.test(p));
+  // palavras inteiras ("Copa do Brasil" não é "Brasileiro"); Brasileirão = Brasileiro; a fase depois do travessão não conta
+  const t = (x) => semAcento(String(x ?? '').split(/\s[–—-]\s/)[0]).replace(/[^a-z0-9]+/g, ' ').split(' ')
+    .map((p) => (p === 'brasileirao' ? 'brasileiro' : p)).filter((p) => p.length >= 3 && !PALAVRAS_COMUNS.has(p) && !/^\d+$/.test(p));
   const ta = t(a), tb = new Set(t(b));
   if (!ta.length || !tb.size) return true;
-  return ta.some((p) => tb.has(p) || [...tb].some((q) => q.startsWith(p.slice(0, 6)) || p.startsWith(q.slice(0, 6))));
+  return ta.some((p) => tb.has(p));
 }
 
 // Observação com cara de dúvida ou de bastidor não vai para o app: dia/horário/canal se resolvem pela fonte oficial.
-const DUVIDA = /(a confirmar|a definir|n[aã]o (foi )?(divulgad|anunciad|confirmad|definid)|uma fonte|outra fonte|fontes? (cita|diz|indica|fala)|antes se falava|se falava|rumor|especula|possivelmente|provavelmente|talvez|suposta|n[aã]o se sabe|ainda n[aã]o)/i;
+const DUVIDA = /(a confirmar|a definir|n[aã]o (foi )?(divulgad|anunciad|confirmad|definid)|uma fonte|outra fonte|fontes? (cita|diz|indica|fala)|antes se falava|se falava|rumor|especula|possivelmente|provavelmente|talvez|suposta|n[aã]o se sabe|pode mudar|podem mudar|sujeit[oa]s? a (altera|mudan|confirma)|deve (passar|ser transmitid|acontecer|ser))/i;
 export const ehDuvida = (s) => DUVIDA.test(String(s ?? ''));
 
 // "25/12/2026" + "16:00" -> "2026-12-25T16:00:00-03:00" (Brasília não tem horário de verão desde 2019)
@@ -236,7 +238,7 @@ export function mesclar(automaticos, linhas) {
     if (pf !== null && pa !== null) novo.placar = { flamengo: pf, adversario: pa };
     if (STATUS[semAcento(l.status)]) novo.status = STATUS[semAcento(l.status)];
     if (limpar(l.observacao)) {
-      if (ehDuvida(l.observacao)) avisos.push(`Linha ${nLinha}: observação com dúvida ("${limpar(l.observacao).slice(0, 60)}") não foi publicada — resolva pela fonte oficial.`);
+      if (ehDuvida(l.observacao)) avisos.push(`Linha ${nLinha}: observação com dúvida não foi publicada — resolva pela fonte oficial.`);
       else novo.observacao = limpar(l.observacao);
     }
     if (limpar(l.fonte) && !String(base.fonte ?? '').startsWith('automatica')) novo.fonteInfo = limpar(l.fonte); // o site oficial prevalece
@@ -292,6 +294,7 @@ function dobrar(linha) {
   while (Buffer.byteLength(s) > 74) {
     let corte = 74;
     while (Buffer.byteLength(s.slice(0, corte)) > 74) corte--;
+    if (/[\uD800-\uDBFF]/.test(s[corte - 1])) corte--; // não corta um emoji ao meio
     out.push(s.slice(0, corte)); s = ' ' + s.slice(corte);
   }
   out.push(s);
@@ -327,7 +330,7 @@ async function lerCsv(arqLocal, url, colunaObrigatoria) {
   let csv;
   if (arqLocal) csv = await readFile(arqLocal, 'utf8');
   else if (url) {
-    const r = await fetch(url, { redirect: 'follow' });
+    const r = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(20000) });
     if (!r.ok) throw new Error(`planilha respondeu ${r.status}`);
     csv = await r.text();
   } else return null;
@@ -475,13 +478,26 @@ export function mesmoTime(a, b) {
 // o site do Flamengo só acrescenta o que ela não tem: link de ingresso, escudo em melhor qualidade, horário se faltar.
 export function juntarCbf(automaticos, cbf) {
   const saida = automaticos.map((j) => ({ ...j }));
+  const usados = new Set(), par = new Map();
+  const mesmaCat = (j, c) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') && String(j.id).startsWith('site-');
+  const mesmoAdv = (j, c) => mesmoTime(j.adversario, c.adversario) || mesmoTime(c.adversario, j.adversario);
+  // 1ª passada: mesmo dia E mesmo adversário (ou, sem bater o nome, mesmo campeonato)
   for (const c of cbf) {
-    const mesmaCat = (j) => j.modalidade === c.modalidade && (j.categoria ?? '') === (c.categoria ?? '') && String(j.id).startsWith('site-');
-    let i = saida.findIndex((j) => mesmaCat(j) && String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10));
-    // jogo remarcado (uma fonte já tem a data nova, a outra ainda não): mesmo adversário em até 7 dias = mesmo jogo
-    if (i < 0) i = saida.findIndex((j) => mesmaCat(j) && Math.abs(new Date(j.inicio) - new Date(c.inicio)) <= 7 * 864e5 &&
-      (mesmoTime(j.adversario, c.adversario) || mesmoTime(c.adversario, j.adversario)));
-    if (i < 0) { saida.push({ ...c }); continue; }
+    const doDia = (j, k) => !usados.has(k) && mesmaCat(j, c) && String(j.inicio).slice(0, 10) === c.inicio.slice(0, 10);
+    let i = saida.findIndex((j, k) => doDia(j, k) && mesmoAdv(j, c));
+    if (i < 0) i = saida.findIndex((j, k) => doDia(j, k) && j.competicao && mesmaCompeticao(c.competicao, j.competicao) &&
+      semAcento(String(c.competicao).split(/\s[–—-]\s/)[0]).split(' ').some((p) => p.length >= 5 && semAcento(j.competicao).includes(p)));
+    if (i >= 0) { usados.add(i); par.set(c, i); }
+  }
+  // 2ª passada — jogo remarcado (uma fonte já tem a data nova, a outra ainda não): mesmo adversário em até 7 dias
+  for (const c of cbf) {
+    if (par.has(c)) continue;
+    const i = saida.findIndex((j, k) => !usados.has(k) && mesmaCat(j, c) && Math.abs(new Date(j.inicio) - new Date(c.inicio)) <= 7 * 864e5 && mesmoAdv(j, c));
+    if (i >= 0) { usados.add(i); par.set(c, i); }
+  }
+  for (const c of cbf) {
+    const i = par.get(c);
+    if (i === undefined) { saida.push({ ...c }); continue; }
     const site = saida[i];
     const junto = { ...c };
     if (site.ingresso && !junto.ingresso) junto.ingresso = site.ingresso;
@@ -594,6 +610,16 @@ async function jogosDasLigas(timesFla, chave, problemas) {
   return jogos;
 }
 
+// Saúde do robô: quando conferiu por último e se a planilha vem falhando. Depois de 3 falhas seguidas da planilha,
+// a rodada termina "vermelha" (o GitHub avisa o dono por e-mail), mas os dados já foram salvos.
+async function registrarSaude(planilhaFalhou, problemas) {
+  const arq = path.join(DATA, 'saude.json');
+  const antes = await lerJson(arq, {});
+  const seguidas = planilhaFalhou ? (antes.planilhaFalhasSeguidas ?? 0) + 1 : 0;
+  await writeFile(arq, JSON.stringify({ verificadoEm: new Date().toISOString(), planilhaFalhasSeguidas: seguidas, avisos: problemas.length }, null, 1));
+  if (seguidas >= 3) { console.error(`A planilha falhou ${seguidas} vezes seguidas — confira o compartilhamento por link.`); process.exitCode = 1; }
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const arg = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
@@ -630,6 +656,12 @@ async function main() {
     const site = await lerSiteFlamengo(cfg.siteFlamengo, log);
     problemas.push(...site.problemas);
     const falhas = new Set(site.paginasComFalha ?? []);
+    // página que respondeu mas veio sem nenhum jogo, quando havia jogos futuros guardados dela: trata como falha (formato pode ter mudado)
+    for (const pg of cfg.siteFlamengo.paginas ?? []) {
+      if (!falhas.has(pg) && !site.jogos.some((j) => j.pagina === pg) && cacheSite.some((j) => j.pagina === pg && new Date(j.inicio).getTime() > Date.now())) {
+        falhas.add(pg); problemas.push(`Site do Flamengo (${pg}): veio sem jogos — mantive os guardados.`);
+      }
+    }
     let jogosSite;
     if (falhas.size >= (cfg.siteFlamengo.paginas?.length ?? 0)) jogosSite = cacheSite; // site fora do ar: usa a última leitura boa
     else {
@@ -655,6 +687,12 @@ async function main() {
     // campeonato que falhou desta vez: mantém os jogos dele guardados da última leitura boa
     const falhas = new Set(r.campeonatosComFalha ?? []);
     const cacheCbf = await lerJson(cacheCbfArq, []);
+    // campeonato que respondeu mas veio sem nenhum jogo, quando havia jogos guardados: trata como falha
+    for (const camp of new Set(cacheCbf.map((j) => j.campeonatoCbf))) {
+      if (camp && !falhas.has(camp) && !r.jogos.some((j) => j.campeonatoCbf === camp) && (cfg.cbf.campeonatos ?? []).some((c) => `${c.campeonato}/${c.categoria}` === camp)) {
+        falhas.add(camp); problemas.push(`CBF (${camp}): veio sem jogos — mantive os guardados.`);
+      }
+    }
     const jogosCbf = [...r.jogos, ...cacheCbf.filter((j) => falhas.has(j.campeonatoCbf))];
     if (r.jogos.length || !falhas.size) await writeFile(cacheCbfArq, JSON.stringify(jogosCbf, null, 1));
     automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('cbf-')), jogosCbf);
@@ -697,19 +735,26 @@ async function main() {
   const anterior = await lerJson(path.join(DATA, 'jogos.json'), null);
   const tabelasAnteriores = await lerJson(path.join(DATA, 'classificacao.json'), null);
   let linhas = [];
-  let planilhaOk = false;
+  let planilhaOk = false, planilhaFalhou = false;
+  const cachePlanilhaArq = path.join(DATA, 'cache-planilha.csv');
   try {
     const csv = await lerCsv(arg('--planilha'), cfg.planilhaCsvUrl, 'adversario');
     if (csv !== null) { linhas = parseCsv(csv); planilhaOk = true; }
     else problemas.push('Endereço da planilha não configurado.');
+    if (csv !== null && !arg('--planilha')) await writeFile(cachePlanilhaArq, csv);
   } catch (e) {
-    problemas.push(`Falha ao ler a planilha (${e.message}).`);
+    planilhaFalhou = true;
+    try {
+      linhas = parseCsv(await readFile(cachePlanilhaArq, 'utf8')); planilhaOk = true;
+      problemas.push(`Falha ao ler a planilha (${e.message}) — usei a última cópia boa.`);
+    } catch { problemas.push(`Falha ao ler a planilha (${e.message}).`); }
   }
   // Segurança: se a planilha falhou (ou veio vazia de repente) e não há outra fonte, mantém o que já está publicado
   const totalAnterior = anterior?.jogos?.length ?? 0;
   if ((!planilhaOk || (linhas.length === 0 && automaticos.length === 0)) && totalAnterior > 0) {
     log(`Planilha indisponível ou vazia — mantive os ${totalAnterior} jogos já publicados, sem mexer em nada.`);
     problemas.forEach((p) => log('Aviso:', p));
+    await registrarSaude(true, problemas);
     return;
   }
 
@@ -770,6 +815,8 @@ async function main() {
   }
   await writeFile(path.join(DATA, 'jogos.json'), JSON.stringify(saida, null, 1));
   await writeFile(path.join(DATA, 'classificacao.json'), JSON.stringify(tabelasNovas, null, 1));
+
+  await registrarSaude(planilhaFalhou, problemas);
 
   await mkdir(path.join(DATA, 'calendario'), { recursive: true });
   await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'FlaFan — todos os jogos', new Date(saida.atualizadoEm)));

@@ -83,7 +83,7 @@ export async function lerTabelasOficiais(cfg, log = () => {}) {
     try {
       const ler = LEITORES[t.tipo];
       if (!ler) throw new Error(`tipo desconhecido "${t.tipo}"`);
-      const r = await fetch(t.url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+      const r = await fetch(t.url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
       if (!r.ok) throw new Error(`respondeu ${r.status}`);
       const linhas = ler(await r.text());
       if (!linhas.length) { problemas.push(`Site da ${FONTE[t.tipo]}: tabela ${t.nome} não veio completa — mantive a da planilha.`); continue; }
@@ -131,7 +131,7 @@ export function lerAgendaLnb(html, agora = Date.now()) {
 }
 
 export async function lerJogosLnb(url, log = () => {}) {
-  const r = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
   if (!r.ok) throw new Error(`respondeu ${r.status}`);
   const jogos = lerAgendaLnb(await r.text());
   if (!jogos.length) throw new Error('nenhum jogo do Flamengo na agenda (formato mudou?)');

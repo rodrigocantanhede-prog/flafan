@@ -93,7 +93,7 @@ export function lerClassificacao(html) {
 }
 
 async function baixar(caminho) {
-  const r = await fetch(BASE + caminho, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(BASE + caminho, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
   if (!r.ok) throw new Error(`${caminho} respondeu ${r.status}`);
   return r.text();
 }

@@ -125,13 +125,13 @@ export function lerCanais(html) {
     .map((c) => NOMES_CANAIS[c.toLowerCase()] ?? c))];
 }
 async function baixarUrl(u) {
-  const r = await fetch(u, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(u, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
   if (!r.ok) throw new Error(`${u} respondeu ${r.status}`);
   return r.text();
 }
 
 async function baixar(caminho) {
-  const r = await fetch(BASE + caminho, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(BASE + caminho, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
   if (!r.ok) throw new Error(`${caminho} respondeu ${r.status}`);
   return r.text();
 }

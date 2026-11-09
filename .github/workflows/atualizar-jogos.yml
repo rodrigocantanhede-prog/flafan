@@ -15,7 +15,7 @@ permissions:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,6 +26,7 @@ jobs:
           API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
         run: node scripts/atualizar.mjs
       - name: Salvar se algo mudou
+        if: always()
         run: |
           git config user.name "FlaFan robô"
           git config user.email "actions@users.noreply.github.com"

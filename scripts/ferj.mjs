@@ -89,7 +89,7 @@ export function lerPartidasFerj(html, { idadeMinima = 15, agora = Date.now() } =
 }
 
 async function baixar(u) {
-  const r = await fetch(u, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(u, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12000) });
   if (!r.ok) throw new Error(`${u.replace(BASE, '')} respondeu ${r.status}`);
   return r.text();
 }

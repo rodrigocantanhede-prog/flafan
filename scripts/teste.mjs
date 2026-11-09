@@ -369,3 +369,25 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.ok(jogos.some((j) => j.adversario === 'Botafogo') && jogos.some((j) => j.adversario === 'Internacional'));
   console.log('✓ Jogos de campeonatos diferentes no mesmo dia não se misturam');
 }
+{
+  // revisão 3
+  const { mesmaCompeticao, juntarCbf, ehDuvida } = await import('./atualizar.mjs');
+  assert.equal(mesmaCompeticao('Copa do Brasil Sub-20', 'Brasileiro Sub-20'), false, 'Copa do Brasil não é Brasileiro');
+  assert.equal(mesmaCompeticao('Brasileirão Série A', 'Campeonato Brasileiro'), true);
+  assert.equal(mesmaCompeticao('Superliga', 'Superliga Feminina'), true);
+  assert.equal(mesmaCompeticao('Copa do Brasil Feminina – final (ida)', 'Copa do Brasil Feminina'), true);
+  const site = [{ id: 'site-futebol-feminino-2026-11-11-botafogo', modalidade: 'futebol-feminino', adversario: 'Botafogo', competicao: 'Campeonato Carioca Feminino', inicio: '2026-11-11T15:00:00-03:00', ingresso: 'https://bota' }];
+  const cbf = [{ id: 'cbf-9', modalidade: 'futebol-feminino', adversario: 'Internacional', competicao: 'Copa do Brasil Feminina', inicio: '2026-11-11T19:00:00-03:00' }];
+  const j = juntarCbf(site, cbf);
+  assert.equal(j.length, 2, 'jogos diferentes no mesmo dia continuam separados');
+  assert.equal(j.find((x) => x.adversario === 'Internacional').ingresso, undefined, 'ingresso do outro jogo não vaza');
+  // série de dois jogos contra o mesmo time: cada ingresso fica no seu jogo
+  const s2 = [{ id: 'site-a', modalidade: 'basquete', adversario: 'Franca', inicio: '2026-12-01T20:00:00-03:00', ingresso: 'https://1' }, { id: 'site-b', modalidade: 'basquete', adversario: 'Franca', inicio: '2026-12-03T20:00:00-03:00', ingresso: 'https://2' }];
+  const l2 = [{ id: 'lnb-1', modalidade: 'basquete', adversario: 'Sesi Franca', inicio: '2026-12-01T20:00:00-03:00' }, { id: 'lnb-2', modalidade: 'basquete', adversario: 'Sesi Franca', inicio: '2026-12-03T20:00:00-03:00' }];
+  const j2 = juntarCbf(s2, l2);
+  assert.deepEqual(j2.map((x) => [x.id, x.ingresso]), [['lnb-1', 'https://1'], ['lnb-2', 'https://2']]);
+  assert.ok(!ehDuvida('Flamengo ainda não perdeu em casa')); assert.ok(ehDuvida('Horário pode mudar')); assert.ok(ehDuvida('Deve passar no SporTV'));
+  const ics = gerarIcs([{ id: 'x', modalidade: 'basquete', adversario: 'Time 🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀🏀', competicao: 'NBB', inicio: '2026-12-01T20:00:00-03:00', transmissao: [], status: 'agendado' }], 'T');
+  assert.ok(!/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/.test(ics), 'calendário não corta emoji ao meio');
+  console.log('✓ Correções da revisão 3 ok');
+}

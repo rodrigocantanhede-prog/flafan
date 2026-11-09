@@ -144,7 +144,7 @@ function cartaoEvento(j, destaque = false) {
   const canais = j.transmissao?.length
     ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
     : `<span class="canal confirmar">A confirmar</span>`;
-  return `<article class="jogo evento ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" style="--cor:${m.cor}">
+  return `<article class="jogo evento ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" tabindex="0" role="button" style="--cor:${m.cor}">
     ${destaque ? '<div class="destaque-rotulo">Próximo evento</div>' : ''}
     <header class="jogo-cab">
       <span class="tag">${emojiEsporte(j.esporte)}<span>${esc(j.esporte)}</span></span>
@@ -222,7 +222,7 @@ function linhaCompacta(j) {
     }
   }
   const comp = j.tipo === 'evento' ? 'Olímpicos' : (j.competicao || m.nome || '');
-  return `<article class="lc" data-id="${esc(j.id)}" style="--cor:${m.cor}">
+  return `<article class="lc" data-id="${esc(j.id)}" tabindex="0" role="button" style="--cor:${m.cor}">
     <div class="lc-placa">
       ${esq}
       <div class="lc-centro">
@@ -271,7 +271,7 @@ function cartao(j, destaque = false) {
     : `<span class="canal confirmar">A confirmar</span>`;
   const mostraOnde = j.status !== 'encerrado';
 
-  return `<article class="jogo ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" style="--cor:${m.cor}">
+  return `<article class="jogo ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" tabindex="0" role="button" style="--cor:${m.cor}">
     ${destaque ? `<div class="destaque-rotulo">Próximo jogo</div>` : ''}
     <header class="jogo-cab">
       <span class="tag">${m.icone ? seloModalidade(m) : ''}<span>${esc(m.nome)}${j.categoria ? ' ' + esc(j.categoria) : ''}</span></span>
@@ -535,7 +535,9 @@ function desenhar() {
   const resultados = filtrados.filter((j) => !idsProx.has(j.id)).reverse();
   if (estado.aba === 'calendario') return desenharCalendario(filtrados);
   if (estado.aba === 'tabela') return desenharTabela();
-  const lista = estado.aba === 'proximos' ? proximos : resultados;
+  const todos = estado.aba === 'proximos' ? proximos : resultados;
+  if (estado.limiteDe !== `${estado.aba}|${estado.filtro}`) { estado.limiteDe = `${estado.aba}|${estado.filtro}`; estado.limite = 40; }
+  const lista = estado.aba === 'resultados' ? todos.slice(0, estado.limite) : todos;
 
   if (!lista.length) {
     $('#lista').dataset.vista = 'vazio';
@@ -558,6 +560,7 @@ function desenhar() {
   });
   if (estado.compacto && diaAtual) html += '</div>';
   if (diaAtual) html += '</section>';
+  if (todos.length > lista.length) html += `<div class="ver-mais"><button type="button" class="btn" data-ver-mais>Ver mais resultados (${todos.length - lista.length})</button></div>`;
   $('#lista').innerHTML = html;
   $('#lista').dataset.vista = 'jogos';
 }
@@ -595,6 +598,7 @@ function montarAjustes() {
 
 // ---------- eventos ----------
 document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-ver-mais]')) { estado.limite += 40; desenhar(); return; }
   const outro = e.target.closest('#detalhe [data-jogo]');
   if (outro) { abrirJogo(outro.dataset.jogo); return; }
   const card = e.target.closest('#lista [data-id]');
@@ -699,7 +703,7 @@ formContato.addEventListener('submit', async (e) => {
   const mostrarErro = (t) => { erro.textContent = t; erro.hidden = false; };
   const f = formContato;
   const dados = { tipo: f.tipo.value, nome: f.nome.value.trim(), contato: f.contato.value.trim(), empresa: f.empresa.value.trim(),
-    mensagem: f.mensagem.value.trim(), site: f.site.value, aparelho: `${navigator.userAgent.slice(0, 150)}${instalado() ? ' (app instalado)' : ''}` };
+    mensagem: f.mensagem.value.trim(), site: f.campo_extra.value, aparelho: `${navigator.userAgent.slice(0, 150)}${instalado() ? ' (app instalado)' : ''}` };
   if (dados.mensagem.length < 3) return mostrarErro('Escreva a sua mensagem.');
   if (dados.tipo === 'anunciar' && !dados.contato) return mostrarErro('Deixe um e-mail ou WhatsApp para a gente responder.');
   if (!CONTATO_URL) return mostrarErro('O envio de mensagens ainda está sendo ativado. Tente de novo em breve.');
@@ -707,7 +711,10 @@ formContato.addEventListener('submit', async (e) => {
   botao.disabled = true; botao.textContent = 'Enviando…';
   try {
     // texto simples (sem cabeçalhos especiais) para o Google aceitar o envio vindo do app
-    await fetch(CONTATO_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(dados) });
+    let resp = null;
+    try { resp = await (await fetch(CONTATO_URL, { method: 'POST', body: JSON.stringify(dados), redirect: 'follow' })).json(); }
+    catch { await fetch(CONTATO_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(dados) }); } // navegador não deixou ler a resposta: envia às cegas
+    if (resp && resp.ok === false) return mostrarErro(resp.erro === 'muitas mensagens' ? 'Muitas mensagens agora. Tente de novo mais tarde.' : 'Não foi possível enviar agora. Tente de novo em instantes.');
     f.querySelector('.contato-corpo').hidden = true;
     f.querySelector('.contato-ok').hidden = false;
   } catch {
@@ -781,13 +788,28 @@ async function carregar() {
       estado.campeonatos = t.campeonatos ?? [];
     } catch { estado.campeonatos = []; }
     $('#aviso-exemplo').hidden = !dados.exemplo;
-    if (dados.atualizadoEm) $('#atualizado').textContent = 'Atualizado em ' + fDataHora.format(new Date(dados.atualizadoEm));
+    let conferido = dados.atualizadoEm;
+    try { conferido = (await (await fetch('data/saude.json', { cache: 'no-cache' })).json()).verificadoEm ?? conferido; } catch { /* arquivo ainda não existe */ }
+    if (conferido) {
+      const horas = (Date.now() - new Date(conferido).getTime()) / 3600e3;
+      $('#atualizado').textContent = 'Conferido em ' + fDataHora.format(new Date(conferido));
+      $('#aviso-antigo').hidden = !(horas > 12);
+    }
+    estado.ultimaCarga = Date.now();
   } catch {
     $('#lista').innerHTML = '<p class="vazio">Não foi possível carregar os jogos. Verifique sua internet.</p>';
     return;
   }
   montarFiltros(); desenhar();
 }
+// app reaberto depois de um tempo (ex.: instalado e deixado em segundo plano): busca os dados de novo
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && Date.now() - (estado.ultimaCarga ?? 0) > 5 * 60e3 && !document.querySelector('dialog[open]')) carregar();
+});
+// teclado: Enter ou espaço num jogo abre a ficha
+document.addEventListener('keydown', (e) => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('#lista [data-id]')) { e.preventDefault(); abrirJogo(e.target.dataset.id); }
+});
 // destaque vermelho que desliza até a aba escolhida
 function moverDestaqueAba() {
   const abas = [...document.querySelectorAll('.abas .aba')];
@@ -805,7 +827,10 @@ if ('serviceWorker' in navigator) {
   const tinhaVersao = !!navigator.serviceWorker.controller;
   let recarregou = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (tinhaVersao && !recarregou) { recarregou = true; location.reload(); }
+    if (!tinhaVersao || recarregou) return;
+    const recarregar = () => { if (!recarregou) { recarregou = true; location.reload(); } };
+    if (!document.querySelector('dialog[open]')) return recarregar();
+    document.addEventListener('close', recarregar, { capture: true, once: true }); // espera fechar a ficha (não perde o que a pessoa escreveu)
   });
   navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then((reg) => {
     reg.update().catch(() => {});

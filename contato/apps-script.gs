@@ -10,15 +10,21 @@ const TIPOS = { sugestao: 'Sugestão de melhoria', erro: 'Erro no app', anunciar
 function doPost(e) {
   try {
     const d = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    if (d.site) return resposta({ ok: true });                 // campo-isca: só robôs preenchem
+    if (d.site || d.campo_extra) return resposta({ ok: true });                 // campo-isca: só robôs preenchem
     const mensagem = limpa(d.mensagem, 2000, true);
     if (mensagem.length < 3) return resposta({ ok: false, erro: 'mensagem vazia' });
 
     // freio contra enxurrada: no máximo 40 mensagens a cada 10 minutos
     const cache = CacheService.getScriptCache();
     const n = Number(cache.get('qtd') || 0);
-    if (n >= 40) return resposta({ ok: false, erro: 'muitas mensagens, tente mais tarde' });
+    if (n >= 40) return resposta({ ok: false, erro: 'muitas mensagens' });
     cache.put('qtd', String(n + 1), 600);
+    // teto diário (protege a planilha e a cota de e-mails do Google)
+    const props = PropertiesService.getScriptProperties();
+    const hoje = Utilities.formatDate(new Date(), 'America/Sao_Paulo', 'yyyy-MM-dd');
+    const noDia = props.getProperty('dia') === hoje ? Number(props.getProperty('qtdDia') || 0) : 0;
+    if (noDia >= 300) return resposta({ ok: false, erro: 'muitas mensagens' });
+    props.setProperties({ dia: hoje, qtdDia: String(noDia + 1) });
 
     const planilha = SpreadsheetApp.getActiveSpreadsheet();
     let aba = planilha.getSheetByName(ABA);
@@ -27,7 +33,7 @@ function doPost(e) {
       aba.appendRow(['recebida em', 'assunto', 'nome', 'contato', 'empresa', 'mensagem', 'aparelho', 'respondida?']);
       aba.setFrozenRows(1);
     }
-    const tipo = TIPOS[d.tipo] || TIPOS.outro;
+    const tipo = Object.prototype.hasOwnProperty.call(TIPOS, d.tipo) ? TIPOS[d.tipo] : TIPOS.outro;
     const linha = [new Date(), tipo, limpa(d.nome, 100), limpa(d.contato, 150), limpa(d.empresa, 150), mensagem, limpa(d.aparelho, 200), ''];
     // nada que comece com = + - @ vira fórmula na planilha
     aba.appendRow(linha.map((v) => (typeof v === 'string' && /^[=+\-@]/.test(v) ? "'" + v : v)));

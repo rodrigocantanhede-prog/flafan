@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FlaFan</title>
+  <title>FlaFan — todos os jogos do Mengão</title>
   <meta name="description" content="Todos os jogos do Mengão, em todas as modalidades, e onde assistir.">
   <meta name="theme-color" content="#0B0B0D">
   <link rel="manifest" href="manifest.webmanifest">
@@ -50,6 +50,7 @@
   </header>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="aviso-antigo" class="aviso" hidden>⚠️ Os dados podem estar desatualizados: a última conferência foi há mais de 12 horas.</div>
   <div id="aviso-exemplo" class="aviso" hidden>⚠️ Dados de exemplo — ainda não são jogos reais.</div>
 
   <nav class="abas" role="tablist">
@@ -68,7 +69,7 @@
     </label>
   </div>
 
-  <main id="lista" aria-live="polite"><p class="vazio">Carregando jogos…</p></main>
+  <main id="lista"><p class="vazio">Carregando jogos…</p></main>
 
   <footer class="rodape">
     <button type="button" class="btn fale-conosco" data-abrir-contato>
@@ -141,7 +142,8 @@
         <label class="campo">Mensagem
           <textarea name="mensagem" rows="5" maxlength="2000" required placeholder="Escreva aqui…"></textarea>
         </label>
-        <label class="isca" aria-hidden="true">Não preencha <input name="site" tabindex="-1" autocomplete="off"></label>
+        <label class="isca" aria-hidden="true">Não preencha <input name="campo_extra" tabindex="-1" autocomplete="off"></label>
+        <p class="ajuda pequena">Guardamos só o que você escrever aqui (e o modelo do aparelho, para investigar erros), para responder e melhorar o app.</p>
         <p class="contato-erro" role="alert" hidden></p>
         <button type="submit" class="btn contato-enviar">Enviar mensagem</button>
       </div>
@@ -163,7 +165,7 @@
 
       <section>
         <h3>📅 Lembrete na agenda do celular</h3>
-        <p class="ajuda">Os jogos entram na agenda do seu celular com alerta <b>1 hora antes</b>. Se um jogo mudar, a agenda se atualiza sozinha.</p>
+        <p class="ajuda">Os jogos entram na agenda do seu celular e, se um jogo mudar, a agenda se atualiza sozinha. No iPhone, o alerta toca <b>1 hora antes</b>; no Google Agenda, ative as notificações do calendário FlaFan nas configurações da agenda.</p>
         <label class="campo">Quais jogos?
           <select id="cal-modalidade"></select>
         </label>
@@ -174,7 +176,7 @@
         </div>
       </section>
 
-      <section>
+      <section hidden id="secao-push">
         <h3>🔔 Notificação do app</h3>
         <p class="ajuda">Escolha as modalidades que você acompanha:</p>
         <div id="pref-modalidades" class="checks"></div>
