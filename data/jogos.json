@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-09T02:20:26.554Z",
+ "atualizadoEm": "2026-11-09T09:39:15.342Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3357,6 +3357,22 @@
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   },
   {
+   "id": "m-f2c1013fc8",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": null,
+   "local": "",
+   "competicao": "Copa do Brasil Feminina – final (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-11T00:00:00-03:00",
+   "semHora": true,
+   "fonteInfo": "Gazeta Esportiva; 365Scores",
+   "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
+  },
+  {
    "id": "ferj-6229",
    "modalidade": "base",
    "adversario": "Botafogo",
@@ -3532,6 +3548,22 @@
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "LNB",
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+  },
+  {
+   "id": "m-21d2536e55",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": null,
+   "local": "",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-15T00:00:00-03:00",
+   "semHora": true,
+   "fonteInfo": "Gazeta Esportiva; 365Scores",
+   "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
    "id": "m-a81a57701d",

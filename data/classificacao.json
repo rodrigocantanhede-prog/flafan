@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-09T02:20:26.554Z",
+ "atualizadoEm": "2026-11-09T09:39:15.342Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 08/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 09/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 08/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 09/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 08/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 09/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 08/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 09/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 08/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 09/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 08/11/2026 (site da LNB)",
+   "atualizado": "em 09/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1994,7 +1994,7 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 08/11/2026 (site da CBV)",
+   "atualizado": "em 09/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
