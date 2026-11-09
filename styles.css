@@ -853,3 +853,15 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   #lista[data-vista="tabelas"] table.larga { width: 100%; }
   #lista[data-vista="tabelas"] .tabela-dica { display: none; }
 }
+/* computador: tabela na mesma largura da lista de jogos, com o nome do time perto dos números */
+@media (min-width: 760px) { #lista[data-vista="tabelas"] { max-width: 760px; } }
+@media (min-width: 940px) {
+  #lista[data-vista="tabelas"] .tabela-camp th, #lista[data-vista="tabelas"] .tabela-camp td { padding-left: 5px; padding-right: 5px; }
+  #lista[data-vista="tabelas"] table.larga .t-time-in { width: auto; }
+}
+@media (min-width: 940px) {
+  /* sem rolagem, as colunas # e Time não precisam ficar "presas" (evita falha na faixa de destaque) */
+  #lista[data-vista="tabelas"] table.larga .t-pos, #lista[data-vista="tabelas"] table.larga .t-time { position: static; box-shadow: none; background: transparent; }
+  #lista[data-vista="tabelas"] table.larga tr.eh-fla td.t-pos, #lista[data-vista="tabelas"] table.larga tr.eh-fla td.t-time { background: rgba(227,20,27,.14); }
+  #lista[data-vista="tabelas"] .tabela-camp .t-pos { padding-left: 14px; position: relative !important; }
+}
