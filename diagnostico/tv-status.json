@@ -1,0 +1,89 @@
+{
+ "cbf-jogo-seriea": {
+  "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221",
+  "final": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221",
+  "status": 200,
+  "bytes": 97689,
+  "chaves": [],
+  "links": [
+   "/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-gremio/832221"
+  ]
+ },
+ "cbf-jogo-feminino": {
+  "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
+  "final": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451",
+  "status": 200,
+  "bytes": 98803,
+  "chaves": [],
+  "links": [
+   "/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451"
+  ]
+ },
+ "cbf-jogo-sub20": {
+  "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
+  "final": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459",
+  "status": 200,
+  "bytes": 93108,
+  "chaves": [],
+  "links": [
+   "/futebol-brasileiro/jogos/copa-do-brasil/sub-20/2026/flamengo-x-operario/835459"
+  ]
+ },
+ "cbf-tabela-seriea": {
+  "url": "https://www.cbf.com.br/futebol-brasileiro/tabelas/campeonato-brasileiro/serie-a/2026",
+  "final": "https://www.cbf.com.br/futebol-brasileiro/tabelas/campeonato-brasileiro/serie-a/2026",
+  "status": 200,
+  "bytes": 919924,
+  "chaves": [],
+  "links": []
+ },
+ "cbv-tabela": {
+  "url": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/tabela",
+  "final": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/tabela",
+  "status": 404,
+  "bytes": 30474,
+  "chaves": [],
+  "links": []
+ },
+ "cbv-jogos": {
+  "url": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/jogos",
+  "final": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/jogos",
+  "status": 404,
+  "bytes": 30474,
+  "chaves": [],
+  "links": []
+ },
+ "cbv-calendario": {
+  "url": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/calendario",
+  "final": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina/calendario",
+  "status": 404,
+  "bytes": 30474,
+  "chaves": [],
+  "links": []
+ },
+ "fla-futebol": {
+  "url": "https://www.flamengo.com.br/futebol/proximos-jogos",
+  "final": "https://www.flamengo.com.br/futebol/proximos-jogos",
+  "status": 200,
+  "bytes": 178561,
+  "chaves": [],
+  "links": [
+   "https://www.flamengo.com.br/futebol/proximos-jogos",
+   "https://www.flamengo.com.br/en/futebol/proximos-jogos",
+   "https://www.flamengo.com.br/es/futebol/proximos-jogos",
+   "/futebol/proximos-jogos"
+  ]
+ },
+ "fla-volei": {
+  "url": "https://www.flamengo.com.br/volei/proximos-jogos",
+  "final": "https://www.flamengo.com.br/volei/proximos-jogos",
+  "status": 200,
+  "bytes": 229726,
+  "chaves": [],
+  "links": [
+   "https://www.flamengo.com.br/volei/proximos-jogos",
+   "https://www.flamengo.com.br/en/volei/proximos-jogos",
+   "https://www.flamengo.com.br/es/volei/proximos-jogos"
+  ]
+ }
+}

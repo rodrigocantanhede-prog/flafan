@@ -1,0 +1,11 @@
+h":120,"height":120,"loading":"lazy"}]}],["$","nav",null,{"className":"ois-Fa_socialContainer","aria-label":"Redes sociais","children":[["$","$L45","hub_footer_youtube",{"className":"ois-Fa_socialLink","href":"https://www.youtube.com/flamengo","title":"YouTube","target":"_blank","rel":"noreferrer noopener nofollow","aria-label":"YouTube","data-analytics-id":"hub_fo
+---
+oter_youtube","data-analytics-name":"YouTube","data-analytics-destination-type":"$undefined","data-analytics-partner-id":"$undefined","data-analytics-outbound-label":"YouTube","data-analytics-origin-component":"$undefined","data-analytics-link-
+---
+h":120,"height":120,"loading":"lazy"}]}],["$","nav",null,{"className":"ois-Fa_socialContainer","aria-label":"Redes sociais","children":[["$","$L45","hub_footer_youtube",{"className":"ois-Fa_socialLink","href":"https://www.youtube.com/flamengo","title":"YouTube","target":"_blank","rel":"noreferrer noopener nofollow","aria-label":"YouTube","data-analytics-id":"hub_fo
+---
+oter_youtube","data-analytics-name":"YouTube","data-analytics-destination-type":"$undefined","data-analytics-partner-id":"$undefined","data-analytics-outbound-label":"YouTube","data-analytics-origin-component":"$undefined","data-analytics-link-
+---
+h":120,"height":120,"loading":"lazy"}]}],["$","nav",null,{"className":"ois-Fa_socialContainer","aria-label":"Redes sociais","children":[["$","$L45","hub_footer_youtube",{"className":"ois-Fa_socialLink","href":"https://www.youtube.com/flamengo","title":"YouTube","target":"_blank","rel":"noreferrer noopener nofollow","aria-label":"YouTube","data-analytics-id":"hub_fo
+---
+oter_youtube","data-analytics-name":"YouTube","data-analytics-destination-type":"$undefined","data-analytics-partner-id":"$undefined","data-analytics-outbound-label":"YouTube","data-analytics-origin-component":"$undefined","data-analytics-link-
