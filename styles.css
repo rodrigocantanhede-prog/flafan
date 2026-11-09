@@ -751,3 +751,6 @@ html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enqua
 .chip .emoji-mod { font-size: 18px; margin-right: 1px; }
 .tag .emoji-mod { font-size: 15px; }
 .lc-comp .emoji-mod { font-size: 13px; margin-right: 3px; } .lc-ic .emoji-mod { font-size: 30px; }
+/* emoji do campeonato no cartão compacto: do tamanho do texto e com respiro até o horário */
+.lc-comp { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 4px; line-height: 1.25; }
+.lc-comp .emoji-mod { font-size: 12px; margin: 0; line-height: 1; flex: none; }

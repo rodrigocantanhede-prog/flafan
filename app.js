@@ -226,7 +226,7 @@ function linhaCompacta(j) {
     <div class="lc-placa">
       ${esq}
       <div class="lc-centro">
-        <span class="lc-comp">${j.tipo === 'evento' ? '' : (m.emoji ? emojiModalidade(m) : icone(m.icone ?? 'olimpicos'))}${esc(comp)}</span>
+        <span class="lc-comp">${m.emoji ? emojiModalidade(m) : icone(m.icone ?? 'olimpicos')}<span>${esc(comp)}</span></span>
         ${valor}
         <span class="lc-leg ${classeValor} ${j.status === 'ao-vivo' ? 'ao-vivo' : ''}">${esc(legenda)}</span>
       </div>
