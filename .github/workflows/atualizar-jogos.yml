@@ -1,8 +1,8 @@
-# Roda a cada 3 horas (e quando você clicar em "Run workflow" ou quando o código do robô muda).
+# Roda a cada 2 horas (e quando você clicar em "Run workflow" ou quando o código do robô muda).
 name: Atualizar jogos
 on:
   schedule:
-    - cron: '17 */3 * * *'
+    - cron: '17 */2 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -15,6 +15,7 @@ permissions:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,7 +29,14 @@ jobs:
         run: |
           git config user.name "FlaFan robô"
           git config user.email "actions@users.noreply.github.com"
-          git add data escudos
-          git diff --cached --quiet || git commit -m "Atualização automática dos jogos"
-          git pull --rebase origin main
+          salvar() { git add data escudos; git diff --cached --quiet || git commit -m "Atualização automática dos jogos"; }
+          salvar
+          # se alguém publicou no meio do caminho e der conflito, recomeça em cima da versão nova (até 3 tentativas)
+          for tentativa in 1 2 3; do
+            if git pull --rebase origin main && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            git fetch origin main && git reset --hard origin/main
+            node scripts/atualizar.mjs
+            salvar
+          done
           git push

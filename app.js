@@ -349,8 +349,9 @@ function desenharCalendario(filtrados) {
       <div class="cal-semana" aria-hidden="true"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
       <div class="cal-grade">${celulas}</div>
     </section>
-    <h2 class="dia">${esc(rotSel)}</h2>
-    ${lista}`;
+    <div class="cal-lista"><h2 class="dia">${esc(rotSel)}</h2>
+    ${lista}</div>`;
+  $('#lista').dataset.vista = 'calendario';
 }
 
 function escudoPequeno(nome, url, fla) {
@@ -413,6 +414,7 @@ function desenharTabela() {
     return;
   }
   $('#lista').innerHTML = lista.map((c) => htmlTabela(c)).join('');
+  $('#lista').dataset.vista = 'tabelas';
 }
 
 // tabela do campeonato do jogo (Brasileirão, NBB, Superliga...), se existir
@@ -536,6 +538,7 @@ function desenhar() {
   const lista = estado.aba === 'proximos' ? proximos : resultados;
 
   if (!lista.length) {
+    $('#lista').dataset.vista = 'vazio';
     $('#lista').innerHTML = `<p class="vazio">${estado.aba === 'proximos' ? 'Nenhum jogo marcado por enquanto.' : 'Nenhum resultado recente.'}</p>`;
     return;
   }
@@ -546,14 +549,17 @@ function desenhar() {
     const rot = rotuloDia(d);
     if (rot !== diaAtual) {
       if (estado.compacto && diaAtual) html += '</div>';
-      html += `<h2 class="dia">${esc(rot)}</h2>`;
+      if (diaAtual) html += '</section>';
+      html += `<section class="dia-bloco"><h2 class="dia">${esc(rot)}</h2>`;
       if (estado.compacto) html += '<div class="painel-compacto">';
       diaAtual = rot;
     }
     html += estado.compacto ? linhaCompacta(j) : cartao(j, i === iDestaque);
   });
   if (estado.compacto && diaAtual) html += '</div>';
+  if (diaAtual) html += '</section>';
   $('#lista').innerHTML = html;
+  $('#lista').dataset.vista = 'jogos';
 }
 
 // ---------- lembretes na agenda (.ics) ----------

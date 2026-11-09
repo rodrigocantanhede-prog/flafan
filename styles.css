@@ -754,3 +754,58 @@ html:has(dialog[open]) { overflow: hidden; } /* a página atrás não rola enqua
 /* emoji do campeonato no cartão compacto: do tamanho do texto e com respiro até o horário */
 .lc-comp { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 4px; line-height: 1.25; }
 .lc-comp .emoji-mod { font-size: 12px; margin: 0; line-height: 1; flex: none; }
+
+/* ================= VERSÃO PARA COMPUTADOR E TABLET ================= */
+.folha-x { display: none; }
+@media (min-width: 900px) {
+  body { max-width: none; }
+  .topo, .abas, .filtros, .visual-barra, main, .rodape, .aviso { max-width: 1180px; margin-left: auto; margin-right: auto; }
+  .topo { padding-left: 24px; padding-right: 24px; border-radius: 0 0 22px 22px; }
+  .topo-icone { width: 48px; height: 48px; }
+  .marca { font-size: 30px; }
+  .marca-sub { font-size: 13.5px; }
+  .topo-botoes { gap: 10px; }
+  .topo-botoes .btn-icone { width: 44px; height: 44px; }
+  .abas { max-width: 640px; margin-top: 22px; margin-bottom: 16px; }
+  .aba { font-size: 16px; padding: 12px 8px; cursor: pointer; }
+  .filtros { flex-wrap: wrap; justify-content: center; overflow: visible; padding: 2px 24px 12px; }
+  .visual-barra { padding-left: 24px; padding-right: 24px; }
+  main { padding: 0 24px 24px; }
+
+  /* jogos: dias lado a lado, em duas colunas */
+  #lista[data-vista="jogos"] { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; align-items: start; }
+  #lista[data-vista="jogos"] .dia-bloco { min-width: 0; }
+  /* tabelas: duas por linha, com todas as colunas à vista */
+  #lista[data-vista="tabelas"] { display: grid; grid-template-columns: repeat(auto-fit, minmax(540px, 1fr)); gap: 18px 24px; align-items: start; }
+  #lista[data-vista="tabelas"] .tabela-camp { margin-bottom: 0; min-width: 0; }
+  .tabela-camp table.larga .t-time-in { width: 190px; }
+  /* calendário: mês à esquerda, jogos do dia à direita */
+  #lista[data-vista="calendario"] { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 28px; align-items: start; }
+  #lista[data-vista="calendario"] .cal { position: sticky; top: 96px; }
+  #lista[data-vista="calendario"] .cal-lista .dia:first-child { margin-top: 4px; }
+
+  /* mouse: realce ao passar e mão nos itens clicáveis */
+  #lista [data-id] { cursor: pointer; transition: background .15s, transform .15s; }
+  #lista [data-id]:hover { background: color-mix(in srgb, var(--texto) 4%, var(--cartao)); }
+  .chip, .cal-dia, .nc-jogo, .btn-icone, .fale-conosco { cursor: pointer; }
+  .chip:hover, .btn-icone:hover, .fale-conosco:hover { filter: brightness(.96); }
+  .nc-jogo:hover { background: rgba(255,255,255,.06); }
+
+  /* fichas: janela no centro da tela, com ✕ para fechar */
+  .folha[open], .painel[open] { justify-content: center; }
+  .folha-conteudo, .painel-conteudo { max-width: 700px; margin-bottom: 0; max-height: min(880px, calc(100% - 64px)); }
+  .folha-conteudo { min-height: min(640px, calc(100% - 64px)); }
+  .painel-conteudo { max-width: 560px; }
+  .folha[open] .folha-conteudo, .painel[open] .painel-conteudo { animation: surgir .22s ease-out; }
+  .folha-alca { display: none; }
+  .folha-x { display: grid; place-items: center; position: sticky; top: 14px; margin: 14px 14px -52px auto; z-index: 4; width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 15px; padding: 0; }
+  .folha-x:hover { background: rgba(0,0,0,.55); }
+  .rodape { padding-bottom: 40px; }
+}
+@media (min-width: 1500px) {
+  #lista[data-vista="jogos"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .topo, .filtros, .visual-barra, main, .rodape, .aviso { max-width: 1480px; }
+}
+@keyframes surgir { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .folha[open] .folha-conteudo, .painel[open] .painel-conteudo, .abas.anima::before { animation: none !important; transition: none !important; } }
