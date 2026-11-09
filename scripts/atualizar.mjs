@@ -74,6 +74,15 @@ export function normalizarModalidade(txt) {
   return null;
 }
 
+// Mesmo campeonato? ("Copa do Brasil Feminina – final" x "Carioca Feminino" = não). Sem campeonato na planilha = aceita.
+const PALAVRAS_COMUNS = new Set(['copa', 'campeonato', 'do', 'da', 'de', 'feminino', 'feminina', 'masculino', 'sub', 'serie', 'final', 'ida', 'volta', 'semifinal', 'quartas', 'fase', 'rodada', 'grupo']);
+export function mesmaCompeticao(a, b) {
+  const t = (x) => semAcento(x).replace(/[^a-z0-9]+/g, ' ').split(' ').filter((p) => p.length >= 3 && !PALAVRAS_COMUNS.has(p) && !/^\d+$/.test(p));
+  const ta = t(a), tb = new Set(t(b));
+  if (!ta.length || !tb.size) return true;
+  return ta.some((p) => tb.has(p) || [...tb].some((q) => q.startsWith(p.slice(0, 6)) || p.startsWith(q.slice(0, 6))));
+}
+
 // Observação com cara de dúvida ou de bastidor não vai para o app: dia/horário/canal se resolvem pela fonte oficial.
 const DUVIDA = /(a confirmar|a definir|n[aã]o (foi )?(divulgad|anunciad|confirmad|definid)|uma fonte|outra fonte|fontes? (cita|diz|indica|fala)|antes se falava|se falava|rumor|especula|possivelmente|provavelmente|talvez|suposta|n[aã]o se sabe|ainda n[aã]o)/i;
 export const ehDuvida = (s) => DUVIDA.test(String(s ?? ''));
@@ -202,7 +211,7 @@ export function mesclar(automaticos, linhas) {
       let igual = cands.find((j) => mesmoTime(l.adversario, j.adversario) || mesmoTime(j.adversario, l.adversario)) ?? null;
       // sem adversário igual: só junta se houver um único jogo possível (e "remover" nunca apaga jogo de outro adversário)
       const livres = cands.filter((j) => !j.daPlanilha);
-      if (!igual && livres.length === 1 && acao !== 'remover') igual = livres[0];
+      if (!igual && livres.length === 1 && acao !== 'remover' && mesmaCompeticao(l.competicao, livres[0].competicao)) igual = livres[0];
       id = igual ? igual.id : 'm-' + createHash('sha1').update(`${modalidade}|${categoria}|${dia}|${semAcento(l.adversario)}`).digest('hex').slice(0, 10);
     }
     if (acao === 'remover') { porId.delete(id); continue; }

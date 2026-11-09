@@ -357,3 +357,15 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.deepEqual(jogos[0].transmissao, ['Premiere'], 'canal oficial da CBF vale mais que o da planilha');
   console.log('✓ Canais da CBF ok');
 }
+{
+  const { mesmaCompeticao } = await import('./atualizar.mjs');
+  assert.equal(mesmaCompeticao('Copa do Brasil Feminina – final (ida)', 'Carioca Feminino'), false);
+  assert.equal(mesmaCompeticao('Campeonato Carioca Feminino', 'Carioca Feminino'), true);
+  assert.equal(mesmaCompeticao('Brasileirão Série A', 'Brasileirão Série A'), true);
+  assert.equal(mesmaCompeticao('', 'NBB'), true);
+  const auto = [{ id: 'site-futebol-feminino-2026-11-11-botafogo', modalidade: 'futebol-feminino', adversario: 'Botafogo', competicao: 'Carioca Feminino', inicio: '2026-11-11T15:00:00-03:00', transmissao: [], status: 'agendado', fonte: 'automatica' }];
+  const { jogos } = mesclar(auto, parseCsv(`id,modalidade,adversario,competicao,data\n,Futebol feminino,Internacional,Copa do Brasil Feminina – final (ida),11/11/2026`));
+  assert.equal(jogos.length, 2, 'final da Copa do Brasil não engole o jogo do Carioca no mesmo dia');
+  assert.ok(jogos.some((j) => j.adversario === 'Botafogo') && jogos.some((j) => j.adversario === 'Internacional'));
+  console.log('✓ Jogos de campeonatos diferentes no mesmo dia não se misturam');
+}
