@@ -839,3 +839,17 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   .aba:not(.ativa):hover { color: var(--texto); }
   .cal-dia.tem:hover { border-color: color-mix(in srgb, var(--vermelho) 50%, transparent); }
 }
+
+/* computador: jogos e tabelas em coluna única e contínua (o calendário continua com a lista ao lado) */
+@media (min-width: 760px) {
+  #lista[data-vista="jogos"] { display: block; max-width: 760px; margin-left: auto; margin-right: auto; }
+  #lista[data-vista="tabelas"] { display: block; max-width: 900px; margin-left: auto; margin-right: auto; }
+  #lista[data-vista="tabelas"] .tabela-camp { margin-bottom: 18px; }
+  #lista[data-vista="vazio"] { max-width: 760px; margin-left: auto; margin-right: auto; }
+}
+@media (min-width: 940px) {
+  /* tabela inteira à vista: sem rolagem para o lado e sem o aviso de arrastar */
+  #lista[data-vista="tabelas"] .tabela-rolagem { overflow-x: visible; }
+  #lista[data-vista="tabelas"] table.larga { width: 100%; }
+  #lista[data-vista="tabelas"] .tabela-dica { display: none; }
+}
