@@ -1,0 +1,37 @@
+id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_fla,placar_adv,status,acao,observacao,escudo_adv,fonte
+,Basquete,Brasília,NBB,04/11/2026,20:15,"Arena Nilson Nelson, Brasília",fora,,91,87,encerrado,,,,LNB
+,Vôlei feminino,Londrina,Superliga Feminina,06/11/2026,,Londrina (PR),fora,,3,0,encerrado,,,,Web Vôlei
+,Vôlei feminino,Fluminense,Superliga Feminina,12/11/2026,21:00,"Maracanãzinho, Rio de Janeiro",casa,SporTV 2,,,,,,,Olympics.com
+,Vôlei feminino,Sesi Vôlei Bauru,Superliga Feminina,17/11/2026,21:00,Bauru (SP),fora,,,,,,,,Olympics.com
+,Futebol masculino,Athletico-PR,Brasileirão Série A,18/11/2026,20:30,"Maracanã, Rio de Janeiro",casa,,,,,,,,Site do Flamengo
+,Basquete,Unifacisa,NBB,19/11/2026,,Campina Grande (PB),fora,,,,,,,,RealGM
+,Futebol masculino,Palmeiras,Brasileirão Série A,21/11/2026,16:30,"Nubank Parque, São Paulo",fora,,,,,,,,Diário do Rio
+,Basquete,Basquete Cearense,NBB,22/11/2026,,Fortaleza (CE),fora,,,,,,,,RealGM
+,Vôlei feminino,Osasco,Superliga Feminina,23/11/2026,21:00,,casa,,,,,,,,Olympics.com
+,Futebol masculino,Coritiba,Brasileirão Série A,29/11/2026,16:00,"Couto Pereira, Curitiba",fora,,,,,,,,Diário do Rio
+,Futebol masculino,Chapecoense,Brasileirão Série A,02/12/2026,21:30,"Maracanã, Rio de Janeiro",casa,,,,,,Última rodada do Brasileirão,,Diário do Rio
+,Futebol masculino,Santos,Brasileirão Série A,08/10/2026,,,fora,,2,2,encerrado,,,,Wikipédia
+,Futebol masculino,Fluminense,Brasileirão Série A,11/10/2026,,"Maracanã, Rio de Janeiro",casa,,1,0,encerrado,,,,CBF
+,Futebol masculino,Estudiantes,Libertadores – semifinal (ida),15/10/2026,,La Plata (Argentina),fora,,0,0,encerrado,,,,ESPN
+,Futebol masculino,Bahia,Brasileirão Série A,18/10/2026,,Salvador (BA),fora,,3,0,encerrado,,,,ESPN
+,Futebol masculino,Estudiantes,Libertadores – semifinal (volta),22/10/2026,,"Maracanã, Rio de Janeiro",casa,,0,0,encerrado,,Eliminado nos pênaltis (2 x 3),,Lance
+,Futebol masculino,Atlético-MG,Brasileirão Série A,26/10/2026,,"Maracanã, Rio de Janeiro",casa,,3,2,encerrado,,,,ESPN
+,Futebol masculino,Vasco,Brasileirão Série A,29/10/2026,,"Estádio Nilton Santos, Rio de Janeiro",fora,,4,1,encerrado,,,,Site do Flamengo
+,Futebol masculino,Grêmio,Brasileirão Série A,04/11/2026,,"Maracanã, Rio de Janeiro",casa,,3,1,encerrado,,,,Fim de Jogo
+,Futebol feminino,Fluminense,Copa do Brasil Feminina – quartas (ida),15/10/2026,,"Estádio Luso-Brasileiro, Rio de Janeiro",fora,,1,2,encerrado,,,,Agência Brasil
+,Futebol feminino,Fluminense,Copa do Brasil Feminina – quartas (volta),22/10/2026,,,casa,,3,1,encerrado,,Classificado para a semifinal (4 x 3 no agregado),,Agência Brasil
+,Futebol feminino,Bahia,Copa do Brasil Feminina – semifinal (ida),03/11/2026,,"Arena Fonte Nova, Salvador",fora,,0,0,encerrado,,,,CBF
+,Basquete,Bauru,NBB,18/10/2026,,"Maracanãzinho, Rio de Janeiro",casa,,81,82,encerrado,,,,LNB
+,Basquete,Botafogo,NBB,20/10/2026,,"Ginásio do Tijuca, Rio de Janeiro",casa,,81,71,encerrado,,,,LNB
+,Basquete,União Corinthians,NBB,01/11/2026,,"Maracanãzinho, Rio de Janeiro",casa,,83,65,encerrado,,,,LNB
+,Basquete,Pato Basquete,NBB,07/11/2026,19:00,"Ginásio do Sesi, Pato Branco (PR)",fora,Xsports; Flamengo TV,80,66,encerrado,,,,LNB
+,Vôlei feminino,Paulistano/Barueri,Superliga Feminina,19/10/2026,,,casa,,3,0,encerrado,,,,Web Vôlei
+,Vôlei feminino,Brasília,Superliga Feminina,23/10/2026,,Brasília (DF),fora,,3,0,encerrado,,,,Web Vôlei
+,Vôlei feminino,Mackenzie,Superliga Feminina,31/10/2026,,"Tijuca Tênis Clube, Rio de Janeiro",casa,,3,0,encerrado,,,,Web Vôlei
+,Futebol feminino,Bahia,Copa do Brasil Feminina – semifinal (volta),07/11/2026,21:30,"Estádio Luso-Brasileiro, Rio de Janeiro",casa,,3,2,encerrado,,Classificado para a final inédita da Copa do Brasil Feminina,,Site do Flamengo
+,Basquete,Sesi Franca,NBB,10/11/2026,20:30,"Maracanãzinho, Rio de Janeiro",casa,,,,,,,,LNB
+,Futebol feminino,Internacional,Copa do Brasil Feminina – final (ida),11/11/2026,,,,,,,agendado,,,,Gazeta Esportiva; 365Scores
+,Basquete,Paisas,Liga Sul-Americana – quartas (Grupo F),13/11/2026,22:40,Medellín (Colômbia),fora,,,,,,,,LNB
+,Basquete,CAIXA/Brasília,Liga Sul-Americana – quartas (Grupo F),14/11/2026,18:10,Medellín (Colômbia),casa,,,,,,"Jogo em quadra neutra, em Medellín",,LNB
+,Futebol feminino,Internacional,Copa do Brasil Feminina – final (volta),15/11/2026,,,,,,,agendado,,,,Gazeta Esportiva; 365Scores
+,Basquete,Boca Juniors,Liga Sul-Americana – quartas (Grupo F),15/11/2026,18:10,Medellín (Colômbia),fora,,,,,,,,LNB
