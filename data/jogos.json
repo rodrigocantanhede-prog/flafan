@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-10T04:10:07.437Z",
+ "atualizadoEm": "2026-11-10T12:43:28.965Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3357,22 +3357,6 @@
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
   },
   {
-   "id": "m-f2c1013fc8",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": null,
-   "local": "",
-   "competicao": "Copa do Brasil Feminina – final (ida)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "inicio": "2026-11-11T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Gazeta Esportiva; 365Scores",
-   "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
-  },
-  {
    "id": "ferj-6229",
    "modalidade": "base",
    "adversario": "Botafogo",
@@ -3409,6 +3393,25 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
+   "id": "site-futebol-feminino-2026-11-11-internacional",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "competicao": "Copa do Brasil Feminina – final (ida)",
+   "inicio": "2026-11-11T21:30:00-03:00",
+   "semHora": false,
+   "local": "Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "Lance!TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
+   "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
+  },
+  {
    "id": "site-volei-feminino-2026-11-12-fluminense",
    "modalidade": "volei-feminino",
    "adversario": "Fluminense",
@@ -3434,7 +3437,7 @@
    "placar": null,
    "status": "agendado",
    "mandante": false,
-   "local": "Medellín (Colômbia)",
+   "local": "Coliseo Universidad de Medellín (Colômbia)",
    "competicao": "Liga Sul-Americana – quartas (Grupo F)",
    "fonte": "manual",
    "modalidade": "basquete",
@@ -3504,7 +3507,7 @@
    "placar": null,
    "status": "agendado",
    "mandante": true,
-   "local": "Medellín (Colômbia)",
+   "local": "Coliseo Universidad de Medellín (Colômbia)",
    "competicao": "Liga Sul-Americana – quartas (Grupo F)",
    "fonte": "manual",
    "modalidade": "basquete",
@@ -3516,19 +3519,22 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "m-21d2536e55",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": null,
-   "local": "",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "fonte": "manual",
+   "id": "site-futebol-feminino-2026-11-15-internacional",
    "modalidade": "futebol-feminino",
    "adversario": "Internacional",
-   "inicio": "2026-11-15T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Gazeta Esportiva; 365Scores",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
+   "local": "Porto Alegre (RS)",
+   "mandante": false,
+   "transmissao": [
+    "Lance!TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3537,7 +3543,7 @@
    "placar": null,
    "status": "agendado",
    "mandante": false,
-   "local": "Medellín (Colômbia)",
+   "local": "Coliseo Universidad de Medellín (Colômbia)",
    "competicao": "Liga Sul-Americana – quartas (Grupo F)",
    "fonte": "manual",
    "modalidade": "basquete",
