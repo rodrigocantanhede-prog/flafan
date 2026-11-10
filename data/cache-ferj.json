@@ -162,6 +162,24 @@
   "categoria": "Sub-17"
  },
  {
+  "id": "ferj-6526",
+  "modalidade": "base",
+  "adversario": "Vasco da Gama",
+  "competicao": "Guilherme Embry Sub-16",
+  "inicio": "2026-11-13T11:00:00-03:00",
+  "semHora": false,
+  "local": "Nivaldo Pereira",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
+  "link": "https://www.fferj.com.br/partidas/6526",
+  "categoria": "Sub-16"
+ },
+ {
   "id": "ferj-6474",
   "modalidade": "base",
   "adversario": "Vasco da Gama",
