@@ -868,3 +868,22 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 
 /* Inter (licença livre OFL): deixa Windows e Android com letra quase igual à da Apple. Em iPhone/Mac continua a fonte do sistema. */
 @font-face { font-family: "Inter FlaFan"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-latin-variavel.woff2") format("woff2-variations"), url("fonts/inter-latin-variavel.woff2") format("woff2"); }
+
+/* topo com 5 botões (instalar, compartilhar, fale com a gente, tema, lembretes): tudo cabe numa linha */
+@media (max-width: 430px) {
+  .topo { gap: 8px; }
+  .topo-botoes { gap: 4px; }
+  .topo-botoes .btn-icone { width: 34px; height: 34px; border-radius: 11px; }
+  .topo-botoes .btn-icone svg { width: 19px; height: 19px; }
+}
+@media (max-width: 380px) {
+  .topo-icone { width: 32px; height: 32px; }
+  .topo-botoes { gap: 3px; }
+  .topo-botoes .btn-icone { width: 31px; height: 31px; border-radius: 10px; }
+  .topo-botoes .btn-icone svg { width: 17px; height: 17px; }
+}
+@media (max-width: 345px) { .topo-icone { display: none; } }
+/* com 5 botões o subtítulo quebra em duas linhas em vez de ser cortado com "…" */
+@media (max-width: 430px) {
+  .marca-sub { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.15; font-size: 11px; max-width: 9.5em; }
+}
