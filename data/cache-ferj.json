@@ -135,8 +135,11 @@
   "local": "Estádio Olímpico Nilton Santos Anexo",
   "mandante": false,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 2,
+   "adversario": 3
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_25.png",
@@ -153,8 +156,11 @@
   "local": "Estádio Olímpico Nilton Santos Anexo",
   "mandante": false,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 1,
+   "adversario": 2
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_25.png",

@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-11T09:30:39.322Z",
+ "atualizadoEm": "2026-11-11T17:56:09.924Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3369,8 +3369,11 @@
    "local": "Estádio Olímpico Nilton Santos Anexo",
    "mandante": false,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 2,
+    "adversario": 3
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6229",
@@ -3387,8 +3390,11 @@
    "local": "Estádio Olímpico Nilton Santos Anexo",
    "mandante": false,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 1,
+    "adversario": 2
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6195",
@@ -3454,7 +3460,9 @@
   },
   {
    "id": "m-9067298e6b",
-   "transmissao": [],
+   "transmissao": [
+    "Basquete TV"
+   ],
    "placar": null,
    "status": "agendado",
    "mandante": false,
@@ -3465,7 +3473,7 @@
    "adversario": "Paisas",
    "inicio": "2026-11-13T22:40:00-03:00",
    "semHora": false,
-   "fonteInfo": "LNB",
+   "fonteInfo": "LNB; FIBA (onde assistir a Liga Sul-Americana 2026)",
    "escudoAdv": "escudos/basquete-paisas.png"
   },
   {
@@ -3524,7 +3532,9 @@
   },
   {
    "id": "m-70f8b20602",
-   "transmissao": [],
+   "transmissao": [
+    "Basquete TV"
+   ],
    "placar": null,
    "status": "agendado",
    "mandante": true,
@@ -3536,7 +3546,7 @@
    "inicio": "2026-11-14T18:10:00-03:00",
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
-   "fonteInfo": "LNB",
+   "fonteInfo": "LNB; FIBA (onde assistir a Liga Sul-Americana 2026)",
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
@@ -3560,7 +3570,9 @@
   },
   {
    "id": "m-a81a57701d",
-   "transmissao": [],
+   "transmissao": [
+    "Basquete TV"
+   ],
    "placar": null,
    "status": "agendado",
    "mandante": false,
@@ -3571,7 +3583,7 @@
    "adversario": "Boca Juniors",
    "inicio": "2026-11-15T18:10:00-03:00",
    "semHora": false,
-   "fonteInfo": "LNB",
+   "fonteInfo": "LNB; FIBA (onde assistir a Liga Sul-Americana 2026)",
    "escudoAdv": "escudos/basquete-boca-juniors.png"
   },
   {
