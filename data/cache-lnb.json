@@ -151,8 +151,11 @@
    "ESPN",
    "Disney+"
   ],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 73,
+   "adversario": 84
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "LNB",
   "escudoAdvUrl": "https://lnb.com.br/wp-content/uploads/2016/10/Logotipo-Sesi-Franca-Basquete--150x150.png",
