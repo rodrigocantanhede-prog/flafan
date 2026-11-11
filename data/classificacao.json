@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-10T20:52:43.816Z",
+ "atualizadoEm": "2026-11-11T01:58:28.972Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1797,17 +1797,6 @@
     },
     {
      "pos": 3,
-     "time": "Flamengo",
-     "j": 6,
-     "v": 5,
-     "e": null,
-     "d": 1,
-     "sg": 63,
-     "pts": 11,
-     "ap": 83
-    },
-    {
-     "pos": 4,
      "time": "Unifacisa",
      "j": 6,
      "v": 5,
@@ -1819,7 +1808,7 @@
      "escudo": "escudos/basquete-unifacisa-f360c0.png"
     },
     {
-     "pos": 5,
+     "pos": 4,
      "time": "Pinheiros",
      "j": 7,
      "v": 5,
@@ -1831,7 +1820,30 @@
      "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
     },
     {
+     "pos": 5,
+     "time": "Flamengo",
+     "j": 7,
+     "v": 5,
+     "e": null,
+     "d": 2,
+     "sg": 52,
+     "pts": 12,
+     "ap": 71
+    },
+    {
      "pos": 6,
+     "time": "Sesi Franca",
+     "j": 7,
+     "v": 4,
+     "e": null,
+     "d": 3,
+     "sg": 35,
+     "pts": 11,
+     "ap": 57,
+     "escudo": "escudos/basquete-sesi-franca-c08c49.png"
+    },
+    {
+     "pos": 7,
      "time": "Ceisc/União Corinthians",
      "j": 6,
      "v": 3,
@@ -1843,7 +1855,7 @@
      "escudo": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
     },
     {
-     "pos": 7,
+     "pos": 8,
      "time": "CAIXA/Brasília Basquete",
      "j": 8,
      "v": 4,
@@ -1855,31 +1867,7 @@
      "escudo": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
     },
     {
-     "pos": 8,
-     "time": "Paulistano",
-     "j": 6,
-     "v": 3,
-     "e": null,
-     "d": 3,
-     "sg": -16,
-     "pts": 9,
-     "ap": 50,
-     "escudo": "escudos/basquete-paulistano-d2670e.png"
-    },
-    {
      "pos": 9,
-     "time": "Sesi Franca",
-     "j": 6,
-     "v": 3,
-     "e": null,
-     "d": 3,
-     "sg": 24,
-     "pts": 9,
-     "ap": 50,
-     "escudo": "escudos/basquete-sesi-franca-c08c49.png"
-    },
-    {
-     "pos": 10,
      "time": "Itatiaiuçu Cruzeiro Basquete",
      "j": 6,
      "v": 3,
@@ -1889,6 +1877,18 @@
      "pts": 9,
      "ap": 50,
      "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
+    },
+    {
+     "pos": 10,
+     "time": "Paulistano",
+     "j": 6,
+     "v": 3,
+     "e": null,
+     "d": 3,
+     "sg": -16,
+     "pts": 9,
+     "ap": 50,
+     "escudo": "escudos/basquete-paulistano-d2670e.png"
     },
     {
      "pos": 11,
