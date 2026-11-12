@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-11T17:56:09.924Z",
+ "atualizadoEm": "2026-11-12T00:48:23.055Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1774,12 +1774,12 @@
     {
      "pos": 1,
      "time": "Minas Storm",
-     "j": 6,
-     "v": 6,
+     "j": 7,
+     "v": 7,
      "e": null,
      "d": 0,
-     "sg": 113,
-     "pts": 12,
+     "sg": 144,
+     "pts": 14,
      "ap": 100,
      "escudo": "escudos/basquete-minas-storm-438d6e.png"
     },
@@ -1798,13 +1798,13 @@
     {
      "pos": 3,
      "time": "Unifacisa",
-     "j": 6,
+     "j": 7,
      "v": 5,
      "e": null,
-     "d": 1,
-     "sg": 61,
-     "pts": 11,
-     "ap": 83,
+     "d": 2,
+     "sg": 30,
+     "pts": 12,
+     "ap": 71,
      "escudo": "escudos/basquete-unifacisa-f360c0.png"
     },
     {
