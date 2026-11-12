@@ -1,8 +1,7 @@
 {
- "atualizadoEm": "2026-11-12T09:54:24.894Z",
+ "atualizadoEm": "2026-11-12T18:23:14.402Z",
  "exemplo": false,
  "avisos": [
-  "CBF (Copa do Brasil Sub-17 2026, jogos): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -3758,7 +3757,7 @@
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
    "competicao": "Carioca Feminino",
-   "inicio": "2026-11-25T15:00:00-03:00",
+   "inicio": "2026-11-24T15:00:00-03:00",
    "semHora": false,
    "local": "João Saldanha - RJ",
    "mandante": true,

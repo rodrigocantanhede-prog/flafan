@@ -2018,6 +2018,72 @@
   "categoria": "Sub-20"
  },
  {
+  "id": "cbf-832432",
+  "modalidade": "base",
+  "adversario": "BNT",
+  "competicao": "Copa do Brasil Sub-17",
+  "inicio": "2026-02-24T15:00:00-03:00",
+  "semHora": false,
+  "local": "Estádio da Gávea - Rio de Janeiro - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 4,
+   "adversario": 0
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-17",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F38052%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/flamengo-x-bnt/832432",
+  "categoria": "Sub-17"
+ },
+ {
+  "id": "cbf-833296",
+  "modalidade": "base",
+  "adversario": "Atlético Mineiro",
+  "competicao": "Copa do Brasil Sub-17",
+  "inicio": "2026-03-04T15:00:00-03:00",
+  "semHora": false,
+  "local": "ARENA MRV - Belo Horizonte - MG",
+  "mandante": false,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 0,
+   "adversario": 1
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-17",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62194%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/atletico-mineiro-x-flamengo/833296",
+  "categoria": "Sub-17"
+ },
+ {
+  "id": "cbf-833305",
+  "modalidade": "base",
+  "adversario": "Atlético Mineiro",
+  "competicao": "Copa do Brasil Sub-17",
+  "inicio": "2026-03-10T15:00:00-03:00",
+  "semHora": false,
+  "local": "Estádio da Gávea - Rio de Janeiro - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 2,
+   "adversario": 3
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/sub-17",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62194%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/flamengo-x-atletico-mineiro/833305",
+  "categoria": "Sub-17"
+ },
+ {
   "id": "cbf-832279",
   "modalidade": "futebol-feminino",
   "adversario": "Mixto",
@@ -2880,71 +2946,5 @@
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/feminino-sub-20/2026/flamengo-x-sao-paulo/834710",
   "categoria": "Sub-20",
   "tabela": "Brasileiro Feminino Sub-20"
- },
- {
-  "id": "cbf-832432",
-  "modalidade": "base",
-  "adversario": "BNT",
-  "competicao": "Copa do Brasil Sub-17",
-  "inicio": "2026-02-24T15:00:00-03:00",
-  "semHora": false,
-  "local": "Estádio da Gávea - Rio de Janeiro - RJ",
-  "mandante": true,
-  "transmissao": [],
-  "placar": {
-   "flamengo": 4,
-   "adversario": 0
-  },
-  "status": "encerrado",
-  "fonte": "automatica",
-  "fonteInfo": "CBF",
-  "campeonatoCbf": "copa-do-brasil/sub-17",
-  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F38052%2Fescudo.jpg&w=128&q=70",
-  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/flamengo-x-bnt/832432",
-  "categoria": "Sub-17"
- },
- {
-  "id": "cbf-833296",
-  "modalidade": "base",
-  "adversario": "Atlético Mineiro",
-  "competicao": "Copa do Brasil Sub-17",
-  "inicio": "2026-03-04T15:00:00-03:00",
-  "semHora": false,
-  "local": "ARENA MRV - Belo Horizonte - MG",
-  "mandante": false,
-  "transmissao": [],
-  "placar": {
-   "flamengo": 0,
-   "adversario": 1
-  },
-  "status": "encerrado",
-  "fonte": "automatica",
-  "fonteInfo": "CBF",
-  "campeonatoCbf": "copa-do-brasil/sub-17",
-  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62194%2Fescudo.jpg&w=128&q=70",
-  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/atletico-mineiro-x-flamengo/833296",
-  "categoria": "Sub-17"
- },
- {
-  "id": "cbf-833305",
-  "modalidade": "base",
-  "adversario": "Atlético Mineiro",
-  "competicao": "Copa do Brasil Sub-17",
-  "inicio": "2026-03-10T15:00:00-03:00",
-  "semHora": false,
-  "local": "Estádio da Gávea - Rio de Janeiro - RJ",
-  "mandante": true,
-  "transmissao": [],
-  "placar": {
-   "flamengo": 2,
-   "adversario": 3
-  },
-  "status": "encerrado",
-  "fonte": "automatica",
-  "fonteInfo": "CBF",
-  "campeonatoCbf": "copa-do-brasil/sub-17",
-  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62194%2Fescudo.jpg&w=128&q=70",
-  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/sub-17/2026/flamengo-x-atletico-mineiro/833305",
-  "categoria": "Sub-17"
  }
 ]
