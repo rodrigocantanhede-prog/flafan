@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-12T00:48:23.055Z",
+ "atualizadoEm": "2026-11-12T09:54:24.894Z",
  "exemplo": false,
  "avisos": [
+  "CBF (Copa do Brasil Sub-17 2026, jogos): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -3402,22 +3403,24 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "site-futebol-feminino-2026-11-11-internacional",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "competicao": "Copa do Brasil Feminina – final (ida)",
-   "inicio": "2026-11-11T21:30:00-03:00",
-   "semHora": false,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "mandante": true,
+   "id": "m-f2c1013fc8",
    "transmissao": [
     "Lance!TV"
    ],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
+   "placar": {
+    "flamengo": 1,
+    "adversario": 3
+   },
+   "status": "encerrado",
+   "mandante": true,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "competicao": "Copa do Brasil Feminina – final (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-11T21:30:00-03:00",
+   "semHora": false,
+   "fonteInfo": "CBF (tabela detalhada); CNN Brasil; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3649,7 +3652,10 @@
    "semHora": false,
    "local": "Maracanã, Rio de Janeiro",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "SporTV",
+    "Premiere"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica+manual",

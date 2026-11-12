@@ -3,7 +3,7 @@ id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_f
 ,Vôlei feminino,Londrina,Superliga Feminina,06/11/2026,,Londrina (PR),fora,,3,0,encerrado,,,,Web Vôlei
 ,Vôlei feminino,Fluminense,Superliga Feminina,12/11/2026,21:00,"Maracanãzinho, Rio de Janeiro",casa,SporTV 2,,,,,,,Olympics.com
 ,Vôlei feminino,Sesi Vôlei Bauru,Superliga Feminina,17/11/2026,21:00,Bauru (SP),fora,,,,,,,,Olympics.com
-,Futebol masculino,Athletico-PR,Brasileirão Série A,18/11/2026,20:30,"Maracanã, Rio de Janeiro",casa,,,,,,,,Site do Flamengo
+,Futebol masculino,Athletico-PR,Brasileirão Série A,18/11/2026,20:30,"Maracanã, Rio de Janeiro",casa,SporTV; Premiere,,,,,,,Site do Flamengo; Máquina do Esporte; Trivela
 ,Basquete,Unifacisa,NBB,19/11/2026,,Campina Grande (PB),fora,,,,,,,,RealGM
 ,Futebol masculino,Palmeiras,Brasileirão Série A,21/11/2026,16:30,"Nubank Parque, São Paulo",fora,,,,,,,,Diário do Rio
 ,Basquete,Basquete Cearense,NBB,22/11/2026,,Fortaleza (CE),fora,,,,,,,,RealGM
@@ -30,7 +30,7 @@ id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_f
 ,Vôlei feminino,Mackenzie,Superliga Feminina,31/10/2026,,"Tijuca Tênis Clube, Rio de Janeiro",casa,,3,0,encerrado,,,,Web Vôlei
 ,Futebol feminino,Bahia,Copa do Brasil Feminina – semifinal (volta),07/11/2026,21:30,"Estádio Luso-Brasileiro, Rio de Janeiro",casa,,3,2,encerrado,,Classificado para a final inédita da Copa do Brasil Feminina,,Site do Flamengo
 ,Basquete,Sesi Franca,NBB,10/11/2026,20:30,"Maracanãzinho, Rio de Janeiro",casa,,,,,,,,LNB
-,Futebol feminino,Internacional,Copa do Brasil Feminina – final (ida),11/11/2026,,"Estádio Luso-Brasileiro, Rio de Janeiro",casa,Lance!TV,,,agendado,,,,CBF (tabela detalhada); Lance; Coluna do Fla
+,Futebol feminino,Internacional,Copa do Brasil Feminina – final (ida),11/11/2026,21:30,"Estádio Luso-Brasileiro, Rio de Janeiro",casa,Lance!TV,1,3,encerrado,,,,CBF (tabela detalhada); CNN Brasil; Terra
 ,Basquete,Paisas,Liga Sul-Americana – quartas (Grupo F),13/11/2026,22:40,Coliseo Universidad de Medellín (Colômbia),fora,Basquete TV,,,,,,,LNB; FIBA (onde assistir a Liga Sul-Americana 2026)
 ,Basquete,CAIXA/Brasília,Liga Sul-Americana – quartas (Grupo F),14/11/2026,18:10,Coliseo Universidad de Medellín (Colômbia),casa,Basquete TV,,,,,"Jogo em quadra neutra, em Medellín",,LNB; FIBA (onde assistir a Liga Sul-Americana 2026)
 ,Futebol feminino,Internacional,Copa do Brasil Feminina – final (volta),15/11/2026,,"Beira-Rio, Porto Alegre",fora,Lance!TV,,,agendado,,,,CBF (tabela detalhada); Lance; Mais Goiás

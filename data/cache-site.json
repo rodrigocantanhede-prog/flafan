@@ -68,23 +68,6 @@
   "pagina": "futebol"
  },
  {
-  "id": "site-futebol-feminino-2026-11-11-internacional",
-  "modalidade": "futebol-feminino",
-  "adversario": "Internacional",
-  "competicao": "Copa do Brasil Feminino",
-  "inicio": "2026-11-11T21:30:00-03:00",
-  "semHora": false,
-  "local": "Luso-Brasileiro",
-  "mandante": true,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/thumbnail_Sport_Club_Internacional_logo_svg_5205e76a93/thumbnail_Sport_Club_Internacional_logo_svg_5205e76a93.webp",
-  "pagina": "futebol-feminino"
- },
- {
   "id": "site-futebol-feminino-2026-11-15-internacional",
   "modalidade": "futebol-feminino",
   "adversario": "Internacional",
