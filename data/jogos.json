@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-12T18:23:14.402Z",
+ "atualizadoEm": "2026-11-13T01:09:07.885Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3402,7 +3402,14 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "m-f2c1013fc8",
+   "id": "cbf-835472",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "competicao": "Copa do Brasil Feminina – final (ida)",
+   "inicio": "2026-11-11T21:30:00-03:00",
+   "semHora": false,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "mandante": true,
    "transmissao": [
     "Lance!TV"
    ],
@@ -3411,15 +3418,10 @@
     "adversario": 3
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "competicao": "Copa do Brasil Feminina – final (ida)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "inicio": "2026-11-11T21:30:00-03:00",
-   "semHora": false,
-   "fonteInfo": "CBF (tabela detalhada); CNN Brasil; Terra",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/feminino",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-internacional/835472",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3552,22 +3554,21 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "site-futebol-feminino-2026-11-15-internacional",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "inicio": "2026-11-15T16:00:00-03:00",
-   "semHora": false,
-   "local": "Beira-Rio, Porto Alegre",
-   "mandante": false,
+   "id": "m-21d2536e55",
    "transmissao": [
     "Lance!TV"
    ],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol-feminino",
+   "mandante": false,
+   "local": "Beira-Rio, Porto Alegre",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-15T00:00:00-03:00",
+   "semHora": true,
+   "fonteInfo": "CBF (tabela detalhada); Lance; Mais Goiás",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {

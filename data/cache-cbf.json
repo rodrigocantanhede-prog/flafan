@@ -2672,6 +2672,27 @@
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-bahia/835451"
  },
  {
+  "id": "cbf-835472",
+  "modalidade": "futebol-feminino",
+  "adversario": "Internacional",
+  "competicao": "Copa do Brasil Feminina",
+  "inicio": "2026-11-11T21:30:00-03:00",
+  "semHora": false,
+  "local": "Luso Brasileiro - Rio de Janeiro - RJ",
+  "mandante": true,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 1,
+   "adversario": 3
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "campeonatoCbf": "copa-do-brasil/feminino",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20011%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-internacional/835472"
+ },
+ {
   "id": "cbf-832442",
   "modalidade": "futebol-feminino",
   "adversario": "Litoral Norte F. C.",
