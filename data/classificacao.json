@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-13T01:09:07.885Z",
+ "atualizadoEm": "2026-11-13T09:37:03.907Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 12/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 13/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 12/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 12/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 12/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 12/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 12/11/2026 (site da LNB)",
+   "atualizado": "em 13/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1797,6 +1797,29 @@
     },
     {
      "pos": 3,
+     "time": "Pinheiros",
+     "j": 8,
+     "v": 6,
+     "e": null,
+     "d": 2,
+     "sg": 97,
+     "pts": 14,
+     "ap": 75,
+     "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
+    },
+    {
+     "pos": 4,
+     "time": "Flamengo",
+     "j": 7,
+     "v": 5,
+     "e": null,
+     "d": 2,
+     "sg": 52,
+     "pts": 12,
+     "ap": 71
+    },
+    {
+     "pos": 5,
      "time": "Unifacisa",
      "j": 7,
      "v": 5,
@@ -1806,29 +1829,6 @@
      "pts": 12,
      "ap": 71,
      "escudo": "escudos/basquete-unifacisa-f360c0.png"
-    },
-    {
-     "pos": 4,
-     "time": "Pinheiros",
-     "j": 7,
-     "v": 5,
-     "e": null,
-     "d": 2,
-     "sg": 85,
-     "pts": 12,
-     "ap": 71,
-     "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
-    },
-    {
-     "pos": 5,
-     "time": "Flamengo",
-     "j": 7,
-     "v": 5,
-     "e": null,
-     "d": 2,
-     "sg": 52,
-     "pts": 12,
-     "ap": 71
     },
     {
      "pos": 6,
@@ -1905,13 +1905,13 @@
     {
      "pos": 12,
      "time": "Corinthians",
-     "j": 5,
+     "j": 6,
      "v": 2,
      "e": null,
-     "d": 3,
-     "sg": 9,
-     "pts": 7,
-     "ap": 40,
+     "d": 4,
+     "sg": -3,
+     "pts": 8,
+     "ap": 33,
      "escudo": "escudos/basquete-corinthians-c187b9.png"
     },
     {
@@ -1994,10 +1994,20 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 12/11/2026 (site da CBV)",
+   "atualizado": "em 13/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
+     "time": "Sesc RJ Flamengo",
+     "j": 5,
+     "v": 5,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 15
+    },
+    {
+     "pos": 2,
      "time": "Sesi Vôlei Bauru",
      "j": 5,
      "v": 5,
@@ -2008,7 +2018,7 @@
      "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
     },
     {
-     "pos": 2,
+     "pos": 3,
      "time": "Gerdau Minas",
      "j": 5,
      "v": 5,
@@ -2017,16 +2027,6 @@
      "sg": null,
      "pts": 14,
      "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
-    },
-    {
-     "pos": 3,
-     "time": "Sesc RJ Flamengo",
-     "j": 4,
-     "v": 4,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 12
     },
     {
      "pos": 4,
@@ -2075,10 +2075,10 @@
     {
      "pos": 8,
      "time": "Fluminense",
-     "j": 3,
+     "j": 4,
      "v": 1,
      "e": null,
-     "d": 2,
+     "d": 3,
      "sg": null,
      "pts": 3,
      "escudo": "escudos/volei-fluminense-c0deef.png"

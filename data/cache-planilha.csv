@@ -1,7 +1,7 @@
 id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_fla,placar_adv,status,acao,observacao,escudo_adv,fonte
 ,Basquete,Brasília,NBB,04/11/2026,20:15,"Arena Nilson Nelson, Brasília",fora,,91,87,encerrado,,,,LNB
 ,Vôlei feminino,Londrina,Superliga Feminina,06/11/2026,,Londrina (PR),fora,,3,0,encerrado,,,,Web Vôlei
-,Vôlei feminino,Fluminense,Superliga Feminina,12/11/2026,21:00,"Maracanãzinho, Rio de Janeiro",casa,SporTV 2,,,,,,,Olympics.com
+,Vôlei feminino,Fluminense,Superliga Feminina,12/11/2026,21:00,"Maracanãzinho, Rio de Janeiro",casa,SporTV 2,3,0,encerrado,,,,Site do Flamengo; Web Vôlei; Terra
 ,Vôlei feminino,Sesi Vôlei Bauru,Superliga Feminina,17/11/2026,21:00,Bauru (SP),fora,,,,,,,,Olympics.com
 ,Futebol masculino,Athletico-PR,Brasileirão Série A,18/11/2026,20:30,"Maracanã, Rio de Janeiro",casa,SporTV; Premiere,,,,,,,Site do Flamengo; Máquina do Esporte; Trivela
 ,Basquete,Unifacisa,NBB,19/11/2026,,Campina Grande (PB),fora,,,,,,,,RealGM
@@ -33,5 +33,5 @@ id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_f
 ,Futebol feminino,Internacional,Copa do Brasil Feminina – final (ida),11/11/2026,21:30,"Estádio Luso-Brasileiro, Rio de Janeiro",casa,Lance!TV,1,3,encerrado,,,,CBF (tabela detalhada); CNN Brasil; Terra
 ,Basquete,Paisas,Liga Sul-Americana – quartas (Grupo F),13/11/2026,22:40,Coliseo Universidad de Medellín (Colômbia),fora,Basquete TV,,,,,,,LNB; FIBA (onde assistir a Liga Sul-Americana 2026)
 ,Basquete,CAIXA/Brasília,Liga Sul-Americana – quartas (Grupo F),14/11/2026,18:10,Coliseo Universidad de Medellín (Colômbia),casa,Basquete TV,,,,,"Jogo em quadra neutra, em Medellín",,LNB; FIBA (onde assistir a Liga Sul-Americana 2026)
-,Futebol feminino,Internacional,Copa do Brasil Feminina – final (volta),15/11/2026,,"Beira-Rio, Porto Alegre",fora,Lance!TV,,,agendado,,,,CBF (tabela detalhada); Lance; Mais Goiás
+,Futebol feminino,Internacional,Copa do Brasil Feminina – final (volta),15/11/2026,16:00,"Beira-Rio, Porto Alegre",fora,Lance!TV,,,agendado,,,,CBF (tabela detalhada); Lance; Mais Goiás
 ,Basquete,Boca Juniors,Liga Sul-Americana – quartas (Grupo F),15/11/2026,18:10,Coliseo Universidad de Medellín (Colômbia),fora,Basquete TV,,,,,,,LNB; FIBA (onde assistir a Liga Sul-Americana 2026)

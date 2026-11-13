@@ -135,24 +135,6 @@
   "pagina": "futebol-feminino"
  },
  {
-  "id": "site-volei-feminino-2026-11-12-fluminense",
-  "modalidade": "volei-feminino",
-  "adversario": "Fluminense",
-  "competicao": "Superliga",
-  "inicio": "2026-11-12T21:00:00-03:00",
-  "semHora": false,
-  "local": "Maracanãzinho (RJ)",
-  "mandante": true,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Fluminense_FC_escudo_3d85ea84e5/Fluminense_FC_escudo_3d85ea84e5.png",
-  "pagina": "volei",
-  "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611"
- },
- {
   "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
   "modalidade": "volei-feminino",
   "adversario": "SESI Vôlei Bauru",
@@ -253,5 +235,23 @@
   "fonteInfo": "Site do Flamengo",
   "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/abel_moda_volei_8aed27edf5/abel_moda_volei_8aed27edf5.webp",
   "pagina": "volei"
+ },
+ {
+  "id": "site-volei-feminino-2026-11-12-fluminense",
+  "modalidade": "volei-feminino",
+  "adversario": "Fluminense",
+  "competicao": "Superliga",
+  "inicio": "2026-11-12T21:00:00-03:00",
+  "semHora": false,
+  "local": "Maracanãzinho (RJ)",
+  "mandante": true,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "Site do Flamengo",
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/Fluminense_FC_escudo_3d85ea84e5/Fluminense_FC_escudo_3d85ea84e5.png",
+  "pagina": "volei",
+  "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611"
  }
 ]

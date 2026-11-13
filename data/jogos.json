@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-13T01:09:07.885Z",
+ "atualizadoEm": "2026-11-13T09:37:03.907Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3436,8 +3436,11 @@
    "transmissao": [
     "SporTV 2"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
@@ -3566,8 +3569,8 @@
    "fonte": "manual",
    "modalidade": "futebol-feminino",
    "adversario": "Internacional",
-   "inicio": "2026-11-15T00:00:00-03:00",
-   "semHora": true,
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
    "fonteInfo": "CBF (tabela detalhada); Lance; Mais Goiás",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
