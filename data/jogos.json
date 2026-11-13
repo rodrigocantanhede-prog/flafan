@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-13T09:37:03.907Z",
+ "atualizadoEm": "2026-11-13T17:48:23.146Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -2777,7 +2777,7 @@
    "fonte": "automatica+manual",
    "fonteInfo": "LNB",
    "tabela": "NBB",
-   "escudoAdv": "escudos/basquete-bauru-28da4b.png"
+   "escudoAdv": "escudos/basquete-bauru-91d95a.png"
   },
   {
    "id": "cbf-832199",
@@ -3402,14 +3402,7 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "cbf-835472",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "competicao": "Copa do Brasil Feminina – final (ida)",
-   "inicio": "2026-11-11T21:30:00-03:00",
-   "semHora": false,
-   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
-   "mandante": true,
+   "id": "m-f2c1013fc8",
    "transmissao": [
     "Lance!TV"
    ],
@@ -3418,10 +3411,15 @@
     "adversario": 3
    },
    "status": "encerrado",
-   "fonte": "automatica+manual",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "copa-do-brasil/feminino",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-internacional/835472",
+   "mandante": true,
+   "local": "Estádio Luso-Brasileiro, Rio de Janeiro",
+   "competicao": "Copa do Brasil Feminina – final (ida)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-11T21:30:00-03:00",
+   "semHora": false,
+   "fonteInfo": "CBF (tabela detalhada); CNN Brasil; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3457,8 +3455,11 @@
    "local": "Nivaldo Pereira",
    "mandante": false,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 2,
+    "adversario": 1
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6526",
@@ -3557,21 +3558,22 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "m-21d2536e55",
+   "id": "site-futebol-feminino-2026-11-15-internacional",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
+   "local": "Beira-Rio, Porto Alegre",
+   "mandante": false,
    "transmissao": [
     "Lance!TV"
    ],
    "placar": null,
    "status": "agendado",
-   "mandante": false,
-   "local": "Beira-Rio, Porto Alegre",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "inicio": "2026-11-15T16:00:00-03:00",
-   "semHora": false,
-   "fonteInfo": "CBF (tabela detalhada); Lance; Mais Goiás",
+   "fonte": "automatica+manual",
+   "fonteInfo": "Site do Flamengo",
+   "pagina": "futebol-feminino",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3683,7 +3685,7 @@
    "fonte": "automatica+manual",
    "fonteInfo": "LNB",
    "tabela": "NBB",
-   "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
+   "escudoAdv": "escudos/basquete-unifacisa-a5807a.png"
   },
   {
    "id": "ferj-6463",
@@ -4135,7 +4137,7 @@
    "fonte": "automatica",
    "fonteInfo": "LNB",
    "tabela": "NBB",
-   "escudoAdv": "escudos/basquete-bauru-basket-28da4b.png"
+   "escudoAdv": "escudos/basquete-bauru-basket-91d95a.png"
   },
   {
    "id": "lnb-27402",
@@ -4186,7 +4188,7 @@
    "fonte": "automatica",
    "fonteInfo": "LNB",
    "tabela": "NBB",
-   "escudoAdv": "escudos/basquete-unifacisa-f360c0.png"
+   "escudoAdv": "escudos/basquete-unifacisa-a5807a.png"
   },
   {
    "id": "lnb-27432",
