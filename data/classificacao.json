@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-13T23:38:37.682Z",
+ "atualizadoEm": "2026-11-14T06:31:29.349Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 13/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 14/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 13/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 13/11/2026 (site da LNB)",
+   "atualizado": "em 14/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1880,18 +1880,6 @@
     },
     {
      "pos": 10,
-     "time": "Paulistano",
-     "j": 6,
-     "v": 3,
-     "e": null,
-     "d": 3,
-     "sg": -16,
-     "pts": 9,
-     "ap": 50,
-     "escudo": "escudos/basquete-paulistano-d2670e.png"
-    },
-    {
-     "pos": 11,
      "time": "Bauru Basket",
      "j": 7,
      "v": 3,
@@ -1903,7 +1891,31 @@
      "escudo": "escudos/basquete-bauru-basket-91d95a.png"
     },
     {
+     "pos": 11,
+     "time": "São José Basketball",
+     "j": 7,
+     "v": 3,
+     "e": null,
+     "d": 4,
+     "sg": -10,
+     "pts": 10,
+     "ap": 43,
+     "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
+    },
+    {
      "pos": 12,
+     "time": "Paulistano",
+     "j": 7,
+     "v": 3,
+     "e": null,
+     "d": 4,
+     "sg": -30,
+     "pts": 10,
+     "ap": 43,
+     "escudo": "escudos/basquete-paulistano-d2670e.png"
+    },
+    {
+     "pos": 13,
      "time": "Corinthians",
      "j": 6,
      "v": 2,
@@ -1913,18 +1925,6 @@
      "pts": 8,
      "ap": 33,
      "escudo": "escudos/basquete-corinthians-c187b9.png"
-    },
-    {
-     "pos": 13,
-     "time": "São José Basketball",
-     "j": 6,
-     "v": 2,
-     "e": null,
-     "d": 4,
-     "sg": -24,
-     "pts": 8,
-     "ap": 33,
-     "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
     },
     {
      "pos": 14,
@@ -1994,10 +1994,21 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 13/11/2026 (site da CBV)",
+   "atualizado": "em 14/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
+     "time": "Sesi Vôlei Bauru",
+     "j": 6,
+     "v": 6,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 17,
+     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
+    },
+    {
+     "pos": 2,
      "time": "Sesc RJ Flamengo",
      "j": 5,
      "v": 5,
@@ -2005,17 +2016,6 @@
      "d": 0,
      "sg": null,
      "pts": 15
-    },
-    {
-     "pos": 2,
-     "time": "Sesi Vôlei Bauru",
-     "j": 5,
-     "v": 5,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 15,
-     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
     },
     {
      "pos": 3,
@@ -2031,10 +2031,10 @@
     {
      "pos": 4,
      "time": "Dentil Praia Clube",
-     "j": 4,
+     "j": 5,
      "v": 4,
      "e": null,
-     "d": 0,
+     "d": 1,
      "sg": null,
      "pts": 12,
      "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
@@ -2042,12 +2042,12 @@
     {
      "pos": 5,
      "time": "Osasco São Cristóvão Saúde",
-     "j": 4,
+     "j": 5,
      "v": 4,
      "e": null,
-     "d": 0,
+     "d": 1,
      "sg": null,
-     "pts": 11,
+     "pts": 12,
      "escudo": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
     },
     {
@@ -2085,6 +2085,17 @@
     },
     {
      "pos": 9,
+     "time": "Batavo Mackenzie",
+     "j": 5,
+     "v": 1,
+     "e": null,
+     "d": 4,
+     "sg": null,
+     "pts": 3,
+     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
+    },
+    {
+     "pos": 10,
      "time": "Sancor Seguros Vôlei",
      "j": 5,
      "v": 0,
@@ -2095,7 +2106,7 @@
      "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
     },
     {
-     "pos": 10,
+     "pos": 11,
      "time": "Paulistano Barueri",
      "j": 6,
      "v": 0,
@@ -2104,17 +2115,6 @@
      "sg": null,
      "pts": 1,
      "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
-    },
-    {
-     "pos": 11,
-     "time": "Batavo Mackenzie",
-     "j": 4,
-     "v": 0,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 0,
-     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
     },
     {
      "pos": 12,
