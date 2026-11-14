@@ -189,22 +189,25 @@
   "categoria": "Sub-16"
  },
  {
-  "id": "ferj-6201",
+  "id": "ferj-6474",
   "modalidade": "base",
-  "adversario": "Bangu",
-  "competicao": "Copa Rio Sub-17",
-  "inicio": "2026-11-14T13:00:00-03:00",
+  "adversario": "Vasco da Gama",
+  "competicao": "Carioca Sub-20",
+  "inicio": "2026-11-14T10:00:00-03:00",
   "semHora": false,
-  "local": "José Bastos Padilha",
-  "mandante": true,
+  "local": "Nivaldo Pereira",
+  "mandante": false,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 1,
+   "adversario": 1
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_17.gif",
-  "link": "https://www.fferj.com.br/partidas/6201",
-  "categoria": "Sub-17"
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
+  "link": "https://www.fferj.com.br/partidas/6474",
+  "categoria": "Sub-20"
  },
  {
   "id": "ferj-6235",
@@ -216,8 +219,11 @@
   "local": "José Bastos Padilha",
   "mandante": true,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 3,
+   "adversario": 0
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_17.gif",
@@ -276,21 +282,21 @@
   "link": "https://www.fferj.com.br/partidas/6521"
  },
  {
-  "id": "ferj-6474",
+  "id": "ferj-6201",
   "modalidade": "base",
-  "adversario": "Vasco da Gama",
-  "competicao": "Carioca Sub-20",
-  "inicio": "2026-11-14T10:00:00-03:00",
+  "adversario": "Bangu",
+  "competicao": "Copa Rio Sub-17",
+  "inicio": "2026-11-14T13:00:00-03:00",
   "semHora": false,
-  "local": "Nivaldo Pereira",
-  "mandante": false,
+  "local": "José Bastos Padilha",
+  "mandante": true,
   "transmissao": [],
   "placar": null,
   "status": "agendado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
-  "link": "https://www.fferj.com.br/partidas/6474",
-  "categoria": "Sub-20"
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_17.gif",
+  "link": "https://www.fferj.com.br/partidas/6201",
+  "categoria": "Sub-17"
  }
 ]
