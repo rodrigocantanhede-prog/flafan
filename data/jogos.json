@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-14T06:31:29.349Z",
+ "atualizadoEm": "2026-11-14T15:08:51.267Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3473,8 +3473,11 @@
    "transmissao": [
     "Basquete TV"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 104,
+    "adversario": 71
+   },
+   "status": "encerrado",
    "mandante": false,
    "local": "Coliseo Universidad de Medellín (Colômbia)",
    "competicao": "Liga Sul-Americana – quartas (Grupo F)",
@@ -3483,7 +3486,7 @@
    "adversario": "Paisas",
    "inicio": "2026-11-13T22:40:00-03:00",
    "semHora": false,
-   "fonteInfo": "LNB; FIBA (onde assistir a Liga Sul-Americana 2026)",
+   "fonteInfo": "Site do Flamengo; LNB; FIBA",
    "escudoAdv": "escudos/basquete-paisas.png"
   },
   {

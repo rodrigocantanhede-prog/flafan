@@ -189,24 +189,6 @@
   "categoria": "Sub-16"
  },
  {
-  "id": "ferj-6474",
-  "modalidade": "base",
-  "adversario": "Vasco da Gama",
-  "competicao": "Carioca Sub-20",
-  "inicio": "2026-11-14T10:00:00-03:00",
-  "semHora": false,
-  "local": "Nivaldo Pereira",
-  "mandante": false,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
-  "link": "https://www.fferj.com.br/partidas/6474",
-  "categoria": "Sub-20"
- },
- {
   "id": "ferj-6201",
   "modalidade": "base",
   "adversario": "Bangu",
@@ -292,5 +274,23 @@
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
   "link": "https://www.fferj.com.br/partidas/6521"
+ },
+ {
+  "id": "ferj-6474",
+  "modalidade": "base",
+  "adversario": "Vasco da Gama",
+  "competicao": "Carioca Sub-20",
+  "inicio": "2026-11-14T10:00:00-03:00",
+  "semHora": false,
+  "local": "Nivaldo Pereira",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
+  "link": "https://www.fferj.com.br/partidas/6474",
+  "categoria": "Sub-20"
  }
 ]
