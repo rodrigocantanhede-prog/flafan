@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-15T01:58:38.161Z",
+ "atualizadoEm": "2026-11-15T09:32:02.584Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 14/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 15/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -220,6 +220,27 @@
     },
     {
      "pos": 11,
+     "time": "Vasco",
+     "j": 34,
+     "v": 12,
+     "e": 8,
+     "d": 14,
+     "gp": 45,
+     "gc": 50,
+     "sg": -5,
+     "pts": 44,
+     "ap": 43,
+     "ca": 65,
+     "cv": 3,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-vasco-5dbf77.webp"
+    },
+    {
+     "pos": 12,
      "time": "Botafogo",
      "j": 34,
      "v": 11,
@@ -240,7 +261,7 @@
      "escudo": "escudos/futebol-botafogo-db3e70.png"
     },
     {
-     "pos": 12,
+     "pos": 13,
      "time": "Coritiba",
      "j": 34,
      "v": 11,
@@ -259,27 +280,6 @@
       "D"
      ],
      "escudo": "escudos/futebol-coritiba-2c60dd.png"
-    },
-    {
-     "pos": 13,
-     "time": "Vasco",
-     "j": 33,
-     "v": 11,
-     "e": 8,
-     "d": 14,
-     "gp": 43,
-     "gc": 50,
-     "sg": -7,
-     "pts": 41,
-     "ap": 41,
-     "ca": 64,
-     "cv": 3,
-     "ult": [
-      "V",
-      "D",
-      "V"
-     ],
-     "escudo": "escudos/futebol-vasco-5dbf77.webp"
     },
     {
      "pos": 14,
@@ -410,16 +410,16 @@
     {
      "pos": 20,
      "time": "Chapecoense",
-     "j": 33,
+     "j": 34,
      "v": 4,
      "e": 9,
-     "d": 20,
+     "d": 21,
      "gp": 33,
-     "gc": 68,
-     "sg": -35,
+     "gc": 70,
+     "sg": -37,
      "pts": 21,
-     "ap": 21,
-     "ca": 76,
+     "ap": 20,
+     "ca": 79,
      "cv": 4,
      "ult": [
       "V",
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 15/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 15/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 15/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 14/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 15/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 14/11/2026 (site da LNB)",
+   "atualizado": "em 15/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1994,7 +1994,7 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 14/11/2026 (site da CBV)",
+   "atualizado": "em 15/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
@@ -2053,12 +2053,12 @@
     {
      "pos": 6,
      "time": "Brusque Vôlei",
-     "j": 4,
-     "v": 1,
+     "j": 5,
+     "v": 2,
      "e": null,
      "d": 3,
      "sg": null,
-     "pts": 5,
+     "pts": 8,
      "escudo": "escudos/volei-brusque-volei-ceea88.png"
     },
     {
@@ -2119,10 +2119,10 @@
     {
      "pos": 12,
      "time": "Brasília Vôlei / BRB",
-     "j": 4,
+     "j": 5,
      "v": 0,
      "e": null,
-     "d": 4,
+     "d": 5,
      "sg": null,
      "pts": 0,
      "escudo": "escudos/volei-brasilia-volei-brb-923451.png"
