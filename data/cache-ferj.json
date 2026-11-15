@@ -210,6 +210,27 @@
   "categoria": "Sub-20"
  },
  {
+  "id": "ferj-6201",
+  "modalidade": "base",
+  "adversario": "Bangu",
+  "competicao": "Copa Rio Sub-17",
+  "inicio": "2026-11-14T13:00:00-03:00",
+  "semHora": false,
+  "local": "José Bastos Padilha",
+  "mandante": true,
+  "transmissao": [],
+  "placar": {
+   "flamengo": 2,
+   "adversario": 0
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_17.gif",
+  "link": "https://www.fferj.com.br/partidas/6201",
+  "categoria": "Sub-17"
+ },
+ {
   "id": "ferj-6235",
   "modalidade": "base",
   "adversario": "Bangu",
@@ -280,23 +301,5 @@
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
   "link": "https://www.fferj.com.br/partidas/6521"
- },
- {
-  "id": "ferj-6201",
-  "modalidade": "base",
-  "adversario": "Bangu",
-  "competicao": "Copa Rio Sub-17",
-  "inicio": "2026-11-14T13:00:00-03:00",
-  "semHora": false,
-  "local": "José Bastos Padilha",
-  "mandante": true,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_17.gif",
-  "link": "https://www.fferj.com.br/partidas/6201",
-  "categoria": "Sub-17"
  }
 ]
