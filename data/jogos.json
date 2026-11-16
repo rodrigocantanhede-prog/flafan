@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-15T17:15:14.095Z",
+ "atualizadoEm": "2026-11-16T06:37:02.263Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3579,8 +3579,11 @@
    "transmissao": [
     "Lance!TV"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 0,
+    "adversario": 1
+   },
+   "status": "encerrado",
    "mandante": false,
    "local": "Beira-Rio, Porto Alegre",
    "competicao": "Copa do Brasil Feminina – final (volta)",
@@ -3589,7 +3592,8 @@
    "adversario": "Internacional",
    "inicio": "2026-11-15T16:00:00-03:00",
    "semHora": false,
-   "fonteInfo": "CBF (tabela detalhada); Lance; Mais Goiás",
+   "observacao": "Internacional campeã (4 x 1 no agregado)",
+   "fonteInfo": "CBF (tabela detalhada); Gazeta Esportiva; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3597,8 +3601,11 @@
    "transmissao": [
     "Basquete TV"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 82,
+    "adversario": 74
+   },
+   "status": "encerrado",
    "mandante": false,
    "local": "Coliseo Universidad de Medellín (Colômbia)",
    "competicao": "Liga Sul-Americana – quartas (Grupo F)",
@@ -3607,7 +3614,8 @@
    "adversario": "Boca Juniors",
    "inicio": "2026-11-15T18:10:00-03:00",
    "semHora": false,
-   "fonteInfo": "LNB; FIBA (onde assistir a Liga Sul-Americana 2026)",
+   "observacao": "Classificado para o Final Four (5 e 6/12)",
+   "fonteInfo": "Netfla; Basquet Plus; LNB",
    "escudoAdv": "escudos/basquete-boca-juniors.png"
   },
   {
