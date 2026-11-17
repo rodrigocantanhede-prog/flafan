@@ -1,8 +1,8 @@
 {
- "atualizadoEm": "2026-11-17T02:59:06.732Z",
+ "atualizadoEm": "2026-11-17T13:31:37.321Z",
  "exemplo": false,
  "avisos": [
-  "CBF (Brasileiro Feminino Sub-17 2026, jogos): The operation was aborted due to timeout",
+  "CBF (Brasileiro Sub-20 2026, jogos): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -923,29 +923,6 @@
    "escudoAdv": "escudos/futebol-atletico-mineiro.png"
   },
   {
-   "id": "cbf-832592",
-   "modalidade": "base",
-   "adversario": "Bahia",
-   "competicao": "Brasileiro Sub-20",
-   "inicio": "2026-04-30T15:00:00-03:00",
-   "semHora": false,
-   "local": "CT Evaristo de Macedo - Camacari - BA",
-   "mandante": false,
-   "transmissao": [],
-   "placar": {
-    "flamengo": 0,
-    "adversario": 1
-   },
-   "status": "encerrado",
-   "fonte": "automatica",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "campeonato-brasileiro/sub-20",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-20/2026/bahia-x-flamengo/832592",
-   "categoria": "Sub-20",
-   "tabela": "Brasileiro Sub-20",
-   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
-  },
-  {
    "id": "cbf-834047",
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
@@ -967,6 +944,29 @@
    "categoria": "Sub-20",
    "tabela": "Brasileiro Feminino Sub-20",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+  },
+  {
+   "id": "cbf-832592",
+   "modalidade": "base",
+   "adversario": "Bahia",
+   "competicao": "Brasileiro Sub-20",
+   "inicio": "2026-04-30T15:00:00-03:00",
+   "semHora": false,
+   "local": "CT Evaristo de Macedo - Camacari - BA",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 0,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/sub-20",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-20/2026/bahia-x-flamengo/832592",
+   "categoria": "Sub-20",
+   "tabela": "Brasileiro Sub-20",
+   "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
    "id": "cbf-834094",
@@ -1528,29 +1528,6 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
-   "id": "cbf-832654",
-   "modalidade": "base",
-   "adversario": "Athletico Paranaense",
-   "competicao": "Brasileiro Sub-20",
-   "inicio": "2026-06-09T15:00:00-03:00",
-   "semHora": false,
-   "local": "Da Gávea - Rio de Janeiro - RJ",
-   "mandante": true,
-   "transmissao": [],
-   "placar": {
-    "flamengo": 1,
-    "adversario": 0
-   },
-   "status": "encerrado",
-   "fonte": "automatica",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "campeonato-brasileiro/sub-20",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-20/2026/flamengo-x-athletico-paranaense/832654",
-   "categoria": "Sub-20",
-   "tabela": "Brasileiro Sub-20",
-   "escudoAdv": "escudos/futebol-athletico-paranaense.png"
-  },
-  {
    "id": "cbf-834461",
    "modalidade": "base",
    "adversario": "São Paulo",
@@ -1572,6 +1549,29 @@
    "categoria": "Sub-17",
    "tabela": "Brasileiro Sub-17",
    "escudoAdv": "escudos/futebol-sao-paulo-5b49a4.webp"
+  },
+  {
+   "id": "cbf-832654",
+   "modalidade": "base",
+   "adversario": "Athletico Paranaense",
+   "competicao": "Brasileiro Sub-20",
+   "inicio": "2026-06-09T15:00:00-03:00",
+   "semHora": false,
+   "local": "Da Gávea - Rio de Janeiro - RJ",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/sub-20",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-20/2026/flamengo-x-athletico-paranaense/832654",
+   "categoria": "Sub-20",
+   "tabela": "Brasileiro Sub-20",
+   "escudoAdv": "escudos/futebol-athletico-paranaense.png"
   },
   {
    "id": "cbf-834470",
@@ -3953,6 +3953,21 @@
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
    "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
+  },
+  {
+   "id": "m-466b5f111b",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": null,
+   "local": "",
+   "competicao": "Liga Sul-Americana – Final Four (semifinal)",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Nacional (Uruguai)",
+   "inicio": "2026-12-05T00:00:00-03:00",
+   "semHora": true,
+   "fonteInfo": "Site do Flamengo; LNB"
   },
   {
    "id": "site-volei-feminino-2026-12-08-minas",
