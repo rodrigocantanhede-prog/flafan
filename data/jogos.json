@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-16T18:37:48.524Z",
+ "atualizadoEm": "2026-11-17T02:59:06.732Z",
  "exemplo": false,
  "avisos": [
+  "CBF (Brasileiro Feminino Sub-17 2026, jogos): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -3575,7 +3576,14 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "m-21d2536e55",
+   "id": "cbf-835473",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
+   "local": "Beira-Rio, Porto Alegre",
+   "mandante": false,
    "transmissao": [
     "Lance!TV"
    ],
@@ -3584,16 +3592,11 @@
     "adversario": 1
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Beira-Rio, Porto Alegre",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "inicio": "2026-11-15T16:00:00-03:00",
-   "semHora": false,
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/feminino",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/internacional-x-flamengo/835473",
    "observacao": "Internacional campeã (4 x 1 no agregado)",
-   "fonteInfo": "CBF (tabela detalhada); Gazeta Esportiva; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
