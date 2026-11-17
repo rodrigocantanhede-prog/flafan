@@ -1,8 +1,7 @@
 {
- "atualizadoEm": "2026-11-17T13:31:37.321Z",
+ "atualizadoEm": "2026-11-17T22:27:41.103Z",
  "exemplo": false,
  "avisos": [
-  "CBF (Brasileiro Sub-20 2026, jogos): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -923,29 +922,6 @@
    "escudoAdv": "escudos/futebol-atletico-mineiro.png"
   },
   {
-   "id": "cbf-834047",
-   "modalidade": "futebol-feminino",
-   "adversario": "Fluminense",
-   "competicao": "Brasileiro Feminino Sub-20",
-   "inicio": "2026-04-30T15:00:00-03:00",
-   "semHora": false,
-   "local": "Estádio da Gávea - Rio de Janeiro - RJ",
-   "mandante": true,
-   "transmissao": [],
-   "placar": {
-    "flamengo": 2,
-    "adversario": 0
-   },
-   "status": "encerrado",
-   "fonte": "automatica",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "campeonato-brasileiro/feminino-sub-20",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/feminino-sub-20/2026/flamengo-x-fluminense/834047",
-   "categoria": "Sub-20",
-   "tabela": "Brasileiro Feminino Sub-20",
-   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
-  },
-  {
    "id": "cbf-832592",
    "modalidade": "base",
    "adversario": "Bahia",
@@ -967,6 +943,29 @@
    "categoria": "Sub-20",
    "tabela": "Brasileiro Sub-20",
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
+  },
+  {
+   "id": "cbf-834047",
+   "modalidade": "futebol-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Brasileiro Feminino Sub-20",
+   "inicio": "2026-04-30T15:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio da Gávea - Rio de Janeiro - RJ",
+   "mandante": true,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 2,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/feminino-sub-20",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/feminino-sub-20/2026/flamengo-x-fluminense/834047",
+   "categoria": "Sub-20",
+   "tabela": "Brasileiro Feminino Sub-20",
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "cbf-834094",
@@ -1528,29 +1527,6 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
-   "id": "cbf-834461",
-   "modalidade": "base",
-   "adversario": "São Paulo",
-   "competicao": "Brasileiro Sub-17",
-   "inicio": "2026-06-09T15:00:00-03:00",
-   "semHora": false,
-   "local": "Marcelo Portugal - Cotia - SP",
-   "mandante": false,
-   "transmissao": [],
-   "placar": {
-    "flamengo": 1,
-    "adversario": 1
-   },
-   "status": "encerrado",
-   "fonte": "automatica",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "campeonato-brasileiro/sub-17",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/sao-paulo-x-flamengo/834461",
-   "categoria": "Sub-17",
-   "tabela": "Brasileiro Sub-17",
-   "escudoAdv": "escudos/futebol-sao-paulo-5b49a4.webp"
-  },
-  {
    "id": "cbf-832654",
    "modalidade": "base",
    "adversario": "Athletico Paranaense",
@@ -1572,6 +1548,29 @@
    "categoria": "Sub-20",
    "tabela": "Brasileiro Sub-20",
    "escudoAdv": "escudos/futebol-athletico-paranaense.png"
+  },
+  {
+   "id": "cbf-834461",
+   "modalidade": "base",
+   "adversario": "São Paulo",
+   "competicao": "Brasileiro Sub-17",
+   "inicio": "2026-06-09T15:00:00-03:00",
+   "semHora": false,
+   "local": "Marcelo Portugal - Cotia - SP",
+   "mandante": false,
+   "transmissao": [],
+   "placar": {
+    "flamengo": 1,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/sub-17",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/sub-17/2026/sao-paulo-x-flamengo/834461",
+   "categoria": "Sub-17",
+   "tabela": "Brasileiro Sub-17",
+   "escudoAdv": "escudos/futebol-sao-paulo-5b49a4.webp"
   },
   {
    "id": "cbf-834470",
@@ -3576,14 +3575,7 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "cbf-835473",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "inicio": "2026-11-15T16:00:00-03:00",
-   "semHora": false,
-   "local": "Beira-Rio, Porto Alegre",
-   "mandante": false,
+   "id": "m-21d2536e55",
    "transmissao": [
     "Lance!TV"
    ],
@@ -3592,11 +3584,16 @@
     "adversario": 1
    },
    "status": "encerrado",
-   "fonte": "automatica+manual",
-   "fonteInfo": "CBF",
-   "campeonatoCbf": "copa-do-brasil/feminino",
-   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/internacional-x-flamengo/835473",
+   "mandante": false,
+   "local": "Beira-Rio, Porto Alegre",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "fonte": "manual",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
    "observacao": "Internacional campeã (4 x 1 no agregado)",
+   "fonteInfo": "CBF (tabela detalhada); Gazeta Esportiva; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3701,7 +3698,7 @@
    "modalidade": "futebol-feminino",
    "adversario": "Botafogo",
    "competicao": "Carioca Feminino",
-   "inicio": "2026-11-18T15:00:00-03:00",
+   "inicio": "2026-11-18T16:00:00-03:00",
    "semHora": false,
    "local": "João Saldanha - RJ",
    "mandante": true,
@@ -3753,6 +3750,23 @@
    "escudoAdv": "escudos/basquete-unifacisa-a5807a.png"
   },
   {
+   "id": "ferj-6463",
+   "modalidade": "futebol-feminino",
+   "adversario": "Vasco da Gama",
+   "competicao": "Carioca Feminino",
+   "inicio": "2026-11-21T10:00:00-03:00",
+   "semHora": false,
+   "local": "Nivaldo Pereira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6463",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
    "id": "ferj-6541",
    "modalidade": "base",
    "adversario": "Botafogo",
@@ -3769,23 +3783,6 @@
    "link": "https://www.fferj.com.br/partidas/6541",
    "categoria": "Sub-15",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
-  },
-  {
-   "id": "ferj-6463",
-   "modalidade": "futebol-feminino",
-   "adversario": "Vasco da Gama",
-   "competicao": "Carioca Feminino",
-   "inicio": "2026-11-21T15:00:00-03:00",
-   "semHora": false,
-   "local": "Nivaldo Pereira",
-   "mandante": false,
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica",
-   "fonteInfo": "FERJ",
-   "link": "https://www.fferj.com.br/partidas/6463",
-   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-21-palmeiras",
@@ -3812,7 +3809,7 @@
    "modalidade": "basquete",
    "adversario": "Basquete Cearense",
    "competicao": "NBB",
-   "inicio": "2026-11-22T11:00:00-03:00",
+   "inicio": "2026-11-22T16:00:00-03:00",
    "semHora": false,
    "local": "Fortaleza (CE)",
    "mandante": false,
@@ -4331,7 +4328,7 @@
    "modalidade": "basquete",
    "adversario": "Pinheiros",
    "competicao": "NBB",
-   "inicio": "2027-03-16T20:00:00-03:00",
+   "inicio": "2027-03-16T20:30:00-03:00",
    "semHora": false,
    "local": "Poliesportivo H. Villaboim",
    "mandante": false,
@@ -4433,7 +4430,7 @@
    "modalidade": "basquete",
    "adversario": "Itatiaiuçu Cruzeiro Basquete",
    "competicao": "NBB",
-   "inicio": "2027-04-13T20:00:00-03:00",
+   "inicio": "2027-04-13T20:30:00-03:00",
    "semHora": false,
    "local": "Maracanãzinho",
    "mandante": true,
