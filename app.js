@@ -170,11 +170,15 @@ function contagemCaixas(data) {
   return `<div class="contagem" aria-label="${esc(contagem(data))}">${caixa(d, d === 1 ? 'dia' : 'dias')}${caixa(h, 'horas')}${caixa(m, 'min')}</div>`;
 }
 
+// "Arena Carioca 1, Parque Olímpico, Rio de Janeiro" -> "Rio de Janeiro"
+const cidadeEvento = (local) => String(local ?? '').split(',').pop().trim();
+
 function blocoInfo(j) {
   const data = new Date(j.inicio);
   const acabou = j.tipo === 'evento' ? (j.status === 'encerrado' || fimDoEvento(j) < Date.now()) : jaTerminou(j) || (!j.semHora && data.getTime() + DURACAO < Date.now());
   const info = [];
-  if (j.local) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
+  // evento sem resultado mostra a cidade à direita da placa; embaixo só se o endereço completo disser mais
+  if (j.local && !(j.tipo === 'evento' && !j.resultado?.length && cidadeEvento(j.local) === j.local)) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
   if (!acabou && j.status !== 'cancelado') {
     info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? `<span class="lc-canais">${j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ')}</span>` : '<i>a confirmar</i>'}</span>`);
   }
@@ -196,7 +200,7 @@ function linhaCompacta(j) {
   if (j.tipo === 'evento') {
     const kIni = j.inicio.slice(0, 10), kFim = j.fim ?? kIni;
     esq = `<div class="lc-time"><span class="lc-ic" style="color:${m.cor}">${emojiEsporte(j.esporte)}</span><span class="lc-nome">${esc(j.esporte)}</span></div>`;
-    dir = `<div class="lc-time"><span class="lc-ic lc-trofeu">${icone(j.resultado?.length ? 'trofeu' : 'pin')}</span><span class="lc-nome">${esc(j.resultado?.[0] ?? j.local ?? '')}</span></div>`;
+    dir = `<div class="lc-time"><span class="lc-ic lc-trofeu">${icone(j.resultado?.length ? 'trofeu' : 'pin')}</span><span class="lc-nome">${esc(j.resultado?.[0] ?? cidadeEvento(j.local))}</span></div>`;
     valor = `<span class="lc-evento">${esc(j.competicao)}</span>`;
     legenda = kIni === kFim ? (j.semHora ? 'Dia todo' : fHora.format(data)) : `${fDM.format(dataDoDia(kIni))} a ${fDM.format(dataDoDia(kFim))}`;
   } else {
@@ -547,7 +551,9 @@ function desenhar() {
   let html = '', diaAtual = '';
   const iDestaque = estado.aba === 'proximos' ? lista.findIndex((j) => j.status !== 'adiado' && j.status !== 'cancelado') : -1;
   lista.forEach((j, i) => {
-    const d = new Date(j.inicio);
+    // evento de vários dias que já começou e ainda não acabou aparece em "Hoje", não em "Ontem"
+    const emAndamento = estado.aba === 'proximos' && j.tipo === 'evento' && new Date(j.inicio).getTime() < Date.now();
+    const d = emAndamento ? new Date() : new Date(j.inicio);
     const rot = rotuloDia(d);
     if (rot !== diaAtual) {
       if (estado.compacto && diaAtual) html += '</div>';
