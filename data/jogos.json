@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-17T22:27:41.103Z",
+ "atualizadoEm": "2026-11-18T07:35:00.241Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3839,6 +3839,7 @@
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
+   "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-osasco_56786",
    "escudoAdv": "escudos/volei-osasco-83684f.png"
   },
   {

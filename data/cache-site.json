@@ -89,7 +89,7 @@
   "modalidade": "futebol-feminino",
   "adversario": "Botafogo",
   "competicao": "Campeonato Carioca Feminino",
-  "inicio": "2026-11-18T15:00:00-03:00",
+  "inicio": "2026-11-18T16:00:00-03:00",
   "semHora": false,
   "local": "João Saldanha",
   "mandante": true,
@@ -135,23 +135,6 @@
   "pagina": "futebol-feminino"
  },
  {
-  "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
-  "modalidade": "volei-feminino",
-  "adversario": "SESI Vôlei Bauru",
-  "competicao": "Superliga",
-  "inicio": "2026-11-17T21:00:00-03:00",
-  "semHora": false,
-  "local": "Bauru",
-  "mandante": false,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "Site do Flamengo",
-  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/sesi_volei_bauru_3170420874/sesi_volei_bauru_3170420874.webp",
-  "pagina": "volei"
- },
- {
   "id": "site-volei-feminino-2026-11-23-osasco-sao-cristovao-saude",
   "modalidade": "volei-feminino",
   "adversario": "Osasco São Cristóvão Saúde",
@@ -166,7 +149,8 @@
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
   "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/osasco_volei_1a62aa924c/osasco_volei_1a62aa924c.png",
-  "pagina": "volei"
+  "pagina": "volei",
+  "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-osasco_56786"
  },
  {
   "id": "site-volei-feminino-2026-12-03-pinheiros",
@@ -234,6 +218,23 @@
   "fonte": "automatica",
   "fonteInfo": "Site do Flamengo",
   "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/abel_moda_volei_8aed27edf5/abel_moda_volei_8aed27edf5.webp",
+  "pagina": "volei"
+ },
+ {
+  "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
+  "modalidade": "volei-feminino",
+  "adversario": "SESI Vôlei Bauru",
+  "competicao": "Superliga",
+  "inicio": "2026-11-17T21:00:00-03:00",
+  "semHora": false,
+  "local": "Bauru",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "Site do Flamengo",
+  "escudoAdvUrl": "https://storage.googleapis.com/crf-strapi-media-prd/sesi_volei_bauru_3170420874/sesi_volei_bauru_3170420874.webp",
   "pagina": "volei"
  },
  {

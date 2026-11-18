@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-17T22:27:41.103Z",
+ "atualizadoEm": "2026-11-18T07:35:00.241Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 17/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 18/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 17/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 17/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 17/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 17/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 17/11/2026 (site da LNB)",
+   "atualizado": "em 18/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1797,6 +1797,18 @@
     },
     {
      "pos": 3,
+     "time": "Unifacisa",
+     "j": 8,
+     "v": 6,
+     "e": null,
+     "d": 2,
+     "sg": 39,
+     "pts": 14,
+     "ap": 75,
+     "escudo": "escudos/basquete-unifacisa-a5807a.png"
+    },
+    {
+     "pos": 4,
      "time": "Pinheiros",
      "j": 8,
      "v": 6,
@@ -1808,7 +1820,7 @@
      "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
     },
     {
-     "pos": 4,
+     "pos": 5,
      "time": "Flamengo",
      "j": 7,
      "v": 5,
@@ -1817,18 +1829,6 @@
      "sg": 52,
      "pts": 12,
      "ap": 71
-    },
-    {
-     "pos": 5,
-     "time": "Unifacisa",
-     "j": 7,
-     "v": 5,
-     "e": null,
-     "d": 2,
-     "sg": 30,
-     "pts": 12,
-     "ap": 71,
-     "escudo": "escudos/basquete-unifacisa-a5807a.png"
     },
     {
      "pos": 6,
@@ -1868,6 +1868,18 @@
     },
     {
      "pos": 9,
+     "time": "Corinthians",
+     "j": 8,
+     "v": 4,
+     "e": null,
+     "d": 4,
+     "sg": 13,
+     "pts": 12,
+     "ap": 50,
+     "escudo": "escudos/basquete-corinthians-c187b9.png"
+    },
+    {
+     "pos": 10,
      "time": "Itatiaiuçu Cruzeiro Basquete",
      "j": 7,
      "v": 3,
@@ -1879,31 +1891,7 @@
      "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
     },
     {
-     "pos": 10,
-     "time": "Paulistano",
-     "j": 7,
-     "v": 3,
-     "e": null,
-     "d": 4,
-     "sg": -30,
-     "pts": 10,
-     "ap": 43,
-     "escudo": "escudos/basquete-paulistano-d2670e.png"
-    },
-    {
      "pos": 11,
-     "time": "Corinthians",
-     "j": 7,
-     "v": 3,
-     "e": null,
-     "d": 4,
-     "sg": 7,
-     "pts": 10,
-     "ap": 43,
-     "escudo": "escudos/basquete-corinthians-c187b9.png"
-    },
-    {
-     "pos": 12,
      "time": "Bauru Basket",
      "j": 7,
      "v": 3,
@@ -1915,7 +1903,7 @@
      "escudo": "escudos/basquete-bauru-basket-91d95a.png"
     },
     {
-     "pos": 13,
+     "pos": 12,
      "time": "São José Basketball",
      "j": 8,
      "v": 3,
@@ -1927,15 +1915,27 @@
      "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
     },
     {
+     "pos": 13,
+     "time": "Paulistano",
+     "j": 8,
+     "v": 3,
+     "e": null,
+     "d": 5,
+     "sg": -36,
+     "pts": 11,
+     "ap": 38,
+     "escudo": "escudos/basquete-paulistano-d2670e.png"
+    },
+    {
      "pos": 14,
      "time": "Botafogo",
-     "j": 6,
+     "j": 7,
      "v": 2,
      "e": null,
-     "d": 4,
-     "sg": -38,
-     "pts": 8,
-     "ap": 33,
+     "d": 5,
+     "sg": -47,
+     "pts": 9,
+     "ap": 29,
      "escudo": "escudos/basquete-botafogo-a485c5.png"
     },
     {
@@ -1994,39 +1994,39 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 17/11/2026 (site da CBV)",
+   "atualizado": "em 18/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
-     "time": "Sesi Vôlei Bauru",
+     "time": "Sesc RJ Flamengo",
+     "j": 6,
+     "v": 6,
+     "e": null,
+     "d": 0,
+     "sg": null,
+     "pts": 18
+    },
+    {
+     "pos": 2,
+     "time": "Gerdau Minas",
      "j": 6,
      "v": 6,
      "e": null,
      "d": 0,
      "sg": null,
      "pts": 17,
-     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
-    },
-    {
-     "pos": 2,
-     "time": "Sesc RJ Flamengo",
-     "j": 5,
-     "v": 5,
-     "e": null,
-     "d": 0,
-     "sg": null,
-     "pts": 15
+     "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
     },
     {
      "pos": 3,
-     "time": "Gerdau Minas",
-     "j": 5,
-     "v": 5,
+     "time": "Sesi Vôlei Bauru",
+     "j": 7,
+     "v": 6,
      "e": null,
-     "d": 0,
+     "d": 1,
      "sg": null,
-     "pts": 14,
-     "escudo": "escudos/volei-gerdau-minas-ccd06c.png"
+     "pts": 17,
+     "escudo": "escudos/volei-sesi-volei-bauru-bafe0f.png"
     },
     {
      "pos": 4,
@@ -2075,10 +2075,10 @@
     {
      "pos": 8,
      "time": "Fluminense",
-     "j": 4,
+     "j": 5,
      "v": 1,
      "e": null,
-     "d": 3,
+     "d": 4,
      "sg": null,
      "pts": 3,
      "escudo": "escudos/volei-fluminense-c0deef.png"
