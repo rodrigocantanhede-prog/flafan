@@ -2,12 +2,12 @@ id,modalidade,adversario,competicao,data,hora,local,mando,onde_assistir,placar_f
 ,Basquete,Brasília,NBB,04/11/2026,20:15,"Arena Nilson Nelson, Brasília",fora,,91,87,encerrado,,,,LNB
 ,Vôlei feminino,Londrina,Superliga Feminina,06/11/2026,,Londrina (PR),fora,,3,0,encerrado,,,,Web Vôlei
 ,Vôlei feminino,Fluminense,Superliga Feminina,12/11/2026,21:00,"Maracanãzinho, Rio de Janeiro",casa,SporTV 2,3,0,encerrado,,,,Site do Flamengo; Web Vôlei; Terra
-,Vôlei feminino,Sesi Vôlei Bauru,Superliga Feminina,17/11/2026,21:30,Bauru (SP),fora,SporTV 2,,,,,,,Site do Flamengo (notícia de 12/11); Web Vôlei; Terra
+,Vôlei feminino,Sesi Vôlei Bauru,Superliga Feminina,17/11/2026,21:30,Bauru (SP),fora,SporTV 2,3,0,encerrado,,,,Site do Flamengo; Web Vôlei; Gazeta Esportiva
 ,Futebol masculino,Athletico-PR,Brasileirão Série A,18/11/2026,20:30,"Maracanã, Rio de Janeiro",casa,SporTV; Premiere,,,,,,,Site do Flamengo; Máquina do Esporte; Trivela
 ,Basquete,Unifacisa,NBB,19/11/2026,,Campina Grande (PB),fora,,,,,,,,RealGM
 ,Futebol masculino,Palmeiras,Brasileirão Série A,21/11/2026,16:30,"Nubank Parque, São Paulo",fora,Globo; Premiere,,,,,,,Site do Flamengo; Trivela; LiveSoccerTV
 ,Basquete,Basquete Cearense,NBB,22/11/2026,,Fortaleza (CE),fora,,,,,,,,RealGM
-,Vôlei feminino,Osasco,Superliga Feminina,23/11/2026,21:00,,casa,,,,,,,,Olympics.com
+,Vôlei feminino,Osasco,Superliga Feminina,23/11/2026,21:00,,casa,SporTV 2,,,,,,,Olympics.com; Sesc RJ (tabela do 1º turno); Web Vôlei
 ,Futebol masculino,Coritiba,Brasileirão Série A,29/11/2026,16:00,"Couto Pereira, Curitiba",fora,,,,,,,,Diário do Rio
 ,Futebol masculino,Chapecoense,Brasileirão Série A,02/12/2026,21:30,"Maracanã, Rio de Janeiro",casa,,,,,,Última rodada do Brasileirão,,Diário do Rio
 ,Futebol masculino,Santos,Brasileirão Série A,08/10/2026,,,fora,,2,2,encerrado,,,,Wikipédia

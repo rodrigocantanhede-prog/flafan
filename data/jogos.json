@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-18T07:35:00.241Z",
+ "atualizadoEm": "2026-11-18T17:18:57.411Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3575,7 +3575,14 @@
    "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
-   "id": "m-21d2536e55",
+   "id": "cbf-835473",
+   "modalidade": "futebol-feminino",
+   "adversario": "Internacional",
+   "competicao": "Copa do Brasil Feminina – final (volta)",
+   "inicio": "2026-11-15T16:00:00-03:00",
+   "semHora": false,
+   "local": "Beira-Rio, Porto Alegre",
+   "mandante": false,
    "transmissao": [
     "Lance!TV"
    ],
@@ -3584,16 +3591,11 @@
     "adversario": 1
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Beira-Rio, Porto Alegre",
-   "competicao": "Copa do Brasil Feminina – final (volta)",
-   "fonte": "manual",
-   "modalidade": "futebol-feminino",
-   "adversario": "Internacional",
-   "inicio": "2026-11-15T16:00:00-03:00",
-   "semHora": false,
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "copa-do-brasil/feminino",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/internacional-x-flamengo/835473",
    "observacao": "Internacional campeã (4 x 1 no agregado)",
-   "fonteInfo": "CBF (tabela detalhada); Gazeta Esportiva; Terra",
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
@@ -3650,8 +3652,11 @@
    "transmissao": [
     "SporTV 2"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
@@ -3667,8 +3672,11 @@
    "local": "Estádio Olímpico Nilton Santos Anexo",
    "mandante": false,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 1,
+    "adversario": 0
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6539",
@@ -3685,8 +3693,11 @@
    "local": "José Bastos Padilha",
    "mandante": true,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 3,
+    "adversario": 4
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6543",
@@ -3833,7 +3844,9 @@
    "semHora": false,
    "local": "Maracanãzinho (RJ)",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica+manual",
