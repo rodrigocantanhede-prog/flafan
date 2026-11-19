@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T00:27:30.111Z",
+ "atualizadoEm": "2026-11-19T01:16:04.139Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -401,9 +401,9 @@
      "ca": 68,
      "cv": 7,
      "ult": [
-      "D",
       "V",
-      "D"
+      "D",
+      "V"
      ],
      "escudo": "escudos/futebol-remo-d14164.webp"
     },
@@ -422,7 +422,7 @@
      "ca": 79,
      "cv": 4,
      "ult": [
-      "V",
+      "D",
       "D",
       "D"
      ],
@@ -1833,13 +1833,13 @@
     {
      "pos": 6,
      "time": "Sesi Franca",
-     "j": 8,
-     "v": 5,
+     "j": 9,
+     "v": 6,
      "e": null,
      "d": 3,
-     "sg": 58,
-     "pts": 13,
-     "ap": 63,
+     "sg": 85,
+     "pts": 15,
+     "ap": 67,
      "escudo": "escudos/basquete-sesi-franca-c08c49.png"
     },
     {
@@ -1977,12 +1977,12 @@
     {
      "pos": 18,
      "time": "Caxias do Sul Basquete",
-     "j": 7,
+     "j": 8,
      "v": 0,
      "e": null,
-     "d": 7,
-     "sg": -104,
-     "pts": 7,
+     "d": 8,
+     "sg": -131,
+     "pts": 8,
      "ap": 0,
      "escudo": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
     }
