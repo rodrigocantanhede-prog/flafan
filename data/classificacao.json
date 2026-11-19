@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T01:37:51.410Z",
+ "atualizadoEm": "2026-11-19T02:41:52.415Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -12,16 +12,16 @@
     {
      "pos": 1,
      "time": "Flamengo",
-     "j": 34,
-     "v": 23,
+     "j": 35,
+     "v": 24,
      "e": 7,
      "d": 4,
-     "gp": 71,
-     "gc": 29,
-     "sg": 42,
-     "pts": 76,
-     "ap": 74,
-     "ca": 69,
+     "gp": 73,
+     "gc": 30,
+     "sg": 43,
+     "pts": 79,
+     "ap": 75,
+     "ca": 71,
      "cv": 7,
      "ult": [
       "V",
@@ -32,37 +32,37 @@
     {
      "pos": 2,
      "time": "Palmeiras",
-     "j": 34,
+     "j": 35,
      "v": 21,
      "e": 10,
-     "d": 3,
-     "gp": 62,
-     "gc": 23,
-     "sg": 39,
+     "d": 4,
+     "gp": 63,
+     "gc": 25,
+     "sg": 38,
      "pts": 73,
-     "ap": 71,
-     "ca": 72,
+     "ap": 69,
+     "ca": 76,
      "cv": 7,
      "ult": [
-      "V",
       "E",
-      "V"
+      "V",
+      "D"
      ],
      "escudo": "escudos/futebol-palmeiras-26c301.png"
     },
     {
      "pos": 3,
      "time": "Cruzeiro",
-     "j": 34,
-     "v": 18,
+     "j": 35,
+     "v": 19,
      "e": 6,
      "d": 10,
-     "gp": 55,
-     "gc": 48,
-     "sg": 7,
-     "pts": 60,
-     "ap": 58,
-     "ca": 86,
+     "gp": 57,
+     "gc": 49,
+     "sg": 8,
+     "pts": 63,
+     "ap": 60,
+     "ca": 90,
      "cv": 4,
      "ult": [
       "V",
@@ -95,19 +95,19 @@
     {
      "pos": 5,
      "time": "Athletico-PR",
-     "j": 34,
+     "j": 35,
      "v": 15,
      "e": 9,
-     "d": 10,
-     "gp": 51,
-     "gc": 43,
-     "sg": 8,
+     "d": 11,
+     "gp": 52,
+     "gc": 45,
+     "sg": 7,
      "pts": 54,
-     "ap": 52,
-     "ca": 78,
+     "ap": 51,
+     "ca": 81,
      "cv": 4,
      "ult": [
-      "E",
+      "D",
       "D",
       "D"
      ],
@@ -2031,12 +2031,12 @@
     {
      "pos": 4,
      "time": "Dentil Praia Clube",
-     "j": 5,
-     "v": 4,
+     "j": 6,
+     "v": 5,
      "e": null,
      "d": 1,
      "sg": null,
-     "pts": 12,
+     "pts": 15,
      "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
     },
     {
@@ -2074,6 +2074,17 @@
     },
     {
      "pos": 8,
+     "time": "Paulistano Barueri",
+     "j": 7,
+     "v": 1,
+     "e": null,
+     "d": 6,
+     "sg": null,
+     "pts": 4,
+     "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
+    },
+    {
+     "pos": 9,
      "time": "Fluminense",
      "j": 5,
      "v": 1,
@@ -2084,7 +2095,7 @@
      "escudo": "escudos/volei-fluminense-c0deef.png"
     },
     {
-     "pos": 9,
+     "pos": 10,
      "time": "Batavo Mackenzie",
      "j": 5,
      "v": 1,
@@ -2095,34 +2106,23 @@
      "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
     },
     {
-     "pos": 10,
-     "time": "Sancor Seguros Vôlei",
-     "j": 5,
-     "v": 0,
-     "e": null,
-     "d": 5,
-     "sg": null,
-     "pts": 1,
-     "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
-    },
-    {
      "pos": 11,
-     "time": "Paulistano Barueri",
+     "time": "Sancor Seguros Vôlei",
      "j": 6,
      "v": 0,
      "e": null,
      "d": 6,
      "sg": null,
      "pts": 1,
-     "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
+     "escudo": "escudos/volei-sancor-seguros-volei-a16700.png"
     },
     {
      "pos": 12,
      "time": "Brasília Vôlei / BRB",
-     "j": 5,
+     "j": 6,
      "v": 0,
      "e": null,
-     "d": 5,
+     "d": 6,
      "sg": null,
      "pts": 0,
      "escudo": "escudos/volei-brasilia-volei-brb-923451.png"

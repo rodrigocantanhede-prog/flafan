@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T01:37:51.410Z",
+ "atualizadoEm": "2026-11-19T02:41:52.415Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3737,8 +3737,11 @@
     "SporTV",
     "Premiere"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 2,
+    "adversario": 1
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
    "pagina": "futebol",
