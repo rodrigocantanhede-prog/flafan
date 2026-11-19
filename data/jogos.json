@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T10:26:45.557Z",
+ "atualizadoEm": "2026-11-19T20:42:16.042Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -4161,7 +4161,7 @@
   {
    "id": "lnb-27257",
    "modalidade": "basquete",
-   "adversario": "Cruzeiro",
+   "adversario": "Itatiaiuçu Cruzeiro Basquete",
    "competicao": "NBB",
    "inicio": "2026-12-29T19:30:00-03:00",
    "semHora": false,
@@ -4173,7 +4173,7 @@
    "fonte": "automatica",
    "fonteInfo": "LNB",
    "tabela": "NBB",
-   "escudoAdv": "escudos/basquete-cruzeiro-afae7a.png"
+   "escudoAdv": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
   },
   {
    "id": "lnb-27328",
