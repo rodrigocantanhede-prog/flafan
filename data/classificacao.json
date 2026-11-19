@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T01:18:02.628Z",
+ "atualizadoEm": "2026-11-19T01:37:51.410Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -157,6 +157,27 @@
     },
     {
      "pos": 8,
+     "time": "Santos",
+     "j": 35,
+     "v": 13,
+     "e": 11,
+     "d": 11,
+     "gp": 51,
+     "gc": 49,
+     "sg": 2,
+     "pts": 50,
+     "ap": 47,
+     "ca": 103,
+     "cv": 10,
+     "ult": [
+      "E",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-santos-7effcf.webp"
+    },
+    {
+     "pos": 9,
      "time": "Bragantino",
      "j": 34,
      "v": 13,
@@ -175,27 +196,6 @@
       "V"
      ],
      "escudo": "escudos/futebol-bragantino-0801e7.png"
-    },
-    {
-     "pos": 9,
-     "time": "Santos",
-     "j": 34,
-     "v": 12,
-     "e": 11,
-     "d": 11,
-     "gp": 50,
-     "gc": 49,
-     "sg": 1,
-     "pts": 47,
-     "ap": 46,
-     "ca": 101,
-     "cv": 10,
-     "ult": [
-      "E",
-      "E",
-      "D"
-     ],
-     "escudo": "escudos/futebol-santos-7effcf.webp"
     },
     {
      "pos": 10,
@@ -263,20 +263,20 @@
     {
      "pos": 13,
      "time": "Coritiba",
-     "j": 34,
+     "j": 35,
      "v": 11,
      "e": 9,
-     "d": 14,
+     "d": 15,
      "gp": 40,
-     "gc": 51,
-     "sg": -11,
+     "gc": 52,
+     "sg": -12,
      "pts": 42,
-     "ap": 41,
-     "ca": 65,
-     "cv": 10,
+     "ap": 40,
+     "ca": 71,
+     "cv": 11,
      "ult": [
-      "D",
       "V",
+      "D",
       "D"
      ],
      "escudo": "escudos/futebol-coritiba-2c60dd.png"
@@ -389,16 +389,16 @@
     {
      "pos": 19,
      "time": "Remo",
-     "j": 34,
-     "v": 6,
+     "j": 35,
+     "v": 7,
      "e": 11,
      "d": 17,
-     "gp": 37,
+     "gp": 39,
      "gc": 57,
-     "sg": -20,
-     "pts": 29,
-     "ap": 28,
-     "ca": 68,
+     "sg": -18,
+     "pts": 32,
+     "ap": 30,
+     "ca": 71,
      "cv": 7,
      "ult": [
       "V",
@@ -410,16 +410,16 @@
     {
      "pos": 20,
      "time": "Chapecoense",
-     "j": 34,
+     "j": 35,
      "v": 4,
      "e": 9,
-     "d": 21,
+     "d": 22,
      "gp": 33,
-     "gc": 70,
-     "sg": -37,
+     "gc": 72,
+     "sg": -39,
      "pts": 21,
      "ap": 20,
-     "ca": 79,
+     "ca": 82,
      "cv": 4,
      "ult": [
       "D",
