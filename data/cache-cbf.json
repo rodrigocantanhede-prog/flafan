@@ -2718,27 +2718,6 @@
   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/flamengo-x-internacional/835472"
  },
  {
-  "id": "cbf-835473",
-  "modalidade": "futebol-feminino",
-  "adversario": "Internacional",
-  "competicao": "Copa do Brasil Feminina",
-  "inicio": "2026-11-15T16:00:00-03:00",
-  "semHora": false,
-  "local": "Beira-Rio - Porto Alegre - RS",
-  "mandante": false,
-  "transmissao": [],
-  "placar": {
-   "flamengo": 0,
-   "adversario": 1
-  },
-  "status": "encerrado",
-  "fonte": "automatica",
-  "fonteInfo": "CBF",
-  "campeonatoCbf": "copa-do-brasil/feminino",
-  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20011%2Fescudo.jpg&w=128&q=70",
-  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/copa-do-brasil/feminino/2026/internacional-x-flamengo/835473"
- },
- {
   "id": "cbf-832442",
   "modalidade": "futebol-feminino",
   "adversario": "Litoral Norte F. C.",
