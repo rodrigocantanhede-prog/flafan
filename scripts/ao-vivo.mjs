@@ -17,7 +17,9 @@ export function jogosAgora(jogos, agora = Date.now()) {
 }
 
 // o que importa para o torcedor durante o jogo (ignora horários de conferência, calendários etc.)
-export const resumoAoVivo = (dados) => JSON.stringify((dados?.jogos ?? []).map((j) => [j.id, j.status, j.placar?.flamengo, j.placar?.adversario]));
+// (chave = modalidade + dia + adversário, porque o id muda quando uma fonte oscila entre uma rodada e outra)
+export const resumoAoVivo = (dados) => JSON.stringify((dados?.jogos ?? []).filter((j) => j.tipo !== 'evento')
+  .map((j) => `${j.modalidade}|${j.inicio.slice(0, 10)}|${j.adversario}|${j.status}|${j.placar?.flamengo ?? ''}x${j.placar?.adversario ?? ''}`).sort());
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const atual = JSON.parse(readFileSync('data/jogos.json', 'utf8'));
