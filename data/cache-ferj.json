@@ -303,8 +303,11 @@
   "local": "João Saldanha - RJ",
   "mandante": true,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 2,
+   "adversario": 1
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_25.png",
@@ -346,6 +349,24 @@
   "categoria": "Sub-15"
  },
  {
+  "id": "ferj-6545",
+  "modalidade": "base",
+  "adversario": "Vasco da Gama",
+  "competicao": "Copa Rio Sub-17",
+  "inicio": "2026-11-24T10:00:00-03:00",
+  "semHora": false,
+  "local": "Nivaldo Pereira",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
+  "link": "https://www.fferj.com.br/partidas/6545",
+  "categoria": "Sub-17"
+ },
+ {
   "id": "ferj-6521",
   "modalidade": "futebol-feminino",
   "adversario": "Fluminense",
@@ -361,23 +382,5 @@
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
   "link": "https://www.fferj.com.br/partidas/6521"
- },
- {
-  "id": "ferj-6545",
-  "modalidade": "base",
-  "adversario": "Vasco da Gama",
-  "competicao": "Copa Rio Sub-17",
-  "inicio": "2026-11-25T10:00:00-03:00",
-  "semHora": false,
-  "local": "Nivaldo Pereira",
-  "mandante": false,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",
-  "link": "https://www.fferj.com.br/partidas/6545",
-  "categoria": "Sub-17"
  }
 ]

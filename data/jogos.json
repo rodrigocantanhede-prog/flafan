@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-18T17:18:57.411Z",
+ "atualizadoEm": "2026-11-19T00:27:30.111Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3630,7 +3630,7 @@
    "inicio": "2026-11-17T00:00:00-03:00",
    "fim": "2026-11-18",
    "semHora": true,
-   "local": "Local a definir",
+   "local": "Arena Carioca 1, Parque Olímpico, Rio de Janeiro",
    "mandante": null,
    "atletas": [],
    "resultado": [],
@@ -3638,7 +3638,7 @@
    "placar": null,
    "status": "agendado",
    "fonte": "manual",
-   "fonteInfo": "CBJ"
+   "fonteInfo": "CBJ; Federação de Judô do Rio (FJERJ)"
   },
   {
    "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
@@ -3714,9 +3714,12 @@
    "local": "João Saldanha - RJ",
    "mandante": true,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica",
+   "placar": {
+    "flamengo": 2,
+    "adversario": 1
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6448",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
@@ -3856,6 +3859,24 @@
    "escudoAdv": "escudos/volei-osasco-83684f.png"
   },
   {
+   "id": "ferj-6545",
+   "modalidade": "base",
+   "adversario": "Vasco da Gama",
+   "competicao": "Copa Rio Sub-17",
+   "inicio": "2026-11-24T10:00:00-03:00",
+   "semHora": false,
+   "local": "Nivaldo Pereira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6545",
+   "categoria": "Sub-17",
+   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
+  },
+  {
    "id": "ferj-6521",
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
@@ -3871,24 +3892,6 @@
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6521",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
-  },
-  {
-   "id": "ferj-6545",
-   "modalidade": "base",
-   "adversario": "Vasco da Gama",
-   "competicao": "Copa Rio Sub-17",
-   "inicio": "2026-11-25T10:00:00-03:00",
-   "semHora": false,
-   "local": "Nivaldo Pereira",
-   "mandante": false,
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "fonte": "automatica",
-   "fonteInfo": "FERJ",
-   "link": "https://www.fferj.com.br/partidas/6545",
-   "categoria": "Sub-17",
-   "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
    "id": "site-futebol-masculino-2026-11-29-coritiba",
