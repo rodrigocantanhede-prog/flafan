@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T02:41:52.415Z",
+ "atualizadoEm": "2026-11-19T10:26:45.557Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3725,7 +3725,7 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "site-futebol-masculino-2026-11-18-athletico-paranaense",
+   "id": "cbf-832231",
    "modalidade": "futebol-masculino",
    "adversario": "Athletico-PR",
    "competicao": "Brasileirão Série A",
@@ -3734,8 +3734,8 @@
    "local": "Maracanã, Rio de Janeiro",
    "mandante": true,
    "transmissao": [
-    "SporTV",
-    "Premiere"
+    "Premiere",
+    "SporTV"
    ],
    "placar": {
     "flamengo": 2,
@@ -3743,8 +3743,10 @@
    },
    "status": "encerrado",
    "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-athletico-paranaense/832231",
+   "tabela": "Brasileirão Série A",
    "escudoAdv": "escudos/futebol-athletico-pr-59ce02.webp"
   },
   {

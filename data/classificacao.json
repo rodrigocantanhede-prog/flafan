@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T02:41:52.415Z",
+ "atualizadoEm": "2026-11-19T10:26:45.557Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 18/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 19/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -116,21 +116,21 @@
     {
      "pos": 6,
      "time": "Bahia",
-     "j": 34,
+     "j": 35,
      "v": 14,
-     "e": 11,
+     "e": 12,
      "d": 9,
      "gp": 50,
      "gc": 45,
      "sg": 5,
-     "pts": 53,
+     "pts": 54,
      "ap": 51,
-     "ca": 86,
+     "ca": 88,
      "cv": 4,
      "ult": [
-      "E",
       "V",
-      "D"
+      "D",
+      "E"
      ],
      "escudo": "escudos/futebol-bahia-9eba69.png"
     },
@@ -242,21 +242,21 @@
     {
      "pos": 12,
      "time": "Botafogo",
-     "j": 34,
+     "j": 35,
      "v": 11,
      "e": 9,
-     "d": 14,
+     "d": 15,
      "gp": 46,
-     "gc": 53,
-     "sg": -7,
+     "gc": 57,
+     "sg": -11,
      "pts": 42,
-     "ap": 41,
-     "ca": 91,
+     "ap": 40,
+     "ca": 93,
      "cv": 6,
      "ult": [
       "D",
-      "D",
-      "V"
+      "V",
+      "D"
      ],
      "escudo": "escudos/futebol-botafogo-db3e70.png"
     },
@@ -304,6 +304,27 @@
     },
     {
      "pos": 15,
+     "time": "Corinthians",
+     "j": 35,
+     "v": 10,
+     "e": 10,
+     "d": 15,
+     "gp": 40,
+     "gc": 42,
+     "sg": -2,
+     "pts": 40,
+     "ap": 38,
+     "ca": 97,
+     "cv": 9,
+     "ult": [
+      "V",
+      "E",
+      "V"
+     ],
+     "escudo": "escudos/futebol-corinthians-3e414a.png"
+    },
+    {
+     "pos": 16,
      "time": "Vitória",
      "j": 34,
      "v": 10,
@@ -324,7 +345,7 @@
      "escudo": "escudos/futebol-vitoria-a96951.png"
     },
     {
-     "pos": 16,
+     "pos": 17,
      "time": "Internacional",
      "j": 34,
      "v": 9,
@@ -345,44 +366,23 @@
      "escudo": "escudos/futebol-internacional-a7b9ea.webp"
     },
     {
-     "pos": 17,
-     "time": "Corinthians",
-     "j": 34,
-     "v": 9,
-     "e": 10,
-     "d": 15,
-     "gp": 36,
-     "gc": 42,
-     "sg": -6,
-     "pts": 37,
-     "ap": 36,
-     "ca": 94,
-     "cv": 9,
-     "ult": [
-      "D",
-      "V",
-      "E"
-     ],
-     "escudo": "escudos/futebol-corinthians-3e414a.png"
-    },
-    {
      "pos": 18,
      "time": "Grêmio",
-     "j": 34,
+     "j": 35,
      "v": 9,
-     "e": 10,
+     "e": 11,
      "d": 15,
      "gp": 38,
      "gc": 47,
      "sg": -9,
-     "pts": 37,
+     "pts": 38,
      "ap": 36,
-     "ca": 90,
+     "ca": 92,
      "cv": 9,
      "ult": [
       "V",
-      "V",
-      "D"
+      "D",
+      "E"
      ],
      "escudo": "escudos/futebol-gremio-ba2f40.webp"
     },
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 19/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 19/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 19/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 18/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 19/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1769,7 +1769,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 18/11/2026 (site da LNB)",
+   "atualizado": "em 19/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -1994,7 +1994,7 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 18/11/2026 (site da CBV)",
+   "atualizado": "em 19/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,

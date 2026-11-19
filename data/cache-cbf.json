@@ -748,6 +748,31 @@
   "tabela": "Brasileirão Série A"
  },
  {
+  "id": "cbf-832231",
+  "modalidade": "futebol-masculino",
+  "adversario": "Athletico Paranaense",
+  "competicao": "Brasileirão Série A",
+  "inicio": "2026-11-18T20:30:00-03:00",
+  "semHora": false,
+  "local": "Maracanã - Rio de Janeiro - RJ",
+  "mandante": true,
+  "transmissao": [
+   "Premiere",
+   "SporTV"
+  ],
+  "placar": {
+   "flamengo": 2,
+   "adversario": 1
+  },
+  "status": "encerrado",
+  "fonte": "automatica",
+  "fonteInfo": "CBF",
+  "campeonatoCbf": "campeonato-brasileiro/serie-a",
+  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20052%2Fescudo.jpg&w=128&q=70",
+  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/flamengo-x-athletico-paranaense/832231",
+  "tabela": "Brasileirão Série A"
+ },
+ {
   "id": "cbf-834013",
   "modalidade": "futebol-masculino",
   "adversario": "Vitória",
