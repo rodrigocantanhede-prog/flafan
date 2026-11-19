@@ -120,10 +120,13 @@ export function lerAgendaLnb(html, agora = Date.now()) {
     const fase = limpaTxt((tr.match(/stage_value hide_value[^>]*>([\s\S]*?)<\/td>/) ?? [])[1]);
     const ginasio = limpaTxt((tr.match(/gym_value[^>]*>([\s\S]*?)<(?:div|\/td)/) ?? [])[1]);
     const adv = nomeBonito(flaCasa ? fora : casa);
-    const placar = pc !== null && pf !== null && new Date(inicio).getTime() + 2.5 * 3600e3 < agora ? { flamengo: flaCasa ? pc : pf, adversario: flaCasa ? pf : pc } : null;
+    // placar parcial durante o jogo (a LNB atualiza a tabela de jogos ao vivo); encerrado 2h30 depois do início
+    const comecou = new Date(inicio).getTime() <= agora, acabou = new Date(inicio).getTime() + 2.5 * 3600e3 < agora;
+    const temNumeros = pc !== null && pf !== null && (pc > 0 || pf > 0 || acabou);
+    const placar = comecou && temNumeros ? { flamengo: flaCasa ? pc : pf, adversario: flaCasa ? pf : pc } : null;
     jogos.push({
       id: `lnb-${id}`, modalidade: 'basquete', adversario: adv, competicao: fase && !/turno/i.test(fase) ? `NBB – ${fase.toLowerCase()}` : 'NBB',
-      inicio, semHora: false, local: ginasio, mandante: flaCasa, transmissao: tv, placar, status: placar ? 'encerrado' : 'agendado',
+      inicio, semHora: false, local: ginasio, mandante: flaCasa, transmissao: tv, placar, status: placar ? (acabou ? 'encerrado' : 'ao-vivo') : 'agendado',
       fonte: 'automatica', fonteInfo: 'LNB', escudoAdvUrl: logo(flaCasa ? 'logo_visitor_team' : 'logo_home_team') || undefined, tabela: 'NBB',
     });
   }

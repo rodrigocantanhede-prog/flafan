@@ -330,7 +330,10 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
     assert.deepEqual(j.map((x) => x.categoria), ['Sub-20', 'Sub-17'], 'lê a página depois da página só de Sub-13');
   } finally { globalThis.fetch = real; globalThis.setTimeout = realTimeout; }
   const tr = `<tr class="with-hotel"><td data-real-id="9">1</td><td class="date_value"><span>08/11/2026</span> <span>19:00</span></td><td class="home_team_value"><span>Flamengo</span></td><td class="score_value show-for-medium"><a><span class="home">40</span> X <span class="away">38</span></a></td><td class="visitor_team_value"><span>Mogi</span></td></tr>`;
-  assert.equal(lerAgendaLnb(tr, new Date('2026-11-08T20:00:00-03:00').getTime())[0].placar, null, 'jogo em andamento: sem placar final');
+  const vivo = lerAgendaLnb(tr, new Date('2026-11-08T20:00:00-03:00').getTime())[0];
+  assert.deepEqual([vivo.status, vivo.placar], ['ao-vivo', { flamengo: 40, adversario: 38 }], 'jogo em andamento: placar parcial');
+  assert.equal(lerAgendaLnb(tr, new Date('2026-11-08T18:00:00-03:00').getTime())[0].placar, null, 'antes do jogo: sem placar');
+  assert.equal(lerAgendaLnb(tr.replace('>40<', '>0<').replace('>38<', '>0<'), new Date('2026-11-08T19:05:00-03:00').getTime())[0].placar, null, 'começo com 0 x 0 da tabela: ainda sem placar');
   assert.deepEqual(lerAgendaLnb(tr, new Date('2026-11-08T22:00:00-03:00').getTime())[0].placar, { flamengo: 40, adversario: 38 });
   const site = [{ id: 'site-futebol-masculino-2026-11-18-athletico', modalidade: 'futebol-masculino', adversario: 'Athletico-PR', inicio: '2026-11-18T21:30:00-03:00', ingresso: 'https://x' }];
   const cbf = [{ id: 'cbf-1', modalidade: 'futebol-masculino', adversario: 'Athletico Paranaense', inicio: '2026-11-19T19:00:00-03:00', link: 'https://cbf' }];

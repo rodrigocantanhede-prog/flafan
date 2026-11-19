@@ -827,6 +827,18 @@ requestAnimationFrame(() => document.querySelector('.abas')?.classList.add('anim
 montarAjustes();
 carregar();
 setInterval(() => { if (estado.carregado && (estado.aba === 'proximos' || estado.aba === 'resultados') && !$('#detalhe').open) desenhar(); }, 60e3); // atualiza a contagem regressiva
+// jogo acontecendo agora: busca o placar de novo a cada 2 minutos (só com o app aberto na tela)
+const temJogoAgora = () => estado.jogos.some((j) => j.tipo !== 'evento' && !j.semHora && !(j.status === 'encerrado' && j.placar)
+  && Date.now() >= new Date(j.inicio).getTime() - 5 * 60e3 && Date.now() <= new Date(j.inicio).getTime() + 2.75 * 3600e3);
+setInterval(async () => {
+  if (!estado.carregado || document.visibilityState !== 'visible' || document.querySelector('dialog[open]') || !temJogoAgora()) return;
+  if (Date.now() - (estado.ultimaCarga ?? 0) < 110e3) return;
+  try {
+    const dados = await (await fetch('data/jogos.json', { cache: 'no-cache' })).json();
+    estado.jogos = dados.jogos ?? estado.jogos; estado.ultimaCarga = Date.now();
+    if (estado.aba === 'proximos' || estado.aba === 'resultados') desenhar();
+  } catch { /* sem internet: tenta de novo na próxima volta */ }
+}, 30e3);
 
 // Atualização do app: confere se há versão nova ao abrir e ao voltar para o app; quando chega, recarrega sozinho.
 if ('serviceWorker' in navigator) {

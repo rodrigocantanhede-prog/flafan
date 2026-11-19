@@ -1,0 +1,38 @@
+# Placar ao vivo: a cada 10 minutos confere se há jogo do Flamengo acontecendo.
+# Se houver, fica ligado durante o jogo, rodando o robô a cada 4 minutos e publicando só quando o placar muda.
+name: Placar ao vivo
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+concurrency:
+  group: placar-ao-vivo
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  ao-vivo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Acompanhar jogos em andamento
+        env:
+          API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
+        run: |
+          git config user.name "FlaFan robô"
+          git config user.email "actions@users.noreply.github.com"
+          if ! node scripts/ao-vivo.mjs; then echo "Nenhum jogo agora."; exit 0; fi
+          while true; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            node scripts/ao-vivo.mjs || break
+            node scripts/atualizar.mjs || true
+            if node scripts/ao-vivo.mjs --mudou; then
+              git add data escudos && git commit -q -m "Placar ao vivo"
+              for t in 1 2 3; do git pull -q --rebase origin main && git push -q && break; git rebase --abort 2>/dev/null || true; git fetch -q origin main && git reset -q --hard origin/main; node scripts/atualizar.mjs || true; git add data escudos; git diff --cached --quiet || git commit -q -m "Placar ao vivo"; done
+            fi
+            sleep 240
+          done

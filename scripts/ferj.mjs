@@ -68,13 +68,16 @@ export function lerPartidasFerj(html, { idadeMinima = 15, agora = Date.now() } =
     const adv = flaCasa ? fora : casa;
     const status = String(p.statusPartida ?? '').toUpperCase();
     const gc = p.placarMandante, gv = p.placarVisitante;
-    const temPlacar = Number.isFinite(gc) && Number.isFinite(gv) && (status.startsWith('FINALIZ') || new Date(inicio).getTime() + 2.5 * 3600e3 < agora);
+    const numeros = Number.isFinite(gc) && Number.isFinite(gv);
+    const temPlacar = numeros && (status.startsWith('FINALIZ') || new Date(inicio).getTime() + 2.5 * 3600e3 < agora);
+    // jogo em andamento: a FERJ marca a partida como iniciada / em andamento e vai mudando o placar
+    const aoVivo = numeros && !temPlacar && new Date(inicio).getTime() <= agora && /ANDAMENTO|INICIAD|VIVO|INTERVALO|TEMPO/.test(status);
     const jogo = {
       id: `ferj-${p.id}`, modalidade: fem ? 'futebol-feminino' : base ? 'base' : 'futebol-masculino',
       adversario: nomeBonito(nomeFerj(adv.nome)), competicao, inicio, semHora: false,
       local: nomeBonito(String(p.estadio?.nome ?? '').replace(/\s+/g, ' ').trim()), mandante: flaCasa, transmissao: [],
-      placar: temPlacar ? { flamengo: flaCasa ? gc : gv, adversario: flaCasa ? gv : gc } : null,
-      status: /CANCEL/.test(status) ? 'cancelado' : /ADIAD/.test(status) ? 'adiado' : temPlacar ? 'encerrado' : 'agendado',
+      placar: temPlacar || aoVivo ? { flamengo: flaCasa ? gc : gv, adversario: flaCasa ? gv : gc } : null,
+      status: /CANCEL/.test(status) ? 'cancelado' : /ADIAD/.test(status) ? 'adiado' : temPlacar ? 'encerrado' : aoVivo ? 'ao-vivo' : 'agendado',
       fonte: 'automatica', fonteInfo: 'FERJ',
       escudoReserva: adv.imgEscudo ? `https://static.fferj.com.br/media/upload/time/${adv.imgEscudo}` : undefined,
       link: `${BASE}/partidas/${p.id}`,
