@@ -887,3 +887,11 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 @media (max-width: 430px) {
   .marca-sub { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.15; font-size: 11px; max-width: 9.5em; }
 }
+
+/* botão "Acompanhe ao vivo" (abre a busca do Google com o placar do jogo) */
+.lc-aovivo, .btn.aovivo { display: inline-flex; align-items: center; gap: 6px; }
+.lc-aovivo { background: #16A34A; }
+.btn.aovivo { background: #16A34A; color: #fff; }
+.pulso { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulso 1.4s ease-in-out infinite; flex: none; }
+@keyframes pulso { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
+@media (prefers-reduced-motion: reduce) { .pulso { animation: none; } }

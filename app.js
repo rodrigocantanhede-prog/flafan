@@ -173,6 +173,17 @@ function contagemCaixas(data) {
 // "Arena Carioca 1, Parque Olímpico, Rio de Janeiro" -> "Rio de Janeiro"
 const cidadeEvento = (local) => String(local ?? '').split(',').pop().trim();
 
+// "Acompanhe ao vivo": de 15 min antes até 3h depois do início, abre a busca do Google sobre o jogo (placar ao vivo do próprio Google)
+const ESPORTE_BUSCA = { basquete: 'basquete', 'volei-feminino': 'vôlei feminino', 'volei-masculino': 'vôlei', 'futebol-feminino': 'futebol feminino' };
+function linkAoVivo(j) {
+  if (j.tipo === 'evento' || j.semHora || j.status === 'encerrado' || j.status === 'cancelado' || j.status === 'adiado') return '';
+  const t = new Date(j.inicio).getTime(), agora = Date.now();
+  if (agora < t - 15 * 60e3 || agora > t + 3 * 3600e3) return '';
+  const [casa, fora] = j.mandante === false ? [j.adversario, 'Flamengo'] : ['Flamengo', j.adversario];
+  const q = [casa, 'x', fora, ESPORTE_BUSCA[j.modalidade] ?? '', j.categoria ?? ''].filter(Boolean).join(' ');
+  return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
+}
+
 function blocoInfo(j) {
   const data = new Date(j.inicio);
   const acabou = j.tipo === 'evento' ? (j.status === 'encerrado' || fimDoEvento(j) < Date.now()) : jaTerminou(j) || (!j.semHora && data.getTime() + DURACAO < Date.now());
@@ -187,6 +198,8 @@ function blocoInfo(j) {
   if (j.tipo === 'evento' && j.resultado?.length > 1) extras.push(`<div class="lc-resultado">${j.resultado.map((r) => `<span>${icone('trofeu')}${esc(r)}</span>`).join('')}</div>`);
   if (j.observacao) extras.push(`<div class="lc-obs">${esc(j.observacao)}</div>`);
   const rodape = [];
+  const aoVivo = linkAoVivo(j);
+  if (aoVivo) rodape.push(`<a class="lc-ingresso lc-aovivo" href="${esc(aoVivo)}" target="_blank" rel="noopener"><span class="pulso"></span>Acompanhe ao vivo ↗</a>`);
   if (j.ingresso && /^https:\/\//.test(j.ingresso) && !acabou && j.status !== 'cancelado') rodape.push(`<a class="lc-ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>`);
   if (j.categoria) rodape.push(`<span class="lc-fonte">${esc(j.categoria)}</span>`);
   if (j.fonteInfo) rodape.push(`<span class="lc-fonte">Fonte: ${esc(j.fonteInfo)}</span>`);
@@ -289,6 +302,7 @@ function cartao(j, destaque = false) {
       ${mostraOnde ? `<div class="linha onde">${icone('tv')}<div class="canais">${canais}</div></div>` : ''}
     </div>
     ${j.observacao ? `<div class="obs">${esc(j.observacao)}</div>` : ''}
+    ${linkAoVivo(j) ? `<a class="btn ingresso aovivo" href="${esc(linkAoVivo(j))}" target="_blank" rel="noopener"><span class="pulso"></span>Acompanhe ao vivo ↗</a>` : ''}
     ${j.ingresso && /^https:\/\//.test(j.ingresso) && !terminou && j.status !== 'cancelado' ? `<a class="btn ingresso" href="${esc(j.ingresso)}" target="_blank" rel="noopener">Comprar ingresso ↗</a>` : ''}
     ${j.fonteInfo ? `<div class="fonte-info">Fonte: ${esc(j.fonteInfo)}</div>` : ''}
   </article>`;
