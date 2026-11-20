@@ -127,7 +127,8 @@ export function lerAgendaLnb(html, agora = Date.now()) {
     jogos.push({
       id: `lnb-${id}`, modalidade: 'basquete', adversario: adv, competicao: fase && !/turno/i.test(fase) ? `NBB – ${fase.toLowerCase()}` : 'NBB',
       inicio, semHora: false, local: ginasio, mandante: flaCasa, transmissao: tv, placar, status: placar ? (acabou ? 'encerrado' : 'ao-vivo') : 'agendado',
-      fonte: 'automatica', fonteInfo: 'LNB', escudoAdvUrl: logo(flaCasa ? 'logo_visitor_team' : 'logo_home_team') || undefined, tabela: 'NBB',
+      fonte: 'automatica', fonteInfo: 'LNB', escudoAdvUrl: logo(flaCasa ? 'logo_visitor_team' : 'logo_home_team') || undefined,
+      ...(/sul-?americana|champions|fiba/i.test(fase) ? {} : { tabela: 'NBB' }), // jogo da Liga Sul-Americana não usa a tabela do NBB
     });
   }
   return jogos;
