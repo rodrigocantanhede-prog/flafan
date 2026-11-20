@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T12:58:56.990Z",
+ "atualizadoEm": "2026-11-20T16:33:12.432Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3632,11 +3632,23 @@
    "semHora": true,
    "local": "Arena Carioca 1, Parque Olímpico, Rio de Janeiro",
    "mandante": null,
-   "atletas": [],
-   "resultado": [],
+   "atletas": [
+    "Marcelo Gomes",
+    "Karol Gimenes",
+    "Giovanna dos Santos",
+    "Gabrielle Ferreira",
+    "Maria Eduarda Diniz"
+   ],
+   "resultado": [
+    "Ouro médio -90 kg (Marcelo Gomes)",
+    "Ouro meio-pesado (Karol Gimenes)",
+    "Ouro pesado (Giovanna dos Santos)",
+    "Bronze médio (Gabrielle Ferreira)",
+    "Bronze médio (Maria Eduarda Diniz)"
+   ],
    "transmissao": [],
    "placar": null,
-   "status": "agendado",
+   "status": "encerrado",
    "fonte": "manual",
    "fonteInfo": "CBJ; Federação de Judô do Rio (FJERJ)"
   },
