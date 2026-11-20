@@ -1,0 +1,11 @@
+finalizados pg=1 | 200 | 21 partidas | 2026-11-03 a 2026-11-18 | ids 6522,6448,6543,6539 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-17; Copa Rio Sub-15; Carioca Sub-20; Guilherme Embry Sub-16
+finalizados pg=2 | 200 | 1 partidas | 2026-11-01 a 2026-11-01 | ids 6457 | links de página no HTML: ?pg=1 | Guilherme Embry Sub-16
+finalizados pg=3 | 200 | 0 partidas | - a - | ids  | links de página no HTML: ?pg=1 | 
+finalizados page=2 | 200 | 21 partidas | 2026-11-03 a 2026-11-18 | ids 6522,6448,6543,6539 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-17; Copa Rio Sub-15; Carioca Sub-20; Guilherme Embry Sub-16
+finalizados pagina=2 | 200 | 21 partidas | 2026-11-03 a 2026-11-18 | ids 6522,6448,6543,6539 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-17; Copa Rio Sub-15; Carioca Sub-20; Guilherme Embry Sub-16
+agendados pg=1 | 200 | 4 partidas | 2026-11-21 a 2026-11-24 | ids 6463,6541,6545,6521 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-15; Copa Rio Sub-17
+agendados pg=2 | 200 | 0 partidas | - a - | ids  | links de página no HTML: ?pg=1 | 
+agendados pg=3 | 200 | 0 partidas | - a - | ids  | links de página no HTML: ?pg=1 | 
+agendados page=2 | 200 | 4 partidas | 2026-11-21 a 2026-11-24 | ids 6463,6541,6545,6521 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-15; Copa Rio Sub-17
+agendados pagina=2 | 200 | 4 partidas | 2026-11-21 a 2026-11-24 | ids 6463,6541,6545,6521 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-15; Copa Rio Sub-17
+sem tab | 200 | 4 partidas | 2026-11-21 a 2026-11-24 | ids 6463,6541,6545,6521 | links de página no HTML: ?pg=1 | Carioca Feminino; Copa Rio Sub-15; Copa Rio Sub-17
