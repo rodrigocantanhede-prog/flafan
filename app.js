@@ -237,7 +237,7 @@ function linhaCompacta(j) {
       valor = '<span class="lc-hora apagado">– × –</span>'; legenda = 'Sem placar';
     } else {
       valor = `<span class="lc-hora">${j.semHora ? '--:--' : fHora.format(data)}</span>`;
-      legenda = j.status === 'ao-vivo' ? 'Ao vivo' : j.semHora ? 'Horário a definir' : 'Horário de Brasília';
+      legenda = j.status === 'ao-vivo' ? 'Ao vivo' : j.semHora ? 'Horário a definir' : '';
     }
   }
   const comp = j.tipo === 'evento' ? 'Olímpicos' : (j.competicao || m.nome || '');
@@ -281,7 +281,7 @@ function cartao(j, destaque = false) {
   } else if (j.semHora) {
     centro = `<div class="hora-grande a-definir">--:--</div><div class="centro-legenda">Horário a definir</div>`;
   } else {
-    centro = `<div class="hora-grande">${fHora.format(data)}</div><div class="centro-legenda">Horário de Brasília</div>`;
+    centro = `<div class="hora-grande">${fHora.format(data)}</div>`;
   }
 
   const status = { 'ao-vivo': 'Ao vivo', adiado: 'Adiado', cancelado: 'Cancelado' }[j.status];
