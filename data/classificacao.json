@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T02:12:33.152Z",
+ "atualizadoEm": "2026-11-20T02:21:29.595Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1763,6 +1763,57 @@
      "escudo": "escudos/futebol-litoral-norte-f-c-f5d431.webp"
     }
    ]
+  },
+  {
+   "nome": "Liga Sul-Americana – Grupo F",
+   "modalidade": "basquete",
+   "atualizado": "final das quartas (15/11) — os 2 primeiros vão ao Final Four",
+   "fonte": "planilha",
+   "linhas": [
+    {
+     "pos": 1,
+     "time": "Flamengo",
+     "j": 3,
+     "v": 2,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": 5
+    },
+    {
+     "pos": 2,
+     "time": "CAIXA/Brasília",
+     "j": 3,
+     "v": 2,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": 5
+    },
+    {
+     "pos": 3,
+     "time": "Boca Juniors",
+     "j": 3,
+     "v": 2,
+     "e": null,
+     "d": 1,
+     "sg": null,
+     "pts": 5,
+     "escudo": "escudos/basquete-boca-juniors.png"
+    },
+    {
+     "pos": 4,
+     "time": "Paisas",
+     "j": 3,
+     "v": 0,
+     "e": null,
+     "d": 3,
+     "sg": null,
+     "pts": 3,
+     "escudo": "escudos/basquete-paisas.png"
+    }
+   ],
+   "nota": "Site do Flamengo; LNB; FIBA"
   },
   {
    "nome": "NBB",

@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-20T02:12:33.152Z",
+ "atualizadoEm": "2026-11-20T02:21:29.595Z",
  "exemplo": false,
  "avisos": [
+  "Chave da API-Sports não configurada — usando só a planilha.",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
