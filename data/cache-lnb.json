@@ -173,8 +173,11 @@
   "transmissao": [
    "SporTV"
   ],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 79,
+   "adversario": 102
+  },
+  "status": "ao-vivo",
   "fonte": "automatica",
   "fonteInfo": "LNB",
   "escudoAdvUrl": "https://lnb.com.br/wp-content/uploads/2018/01/Unifacisa-1-150x150.png",

@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-19T22:58:36.610Z",
+ "atualizadoEm": "2026-11-20T00:15:02.800Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1798,13 +1798,13 @@
     {
      "pos": 3,
      "time": "Unifacisa",
-     "j": 8,
-     "v": 6,
+     "j": 9,
+     "v": 7,
      "e": null,
      "d": 2,
-     "sg": 39,
-     "pts": 14,
-     "ap": 75,
+     "sg": 62,
+     "pts": 16,
+     "ap": 78,
      "escudo": "escudos/basquete-unifacisa-a5807a.png"
     },
     {
@@ -1821,17 +1821,6 @@
     },
     {
      "pos": 5,
-     "time": "Flamengo",
-     "j": 7,
-     "v": 5,
-     "e": null,
-     "d": 2,
-     "sg": 52,
-     "pts": 12,
-     "ap": 71
-    },
-    {
-     "pos": 6,
      "time": "Sesi Franca",
      "j": 9,
      "v": 6,
@@ -1841,6 +1830,17 @@
      "pts": 15,
      "ap": 67,
      "escudo": "escudos/basquete-sesi-franca-c08c49.png"
+    },
+    {
+     "pos": 6,
+     "time": "Flamengo",
+     "j": 8,
+     "v": 5,
+     "e": null,
+     "d": 3,
+     "sg": 29,
+     "pts": 13,
+     "ap": 63
     },
     {
      "pos": 7,
@@ -2042,32 +2042,32 @@
     {
      "pos": 5,
      "time": "Osasco São Cristóvão Saúde",
-     "j": 5,
-     "v": 4,
+     "j": 6,
+     "v": 5,
      "e": null,
      "d": 1,
      "sg": null,
-     "pts": 12,
+     "pts": 15,
      "escudo": "escudos/volei-osasco-sao-cristovao-saude-cdfbcf.png"
     },
     {
      "pos": 6,
      "time": "Brusque Vôlei",
-     "j": 5,
-     "v": 2,
+     "j": 6,
+     "v": 3,
      "e": null,
      "d": 3,
      "sg": null,
-     "pts": 8,
+     "pts": 11,
      "escudo": "escudos/volei-brusque-volei-ceea88.png"
     },
     {
      "pos": 7,
      "time": "Pinheiros",
-     "j": 4,
+     "j": 5,
      "v": 2,
      "e": null,
-     "d": 2,
+     "d": 3,
      "sg": null,
      "pts": 4,
      "escudo": "escudos/volei-pinheiros-ef805a.png"
@@ -2097,10 +2097,10 @@
     {
      "pos": 10,
      "time": "Batavo Mackenzie",
-     "j": 5,
+     "j": 6,
      "v": 1,
      "e": null,
-     "d": 4,
+     "d": 5,
      "sg": null,
      "pts": 3,
      "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"

@@ -756,10 +756,7 @@
   "semHora": false,
   "local": "Maracanã - Rio de Janeiro - RJ",
   "mandante": true,
-  "transmissao": [
-   "Premiere",
-   "SporTV"
-  ],
+  "transmissao": [],
   "placar": {
    "flamengo": 2,
    "adversario": 1
