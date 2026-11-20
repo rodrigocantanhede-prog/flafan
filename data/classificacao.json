@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T02:21:29.595Z",
+ "atualizadoEm": "2026-11-20T02:24:23.871Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1782,13 +1782,14 @@
     },
     {
      "pos": 2,
-     "time": "CAIXA/Brasília",
+     "time": "Brasília",
      "j": 3,
      "v": 2,
      "e": null,
      "d": 1,
      "sg": null,
-     "pts": 5
+     "pts": 5,
+     "escudo": "escudos/basquete-brasilia-e22d40.png"
     },
     {
      "pos": 3,

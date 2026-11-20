@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T02:21:29.595Z",
+ "atualizadoEm": "2026-11-20T02:24:23.871Z",
  "exemplo": false,
  "avisos": [
   "Chave da API-Sports não configurada — usando só a planilha.",
@@ -3573,7 +3573,7 @@
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "Site do Flamengo; LNB; Lance",
-   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
   },
   {
    "id": "cbf-835473",
