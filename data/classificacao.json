@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T00:31:25.615Z",
+ "atualizadoEm": "2026-11-20T02:12:33.152Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -179,26 +179,47 @@
     {
      "pos": 9,
      "time": "Bragantino",
-     "j": 34,
+     "j": 35,
      "v": 13,
      "e": 8,
-     "d": 13,
-     "gp": 44,
-     "gc": 39,
-     "sg": 5,
+     "d": 14,
+     "gp": 45,
+     "gc": 41,
+     "sg": 4,
      "pts": 47,
-     "ap": 46,
-     "ca": 86,
+     "ap": 44,
+     "ca": 92,
      "cv": 5,
      "ult": [
-      "D",
       "V",
-      "V"
+      "V",
+      "D"
      ],
      "escudo": "escudos/futebol-bragantino-0801e7.png"
     },
     {
      "pos": 10,
+     "time": "Vasco",
+     "j": 35,
+     "v": 13,
+     "e": 8,
+     "d": 14,
+     "gp": 47,
+     "gc": 51,
+     "sg": -4,
+     "pts": 47,
+     "ap": 44,
+     "ca": 68,
+     "cv": 3,
+     "ult": [
+      "D",
+      "V",
+      "V"
+     ],
+     "escudo": "escudos/futebol-vasco-5dbf77.webp"
+    },
+    {
+     "pos": 11,
      "time": "São Paulo",
      "j": 34,
      "v": 12,
@@ -217,27 +238,6 @@
       "E"
      ],
      "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
-    },
-    {
-     "pos": 11,
-     "time": "Vasco",
-     "j": 34,
-     "v": 12,
-     "e": 8,
-     "d": 14,
-     "gp": 45,
-     "gc": 50,
-     "sg": -5,
-     "pts": 44,
-     "ap": 43,
-     "ca": 65,
-     "cv": 3,
-     "ult": [
-      "V",
-      "D",
-      "V"
-     ],
-     "escudo": "escudos/futebol-vasco-5dbf77.webp"
     },
     {
      "pos": 12,
@@ -283,6 +283,27 @@
     },
     {
      "pos": 14,
+     "time": "Vitória",
+     "j": 35,
+     "v": 11,
+     "e": 8,
+     "d": 16,
+     "gp": 37,
+     "gc": 52,
+     "sg": -15,
+     "pts": 41,
+     "ap": 39,
+     "ca": 79,
+     "cv": 4,
+     "ult": [
+      "D",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-vitoria-a96951.png"
+    },
+    {
+     "pos": 15,
      "time": "Mirassol",
      "j": 35,
      "v": 10,
@@ -303,7 +324,7 @@
      "escudo": "escudos/futebol-mirassol-74dc30.webp"
     },
     {
-     "pos": 15,
+     "pos": 16,
      "time": "Corinthians",
      "j": 35,
      "v": 10,
@@ -324,44 +345,23 @@
      "escudo": "escudos/futebol-corinthians-3e414a.png"
     },
     {
-     "pos": 16,
-     "time": "Vitória",
-     "j": 34,
-     "v": 10,
-     "e": 8,
-     "d": 16,
-     "gp": 35,
-     "gc": 51,
-     "sg": -16,
-     "pts": 38,
-     "ap": 37,
-     "ca": 77,
-     "cv": 4,
-     "ult": [
-      "E",
-      "D",
-      "D"
-     ],
-     "escudo": "escudos/futebol-vitoria-a96951.png"
-    },
-    {
      "pos": 17,
      "time": "Internacional",
-     "j": 34,
+     "j": 35,
      "v": 9,
      "e": 11,
-     "d": 14,
-     "gp": 38,
-     "gc": 42,
-     "sg": -4,
+     "d": 15,
+     "gp": 39,
+     "gc": 44,
+     "sg": -5,
      "pts": 38,
-     "ap": 37,
-     "ca": 97,
+     "ap": 36,
+     "ca": 101,
      "cv": 10,
      "ult": [
-      "V",
       "D",
-      "V"
+      "V",
+      "D"
      ],
      "escudo": "escudos/futebol-internacional-a7b9ea.webp"
     },
@@ -1774,12 +1774,12 @@
     {
      "pos": 1,
      "time": "Minas Storm",
-     "j": 8,
-     "v": 8,
+     "j": 9,
+     "v": 9,
      "e": null,
      "d": 0,
-     "sg": 158,
-     "pts": 16,
+     "sg": 175,
+     "pts": 18,
      "ap": 100,
      "escudo": "escudos/basquete-minas-storm-438d6e.png"
     },
@@ -1810,13 +1810,13 @@
     {
      "pos": 4,
      "time": "Pinheiros",
-     "j": 8,
-     "v": 6,
+     "j": 9,
+     "v": 7,
      "e": null,
      "d": 2,
-     "sg": 97,
-     "pts": 14,
-     "ap": 75,
+     "sg": 111,
+     "pts": 16,
+     "ap": 78,
      "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
     },
     {
@@ -1856,6 +1856,18 @@
     },
     {
      "pos": 8,
+     "time": "Corinthians",
+     "j": 9,
+     "v": 5,
+     "e": null,
+     "d": 4,
+     "sg": 14,
+     "pts": 14,
+     "ap": 56,
+     "escudo": "escudos/basquete-corinthians-c187b9.png"
+    },
+    {
+     "pos": 9,
      "time": "CAIXA/Brasília Basquete",
      "j": 8,
      "v": 4,
@@ -1867,31 +1879,7 @@
      "escudo": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
     },
     {
-     "pos": 9,
-     "time": "Corinthians",
-     "j": 8,
-     "v": 4,
-     "e": null,
-     "d": 4,
-     "sg": 13,
-     "pts": 12,
-     "ap": 50,
-     "escudo": "escudos/basquete-corinthians-c187b9.png"
-    },
-    {
      "pos": 10,
-     "time": "Itatiaiuçu Cruzeiro Basquete",
-     "j": 7,
-     "v": 3,
-     "e": null,
-     "d": 4,
-     "sg": -20,
-     "pts": 10,
-     "ap": 43,
-     "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
-    },
-    {
-     "pos": 11,
      "time": "Bauru Basket",
      "j": 7,
      "v": 3,
@@ -1903,7 +1891,7 @@
      "escudo": "escudos/basquete-bauru-basket-91d95a.png"
     },
     {
-     "pos": 12,
+     "pos": 11,
      "time": "São José Basketball",
      "j": 8,
      "v": 3,
@@ -1913,6 +1901,18 @@
      "pts": 11,
      "ap": 38,
      "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
+    },
+    {
+     "pos": 12,
+     "time": "Itatiaiuçu Cruzeiro Basquete",
+     "j": 8,
+     "v": 3,
+     "e": null,
+     "d": 5,
+     "sg": -34,
+     "pts": 11,
+     "ap": 38,
+     "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
     },
     {
      "pos": 13,
@@ -1940,18 +1940,6 @@
     },
     {
      "pos": 15,
-     "time": "Pato Basquete",
-     "j": 8,
-     "v": 2,
-     "e": null,
-     "d": 6,
-     "sg": -71,
-     "pts": 10,
-     "ap": 25,
-     "escudo": "escudos/basquete-pato-basquete-d43cc6.png"
-    },
-    {
-     "pos": 16,
      "time": "Basquete Cearense",
      "j": 8,
      "v": 2,
@@ -1963,15 +1951,27 @@
      "escudo": "escudos/basquete-basquete-cearense-8b0fd2.png"
     },
     {
+     "pos": 16,
+     "time": "Pato Basquete",
+     "j": 9,
+     "v": 2,
+     "e": null,
+     "d": 7,
+     "sg": -72,
+     "pts": 11,
+     "ap": 22,
+     "escudo": "escudos/basquete-pato-basquete-d43cc6.png"
+    },
+    {
      "pos": 17,
      "time": "Basket Osasco",
-     "j": 6,
+     "j": 7,
      "v": 1,
      "e": null,
-     "d": 5,
-     "sg": -54,
-     "pts": 7,
-     "ap": 17,
+     "d": 6,
+     "sg": -71,
+     "pts": 8,
+     "ap": 14,
      "escudo": "escudos/basquete-basket-osasco-449453.png"
     },
     {
