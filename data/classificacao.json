@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-20T03:22:35.401Z",
+ "atualizadoEm": "2026-11-20T12:58:56.990Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -74,16 +74,16 @@
     {
      "pos": 4,
      "time": "Fluminense",
-     "j": 34,
-     "v": 16,
+     "j": 35,
+     "v": 17,
      "e": 9,
      "d": 9,
-     "gp": 55,
+     "gp": 56,
      "gc": 42,
-     "sg": 13,
-     "pts": 57,
-     "ap": 55,
-     "ca": 93,
+     "sg": 14,
+     "pts": 60,
+     "ap": 57,
+     "ca": 94,
      "cv": 4,
      "ult": [
       "V",
@@ -221,16 +221,16 @@
     {
      "pos": 11,
      "time": "São Paulo",
-     "j": 34,
+     "j": 35,
      "v": 12,
      "e": 8,
-     "d": 14,
+     "d": 15,
      "gp": 39,
-     "gc": 39,
-     "sg": 0,
+     "gc": 40,
+     "sg": -1,
      "pts": 44,
-     "ap": 43,
-     "ca": 78,
+     "ap": 41,
+     "ca": 79,
      "cv": 4,
      "ult": [
       "D",
