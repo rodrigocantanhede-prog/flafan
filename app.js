@@ -1,4 +1,4 @@
-// FlaFan — telas do app.
+// RubroNegro+ — telas do app.
 const FUSO = 'America/Sao_Paulo';
 const MODALIDADES = {
   'futebol-masculino': { nome: 'Futebol masculino', curto: 'Futebol masc.', icone: 'futebol', emoji: '⚽', sexo: 'm', cor: '#E3141B' },
@@ -11,7 +11,7 @@ const MODALIDADES = {
   'olimpicos': { nome: 'Esportes olímpicos', curto: 'Olímpicos', icone: 'olimpicos', emoji: '🏅', sexo: null, cor: '#2DD4BF' },
 };
 
-// Ícones desenhados para o FlaFan (traço simples, herdam a cor do texto)
+// Ícones desenhados para o RubroNegro+ (traço simples, herdam a cor do texto)
 const ICONES = {
   futebol: '<circle cx="12" cy="12" r="9.5"/><path d="M12 7.6l3.2 2.3-1.2 3.8h-4l-1.2-3.8z" fill="currentColor"/><path d="M12 7.6V2.6M15.2 9.9l4.6-1.5M14 13.7l2.9 3.9M10 13.7l-2.9 3.9M8.8 9.9L4.2 8.4"/>',
   base: '<circle cx="12" cy="12" r="9.5"/><path d="M12 7.6l3.2 2.3-1.2 3.8h-4l-1.2-3.8z" fill="currentColor"/><path d="M12 7.6V2.6M15.2 9.9l4.6-1.5M14 13.7l2.9 3.9M10 13.7l-2.9 3.9M8.8 9.9L4.2 8.4"/>',
@@ -678,7 +678,7 @@ const instalado = () => window.matchMedia('(display-mode: standalone)').matches 
 const ehIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 let pedidoInstalar = null;
 
-// link que abre o FlaFan já com o passo a passo de instalação (para mandar aos amigos)
+// link que abre o RubroNegro+ já com o passo a passo de instalação (para mandar aos amigos)
 const linkConvite = () => `${location.origin}${location.pathname.replace(/index\.html$/, '')}?instalar`;
 function avisar(texto) {
   const t = $('#toast'); t.textContent = texto; t.hidden = false;
@@ -687,7 +687,7 @@ function avisar(texto) {
   clearTimeout(avisar.tempo); avisar.tempo = setTimeout(() => { t.hidden = true; }, 2600);
 }
 $('#compartilhar').onclick = $('#compartilhar-topo').onclick = async () => {
-  const dados = { title: 'RubroNegro+', text: 'Todos os jogos do Mengão em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
+  const dados = { title: 'RubroNegro+', text: 'Todos os jogos do mais amado do Brasil em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
   try {
     if (navigator.share) { await navigator.share(dados); return; }
   } catch (e) { if (e?.name === 'AbortError') return; }

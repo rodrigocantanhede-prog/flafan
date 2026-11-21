@@ -1,4 +1,4 @@
-// FlaFan — atualização diária dos jogos.
+// RubroNegro+ — atualização diária dos jogos.
 // Junta: (1) dados automáticos da API-Sports + (2) sua planilha do Google (que sempre tem a palavra final).
 // Gera: data/jogos.json (lido pelo app) e data/calendario/*.ics (lembretes na agenda).
 //
@@ -31,7 +31,7 @@ export const MODALIDADES = {
 };
 
 // ---------- utilidades ----------
-const log = (...a) => console.log('[FlaFan]', ...a);
+const log = (...a) => console.log('[RubroNegro+]', ...a);
 const limpar = (s) => (s ?? '').toString().trim();
 const semAcento = (s) => limpar(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
@@ -324,7 +324,7 @@ export function gerarIcs(jogos, titulo, carimbo = new Date()) {
       'END:VEVENT',
     ].filter(Boolean);
   }).flat();
-  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//FlaFan//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//RubroNegro+//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     `X-WR-CALNAME:${icsTexto(titulo)}`, 'X-WR-TIMEZONE:America/Sao_Paulo', 'REFRESH-INTERVAL;VALUE=DURATION:PT12H',
     ...ev, 'END:VCALENDAR'].map(dobrar).join('\r\n') + '\r\n';
 }
@@ -818,9 +818,9 @@ async function main() {
   await registrarSaude(planilhaFalhou, problemas);
 
   await mkdir(path.join(DATA, 'calendario'), { recursive: true });
-  await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'FlaFan — todos os jogos', new Date(saida.atualizadoEm)));
+  await writeFile(path.join(DATA, 'calendario', 'todos.ics'), gerarIcs(jogos, 'RubroNegro+ — todos os jogos', new Date(saida.atualizadoEm)));
   for (const [chaveMod, nome] of Object.entries(MODALIDADES)) {
-    await writeFile(path.join(DATA, 'calendario', `${chaveMod}.ics`), gerarIcs(jogos.filter((j) => j.modalidade === chaveMod), `FlaFan — ${nome}`, new Date(saida.atualizadoEm)));
+    await writeFile(path.join(DATA, 'calendario', `${chaveMod}.ics`), gerarIcs(jogos.filter((j) => j.modalidade === chaveMod), `RubroNegro+ — ${nome}`, new Date(saida.atualizadoEm)));
   }
   log(`Pronto: ${jogos.length} jogos salvos.`);
   problemas.forEach((p) => log('Aviso:', p));

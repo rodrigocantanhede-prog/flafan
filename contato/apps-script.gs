@@ -1,5 +1,5 @@
-// FlaFan — recebe as mensagens do formulário "Fale com a gente" do app.
-// Cole este código em: planilha do FlaFan > Extensões > Apps Script. Depois: Implantar > Nova implantação > App da Web
+// RubroNegro+ — recebe as mensagens do formulário "Fale com a gente" do app.
+// Cole este código em: planilha do RubroNegro+ > Extensões > Apps Script. Depois: Implantar > Nova implantação > App da Web
 // (Executar como: Eu · Quem pode acessar: Qualquer pessoa). Copie o endereço que termina em /exec.
 //
 // Cada mensagem vira uma linha na aba "Mensagens" (criada sozinha) e você recebe um e-mail.
@@ -38,9 +38,9 @@ function doPost(e) {
     // nada que comece com = + - @ vira fórmula na planilha
     aba.appendRow(linha.map((v) => (typeof v === 'string' && /^[=+\-@]/.test(v) ? "'" + v : v)));
 
-    const assunto = 'FlaFan — ' + tipo + (d.nome ? ' — ' + limpa(d.nome, 60) : '');
+    const assunto = 'RubroNegro+ — ' + tipo + (d.nome ? ' — ' + limpa(d.nome, 60) : '');
     const corpo = [
-      'Nova mensagem pelo app FlaFan', '',
+      'Nova mensagem pelo app RubroNegro+', '',
       'Assunto: ' + tipo,
       'Nome: ' + (limpa(d.nome, 100) || '(não informado)'),
       'Contato: ' + (limpa(d.contato, 150) || '(não informado)'),
@@ -57,7 +57,7 @@ function doPost(e) {
 }
 
 // abrir o endereço no navegador mostra só isto (serve para testar se está no ar)
-function doGet() { return resposta({ ok: true, servico: 'FlaFan contato' }); }
+function doGet() { return resposta({ ok: true, servico: 'RubroNegro+ contato' }); }
 
 function limpa(s, max, manterLinhas) {
   let t = String(s == null ? '' : s);

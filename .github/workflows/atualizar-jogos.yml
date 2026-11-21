@@ -28,7 +28,7 @@ jobs:
       - name: Salvar se algo mudou
         if: always()
         run: |
-          git config user.name "FlaFan robô"
+          git config user.name "RubroNegro+ robô"
           git config user.email "actions@users.noreply.github.com"
           salvar() { git add data escudos; git diff --cached --quiet || git commit -m "Atualização automática dos jogos"; }
           salvar

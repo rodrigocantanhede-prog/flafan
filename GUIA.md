@@ -1,4 +1,4 @@
-# FlaFan: guia do dono do app
+# RubroNegro+: guia do dono do app
 
 App de torcedor que mostra todos os jogos do Flamengo, em todas as modalidades, e onde assistir a cada um.
 
@@ -22,7 +22,7 @@ Se uma fonte sair do ar, o app continua com a última leitura boa daquela fonte.
 ## Onde fica cada coisa
 | Arquivo / pasta | Para que serve | Você mexe? |
 |---|---|---|
-| Planilha "FlaFan — Jogos (painel de controle)" no seu Google Drive | Corrigir ou adicionar jogos, eventos e canais; receber as mensagens do "Fale com a gente" | **Sim, é o seu painel** |
+| Planilha "RubroNegro+ — Jogos (painel de controle)" no seu Google Drive | Corrigir ou adicionar jogos, eventos e canais; receber as mensagens do "Fale com a gente" | **Sim, é o seu painel** |
 | `config.json` | Configurações (endereço da planilha, campeonatos lidos de cada site) | Raramente |
 | `index.html`, `styles.css`, `app.js` | As telas do app | Não |
 | `scripts/` | O robô que lê as fontes e junta os jogos | Não |

@@ -23,7 +23,7 @@ jobs:
         env:
           API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
         run: |
-          git config user.name "FlaFan robô"
+          git config user.name "RubroNegro+ robô"
           git config user.email "actions@users.noreply.github.com"
           if ! node scripts/ao-vivo.mjs; then echo "Nenhum jogo agora."; exit 0; fi
           while true; do

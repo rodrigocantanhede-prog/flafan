@@ -1,4 +1,4 @@
-# FlaFan
+# RubroNegro+
 
 App de torcedor com todos os jogos do Flamengo, em todas as modalidades, e onde assistir a cada um.
 Funciona no navegador do celular e pode ser instalado na tela inicial.
