@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-21T03:15:28.995Z",
+ "atualizadoEm": "2026-11-21T09:36:42.384Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3792,10 +3792,12 @@
    "semHora": false,
    "local": "Nivaldo Pereira",
    "mandante": false,
-   "transmissao": [],
+   "transmissao": [
+    "VascoTV (YouTube)"
+   ],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6463",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
