@@ -901,3 +901,6 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   background: transparent; border: 1px solid var(--borda); padding: 4px 10px; border-radius: 999px; cursor: pointer; }
 .lc-partilhar svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .folha .lc-partilhar { color: #fff; border-color: rgba(255,255,255,.25); }
+
+/* canal na internet (YouTube etc.) vira link */
+.canal-link { color: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }

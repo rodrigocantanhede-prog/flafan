@@ -39,6 +39,24 @@ const emojiModalidade = (m) => (m?.emoji ? `<span class="emoji-mod" aria-hidden=
 const seloModalidade = (m) => `${m.emoji ? emojiModalidade(m) : icone(m.icone)}${m.sexo ? icone(m.sexo, 'ic ic-sexo') : ''}`;
 
 const GRATIS = /(globo\b|tv globo|ge ?tv|youtube|tv brasil|tv cultura|cazé|caze|record\b|band\b|sbt\b|flatv|fla tv|flamengo tv)/i;
+// canais na internet viram link: Flamengo TV vai direto ao canal do clube; os outros canais do YouTube abrem a busca do YouTube pelo canal
+const LINK_CANAL = [
+  [/^(fla ?tv|flamengo ?tv)\b/i, 'https://www.youtube.com/@flamengo/streams'],
+];
+const NA_INTERNET = /youtube|\btv\b|tv\b|basquete ?tv|vbtv|caz[eé]|canal|lance!?tv|twitch/i;
+const SO_TV = /^(tv |sportv|premiere|globo|band|record|espn|tnt|sbt|disney|max|prime|paramount|globoplay|combate)/i;
+function linkCanal(c) {
+  const nome = String(c).trim();
+  for (const [re, url] of LINK_CANAL) if (re.test(nome)) return url;
+  if (SO_TV.test(nome) || !NA_INTERNET.test(nome)) return null;
+  const busca = nome.replace(/\(?youtube\)?/i, '').trim() || 'Flamengo';
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(busca + ' ao vivo')}`;
+}
+const canalHtml = (c, tag, extra = '') => {
+  const url = linkCanal(c), cls = GRATIS.test(c) ? 'gratis' : '';
+  return url ? `<a class="canal-link ${cls} ${tag === 'span' ? 'canal' : ''}" href="${esc(url)}" target="_blank" rel="noopener">${esc(c)} ↗${extra}</a>`
+    : `<${tag} class="${tag === 'span' ? 'canal ' : ''}${cls}">${esc(c)}${extra}</${tag}>`;
+};
 
 // ---------- memória do aparelho (só conveniência; se falhar, o app funciona igual) ----------
 const guardar = (k, v) => { try { localStorage.setItem('flafan:' + k, JSON.stringify(v)); } catch {} };
@@ -143,7 +161,7 @@ function cartaoEvento(j, destaque = false) {
   const status = { adiado: 'Adiado', cancelado: 'Cancelado' }[j.status];
   const terminou = j.status === 'encerrado' || fimDoEvento(j) < Date.now();
   const canais = j.transmissao?.length
-    ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
+    ? j.transmissao.map((c) => canalHtml(c, 'span', GRATIS.test(c) ? '<em>grátis</em>' : '')).join('')
     : `<span class="canal confirmar">A confirmar</span>`;
   return `<article class="jogo evento ${destaque ? 'destaque' : ''}" data-id="${esc(j.id)}" tabindex="0" role="button" style="--cor:${m.cor}">
     ${destaque ? '<div class="destaque-rotulo">Próximo evento</div>' : ''}
@@ -192,7 +210,7 @@ function blocoInfo(j) {
   // evento sem resultado mostra a cidade à direita da placa; embaixo só se o endereço completo disser mais
   if (j.local && !(j.tipo === 'evento' && !j.resultado?.length && cidadeEvento(j.local) === j.local)) info.push(`<span class="lc-item">${icone('pin')}${esc(j.local)}</span>`);
   if (!acabou && j.status !== 'cancelado') {
-    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? `<span class="lc-canais">${j.transmissao.map((c) => `<b class="${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}</b>`).join(', ')}</span>` : '<i>a confirmar</i>'}</span>`);
+    info.push(`<span class="lc-item">${icone('tv')}${j.transmissao?.length ? `<span class="lc-canais">${j.transmissao.map((c) => canalHtml(c, 'b')).join(', ')}</span>` : '<i>a confirmar</i>'}</span>`);
   }
   if (j.tipo === 'evento' && j.atletas?.length) info.push(`<span class="lc-item">${icone('pessoa')}${j.atletas.map(esc).join(' · ')}</span>`);
   const extras = [];
@@ -286,7 +304,7 @@ function cartao(j, destaque = false) {
 
   const status = { 'ao-vivo': 'Ao vivo', adiado: 'Adiado', cancelado: 'Cancelado' }[j.status];
   const canais = j.transmissao?.length
-    ? j.transmissao.map((c) => `<span class="canal ${GRATIS.test(c) ? 'gratis' : ''}">${esc(c)}${GRATIS.test(c) ? '<em>grátis</em>' : ''}</span>`).join('')
+    ? j.transmissao.map((c) => canalHtml(c, 'span', GRATIS.test(c) ? '<em>grátis</em>' : '')).join('')
     : `<span class="canal confirmar">A confirmar</span>`;
   const mostraOnde = j.status !== 'encerrado';
 
