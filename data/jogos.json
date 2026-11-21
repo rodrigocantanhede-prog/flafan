@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-21T09:36:42.384Z",
+ "atualizadoEm": "2026-11-21T15:54:08.625Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3795,8 +3795,11 @@
    "transmissao": [
     "VascoTV (YouTube)"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 3,
+    "adversario": 3
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6463",
@@ -3812,8 +3815,11 @@
    "local": "José Bastos Padilha",
    "mandante": true,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 2,
+    "adversario": 0
+   },
+   "status": "encerrado",
    "fonte": "automatica",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6541",
