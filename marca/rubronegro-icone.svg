@@ -3,5 +3,5 @@
 <rect width="1024" height="1024" fill="url(#g)"/>
 <g transform="translate(512 470) skewX(-10)" fill="#E3141B"><rect x="-330" y="-250" width="660" height="70" rx="12"/><rect x="-330" y="-110" width="660" height="70" rx="12"/><rect x="-330" y="30" width="660" height="70" rx="12"/><rect x="-330" y="170" width="660" height="70" rx="12"/></g>
 <text x="512" y="610" font-family="Barlow Condensed" font-weight="800" font-style="italic" font-size="430" text-anchor="middle" letter-spacing="-8" fill="#fff" stroke="#060607" stroke-width="30" paint-order="stroke">RN+</text>
-<text x="512" y="880" font-family="Barlow Condensed" font-weight="800" font-style="italic" font-size="120" text-anchor="middle" letter-spacing="6" fill="#fff" opacity=".95">RUBRONEGRO<tspan fill="#E3141B">+</tspan></text>
+<text x="512" y="880" font-family="Barlow Condensed" font-weight="800" font-style="italic" font-size="120" text-anchor="middle" letter-spacing="6" fill="#fff" opacity=".95">RUBRONEGRO+</text>
 </svg>
