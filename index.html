@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FlaFan — todos os jogos do Mengão</title>
+  <title>RubroNegro+ — todos os jogos do Mengão</title>
   <meta name="description" content="Todos os jogos do Mengão, em todas as modalidades, e onde assistir.">
   <meta name="theme-color" content="#0B0B0D">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/favicon-64.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="FlaFan">
+  <meta name="apple-mobile-web-app-title" content="RN+">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta property="og:title" content="FlaFan">
+  <meta property="og:title" content="RubroNegro+">
   <meta property="og:description" content="Todos os jogos do Mengão, em todas as modalidades, e onde assistir. Grátis, direto no celular.">
   <meta property="og:image" content="https://rodrigocantanhede-prog.github.io/flafan/icons/icon-512.png">
   <meta property="og:url" content="https://rodrigocantanhede-prog.github.io/flafan/">
@@ -29,14 +29,14 @@
   <header class="topo">
     <img src="icons/icon-192.png" alt="" class="topo-icone" width="40" height="40">
     <div class="marca-bloco">
-      <div class="marca"><span class="fla">Fla</span><span class="fan">Fan</span></div>
+      <div class="marca"><span class="fan">Rubro</span><span class="fla">Negro</span><span class="fan">+</span></div>
       <div class="marca-sub">Todos os jogos do Mengão</div>
     </div>
     <div class="topo-botoes">
-    <button class="btn-icone" id="abrir-instalar" aria-label="Instalar o FlaFan no celular" title="Instalar no celular">
+    <button class="btn-icone" id="abrir-instalar" aria-label="Instalar o RubroNegro+ no celular" title="Instalar no celular">
       <svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M12 8v6M9 11h6"/><path d="M10.5 18.5h3"/></svg>
     </button>
-    <button class="btn-icone" id="compartilhar-topo" aria-label="Compartilhar o FlaFan com amigos" title="Compartilhar com amigos">
+    <button class="btn-icone" id="compartilhar-topo" aria-label="Compartilhar o RubroNegro+ com amigos" title="Compartilhar com amigos">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>
     </button>
     <button class="btn-icone" id="contato-topo" data-abrir-contato aria-label="Fale com a gente: sugestões, erros ou anúncios" title="Fale com a gente">
@@ -79,9 +79,9 @@
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12Z"/></svg>
       Fale com a gente
     </button>
-    <span class="rodape-chamada">Sugestões, erros ou quer anunciar no FlaFan? Mande uma mensagem.</span>
+    <span class="rodape-chamada">Sugestões, erros ou quer anunciar no RubroNegro+? Mande uma mensagem.</span>
     <span id="atualizado"></span>
-    <span>FlaFan é um app de torcedor, sem vínculo oficial com o clube.</span>
+    <span>RubroNegro+ é um app de torcedor, sem vínculo oficial com o clube.</span>
   </footer>
 
   <dialog id="instalar" class="painel">
@@ -90,14 +90,14 @@
         <h2>Instalar o app</h2>
         <button class="btn-icone" value="fechar" aria-label="Fechar">✕</button>
       </div>
-      <div class="instalar-app"><img src="icons/icon-192.png" alt="" width="56" height="56"><div><b>FlaFan</b><span>Fica na tela inicial como um app, abre em tela cheia e funciona sem internet.</span></div></div>
-      <button type="button" class="btn instalar-direto" id="instalar-direto" hidden>Instalar FlaFan</button>
+      <div class="instalar-app"><img src="icons/icon-192.png" alt="" width="56" height="56"><div><b>RubroNegro+</b><span>Fica na tela inicial como um app, abre em tela cheia e funciona sem internet.</span></div></div>
+      <button type="button" class="btn instalar-direto" id="instalar-direto" hidden>Instalar RubroNegro+</button>
       <section class="passos" data-sistema="ios">
         <h3>No iPhone (Safari)</h3>
         <ol>
           <li>Toque em <b>Compartilhar</b> <span class="ic-passo" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg></span> na barra do Safari (embaixo ou em cima, ao lado do endereço).</li>
           <li>Role a lista e toque em <b>Adicionar à Tela de Início</b> <span class="ic-passo" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8v8M8 12h8"/></svg></span>.</li>
-          <li>Toque em <b>Adicionar</b>. Pronto: o ícone do FlaFan aparece na sua tela inicial.</li>
+          <li>Toque em <b>Adicionar</b>. Pronto: o ícone do RubroNegro+ aparece na sua tela inicial.</li>
         </ol>
         <p class="ajuda">No Chrome do iPhone, o botão Compartilhar fica no canto de cima, ao lado do endereço.</p>
       </section>
@@ -106,7 +106,7 @@
         <ol>
           <li>Toque no menu <b>⋮</b> (três pontinhos, no canto de cima).</li>
           <li>Toque em <b>Instalar app</b> ou <b>Adicionar à tela inicial</b>.</li>
-          <li>Confirme em <b>Instalar</b>. O ícone do FlaFan aparece junto com os seus apps.</li>
+          <li>Confirme em <b>Instalar</b>. O ícone do RubroNegro+ aparece junto com os seus apps.</li>
         </ol>
       </section>
       <button type="button" class="btn compartilhar-amigos" id="compartilhar">
@@ -125,7 +125,7 @@
         <button type="button" class="btn-icone" data-fechar-contato aria-label="Fechar">✕</button>
       </div>
       <div class="contato-corpo">
-        <p class="ajuda">Sua mensagem chega direto para quem cuida do FlaFan.</p>
+        <p class="ajuda">Sua mensagem chega direto para quem cuida do RubroNegro+.</p>
         <fieldset class="contato-tipos">
           <legend>Assunto</legend>
           <label><input type="radio" name="tipo" value="sugestao" checked><span>💡 Sugestão</span></label>
@@ -153,7 +153,7 @@
       <div class="contato-ok" hidden>
         <div class="contato-ok-icone">✓</div>
         <h3>Mensagem enviada!</h3>
-        <p>Obrigado por ajudar a melhorar o FlaFan. Se você deixou um contato, a gente responde por lá.</p>
+        <p>Obrigado por ajudar a melhorar o RubroNegro+. Se você deixou um contato, a gente responde por lá.</p>
         <button type="button" class="btn" data-fechar-contato>Fechar</button>
       </div>
     </form>
@@ -168,7 +168,7 @@
 
       <section>
         <h3>📅 Lembrete na agenda do celular</h3>
-        <p class="ajuda">Os jogos entram na agenda do seu celular e, se um jogo mudar, a agenda se atualiza sozinha. No iPhone, o alerta toca <b>1 hora antes</b>; no Google Agenda, ative as notificações do calendário FlaFan nas configurações da agenda.</p>
+        <p class="ajuda">Os jogos entram na agenda do seu celular e, se um jogo mudar, a agenda se atualiza sozinha. No iPhone, o alerta toca <b>1 hora antes</b>; no Google Agenda, ative as notificações do calendário RubroNegro+ nas configurações da agenda.</p>
         <label class="campo">Quais jogos?
           <select id="cal-modalidade"></select>
         </label>
@@ -184,7 +184,7 @@
         <p class="ajuda">Escolha as modalidades que você acompanha:</p>
         <div id="pref-modalidades" class="checks"></div>
         <button type="button" class="btn" id="ativar-push" disabled>Ativar notificações (em breve)</button>
-        <p class="ajuda pequena" id="push-ajuda">No iPhone, primeiro instale o FlaFan na tela inicial (Compartilhar → “Adicionar à Tela de Início”).</p>
+        <p class="ajuda pequena" id="push-ajuda">No iPhone, primeiro instale o RubroNegro+ na tela inicial (Compartilhar → “Adicionar à Tela de Início”).</p>
       </section>
     </form>
   </dialog>

@@ -904,3 +904,9 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 
 /* canal na internet (YouTube etc.) vira link */
 .canal-link { color: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+/* nome "RubroNegro+" (mais comprido): cabe inteiro ao lado dos 5 botões */
+.marca { white-space: nowrap; }
+@media (max-width: 430px) { .marca { font-size: 24px; } }
+@media (max-width: 400px) { .marca { font-size: 22px; } }
+@media (max-width: 345px) { .marca { font-size: 21px; } }

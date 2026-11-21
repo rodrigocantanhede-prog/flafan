@@ -25,8 +25,8 @@
     <rect x="200" y="100" width="720" height="500" fill="url(#shade)"/>
   </g>
 </g>
-<g transform="translate(512 760) skewX(-12)" filter="url(#drop)" font-family="Inter Display" font-weight="900" font-size="250" text-anchor="middle" letter-spacing="-8">
-  <text x="0" y="0"><tspan fill="#FFFFFF">Fla</tspan><tspan fill="#E3141B">Fan</tspan></text>
+<g transform="translate(512 778) skewX(0)" filter="url(#drop)" font-family="Barlow Condensed" font-weight="800" font-style="italic" font-size="270" text-anchor="middle" letter-spacing="-4">
+  <text x="0" y="0"><tspan fill="#E3141B">R</tspan><tspan fill="#FFFFFF">N</tspan><tspan fill="#E3141B">+</tspan></text>
 </g>
 <path d="M190 850 C 420 800, 700 790, 860 800 C 700 812, 450 840, 230 885 L 255 860 Z" fill="#E3141B" filter="url(#drop)"/>
 </svg>

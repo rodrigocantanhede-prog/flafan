@@ -687,12 +687,12 @@ function avisar(texto) {
   clearTimeout(avisar.tempo); avisar.tempo = setTimeout(() => { t.hidden = true; }, 2600);
 }
 $('#compartilhar').onclick = $('#compartilhar-topo').onclick = async () => {
-  const dados = { title: 'FlaFan', text: 'Todos os jogos do Mengão em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
+  const dados = { title: 'RubroNegro+', text: 'Todos os jogos do Mengão em um app: futebol, base, feminino, basquete, vôlei e mais. Instala aí:', url: linkConvite() };
   try {
     if (navigator.share) { await navigator.share(dados); return; }
   } catch (e) { if (e?.name === 'AbortError') return; }
   try { await navigator.clipboard.writeText(`${dados.text} ${dados.url}`); avisar('Link copiado! Cole no WhatsApp para mandar.'); }
-  catch { prompt('Copie o link do FlaFan:', dados.url); }
+  catch { prompt('Copie o link do RubroNegro+:', dados.url); }
 };
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pedidoInstalar = e; $('#instalar-direto').hidden = false; });
 window.addEventListener('appinstalled', () => { $('#instalar-direto').hidden = true; });
@@ -782,8 +782,8 @@ async function compartilharJogo(id) {
   const j = estado.jogos.find((x) => x.id === id);
   if (!j) return;
   const url = `${location.origin}${location.pathname.replace(/index\.html$/, '')}?jogo=${encodeURIComponent(j.id)}`;
-  const texto = `${textoDoJogo(j)}\n\nVeja no FlaFan:`;
-  try { if (navigator.share) { await navigator.share({ title: 'FlaFan', text: texto, url }); return; } }
+  const texto = `${textoDoJogo(j)}\n\nVeja no RubroNegro+:`;
+  try { if (navigator.share) { await navigator.share({ title: 'RubroNegro+', text: texto, url }); return; } }
   catch (e) { if (e?.name === 'AbortError') return; }
   try { await navigator.clipboard.writeText(`${texto} ${url}`); avisar('Jogo copiado! Cole no WhatsApp para mandar.'); }
   catch { prompt('Copie o link do jogo:', url); }
