@@ -918,3 +918,10 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   .marca { flex: 1 1 auto; min-width: 0; }
   .marca-sub { order: 9; flex: 0 0 100%; max-width: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11.5px; margin-top: 0; }
 }
+
+/* calendário no computador: o primeiro cartão do dia começa na mesma linha do topo do calendário (o título do dia sobe) */
+@media (min-width: 760px) {
+  #lista[data-vista="calendario"] { margin-top: 30px; } /* espaço para o título do dia, que fica acima da linha dos cartões */
+  #lista[data-vista="calendario"] .cal-lista { position: relative; padding-top: 0; }
+  #lista[data-vista="calendario"] .cal-lista .dia:first-child { position: absolute; left: 0; right: 0; bottom: 100%; margin: 0 0 8px; }
+}
