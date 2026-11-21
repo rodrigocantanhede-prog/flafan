@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-21T15:54:08.625Z",
+ "atualizadoEm": "2026-11-21T22:03:17.487Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -26,7 +26,7 @@
      "ult": [
       "V",
       "V",
-      "V"
+      "E"
      ]
     },
     {
@@ -44,9 +44,9 @@
      "ca": 76,
      "cv": 7,
      "ult": [
-      "E",
       "V",
-      "D"
+      "D",
+      "E"
      ],
      "escudo": "escudos/futebol-palmeiras-26c301.png"
     },
@@ -1933,13 +1933,13 @@
     {
      "pos": 10,
      "time": "Itatiaiuçu Cruzeiro Basquete",
-     "j": 8,
-     "v": 3,
+     "j": 9,
+     "v": 4,
      "e": null,
      "d": 5,
-     "sg": -34,
-     "pts": 11,
-     "ap": 38,
+     "sg": -16,
+     "pts": 13,
+     "ap": 44,
      "escudo": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
     },
     {
@@ -2017,13 +2017,13 @@
     {
      "pos": 17,
      "time": "Basket Osasco",
-     "j": 7,
+     "j": 8,
      "v": 1,
      "e": null,
-     "d": 6,
-     "sg": -71,
-     "pts": 8,
-     "ap": 14,
+     "d": 7,
+     "sg": -89,
+     "pts": 9,
+     "ap": 13,
      "escudo": "escudos/basquete-basket-osasco-449453.png"
     },
     {

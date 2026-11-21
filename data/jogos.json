@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-21T15:54:08.625Z",
+ "atualizadoEm": "2026-11-21T22:03:17.487Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3839,11 +3839,15 @@
     "Globo",
     "Premiere"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 1,
+    "adversario": 1
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "Site do Flamengo",
    "pagina": "futebol",
+   "observacao": "Flamengo campeão brasileiro de 2026",
    "escudoAdv": "escudos/futebol-palmeiras-26c301.png"
   },
   {
