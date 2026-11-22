@@ -915,7 +915,7 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 @media (max-width: 759px) {
   .topo { flex-wrap: wrap; row-gap: 4px; }
   .marca-bloco { display: contents; }
-  .marca { flex: 1 1 auto; min-width: 0; }
+  .marca { flex: 1 1 0; min-width: 0; overflow: hidden; }
   .marca-sub { order: 9; flex: 0 0 100%; max-width: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11.5px; margin-top: 0; }
 }
 
@@ -929,3 +929,7 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 /* última coluna das tabelas: mesma folga da borda que a coluna "#" tem do outro lado */
 .tabela-camp th:last-child, .tabela-camp td:last-child, #lista[data-vista="tabelas"] .tabela-camp th:last-child, #lista[data-vista="tabelas"] .tabela-camp td:last-child { padding-right: 14px; }
 .folha .tabela-camp th:last-child, .folha .tabela-camp td:last-child { padding-right: 10px; }
+
+/* tela não "pula" ao carregar: guarda o lugar dos filtros e mantém o rodapé lá embaixo desde o início */
+.filtros:empty::before { content: ""; display: block; height: 38px; flex: none; }
+#lista { min-height: 100vh; }
