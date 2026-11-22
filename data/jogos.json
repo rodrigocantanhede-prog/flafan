@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-22T02:17:26.864Z",
+ "atualizadoEm": "2026-11-22T02:20:22.923Z",
  "exemplo": false,
  "avisos": [
+  "Chave da API-Sports não configurada — usando só a planilha.",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -3827,7 +3828,7 @@
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
-   "id": "site-futebol-masculino-2026-11-21-palmeiras",
+   "id": "cbf-832244",
    "modalidade": "futebol-masculino",
    "adversario": "Palmeiras",
    "competicao": "Brasileirão Série A",
@@ -3836,6 +3837,7 @@
    "local": "Nubank Parque, São Paulo",
    "mandante": false,
    "transmissao": [
+    "ge TV",
     "Globo",
     "Premiere"
    ],
@@ -3845,8 +3847,10 @@
    },
    "status": "encerrado",
    "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "futebol",
+   "fonteInfo": "CBF",
+   "campeonatoCbf": "campeonato-brasileiro/serie-a",
+   "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/palmeiras-x-flamengo/832244",
+   "tabela": "Brasileirão Série A",
    "observacao": "Flamengo campeão brasileiro de 2026",
    "escudoAdv": "escudos/futebol-palmeiras-26c301.png"
   },
