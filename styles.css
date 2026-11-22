@@ -925,3 +925,7 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
   #lista[data-vista="calendario"] .cal-lista { position: relative; padding-top: 0; }
   #lista[data-vista="calendario"] .cal-lista .dia:first-child { position: absolute; left: 0; right: 0; bottom: 100%; margin: 0 0 8px; }
 }
+
+/* última coluna das tabelas: mesma folga da borda que a coluna "#" tem do outro lado */
+.tabela-camp th:last-child, .tabela-camp td:last-child { padding-right: 14px; }
+.folha .tabela-camp th:last-child, .folha .tabela-camp td:last-child { padding-right: 10px; }
