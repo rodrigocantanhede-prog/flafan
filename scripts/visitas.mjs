@@ -23,17 +23,17 @@ async function chamar(caminho, token, corpo) {
   return j;
 }
 
-export async function lerCloudflare(token, dias = 10) {
-  const contas = (await chamar('/accounts?per_page=5', token)).result ?? [];
-  if (!contas.length) throw new Error('a chave não enxerga nenhuma conta');
+export async function lerCloudflare(token, dias = 10, conta = process.env.CLOUDFLARE_ACCOUNT_ID ?? '') {
   const ate = new Date(), de = new Date(ate.getTime() - dias * 864e5);
-  const query = `query ($conta: String!, $de: Date!, $ate: Date!) { viewer { accounts(filter: { accountTag: $conta }) {
+  // a chave só de leitura de estatísticas não lista contas pelo caminho comum; o próprio relatório diz quais contas ela enxerga
+  const filtro = conta ? '{ accountTag: $conta }' : '{}';
+  const query = `query (${conta ? '$conta: String!, ' : ''}$de: Date!, $ate: Date!) { viewer { accounts(filter: ${filtro}) {
     rumPageloadEventsAdaptiveGroups(filter: { date_geq: $de, date_leq: $ate }, limit: 1000) { count dimensions { date } } } } }`;
+  const j = await chamar('/graphql', token, { query, variables: { ...(conta ? { conta } : {}), de: dia(de), ate: dia(ate) } });
+  const contas = j.data?.viewer?.accounts ?? [];
+  if (!contas.length) throw new Error('a chave não enxerga nenhuma conta');
   const novos = {};
-  for (const c of contas) {
-    const j = await chamar('/graphql', token, { query, variables: { conta: c.id, de: dia(de), ate: dia(ate) } });
-    for (const g of j.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? []) novos[g.dimensions.date] = (novos[g.dimensions.date] ?? 0) + g.count;
-  }
+  for (const c of contas) for (const g of c.rumPageloadEventsAdaptiveGroups ?? []) novos[g.dimensions.date] = (novos[g.dimensions.date] ?? 0) + g.count;
   return novos;
 }
 
