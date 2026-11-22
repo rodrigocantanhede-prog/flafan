@@ -32,6 +32,8 @@ jobs:
         run: node scripts/visitas.mjs || true
       - name: Salvar se algo mudou
         if: always()
+        env:
+          API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
         run: |
           git config user.name "RubroNegro+ robô"
           git config user.email "actions@users.noreply.github.com"
