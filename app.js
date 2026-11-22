@@ -764,7 +764,7 @@ $('#instalar').addEventListener('click', (e) => { if (e.target === $('#instalar'
 
 // ---------- "Fale com a gente": mensagens vão para a planilha (Google Apps Script) e chegam por e-mail ----------
 // endereço do App da Web (termina em /exec). Enquanto estiver vazio, o formulário avisa que ainda não está ativo.
-const CONTATO_URL = '';
+const CONTATO_URL = 'https://script.google.com/macros/s/AKfycbzv9Th9E76-4SUvRYlHnPOjkfGK-BXhWa9uLYEfTUqr1LwppqKbUngeS8bsIK-X9Kz1bw/exec';
 const formContato = $('#form-contato');
 function abrirContato(tipo) {
   for (const d of document.querySelectorAll('dialog[open]')) d.close();
