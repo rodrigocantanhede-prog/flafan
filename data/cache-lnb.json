@@ -196,8 +196,11 @@
    "YouTube",
    "Flamengo TV"
   ],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 92,
+   "adversario": 66
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "LNB",
   "escudoAdvUrl": "https://lnb.com.br/wp-content/uploads/2015/08/logo-basquete-cearense-2015.png",

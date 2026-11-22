@@ -1,7 +1,8 @@
 {
- "atualizadoEm": "2026-11-22T20:04:42.930Z",
+ "atualizadoEm": "2026-11-22T23:40:12.533Z",
  "exemplo": false,
  "avisos": [
+  "Site do Flamengo (futebol): The operation was aborted due to timeout",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -3865,8 +3866,11 @@
     "YouTube",
     "Flamengo TV"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 92,
+    "adversario": 66
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "LNB",
    "tabela": "NBB",
