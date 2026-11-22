@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-21T22:03:17.487Z",
+ "atualizadoEm": "2026-11-22T02:00:02.684Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -12,16 +12,16 @@
     {
      "pos": 1,
      "time": "Flamengo",
-     "j": 35,
+     "j": 36,
      "v": 24,
-     "e": 7,
+     "e": 8,
      "d": 4,
-     "gp": 73,
-     "gc": 30,
+     "gp": 74,
+     "gc": 31,
      "sg": 43,
-     "pts": 79,
-     "ap": 75,
-     "ca": 71,
+     "pts": 80,
+     "ap": 74,
+     "ca": 73,
      "cv": 7,
      "ult": [
       "V",
@@ -32,16 +32,16 @@
     {
      "pos": 2,
      "time": "Palmeiras",
-     "j": 35,
+     "j": 36,
      "v": 21,
-     "e": 10,
+     "e": 11,
      "d": 4,
-     "gp": 63,
-     "gc": 25,
+     "gp": 64,
+     "gc": 26,
      "sg": 38,
-     "pts": 73,
-     "ap": 69,
-     "ca": 76,
+     "pts": 74,
+     "ap": 68,
+     "ca": 80,
      "cv": 7,
      "ult": [
       "V",
@@ -116,21 +116,21 @@
     {
      "pos": 6,
      "time": "Bahia",
-     "j": 35,
+     "j": 36,
      "v": 14,
      "e": 12,
-     "d": 9,
+     "d": 10,
      "gp": 50,
-     "gc": 45,
-     "sg": 5,
+     "gc": 46,
+     "sg": 4,
      "pts": 54,
-     "ap": 51,
-     "ca": 88,
-     "cv": 4,
+     "ap": 50,
+     "ca": 89,
+     "cv": 5,
      "ult": [
-      "V",
       "D",
-      "E"
+      "E",
+      "D"
      ],
      "escudo": "escudos/futebol-bahia-9eba69.png"
     },
@@ -220,6 +220,27 @@
     },
     {
      "pos": 11,
+     "time": "Coritiba",
+     "j": 36,
+     "v": 12,
+     "e": 9,
+     "d": 15,
+     "gp": 41,
+     "gc": 52,
+     "sg": -11,
+     "pts": 45,
+     "ap": 41,
+     "ca": 73,
+     "cv": 11,
+     "ult": [
+      "D",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-coritiba-2c60dd.png"
+    },
+    {
+     "pos": 12,
      "time": "São Paulo",
      "j": 35,
      "v": 12,
@@ -240,7 +261,7 @@
      "escudo": "escudos/futebol-sao-paulo-5b49a4.webp"
     },
     {
-     "pos": 12,
+     "pos": 13,
      "time": "Botafogo",
      "j": 35,
      "v": 11,
@@ -259,27 +280,6 @@
       "D"
      ],
      "escudo": "escudos/futebol-botafogo-db3e70.png"
-    },
-    {
-     "pos": 13,
-     "time": "Coritiba",
-     "j": 35,
-     "v": 11,
-     "e": 9,
-     "d": 15,
-     "gp": 40,
-     "gc": 52,
-     "sg": -12,
-     "pts": 42,
-     "ap": 40,
-     "ca": 71,
-     "cv": 11,
-     "ult": [
-      "V",
-      "D",
-      "D"
-     ],
-     "escudo": "escudos/futebol-coritiba-2c60dd.png"
     },
     {
      "pos": 14,
@@ -1826,12 +1826,12 @@
     {
      "pos": 1,
      "time": "Minas Storm",
-     "j": 9,
-     "v": 9,
+     "j": 10,
+     "v": 10,
      "e": null,
      "d": 0,
-     "sg": 175,
-     "pts": 18,
+     "sg": 212,
+     "pts": 20,
      "ap": 100,
      "escudo": "escudos/basquete-minas-storm-438d6e.png"
     },
@@ -1861,18 +1861,6 @@
     },
     {
      "pos": 4,
-     "time": "Pinheiros",
-     "j": 9,
-     "v": 7,
-     "e": null,
-     "d": 2,
-     "sg": 111,
-     "pts": 16,
-     "ap": 78,
-     "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
-    },
-    {
-     "pos": 5,
      "time": "Sesi Franca",
      "j": 10,
      "v": 7,
@@ -1882,6 +1870,18 @@
      "pts": 17,
      "ap": 70,
      "escudo": "escudos/basquete-sesi-franca-c08c49.png"
+    },
+    {
+     "pos": 5,
+     "time": "Pinheiros",
+     "j": 10,
+     "v": 7,
+     "e": null,
+     "d": 3,
+     "sg": 74,
+     "pts": 17,
+     "ap": 70,
+     "escudo": "escudos/basquete-pinheiros-bfe7cc.png"
     },
     {
      "pos": 6,
