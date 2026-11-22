@@ -1,8 +1,7 @@
 {
- "atualizadoEm": "2026-11-22T02:20:22.923Z",
+ "atualizadoEm": "2026-11-22T09:37:03.453Z",
  "exemplo": false,
  "avisos": [
-  "Chave da API-Sports não configurada — usando só a planilha.",
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
@@ -4009,15 +4008,15 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "mandante": null,
-   "local": "",
+   "mandante": true,
+   "local": "Maracanãzinho, Rio de Janeiro",
    "competicao": "Liga Sul-Americana – Final Four (semifinal)",
    "fonte": "manual",
    "modalidade": "basquete",
    "adversario": "Nacional (Uruguai)",
    "inicio": "2026-12-05T00:00:00-03:00",
    "semHora": true,
-   "fonteInfo": "Site do Flamengo; LNB"
+   "fonteInfo": "FIBA; Site do Flamengo; LNB"
   },
   {
    "id": "site-volei-feminino-2026-12-08-minas",
