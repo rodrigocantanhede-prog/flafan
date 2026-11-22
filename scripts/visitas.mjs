@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const ARQ = 'data/visitas.json';
 const API = 'https://api.cloudflare.com/client/v4';
+const CONTA = '5803b0e0f138c97b2e9cc625a623c48c'; // identificador da conta no Cloudflare (não é segredo)
 const dia = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: 'UTC' }).format(d);
 
 // junta os dias novos com os já guardados (o dia mais recente substitui a contagem parcial anterior)
@@ -23,7 +24,7 @@ async function chamar(caminho, token, corpo) {
   return j;
 }
 
-export async function lerCloudflare(token, dias = 10, conta = process.env.CLOUDFLARE_ACCOUNT_ID ?? '') {
+export async function lerCloudflare(token, dias = 10, conta = process.env.CLOUDFLARE_ACCOUNT_ID || CONTA) {
   const ate = new Date(), de = new Date(ate.getTime() - dias * 864e5);
   // a chave só de leitura de estatísticas não lista contas pelo caminho comum; o próprio relatório diz quais contas ela enxerga
   const filtro = conta ? '{ accountTag: $conta }' : '{}';
