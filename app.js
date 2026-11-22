@@ -920,6 +920,15 @@ async function carregar() {
       $('#atualizado').textContent = 'Conferido em ' + fDataHora.format(new Date(conferido));
       $('#aviso-antigo').hidden = !(horas > 12);
     }
+    // contador de acessos (o robô lê do Cloudflare; aparece só quando houver número)
+    try {
+      const v = await (await fetch('data/visitas.json', { cache: 'no-cache' })).json();
+      if (v?.total > 0) {
+        const [a, m, d] = String(v.desde).split('-');
+        $('#visitas').textContent = `👁 ${v.total.toLocaleString('pt-BR')} acesso${v.total === 1 ? '' : 's'} desde ${d}/${m}/${a}`;
+        $('#visitas').hidden = false;
+      }
+    } catch { /* ainda sem contador */ }
     estado.ultimaCarga = Date.now();
   } catch {
     $('#lista').innerHTML = '<p class="vazio">Não foi possível carregar os jogos. Verifique sua internet.</p>';

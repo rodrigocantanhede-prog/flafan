@@ -25,6 +25,11 @@ jobs:
         env:
           API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
         run: node scripts/atualizar.mjs
+      - name: Contador de acessos (Cloudflare)
+        if: always()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/visitas.mjs || true
       - name: Salvar se algo mudou
         if: always()
         run: |

@@ -427,3 +427,13 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.equal(etiqueta('futebol-masculino'), 'm_futebol_masculino');
   console.log('✓ Avisos no celular: agenda 1h antes, não repete e corrige quando o jogo muda');
 }
+
+// ---------- contador de acessos ----------
+{
+  const { somar } = await import('./visitas.mjs');
+  let v = somar(null, { '2026-11-22': 10, '2026-11-23': 4 }, '2026-11-23');
+  assert.deepEqual([v.desde, v.total, v.hoje], ['2026-11-22', 14, 4]);
+  v = somar(v, { '2026-11-23': 9, '2026-11-24': 2 }, '2026-11-24');
+  assert.deepEqual([v.desde, v.total, v.hoje], ['2026-11-22', 21, 2], 'dia parcial é substituído, dias antigos ficam guardados');
+  console.log('✓ Contador de acessos soma dia a dia');
+}
