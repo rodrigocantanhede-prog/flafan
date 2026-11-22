@@ -770,32 +770,6 @@
   "tabela": "Brasileirão Série A"
  },
  {
-  "id": "cbf-832244",
-  "modalidade": "futebol-masculino",
-  "adversario": "Palmeiras",
-  "competicao": "Brasileirão Série A",
-  "inicio": "2026-11-21T16:30:00-03:00",
-  "semHora": false,
-  "local": "Nubank Parque - Sao Paulo - SP",
-  "mandante": false,
-  "transmissao": [
-   "ge TV",
-   "Globo",
-   "Premiere"
-  ],
-  "placar": {
-   "flamengo": 1,
-   "adversario": 1
-  },
-  "status": "encerrado",
-  "fonte": "automatica",
-  "fonteInfo": "CBF",
-  "campeonatoCbf": "campeonato-brasileiro/serie-a",
-  "escudoReserva": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20002%2Fescudo.jpg&w=128&q=70",
-  "link": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/palmeiras-x-flamengo/832244",
-  "tabela": "Brasileirão Série A"
- },
- {
   "id": "cbf-834013",
   "modalidade": "futebol-masculino",
   "adversario": "Vitória",
