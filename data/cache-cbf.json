@@ -778,11 +778,7 @@
   "semHora": false,
   "local": "Nubank Parque - Sao Paulo - SP",
   "mandante": false,
-  "transmissao": [
-   "ge TV",
-   "Globo",
-   "Premiere"
-  ],
+  "transmissao": [],
   "placar": {
    "flamengo": 1,
    "adversario": 1
