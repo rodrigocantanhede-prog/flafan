@@ -41,3 +41,13 @@ jobs:
             salvar
           done
           git push
+      - name: Avisos no celular (1 hora antes de cada jogo)
+        if: always()
+        env:
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          git pull -q --rebase origin main || true
+          node scripts/avisos.mjs || true
+          git add data/avisos-push.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -q -m "Avisos agendados"
+          for t in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done

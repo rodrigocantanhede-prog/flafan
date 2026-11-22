@@ -403,3 +403,27 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.deepEqual(j.map((x) => `${x.id} ${x.inicio.slice(8, 10)}`).sort(), ['ferj-1 18', 'ferj-2 21', 'ferj-3 25']);
   console.log('✓ Rodada adiada não deixa jogo fantasma');
 }
+
+// ---------- avisos no celular ----------
+{
+  const { planejar, diferencas, chaveUnica, etiqueta } = await import('./avisos.mjs');
+  const agora = Date.parse('2026-11-23T18:00:00-03:00');
+  const js = [
+    { id: 'a', modalidade: 'volei-feminino', adversario: 'Osasco', inicio: '2026-11-23T21:00:00-03:00', competicao: 'Superliga Feminina', transmissao: ['SporTV 2'], status: 'agendado' },
+    { id: 'b', modalidade: 'basquete', adversario: 'X', inicio: '2026-11-23T18:05:00-03:00', status: 'agendado' },        // em 5 min: tarde demais
+    { id: 'c', modalidade: 'basquete', adversario: 'Y', inicio: '2026-11-26T18:05:00-03:00', status: 'agendado' },        // daqui a 3 dias: ainda não
+    { id: 'd', modalidade: 'base', adversario: 'Z', inicio: '2026-11-23T20:00:00-03:00', semHora: true, status: 'agendado' },
+  ];
+  const plano = planejar(js, agora);
+  assert.deepEqual(Object.values(plano).map((p) => [p.titulo, p.quando]), [['Flamengo x Osasco às 21:00', '2026-11-23T23:00:00Z']]);
+  let d = diferencas(plano, {}, agora);
+  const estado = Object.fromEntries(d.criar.map((a) => [a.chave, { id: 'n1', quando: a.quando, inicio: a.inicio, titulo: a.titulo, corpo: a.corpo }]));
+  d = diferencas(plano, estado, agora);
+  assert.equal(d.criar.length + d.cancelar.length, 0, 'já agendado: não repete');
+  js[0].inicio = '2026-11-23T21:30:00-03:00';
+  d = diferencas(planejar(js, agora), estado, agora);
+  assert.deepEqual([d.criar.length, d.cancelar.length], [1, 1], 'jogo mudou de hora: cancela e agenda de novo');
+  assert.equal(chaveUnica({ chave: 'k', inicio: 'i', titulo: 't', corpo: 'c' }), chaveUnica({ chave: 'k', inicio: 'i', titulo: 't', corpo: 'c' }));
+  assert.equal(etiqueta('futebol-masculino'), 'm_futebol_masculino');
+  console.log('✓ Avisos no celular: agenda 1h antes, não repete e corrige quando o jogo muda');
+}

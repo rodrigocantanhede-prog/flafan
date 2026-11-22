@@ -636,6 +636,57 @@ function montarAjustes() {
   };
 }
 
+// ---------- avisos no celular (OneSignal) ----------
+// O App ID é público. A chave secreta fica só no cofre do GitHub (o robô é quem agenda os avisos).
+const ONESIGNAL_APP_ID = '1283bb3c-ffa7-42a3-9e4e-d65d32a66c6b';
+let oneSignalPronto = null;
+function carregarOneSignal() {
+  if (oneSignalPronto) return oneSignalPronto;
+  oneSignalPronto = new Promise((resolver, rejeitar) => {
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    window.OneSignalDeferred.push(async (OneSignal) => {
+      try {
+        await OneSignal.init({ appId: ONESIGNAL_APP_ID, serviceWorkerPath: 'push/OneSignalSDKWorker.js', serviceWorkerParam: { scope: '/push/' } });
+        resolver(OneSignal);
+      } catch (e) { rejeitar(e); }
+    });
+    const s = document.createElement('script');
+    s.src = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js'; s.defer = true;
+    s.onerror = () => rejeitar(new Error('não carregou'));
+    document.head.appendChild(s);
+  }).catch((e) => { oneSignalPronto = null; throw e; });
+  return oneSignalPronto;
+}
+// etiquetas m_<modalidade> = 1/0: o robô manda o aviso de cada jogo só para quem acompanha aquela modalidade
+const etiquetasPush = () => {
+  const prefs = lembrar('acompanhar', Object.keys(MODALIDADES));
+  return Object.fromEntries(Object.keys(MODALIDADES).map((k) => [`m_${k.replace(/-/g, '_')}`, prefs.includes(k) ? '1' : '0']));
+};
+function montarPush() {
+  const botao = $('#ativar-push'), estado = $('#push-estado'), ajuda = $('#push-ajuda');
+  const suporta = 'Notification' in window && 'serviceWorker' in navigator && 'PushManager' in window;
+  const mostrar = (ativo, texto = '') => { botao.textContent = ativo ? 'Desativar avisos' : 'Ativar avisos'; botao.dataset.ativo = ativo ? '1' : ''; estado.textContent = texto; };
+  if (ehIos && !instalado()) { botao.disabled = true; ajuda.hidden = false; return; }
+  if (!suporta) { botao.disabled = true; estado.textContent = 'Este navegador não permite avisos. No Android, use o Chrome.'; return; }
+  mostrar(lembrar('push', false) && Notification.permission === 'granted', lembrar('push', false) && Notification.permission === 'granted' ? 'Avisos ativados neste aparelho.' : '');
+  if (lembrar('push', false) && Notification.permission === 'granted') carregarOneSignal().then((OS) => OS.User.addTags(etiquetasPush())).catch(() => {});
+  botao.onclick = async () => {
+    botao.disabled = true; estado.textContent = 'Um instante…';
+    try {
+      const OS = await carregarOneSignal();
+      if (botao.dataset.ativo) { await OS.User.PushSubscription.optOut(); guardar('push', false); mostrar(false, 'Avisos desativados neste aparelho.'); return; }
+      if (Notification.permission === 'denied') { mostrar(false, 'Os avisos estão bloqueados para este site. Libere nas configurações do navegador (cadeado ao lado do endereço) e tente de novo.'); return; }
+      await OS.Notifications.requestPermission();
+      if (Notification.permission !== 'granted') { mostrar(false, 'Você não permitiu os avisos. Toque de novo quando quiser ativar.'); return; }
+      await OS.User.PushSubscription.optIn();
+      await OS.User.addTags(etiquetasPush());
+      guardar('push', true); mostrar(true, 'Pronto! Você recebe um aviso 1 hora antes de cada jogo.');
+    } catch { mostrar(!!botao.dataset.ativo, 'Não deu para ativar agora. Confira a internet e tente de novo.'); }
+    finally { botao.disabled = false; }
+  };
+  window.addEventListener('flafan:prefs', () => { if (lembrar('push', false)) carregarOneSignal().then((OS) => OS.User.addTags(etiquetasPush())).catch(() => {}); });
+}
+
 // ---------- eventos ----------
 document.addEventListener('click', (e) => {
   if (e.target.closest('[data-ver-mais]')) { estado.limite += 40; desenhar(); return; }
@@ -893,6 +944,7 @@ function moverDestaqueAba() {
 moverDestaqueAba();
 requestAnimationFrame(() => document.querySelector('.abas')?.classList.add('anima'));
 montarAjustes();
+montarPush();
 carregar();
 setInterval(() => { if (estado.carregado && (estado.aba === 'proximos' || estado.aba === 'resultados') && !$('#detalhe').open) desenhar(); }, 60e3); // atualiza a contagem regressiva
 // jogo acontecendo agora: busca o placar de novo a cada 2 minutos (só com o app aberto na tela)
