@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-22T09:37:03.453Z",
+ "atualizadoEm": "2026-11-22T17:52:35.794Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -1897,17 +1897,29 @@
     {
      "pos": 7,
      "time": "Corinthians",
-     "j": 9,
-     "v": 5,
+     "j": 10,
+     "v": 6,
      "e": null,
      "d": 4,
-     "sg": 14,
-     "pts": 14,
-     "ap": 56,
+     "sg": 33,
+     "pts": 16,
+     "ap": 60,
      "escudo": "escudos/basquete-corinthians-c187b9.png"
     },
     {
      "pos": 8,
+     "time": "CAIXA/Brasília Basquete",
+     "j": 9,
+     "v": 5,
+     "e": null,
+     "d": 4,
+     "sg": 19,
+     "pts": 14,
+     "ap": 56,
+     "escudo": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+    },
+    {
+     "pos": 9,
      "time": "Ceisc/União Corinthians",
      "j": 8,
      "v": 4,
@@ -1917,18 +1929,6 @@
      "pts": 12,
      "ap": 50,
      "escudo": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
-    },
-    {
-     "pos": 9,
-     "time": "CAIXA/Brasília Basquete",
-     "j": 8,
-     "v": 4,
-     "e": null,
-     "d": 4,
-     "sg": 7,
-     "pts": 12,
-     "ap": 50,
-     "escudo": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
     },
     {
      "pos": 10,
@@ -1944,30 +1944,6 @@
     },
     {
      "pos": 11,
-     "time": "Bauru Basket",
-     "j": 8,
-     "v": 3,
-     "e": null,
-     "d": 5,
-     "sg": -10,
-     "pts": 11,
-     "ap": 38,
-     "escudo": "escudos/basquete-bauru-basket-91d95a.png"
-    },
-    {
-     "pos": 12,
-     "time": "São José Basketball",
-     "j": 8,
-     "v": 3,
-     "e": null,
-     "d": 5,
-     "sg": -30,
-     "pts": 11,
-     "ap": 38,
-     "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
-    },
-    {
-     "pos": 13,
      "time": "Paulistano",
      "j": 8,
      "v": 3,
@@ -1979,7 +1955,19 @@
      "escudo": "escudos/basquete-paulistano-d2670e.png"
     },
     {
-     "pos": 14,
+     "pos": 12,
+     "time": "Bauru Basket",
+     "j": 8,
+     "v": 3,
+     "e": null,
+     "d": 5,
+     "sg": -10,
+     "pts": 11,
+     "ap": 38,
+     "escudo": "escudos/basquete-bauru-basket-91d95a.png"
+    },
+    {
+     "pos": 13,
      "time": "Botafogo",
      "j": 8,
      "v": 3,
@@ -1991,19 +1979,19 @@
      "escudo": "escudos/basquete-botafogo-a485c5.png"
     },
     {
-     "pos": 15,
-     "time": "Pato Basquete",
+     "pos": 14,
+     "time": "São José Basketball",
      "j": 9,
-     "v": 2,
+     "v": 3,
      "e": null,
-     "d": 7,
-     "sg": -72,
-     "pts": 11,
-     "ap": 22,
-     "escudo": "escudos/basquete-pato-basquete-d43cc6.png"
+     "d": 6,
+     "sg": -49,
+     "pts": 12,
+     "ap": 33,
+     "escudo": "escudos/basquete-sao-jose-basketball-89ff28.png"
     },
     {
-     "pos": 16,
+     "pos": 15,
      "time": "Basquete Cearense",
      "j": 9,
      "v": 2,
@@ -2013,6 +2001,18 @@
      "pts": 11,
      "ap": 22,
      "escudo": "escudos/basquete-basquete-cearense-8b0fd2.png"
+    },
+    {
+     "pos": 16,
+     "time": "Pato Basquete",
+     "j": 10,
+     "v": 2,
+     "e": null,
+     "d": 8,
+     "sg": -84,
+     "pts": 12,
+     "ap": 20,
+     "escudo": "escudos/basquete-pato-basquete-d43cc6.png"
     },
     {
      "pos": 17,
