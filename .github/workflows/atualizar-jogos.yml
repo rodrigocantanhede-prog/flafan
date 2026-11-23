@@ -1,4 +1,4 @@
-# Roda a cada 2 horas (e quando você clicar em "Run workflow" ou quando o código do robô muda).
+# Roda de hora em hora (e quando você clicar em "Run workflow" ou quando o código do robô muda).
 name: Atualizar jogos
 on:
   schedule:

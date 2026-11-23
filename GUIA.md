@@ -31,7 +31,7 @@ Se uma fonte sair do ar, o app continua com a última leitura boa daquela fonte.
 | `data/saude.json` | Quando o robô conferiu pela última vez | Não |
 | `data/calendario/*.ics` | Os lembretes de agenda (gerados pelo robô) | Não |
 | `contato/apps-script.gs` | Código que você cola no Google para receber as mensagens do app | Uma vez |
-| `.github/workflows/atualizar-jogos.yml` | O "despertador" que roda o robô a cada 2 horas | Não |
+| `.github/workflows/atualizar-jogos.yml` | O "despertador" que roda o robô de hora em hora | Não |
 | `marca/`, `icons/`, `escudos/` | Logo, ícones e escudos dos times | Não |
 
 ## Corrigir ou adicionar um jogo
