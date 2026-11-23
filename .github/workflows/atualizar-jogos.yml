@@ -2,7 +2,7 @@
 name: Atualizar jogos
 on:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - name: Buscar jogos (API + planilha)
         env:
           API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
