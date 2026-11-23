@@ -111,7 +111,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const id = await criarAviso(a, chave);
       novo[a.chave] = { id, quando: a.quando, inicio: a.inicio, titulo: a.titulo, corpo: a.corpo };
       console.log(`[avisos] agendado para ${a.quando}: ${a.titulo}`);
-    } catch (e) { console.log(`[avisos] falhou "${a.titulo}": ${e.message}`); }
+    } catch (e) {
+      if (/not subscribed/i.test(e.message)) console.log(`[avisos] "${a.titulo}": ninguém que acompanha esta modalidade ativou os avisos ainda — tento de novo na próxima rodada.`);
+      else console.log(`[avisos] falhou "${a.titulo}": ${e.message}`);
+    }
   }
   writeFileSync(ARQ, JSON.stringify(novo, null, 1) + '\n');
 }

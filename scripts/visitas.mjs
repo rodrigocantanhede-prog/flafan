@@ -29,11 +29,12 @@ export async function lerCloudflare(token, dias = 10, conta = process.env.CLOUDF
   // a chave só de leitura de estatísticas não lista contas pelo caminho comum; o próprio relatório diz quais contas ela enxerga
   const filtro = conta ? '{ accountTag: $conta }' : '{}';
   const query = `query (${conta ? '$conta: String!, ' : ''}$de: Date!, $ate: Date!) { viewer { accounts(filter: ${filtro}) {
-    rumPageloadEventsAdaptiveGroups(filter: { date_geq: $de, date_leq: $ate }, limit: 1000) { count dimensions { date } } } } }`;
+    rumPageloadEventsAdaptiveGroups(filter: { date_geq: $de, date_leq: $ate }, limit: 1000) { count sum { visits } dimensions { date } } } } }`;
   const j = await chamar('/graphql', token, { query, variables: { ...(conta ? { conta } : {}), de: dia(de), ate: dia(ate) } });
   const contas = j.data?.viewer?.accounts ?? [];
   if (!contas.length) throw new Error('a chave não enxerga nenhuma conta');
   const novos = {};
+  console.log('[visitas] Cloudflare devolveu: ' + JSON.stringify(contas.map((c) => (c.rumPageloadEventsAdaptiveGroups ?? []).map((g) => `${g.dimensions.date}: ${g.count} páginas, ${g.sum?.visits} visitas`))));
   for (const c of contas) for (const g of c.rumPageloadEventsAdaptiveGroups ?? []) novos[g.dimensions.date] = (novos[g.dimensions.date] ?? 0) + g.count;
   return novos;
 }
