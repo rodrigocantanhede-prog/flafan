@@ -39,6 +39,17 @@ export async function lerCloudflare(token, dias = 10, conta = process.env.CLOUDF
   return novos;
 }
 
+// saúde do site (velocidade e estabilidade da tela) por dia, medida pelo Cloudflare nos aparelhos de quem visita
+export async function lerDesempenho(token, dias = 7, conta = process.env.CLOUDFLARE_ACCOUNT_ID || CONTA) {
+  const ate = new Date(), de = new Date(ate.getTime() - dias * 864e5);
+  const query = `query ($conta: String!, $de: Date!, $ate: Date!) { viewer { accounts(filter: { accountTag: $conta }) {
+    rumWebVitalsEventsAdaptiveGroups(filter: { date_geq: $de, date_leq: $ate }, limit: 1000, orderBy: [date_ASC]) {
+      count dimensions { date }
+      sum { lcpGood lcpNeedsImprovement lcpPoor clsGood clsNeedsImprovement clsPoor inpGood inpNeedsImprovement inpPoor } } } } }`;
+  const j = await chamar('/graphql', token, { query, variables: { conta, de: dia(de), ate: dia(ate) } });
+  return (j.data?.viewer?.accounts?.[0]?.rumWebVitalsEventsAdaptiveGroups ?? []).map((g) => ({ dia: g.dimensions.date, medicoes: g.count, ...g.sum }));
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const token = process.env.CLOUDFLARE_API_TOKEN ?? '';
   if (!token) { console.log('[visitas] Chave do Cloudflare não configurada — contador não atualizado.'); process.exit(0); }
@@ -48,4 +59,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     writeFileSync(ARQ, JSON.stringify(saida, null, 1) + '\n');
     console.log(`[visitas] ${saida.total} acessos desde ${saida.desde} (${saida.hoje} hoje).`);
   } catch (e) { console.log(`[visitas] não consegui ler: ${e.message}`); }
+  try {
+    const d = await lerDesempenho(token);
+    writeFileSync('data/desempenho.json', JSON.stringify({ atualizadoEm: new Date().toISOString(), porDia: d }, null, 1) + '\n');
+    console.log(`[desempenho] ${d.length} dias lidos.`);
+  } catch (e) { console.log(`[desempenho] não consegui ler: ${e.message}`); }
 }
