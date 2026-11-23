@@ -5,5 +5,19 @@
   "inicio": "2026-11-23T21:00:00-03:00",
   "titulo": "Flamengo x Osasco às 21:00",
   "corpo": "Superliga Feminina · 📺 SporTV 2 · 📍 Maracanãzinho (RJ)"
+ },
+ "base|Sub-17|2026-11-24|Vasco da Gama": {
+  "id": "1283b46c-050a-41e2-93b9-6ebf980f2894",
+  "quando": "2026-11-24T12:00:00Z",
+  "inicio": "2026-11-24T10:00:00-03:00",
+  "titulo": "Vasco da Gama x Flamengo às 10:00",
+  "corpo": "Copa Rio Sub-17 · 📍 Nivaldo Pereira"
+ },
+ "futebol-feminino||2026-11-24|Fluminense": {
+  "id": "447c597e-7a66-40fc-8edb-4ec607d24405",
+  "quando": "2026-11-24T17:00:00Z",
+  "inicio": "2026-11-24T15:00:00-03:00",
+  "titulo": "Flamengo x Fluminense às 15:00",
+  "corpo": "Carioca Feminino · 📍 João Saldanha - RJ"
  }
 }
