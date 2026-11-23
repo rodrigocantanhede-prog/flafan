@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-22T23:40:12.533Z",
+ "atualizadoEm": "2026-11-23T07:44:52.514Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 22/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 23/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -74,16 +74,16 @@
     {
      "pos": 4,
      "time": "Fluminense",
-     "j": 35,
-     "v": 17,
+     "j": 36,
+     "v": 18,
      "e": 9,
      "d": 9,
-     "gp": 56,
+     "gp": 57,
      "gc": 42,
-     "sg": 14,
-     "pts": 60,
-     "ap": 57,
-     "ca": 94,
+     "sg": 15,
+     "pts": 63,
+     "ap": 58,
+     "ca": 95,
      "cv": 4,
      "ult": [
       "V",
@@ -157,6 +157,27 @@
     },
     {
      "pos": 8,
+     "time": "Bragantino",
+     "j": 36,
+     "v": 14,
+     "e": 8,
+     "d": 14,
+     "gp": 46,
+     "gc": 41,
+     "sg": 5,
+     "pts": 50,
+     "ap": 46,
+     "ca": 96,
+     "cv": 5,
+     "ult": [
+      "V",
+      "D",
+      "V"
+     ],
+     "escudo": "escudos/futebol-bragantino-0801e7.png"
+    },
+    {
+     "pos": 9,
      "time": "Santos",
      "j": 35,
      "v": 13,
@@ -177,44 +198,23 @@
      "escudo": "escudos/futebol-santos-7effcf.webp"
     },
     {
-     "pos": 9,
-     "time": "Bragantino",
-     "j": 35,
+     "pos": 10,
+     "time": "Vasco",
+     "j": 36,
      "v": 13,
      "e": 8,
-     "d": 14,
-     "gp": 45,
-     "gc": 41,
-     "sg": 4,
+     "d": 15,
+     "gp": 47,
+     "gc": 52,
+     "sg": -5,
      "pts": 47,
-     "ap": 44,
-     "ca": 92,
-     "cv": 5,
+     "ap": 43,
+     "ca": 70,
+     "cv": 4,
      "ult": [
       "V",
       "V",
       "D"
-     ],
-     "escudo": "escudos/futebol-bragantino-0801e7.png"
-    },
-    {
-     "pos": 10,
-     "time": "Vasco",
-     "j": 35,
-     "v": 13,
-     "e": 8,
-     "d": 14,
-     "gp": 47,
-     "gc": 51,
-     "sg": -4,
-     "pts": 47,
-     "ap": 44,
-     "ca": 68,
-     "cv": 3,
-     "ult": [
-      "D",
-      "V",
-      "V"
      ],
      "escudo": "escudos/futebol-vasco-5dbf77.webp"
     },
@@ -305,21 +305,21 @@
     {
      "pos": 15,
      "time": "Mirassol",
-     "j": 35,
+     "j": 36,
      "v": 10,
      "e": 11,
-     "d": 14,
+     "d": 15,
      "gp": 39,
-     "gc": 48,
-     "sg": -9,
+     "gc": 49,
+     "sg": -10,
      "pts": 41,
-     "ap": 39,
-     "ca": 90,
+     "ap": 37,
+     "ca": 92,
      "cv": 10,
      "ult": [
-      "D",
       "V",
-      "E"
+      "E",
+      "D"
      ],
      "escudo": "escudos/futebol-mirassol-74dc30.webp"
     },
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 22/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 23/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 22/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 23/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 22/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 23/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 22/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 23/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -1821,7 +1821,7 @@
    "modalidade": "basquete",
    "fonte": "automatica",
    "fonteInfo": "LNB",
-   "atualizado": "em 22/11/2026 (site da LNB)",
+   "atualizado": "em 23/11/2026 (site da LNB)",
    "linhas": [
     {
      "pos": 1,
@@ -2046,7 +2046,7 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 22/11/2026 (site da CBV)",
+   "atualizado": "em 23/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
