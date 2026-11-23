@@ -933,3 +933,5 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 /* tela não "pula" ao carregar: guarda o lugar dos filtros e mantém o rodapé lá embaixo desde o início */
 .filtros:empty::before { content: ""; display: block; height: 38px; flex: none; }
 #lista { min-height: 100vh; }
+
+.rodape-link { color: inherit; text-decoration: underline; text-underline-offset: 2px; align-self: center; padding: 6px 8px; }
