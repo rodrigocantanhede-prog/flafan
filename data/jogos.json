@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-23T07:44:52.514Z",
+ "atualizadoEm": "2026-11-23T15:04:28.149Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes."
@@ -3931,6 +3931,24 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
+   "id": "ferj-6576",
+   "modalidade": "base",
+   "adversario": "Fluminense",
+   "competicao": "Copa Rio Sub-15",
+   "inicio": "2026-11-28T10:00:00-03:00",
+   "semHora": false,
+   "local": "Estádio Marcelo Vieira",
+   "mandante": false,
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "FERJ",
+   "link": "https://www.fferj.com.br/partidas/6576",
+   "categoria": "Sub-15",
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+  },
+  {
    "id": "site-futebol-masculino-2026-11-29-coritiba",
    "modalidade": "futebol-masculino",
    "adversario": "Coritiba",
@@ -3939,7 +3957,10 @@
    "semHora": false,
    "local": "Couto Pereira, Curitiba",
    "mandante": false,
-   "transmissao": [],
+   "transmissao": [
+    "Globo",
+    "Premiere"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica+manual",

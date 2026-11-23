@@ -388,5 +388,23 @@
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
   "link": "https://www.fferj.com.br/partidas/6521"
+ },
+ {
+  "id": "ferj-6576",
+  "modalidade": "base",
+  "adversario": "Fluminense",
+  "competicao": "Copa Rio Sub-15",
+  "inicio": "2026-11-28T10:00:00-03:00",
+  "semHora": false,
+  "local": "Estádio Marcelo Vieira",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
+  "link": "https://www.fferj.com.br/partidas/6576",
+  "categoria": "Sub-15"
  }
 ]
