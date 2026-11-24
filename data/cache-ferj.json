@@ -364,8 +364,11 @@
   "local": "Nivaldo Pereira",
   "mandante": false,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 0,
+   "adversario": 5
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_32.png",

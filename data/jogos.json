@@ -1,9 +1,10 @@
 {
- "atualizadoEm": "2026-11-24T12:58:43.769Z",
+ "atualizadoEm": "2026-11-24T14:58:48.605Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
-  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura."
+  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura.",
+  "Site da LNB (tabela NBB): respondeu 403 — mantive a da planilha."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -3573,7 +3574,7 @@
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "Site do Flamengo; LNB; Lance",
-   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
+   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
    "id": "cbf-835473",
@@ -3910,8 +3911,11 @@
    "local": "Nivaldo Pereira",
    "mandante": false,
    "transmissao": [],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 0,
+    "adversario": 5
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6545",
