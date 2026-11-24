@@ -56,7 +56,7 @@ export function lerPartidasFerj(html, { idadeMinima = 15, agora = Date.now() } =
     const cct = p.campeonatoCategoriaTemporada ?? {};
     const categoria = cct.campeonatoCategoria?.nome ?? '';
     const idade = NUM_CAT(categoria);
-    if (idade < idadeMinima) continue; // Sub-11 a Sub-14 ficam de fora (muitos jogos de escolinha)
+    if (idade < idadeMinima) continue; // abaixo da idade mínima do config (hoje Sub-14) fica de fora (muitos jogos de escolinha)
     const fem = /fem/i.test(cct.genero ?? '');
     const base = idade < 99;
     const inicio = inicioFerj(p.data);
