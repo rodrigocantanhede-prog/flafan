@@ -1,16 +1,16 @@
 {
- "futebol-feminino||2026-11-24|Fluminense": {
-  "id": "447c597e-7a66-40fc-8edb-4ec607d24405",
-  "quando": "2026-11-24T17:00:00Z",
-  "inicio": "2026-11-24T15:00:00-03:00",
-  "titulo": "Flamengo x Fluminense às 15:00",
-  "corpo": "Carioca Feminino · 📍 João Saldanha - RJ"
- },
  "base|Sub-17|2026-11-24|Vasco da Gama": {
   "id": "77b68a65-2997-4e45-991a-669908e0989c",
   "quando": "2026-11-24T12:00:00Z",
   "inicio": "2026-11-24T10:00:00-03:00",
   "titulo": "Vasco da Gama x Flamengo às 10:00",
   "corpo": "Copa Rio Sub-17 – semifinal (volta) · 📍 Nivaldo Pereira"
+ },
+ "futebol-feminino||2026-11-24|Fluminense": {
+  "id": "761900a7-2b3a-4ac8-9fb8-e359125eafb4",
+  "quando": "2026-11-24T17:00:00Z",
+  "inicio": "2026-11-24T15:00:00-03:00",
+  "titulo": "Flamengo x Fluminense às 15:00",
+  "corpo": "Carioca Feminino · 📺 Flamengo TV (YouTube) · 📍 João Saldanha - RJ"
  }
 }
