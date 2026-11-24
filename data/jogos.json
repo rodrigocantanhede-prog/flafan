@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T02:58:30.639Z",
+ "atualizadoEm": "2026-11-24T03:03:34.851Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -4052,15 +4052,15 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "mandante": null,
-   "local": "",
+   "mandante": true,
+   "local": "José Bastos Padilha",
    "competicao": "Copa Rio Sub-15 – final (volta)",
    "fonte": "manual",
    "modalidade": "base",
    "categoria": "Sub-15",
    "adversario": "Fluminense",
-   "inicio": "2026-12-05T00:00:00-03:00",
-   "semHora": true,
+   "inicio": "2026-12-05T10:00:00-03:00",
+   "semHora": false,
    "fonteInfo": "FERJ",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
