@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T14:58:48.605Z",
+ "atualizadoEm": "2026-11-24T16:37:52.303Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -3932,10 +3932,12 @@
    "semHora": false,
    "local": "João Saldanha - RJ",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "Flamengo TV (YouTube)"
+   ],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6521",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
