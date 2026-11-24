@@ -1,10 +1,9 @@
 {
- "atualizadoEm": "2026-11-24T16:37:52.303Z",
+ "atualizadoEm": "2026-11-24T16:39:24.800Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
-  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura.",
-  "Site da LNB (tabela NBB): respondeu 403 — mantive a da planilha."
+  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -3574,7 +3573,7 @@
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "Site do Flamengo; LNB; Lance",
-   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
   },
   {
    "id": "cbf-835473",
@@ -3920,7 +3919,7 @@
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6545",
    "categoria": "Sub-17",
-   "observacao": "Jogo de ida: Flamengo 3 x 4 Vasco",
+   "observacao": "Eliminado na semifinal (3 x 9 no agregado)",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
