@@ -1,10 +1,9 @@
 {
- "atualizadoEm": "2026-11-24T02:47:34.431Z",
+ "atualizadoEm": "2026-11-24T02:58:30.639Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
-  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura.",
-  "Site da LNB (tabela NBB): respondeu 403 — mantive a da planilha."
+  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -3574,7 +3573,7 @@
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "Site do Flamengo; LNB; Lance",
-   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
+   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
   },
   {
    "id": "cbf-835473",
@@ -3680,7 +3679,7 @@
    "id": "ferj-6539",
    "modalidade": "base",
    "adversario": "Botafogo",
-   "competicao": "Copa Rio Sub-15",
+   "competicao": "Copa Rio Sub-15 – semifinal (ida)",
    "inicio": "2026-11-18T10:00:00-03:00",
    "semHora": false,
    "local": "Estádio Olímpico Nilton Santos Anexo",
@@ -3691,7 +3690,7 @@
     "adversario": 0
    },
    "status": "encerrado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6539",
    "categoria": "Sub-15",
@@ -3701,7 +3700,7 @@
    "id": "ferj-6543",
    "modalidade": "base",
    "adversario": "Vasco da Gama",
-   "competicao": "Copa Rio Sub-17",
+   "competicao": "Copa Rio Sub-17 – semifinal (ida)",
    "inicio": "2026-11-18T11:00:00-03:00",
    "semHora": false,
    "local": "José Bastos Padilha",
@@ -3712,7 +3711,7 @@
     "adversario": 4
    },
    "status": "encerrado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6543",
    "categoria": "Sub-17",
@@ -3811,7 +3810,7 @@
    "id": "ferj-6541",
    "modalidade": "base",
    "adversario": "Botafogo",
-   "competicao": "Copa Rio Sub-15",
+   "competicao": "Copa Rio Sub-15 – semifinal (volta)",
    "inicio": "2026-11-21T10:00:00-03:00",
    "semHora": false,
    "local": "José Bastos Padilha",
@@ -3822,10 +3821,11 @@
     "adversario": 0
    },
    "status": "encerrado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6541",
    "categoria": "Sub-15",
+   "observacao": "Classificado para a final (3 x 0 no agregado)",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
   },
   {
@@ -3904,7 +3904,7 @@
    "id": "ferj-6545",
    "modalidade": "base",
    "adversario": "Vasco da Gama",
-   "competicao": "Copa Rio Sub-17",
+   "competicao": "Copa Rio Sub-17 – semifinal (volta)",
    "inicio": "2026-11-24T10:00:00-03:00",
    "semHora": false,
    "local": "Nivaldo Pereira",
@@ -3912,10 +3912,11 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6545",
    "categoria": "Sub-17",
+   "observacao": "Jogo de ida: Flamengo 3 x 4 Vasco",
    "escudoAdv": "escudos/futebol-vasco-da-gama.png"
   },
   {
@@ -3939,7 +3940,7 @@
    "id": "ferj-6576",
    "modalidade": "base",
    "adversario": "Fluminense",
-   "competicao": "Copa Rio Sub-15",
+   "competicao": "Copa Rio Sub-15 – final (ida)",
    "inicio": "2026-11-28T10:00:00-03:00",
    "semHora": false,
    "local": "Estádio Marcelo Vieira",
@@ -3947,7 +3948,7 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6576",
    "categoria": "Sub-15",
@@ -4045,6 +4046,23 @@
    "inicio": "2026-12-05T00:00:00-03:00",
    "semHora": true,
    "fonteInfo": "FIBA; Site do Flamengo; LNB"
+  },
+  {
+   "id": "m-715ddb08f5",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": null,
+   "local": "",
+   "competicao": "Copa Rio Sub-15 – final (volta)",
+   "fonte": "manual",
+   "modalidade": "base",
+   "categoria": "Sub-15",
+   "adversario": "Fluminense",
+   "inicio": "2026-12-05T00:00:00-03:00",
+   "semHora": true,
+   "fonteInfo": "FERJ",
+   "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
    "id": "site-volei-feminino-2026-12-08-minas",
