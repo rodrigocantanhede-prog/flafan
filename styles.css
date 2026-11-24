@@ -935,3 +935,41 @@ html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--texto) 2
 #lista { min-height: 100vh; }
 
 .rodape-link { color: inherit; text-decoration: underline; text-underline-offset: 2px; align-self: center; padding: 6px 8px; }
+
+/* ---------- fundo com degradê parado e cards de vidro fosco (mesmo clima da ficha do jogo) ---------- */
+:root {
+  --vidro: rgba(255,255,255,.06); --vidro-borda: rgba(255,255,255,.10); --vidro-brilho: rgba(255,255,255,.07); --vidro-sombra: rgba(0,0,0,.20);
+  --fundo-degrade:
+    radial-gradient(120% 75% at 0% 0%, rgba(227,20,27,.55), transparent 70%),
+    radial-gradient(120% 75% at 100% 0%, rgba(124,92,214,.45), transparent 70%),
+    radial-gradient(90% 50% at 50% 115%, rgba(227,20,27,.22), transparent 70%),
+    linear-gradient(180deg, #1a1216 0%, #121014 45%, #0c0b0e 100%);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --vidro: rgba(255,255,255,.58); --vidro-borda: rgba(255,255,255,.85); --vidro-brilho: rgba(255,255,255,.9); --vidro-sombra: rgba(60,20,30,.08);
+    --fundo-degrade:
+      radial-gradient(120% 75% at 0% 0%, rgba(227,20,27,.22), transparent 70%),
+      radial-gradient(120% 75% at 100% 0%, rgba(124,92,214,.20), transparent 70%),
+      radial-gradient(90% 50% at 50% 115%, rgba(227,20,27,.10), transparent 70%),
+      linear-gradient(180deg, #faf7f6 0%, #f5f4f2 60%);
+  }
+}
+:root[data-theme="light"] {
+  --vidro: rgba(255,255,255,.58); --vidro-borda: rgba(255,255,255,.85); --vidro-brilho: rgba(255,255,255,.9); --vidro-sombra: rgba(60,20,30,.08);
+  --fundo-degrade:
+    radial-gradient(120% 75% at 0% 0%, rgba(227,20,27,.22), transparent 70%),
+    radial-gradient(120% 75% at 100% 0%, rgba(124,92,214,.20), transparent 70%),
+    radial-gradient(90% 50% at 50% 115%, rgba(227,20,27,.10), transparent 70%),
+    linear-gradient(180deg, #faf7f6 0%, #f5f4f2 60%);
+}
+body { background: transparent; }
+body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--fundo-degrade); }
+.topo { background: color-mix(in srgb, var(--fundo) 35%, transparent); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); border-bottom-color: var(--vidro-borda); }
+.abas, #lista .painel-compacto, #lista .cal, #lista .tabela-camp, #lista .jogo, #lista .ver-mais .btn {
+  background: var(--vidro); border-color: var(--vidro-borda);
+  backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: inset 0 1px 0 var(--vidro-brilho), 0 8px 24px var(--vidro-sombra);
+}
+.chip:not([aria-pressed="true"]) { background: var(--vidro); border-color: var(--vidro-borda); }
+#lista .tabela-camp table.larga .t-pos, #lista .tabela-camp table.larga .t-time { background: color-mix(in srgb, var(--cartao) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
