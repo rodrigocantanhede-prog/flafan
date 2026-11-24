@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T03:03:37.404Z",
+ "atualizadoEm": "2026-11-24T09:36:29.739Z",
  "porDia": [
   {
    "dia": "2026-11-22",
@@ -29,14 +29,14 @@
   },
   {
    "dia": "2026-11-24",
-   "medicoes": 8,
-   "clsGood": 2,
+   "medicoes": 9,
+   "clsGood": 3,
    "clsNeedsImprovement": 1,
    "clsPoor": 0,
    "inpGood": 3,
    "inpNeedsImprovement": 0,
    "inpPoor": 0,
-   "lcpGood": 4,
+   "lcpGood": 5,
    "lcpNeedsImprovement": 1,
    "lcpPoor": 1
   }

@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T03:03:34.851Z",
+ "atualizadoEm": "2026-11-24T09:36:27.038Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -4033,21 +4033,6 @@
    "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
   },
   {
-   "id": "m-466b5f111b",
-   "transmissao": [],
-   "placar": null,
-   "status": "agendado",
-   "mandante": true,
-   "local": "Maracanãzinho, Rio de Janeiro",
-   "competicao": "Liga Sul-Americana – Final Four (semifinal)",
-   "fonte": "manual",
-   "modalidade": "basquete",
-   "adversario": "Nacional (Uruguai)",
-   "inicio": "2026-12-05T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "FIBA; Site do Flamengo; LNB"
-  },
-  {
    "id": "m-715ddb08f5",
    "transmissao": [],
    "placar": null,
@@ -4063,6 +4048,22 @@
    "semHora": false,
    "fonteInfo": "FERJ",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
+  },
+  {
+   "id": "m-466b5f111b",
+   "transmissao": [],
+   "placar": null,
+   "status": "agendado",
+   "mandante": true,
+   "local": "Maracanãzinho, Rio de Janeiro",
+   "competicao": "Liga Sul-Americana – Final Four (semifinal)",
+   "fonte": "manual",
+   "modalidade": "basquete",
+   "adversario": "Nacional (Uruguai)",
+   "inicio": "2026-12-05T19:10:00-03:00",
+   "semHora": false,
+   "observacao": "Se vencer, decide o título no domingo (6/12), às 19h10",
+   "fonteInfo": "Site do Flamengo (programação do Final Four); FIBA; LNB"
   },
   {
    "id": "site-volei-feminino-2026-12-08-minas",

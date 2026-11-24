@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T03:03:34.851Z",
+ "atualizadoEm": "2026-11-24T09:36:27.038Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -179,16 +179,16 @@
     {
      "pos": 9,
      "time": "Santos",
-     "j": 35,
+     "j": 36,
      "v": 13,
      "e": 11,
-     "d": 11,
+     "d": 12,
      "gp": 51,
-     "gc": 49,
-     "sg": 2,
+     "gc": 51,
+     "sg": 0,
      "pts": 50,
-     "ap": 47,
-     "ca": 103,
+     "ap": 46,
+     "ca": 106,
      "cv": 10,
      "ult": [
       "D",
@@ -304,6 +304,27 @@
     },
     {
      "pos": 15,
+     "time": "Grêmio",
+     "j": 36,
+     "v": 10,
+     "e": 11,
+     "d": 15,
+     "gp": 40,
+     "gc": 47,
+     "sg": -7,
+     "pts": 41,
+     "ap": 37,
+     "ca": 94,
+     "cv": 9,
+     "ult": [
+      "D",
+      "E",
+      "V"
+     ],
+     "escudo": "escudos/futebol-gremio-ba2f40.webp"
+    },
+    {
+     "pos": 16,
      "time": "Mirassol",
      "j": 36,
      "v": 10,
@@ -324,7 +345,7 @@
      "escudo": "escudos/futebol-mirassol-74dc30.webp"
     },
     {
-     "pos": 16,
+     "pos": 17,
      "time": "Corinthians",
      "j": 35,
      "v": 10,
@@ -345,7 +366,7 @@
      "escudo": "escudos/futebol-corinthians-3e414a.png"
     },
     {
-     "pos": 17,
+     "pos": 18,
      "time": "Internacional",
      "j": 36,
      "v": 9,
@@ -364,27 +385,6 @@
       "D"
      ],
      "escudo": "escudos/futebol-internacional-a7b9ea.webp"
-    },
-    {
-     "pos": 18,
-     "time": "Grêmio",
-     "j": 35,
-     "v": 9,
-     "e": 11,
-     "d": 15,
-     "gp": 38,
-     "gc": 47,
-     "sg": -9,
-     "pts": 38,
-     "ap": 36,
-     "ca": 92,
-     "cv": 9,
-     "ult": [
-      "D",
-      "E",
-      "V"
-     ],
-     "escudo": "escudos/futebol-gremio-ba2f40.webp"
     },
     {
      "pos": 19,
