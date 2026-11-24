@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-24T16:39:24.800Z",
+ "atualizadoEm": "2026-11-24T21:05:47.276Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -3934,8 +3934,11 @@
    "transmissao": [
     "Flamengo TV (YouTube)"
    ],
-   "placar": null,
-   "status": "agendado",
+   "placar": {
+    "flamengo": 1,
+    "adversario": 1
+   },
+   "status": "encerrado",
    "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6521",
