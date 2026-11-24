@@ -50,6 +50,18 @@ export async function lerDesempenho(token, dias = 7, conta = process.env.CLOUDFL
   return (j.data?.viewer?.accounts?.[0]?.rumWebVitalsEventsAdaptiveGroups ?? []).map((g) => ({ dia: g.dimensions.date, medicoes: g.count, ...g.sum }));
 }
 
+// de onde vêm as visitas (site de origem, tipo de aparelho e país), nos últimos dias
+export async function lerOrigens(token, dias = 7, conta = process.env.CLOUDFLARE_ACCOUNT_ID || CONTA) {
+  const ate = new Date(), de = new Date(ate.getTime() - dias * 864e5);
+  const grupo = (dim) => `rumPageloadEventsAdaptiveGroups(filter: { date_geq: $de, date_leq: $ate }, limit: 50, orderBy: [count_DESC]) { count sum { visits } dimensions { ${dim} } }`;
+  const query = `query ($conta: String!, $de: Date!, $ate: Date!) { viewer { accounts(filter: { accountTag: $conta }) {
+    origem: ${grupo('refererHost')} aparelho: ${grupo('deviceType')} pais: ${grupo('countryName')} pagina: ${grupo('requestPath')} } } }`;
+  const j = await chamar('/graphql', token, { query, variables: { conta, de: dia(de), ate: dia(ate) } });
+  const c = j.data?.viewer?.accounts?.[0] ?? {};
+  const lista = (grupos, campo) => (grupos ?? []).map((g) => ({ nome: g.dimensions?.[campo] || '(direto, app instalado ou WhatsApp)', paginas: g.count, visitas: g.sum?.visits ?? 0 }));
+  return { de: dia(de), ate: dia(ate), origem: lista(c.origem, 'refererHost'), aparelho: lista(c.aparelho, 'deviceType'), pais: lista(c.pais, 'countryName'), pagina: lista(c.pagina, 'requestPath') };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const token = process.env.CLOUDFLARE_API_TOKEN ?? '';
   if (!token) { console.log('[visitas] Chave do Cloudflare não configurada — contador não atualizado.'); process.exit(0); }
@@ -64,4 +76,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     writeFileSync('data/desempenho.json', JSON.stringify({ atualizadoEm: new Date().toISOString(), porDia: d }, null, 1) + '\n');
     console.log(`[desempenho] ${d.length} dias lidos.`);
   } catch (e) { console.log(`[desempenho] não consegui ler: ${e.message}`); }
+  try {
+    const o = await lerOrigens(token);
+    writeFileSync('data/origem.json', JSON.stringify({ atualizadoEm: new Date().toISOString(), ...o }, null, 1) + '\n');
+    console.log(`[origem] ${o.origem.length} origens lidas.`);
+  } catch (e) { console.log(`[origem] não consegui ler: ${e.message}`); }
 }

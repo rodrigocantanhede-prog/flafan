@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /push/
+
+Sitemap: https://rubronegroplus.com/sitemap.xml

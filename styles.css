@@ -973,3 +973,5 @@ body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-event
 }
 .chip:not([aria-pressed="true"]) { background: var(--vidro); border-color: var(--vidro-borda); }
 #lista .tabela-camp table.larga .t-pos, #lista .tabela-camp table.larga .t-time { background: color-mix(in srgb, var(--cartao) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+
+.rodape-links { display: inline-flex; justify-content: center; gap: 6px 14px; flex-wrap: wrap; }

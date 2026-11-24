@@ -30,6 +30,8 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node scripts/visitas.mjs || true
+      - name: Página de agenda para o Google
+        run: node scripts/agenda.mjs || true
       - name: Salvar se algo mudou
         if: always()
         env:
@@ -37,7 +39,7 @@ jobs:
         run: |
           git config user.name "RubroNegro+ robô"
           git config user.email "actions@users.noreply.github.com"
-          salvar() { git add data escudos; git diff --cached --quiet || git commit -m "Atualização automática dos jogos"; }
+          salvar() { git add data escudos agenda sitemap.xml 2>/dev/null || git add data escudos; git diff --cached --quiet || git commit -m "Atualização automática dos jogos"; }
           salvar
           # se alguém publicou no meio do caminho e der conflito, recomeça em cima da versão nova (até 3 tentativas)
           for tentativa in 1 2 3; do

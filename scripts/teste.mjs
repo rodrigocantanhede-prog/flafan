@@ -437,3 +437,20 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.deepEqual([v.desde, v.total, v.hoje], ['2026-11-22', 21, 2], 'dia parcial é substituído, dias antigos ficam guardados');
   console.log('✓ Contador de acessos soma dia a dia');
 }
+
+// ---------- página de agenda para buscadores ----------
+{
+  const { montarAgenda, confronto } = await import('./agenda.mjs');
+  const agora = Date.parse('2026-11-24T12:00:00-03:00');
+  const jogos = [
+    { id: 'a', modalidade: 'futebol-masculino', adversario: 'Coritiba', competicao: 'Brasileirão Série A', inicio: '2026-11-29T16:00:00-03:00', mandante: false, transmissao: ['Globo'], placar: null, status: 'agendado', local: 'Couto Pereira' },
+    { id: 'b', modalidade: 'volei-feminino', adversario: 'Osasco <b>', competicao: 'Superliga', inicio: '2026-11-23T21:00:00-03:00', mandante: true, transmissao: [], placar: { flamengo: 3, adversario: 1 }, status: 'encerrado' },
+    { id: 'c', tipo: 'evento', titulo: 'Mundial', inicio: '2026-12-01T00:00:00-03:00' },
+  ];
+  const html = montarAgenda(jogos, agora);
+  assert.equal(confronto(jogos[0]), 'Coritiba x Flamengo');
+  assert.ok(html.includes('<strong>Coritiba x Flamengo</strong>') && html.includes('Onde assistir: Globo.') && html.includes('às 16:00'), 'próximo jogo com canal e hora');
+  assert.ok(html.includes('Flamengo 3 x 1 Osasco &lt;b&gt;'), 'resultado na ordem do mando e texto protegido');
+  assert.ok(!html.includes('Mundial') && html.includes('"@type":"SportsEvent"'), 'eventos ficam de fora; dados estruturados presentes');
+  console.log('✓ Página de agenda lista próximos jogos e resultados');
+}
