@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-25T00:00:12.699Z",
+ "atualizadoEm": "2026-11-25T05:29:26.678Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -7,7 +7,7 @@
    "modalidade": "futebol-masculino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 24/11/2026 (site da CBF, 2026)",
+   "atualizado": "em 25/11/2026 (site da CBF, 2026)",
    "linhas": [
     {
      "pos": 1,
@@ -32,16 +32,16 @@
     {
      "pos": 2,
      "time": "Palmeiras",
-     "j": 36,
+     "j": 37,
      "v": 21,
      "e": 11,
-     "d": 4,
+     "d": 5,
      "gp": 64,
-     "gc": 26,
-     "sg": 38,
+     "gc": 29,
+     "sg": 35,
      "pts": 74,
-     "ap": 68,
-     "ca": 80,
+     "ap": 66,
+     "ca": 81,
      "cv": 7,
      "ult": [
       "D",
@@ -410,16 +410,16 @@
     {
      "pos": 20,
      "time": "Chapecoense",
-     "j": 36,
-     "v": 4,
+     "j": 37,
+     "v": 5,
      "e": 9,
      "d": 23,
-     "gp": 34,
+     "gp": 37,
      "gc": 74,
-     "sg": -40,
-     "pts": 21,
-     "ap": 19,
-     "ca": 84,
+     "sg": -37,
+     "pts": 24,
+     "ap": 21,
+     "ca": 87,
      "cv": 4,
      "ult": [
       "D",
@@ -435,7 +435,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 24/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 25/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -863,7 +863,7 @@
    "modalidade": "base",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 24/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 25/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1291,7 +1291,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 24/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
+   "atualizado": "em 25/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo A",
    "linhas": [
     {
      "pos": 1,
@@ -1677,7 +1677,7 @@
    "modalidade": "futebol-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBF",
-   "atualizado": "em 24/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
+   "atualizado": "em 25/11/2026 (site da CBF, 2026) — 1ª Fase · Grupo B",
    "linhas": [
     {
      "pos": 1,
@@ -2028,7 +2028,7 @@
    "modalidade": "volei-feminino",
    "fonte": "automatica",
    "fonteInfo": "CBV",
-   "atualizado": "em 24/11/2026 (site da CBV)",
+   "atualizado": "em 25/11/2026 (site da CBV)",
    "linhas": [
     {
      "pos": 1,
@@ -2065,12 +2065,12 @@
     {
      "pos": 4,
      "time": "Dentil Praia Clube",
-     "j": 6,
-     "v": 5,
+     "j": 7,
+     "v": 6,
      "e": null,
      "d": 1,
      "sg": null,
-     "pts": 15,
+     "pts": 17,
      "escudo": "escudos/volei-dentil-praia-clube-6702d5.png"
     },
     {
@@ -2108,6 +2108,17 @@
     },
     {
      "pos": 8,
+     "time": "Fluminense",
+     "j": 6,
+     "v": 1,
+     "e": null,
+     "d": 5,
+     "sg": null,
+     "pts": 4,
+     "escudo": "escudos/volei-fluminense-c0deef.png"
+    },
+    {
+     "pos": 9,
      "time": "Paulistano Barueri",
      "j": 7,
      "v": 1,
@@ -2116,17 +2127,6 @@
      "sg": null,
      "pts": 4,
      "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
-    },
-    {
-     "pos": 9,
-     "time": "Fluminense",
-     "j": 5,
-     "v": 1,
-     "e": null,
-     "d": 4,
-     "sg": null,
-     "pts": 3,
-     "escudo": "escudos/volei-fluminense-c0deef.png"
     },
     {
      "pos": 10,

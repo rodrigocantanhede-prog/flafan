@@ -1,16 +1,16 @@
 {
- "atualizadoEm": "2026-11-25T00:00:17.950Z",
+ "atualizadoEm": "2026-11-25T05:29:30.824Z",
  "de": "2026-11-18",
  "ate": "2026-11-25",
  "origem": [
   {
    "nome": "(direto, app instalado ou WhatsApp)",
-   "paginas": 87,
-   "visitas": 87
+   "paginas": 90,
+   "visitas": 90
   },
   {
    "nome": "rubronegroplus.com",
-   "paginas": 31,
+   "paginas": 34,
    "visitas": 0
   },
   {
@@ -27,25 +27,25 @@
  "aparelho": [
   {
    "nome": "desktop",
-   "paginas": 67,
-   "visitas": 53
+   "paginas": 69,
+   "visitas": 55
   },
   {
    "nome": "mobile",
-   "paginas": 54,
-   "visitas": 37
+   "paginas": 58,
+   "visitas": 38
   }
  ],
  "pais": [
   {
    "nome": "BR",
-   "paginas": 73,
-   "visitas": 42
+   "paginas": 77,
+   "visitas": 43
   },
   {
    "nome": "US",
-   "paginas": 34,
-   "visitas": 34
+   "paginas": 36,
+   "visitas": 36
   },
   {
    "nome": "FR",
@@ -91,8 +91,8 @@
  "pagina": [
   {
    "nome": "/",
-   "paginas": 121,
-   "visitas": 90
+   "paginas": 127,
+   "visitas": 93
   }
  ]
 }
