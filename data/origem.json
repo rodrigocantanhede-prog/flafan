@@ -1,0 +1,98 @@
+{
+ "atualizadoEm": "2026-11-25T00:00:17.950Z",
+ "de": "2026-11-18",
+ "ate": "2026-11-25",
+ "origem": [
+  {
+   "nome": "(direto, app instalado ou WhatsApp)",
+   "paginas": 87,
+   "visitas": 87
+  },
+  {
+   "nome": "rubronegroplus.com",
+   "paginas": 31,
+   "visitas": 0
+  },
+  {
+   "nome": "l.instagram.com",
+   "paginas": 2,
+   "visitas": 2
+  },
+  {
+   "nome": "l.threads.com",
+   "paginas": 1,
+   "visitas": 1
+  }
+ ],
+ "aparelho": [
+  {
+   "nome": "desktop",
+   "paginas": 67,
+   "visitas": 53
+  },
+  {
+   "nome": "mobile",
+   "paginas": 54,
+   "visitas": 37
+  }
+ ],
+ "pais": [
+  {
+   "nome": "BR",
+   "paginas": 73,
+   "visitas": 42
+  },
+  {
+   "nome": "US",
+   "paginas": 34,
+   "visitas": 34
+  },
+  {
+   "nome": "FR",
+   "paginas": 3,
+   "visitas": 3
+  },
+  {
+   "nome": "CA",
+   "paginas": 3,
+   "visitas": 3
+  },
+  {
+   "nome": "GB",
+   "paginas": 2,
+   "visitas": 2
+  },
+  {
+   "nome": "DE",
+   "paginas": 2,
+   "visitas": 2
+  },
+  {
+   "nome": "SG",
+   "paginas": 1,
+   "visitas": 1
+  },
+  {
+   "nome": "AT",
+   "paginas": 1,
+   "visitas": 1
+  },
+  {
+   "nome": "IN",
+   "paginas": 1,
+   "visitas": 1
+  },
+  {
+   "nome": "KR",
+   "paginas": 1,
+   "visitas": 1
+  }
+ ],
+ "pagina": [
+  {
+   "nome": "/",
+   "paginas": 121,
+   "visitas": 90
+  }
+ ]
+}
