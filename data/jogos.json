@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-26T14:40:34.929Z",
+ "atualizadoEm": "2026-11-26T19:04:37.401Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -2803,22 +2803,26 @@
    "escudoAdv": "escudos/futebol-bahia-9eba69.png"
   },
   {
-   "id": "m-d13ad9a4ad",
-   "transmissao": [],
+   "id": "cbv-2584997",
+   "modalidade": "volei-feminino",
+   "adversario": "Paulistano/Barueri",
+   "competicao": "Superliga Feminina",
+   "inicio": "2026-10-19T21:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": {
     "flamengo": 3,
     "adversario": 0
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
-   "modalidade": "volei-feminino",
-   "adversario": "Paulistano/Barueri",
-   "inicio": "2026-10-19T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Web Vôlei",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-paulistano-barueri-eccc6c.png"
   },
   {
@@ -2909,22 +2913,26 @@
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
-   "id": "m-217bc21f14",
-   "transmissao": [],
+   "id": "cbv-2585004",
+   "modalidade": "volei-feminino",
+   "adversario": "Brasília",
+   "competicao": "Superliga Feminina",
+   "inicio": "2026-10-23T18:30:00-03:00",
+   "semHora": false,
+   "local": "Brasília (DF)",
+   "mandante": false,
+   "transmissao": [
+    "GE TV"
+   ],
    "placar": {
     "flamengo": 3,
     "adversario": 0
    },
    "status": "encerrado",
-   "mandante": false,
-   "local": "Brasília (DF)",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
-   "modalidade": "volei-feminino",
-   "adversario": "Brasília",
-   "inicio": "2026-10-23T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Web Vôlei",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-brasilia-volei-brb-923451.png"
   },
   {
@@ -3017,22 +3025,26 @@
    "escudoAdv": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
   },
   {
-   "id": "m-187b54a54e",
-   "transmissao": [],
+   "id": "cbv-2585010",
+   "modalidade": "volei-feminino",
+   "adversario": "Mackenzie",
+   "competicao": "Superliga Feminina",
+   "inicio": "2026-10-31T18:30:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": {
     "flamengo": 3,
     "adversario": 0
    },
    "status": "encerrado",
-   "mandante": true,
-   "local": "Tijuca Tênis Clube, Rio de Janeiro",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
-   "modalidade": "volei-feminino",
-   "adversario": "Mackenzie",
-   "inicio": "2026-10-31T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Web Vôlei",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
   },
   {
@@ -3190,25 +3202,6 @@
    "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
   },
   {
-   "id": "m-78aa055826",
-   "transmissao": [],
-   "placar": {
-    "flamengo": 3,
-    "adversario": 0
-   },
-   "status": "encerrado",
-   "mandante": false,
-   "local": "Londrina (PR)",
-   "competicao": "Superliga Feminina",
-   "fonte": "manual",
-   "modalidade": "volei-feminino",
-   "adversario": "Londrina",
-   "inicio": "2026-11-06T00:00:00-03:00",
-   "semHora": true,
-   "fonteInfo": "Web Vôlei",
-   "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
-  },
-  {
    "id": "ferj-6459",
    "modalidade": "base",
    "adversario": "Botafogo",
@@ -3228,6 +3221,29 @@
    "link": "https://www.fferj.com.br/partidas/6459",
    "categoria": "Sub-16",
    "escudoAdv": "escudos/futebol-botafogo-db3e70.png"
+  },
+  {
+   "id": "cbv-2585015",
+   "modalidade": "volei-feminino",
+   "adversario": "Londrina",
+   "competicao": "Superliga Feminina",
+   "inicio": "2026-11-06T18:30:00-03:00",
+   "semHora": false,
+   "local": "Londrina (PR)",
+   "mandante": false,
+   "transmissao": [
+    "GE TV"
+   ],
+   "placar": {
+    "flamengo": 3,
+    "adversario": 0
+   },
+   "status": "encerrado",
+   "fonte": "automatica+manual",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
    "id": "ferj-6215",
@@ -3426,7 +3442,7 @@
    "escudoAdv": "escudos/futebol-internacional-a7b9ea.webp"
   },
   {
-   "id": "site-volei-feminino-2026-11-12-fluminense",
+   "id": "cbv-2609566",
    "modalidade": "volei-feminino",
    "adversario": "Fluminense",
    "competicao": "Superliga Feminina",
@@ -3443,8 +3459,9 @@
    },
    "status": "encerrado",
    "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-fluminense_56611",
    "escudoAdv": "escudos/volei-fluminense-9265d1.png"
   },
@@ -3654,7 +3671,7 @@
    "fonteInfo": "CBJ; Federação de Judô do Rio (FJERJ)"
   },
   {
-   "id": "site-volei-feminino-2026-11-17-sesi-volei-bauru",
+   "id": "cbv-2585026",
    "modalidade": "volei-feminino",
    "adversario": "Sesi Vôlei Bauru",
    "competicao": "Superliga Feminina",
@@ -3671,8 +3688,9 @@
    },
    "status": "encerrado",
    "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-sesi-volei-bauru-c39437.webp"
   },
   {
@@ -3878,13 +3896,13 @@
    "escudoAdv": "escudos/basquete-basquete-cearense-8b0fd2.png"
   },
   {
-   "id": "site-volei-feminino-2026-11-23-osasco-sao-cristovao-saude",
+   "id": "cbv-2585035",
    "modalidade": "volei-feminino",
    "adversario": "Osasco",
    "competicao": "Superliga Feminina",
    "inicio": "2026-11-23T21:00:00-03:00",
    "semHora": false,
-   "local": "Maracanãzinho (RJ)",
+   "local": "Maracanãzinho, Rio de Janeiro",
    "mandante": true,
    "transmissao": [
     "SporTV 2"
@@ -3895,8 +3913,9 @@
    },
    "status": "encerrado",
    "fonte": "automatica+manual",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-osasco_56786",
    "escudoAdv": "escudos/volei-osasco-83684f.png"
   },
@@ -4059,20 +4078,23 @@
    "escudoAdv": "escudos/futebol-chapecoense-2cccc2.png"
   },
   {
-   "id": "site-volei-feminino-2026-12-03-pinheiros",
+   "id": "cbv-2585037",
    "modalidade": "volei-feminino",
    "adversario": "Pinheiros",
-   "competicao": "Superliga",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-12-03T18:30:00-03:00",
    "semHora": false,
-   "local": "Tijuca (RJ)",
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-pinheiros_57107",
    "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
   },
@@ -4110,20 +4132,23 @@
    "fonteInfo": "Site do Flamengo (programação do Final Four); FIBA; LNB"
   },
   {
-   "id": "site-volei-feminino-2026-12-08-minas",
+   "id": "cbv-2585048",
    "modalidade": "volei-feminino",
    "adversario": "Minas",
-   "competicao": "Superliga",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-12-08T21:00:00-03:00",
    "semHora": false,
-   "local": "Belo Horizonte",
+   "local": "Arena Minas, Belo Horizonte",
    "mandante": false,
-   "transmissao": [],
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-minas-21559f.svg"
   },
   {
@@ -4161,20 +4186,23 @@
    "escudoAdv": "escudos/basquete-sao-jose-basketball-89ff28.png"
   },
   {
-   "id": "site-volei-feminino-2026-12-14-dentil-praia-clube",
+   "id": "cbv-2585050",
    "modalidade": "volei-feminino",
    "adversario": "Dentil Praia Clube",
-   "competicao": "Superliga",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-12-14T21:00:00-03:00",
    "semHora": false,
-   "local": "Tijuca (RJ)",
+   "local": "Maracanãzinho, Rio de Janeiro",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "SporTV 2"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
    "escudoAdv": "escudos/volei-dentil-praia-clube-7bfdf3.png"
   },
   {
@@ -4212,21 +4240,24 @@
    "escudoAdv": "escudos/basquete-paulistano-d2670e.png"
   },
   {
-   "id": "site-volei-feminino-2026-12-19-abel-moda-volei-brusque",
+   "id": "cbv-2585059",
    "modalidade": "volei-feminino",
-   "adversario": "Abel Moda Vôlei (Brusque)",
-   "competicao": "Superliga",
+   "adversario": "Brusque",
+   "competicao": "Superliga Feminina",
    "inicio": "2026-12-19T18:30:00-03:00",
    "semHora": false,
-   "local": "Brusque",
+   "local": "Sesi Brusque, Brusque",
    "mandante": false,
-   "transmissao": [],
+   "transmissao": [
+    "GE TV"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica",
-   "fonteInfo": "Site do Flamengo",
-   "pagina": "volei",
-   "escudoAdv": "escudos/volei-abel-moda-volei-brusque-181b0a.webp"
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-brusque-181b0a.webp"
   },
   {
    "id": "lnb-27236",
@@ -4297,6 +4328,26 @@
    "escudoAdv": "escudos/basquete-itatiaiucu-cruzeiro-basquete-afae7a.png"
   },
   {
+   "id": "cbv-2601558",
+   "modalidade": "volei-feminino",
+   "adversario": "Paulistano/Barueri",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-01-08T21:00:00-03:00",
+   "semHora": false,
+   "local": "Sportville, São Paulo",
+   "mandante": false,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-paulistano-barueri-eccc6c.png"
+  },
+  {
    "id": "lnb-27328",
    "modalidade": "basquete",
    "adversario": "Botafogo",
@@ -4312,6 +4363,26 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-botafogo-a485c5.png"
+  },
+  {
+   "id": "cbv-2601563",
+   "modalidade": "volei-feminino",
+   "adversario": "Brasília",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-01-15T18:30:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "GE TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-brasilia-volei-brb-923451.png"
   },
   {
    "id": "lnb-27336",
@@ -4331,6 +4402,26 @@
    "escudoAdv": "escudos/basquete-caxias-do-sul-basquete-fa3743.png"
   },
   {
+   "id": "cbv-2601597",
+   "modalidade": "volei-feminino",
+   "adversario": "Osasco",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-01-19T21:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio José Liberatti, Osasco",
+   "mandante": false,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-osasco-83684f.png"
+  },
+  {
    "id": "lnb-27344",
    "modalidade": "basquete",
    "adversario": "Ceisc/União Corinthians",
@@ -4346,6 +4437,46 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-ceisc-uniao-corinthians-bce2f9.png"
+  },
+  {
+   "id": "cbv-2601572",
+   "modalidade": "volei-feminino",
+   "adversario": "Mackenzie",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-01-27T18:30:00-03:00",
+   "semHora": false,
+   "local": "Ginásio do Mackenzie, Belo Horizonte",
+   "mandante": false,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-batavo-mackenzie-ad5725.png"
+  },
+  {
+   "id": "cbv-2601575",
+   "modalidade": "volei-feminino",
+   "adversario": "Sancor Seguros Vôlei",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-02-02T19:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-sancor-seguros-volei-a16700.png"
   },
   {
    "id": "lnb-27356",
@@ -4399,6 +4530,26 @@
    "escudoAdv": "escudos/basquete-bauru-basket-91d95a.png"
   },
   {
+   "id": "cbv-2609577",
+   "modalidade": "volei-feminino",
+   "adversario": "Fluminense",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-02-12T21:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio da Hebraica, Rio de Janeiro",
+   "mandante": false,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-fluminense-c0deef.png"
+  },
+  {
    "id": "lnb-27402",
    "modalidade": "basquete",
    "adversario": "Sesi Franca",
@@ -4414,6 +4565,26 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-sesi-franca-c08c49.png"
+  },
+  {
+   "id": "cbv-2601587",
+   "modalidade": "volei-feminino",
+   "adversario": "Sesi Vôlei Bauru",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-02-19T21:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-sesi-volei-bauru-bafe0f.png"
   },
   {
    "id": "lnb-27420",
@@ -4450,6 +4621,26 @@
    "escudoAdv": "escudos/basquete-unifacisa-a5807a.png"
   },
   {
+   "id": "cbv-2601598",
+   "modalidade": "volei-feminino",
+   "adversario": "Pinheiros",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-03-08T18:30:00-03:00",
+   "semHora": false,
+   "local": "Ginásio do Pinheiros, São Paulo",
+   "mandante": false,
+   "transmissao": [
+    "GE TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-pinheiros-ef805a.png"
+  },
+  {
    "id": "lnb-27432",
    "modalidade": "basquete",
    "adversario": "Basket Osasco",
@@ -4465,6 +4656,26 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-basket-osasco-449453.png"
+  },
+  {
+   "id": "cbv-2601606",
+   "modalidade": "volei-feminino",
+   "adversario": "Minas",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-03-13T21:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-minas-21559f.svg"
   },
   {
    "id": "lnb-27442",
@@ -4499,6 +4710,46 @@
    "fonteInfo": "LNB",
    "tabela": "NBB",
    "escudoAdv": "escudos/basquete-paulistano-d2670e.png"
+  },
+  {
+   "id": "cbv-2601613",
+   "modalidade": "volei-feminino",
+   "adversario": "Dentil Praia Clube",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-03-18T21:00:00-03:00",
+   "semHora": false,
+   "local": "Ginásio do UTC, Uberlândia",
+   "mandante": false,
+   "transmissao": [
+    "SporTV 2"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-dentil-praia-clube-6702d5.png"
+  },
+  {
+   "id": "cbv-2601618",
+   "modalidade": "volei-feminino",
+   "adversario": "Brusque",
+   "competicao": "Superliga Feminina",
+   "inicio": "2027-03-22T20:00:00-03:00",
+   "semHora": false,
+   "local": "Tijuca Tênis Clube, Rio de Janeiro",
+   "mandante": true,
+   "transmissao": [
+    "GE TV"
+   ],
+   "placar": null,
+   "status": "agendado",
+   "fonte": "automatica",
+   "fonteInfo": "CBV",
+   "tabela": "Superliga Feminina",
+   "link": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+   "escudoAdv": "escudos/volei-brusque-181b0a.webp"
   },
   {
    "id": "lnb-27465",
