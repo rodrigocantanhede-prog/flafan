@@ -1,14 +1,36 @@
 {
- "atualizadoEm": "2026-11-26T11:00:20.946Z",
+ "atualizadoEm": "2026-11-26T13:24:37.443Z",
  "de": "2026-11-19",
  "ate": "2026-11-26",
- "origem": [],
- "aparelho": [],
+ "origem": [
+  {
+   "nome": "(direto, app instalado ou WhatsApp)",
+   "paginas": 100,
+   "visitas": 100
+  },
+  {
+   "nome": "rubronegroplus.com",
+   "paginas": 30,
+   "visitas": 0
+  }
+ ],
+ "aparelho": [
+  {
+   "nome": "desktop",
+   "paginas": 73,
+   "visitas": 59
+  },
+  {
+   "nome": "mobile",
+   "paginas": 64,
+   "visitas": 43
+  }
+ ],
  "pais": [
   {
    "nome": "BR",
-   "paginas": 82,
-   "visitas": 47
+   "paginas": 83,
+   "visitas": 48
   },
   {
    "nome": "US",
