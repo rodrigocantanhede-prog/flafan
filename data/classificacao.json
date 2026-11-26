@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-25T17:20:31.318Z",
+ "atualizadoEm": "2026-11-26T01:50:06.230Z",
  "escudoFlamengo": "escudos/flamengo.png",
  "campeonatos": [
   {
@@ -150,7 +150,7 @@
      "cv": 5,
      "ult": [
       "D",
-      "D",
+      "E",
       "E"
      ],
      "escudo": "escudos/futebol-atletico-mg-a62640.png"
@@ -359,9 +359,9 @@
      "ca": 97,
      "cv": 9,
      "ult": [
-      "V",
       "E",
-      "V"
+      "V",
+      "E"
      ],
      "escudo": "escudos/futebol-corinthians-3e414a.png"
     },
@@ -2098,16 +2098,27 @@
     {
      "pos": 7,
      "time": "Pinheiros",
-     "j": 5,
-     "v": 2,
+     "j": 6,
+     "v": 3,
      "e": null,
      "d": 3,
      "sg": null,
-     "pts": 4,
+     "pts": 7,
      "escudo": "escudos/volei-pinheiros-ef805a.png"
     },
     {
      "pos": 8,
+     "time": "Batavo Mackenzie",
+     "j": 7,
+     "v": 2,
+     "e": null,
+     "d": 5,
+     "sg": null,
+     "pts": 6,
+     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
+    },
+    {
+     "pos": 9,
      "time": "Fluminense",
      "j": 6,
      "v": 1,
@@ -2118,26 +2129,15 @@
      "escudo": "escudos/volei-fluminense-c0deef.png"
     },
     {
-     "pos": 9,
+     "pos": 10,
      "time": "Paulistano Barueri",
-     "j": 7,
+     "j": 8,
      "v": 1,
      "e": null,
-     "d": 6,
+     "d": 7,
      "sg": null,
      "pts": 4,
      "escudo": "escudos/volei-paulistano-barueri-eccc6c.png"
-    },
-    {
-     "pos": 10,
-     "time": "Batavo Mackenzie",
-     "j": 6,
-     "v": 1,
-     "e": null,
-     "d": 5,
-     "sg": null,
-     "pts": 3,
-     "escudo": "escudos/volei-batavo-mackenzie-ad5725.png"
     },
     {
      "pos": 11,
@@ -2153,10 +2153,10 @@
     {
      "pos": 12,
      "time": "Brasília Vôlei / BRB",
-     "j": 6,
+     "j": 7,
      "v": 0,
      "e": null,
-     "d": 6,
+     "d": 7,
      "sg": null,
      "pts": 0,
      "escudo": "escudos/volei-brasilia-volei-brb-923451.png"

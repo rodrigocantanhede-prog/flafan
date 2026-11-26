@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-25T17:20:31.318Z",
+ "atualizadoEm": "2026-11-26T01:50:06.230Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -4073,6 +4073,7 @@
    "fonte": "automatica",
    "fonteInfo": "Site do Flamengo",
    "pagina": "volei",
+   "ingresso": "https://www.guicheweb.com.br/sesc-rj-flamengo-x-pinheiros_57107",
    "escudoAdv": "escudos/volei-pinheiros-c2b37b.svg"
   },
   {
