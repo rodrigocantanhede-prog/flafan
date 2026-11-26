@@ -9,10 +9,12 @@ const API = 'https://api.cloudflare.com/client/v4';
 const CONTA = '5803b0e0f138c97b2e9cc625a623c48c'; // identificador da conta no Cloudflare (não é segredo)
 const dia = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: 'UTC' }).format(d);
 
-// junta os dias novos com os já guardados (o dia mais recente substitui a contagem parcial anterior)
+// junta os dias lidos agora com os já guardados (dias que o Cloudflare não devolve mais ficam como estavam)
 export function somar(anterior, novos, hoje = dia(new Date())) {
   const porDia = { ...(anterior?.porDia ?? {}) };
-  for (const [d, n] of Object.entries(novos)) if (Number.isFinite(n) && n >= (porDia[d] ?? 0)) porDia[d] = n;
+  // vale sempre a leitura mais recente de cada dia: o Cloudflare entrega estimativas que oscilam um pouco,
+  // e guardar "a maior já vista" fazia o total crescer sozinho, sem visita nova
+  for (const [d, n] of Object.entries(novos)) if (Number.isFinite(n)) porDia[d] = n;
   const dias = Object.keys(porDia).sort();
   return { desde: anterior?.desde ?? dias[0] ?? hoje, total: Object.values(porDia).reduce((a, b) => a + b, 0), hoje: porDia[hoje] ?? 0, atualizadoEm: new Date().toISOString(), porDia };
 }

@@ -435,6 +435,8 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.deepEqual([v.desde, v.total, v.hoje], ['2026-11-22', 14, 4]);
   v = somar(v, { '2026-11-23': 9, '2026-11-24': 2 }, '2026-11-24');
   assert.deepEqual([v.desde, v.total, v.hoje], ['2026-11-22', 21, 2], 'dia parcial é substituído, dias antigos ficam guardados');
+  v = somar(v, { '2026-11-23': 6 }, '2026-11-24');
+  assert.deepEqual([v.porDia['2026-11-23'], v.porDia['2026-11-22'], v.total], [6, 10, 18], 'vale a leitura mais recente, mesmo menor; dia fora da leitura fica guardado');
   console.log('✓ Contador de acessos soma dia a dia');
 }
 
