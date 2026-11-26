@@ -183,6 +183,12 @@
   "lnbJogos": {
     "url": "https://lnb.com.br/nbb/tabela-de-jogos/"
   },
+  "cbvJogos": {
+    "url": "https://cbv.com.br/volei-de-quadra/superliga-a-feminina",
+    "competicao": "Superliga Feminina",
+    "modalidade": "volei-feminino",
+    "_nota": "Agenda oficial da Superliga Feminina na CBV: jogos, placar em sets, ginásio e canal de TV."
+  },
   "ferj": {
     "ativo": true,
     "paginas": 10,

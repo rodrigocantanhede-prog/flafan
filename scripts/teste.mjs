@@ -456,3 +456,30 @@ import { lerProximosJogos, lerClassificacao, dataDoSite } from './site-flamengo.
   assert.ok(!html.includes('Mundial') && html.includes('"@type":"SportsEvent"'), 'eventos ficam de fora; dados estruturados presentes');
   console.log('✓ Página de agenda lista próximos jogos e resultados');
 }
+
+// ---------- agenda da Superliga no site da CBV ----------
+{
+  const { lerAgendaCbv, nomeCbv } = await import('./cbv.mjs');
+  const { juntarCbf } = await import('./atualizar.mjs');
+  const part = (id, rodada, casa, fora, quando, sc, sf, fim, extra) => `{"ChampionshipMatch_ID":${id},"HomeTeam":"${casa}","GuestTeam":"${fora}","RoundType":"${rodada}","MatchDateTime":"${quando}","WonSetHome":${sc},"WonSetGuest":${sf},"postponed":false,${extra},"isLive":false,"isFinished":${fim}}`;
+  const dados = `x:{"matchesByRound":{"TURNO - RODADA 1":[` +
+    part(1, 'TURNO - RODADA 1', 'SESC RJ FLAMENGO', 'OSASCO SÃO CRISTÓVÃO SAÚDE', '2026-11-24T01:00:00+01:00', 3, 1, true, `"tv":{"TelevisionID":16,"Live":1},"hall":{"Hall_ID":9,"Denomination":"MARACANÃZINHO","City":"RIO DE JANEIRO","Address":null},"channel":{"ID":16,"Denomination":"SPORTV 2","Address":null}`) + ',' +
+    part(2, 'TURNO - RODADA 1', 'GERDAU MINAS', 'DENTIL PRAIA CLUBE', '2026-11-24T22:30:00+01:00', 0, 0, false, `"tv":{"TelevisionID":65,"Live":1},"hall":{"Hall_ID":8,"Denomination":"ARENA MINAS","City":"BELO HORIZONTE","Address":null},"channel":{"ID":65,"Denomination":"GE TV","Address":null}`) +
+    `],"TURNO - RODADA 2":[` +
+    part(3, 'TURNO - RODADA 2', 'GERDAU MINAS', 'SESC RJ FLAMENGO', '2026-12-09T01:00:00+01:00', 0, 0, false, `"tv":{"TelevisionID":16,"Live":1},"hall":"$37:props:matchesByRound:TURNO - RODADA 1:1:hall","channel":"$37:props:matchesByRound:TURNO - RODADA 1:0:channel"`) + `]}}`;
+  const html = `<script>self.__next_f.push([1,${JSON.stringify(dados)}])</script>`;
+  const jogos = lerAgendaCbv(html, { agora: Date.parse('2026-11-26T12:00:00-03:00') });
+  assert.equal(jogos.length, 2, 'só os jogos do Flamengo');
+  assert.deepEqual([jogos[0].inicio, jogos[0].adversario, jogos[0].mandante, jogos[0].placar, jogos[0].status, jogos[0].transmissao, jogos[0].local],
+    ['2026-11-23T21:00:00-03:00', 'Osasco', true, { flamengo: 3, adversario: 1 }, 'encerrado', ['SporTV 2'], 'Maracanãzinho, Rio de Janeiro'], 'hora de Brasília, sets, canal e ginásio');
+  assert.deepEqual([jogos[1].inicio, jogos[1].adversario, jogos[1].mandante, jogos[1].status, jogos[1].transmissao, jogos[1].local],
+    ['2026-12-08T21:00:00-03:00', 'Minas', false, 'agendado', ['SporTV 2'], 'Arena Minas, Belo Horizonte'], 'ginásio e canal vindos por referência a outra partida');
+  assert.equal(nomeCbv('E.C. PINHEIROS'), 'Pinheiros');
+  // o jogo que o site do Flamengo já tinha vira um só, com o canal da CBV e o ingresso do site
+  const site = [{ id: 'site-volei-feminino-2026-12-08-minas', modalidade: 'volei-feminino', adversario: 'Minas', competicao: 'Superliga', inicio: '2026-12-08T21:00:00-03:00', local: 'Belo Horizonte', transmissao: [], ingresso: 'https://x', fonte: 'automatica' }];
+  const junto = juntarCbf(site, jogos);
+  assert.equal(junto.length, 2);
+  const minas = junto.find((j) => j.adversario === 'Minas');
+  assert.deepEqual([minas.id, minas.transmissao, minas.ingresso, minas.competicao], ['cbv-3', ['SporTV 2'], 'https://x', 'Superliga Feminina']);
+  console.log('✓ Agenda da CBV: jogos do vôlei com canal, ginásio e placar em sets');
+}

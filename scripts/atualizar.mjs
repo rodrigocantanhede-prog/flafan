@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { lerCbf } from './cbf.mjs';
 import { lerFerj } from './ferj.mjs';
+import { lerJogosCbv } from './cbv.mjs';
 import { lerTabelasOficiais, lerJogosLnb } from './tabelas-oficiais.mjs';
 import { lerSiteFlamengo } from './site-flamengo.mjs';
 
@@ -721,6 +722,15 @@ async function main() {
       await writeFile(cacheFerjArq, JSON.stringify(jogosFerj, null, 1));
     } catch (e) { problemas.push(`Site da FERJ: ${e.message} — mantive a última leitura.`); }
     automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('ferj-')), jogosFerj);
+  }
+
+  // 1b5) agenda da Superliga no site da CBV: jogos do vôlei com placar em sets, ginásio e onde assistir
+  if (cfg.cbvJogos?.url && !args.includes('--sem-api') && !args.includes('--sem-site')) {
+    const cacheCbvArq = path.join(DATA, 'cache-cbv.json');
+    let jogosCbv;
+    try { jogosCbv = await lerJogosCbv(cfg.cbvJogos, log); await writeFile(cacheCbvArq, JSON.stringify(jogosCbv, null, 1)); }
+    catch (e) { problemas.push(`Site da CBV (agenda da Superliga): ${e.message} — mantive a última leitura.`); jogosCbv = await lerJson(cacheCbvArq, []); }
+    automaticos = juntarCbf(automaticos.filter((j) => !String(j.id).startsWith('cbv-')), jogosCbv);
   }
 
   // 1c) tabelas completas dos sites das ligas (NBB na LNB, Superliga na CBV)
