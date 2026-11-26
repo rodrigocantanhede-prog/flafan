@@ -1,17 +1,27 @@
 {
- "atualizadoEm": "2026-11-26T13:24:37.443Z",
+ "atualizadoEm": "2026-11-26T13:26:45.955Z",
  "de": "2026-11-19",
  "ate": "2026-11-26",
  "origem": [
   {
    "nome": "(direto, app instalado ou WhatsApp)",
-   "paginas": 100,
-   "visitas": 100
+   "paginas": 99,
+   "visitas": 99
   },
   {
    "nome": "rubronegroplus.com",
-   "paginas": 30,
+   "paginas": 35,
    "visitas": 0
+  },
+  {
+   "nome": "l.instagram.com",
+   "paginas": 2,
+   "visitas": 2
+  },
+  {
+   "nome": "l.threads.com",
+   "paginas": 1,
+   "visitas": 1
   }
  ],
  "aparelho": [
