@@ -1,9 +1,10 @@
 {
- "atualizadoEm": "2026-11-26T09:36:49.762Z",
+ "atualizadoEm": "2026-11-26T09:39:03.999Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
-  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura."
+  "Site da LNB (agenda do NBB): respondeu 403 — mantive a última leitura.",
+  "Site da LNB (tabela NBB): respondeu 403 — mantive a da planilha."
  ],
  "escudoFlamengo": "escudos/flamengo.png",
  "jogos": [
@@ -3573,7 +3574,7 @@
    "semHora": false,
    "observacao": "Jogo em quadra neutra, em Medellín",
    "fonteInfo": "Site do Flamengo; LNB; Lance",
-   "escudoAdv": "escudos/basquete-brasilia-e22d40.png"
+   "escudoAdv": "escudos/basquete-caixa-brasilia-basquete-e22d40.png"
   },
   {
    "id": "cbf-835473",
@@ -3948,7 +3949,7 @@
    "id": "ferj-6588",
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
-   "competicao": "Carioca Feminino",
+   "competicao": "Carioca Feminino – final (ida)",
    "inicio": "2026-11-27T15:00:00-03:00",
    "semHora": false,
    "local": "João Saldanha - RJ",
@@ -3956,9 +3957,10 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6588",
+   "observacao": "Entrada gratuita",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
@@ -4003,7 +4005,7 @@
    "id": "ferj-6589",
    "modalidade": "futebol-feminino",
    "adversario": "Fluminense",
-   "competicao": "Carioca Feminino",
+   "competicao": "Carioca Feminino – final (volta)",
    "inicio": "2026-11-30T15:00:00-03:00",
    "semHora": false,
    "local": "Marcelo Vieira",
@@ -4011,7 +4013,7 @@
    "transmissao": [],
    "placar": null,
    "status": "agendado",
-   "fonte": "automatica",
+   "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6589",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
