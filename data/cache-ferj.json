@@ -405,8 +405,11 @@
   "local": "João Saldanha - RJ",
   "mandante": true,
   "transmissao": [],
-  "placar": null,
-  "status": "agendado",
+  "placar": {
+   "flamengo": 2,
+   "adversario": 2
+  },
+  "status": "encerrado",
   "fonte": "automatica",
   "fonteInfo": "FERJ",
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
