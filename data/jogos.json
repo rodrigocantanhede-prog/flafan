@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-27T09:36:04.862Z",
+ "atualizadoEm": "2026-11-27T09:37:57.924Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -3973,7 +3973,9 @@
    "semHora": false,
    "local": "João Saldanha - RJ",
    "mandante": true,
-   "transmissao": [],
+   "transmissao": [
+    "Flamengo TV (YouTube)"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica+manual",
