@@ -1,5 +1,5 @@
 {
- "atualizadoEm": "2026-11-28T03:58:22.301Z",
+ "atualizadoEm": "2026-11-28T09:38:44.559Z",
  "exemplo": false,
  "avisos": [
   "CBF: tabela Brasileiro Feminino Sub-17 sem fase por pontos com o Flamengo — mantive a publicada antes.",
@@ -4033,12 +4033,15 @@
    "semHora": false,
    "local": "Marcelo Vieira",
    "mandante": false,
-   "transmissao": [],
+   "transmissao": [
+    "FluTV (YouTube)"
+   ],
    "placar": null,
    "status": "agendado",
    "fonte": "automatica+manual",
    "fonteInfo": "FERJ",
    "link": "https://www.fferj.com.br/partidas/6589",
+   "observacao": "Jogo de ida: Flamengo 2 x 2 Fluminense",
    "escudoAdv": "escudos/futebol-fluminense-9265d1.png"
   },
   {
