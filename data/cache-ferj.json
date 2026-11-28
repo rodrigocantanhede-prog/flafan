@@ -416,6 +416,23 @@
   "link": "https://www.fferj.com.br/partidas/6588"
  },
  {
+  "id": "ferj-6589",
+  "modalidade": "futebol-feminino",
+  "adversario": "Fluminense",
+  "competicao": "Carioca Feminino",
+  "inicio": "2026-11-30T15:00:00-03:00",
+  "semHora": false,
+  "local": "Marcelo Vieira",
+  "mandante": false,
+  "transmissao": [],
+  "placar": null,
+  "status": "agendado",
+  "fonte": "automatica",
+  "fonteInfo": "FERJ",
+  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
+  "link": "https://www.fferj.com.br/partidas/6589"
+ },
+ {
   "id": "ferj-6576",
   "modalidade": "base",
   "adversario": "Fluminense",
@@ -432,22 +449,5 @@
   "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
   "link": "https://www.fferj.com.br/partidas/6576",
   "categoria": "Sub-15"
- },
- {
-  "id": "ferj-6589",
-  "modalidade": "futebol-feminino",
-  "adversario": "Fluminense",
-  "competicao": "Carioca Feminino",
-  "inicio": "2026-11-30T15:00:00-03:00",
-  "semHora": false,
-  "local": "Marcelo Vieira",
-  "mandante": false,
-  "transmissao": [],
-  "placar": null,
-  "status": "agendado",
-  "fonte": "automatica",
-  "fonteInfo": "FERJ",
-  "escudoReserva": "https://static.fferj.com.br/media/upload/time/img_icone_74.png",
-  "link": "https://www.fferj.com.br/partidas/6589"
  }
 ]
